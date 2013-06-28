@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<gui-definition>
+<servers number="2">
+    <server>
+        <servername>PhaidraTestServerPaduaName</servername>
+        <fedoraurl>fedora.cab.unipd.it</fedoraurl>
+        <phaidraurl>phaidratest.cab.unipd.it</phaidraurl>
+        <staticurl>http://phaidrastatic.cab.unipd.it</staticurl>
+        <stylesheeturl>http://phaidrastatic.cab.unipd.it/stylesheets/externalview.xsl</stylesheeturl>
+        <oaiIdentifier>cab.unipd.it</oaiIdentifier>
+    </server>
+    <server>
+        <servername>PhaidraDevServerPaduaName</servername>
+        <fedoraurl>prova</fedoraurl>
+        <phaidraurl>prova</phaidraurl>
+        <staticurl>prova</staticurl>
+        <stylesheeturl>prova</stylesheeturl>
+        <oaiIdentifier>prova</oaiIdentifier>
+    </server>
+  </servers>
+<resources number="3">
+      <resource descr="binglese">en</resource>
+      <resource descr="bitaliano">it</resource>
+      <resource descr="btedesco">de</resource>
+  </resources>
+<locale>
+    <current value="it">lingua</current>
+  </locale>
+<urlupdater>
+      <descrurl>http://192.168.1.181/pluginmfu/phaidra/updater.xml</descrurl>
+  </urlupdater>
+<version current="1.0">version</version>
+</gui-definition>
