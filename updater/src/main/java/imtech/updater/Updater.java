@@ -162,7 +162,7 @@ public class Updater extends JFrame{
     }
     private void cleanup()
     {
-        outText.setText(outText.getText()+"\nPreforming clean up...");
+        outText.setText(outText.getText()+"\nPerforming clean up...");
         File f = new File(USER_DIR+getSep()+"update.zip");
         f.delete();
         remove(new File(root));
