@@ -19,12 +19,12 @@ import javax.swing.border.TitledBorder;
 
 /**
  *
- * @author mauro
+ * @author Mauro
  */
 public class About extends javax.swing.JFrame {
 
     /**
-     * Creates new form About
+     * Creates new form About (testing fork)
      */
     public About() {
         try {
