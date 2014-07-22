@@ -6,7 +6,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>Updater</module>
+        <module>Updater</module> 
         <module>CustomTargetPanel</module>
         <module>Phaidra</module>
     </modules>
