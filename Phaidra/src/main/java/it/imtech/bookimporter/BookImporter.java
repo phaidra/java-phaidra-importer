@@ -381,7 +381,6 @@ public class BookImporter extends javax.swing.JFrame {
                         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
                         xmlTree.updateLanguage();
                         createLanguageMenu(bundle);
-                        
                     }
                 });
 
@@ -397,12 +396,12 @@ public class BookImporter extends javax.swing.JFrame {
                            setDefaultCurrent();
                            boolean exported = this.exportMetadataSilent(backup_metadata);
                            
-                           if(exported){
-                                jLayeredPane1.removeAll();
-                                MetaUtility.getInstance().preInitializeData();
-                                initializeData();
-                                this.importMetadataSilent(backup_metadata);
-                           }
+                            jLayeredPane1.removeAll();
+                            MetaUtility.getInstance().preInitializeData();
+                            initializeData();
+                            if(exported){
+                             this.importMetadataSilent(backup_metadata);
+                            }
                         }
                                                        
                         int items = jMenu1.getItemCount();
