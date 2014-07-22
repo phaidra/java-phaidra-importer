@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="abort" xml:space="preserve">
+    <value>Interrompi</value>
+  </data>
+  <data name="acnum" xml:space="preserve">
+    <value>Numero-Struttura mista (Numero-AC)</value>
+  </data>
+  <data name="acnum1" xml:space="preserve">
+    <value>Inserisci un Numero-Struttura mista (Numero-AC)</value>
+  </data>
+  <data name="alephError" xml:space="preserve">
+    <value>Errore di Aleph</value>
+  </data>
+  <data name="alephError1" xml:space="preserve">
+    <value>Nessun metadato rinvenuto.</value>
+  </data>
+  <data name="alephHttpError1" xml:space="preserve">
+    <value>Il servizio di metadati di Aleph non risponde.</value>
+  </data>
+  <data name="alephHttpError2" xml:space="preserve">
+    <value>Non hai l'autorizzazione per accedere ai metadati di Aleph.</value>
+  </data>
+  <data name="alephImport" xml:space="preserve">
+    <value>Sei sicuro di voler importare i metadati di Aleph? NB: tutti i metadati già inseriti andranno persi!</value>
+  </data>
+  <data name="alephImport1" xml:space="preserve">
+    <value>Importazione dei metadati di Aleph</value>
+  </data>
+  <data name="bookStructure1" xml:space="preserve">
+    <value>Copertina</value>
+  </data>
+  <data name="bookStructure2" xml:space="preserve">
+    <value>Quarta di copertina</value>
+  </data>
+  <data name="bookStructure3" xml:space="preserve">
+    <value>Frontespizio</value>
+  </data>
+  <data name="bookStructure4" xml:space="preserve">
+    <value>Indice</value>
+  </data>
+  <data name="bookStructure5" xml:space="preserve">
+    <value>Introduzione</value>
+  </data>
+  <data name="bookStructure6" xml:space="preserve">
+    <value>Capitolo</value>
+  </data>
+  <data name="bookStructure7" xml:space="preserve">
+    <value>Allegato</value>
+  </data>
+  <data name="changeLang" xml:space="preserve">
+    <value>Cambia lingua</value>
+  </data>
+  <data name="changeLangText" xml:space="preserve">
+    <value>Sei sicuro di voler cambiare lingua? NB: per applicare le modifiche bisogna riavviare il programma.</value>
+  </data>
+  <data name="choose1" xml:space="preserve">
+    <value>Scegli il percorso delle immagini</value>
+  </data>
+  <data name="choose2" xml:space="preserve">
+    <value>Scegli il percorso della classificazione</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="error1" xml:space="preserve">
+    <value>Nessuna immagine rinvenuta. Formati consentiti: JPEG, TIFF, PNG</value>
+  </data>
+  <data name="error10" xml:space="preserve">
+    <value>Il campo</value>
+  </data>
+  <data name="error11" xml:space="preserve">
+    <value>è obbligatorio</value>
+  </data>
+  <data name="error12" xml:space="preserve">
+    <value>Si è verificato un errore nella creazione dell'XML di OCRTEXT</value>
+  </data>
+  <data name="error13" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="error14" xml:space="preserve">
+    <value>non trovato. Controlla: a ogni immagine deve corrispondere un file XML con lo stesso nome.</value>
+  </data>
+  <data name="error15" xml:space="preserve">
+    <value>Errore dello schema XML in</value>
+  </data>
+  <data name="error16" xml:space="preserve">
+    <value>Non hai selezionato un file PDF. Scegline uno in "Sezioni e pagine"</value>
+  </data>
+  <data name="error17" xml:space="preserve">
+    <value>Immetti Nome utente e Password in "Inizia il caricamento"</value>
+  </data>
+  <data name="error18" xml:space="preserve">
+    <value>Autenticazione fallita al server Phaidra. Controlla Nome utente e Password.</value>
+  </data>
+  <data name="error19" xml:space="preserve">
+    <value>Il server Phaidra è irraggiungibile. Riprova più tardi.</value>
+  </data>
+  <data name="error2" xml:space="preserve">
+    <value>Avvio impossibile.</value>
+  </data>
+  <data name="error20" xml:space="preserve">
+    <value>Errore sconosciuto.</value>
+  </data>
+  <data name="error3" xml:space="preserve">
+    <value>Si è verificato un errore nella lettura dell'albero dei metadati</value>
+  </data>
+  <data name="error4" xml:space="preserve">
+    <value>Si è verificato un errore nella lettura delle classificazioni</value>
+  </data>
+  <data name="error5" xml:space="preserve">
+    <value>Si è verificato un errore creando l'XML PAGEINFO</value>
+  </data>
+  <data name="error6" xml:space="preserve">
+    <value>Si è verificato un errore creando l'XML BOOKSTRUCTURE</value>
+  </data>
+  <data name="error7" xml:space="preserve">
+    <value>Si è verificato un errore creando l'XML METADATA</value>
+  </data>
+  <data name="error8" xml:space="preserve">
+    <value>Si è verificato un errore creando l'XML METADATA: valore non precisato per</value>
+  </data>
+  <data name="error9" xml:space="preserve">
+    <value>Scegli una classificazione</value>
+  </data>
+  <data name="export1" xml:space="preserve">
+    <value>Scegli la cartella di destinazione del PDF</value>
+  </data>
+  <data name="export2" xml:space="preserve">
+    <value>Sei sicuro di voler annullare l'esportazione?</value>
+  </data>
+  <data name="export3" xml:space="preserve">
+    <value>Annulla l'esportazione</value>
+  </data>
+  <data name="info1" xml:space="preserve">
+    <value>Sei sicuro di voler importare questo libro in</value>
+  </data>
+  <data name="info2" xml:space="preserve">
+    <value>Importa</value>
+  </data>
+  <data name="info3" xml:space="preserve">
+    <value>Importazione confermata</value>
+  </data>
+  <data name="info4" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="loggiing4" xml:space="preserve">
+    <value>Aggiungi flusso di dati PAGEINFO</value>
+  </data>
+  <data name="logging1" xml:space="preserve">
+    <value>Crea identificatore PID  (numero identificativo specifico) per la Pagina</value>
+  </data>
+  <data name="logging10" xml:space="preserve">
+    <value>Crea identificatore PID  (numero identificativo specifico) per il Libro</value>
+  </data>
+  <data name="logging11" xml:space="preserve">
+    <value>Inizia a caricare la pagina</value>
+  </data>
+  <data name="logging12" xml:space="preserve">
+    <value>Termina il libro - identificatore PID  (numero identificativo specifico) </value>
+  </data>
+  <data name="logging13" xml:space="preserve">
+    <value>Ultimare il processo</value>
+  </data>
+  <data name="logging14" xml:space="preserve">
+    <value>Aggiungi flusso di dati BOOKINFO</value>
+  </data>
+  <data name="logging2" xml:space="preserve">
+    <value>Aggiungi flusso di dati OCTETS. Potrebbe essere necessario qualche minuto.</value>
+  </data>
+  <data name="logging3" xml:space="preserve">
+    <value>Aggiungi flusso di dati METADATA</value>
+  </data>
+  <data name="logging5" xml:space="preserve">
+    <value>Aggiungi flusso di dati STYLESHEET</value>
+  </data>
+  <data name="logging6" xml:space="preserve">
+    <value>Aggiungi flusso di dati THUMBNAIL</value>
+  </data>
+  <data name="logging7" xml:space="preserve">
+    <value>Aggiungi flusso di dati OCRTEXT</value>
+  </data>
+  <data name="logging8" xml:space="preserve">
+    <value>Aggiungi flusso di dati FULLTEXT</value>
+  </data>
+  <data name="logging9" xml:space="preserve">
+    <value>Aggiungi flusso di dati RIGHTS</value>
+  </data>
+  <data name="ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="PhaidraDevServerPaduaName" xml:space="preserve">
+    <value>Phaidra -Sviluppo Università di Padova</value>
+  </data>
+  <data name="PhaidraDevServerViennaName" xml:space="preserve">
+    <value>Phaidra - Sviluppo Università di Vienna</value>
+  </data>
+  <data name="PhaidraLocationLabel" xml:space="preserve">
+    <value>Scegli una destinazione:</value>
+  </data>
+  <data name="PhaidraServerKugName" xml:space="preserve">
+    <value>Phaidra Università di Musica e Spettacolo Graz</value>
+  </data>
+  <data name="PhaidraServerPaduaName" xml:space="preserve">
+    <value>Phaidra Università di Padova</value>
+  </data>
+  <data name="PhaidraServerViennaName" xml:space="preserve">
+    <value>Phaidra Università di Vienna</value>
+  </data>
+  <data name="PhaidraTestServerPaduaName" xml:space="preserve">
+    <value>Phaidra-Test Università di Padova</value>
+  </data>
+  <data name="PhaidraTestServerViennaName" xml:space="preserve">
+    <value>Phaidra-Test Università di Vienna</value>
+  </data>
+  <data name="restart" xml:space="preserve">
+    <value>Riavvia programma</value>
+  </data>
+  <data name="restartText" xml:space="preserve">
+    <value>Vuoi riavviare il programma? NB: tutti i dati inseriti andranno persi.</value>
+  </data>
+  <data name="seite" xml:space="preserve">
+    <value>Pagina</value>
+  </data>
+  <data name="upload1" xml:space="preserve">
+    <value>non bloccato</value>
+  </data>
+  <data name="upload2" xml:space="preserve">
+    <value>settimane</value>
+  </data>
+  <data name="uploadProgress1" xml:space="preserve">
+    <value>Il libro con PID</value>
+  </data>
+  <data name="uploadProgress2" xml:space="preserve">
+    <value>è stato creato correttamente</value>
+  </data>
+  <data name="uploadProgress3" xml:space="preserve">
+    <value>Carica informazione</value>
+  </data>
+  <data name="voc1" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="voc2" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="delsection1" xml:space="preserve">
+    <value>Do you really want to delete this section?</value>
+  </data>
+  <data name="delsection2" xml:space="preserve">
+    <value>Attention: the section contains pages!</value>
+  </data>
+  <data name="error21" xml:space="preserve">
+    <value>Errore nella lettura di bookstructure.xml</value>
+  </data>
+  <data name="error22" xml:space="preserve">
+    <value>Errore nella lettura di uwmetadata.xml</value>
+  </data>
+  <data name="errorloadBookstructure" xml:space="preserve">
+    <value>Errore nel caricamento di bookstructure.xml</value>
+  </data>
+  <data name="errorloadBookstructureText" xml:space="preserve">
+    <value>bookstructure.xml non trovato!</value>
+  </data>
+  <data name="errorloadUwmetadata" xml:space="preserve">
+    <value>Errore nel  caricamento di uwmetadata.xml</value>
+  </data>
+  <data name="errorloadUwmetadataText" xml:space="preserve">
+    <value>uwmetadata.xml non trovato!</value>
+  </data>
+  <data name="export4" xml:space="preserve">
+    <value>Esportazione metadati riuscita</value>
+  </data>
+  <data name="export5" xml:space="preserve">
+    <value>Esportazione bookstructure riuscita</value>
+  </data>
+  <data name="export6" xml:space="preserve">
+    <value>Informazioni sull'esportazione</value>
+  </data>
+  <data name="importBookStructure" xml:space="preserve">
+    <value>bookstructure,xml trovato!</value>
+  </data>
+  <data name="importBookStructureText" xml:space="preserve">
+    <value>È stato trovato un file di bookstructure. Devo importarlo?</value>
+  </data>
+  <data name="importUwmetadata" xml:space="preserve">
+    <value>uwmetadata.xml trovato!</value>
+  </data>
+  <data name="importUwmetadataText" xml:space="preserve">
+    <value>È stato trovato un file di metadati. Devo importarlo?</value>
+  </data>
+  <data name="loadBookstructure" xml:space="preserve">
+    <value>Importa bookstructure:</value>
+  </data>
+  <data name="loadBookstructureText" xml:space="preserve">
+    <value>Sei sicuro di voler importare bookstructure?</value>
+  </data>
+  <data name="loadUwmetadata" xml:space="preserve">
+    <value>Importa i metadati:</value>
+  </data>
+  <data name="loadUwmetadataText" xml:space="preserve">
+    <value>Sei sicuro di voler importare i metadati?</value>
+  </data>
+  <data name="picImport1" xml:space="preserve">
+    <value>Scegli le foto da importare</value>
+  </data>
+  <data name="importPictureWarning" xml:space="preserve">
+    <value>Informazioni</value>
+  </data>
+  <data name="importPictureWarningText" xml:space="preserve">
+    <value>Attenzione: le pagine non sono state importate perché non si trovano nella cartella libro!</value>
+  </data>
+</root>
