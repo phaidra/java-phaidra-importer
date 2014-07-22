@@ -139,7 +139,7 @@ public class XMLTree extends JTree {
                 clickedPath = getPathForLocation(e.getX(), e.getY());
 
                 if (clickedPath != null) {
-                	XMLNode node = (XMLNode) clickedPath.getLastPathComponent();
+                    XMLNode node = (XMLNode) clickedPath.getLastPathComponent();
                     JLabel labelImage = BookImporter.getInstance().getLabelPreviewImage();
                     Dimension label_dim = labelImage.getSize();
                         
@@ -153,10 +153,10 @@ public class XMLTree extends JTree {
                     else{
                     	labelImage.setText("");
                         labelImage.setMinimumSize(label_dim);
-                	}
+                    }
                 }
 				
-				if (e.isPopupTrigger()) {
+                if (e.isPopupTrigger() || SwingUtilities.isRightMouseButton(e)) {
                     //Select node only if there is a single selection
                     TreePath[] paths = getSelectionPaths();
                     
