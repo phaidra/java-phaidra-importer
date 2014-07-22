@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<installation version="1.0">
+    <info>
+        <appname>PhaidraImporter</appname>
+        <appversion>2.0.0</appversion>
+        <javaversion>1.6</javaversion>
+        <!--<run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7" />-->
+        <uninstaller path="${INSTALL_PATH}/Uninstaller" write="yes" />
+    </info>
+    
+    <guiprefs height="400" resizable="no" width="1050">
+	<splash>install/phaidra_splash.jpg</splash>
+      
+        <modifier key="useButtonIcons" value="yes"/>
+        <modifier key="useLabelIcons" value="no"/>
+        <modifier key="labelGap" value="2"/>
+        <modifier key="layoutAnchor" value="CENTER"/>
+      	<modifier key="useHeadingPanel" value="no" />
+	<modifier key="useFlags" value="no" />
+        <modifier key="langDisplayType" value="default" />
+        <modifier key="headingImageOnLeft" value="yes"/>
+        <modifier key="headingLineCount" value="1"/>
+        <modifier key="headingFontSize" value="1.5"/>
+        <modifier key="headingBackgroundColor" value="0x00ffffff"/>
+        <modifier key="headingPanelCounter" value="progressbar"/>
+        <modifier key="headingPanelCounterPos" value="inNavigationPanel"/>
+	<modifier key="allYGap" value="4"/>
+	<modifier key="paragraphYGap" value="10"/>
+	<modifier key="filler1YGap" value="5"/>
+	<modifier key="filler3XGap" value="10"/>
+    </guiprefs>
+    <locale>
+      <langpack iso3="eng" />
+      <langpack iso3="ita" />
+      <langpack iso3="deu" />
+    </locale>
+    <resources>
+        <res id="Installer.image" src="install/phaidra_install.png"/>
+        <res id="HTMLHelloPanel.welcome" src="install/welcome.html"/>
+        <res id="IZPackLogo" src="install/phaidra.gif"/>
+    	<res id="InfoPanel.info" src="install/Readme.txt"/>
+    	<res id="HTMLInfoPanel.welcome" src="install/welcome.html"/>
+        
+        <!--<res src="install/info-border.png" id="Installer.image.0"/>-->
+        <res src="install/shortcutSpec.xml" id="shortcutSpec.xml"/>
+    </resources>
+    
+    <variables>
+        <variable name="InstallerFrame.logfilePath" value="Default"/>
+        <variable name="WELCOME_TEXT" value="Phaidra Importer - 2.0"/>
+        <variable name="WELCOME_VERSION" value=""/>
+    </variables>
+    
+    <jar src="custom/izpack-panels.jar" stage="both"/>
+
+    <panels>
+	<panel classname="HTMLInfoPanel" id="welcome"/>
+        <panel classname="com.izforge.izpack.panels.mypanels.MyTargetPanel" id="myTarget"/>
+	<panel classname="PacksPanel" id="packspanel" />
+        <panel classname="InstallPanel" id="installpanel" />
+        <panel classname="ShortcutPanel" id="shortcutpanel" condition="izpack.windowsinstall" />
+        <panel classname="FinishPanel" id="finishpanel"/> 
+    </panels>
+ 
+    <packs>
+        <pack name="BookImporter" required="yes" preselected="yes">
+            <description>The core files are needed for the application</description>
+            <file src="PhaidraImporter.jar" targetdir="${INSTALL_PATH}" override="true" />
+            <file src="updater.jar" targetdir="${INSTALL_PATH}" override="true" />
+            
+            <file src="install/zid.ico" targetdir="${INSTALL_PATH}" override="true" />
+            <file src="install/zid.png" targetdir="${INSTALL_PATH}" override="true" />
+            
+            <fileset dir="lib" targetdir="${INSTALL_PATH}/lib" override="true" />
+            <fileset dir="resources" targetdir="${INSTALL_PATH}/resources" override="true" />
+            <fileset dir="appdata/config" targetdir="${INSTALL_PATH}/appdata/config" override="asktrue" />
+        </pack>
+    </packs>
+    
+    <natives>
+        <native type="izpack" name="ShellLink.dll"/>
+        <native type="izpack" name="ShellLink_x64.dll"/>
+        <native type="3rdparty" name="COIOSHelper.dll" stage="both">
+           <os family="windows"/>
+        </native>
+        <native type="3rdparty" name="COIOSHelper_x64.dll" stage="both">
+           <os family="windows"/>
+        </native>
+    </natives>
+</installation>

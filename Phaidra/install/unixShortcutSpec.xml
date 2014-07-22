@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<shortcuts>
+  
+  <skipIfNotSupported/>
+ 
+  <programGroup defaultName="Phaidra Importer" location="applications"/>
+  
+  <shortcut
+    name="Phaidra"
+    target="java"
+    commandLine="-jar  &quot;$INSTALL_PATH/BookImporter.jar&quot;"
+    workingDirectory="$INSTALL_PATH"
+    description="Start Phaidra Importer"
+    iconFile="$INSTALL_PATH\zid.ico"
+    iconIndex="0"
+    initialState="noShow"
+    programGroup="yes"
+    desktop="yes"
+    applications="no"
+    startMenu="no"
+    startup="no">
+
+    <createForPack name="BookImporter"/>
+  </shortcut>
+ 
+  <shortcut name="Unistaller"
+           programGroup="yes"
+           desktop="no"
+           applications="no"
+           startMenu="no"
+           startup="no"
+           target="$INSTALL_PATH\Uninstaller\uninstaller.jar"
+           commandLine="java -jar Uninstaller\uninstaller.jar"
+           iconFile="%SystemRoot%\system32\SHELL32.dll"
+           iconIndex="31"
+           description="Uninstall Phaidra Importer">
+
+        <createForPack name="BookImporter"/>
+    </shortcut>
+  
+  
+</shortcuts>
+
