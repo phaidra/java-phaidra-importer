@@ -1,7 +1,10 @@
 package imtech.updater;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
@@ -14,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Enumeration;
@@ -38,13 +42,15 @@ import org.xml.sax.SAXException;
 
 /**
  *
- * @author Thomas Otero (H3R3T1C)
+ * @author Thomas Otero (H3rootR3T1C)
  */
 public class Updater extends JFrame{
 
     private Thread worker;
     private final String root = "update"+getSep();
-
+    private String namezip = "imphaidrazip.zip";
+    private String jarpath = getCurrentJarDirectory();
+    
     private JTextArea outText;
     private JButton cancle;
     private JButton launch;
@@ -56,6 +62,14 @@ public class Updater extends JFrame{
     public Updater() {   
         this.setAlwaysOnTop(true);
         initComponents();
+        
+        //Posizionamento interfaccia
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (dim.width - getSize().width) / 2;
+        int y = (dim.height - getSize().height) / 2;
+        setLocation(x, y);
+        setVisible(true);
+            
         outText.setText("Contacting Download Server...");
         outText.setText(outText.getText()+"\n"+USER_DIR);
         download();
@@ -98,11 +112,11 @@ public class Updater extends JFrame{
 
         add(pan1);
         pack();
-        this.setSize(500, 400);
+        this.setSize(600, 500);
     }
 
     private void updateVersion() throws ConfigurationException, ParserConfigurationException, MalformedURLException, SAXException, IOException{
-        XMLConfiguration config = new XMLConfiguration(USER_DIR+getSep()+"config" + getSep() + "config.xml");
+        XMLConfiguration config = new XMLConfiguration(USER_DIR + getSep() + "config" + getSep() + "config.xml");
         config.setAutoSave(true);
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -135,7 +149,7 @@ public class Updater extends JFrame{
                     outText.setText(outText.getText()+"\nunzipping");
                     unzip();
                     outText.setText(outText.getText()+"\ncopy files");
-                    copyFiles(new File(root),new File("").getAbsolutePath());
+                    copyFiles(new File(root),jarpath);
                     cleanup();
                     updateVersion();
                     
@@ -150,9 +164,11 @@ public class Updater extends JFrame{
         });
         worker.start();
     }
+    
     private void launch()
     {
-        String[] run = {"java","-jar","PhaidraImporter.jar"};
+        String path = getCurrentJarDirectory()+"PhaidraImporter.jar";
+        String[] run = {"java", "-jar", path};
         try {
             Runtime.getRuntime().exec(run);
         } catch (Exception ex) {
@@ -160,14 +176,16 @@ public class Updater extends JFrame{
         }
         System.exit(0);
     }
+    
     private void cleanup()
     {
         outText.setText(outText.getText()+"\nPerforming clean up...");
-        File f = new File(USER_DIR+getSep()+"update.zip");
+        File f = new File(USER_DIR+getSep()+namezip);
         f.delete();
         remove(new File(root));
         new File(root).delete();
     }
+    
     private void remove(File f)
     {
         File[]files = f.listFiles();
@@ -184,6 +202,7 @@ public class Updater extends JFrame{
             }
         }
     }
+    
     private void copyFiles(File f,String dir) throws IOException
     {
         String tmp_dir = dir;
@@ -195,16 +214,17 @@ public class Updater extends JFrame{
                     dir = USER_DIR;
                 }   
                 else
-                    dir = tmp_dir;
+                    dir = getSep() + tmp_dir;
                 try   {  
                     new File(dir+getSep()+ff.getName()).mkdir();
                 }
+                
                 catch(Exception ex){ 
                     outText.setText(outText.getText()+"\nCreating folder "+ff.getName()+" permission denied!");
                 }
                 
                 //Config xml non si aggiorna
-                copyFiles(ff,dir+getSep()+ff.getName());
+                copyFiles(ff, dir+getSep()+ff.getName());
             }
             else
             {
@@ -212,7 +232,7 @@ public class Updater extends JFrame{
                 try  {  
                     if(!(dir.equals(USER_DIR+getSep()+"config") && ff.getName().equals("config.xml"))){  
                         outText.setText(outText.getText()+"\nCopied: "+ff.getName()+" to "+dir);
-                        copy(ff.getAbsolutePath(),dir+getSep()+ff.getName()); 
+                        copy(ff.getAbsolutePath(), dir + getSep()+ff.getName()); 
                     }
                 }
                 catch(Exception ex){ 
@@ -245,7 +265,7 @@ public class Updater extends JFrame{
          BufferedOutputStream dest = null;
          BufferedInputStream is = null;
          ZipEntry entry;
-         ZipFile zipfile = new ZipFile(USER_DIR+getSep()+"update.zip");
+         ZipFile zipfile = new ZipFile(USER_DIR+getSep()+namezip);
          Enumeration e = zipfile.entries();
          (new File(root)).mkdir();
          while(e.hasMoreElements()) {
@@ -281,7 +301,8 @@ public class Updater extends JFrame{
         InputStream is = conn.getInputStream();
         long max = conn.getContentLength();
         outText.setText(outText.getText()+"\n"+"Downloding file...\nUpdate Size(compressed): "+max+" Bytes");
-        BufferedOutputStream fOut = new BufferedOutputStream(new FileOutputStream(new File(USER_DIR+getSep()+"update.zip")));
+        BufferedOutputStream fOut = new BufferedOutputStream(new FileOutputStream(new File(USER_DIR+getSep()+namezip)));
+   
         byte[] buffer = new byte[32 * 1024];
         int bytesRead = 0;
         int in = 0;
@@ -292,6 +313,8 @@ public class Updater extends JFrame{
         fOut.flush();
         fOut.close();
         is.close();
+        
+        outText.setText("\n"+"File downloaded in: "+USER_DIR+getSep()+namezip);
         outText.setText(outText.getText()+"\nDownload Complete!");
 
     }
@@ -325,6 +348,27 @@ public class Updater extends JFrame{
         
         return el.getTextContent();
     }
+    
+    /**
+     * Setta la directory dell'eseguibile dell'applicazione
+     * @return Path corrente
+     */
+    public static String getCurrentJarDirectory() {
+        URL url = Updater.class.getProtectionDomain().getCodeSource().getLocation();
+        String jrPath = null;
+        
+        try {
+            final File jarPath = new File(url.toURI()).getParentFile();
+            jrPath = jarPath.getAbsolutePath() + getSep();
+        } catch (final URISyntaxException ex) {
+            JOptionPane.showMessageDialog(new Frame(), ex.getMessage());
+        }
+        
+        return jrPath;
+    }
+    
+    
+
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

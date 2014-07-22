@@ -9,10 +9,10 @@
          <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
       </layout>
    </appender>
- 
+
    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
       <param name="Threshold" value="INFO" />
-      <param name="File" value="logs/bookimporter.log"/>
+      <param name="File" value="PhaidraLogs/phaidraupdater.log"/>
       <layout class="org.apache.log4j.PatternLayout">
          <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
       </layout>
