@@ -99,7 +99,7 @@ public class BookImporter extends javax.swing.JFrame {
             if (Globals.DEBUG==true){
                Globals.setGlobalVariables();
             }
-            */
+       */
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             this.setTitle("Phaidra Importer v." + Globals.CURRENT_VERSION);
             jTextField2.setText("");
@@ -254,7 +254,27 @@ public class BookImporter extends javax.swing.JFrame {
     }
     
     
+    protected void importMetadataSilent(String xmlFile){
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        try {
+            //Leggi il file uwmetadata.xml
+            setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            MetaUtility.getInstance().read_uwmetadata(xmlFile);
 
+            jLayeredPane1.removeAll();
+            jLayeredPane1.revalidate();
+
+            //Ridisegna l'interfaccia
+            this.setMetadataTab();
+            setCursor(null);
+
+            JOptionPane.showMessageDialog(this, Utility.getBundleString("import4", bundle));
+        } catch (Exception ex) {
+            setCursor(null);
+            JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
+        }
+    }
+	
     /**
      * Effettua il reload dell'interfaccia dinamica dei metadati in base al file
      * uwmetadata.xml contenuto nella cartella di lavoro corrente.
@@ -369,12 +389,20 @@ public class BookImporter extends javax.swing.JFrame {
                 jMenu1.add(lang);
                 if (language.equals(bundle.getLocale().getLanguage())) {
                     try {
+                        String backup_metadata = Globals.USER_DIR+"metadata_backup.xml";
+                                                
                         updateLanguageLabel(local);
 
                         if (instance != null) {
                            setDefaultCurrent();
-                           jLayeredPane1.removeAll();
-                           initializeData();
+                           boolean exported = this.exportMetadataSilent(backup_metadata);
+                           
+                           if(exported){
+                                jLayeredPane1.removeAll();
+                                MetaUtility.getInstance().preInitializeData();
+                                initializeData();
+                                this.importMetadataSilent(backup_metadata);
+                           }
                         }
                                                        
                         int items = jMenu1.getItemCount();
@@ -390,6 +418,10 @@ public class BookImporter extends javax.swing.JFrame {
                         }
                     }   
                     catch (ConfigurationException ex) {
+                        logger.error(ex.getMessage());
+                        JOptionPane.showMessageDialog(new Frame(), ex.getMessage());
+                    } 
+                     catch (Exception ex) {
                         logger.error(ex.getMessage());
                         JOptionPane.showMessageDialog(new Frame(), ex.getMessage());
                     } 
@@ -950,30 +982,53 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }                          
     
+    private boolean exportMetadataSilent(String xmlFile){
+        componentMap = new HashMap<String, Component>();
+        createComponentMap(main_panel);
+        
+        String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile, true);
+        
+        if (error.length() > 0) {
+            return false;
+        } 
+        else{
+            return true;
+        }
+    }
+    
+    
+    private boolean exportMetadata(){
+        boolean result = false;
+        
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        if (Globals.FOLDER_WRITABLE) {
+            componentMap = new HashMap<String, Component>();
+            createComponentMap(main_panel);
+
+            String xmlFile = Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA;
+          
+            String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile,true);
+           
+            if (error.length() > 0) {
+                JOptionPane.showMessageDialog(this, error);
+            } 
+            else {
+                JOptionPane.showMessageDialog(this, Utility.getBundleString("export4", bundle));
+                result = true;
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, Utility.getBundleString("opnotpermitted", bundle));
+        }
+        return result;
+    }
+    
     /**
      * Gestisce l'esportazione dei metadati sul file uwmetadata.xml nella
      * cartella locale di lavoro
      *
      */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-
-        if (Globals.FOLDER_WRITABLE) {
-            componentMap = new HashMap<String, Component>();
-            createComponentMap(main_panel);
-
-            String xmlFile = Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA;
-
-            String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile,true);
-            
-            if (error.length() > 0) {
-                JOptionPane.showMessageDialog(this, error);
-            } else {
-                JOptionPane.showMessageDialog(this, Utility.getBundleString("export4", bundle));
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, Utility.getBundleString("opnotpermitted", bundle));
-        }
+        exportMetadata();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed

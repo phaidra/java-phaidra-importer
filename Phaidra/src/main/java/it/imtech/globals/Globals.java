@@ -19,7 +19,7 @@ import java.util.Locale;
 public class Globals {
     public final static boolean DEBUG = true;
     public final static String DEBUG_FOLDER = "remote";
-    public final static String DEBUG_XML = DEBUG_FOLDER+Utility.getSep()+"xml"+Utility.getSep()+"config.xml";
+    public final static String DEBUG_XML = Globals.DEBUG_FOLDER + Utility.getSep() + "xml" + Utility.getSep() + "config.xml";
     
     //Local files import/export metadata & bookstructure
     public final static String IMP_EXP_METADATA = "uwmetadata.xml";
@@ -65,7 +65,7 @@ public class Globals {
     public static String SELECTED_FOLDER = null;
     //Path assoluto alla cartella di lavoro corrente con separatore
     public static String SELECTED_FOLDER_SEP = null;
-    //La cartella di output � scrivibile
+    //La cartella di output ï¿½ scrivibile
     public static boolean FOLDER_WRITABLE = true;
     //E' stato scelto di creare un libro o una collezzione
     public static char TYPE_BOOK = 'X';
@@ -86,11 +86,13 @@ public class Globals {
             LOG4J = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "log4j.xml";
             BLANKPAGE = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "blankpage.jpg";
             INTERNAL_CONFIG = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "config.xml";
-            
+            /*
             SELECTED_FOLDER = "working_dir";
             SELECTED_FOLDER_SEP = "working_dir"+Utility.getSep();
+            */
             CURRENT_VERSION = "2.0";
             
+          
             ArrayList<Language> langs = new ArrayList<Language>();
             Language lang = new Language("en", "binglese", "Inglese");
             langs.add(lang);
@@ -101,8 +103,8 @@ public class Globals {
             
             LANGUAGES = langs.toArray(new Language[langs.size()]);
             
-            Server sv = new Server("test", "test", "test", "test", "test", "test");
-            SelectedServer.getInstance(sv);
+            //Server sv = new Server("test", "test", "test", "test", "test", "test");
+            //SelectedServer.getInstance(sv);
         }    
     }
     

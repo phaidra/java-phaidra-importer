@@ -2,9 +2,9 @@
 <gui-definition>
 <!--<configurl path="http://static.phaidrabg.bg.ac.rs/xml/config.xml">Url configuration</configurl>-->
 <!--<configurl path="http://static.phaidra.univie.ac.at/xml/config.xml">Url configuration</configurl>-->
-    <configurl path="http://phaidrastaticdev.cab.unipd.it/xml/config.xml">Url configuration</configurl>
-    <locale>
-            <current value="it">lingua</current>
+<configurl path="http://phaidrastaticdev.cab.unipd.it/xml/config.xml">Url configuration</configurl>
+<locale>
+            <current value="en">lingua</current>
         </locale>
-    <version current="1.0">version</version>
+<version current="1.0">version</version>
 </gui-definition>
