@@ -433,7 +433,7 @@ public class UploadSettings extends javax.swing.JFrame {
                 //Metadaten prüfen
                 if (error.length() < 1) {
                     BookImporter.getInstance().createComponentMap();
-                    error = MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA,false);
+                    error = MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true);
                 }
 
                 if (error.length() < 1) {

@@ -603,10 +603,10 @@ public class MetaUtility {
      * @param xmlFile File in cui esportare i metadati
      * @return
      */
-    public String check_and_save_metadata(String xmlFile,Boolean toFile) {
+    public String check_and_save_metadata(String xmlFile,Boolean toFile, boolean checkMandatory) {
         String result = "";
 
-        result = check_and_save_metadata_recursive(BookImporter.getInstance().getMetadata());
+        result = check_and_save_metadata_recursive(BookImporter.getInstance().getMetadata(), checkMandatory);
 
         if (result.length() < 1) {
             try {
@@ -981,7 +981,7 @@ public class MetaUtility {
         }
     }
 
-    private String check_and_save_metadata_recursive(Map<Object, Metadata> submetadatas) {
+    private String check_and_save_metadata_recursive(Map<Object, Metadata> submetadatas, boolean checkMandatory) {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         String error = "";
 
@@ -993,7 +993,7 @@ public class MetaUtility {
                     if (field.getValue().datatype.equals("CharacterString") || field.getValue().datatype.equals("LangString")) {
                         JTextArea textTemp = (JTextArea) element;
                         field.getValue().value = textTemp.getText();
-                        if (field.getValue().value.length() < 1 && (field.getValue().mandatory.equals("Y") || field.getValue().MID == 14 || field.getValue().MID == 15)) {
+                        if (checkMandatory && field.getValue().value.length() < 1 && (field.getValue().mandatory.equals("Y") || field.getValue().MID == 14 || field.getValue().MID == 15)) {
                             error += Utility.getBundleString("error10",bundle) + " " + field.getValue().description.toString() + " " + Utility.getBundleString("error11",bundle) + "!\n";
                         }
                     }
@@ -1027,7 +1027,7 @@ public class MetaUtility {
                             //ResourceBundle tmpBundle = ResourceBundle.getBundle(Globals.RESOURCES, BookImporter.localConst, Globals.loader); 
                             ResourceBundle tmpBundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader); 
                             
-                            if(tmp2.getValue().toString().equals(Utility.getBundleString("comboselect",tmpBundle)) && field.getValue().mandatory.equals("Y"))
+                            if(checkMandatory && tmp2.getValue().toString().equals(Utility.getBundleString("comboselect",tmpBundle)) && field.getValue().mandatory.equals("Y"))
                                 error += Utility.getBundleString("error10",bundle) + " " + field.getValue().description.toString() + " " + Utility.getBundleString("error11",bundle) + "!\n";
                              else
                                 if(tmp2.getValue().toString().equals(Utility.getBundleString("comboselect",tmpBundle)))
@@ -1041,7 +1041,7 @@ public class MetaUtility {
                 }
             }
 
-            error += check_and_save_metadata_recursive(field.getValue().submetadatas);
+            error += check_and_save_metadata_recursive(field.getValue().submetadatas, checkMandatory);
         }
         return error;
     }

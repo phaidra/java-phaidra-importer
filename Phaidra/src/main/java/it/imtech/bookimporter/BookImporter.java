@@ -396,12 +396,12 @@ public class BookImporter extends javax.swing.JFrame {
                            setDefaultCurrent();
                            boolean exported = this.exportMetadataSilent(backup_metadata);
                            
-                            jLayeredPane1.removeAll();
-                            MetaUtility.getInstance().preInitializeData();
-                            initializeData();
-                            if(exported){
-                             this.importMetadataSilent(backup_metadata);
-                            }
+                           jLayeredPane1.removeAll();
+                           MetaUtility.getInstance().preInitializeData();
+                           initializeData();
+                           if(exported){
+                               this.importMetadataSilent(backup_metadata);
+                           }
                         }
                                                        
                         int items = jMenu1.getItemCount();
@@ -985,7 +985,7 @@ public class BookImporter extends javax.swing.JFrame {
         componentMap = new HashMap<String, Component>();
         createComponentMap(main_panel);
         
-        String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile, true);
+        String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile, true, false);
         
         if (error.length() > 0) {
             return false;
@@ -1006,7 +1006,7 @@ public class BookImporter extends javax.swing.JFrame {
 
             String xmlFile = Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA;
           
-            String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile,true);
+            String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile,true, true);
            
             if (error.length() > 0) {
                 JOptionPane.showMessageDialog(this, error);
