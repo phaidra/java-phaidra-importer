@@ -65,7 +65,7 @@ public class Globals {
     public static String SELECTED_FOLDER = null;
     //Path assoluto alla cartella di lavoro corrente con separatore
     public static String SELECTED_FOLDER_SEP = null;
-    //La cartella di output ï¿½ scrivibile
+    //La cartella di output e scrivibile
     public static boolean FOLDER_WRITABLE = true;
     //E' stato scelto di creare un libro o una collezzione
     public static char TYPE_BOOK = 'X';
