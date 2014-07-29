@@ -348,7 +348,7 @@ public class ImObject {
         getValues.put("upload_date", "/foxml:digitalObject/foxml:objectProperties/foxml:property[@NAME=\"info:fedora/fedora-system:def/model#createdDate\"]/@VALUE");
         getValues.put("size", "/foxml:digitalObject/foxml:datastream[@ID=\"TECHINFO\"]/foxml:datastreamVersion[last()]/foxml:xmlContent/di:dsinfo/di:filesize");
         getValues.put("format", "/foxml:digitalObject/foxml:datastream[@ID=\"OCTETS\"]/foxml:datastreamVersion[last()]/@MIMETYPE");
-
+        
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         dbFactory.setNamespaceAware(true);
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -367,7 +367,8 @@ public class ImObject {
             values.put(field.getKey().toString(), path);
         }
         values.put("purpose", "70");
-
+        values.put("peer_reviewed", "no");
+        
         //Bei Büchern wird kein TECHINFO geschrieben - also auch keine Filesize :(
         try {
             Double size = Double.parseDouble(Utility.getValueFromKey(values, "size"));

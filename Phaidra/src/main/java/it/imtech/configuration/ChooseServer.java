@@ -72,11 +72,8 @@ public class ChooseServer extends javax.swing.JPanel {
         Server[] servers = getServersFromConfig(config, bundle);
         choose_server.setModel(new javax.swing.DefaultComboBoxModel(servers));
         choose_server.setSelectedItem(servers[0]);
-        choose_server.setMinimumSize(new Dimension(400,20));
+        choose_server.setMinimumSize(new Dimension(400,20));  
         
-        Server s = (Server) choose_server.getSelectedItem();
-        SelectedServer.getInstance(s);
-                
         getLanguagesFromConfig(config, bundle);
         choose_language.setModel(new javax.swing.DefaultComboBoxModel(Globals.LANGUAGES));
         choose_language.setSelectedItem(this.selected_lang);
@@ -109,12 +106,17 @@ public class ChooseServer extends javax.swing.JPanel {
             }
         });
         
-
         this.setPreferredSize(this.getPreferredSize());
         this.validate();
         this.repaint();
     }
     
+    public Server getSelectedServer(){
+        Server selected = (Server) choose_server.getSelectedItem();
+        SelectedServer server = SelectedServer.getInstance(selected);
+        
+        return selected;
+    }
     /**
      * Test della connessione al server per l'acquisizione del certificato
      * Acquisice il certificato e restart dell'applicazione
@@ -123,7 +125,6 @@ public class ChooseServer extends javax.swing.JPanel {
      */
     public static boolean testServerConnection(String uri) {
         Server s = (Server) choose_server.getSelectedItem();
-        SelectedServer.getInstance(s);
                 
         boolean result = true;
         String outputFile = Globals.USER_DIR + "certs" + Utility.getSep() + "jssecacerts.jks";

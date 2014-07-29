@@ -4,7 +4,6 @@
  */
 package it.imtech.utility;
 
-import it.imtech.bookimporter.BookImporter;
 import it.imtech.globals.Globals;
 import java.util.ResourceBundle;
 

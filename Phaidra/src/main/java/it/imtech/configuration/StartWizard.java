@@ -10,6 +10,7 @@ import it.imtech.bookimporter.BookImporter;
 import it.imtech.globals.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
+import it.imtech.utility.Server;
 import it.imtech.utility.Utility;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -29,6 +30,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -99,6 +101,9 @@ public class StartWizard  {
             {
                 if(getCurrentCard() instanceof ChooseServer){
                     mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                    Server selected = chooseServer.getSelectedServer();
+                    SelectedServer.getInstance(selected);
+                    
                     ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
                     chooseFolder.updateLanguage();
                     c1.next(cardsPanel);
@@ -219,10 +224,10 @@ public class StartWizard  {
             }
             
             File xmlconfnew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"config.xml");
-            if (!xmlconfnew.exists()){
-                FileUtils.copyFile(xmlconf, xmlconfnew);
-                
+            if (xmlconfnew.exists()){
+                xmlconfnew.delete();
             }
+            FileUtils.copyFile(xmlconf, xmlconfnew);
             
             File logforjnew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"log4j.xml");
             if (!logforjnew.exists()){
