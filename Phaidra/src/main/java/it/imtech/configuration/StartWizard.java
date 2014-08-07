@@ -201,7 +201,7 @@ public class StartWizard  {
         try{
             File appdata = new File(Globals.USER_DIR);
             File blank = new File(Globals.JRPATH + "appdata" + Utility.getSep() + "config" + Utility.getSep() + "blankpage.jpg");
-            File xmlconf = new File(Globals.JRPATH + "appdata" + Utility.getSep() + "config" + Utility.getSep() + "config.xml");
+            File xmlconfnew = new File(Globals.JRPATH + "appdata" + Utility.getSep() + "config" + Utility.getSep() + "config.xml");
             File logforj = new File(Globals.JRPATH + "appdata" + Utility.getSep() + "config" + Utility.getSep() + "log4j.xml");
             
             if (!appdata.exists()){
@@ -223,12 +223,33 @@ public class StartWizard  {
                 certs.mkdir();
             }
             
-            File xmlconfnew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"config.xml");
-            if (xmlconfnew.exists()){
-                xmlconfnew.delete();
+            File xmlconfold = new File(Globals.USER_DIR + "config" + Utility.getSep() +"config.xml");
+            if (xmlconfold.exists()){
+                try{
+                    XMLConfiguration configureold = new XMLConfiguration(xmlconfold);
+                    XMLConfiguration configurenew = new XMLConfiguration(xmlconfnew);
+
+                    String versioneold = configureold.getString("version[@current]");
+                    String versionenew = configurenew.getString("version[@current]");
+
+                    String urlold = configureold.getString("configurl[@path]");
+                    String urlnew = configurenew.getString("configurl[@path]");
+                    if ((!versioneold.equals(versionenew)) || (!urlold.equals(urlnew)))
+                    {
+                      xmlconfold.delete();
+                      FileUtils.copyFile(xmlconfnew, xmlconfold);
+                    }
+                  }
+                  catch (ConfigurationException ex)
+                  {
+                    logger.error("ERR:0002 Cannot copy configuration application data");
+                    logger.error(ex.getMessage());
+                    result = false;
+                  }
+            } else {
+                FileUtils.copyFile(xmlconfnew, xmlconfold);
             }
-            FileUtils.copyFile(xmlconf, xmlconfnew);
-            
+
             File logforjnew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"log4j.xml");
             if (!logforjnew.exists()){
                 FileUtils.copyFile(logforj, logforjnew);
