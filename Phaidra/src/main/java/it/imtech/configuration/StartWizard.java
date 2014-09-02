@@ -164,13 +164,33 @@ public class StartWizard  {
         mainPanel.add(BorderLayout.NORTH, headerPanel);
         mainPanel.add(BorderLayout.CENTER, cardsPanel);
         mainPanel.add(BorderLayout.PAGE_END, footerPanel);
+        mainFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        
+        mainFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+                String title = Utility.getBundleString("dialog_1_title", bundle);
+                String text = Utility.getBundleString("dialog_1", bundle);
+                   
+                ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, "test");
+                   
+                confirm.setVisible(true);
+                boolean close = confirm.getChoice();
+                confirm.dispose();
+
+                if (close == true){
+                    mainFrame.dispose();
+                }
+            }
+        });
         
         //Stile interfaccia
         mainFrame.getContentPane().setBackground(Color.white);
         mainFrame.getContentPane().setLayout(new BorderLayout());
         mainFrame.getContentPane().setPreferredSize(new Dimension(640, 370));
-        mainFrame. getContentPane().add(BorderLayout.CENTER, mainPanel);
-        mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainFrame.getContentPane().add(BorderLayout.CENTER, mainPanel);
+        //mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainFrame.pack();
         
         //Centra il frame in mezzo allo schermo

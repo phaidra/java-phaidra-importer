@@ -15,6 +15,8 @@ import it.imtech.xmltree.XMLTree;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import java.util.*;
 import javax.swing.*;
@@ -95,17 +97,35 @@ public class BookImporter extends javax.swing.JFrame {
     public BookImporter() {
         try {
             initComponents();
-           /*
-            if (Globals.DEBUG==true){
-               Globals.setGlobalVariables();
-            }
-       */
+
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             this.setTitle("Phaidra Importer v." + Globals.CURRENT_VERSION);
             jTextField2.setText("");
+            
             //Crea pannello frontale
             createFrontalPane();
             jTextField2.setText("");
+            
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        
+            this.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                    ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+                    String title = Utility.getBundleString("dialog_1_title", bundle);
+                    String text = Utility.getBundleString("dialog_1", bundle);
+
+                    ConfirmDialog confirm = new ConfirmDialog(null, true, title, text, "test");
+
+                    confirm.setVisible(true);
+                    boolean close = confirm.getChoice();
+                    confirm.dispose();
+
+                    if (close == true){
+                        dispose();
+                    }
+                }
+            });
             
             //Crea Menu delle lingue
             createLanguageMenu(bundle);

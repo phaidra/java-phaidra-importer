@@ -4,9 +4,7 @@
  */
 package it.imtech.globals;
 
-import it.imtech.upload.SelectedServer;
 import it.imtech.utility.Language;
-import it.imtech.utility.Server;
 import it.imtech.utility.Utility;
 import java.net.URL;
 import java.util.ArrayList;

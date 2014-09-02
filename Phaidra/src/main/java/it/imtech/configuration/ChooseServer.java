@@ -82,7 +82,7 @@ public class ChooseServer extends javax.swing.JPanel {
         updateLanguage();
         MigLayout choose_layout = new MigLayout("fillx, insets 10 20 10 50");  
         main_panel = new JPanel(choose_layout);
-        //main_panel.setBackground(Color.WHITE);
+
         main_panel.add(label_server_1, "wrap 20");
         main_panel.add(label_server_2, "wrap 30");
         main_panel.add(label_server_3, "wrap 5");
