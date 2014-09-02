@@ -15,8 +15,6 @@ import it.imtech.xmltree.XMLTree;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.*;
 import java.util.*;
 import javax.swing.*;
@@ -288,7 +286,7 @@ public class BookImporter extends javax.swing.JFrame {
             this.setMetadataTab();
             setCursor(null);
 
-            JOptionPane.showMessageDialog(this, Utility.getBundleString("import4", bundle));
+            //JOptionPane.showMessageDialog(this, Utility.getBundleString("import4", bundle));
         } catch (Exception ex) {
             setCursor(null);
             JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
@@ -395,12 +393,14 @@ public class BookImporter extends javax.swing.JFrame {
                 //Associo l'evento al nuovo menu item
                 lang.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                         Globals.CURRENT_LOCALE = local;
                         Locale.setDefault(Globals.CURRENT_LOCALE);
                         
                         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
                         xmlTree.updateLanguage();
                         createLanguageMenu(bundle);
+                        setCursor(null);
                     }
                 });
 
