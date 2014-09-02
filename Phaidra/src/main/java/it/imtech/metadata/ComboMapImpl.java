@@ -17,7 +17,7 @@ public class ComboMapImpl extends AbstractListModel implements ComboBoxModel, Ma
 
     private boolean vocabulary = false;
     
-    private TreeMap<String,String> values = new TreeMap<String,String>(String.CASE_INSENSITIVE_ORDER);
+    private Map<String,String> values;
 
     private Map.Entry<String, String> selectedItem = null;
 
@@ -84,6 +84,12 @@ public class ComboMapImpl extends AbstractListModel implements ComboBoxModel, Ma
     }
 
     public void putAll(Map<? extends String, ? extends String> m) {
+        values = new TreeMap<String,String>(String.CASE_INSENSITIVE_ORDER);
+        values.putAll(m);
+    }
+    
+    public void putAllLinked(Map<? extends String, ? extends String> m) {       
+        values = new LinkedHashMap<String,String>();
         values.putAll(m);
     }
     

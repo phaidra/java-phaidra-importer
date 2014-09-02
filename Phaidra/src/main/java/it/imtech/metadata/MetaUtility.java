@@ -1219,29 +1219,29 @@ public class MetaUtility {
     }
 
     private JComboBox getComboLangBox(String value) {
-        HashMap<String, String> comboLang = new HashMap<String, String>();
-        int selected = 0;
+        LinkedHashMap<String, String> comboLang = new LinkedHashMap<String, String>();
+        int sel_index = 0;
         int index = 0;
 
         for (Map.Entry<String, String> vc : languages.entrySet()) {
-            comboLang.put(vc.getKey(), vc.getValue());
+            comboLang.put(vc.getValue(), vc.getKey());
 
-            if (Globals.CURRENT_LOCALE.getLanguage().equals(vc.getKey()) && value == null) {
-                selected = index;
+            if (Globals.CURRENT_LOCALE.getLanguage().equals(vc.getValue()) && value == null) {
+                sel_index = index;
             } else if (value != null) {
-                if (value.equals(vc.getKey())) {
-                    selected = index;
+                if (value.equals(vc.getValue())) {
+                    sel_index = index;
                 }
             }
             index++;
         }
 
         final ComboMapImpl model = new ComboMapImpl();
-        model.putAll(comboLang);
+        model.putAllLinked(comboLang);
 
         JComboBox result = new javax.swing.JComboBox(model);
 
-        result.setSelectedIndex(selected);
+        result.setSelectedIndex(sel_index);
         model.specialRenderCombo(result);
 
         return result;
