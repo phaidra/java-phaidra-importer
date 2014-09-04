@@ -164,16 +164,16 @@ public class XMLUtil {
 
     }
 
-    public static XMLNode createXMLNode(String name) {
+    public static XMLNode createXMLNode(String name, String href) {
         XMLNode xmlnode = null;
         try {
-
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc = builder.newDocument();
             Element page = doc.createElement("book:page");
 
             page.setAttribute("pid", name);
-            page.setAttribute("href", name);
+            page.setAttribute("href", href);
+            
             page.setAttribute("firstpage", "false");
             page.setAttribute("abspagenum", "-1");
             page.setAttribute("pagenum", "-1");

@@ -273,7 +273,7 @@ public class XMLTree extends JTree {
 
                     XMLUtil.copyfile(Globals.BLANKPAGE, Globals.SELECTED_FOLDER_SEP + newblankpage);
 
-                    XMLNode newXmlnode = XMLUtil.createXMLNode(newblankpage);
+                    XMLNode newXmlnode = XMLUtil.createXMLNode(newblankpage, newblankpage);
 
                     nodesToInsert = new ArrayList<XMLNode>();
                     nodesToInsert.add(newXmlnode);
@@ -297,7 +297,7 @@ public class XMLTree extends JTree {
                         nodesToInsert = new ArrayList<XMLNode>();
                         for (String fileName : filesName) {
 
-                            XMLNode newXmlnode = XMLUtil.createXMLNode(fileName);
+                            XMLNode newXmlnode = XMLUtil.createXMLNode(fileName, fileName);
 
                             //imposta nodi da inserire
                             nodesToInsert.add(newXmlnode);
@@ -509,7 +509,7 @@ public class XMLTree extends JTree {
             int len = array.length;
             for (int i = 0; i < len; i++) {
                 XMLNode oldXmlNode = (XMLNode) array[len - i - 1];
-                XMLNode newXmlnode = XMLUtil.createXMLNode(oldXmlNode.getName());
+                XMLNode newXmlnode = XMLUtil.createXMLNode(oldXmlNode.getName(), oldXmlNode.getHref());
                 nodesToInsert.add(newXmlnode);
             }
     }
