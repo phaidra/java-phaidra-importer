@@ -523,7 +523,7 @@ public class XMLTree extends JTree {
             Integer index = (Integer) i.next();
 
             for (int is = files.size()-1; is >=0 ; is--) {
-                XMLNode newXmlnode = XMLUtil.createXMLNode(files.get(is).toString());
+                XMLNode newXmlnode = XMLUtil.createXMLNode(files.get(is), files.get(is));
                 newItems.add(newXmlnode);
             }
             Iterator<XMLNode> iterNodesToInsert = newItems.listIterator();
