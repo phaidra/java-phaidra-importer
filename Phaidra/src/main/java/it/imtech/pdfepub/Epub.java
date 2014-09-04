@@ -9,7 +9,10 @@ import it.imtech.utility.Utility;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.xmltree.XMLTree;
 import it.imtech.globals.Globals;
+import static it.imtech.pdfepub.PdfCreateMonitor.frame;
 import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -123,7 +126,7 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
             int i = 0;
           
             //Scorri bookstructure per trovare coppie(Nome Capitolo, Nome File pagina)
-            for (int s = 0; s < nodeLst.getLength(); s++) {
+            for (int s = 0; s < nodeLst.getLength() && !isCancelled(); s++) {
                 if (nodeLst.item(s).getNodeType() == Node.ELEMENT_NODE) {
                     Element chapter = (Element) nodeLst.item(s);
 
@@ -137,7 +140,7 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
                         if (leaves.item(z).getNodeType() == Node.ELEMENT_NODE) {
                             Element page = (Element) leaves.item(z);
 
-                            imglist.add(page.getAttribute("pid"));
+                            imglist.add(page.getAttribute("href"));
                             addUploadInfoText(Utility.getBundleString("epubbookpage",bundle)+":"+page.getAttribute("pid"));
                         }
                     }
@@ -267,10 +270,15 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
 
             //Display the window.
             frame.pack();
+            
+            //Posizionamento interfaccia
+            Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+            int x = (dim.width - frame.getSize().width) / 2;
+            int y = (dim.height - frame.getSize().height) / 2;
+            frame.setLocation(x, y);
             frame.setVisible(true);
         } else {
             frame.dispose();
-            BookImporter.getInstance().setVisible(true);
         }
     }
     
@@ -303,8 +311,6 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
      */
     private Epub() {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-
-        BookImporter.getInstance().setVisible(false);
 
         JFileChooser saveFile = new JFileChooser();//new save dialog  
        
@@ -360,10 +366,17 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
 
             jButton1.setEnabled(false);
             jButton1.addActionListener(new ActionListener() {
-
                 public void actionPerformed(ActionEvent e) {
                     //Close the application main form
-                    BookImporter.getInstance().setVisible(true);
+                    task.cancel(true);
+                    frame.dispose();
+                }
+            });
+            
+            frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                    task.cancel(true);
                     frame.dispose();
                 }
             });

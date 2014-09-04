@@ -28,9 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -84,7 +82,6 @@ public class StartWizard  {
         
         XMLConfiguration internalConf = setConfiguration();
 
-        
         XMLConfiguration config = setConfigurationPaths(false, internalConf, bundle);
         
         //Creazione Header

@@ -10,10 +10,11 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.pdf.PdfWriter;
 import it.imtech.bookimporter.BookImporter;
+import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLNode;
+import it.imtech.xmltree.XMLPage;
 import it.imtech.xmltree.XMLTree;
-import it.imtech.globals.Globals;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -89,20 +90,21 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
                 document.load(new File(pdfLocation));
 
                 ArrayList<String> newPages = new ArrayList<String>();
-                
+
                 // create renderer
                 SimpleRenderer renderer = new SimpleRenderer();
                 // set resolution (in DPI)
                 renderer.setResolution(200);
                 int pages = document.getPageCount();
                 java.util.List<java.awt.Image> images;
-                for (int i = 0; i < pages; i++) {
+                for (int i = 0; i < pages && !isCancelled(); i++) {
                     try {
                         images = renderer.render(document, i, i + 1);
                         File file = Utility.getUniqueFileName(prefix, suffix);
                         ImageIO.write((RenderedImage) images.get(0), "jpg", file);
 
                         newPages.add(file.getName());
+                        jLabel4.setText(file.getName());
                         progress++;
                         percent = progress * 100 / pages;
                         jProgressBar1.setValue(percent);
@@ -140,18 +142,19 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
 
                 document.open();
 
-                ArrayList<String> images = XMLTree.getImagesFromStructure();
+                ArrayList<XMLPage> images = XMLTree.getImagesFromStructure();
                 com.itextpdf.text.Image img;
+                XMLPage test = new XMLPage("test","test");
+                
+                for (int i = 0; i < images.size() && !isCancelled(); i++) {
+                    jLabel4.setText(images.get(i).toString());
 
-                for (int i = 0; i < images.size(); i++) {
-                    jLabel4.setText(images.get(i));
-
-                    mimetype = Utility.getMimeType(Globals.SELECTED_FOLDER_SEP + images.get(i));
+                    mimetype = Utility.getMimeType(Globals.SELECTED_FOLDER_SEP + images.get(i).getHref());
                     if (Utility.fileIsPicture(mimetype)) {
                         if(mimetype.equals("image/tiff"))
-                            img = Image.getInstance(Globals.SELECTED_FOLDER_SEP + images.get(i));
+                            img = Image.getInstance(Globals.SELECTED_FOLDER_SEP + images.get(i).getHref());
                         else
-                            img = Image.getInstance(Utility.convertImage(Globals.SELECTED_FOLDER_SEP + images.get(i), quality));
+                            img = Image.getInstance(Utility.convertImage(Globals.SELECTED_FOLDER_SEP + images.get(i).getHref(), quality));
                         
                         img.setAlignment(Element.ALIGN_CENTER);
                         img.scaleToFit(PageSize.A4.getWidth(), PageSize.A4.getHeight());
@@ -227,9 +230,7 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
             frame.setContentPane(newContentPane);
 
             frame.addWindowListener(new WindowAdapter() {
-
                 public void windowClosing(WindowEvent e) {
-                    //BookImporter.getInstance().setVisible(true);
                     frame.dispose();
                 }
             });
@@ -265,7 +266,6 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
         this.pdfLocation = location;
 
         this.export = exp;
-        //BookImporter.getInstance().setVisible(false);
 
         initComponents();
         updateLanguageLabel();
@@ -279,14 +279,18 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
         jButton1.setEnabled(true);
         jButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                task.cancel(true);
                 frame.dispose();
             }
         });
-
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (dim.width - getSize().width) / 2;
-        int y = (dim.height - getSize().height) / 2;
-        setLocation(x, y);
+        
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                task.cancel(true);
+                frame.dispose();
+            }
+        });
     }
 
     private void updateLanguageLabel() {
@@ -333,11 +337,11 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
                         .addGap(18, 18, 18)
                         .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28)

@@ -1161,6 +1161,7 @@ public class BookImporter extends javax.swing.JFrame {
      * @param evt
      */
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         if (Globals.FOLDER_WRITABLE) {
             initializeXmlTree(true,false);
@@ -1169,6 +1170,7 @@ public class BookImporter extends javax.swing.JFrame {
         else {
             JOptionPane.showMessageDialog(this, Utility.getBundleString("opnotpermitted", bundle));
         }
+        setCursor(null);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed

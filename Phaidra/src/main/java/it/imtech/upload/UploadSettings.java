@@ -172,7 +172,7 @@ public class UploadSettings extends javax.swing.JFrame {
                     for (int z = 0; z < leaves.getLength(); z++) {
                         if (leaves.item(z).getNodeType() == Node.ELEMENT_NODE) {
                             Element page = (Element) leaves.item(z);
-                            xmlPath = Globals.SELECTED_FOLDER_SEP + Utility.changeFileExt(page.getAttribute("pid"));
+                            xmlPath = Globals.SELECTED_FOLDER_SEP + Utility.changeFileExt(page.getAttribute("href"));
 
                             if (new File(xmlPath).isFile()) {
                                 try {

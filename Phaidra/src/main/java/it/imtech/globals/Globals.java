@@ -39,11 +39,13 @@ public class Globals {
     public final static char COLLECTION = 'C';
     public final static char NOT_EXISTS = 'X';
     
-    public static String USER_DIR = System.getProperty("user.home")+Utility.getSep()+".phaidraimporter"+Utility.getSep();
-    public static String UNDO_DIR = System.getProperty("user.home")+Utility.getSep()+".phaidraimporter"+Utility.getSep()+"undo"+Utility.getSep();
-    public static String LOG4J = System.getProperty("user.home")+Utility.getSep()+".phaidraimporter"+Utility.getSep()+"config" + Utility.getSep() + "log4j.xml";
-    public static String BLANKPAGE = System.getProperty("user.home")+Utility.getSep()+".phaidraimporter"+Utility.getSep()+"config" + Utility.getSep() + "blankpage.jpg";
-    public static String INTERNAL_CONFIG = System.getProperty("user.home")+Utility.getSep()+".phaidraimporter"+Utility.getSep()+"config" + Utility.getSep() + "config.xml";
+    public static String HIDDEN_FOLDER = ".imphaidraimporter";
+    
+    public static String USER_DIR = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep();
+    public static String UNDO_DIR = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"undo"+Utility.getSep();
+    public static String LOG4J = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"config" + Utility.getSep() + "log4j.xml";
+    public static String BLANKPAGE = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"config" + Utility.getSep() + "blankpage.jpg";
+    public static String INTERNAL_CONFIG = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"config" + Utility.getSep() + "config.xml";
     
     //Path della cartella che contiene l'eseguibile dell'applicazione
     public static String JRPATH = null;

@@ -57,7 +57,7 @@ public class Updater extends JFrame{
     private JScrollPane sp;
     private JPanel pan1;
     private JPanel pan2;
-    private String USER_DIR = System.getProperty("user.home")+getSep()+".phaidraimporter";
+    private String USER_DIR = System.getProperty("user.home")+getSep()+".imphaidraimporter";
      
     public Updater() {   
         this.setAlwaysOnTop(true);

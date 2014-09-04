@@ -285,7 +285,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             String slPID = null;
 
             //Scorri collstructure per trovare coppie(Nome Capitolo, Nome File pagina)
-            for (int s = 0; s < nodeLst.getLength(); s++) {
+            for (int s = 0; s < nodeLst.getLength() && !isCancelled(); s++) {
                 if (nodeLst.item(s).getNodeType() == Node.ELEMENT_NODE) {
                     Element container = (Element) nodeLst.item(s);
 
@@ -323,7 +323,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                         if (flPID != null) {
                             //Per ogni elemento del container esegui l'upload
                             NodeList leaves = container.getChildNodes();
-                            for (int z = 0; z < leaves.getLength(); z++) {
+                            for (int z = 0; z < leaves.getLength() && !isCancelled(); z++) {
                                 if (leaves.item(z).getNodeType() == Node.ELEMENT_NODE) {
                                     Element page = (Element) leaves.item(z);
 
@@ -369,11 +369,11 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             type = null;
 
             //Ricava nome file e path 
-            String file = Globals.SELECTED_FOLDER_SEP + el.getAttribute("folder") + Utility.getSep() + el.getAttribute("pid");
+            String file = Globals.SELECTED_FOLDER_SEP + el.getAttribute("folder") + Utility.getSep() + el.getAttribute("href");
 
             setTextField(el.getAttribute("pid"));
 
-            String mimetype = Utility.getMimeType(el.getAttribute("pid"));
+            String mimetype = Utility.getMimeType(el.getAttribute("href"));
 
             String slPID = null;
 
@@ -406,7 +406,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             boolean addChapter = true;
             boolean firstPage  = false;
             //Scorri bookstructure per trovare coppie(Nome Capitolo, Nome File pagina)
-            for (int s = 0; s < nodeLst.getLength(); s++) {
+            for (int s = 0; s < nodeLst.getLength() && !isCancelled(); s++) {
                 if (nodeLst.item(s).getNodeType() == Node.ELEMENT_NODE) {
                     Element chapter = (Element) nodeLst.item(s);
                     Book.Chapter capitolo = null;
@@ -415,7 +415,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
                     //Per ogni pagina del capitolo esegui l'upload
                     NodeList leaves = chapter.getChildNodes();
-                    for (int z = 0; z < leaves.getLength(); z++) {
+                    for (int z = 0; z < leaves.getLength() && !isCancelled(); z++) {
                         if (leaves.item(z).getNodeType() == Node.ELEMENT_NODE) {
                             //Se il capitolo ha una foglia aggiungilo
                             if (addChapter) {
@@ -425,7 +425,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
                             Element page = (Element) leaves.item(z);
 
-                            String flnm = page.getAttribute("pid");
+                            String flnm = page.getAttribute("href");
 
                             firstPage = (page.getAttribute("firstpage").equals("true"))?true:false;
                             
@@ -433,8 +433,6 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                             String pagePid = obj.createPage(flnm, bookPID, chapter.getAttribute("name"), pagenum, capitolo, book, firstPage);
 
                             pagenum++;
-                            
-
                             progress = updateProgress(progress, total, Utility.getBundleString("logging1",bundle) + ":" + pagePid);
                         }
                     }
@@ -509,8 +507,6 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         path = pdfPth;
         user = usernm;
 
-        BookImporter.getInstance().setVisible(false);
-
         initComponents();
         jProgressBar1.setMaximum(100);
         updateLanguageLabel();
@@ -526,11 +522,19 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
             public void actionPerformed(ActionEvent e) {
                 //Close the application main form
-                BookImporter.getInstance().setVisible(true);
+                task.cancel(true);
                 frame.dispose();
             }
         });
-
+        
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                task.cancel(true);
+                frame.dispose();
+            }
+        });
+        
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (dim.width - getSize().width) / 2;
         int y = (dim.height - getSize().height) / 2;
@@ -571,15 +575,18 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         frame.setContentPane(newContentPane);
 
         frame.addWindowListener(new WindowAdapter() {
-
             public void windowClosing(WindowEvent e) {
-                BookImporter.getInstance().setVisible(true);
                 frame.dispose();
             }
         });
 
         //Display the window.
         frame.pack();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (dim.width - frame.getSize().width) / 2;
+        int y = (dim.height - frame.getSize().height) / 2;
+        frame.setLocation(x, y);
+            
         frame.setVisible(true);
     }
 
@@ -716,6 +723,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

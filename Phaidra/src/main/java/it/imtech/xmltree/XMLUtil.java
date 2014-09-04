@@ -173,6 +173,7 @@ public class XMLUtil {
             Element page = doc.createElement("book:page");
 
             page.setAttribute("pid", name);
+            page.setAttribute("href", name);
             page.setAttribute("firstpage", "false");
             page.setAttribute("abspagenum", "-1");
             page.setAttribute("pagenum", "-1");

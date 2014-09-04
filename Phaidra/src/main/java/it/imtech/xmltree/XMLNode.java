@@ -13,6 +13,7 @@ public class XMLNode extends DefaultMutableTreeNode {
 
     private String id;
     private String name;
+    private String href;
     private String iconName;
     private boolean isFile;
     private boolean loaded;
@@ -47,6 +48,8 @@ public class XMLNode extends DefaultMutableTreeNode {
             isFile = false;
         } else if ("book:page".equals(tagName)) {
             name = ((Element) userObject).getAttribute("pid");
+            href = ((Element) userObject).getAttribute("href");
+            
             iconName = StringUtils.substringAfter(name, ".").toLowerCase();
             isFile = true;
             if(((Element) userObject).getAttribute("firstpage").equals("true"))
@@ -67,6 +70,10 @@ public class XMLNode extends DefaultMutableTreeNode {
         return iconName;
     }
 
+    public String getHref() {
+        return href;
+    }
+    
     @Override
     public String toString() {
         return name;
@@ -79,7 +86,10 @@ public class XMLNode extends DefaultMutableTreeNode {
 
     public void setName(String name) {
         this.name = name;
-
+    }
+    
+    public void setHref(String href) {
+        this.href = href;
     }
 
     public String getName() {

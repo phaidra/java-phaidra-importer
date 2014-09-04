@@ -144,7 +144,7 @@ public class XMLTree extends JTree {
                     Dimension label_dim = labelImage.getSize();
                         
                     if (node.isLeaf()) {
-                    	String file = clickedPath.getLastPathComponent().toString();
+                    	String file = node.getHref();
                         Element el = (Element) node.getUserObject();
                         String dir = (StringUtils.isEmpty(el.getAttribute("folder")) ? "" : el.getAttribute("folder") + Utility.getSep());
                         file = Globals.SELECTED_FOLDER_SEP + dir + file;
@@ -318,7 +318,7 @@ public class XMLTree extends JTree {
                     XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
 
                     String nodeName = xmlNode.getName();
-                    if (!xmlNode.isLeaf() && !("root".equals(nodeName) || 
+                    if (!("root".equals(nodeName) || 
                             Utility.getBundleString("sbook", bundle).equals(nodeName) || 
                             Utility.getBundleString("scollection", bundle).equals(nodeName))) {
                         exportBookstructureXUndo();
@@ -327,24 +327,26 @@ public class XMLTree extends JTree {
                         startEditingAtPath(clickedPath);
                     }
                 }
-            };
-            copyAction  = new AbstractAction(Utility.getBundleString("mc_copy", bundle), IconFactory.getIcon("copy",
-                    IconFactory.IconSize.SIZE_16X16)) {
+        };
+        
+        copyAction  = new AbstractAction(Utility.getBundleString("mc_copy", bundle), IconFactory.getIcon("copy",
+                IconFactory.IconSize.SIZE_16X16)) {
 
-                public void actionPerformed(ActionEvent e) {
-                    setNodesToPast();
-                    
-                }
-            };
-            cutAction  = new AbstractAction(Utility.getBundleString("mc_cut", bundle), IconFactory.getIcon("cut",
-                    IconFactory.IconSize.SIZE_16X16)) {
+            public void actionPerformed(ActionEvent e) {
+                setNodesToPast();
+            }
+        };
+        
+        cutAction  = new AbstractAction(Utility.getBundleString("mc_cut", bundle), IconFactory.getIcon("cut",
+                IconFactory.IconSize.SIZE_16X16)) {
 
-                public void actionPerformed(ActionEvent e) {
-                    setNodesToPast();
-                    deleteXmlNodes();
-                }
-            };
-            pasteAction  = new AbstractAction(Utility.getBundleString("mc_paste", bundle), IconFactory.getIcon("paste",
+            public void actionPerformed(ActionEvent e) {
+                setNodesToPast();
+                deleteXmlNodes();
+            }
+        };
+            
+        pasteAction  = new AbstractAction(Utility.getBundleString("mc_paste", bundle), IconFactory.getIcon("paste",
                     IconFactory.IconSize.SIZE_16X16)) {
 
                 public void actionPerformed(ActionEvent e) {
@@ -498,7 +500,7 @@ public class XMLTree extends JTree {
     }
 
     /**
-     * Imposta l'insieme dei nodi da inserire in ordine invertito perch�
+     * Imposta l'insieme dei nodi da inserire in ordine invertito perche
      * l'inserimento della paste action sia corretto
      */
     private void setNodesToPast() {
@@ -563,8 +565,8 @@ public class XMLTree extends JTree {
      * libro
      * @throws ParserConfigurationException
      */
-    public static ArrayList<String> getImagesFromStructure() {
-        ArrayList<String> result = new ArrayList<String>();       
+    public static ArrayList<XMLPage> getImagesFromStructure() {
+        ArrayList<XMLPage> result = new ArrayList<XMLPage>();       
         
         try {
             savedXmlDoc.getDocumentElement().normalize();
@@ -579,17 +581,20 @@ public class XMLTree extends JTree {
                     nodeLst = nodo.getChildNodes();
                 }
             }
-
+            XMLPage resultPage = null;
+            
             for (int s = 0; s < nodeLst.getLength(); s++) {
+                resultPage = null;
                 if (nodeLst.item(s).getNodeType() == Node.ELEMENT_NODE) {
                     Element chapter = (Element) nodeLst.item(s);
 
                     if (!chapter.hasChildNodes()) {
                         if (chapter.hasAttribute("folder")) {
-                            result.add(chapter.getAttribute("folder") + Utility.getSep() + chapter.getAttribute("pid"));
+                            resultPage = new XMLPage(chapter.getAttribute("folder") + Utility.getSep() + chapter.getAttribute("pid"), "folder");
                         } else {
-                            result.add(chapter.getAttribute("pid"));
+                            resultPage = new XMLPage(chapter.getAttribute("pid"), chapter.getAttribute("href"));
                         }
+                        result.add(resultPage);
                     } else {
                         NodeList leaves = chapter.getChildNodes();
                         for (int z = 0; z < leaves.getLength(); z++) {
@@ -597,10 +602,11 @@ public class XMLTree extends JTree {
                                 Element page = (Element) leaves.item(z);
 
                                 if (page.hasAttribute("folder")) {
-                                    result.add(page.getAttribute("folder") + Utility.getSep() + page.getAttribute("pid"));
+                                    resultPage = new XMLPage(page.getAttribute("folder") + Utility.getSep() + page.getAttribute("pid"), "folder");
                                 } else {
-                                    result.add(page.getAttribute("pid"));
+                                    resultPage = new XMLPage(page.getAttribute("pid"), page.getAttribute("href"));
                                 }
+                                result.add(resultPage);
                             }
                         }
                     }
@@ -1081,6 +1087,8 @@ public class XMLTree extends JTree {
      */
     public static String createBookstructureCollection(String selectedFolder,  String xmlfile) {
         String pathXmlfile = selectedFolder + xmlfile;
+        String pid = "";
+        
         try {
             final DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             final Document doc = builder.newDocument();
@@ -1094,7 +1102,7 @@ public class XMLTree extends JTree {
             int iabs = 0;
             int irel = 0;
             List<String> sf = getFileFromSelectedFolder(Globals.SELECTED_FOLDER);
-
+            
             Iterator<String> iterFileSf = sf.iterator();
 
             while (iterFileSf.hasNext()) {
@@ -1104,7 +1112,10 @@ public class XMLTree extends JTree {
                 elp.setAttribute("abspagenum", "" + iabs);
                 elp.setAttribute("pagenum", "" + irel);
                 elp.setAttribute("folder", "");
-                elp.setAttribute("pid", iterFileSf.next());
+                
+                pid = iterFileSf.next();
+                elp.setAttribute("pid", pid);
+                elp.setAttribute("href", pid);
                 cg.appendChild(elp);
             }
 
@@ -1130,7 +1141,10 @@ public class XMLTree extends JTree {
                     elp.setAttribute("abspagenum", "" + iabs);
                     elp.setAttribute("pagenum", "" + irel);
                     elp.setAttribute("folder", dir);
-                    elp.setAttribute("pid", iterFile.next());
+                    
+                    pid = iterFile.next();
+                    elp.setAttribute("pid", pid);
+                    elp.setAttribute("href", pid);
                     els.appendChild(elp);
                 }
                 irel = 0;
@@ -1191,6 +1205,8 @@ public class XMLTree extends JTree {
     
     public static String createBookstructure(String selectedFolder, String xmlfile) {
         String pathXmlfile = selectedFolder + xmlfile;
+        String pid = "";
+        
         try {
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             List<String> lf = getFileFromSelectedFolder(Globals.SELECTED_FOLDER);
@@ -1217,8 +1233,10 @@ public class XMLTree extends JTree {
                 elp.setAttribute("firstpage", "false");
 
                 Iterator<String> iter = lf.iterator();
-
-                elp.setAttribute("pid", iter.next());
+                
+                pid = iter.next();
+                elp.setAttribute("pid", pid);
+                elp.setAttribute("href", pid);
                 els.appendChild(elp);
                 pg.appendChild(els);
 
@@ -1232,7 +1250,10 @@ public class XMLTree extends JTree {
                     elp = doc.createElement("book:page");
                     elp.setAttribute("abspagenum", "" + iabs);
                     elp.setAttribute("pagenum", "" + irel);
-                    elp.setAttribute("pid", iter.next());
+                    
+                    pid = iter.next();
+                    elp.setAttribute("pid", pid);
+                    elp.setAttribute("href", pid);
                     elp.setAttribute("firstpage", "false");
                     els.appendChild(elp);
                     irel++;

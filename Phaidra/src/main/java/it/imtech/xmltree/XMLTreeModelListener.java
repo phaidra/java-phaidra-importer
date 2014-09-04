@@ -19,25 +19,36 @@ public class XMLTreeModelListener implements TreeModelListener {
 
     public void treeNodesChanged(TreeModelEvent e) {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) (e.getTreePath().getLastPathComponent());
-
+        Element element;
+        
         try {
             int index = e.getChildIndices()[0];
             XMLNode xmlNode = (XMLNode) (node.getChildAt(index));
-           
             String newName = xmlNode.getUserObject().toString();
+            
             xmlNode.setName(newName);
-            System.out.println("node newName: " + newName);
             final DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             final Document doc = builder.newDocument();
-            final Element capitolo = doc.createElement("book:structure");
-            capitolo.setAttribute("name", newName);
-            capitolo.setAttribute("seq", "1");
-            xmlNode.setUserObject(capitolo);
-
+                    
+            if (xmlNode.isLeaf()){
+                element = doc.createElement("book:page");
+                element.setAttribute("pid", newName);
+                element.setAttribute("href", xmlNode.getHref());
+                element.setAttribute("firstpage", "false");
+                element.setAttribute("abspagenum", "-1");
+                element.setAttribute("pagenum", "-1");
+            }
+            else{
+                element = doc.createElement("book:structure");
+                element.setAttribute("name", newName);
+                element.setAttribute("seq", "1");
+                element.setAttribute("id", xmlNode.getId());
+            }
+            
+            xmlNode.setUserObject(element);
+            
             XMLTree.getXmlTreeModel().reload((DefaultMutableTreeNode) XMLTree.getXmlTreeModel().getRoot());
             XMLTree.expandAll(BookImporter.xmlTree);
-
-
         } catch (NullPointerException ex) {
             logger.error(ex.getMessage());
         } catch (ParserConfigurationException ex) {
