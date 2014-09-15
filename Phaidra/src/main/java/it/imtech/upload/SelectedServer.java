@@ -34,6 +34,10 @@ public class SelectedServer {
         return istance;
     }
     
+    public void makeEmpty(){
+        this.istance = null;
+    }
+    
     public SelectedServer() {}
 
     public SelectedServer(Server s){

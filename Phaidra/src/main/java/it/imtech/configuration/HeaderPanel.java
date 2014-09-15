@@ -41,15 +41,13 @@ public class HeaderPanel extends javax.swing.JPanel {
      */
     public HeaderPanel() {
         initComponents();
-        
-        //this.setBackground(Color.WHITE);
 
         MigLayout layout = new MigLayout("fillx", "[right]rel[grow,fill]");
         this.setLayout(layout);
         
         BufferedImage head;
         try {
-            head = ImageIO.read(getClass().getResource("/images/phaidra.png"));
+            head = ImageIO.read(getClass().getResource("images/phaidra.png"));
             JLabel picLabel = new JLabel(new ImageIcon(head));
             this.add(picLabel, "span 1 2");
         } catch (IOException ex) {

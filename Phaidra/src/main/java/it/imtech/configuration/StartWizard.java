@@ -99,6 +99,8 @@ public class StartWizard  {
                 if(getCurrentCard() instanceof ChooseServer){
                     mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                     Server selected = chooseServer.getSelectedServer();
+                    
+                    SelectedServer.getInstance(null).makeEmpty();
                     SelectedServer.getInstance(selected);
                     
                     ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
@@ -112,9 +114,9 @@ public class StartWizard  {
                 
                     if (error==false){
                         BookImporter x = BookImporter.getInstance();
+                        mainFrame.setCursor(null);
                         mainFrame.dispose();
                     }
-                    mainFrame.setCursor(null);
                 }
             }
         });
@@ -217,9 +219,11 @@ public class StartWizard  {
         
         try{
             File appdata = new File(Globals.USER_DIR);
-            File blank = new File(Globals.JRPATH + "appdata" + Utility.getSep() + "config" + Utility.getSep() + "blankpage.jpg");
-            File xmlconfnew = new File(Globals.JRPATH + "appdata" + Utility.getSep() + "config" + Utility.getSep() + "config.xml");
-            File logforj = new File(Globals.JRPATH + "appdata" + Utility.getSep() + "config" + Utility.getSep() + "log4j.xml");
+            String currentpath = Globals.JRPATH + "appdata" + Utility.getSep();
+            File blank = new File(currentpath + "config" + Utility.getSep() + "blankpage.jpg");
+            File xmlconfnew = new File(currentpath + "config" + Utility.getSep() + "config.xml");
+            File logforj = new File(currentpath + "config" + Utility.getSep() + "log4j.xml");
+            File uncompleteduploads = new File(currentpath + "uploads" + Utility.getSep() + "uncompleteduploads.xml");
             
             if (!appdata.exists()){
                 appdata.mkdir();
@@ -238,6 +242,11 @@ public class StartWizard  {
             File certs = new File(Globals.USER_DIR + "certs");
             if (!certs.exists()){
                 certs.mkdir();
+            }
+            
+            File uploads = new File(Globals.USER_DIR + "uploads");
+            if (!uploads.exists()){
+                uploads.mkdir();
             }
             
             File xmlconfold = new File(Globals.USER_DIR + "config" + Utility.getSep() +"config.xml");
@@ -275,6 +284,11 @@ public class StartWizard  {
             File blanknew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"blankpage.jpg");
             if (!blanknew.exists()){
                 FileUtils.copyFile(blank, blanknew);
+            }
+            
+            File newuploads = new File(Globals.USER_DIR + "config" + Utility.getSep() +"uncompleteduploads.xml");
+            if (!newuploads.exists()){
+                FileUtils.copyFile(uncompleteduploads, newuploads);
             }
             
             result = true;
