@@ -8,7 +8,6 @@ package it.imtech.configuration;
 
 import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.util.HashMap;
@@ -53,8 +52,6 @@ public class FooterPanel extends javax.swing.JPanel {
         this.add(nextButton);
         
         createComponentMap();
-        
-        //this.setBackground(Color.WHITE);
     }
     
     private void createComponentMap() {

@@ -189,13 +189,24 @@ public class Utility {
         }
     }
 
-    public static String getOuterXml(Node node) throws TransformerConfigurationException, TransformerException {
-        Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        transformer.setOutputProperty("omit-xml-declaration", "yes");
-
-        StringWriter writer = new StringWriter();
-        transformer.transform(new DOMSource(node), new StreamResult(writer));
-        return writer.toString();
+    public static String getOuterXml(Node node) {
+        String results = "";
+        try {    
+              DOMSource domSource = new DOMSource(node); 
+              StringWriter writer = new StringWriter(); 
+              StreamResult result = new StreamResult(writer); 
+              TransformerFactory tf = TransformerFactory.newInstance(); 
+              Transformer transformer = tf.newTransformer(); 
+              transformer.transform(domSource, result);
+              
+              byte[] out_1 = UnicodeUtil.convert(writer.toString().getBytes("UTF-16"), "UTF-8"); //Shanghai in Chinese
+              results = new String(out_1);    
+          
+        } catch (Exception ex) {
+            return null;
+        }
+        
+        return results;
     }
 
     public static String changeFileExt(String filename) {

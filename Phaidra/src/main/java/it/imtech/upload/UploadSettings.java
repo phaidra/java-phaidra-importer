@@ -29,6 +29,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.border.TitledBorder;
 import javax.xml.XMLConstants;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Source;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
@@ -37,6 +42,7 @@ import net.miginfocom.swing.MigLayout;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.jdesktop.swingx.JXDatePicker;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -62,11 +68,11 @@ public class UploadSettings extends javax.swing.JFrame {
             istance = new UploadSettings();
             istance.addWindowListener(new WindowAdapter() {
 
+            @Override
             public void windowClosing(WindowEvent e) {
                 istance.setVisible(false);
                 istance.password = "";
                 istance.jTextField3.setText("");
-               // BookImporter.getInstance().setVisible(true);
             }
         });
         }
@@ -148,13 +154,17 @@ public class UploadSettings extends javax.swing.JFrame {
         jPanel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), Utility.getBundleString("paneltitleupload",bundle), TitledBorder.LEFT, TitledBorder.TOP));
     }
 
-    private String checkOCRFiles() {
+    private String checkOCRFiles()  {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         String result = "";
         String xmlPath = "";
-
+        String W3C_XML_SCHEMA_NS_URI = "http://www.w3.org/2001/XMLSchema";
+        
         try {
-            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            DocumentBuilderFactory dbf=DocumentBuilderFactory.newInstance();
+            //We need to make sure we add this line 
+
+            SchemaFactory factory = SchemaFactory.newInstance(W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(getClass().getResource("config/ocr.xsd"));
             Validator validator = schema.newValidator();
 
@@ -173,13 +183,15 @@ public class UploadSettings extends javax.swing.JFrame {
                         if (leaves.item(z).getNodeType() == Node.ELEMENT_NODE) {
                             Element page = (Element) leaves.item(z);
                             xmlPath = Globals.SELECTED_FOLDER_SEP + Utility.changeFileExt(page.getAttribute("href"));
-
+                            
+                            DocumentBuilderFactory test = DocumentBuilderFactory.newInstance();
+                            test.setNamespaceAware(true);
+                            DocumentBuilder documentBuilder = test.newDocumentBuilder();
+                            
+                            Document doc = documentBuilder.parse(new File(xmlPath));
+                            Source xmlSource = new DOMSource(doc);
                             if (new File(xmlPath).isFile()) {
-                                try {
-                                    validator.validate(new StreamSource(getClass().getResourceAsStream(xmlPath)));
-                                } catch (SAXException e) {
-                                    result = Utility.getBundleString("error15",bundle) + " " + xmlPath + ": " + e.toString();
-                                }
+                                validator.validate(xmlSource);
                             } else {
                                 result = Utility.getBundleString("error12",bundle) + " " + xmlPath + " " + Utility.getBundleString("error14",bundle);
                             }
@@ -187,9 +199,13 @@ public class UploadSettings extends javax.swing.JFrame {
                     }
                 }
             }
+        } catch(IllegalArgumentException ex){
+            result = "Check OCR: " + Utility.getBundleString("error23",bundle);
         } catch (SAXException ex) {
             result = "Check OCR: " + Utility.getBundleString("error23",bundle);
         } catch (IOException ex) {
+            result = "Check OCR: " + Utility.getBundleString("error24",bundle);
+        } catch (ParserConfigurationException ex) {
             result = "Check OCR: " + Utility.getBundleString("error24",bundle);
         }
 

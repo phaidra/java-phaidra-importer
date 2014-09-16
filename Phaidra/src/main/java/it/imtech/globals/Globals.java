@@ -39,14 +39,14 @@ public class Globals {
     public final static char COLLECTION = 'C';
     public final static char NOT_EXISTS = 'X';
     
-    public static String HIDDEN_FOLDER = ".imphaidraimporter";
+    public final static String HIDDEN_FOLDER = ".imphaidraimporter";
+    public static String USER_DIR  = System.getProperty("user.home") + Utility.getSep() + HIDDEN_FOLDER + Utility.getSep();
     
-    public static String USER_DIR = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep();
-    public static String UNDO_DIR = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"undo"+Utility.getSep();
-    public static String LOG4J = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"config" + Utility.getSep() + "log4j.xml";
-    public static String BLANKPAGE = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"config" + Utility.getSep() + "blankpage.jpg";
-    public static String INTERNAL_CONFIG = System.getProperty("user.home")+Utility.getSep()+HIDDEN_FOLDER+Utility.getSep()+"config" + Utility.getSep() + "config.xml";
-    
+    public static String UNDO_DIR  = USER_DIR + "undo" +Utility.getSep();
+    public static String LOG4J     = USER_DIR + "config" + Utility.getSep() + "log4j.xml";
+    public static String BLANKPAGE = USER_DIR + "config" + Utility.getSep() + "blankpage.jpg";
+    public static String INTERNAL_CONFIG = USER_DIR +"config" + Utility.getSep() + "config.xml";
+     
     //Path della cartella che contiene l'eseguibile dell'applicazione
     public static String JRPATH = null;
     public static String BASE_RESOURCES = "resources" +Utility.getSep()+ "messages";
@@ -80,19 +80,14 @@ public class Globals {
         Globals.CURRENT_LOCALE = new Locale("en");
         
         if(DEBUG){
-            
             USER_DIR = "";
+            CURRENT_VERSION = "2.0";
             UNDO_DIR = "appdata"+ Utility.getSep() + "undo"+Utility.getSep();
             LOG4J = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "log4j.xml";
             BLANKPAGE = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "blankpage.jpg";
             INTERNAL_CONFIG = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "config.xml";
-            /*
-            SELECTED_FOLDER = "working_dir";
-            SELECTED_FOLDER_SEP = "working_dir"+Utility.getSep();
-            */
-            CURRENT_VERSION = "2.0";
+  
             
-          
             ArrayList<Language> langs = new ArrayList<Language>();
             Language lang = new Language("en", "binglese", "Inglese");
             langs.add(lang);
@@ -102,9 +97,6 @@ public class Globals {
             langs.add(lang);
             
             LANGUAGES = langs.toArray(new Language[langs.size()]);
-            
-            //Server sv = new Server("test", "test", "test", "test", "test", "test");
-            //SelectedServer.getInstance(sv);
         }    
     }
     
