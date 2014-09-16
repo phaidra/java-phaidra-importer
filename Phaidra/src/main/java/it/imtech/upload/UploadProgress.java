@@ -365,6 +365,10 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             return firsLevelEl;
         }
 
+        public void addUploadInfoInnerText(String message){
+            addUploadInfoText(message);
+        }
+        
         private String addElementToCollection(Element el, ImObject coll) throws Exception {
             type = null;
 
@@ -378,11 +382,14 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             String slPID = null;
 
             if (Utility.fileIsPicture(mimetype)) {
-                slPID = coll.createPicture(file, mimetype);
+                slPID = coll.createPicture(file, mimetype, this);
                 type = Utility.getBundleString("clogging2",bundle);
             } else if (Utility.fileIsPdf(file)) {
-                slPID = coll.createDocument(file, mimetype);
+                slPID = coll.createDocument(file, mimetype, this);
                 type = Utility.getBundleString("clogging3",bundle);
+            } else if (Utility.fileIsVideo(mimetype)) {
+                slPID = coll.createVideo(file, mimetype, this);
+                type = Utility.getBundleString("clogging13",bundle);
             }
 
             return slPID;

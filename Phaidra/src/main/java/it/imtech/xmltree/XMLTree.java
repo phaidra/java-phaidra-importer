@@ -739,7 +739,7 @@ public class XMLTree extends JTree {
                 IconFactory.IconSize.SIZE_16X16));
         icons.put("blankpage", IconFactory.getIcon("blankpage",
                 IconFactory.IconSize.SIZE_16X16));
-
+        icons.put("avi", IconFactory.getIcon("movie", IconFactory.IconSize.SIZE_16X16));
 
         return icons;
     }
@@ -816,13 +816,18 @@ public class XMLTree extends JTree {
         List<String> filesName = new ArrayList<String>();
         //TreeSet filesName = new TreeSet();
         try {
-            boolean isPdfLoading = (Globals.TYPE_BOOK == Globals.COLLECTION ? true : false);
+            boolean isCollectionLoading = (Globals.TYPE_BOOK == Globals.COLLECTION ? true : false);
             File[] listOfFiles = dir.listFiles();
 
             for (int i = 0; i < listOfFiles.length; i++) {
                 String name = listOfFiles[i].getName();
-
-                boolean loadPdf = name.toLowerCase().endsWith(".pdf") && isPdfLoading;
+                
+                //String mimetype = Utility.getMimeType(name);
+                //Utility.fileIsVideo(mimetype);
+                
+                boolean loadPdf = (name.toLowerCase().endsWith(".pdf") ||
+                                   name.toLowerCase().endsWith(".avi")) && isCollectionLoading;
+                
                 if (listOfFiles[i].isFile() && loadPdf
                         || name.toLowerCase().endsWith(".jpg")
                         || name.toLowerCase().endsWith(".jpeg")
@@ -832,6 +837,7 @@ public class XMLTree extends JTree {
 
                     filesName.add(listOfFiles[i].getName());
                 }
+               
             }
             Collections.sort(filesName);
         } catch (Exception e) {

@@ -42,6 +42,10 @@ import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.tika.config.TikaConfig;
+import org.apache.tika.io.TikaInputStream;
+import org.apache.tika.metadata.Metadata;
+import org.apache.tika.mime.MediaType;
 import org.apache.ws.commons.util.NamespaceContextImpl;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -325,10 +329,33 @@ public class Utility {
 
         return result;
     }
+    
+    public static boolean fileIsVideo(String mimetype) {
+        return mimetype.substring(0, 5).equalsIgnoreCase("video");
+    }
 
     public static String getMimeType(String filename) {
+        
+        String result = null;
+        MediaType mimetype;
+        
+        try {
+            File x = new File (Globals.SELECTED_FOLDER_SEP + filename);
+            FileInputStream is = new FileInputStream(x);
+        
+            TikaConfig tika = new TikaConfig();
+            
+            mimetype = tika.getDetector().detect(TikaInputStream.get(is), new Metadata());
+            result = mimetype.toString();
+        }
+        catch (Exception e) {
+          logger.info("Exception during mimetype detection.");
+        }
+        return result;
+       /*
         FileNameMap fileNameMap = URLConnection.getFileNameMap();
         return fileNameMap.getContentTypeFor(filename);
+        */
     }
 
     public static File getUniqueFileName(String prefix, String suffix) {

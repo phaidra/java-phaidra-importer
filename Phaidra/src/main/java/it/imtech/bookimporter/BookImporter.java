@@ -1279,7 +1279,6 @@ public class BookImporter extends javax.swing.JFrame {
          * default look and feel. For details see
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
-        /*
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -1297,7 +1296,7 @@ public class BookImporter extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        */
+
         /*
          * Create and display the form
          */

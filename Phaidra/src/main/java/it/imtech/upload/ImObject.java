@@ -103,22 +103,59 @@ public class ImObject {
      * @return Identificativo dell'oggetto
      * @throws Exception 
      */
-    protected String createPicture(String path, String mimetype) throws Exception {
+    protected String createPicture(String path, String mimetype, UploadProgress.UplTask task) throws Exception {
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadimage1",bundle));
         Picture picture = phaidra.createPicture("Picture Java");
+        
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric2",bundle));
         picture.addPicture(path, mimetype);
+        
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
         picture.addMetadata(addPhaidraMetadata(picture.getPID(),""));
 
         //Nel caso di pubblicazione postposta
         if (lockObjectsUntil != null) {
             if (lockObjectsUntil != "") {
+                task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric4",bundle));
                 picture.grantUsername(username, lockObjectsUntil); 
-               // picture.addDatastreamContent("RIGHTS", "text/xml", create_rights(lockObjectsUntil), "RIGHTS", "X");
             }
         }
-
+        
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadimage5",bundle));
         picture.save();
 
         return picture.getPID();
+    }
+    
+    /**
+     * Crea un' Oggetto picture di Fedora con relativi metadati e blocco
+     * @param path Path del file 
+     * @param mimetype Tipo di file
+     * @param task Gestore dei log
+     * @return Identificativo dell'oggetto
+     * @throws Exception 
+     */
+    protected String createVideo(String path, String mimetype, UploadProgress.UplTask task) throws Exception {
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadvideo1",bundle));
+        Video video = phaidra.createVideo("Video Java");
+        
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric2",bundle));
+        video.addVideo(path, mimetype);
+        
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
+        video.addMetadata(addPhaidraMetadata(video.getPID(),""));
+
+        //Nel caso di pubblicazione postposta
+        if (lockObjectsUntil != null) {
+            if (lockObjectsUntil != "") {
+                task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric4",bundle));
+                video.grantUsername(username, lockObjectsUntil); 
+            }
+        }
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadvideo5",bundle));
+        video.save();
+
+        return video.getPID();
     }
 
     /**
@@ -128,19 +165,24 @@ public class ImObject {
      * @return
      * @throws Exception 
      */
-    protected String createDocument(String path, String mimetype) throws Exception {
-        Document doc = phaidra.createDocument("Picture Java");
+    protected String createDocument(String path, String mimetype, UploadProgress.UplTask task) throws Exception {
+        task.addUploadInfoInnerText(Utility.getBundleString("uploaddocument1",bundle));
+        Document doc = phaidra.createDocument("Document Java");
+        
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric2",bundle));
         doc.addPDF(path);
+        
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
         doc.addMetadata(addPhaidraMetadata(doc.getPID(),""));
 
         //Nel caso di pubblicazione postposta
         if (lockObjectsUntil != null) {
             if (lockObjectsUntil != "") {
+                task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric4",bundle));
                 doc.grantUsername(username, lockObjectsUntil); 
-              //  doc.addDatastreamContent("RIGHTS", "text/xml", create_rights(lockObjectsUntil), "RIGHTS", "X");
             }
         }
-
+        task.addUploadInfoInnerText(Utility.getBundleString("uploaddocument5",bundle));
         doc.save();
 
         return doc.getPID();
