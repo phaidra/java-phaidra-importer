@@ -16,6 +16,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
@@ -349,16 +351,19 @@ public class MetaUtility {
         int lenght = submetadatas.size();
         int labelwidth = 220;
         int i = 0;
-
+        
+        
         for (Map.Entry<Object, Metadata> kv : submetadatas.entrySet()) {
+            ArrayList<Component> tabobjects = new ArrayList<Component>();
+            
             if (kv.getValue().MID == 17 || kv.getValue().MID == 23 || kv.getValue().MID == 18 || kv.getValue().MID == 137) {
                 continue;
             }
 
             //Crea un jpanel nuovo e fa appen su parent
-            JPanel innerPanel = new JPanel(new MigLayout());
+            JPanel innerPanel = new JPanel(new MigLayout("fillx, insets 2 2 2 2"));
             innerPanel.setName("pannello" + level + i);
-
+            
             i++;
             String datatype = kv.getValue().datatype.toString();
 
@@ -382,28 +387,29 @@ public class MetaUtility {
                 catch (Exception ex) {
                     logger.error("Errore nell'aggiunta delle classificazioni");
                 }
-                
-                parent.add(innerPanel, "wrap,width :700:");
+                parent.add(innerPanel, "wrap,growx");
+                BookImporter.policy.addIndexedComponent(combo);
+                //tabobjects.add(combo);
                 continue;
             }
 
             if (datatype.equals("Node")) {
                 JLabel label = new JLabel();
-                label.setText(kv.getValue().description.toString());
+                label.setText(kv.getValue().description);
                 label.setPreferredSize(new Dimension(100, 20));
 
                 int size = 16 - (level * 2);
                 Font myFont = new Font("MS Sans Serif", Font.PLAIN, size);
                 label.setFont(myFont);
                 
-                innerPanel.add(label, "wrap");
+                innerPanel.add(label, "wrap, growx");
             } else {
                 String title = "";
 
                 if (kv.getValue().mandatory.equals("Y") || kv.getValue().MID == 14 || kv.getValue().MID == 15) {
-                    title = kv.getValue().description.toString() + " *";
+                    title = kv.getValue().description + " *";
                 } else {
-                    title = kv.getValue().description.toString();
+                    title = kv.getValue().description;
                 }
 
                 innerPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), title, TitledBorder.LEFT, TitledBorder.TOP));
@@ -448,51 +454,89 @@ public class MetaUtility {
                     
                     for (int k = 0; k < voc.getItemCount(); k++) {
                         Map.Entry<String, String> el = (Map.Entry<String, String>) voc.getItemAt(k);
-                        if(el.getValue().toString().equals(selected))
+                        if(el.getValue().equals(selected))
                             voc.setSelectedIndex(k);
                     }
                     
                     voc.setPreferredSize(new Dimension(150, 30));
-                    innerPanel.add(voc, "wrap");
+                    innerPanel.add(voc, "wrap, width :400:");
+                    //BookImporter.policy.addIndexedComponent(voc);
+                    tabobjects.add(voc);
                 } else if (datatype.equals("CharacterString")) {
-                    JTextArea textField = new javax.swing.JTextArea();
+                    final JTextArea textField = new javax.swing.JTextArea();
                     textField.setName("MID_" + Integer.toString(kv.getValue().MID));
                     textField.setPreferredSize(new Dimension(230, 0));
                     textField.setText(kv.getValue().value);
                     textField.setLineWrap(true);
                     textField.setWrapStyleWord(true);
+                    innerPanel.add(textField, "wrap, width :300:");
                     
-                    innerPanel.add(textField, "wrap");
+                    textField.addKeyListener(new KeyAdapter() {
+                        @Override
+                        public void keyPressed(KeyEvent e) {
+                            if (e.getKeyCode() == KeyEvent.VK_TAB) {
+                                if (e.getModifiers() > 0) {
+                                    textField.transferFocusBackward();
+                                } else {
+                                    textField.transferFocus();
+                                }
+                                e.consume();
+                            }
+                        }
+                    });
+                    
+                    tabobjects.add(textField);
                 } else if (datatype.equals("LangString")) {
                     JScrollPane inner_scroll = new javax.swing.JScrollPane();
                     inner_scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
                     inner_scroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
                     inner_scroll.setPreferredSize(new Dimension(240, 80));
                     inner_scroll.setName("langStringScroll");
-                    JTextArea jTextArea1 = new javax.swing.JTextArea();
+                    final JTextArea jTextArea1 = new javax.swing.JTextArea();
                     jTextArea1.setName("MID_" + Integer.toString(kv.getValue().MID));
                     jTextArea1.setText(kv.getValue().value);
                     
-                    jTextArea1.setSize(new Dimension(240, 70));
+                    jTextArea1.setSize(new Dimension(350, 70));
                     jTextArea1.setLineWrap(true);
                     jTextArea1.setWrapStyleWord(true);
 
                     inner_scroll.setViewportView(jTextArea1);
-                    innerPanel.add(inner_scroll);
+                    innerPanel.add(inner_scroll, "width :350:");
 
                     //Add combo language box
                     JComboBox voc = getComboLangBox(kv.getValue().language);
                     voc.setName("MID_" + Integer.toString(kv.getValue().MID) + "_lang");
 
                     voc.setPreferredSize(new Dimension(200, 20));
-                    innerPanel.add(voc, "wrap");
+                    innerPanel.add(voc, "wrap, width :400:");
+                    
+                    jTextArea1.addKeyListener(new KeyAdapter() {
+                        @Override
+                        public void keyPressed(KeyEvent e) {
+                            if (e.getKeyCode() == KeyEvent.VK_TAB) {
+                                if (e.getModifiers() > 0) {
+                                    jTextArea1.transferFocusBackward();
+                                } else {
+                                    jTextArea1.transferFocus();
+                                }
+                                e.consume();
+                            }
+                        }
+                    });
+                    tabobjects.add(jTextArea1);
+                    tabobjects.add(voc);
                 } else if (datatype.equals("Language")) {
                     final JComboBox voc = getComboLangBox(kv.getValue().value);
                     voc.setName("MID_" + Integer.toString(kv.getValue().MID));
 
+                    
                     voc.setPreferredSize(new Dimension(150, 20));
                     voc.setBounds(5, 5, 150, 20);
-                    innerPanel.add(voc, "wrap");
+                    innerPanel.add(voc, "wrap, width :500:");
+                    
+                    //BookImporter.policy.addIndexedComponent(voc);
+                    tabobjects.add(voc);
+                            
                 } else if (datatype.equals("Boolean")) {
                     int selected = 0;
                     TreeMap bin = new TreeMap<String, String>();
@@ -525,7 +569,9 @@ public class MetaUtility {
 
                     voc.setPreferredSize(new Dimension(150, 20));
                     voc.setBounds(5, 5, 150, 20);
-                    innerPanel.add(voc, "wrap");
+                    innerPanel.add(voc, "wrap, width :300:");
+                    //BookImporter.policy.addIndexedComponent(voc);
+                    tabobjects.add(voc);
                 } else if (datatype.equals("License")) {
                     String selectedIndex = null;
                     int vindex = 0;
@@ -568,9 +614,11 @@ public class MetaUtility {
                     voc.setPreferredSize(new Dimension(150, 20));
 
                     voc.setBounds(5, 5, 150, 20);
-                    innerPanel.add(voc, "wrap");
+                    innerPanel.add(voc, "wrap, width :500:");
+                    //BookImporter.policy.addIndexedComponent(voc);
+                    tabobjects.add(voc);
                 } else if (datatype.equals("DateTime")) {
-                    JXDatePicker datePicker = new JXDatePicker();
+                    final JXDatePicker datePicker = new JXDatePicker();
                     datePicker.setName("MID_" + Integer.toString(kv.getValue().MID));
 
                     if (kv.getValue().value != null) {
@@ -582,8 +630,8 @@ public class MetaUtility {
                             //Console.WriteLine("ERROR import date:" + ex.Message);
                         }
                     }
-
-                    innerPanel.add(datePicker, "wrap");
+                    
+                    innerPanel.add(datePicker, "wrap, width :200:");
                 }
             }
 
@@ -591,7 +639,11 @@ public class MetaUtility {
             create_metadata_view(kv.getValue().submetadatas, innerPanel, level + 1);
 
             if (kv.getValue().editable.equals("Y") || (datatype.equals("Node") && kv.getValue().hidden.equals("0"))) {
-                parent.add(innerPanel, "wrap,width :700:");
+                parent.add(innerPanel, "wrap, growx");
+                
+                for (Component tabobject : tabobjects) {
+                    BookImporter.policy.addIndexedComponent(tabobject); 
+                }
             }
         }
     }

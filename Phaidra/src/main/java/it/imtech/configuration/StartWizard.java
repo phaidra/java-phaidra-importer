@@ -33,9 +33,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
-import javax.swing.UnsupportedLookAndFeelException;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.io.FileUtils;
@@ -185,7 +182,7 @@ public class StartWizard  {
         //Stile interfaccia
         mainFrame.getContentPane().setBackground(Color.white);
         mainFrame.getContentPane().setLayout(new BorderLayout());
-        mainFrame.getContentPane().setPreferredSize(new Dimension(640, 370));
+        mainFrame.getContentPane().setPreferredSize(new Dimension(640, 400));
         mainFrame.getContentPane().add(BorderLayout.CENTER, mainPanel);
         //mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainFrame.pack();
@@ -362,7 +359,7 @@ public class StartWizard  {
         SwingUtilities.invokeLater(new Runnable(){
             @Override
             public void run(){
-                try {
+                /*try {
                     for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                         if ("Nimbus".equals(info.getName())) {
                             UIManager.setLookAndFeel(info.getClassName());
@@ -382,7 +379,7 @@ public class StartWizard  {
                          logger.fatal(StartWizard.class.getName() + ":" + ex.getMessage());
                     }
                 }
-                 
+                 */
                 new StartWizard();
             }
         });

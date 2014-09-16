@@ -590,12 +590,10 @@
             <artifactId>izpack-panels</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!--
         <dependency>
-            <groupId>com.akathist.maven.plugins.launch4j</groupId>
-            <artifactId>launch4j-maven-plugin</artifactId>
-            <version>1.5.2</version>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>jgoodies-looks</artifactId>
+            <version>2.5.3</version>
         </dependency>
-        -->
     </dependencies>
 </project>

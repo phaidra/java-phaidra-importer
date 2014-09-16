@@ -15,6 +15,8 @@ import it.imtech.xmltree.XMLTree;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.util.*;
 import javax.swing.*;
@@ -70,6 +72,8 @@ public class BookImporter extends javax.swing.JFrame {
     private JCheckBox jCheckBox1 = new JCheckBox();
     
     private JButton jButton2 = new JButton();
+    
+    public static IndexedFocusTraversalPolicy policy;
     
     //public static Locale localConst = null;
     /**
@@ -158,7 +162,8 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }
     
-    public void createFrontalPane(){
+    public final void createFrontalPane(){
+        
         jLayeredPane2.removeAll();
         MigLayout miglayout = new MigLayout(); 
                
@@ -188,7 +193,7 @@ public class BookImporter extends javax.swing.JFrame {
             book_panel.add(jButton2);
             book_panel.add(jCheckBox1, "gapleft 50");
             
-            jLayeredPane2.add(book_panel, "wrap, grow, height 60:60:60");
+            jLayeredPane2.add(book_panel, "wrap, grow, height 80:80:80");
             jLayeredPane2.add(jPanel3, "wrap, grow, height 100:600:600, align center");
         }
         else{
@@ -313,8 +318,7 @@ public class BookImporter extends javax.swing.JFrame {
                     setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                     MetaUtility.getInstance().read_uwmetadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA);
 
-                    jLayeredPane1.removeAll();
-                    jLayeredPane1.revalidate();
+                    
 
                     //Ridisegna l'interfaccia
                     this.setMetadataTab();
@@ -543,40 +547,105 @@ public class BookImporter extends javax.swing.JFrame {
     private void setMetadataTab() throws Exception {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
+        jLayeredPane1.removeAll();
+        jLayeredPane1.revalidate();
+                    
         Dimension iDim = new Dimension(840, 0);
         int p_x = 10;
         int p_y = 10;
-
+            
         javax.swing.JScrollPane main_scroller = new javax.swing.JScrollPane();
-        main_panel = new JPanel(new MigLayout());
+        main_panel = new JPanel(new MigLayout("fillx, insets 10 10 10 10"));
         setName("main_panel");
 
         main_scroller.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         main_scroller.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        main_scroller.setPreferredSize(new java.awt.Dimension(100, 550));
+        main_scroller.setPreferredSize(new java.awt.Dimension(100, 750));
         main_scroller.setViewportView(main_panel);
         main_scroller.setBorder(null);
-        main_scroller.setBounds(5, 5, 750, 650);
+        main_scroller.setBounds(5, 5, 750, 750);
 
         JPanel innerPanel = new JPanel(new MigLayout());
         innerPanel.setName("pannello000");
         JLabel label = new JLabel();
         label.setText(Utility.getBundleString("obblfield", bundle));
-        label.setPreferredSize(new Dimension(690, 12));
         label.setHorizontalAlignment(SwingConstants.RIGHT);
         label.setFont(new Font("MS Sans Serif", Font.PLAIN, 12));
-                
         main_panel.add(label, "wrap");
-            
+          
+        policy = new IndexedFocusTraversalPolicy();
+        
         //Metodo che si occupa della costruzione dell'interfaccia a partire dalle strutture dati
         MetaUtility.getInstance().create_metadata_view(metadata,  main_panel, 0);
+        
+        jLayeredPane1.setLayout(new MigLayout("fillx, insets 10 10 10 10"));
+        jLayeredPane1.add(main_scroller, "wrap, growx");
+        
+        KeyboardFocusManager.getCurrentKeyboardFocusManager()
+                            .addPropertyChangeListener("focusOwner", 
+                     new PropertyChangeListener() {
 
-        jLayeredPane1.add(main_scroller, "wrap");
-
+          @Override
+          public void propertyChange(PropertyChangeEvent evt) {
+            if (!(evt.getNewValue() instanceof JComponent)) {
+              return;
+            }
+            JComponent focused = (JComponent) evt.getNewValue();
+            if (main_panel.isAncestorOf(focused)) {
+              System.out.println("Scrolling to " + focused.getName());
+              focused.scrollRectToVisible(focused.getBounds());
+            }
+          }
+        });
+        
+        setFocusTraversalPolicy(policy);        
         setCursor(null);
     }
+    
+    public class IndexedFocusTraversalPolicy extends 
+        FocusTraversalPolicy {
 
+         private ArrayList<Component> components = 
+            new ArrayList<Component>();
+
+         public void addIndexedComponent(Component component) {
+              components.add(component);
+         }
+
+         @Override
+         public Component getComponentAfter(Container aContainer, 
+                     Component aComponent) {
+              int atIndex = components.indexOf(aComponent);              
+              int nextIndex = (atIndex + 1) % components.size();
+              return components.get(nextIndex);
+         }
+
+         @Override
+         public Component getComponentBefore(Container aContainer,
+               Component aComponent) {
+              int atIndex = components.indexOf(aComponent);
+              int nextIndex = (atIndex + components.size() - 1) %
+                      components.size();
+              return components.get(nextIndex);
+         }
+
+         @Override
+         public Component getFirstComponent(Container aContainer) {
+              return components.get(0);
+         }
+         
+         @Override
+         public Component getLastComponent(Container aContainer) {
+              return components.get(0);
+         }
+         
+         @Override
+         public Component getDefaultComponent(Container aContainer) {
+              return components.get(0);
+         }
+      }
+    
     /**
      * Inserisce in una struttura dati solo i campi che si possono editare tra
      * tutti i campi di un JPanel
@@ -1210,6 +1279,7 @@ public class BookImporter extends javax.swing.JFrame {
          * default look and feel. For details see
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
+        /*
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -1227,7 +1297,7 @@ public class BookImporter extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        */
         /*
          * Create and display the form
          */
