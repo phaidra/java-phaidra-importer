@@ -6,11 +6,14 @@
 package it.imtech.develop;
 
 import it.imtech.bookimporter.BookImporter;
+import static it.imtech.configuration.StartWizard.logger;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
 import it.imtech.utility.Server;
 import java.util.Locale;
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -31,7 +34,6 @@ public class BookImporterDevelop {
         String oaiIdentifier = "cab.unipd.it";
             
         return new Server(servername, fedoraurl, phaidraurl, staticurl, stylesheeturl, oaiIdentifier);
-
     }
     
     public final void testBookLayout(){
@@ -51,7 +53,27 @@ public class BookImporterDevelop {
         SwingUtilities.invokeLater(new Runnable(){
             @Override
             public void run(){
-                   new BookImporterDevelop();
+                try {
+                    for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                        if ("Nimbus".equals(info.getName())) {
+                            UIManager.setLookAndFeel(info.getClassName());
+                            break;
+                        }
+                    }
+                } catch (Exception e) {
+                    try {
+                        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    } catch (ClassNotFoundException ex) {
+                         logger.fatal(ex.getMessage()); 
+                    } catch (InstantiationException ex) {
+                         logger.fatal(ex.getMessage());
+                    } catch (IllegalAccessException ex) {
+                         logger.fatal(ex.getMessage());
+                    } catch (UnsupportedLookAndFeelException ex) {
+                         logger.fatal(ex.getMessage());
+                    }
+                }
+                  new BookImporterDevelop();
             }
         });
     };

@@ -25,8 +25,9 @@ public class Metadata {
         public String language;
         public String mandatory;
         public String hidden;
+        public String sequence;
 
-        public Metadata(int MID, int MID_parent, String description, String datatype, String editable, String foxmlname,String value, String foxmlnamespace,String mandatory,String hidden)
+        public Metadata(int MID, int MID_parent, String description, String datatype, String editable, String foxmlname,String value, String foxmlnamespace,String mandatory,String hidden, String sequence)
         {
             this.MID = MID;
             this.MID_parent = MID_parent;
@@ -39,5 +40,6 @@ public class Metadata {
             this.language = null;
             this.mandatory = mandatory;
             this.hidden = hidden;
+            this.sequence = sequence;
         }
 }

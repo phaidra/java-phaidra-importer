@@ -228,7 +228,16 @@ public class ImObject {
         HashMap<String, String> objectDefaultValues = getDefaultValues(PID, dataContent);
 
         org.w3c.dom.Document doc = MetaUtility.getInstance().create_uwmetadata(PID, -1, objectDefaultValues,title);
-
+        
+        XPath taxonpath = XPathFactory.newInstance().newXPath();
+        String expression = "//*[local-name()='taxonpath']";
+        NodeList nodeList = (NodeList) taxonpath.evaluate(expression, doc, XPathConstants.NODESET);
+        
+        for(int i=0;i<nodeList.getLength();i++){
+            Element taxon = (Element) nodeList.item(i);
+            taxon.removeAttribute("seq");
+        }
+        
         String meta = Utility.getStringFromDocument(doc);
 
         String metadata = meta.replace("PID", PID);

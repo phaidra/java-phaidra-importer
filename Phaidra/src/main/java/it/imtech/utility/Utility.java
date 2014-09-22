@@ -16,6 +16,7 @@ import java.awt.Frame;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.FileNameMap;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -39,6 +40,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.*;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -77,6 +79,28 @@ public class Utility {
         }
         
         return jrPath;
+    }
+ 
+    public static boolean internetConnectionAvailable(){
+        boolean connected = false;
+        try {
+            try {
+                URL url = new URL("http://www.google.com");
+                System.out.println(url.getHost());
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                con.connect();
+                
+                if (con.getResponseCode() == 200){
+                    connected = true;
+                }
+            } catch (Exception exception) {
+                logger.info("Internet Connection not available!");
+            }
+        } catch (Exception e) {
+            logger.info("Exception during check Internet Connection!");
+        }
+        
+        return connected;
     }
     
     public static void cleanUndoDir() {
@@ -340,7 +364,7 @@ public class Utility {
         MediaType mimetype;
         
         try {
-            File x = new File (Globals.SELECTED_FOLDER_SEP + filename);
+            File x = new File (filename);
             FileInputStream is = new FileInputStream(x);
         
             TikaConfig tika = new TikaConfig();
@@ -352,10 +376,6 @@ public class Utility {
           logger.info("Exception during mimetype detection.");
         }
         return result;
-       /*
-        FileNameMap fileNameMap = URLConnection.getFileNameMap();
-        return fileNameMap.getContentTypeFor(filename);
-        */
     }
 
     public static File getUniqueFileName(String prefix, String suffix) {
@@ -387,6 +407,43 @@ public class Utility {
             leaves = 0;
         }
         return leaves;
+    }
+    
+    public static void makeBackupMetadata(String filename){
+        BufferedInputStream inputStream = null;
+        BufferedOutputStream outputStream = null;
+        byte[] buffer = new byte[1024];
+        int bytesRead;
+        String path = "";
+        
+        File f = new File(Globals.BACKUP_METADATA);
+        File s = new File(Globals.SESSION_METADATA);
+        
+        try {
+            if (!Globals.DEBUG){
+                path = SelectedServer.getInstance(null).getHTTPStaticBaseURL() + filename;
+                URL url = new URL(path);
+                URLConnection connection = url.openConnection();
+
+                inputStream = new BufferedInputStream(connection.getInputStream());
+                
+
+                outputStream = new BufferedOutputStream(new FileOutputStream(f));
+
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                inputStream.close();
+                outputStream.close();
+            }
+            
+            FileUtils.copyFile(f, s);
+        } catch (MalformedURLException ex) {
+            logger.error("Cannot donwload file: "+path+"  "+ex.getMessage());
+        } catch (IOException ex) {
+            logger.error("Cannot donwload file: "+path+"  "+ex.getMessage());
+        }
     }
     
     public static Document getDocument(String filename,boolean classif) throws MalformedURLException, ParserConfigurationException, SAXException, IOException{

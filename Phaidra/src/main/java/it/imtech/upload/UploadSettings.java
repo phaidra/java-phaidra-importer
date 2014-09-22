@@ -28,13 +28,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.border.TitledBorder;
-import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
@@ -63,6 +61,9 @@ public class UploadSettings extends javax.swing.JFrame {
     private static UploadSettings istance;
     //https://phaidratest.cab.unipd.it/detail_object/o:16121?tab=0#mda
 
+    String set_username;
+    String set_password;
+        
     public static UploadSettings getInstance(Locale currentLocale) {
         if (istance == null) {
             istance = new UploadSettings();
@@ -104,11 +105,9 @@ public class UploadSettings extends javax.swing.JFrame {
         jPanel3.add(datePicker, "wrap");
         jPanel3.revalidate();
         
-        XMLConfiguration config;
-        String set_username;
-        String set_password;
-        
         try {
+            XMLConfiguration config;
+    
             config = new XMLConfiguration(Globals.INTERNAL_CONFIG);
             
             set_username = config.getString("credential.username[@value]");
@@ -139,7 +138,6 @@ public class UploadSettings extends javax.swing.JFrame {
     }
 
     private void setDefaultValues(Locale currentLocale) {
-        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         jPasswordField1.setText(this.password);
         jTextField3.setText(this.username);
     }
@@ -485,7 +483,7 @@ public class UploadSettings extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(BookImporter.getInstance(), Utility.getBundleString("error17",bundle));
                     }
                 } else {
-                    JOptionPane.showMessageDialog(BookImporter.getInstance(), error.toString());
+                    JOptionPane.showMessageDialog(BookImporter.getInstance(), error);
                 }
 
             } catch (Exception ex) {

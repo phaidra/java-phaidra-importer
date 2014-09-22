@@ -15,7 +15,7 @@ import java.util.Locale;
  * @author Mauro
  */
 public class Globals {
-    public final static boolean DEBUG = true;
+    public final static boolean DEBUG = false;
     public final static String DEBUG_FOLDER = "remote";
     public final static String DEBUG_XML = Globals.DEBUG_FOLDER + Utility.getSep() + "xml" + Utility.getSep() + "config.xml";
     
@@ -33,7 +33,9 @@ public class Globals {
     public final static String URL_VOCABULARY = FOLD_XML + "vocabulary.xml";
     public final static String URL_CLASS_LIST = FOLD_XML + "classification_list.xml";
     public final static String CLASSIF_CONFIG = "classification.xml";
-   
+
+    public static boolean ONLINE = false;
+    
     //Book Collection definition
     public final static char BOOK = 'B';
     public final static char COLLECTION = 'C';
@@ -47,6 +49,11 @@ public class Globals {
     public static String BLANKPAGE = USER_DIR + "config" + Utility.getSep() + "blankpage.jpg";
     public static String INTERNAL_CONFIG = USER_DIR +"config" + Utility.getSep() + "config.xml";
      
+       
+    //BACKUP_METADATA
+    public static String SESSION_METADATA = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "sessionuwmetadata.xml";
+    public static String BACKUP_METADATA  = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "backupuwmetadata.xml";
+    public static String EXPORT_METADATA  = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
     //Path della cartella che contiene l'eseguibile dell'applicazione
     public static String JRPATH = null;
     public static String BASE_RESOURCES = "resources" +Utility.getSep()+ "messages";
@@ -79,24 +86,18 @@ public class Globals {
         Globals.RESOURCES = JRPATH + BASE_RESOURCES;
         Globals.CURRENT_LOCALE = new Locale("en");
         
-        if(DEBUG){
+        if(DEBUG || !ONLINE){
             USER_DIR = "";
             CURRENT_VERSION = "2.0";
-            UNDO_DIR = "appdata"+ Utility.getSep() + "undo"+Utility.getSep();
-            LOG4J = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "log4j.xml";
-            BLANKPAGE = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "blankpage.jpg";
-            INTERNAL_CONFIG = "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "config.xml";
-  
+            UNDO_DIR = Globals.JRPATH + "appdata"+ Utility.getSep() + "undo"+Utility.getSep();
+            LOG4J = Globals.JRPATH + "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "log4j.xml";
+            BLANKPAGE = Globals.JRPATH + "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "blankpage.jpg";
+            INTERNAL_CONFIG = Globals.JRPATH + "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "config.xml";
             
-            ArrayList<Language> langs = new ArrayList<Language>();
-            Language lang = new Language("en", "binglese", "Inglese");
-            langs.add(lang);
-            lang = new Language("it", "bitaliano", "Italiano");
-            langs.add(lang);
-            lang = new Language("de", "btedesco", "Tedesco");
-            langs.add(lang);
-            
-            LANGUAGES = langs.toArray(new Language[langs.size()]);
+            BACKUP_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "backupuwmetadata.xml";
+            EXPORT_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
+            SESSION_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "sessionuwmetadata.xml";
+           
         }    
     }
     

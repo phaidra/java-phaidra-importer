@@ -59,13 +59,23 @@ public class StartWizard  {
     JFrame mainFrame;
     
     ResourceBundle bundle;
+     
+    private void backupOnlineFiles(){
+        
+    }
+    
     
     /**
      * Creates new form Main
      */
     public StartWizard() {
         mainFrame = new JFrame();
-        Globals.setGlobalVariables();
+        
+        if(Utility.internetConnectionAvailable()){
+            Globals.ONLINE = true;
+        }
+                Globals.setGlobalVariables();
+        
         bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
         if(!checkAppDataFiles()){
@@ -73,6 +83,7 @@ public class StartWizard  {
             Utility.getBundleString("copy_appdata_title", bundle), JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }
+        
         
         DOMConfigurator.configure(Globals.LOG4J);
         
@@ -105,6 +116,9 @@ public class StartWizard  {
                     
                     ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
                     chooseFolder.updateLanguage();
+                    
+                    backupOnlineFiles();
+                    
                     c1.next(cardsPanel);
                     mainFrame.setCursor(null);
                 }
@@ -145,16 +159,23 @@ public class StartWizard  {
                     c1.previous(cardsPanel);
                }
             }
-        });
-        
-        //Creazione Panelli di configurazione
-        chooseServer = new ChooseServer(config);
-        chooseFolder = new ChooseFolder();
+        });        
         
         cardsPanel = new JPanel(new CardLayout());
         cardsPanel.setBackground(Color.WHITE);
-        cardsPanel.add(chooseServer, "1");
-        cardsPanel.add(chooseFolder, "2");
+        
+        if (Globals.ONLINE){
+            chooseServer = new ChooseServer(config);
+            chooseFolder = new ChooseFolder();
+       
+            cardsPanel.add(chooseServer, "1");
+            cardsPanel.add(chooseFolder, "2");
+        }
+        else{
+            chooseFolder = new ChooseFolder();
+            cardsPanel.add(chooseFolder, "1");
+        }
+        
         cardsPanel.setLayout(c1);
         c1.show(cardsPanel, "1");
         
