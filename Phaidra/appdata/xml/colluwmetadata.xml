@@ -13,10 +13,10 @@
         <description isocode="de">Persistente Signatur</description>
       </metadata>
       <metadata mandatory="Y" ID="2" forxmlname="title" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="4" lomref="1.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="2" ordered="N" fgslabel="uw.general.title" vid="" defaultvalue="" sequence="2" valuespace=".*">
-        <description isocode="sr">naslov Debug</description>
-        <description isocode="it">Titolo Debug</description>
-        <description isocode="en">Title Debug</description>
-        <description isocode="de">Titel Debug</description>
+        <description isocode="sr">naslov</description>
+        <description isocode="it">Titolo</description>
+        <description isocode="en">Title</description>
+        <description isocode="de">Titel</description>
       </metadata>
       <metadata mandatory="N" ID="105" forxmlname="subtitle" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552078" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.subtitle" vid="" defaultvalue="" sequence="3" valuespace=".*">
         <description isocode="sr">podnaslov</description>
@@ -504,7 +504,7 @@
     <description isocode="en">Association</description>
     <description isocode="de">Zuordnung</description>
     <description isocode="sr">ustanove</description>
-    <description isocode="it">Relazioni</description>
+    <description isocode="it">Afferenza</description>
     <metadatas>
       <metadata mandatory="N" ID="72" forxmlname="hoschtyp" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1733" lomref="10.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="71" cardinality="*" ordered="N" fgslabel="uw.organization.hoschtyp" vid="17" defaultvalue="" sequence="1" valuespace="^.*$">
         <description isocode="sr">vrsta akademskog rada</description>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <classifications>
 		<classification mandatory="N" ID="4">
 		<description isocode="de">Physics and Astronomy Classification Scheme</description>
@@ -699,8 +699,8 @@
 							<description isocode="en">Foundations of quantum mechanics; measurement theory (for optical tests of quantum theory, see 42.50.Xa)</description>
 						</taxon>
 						<taxon ID="10609" upstream_identifier="03.65.Ud">
-							<description isocode="de">Entanglement and quantum nonlocality (e.g. EPR paradox, Bell's inequalities, GHZ states, etc.) (for entanglement production and manipulation, see 03.67.Bg; for entanglement measures, witnesses etc., see 03.67.Mn; for entanglement in Bose-Einstein condensates, see 03.75.Gg)</description>
-							<description isocode="en">Entanglement and quantum nonlocality (e.g. EPR paradox, Bell's inequalities, GHZ states, etc.) (for entanglement production and manipulation, see 03.67.Bg; for entanglement measures, witnesses etc., see 03.67.Mn; for entanglement in Bose-Einstein condensates, see 03.75.Gg)</description>
+							<description isocode="de">Entanglement and quantum nonlocality (e.g. EPR paradox, Bell&apos;s inequalities, GHZ states, etc.) (for entanglement production and manipulation, see 03.67.Bg; for entanglement measures, witnesses etc., see 03.67.Mn; for entanglement in Bose-Einstein condensates, see 03.75.Gg)</description>
+							<description isocode="en">Entanglement and quantum nonlocality (e.g. EPR paradox, Bell&apos;s inequalities, GHZ states, etc.) (for entanglement production and manipulation, see 03.67.Bg; for entanglement measures, witnesses etc., see 03.67.Mn; for entanglement in Bose-Einstein condensates, see 03.75.Gg)</description>
 						</taxon>
 						<taxon ID="10610" upstream_identifier="03.65.Vf">
 							<description isocode="de">Phases: geometric; dynamic or topological</description>
@@ -7513,8 +7513,8 @@
 							<description isocode="en">Structure of clusters (e.g., metcars; not fragments of crystals; free or loosely aggregated or loosely attached to a substrate) (see also 61.48.-c for structure of fullerenes)</description>
 						</taxon>
 						<taxon ID="12183" upstream_identifier="61.46.Df">
-							<description isocode="de">Structure of nanocrystals and nanoparticles ("colloidal" quantum dots but not gate-isolated embedded quantum dots)</description>
-							<description isocode="en">Structure of nanocrystals and nanoparticles ("colloidal" quantum dots but not gate-isolated embedded quantum dots)</description>
+							<description isocode="de">Structure of nanocrystals and nanoparticles (&quot;colloidal&quot; quantum dots but not gate-isolated embedded quantum dots)</description>
+							<description isocode="en">Structure of nanocrystals and nanoparticles (&quot;colloidal&quot; quantum dots but not gate-isolated embedded quantum dots)</description>
 						</taxon>
 						<taxon ID="12184" upstream_identifier="61.46.Fg">
 							<description isocode="de">Nanotubes</description>
@@ -7787,8 +7787,8 @@
 								<description isocode="en">Elastic moduli</description>
 							</taxon>
 							<taxon ID="12246" upstream_identifier="62.20.dj">
-								<description isocode="de">Poisson's ratio</description>
-								<description isocode="en">Poisson's ratio</description>
+								<description isocode="de">Poisson&apos;s ratio</description>
+								<description isocode="en">Poisson&apos;s ratio</description>
 							</taxon>
 							<taxon ID="12247" upstream_identifier="62.20.dq">
 								<description isocode="de">Other elastic constants</description>
@@ -13889,16 +13889,16 @@
 								<description isocode="en">Musculoskeletal diseases</description>
 							</taxon>
 							<taxon ID="13665" upstream_identifier="87.19.xp">
-								<description isocode="de">Motor system disease (Parkinson's, etc.)</description>
-								<description isocode="en">Motor system disease (Parkinson's, etc.)</description>
+								<description isocode="de">Motor system disease (Parkinson&apos;s, etc.)</description>
+								<description isocode="en">Motor system disease (Parkinson&apos;s, etc.)</description>
 							</taxon>
 							<taxon ID="13666" upstream_identifier="87.19.xq">
 								<description isocode="de">Stroke</description>
 								<description isocode="en">Stroke</description>
 							</taxon>
 							<taxon ID="13667" upstream_identifier="87.19.xr">
-								<description isocode="en">Degenerative diseases (Alzheimer's, ALS, etc)</description>
-								<description isocode="de">Degenerative diseases (Alzheimer's, ALS, etc)</description>
+								<description isocode="en">Degenerative diseases (Alzheimer&apos;s, ALS, etc)</description>
+								<description isocode="de">Degenerative diseases (Alzheimer&apos;s, ALS, etc)</description>
 							</taxon>
 							<taxon ID="13668" upstream_identifier="87.19.xt">
 								<description isocode="de">Developmental diseases</description>
@@ -14973,8 +14973,8 @@
 							<description isocode="en">Photogrammetry</description>
 						</taxon>
 						<taxon ID="13909" upstream_identifier="91.10.Nj">
-							<description isocode="de">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth's rotation)</description>
-							<description isocode="en">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth's rotation)</description>
+							<description isocode="de">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth&apos;s rotation)</description>
+							<description isocode="en">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth&apos;s rotation)</description>
 						</taxon>
 						<taxon ID="13910" upstream_identifier="91.10.Op">
 							<description isocode="de">Gravity anomalies; time variable gravity</description>
@@ -15141,8 +15141,8 @@
 							<description isocode="en">Transform faults</description>
 						</taxon>
 						<taxon ID="13949" upstream_identifier="91.30.Jk">
-							<description isocode="de">Tomography in seismology (see also 91.35.Pn Tomography of the Earth's interior)</description>
-							<description isocode="en">Tomography in seismology (see also 91.35.Pn Tomography of the Earth's interior)</description>
+							<description isocode="de">Tomography in seismology (see also 91.35.Pn Tomography of the Earth&apos;s interior)</description>
+							<description isocode="en">Tomography in seismology (see also 91.35.Pn Tomography of the Earth&apos;s interior)</description>
 						</taxon>
 						<taxon ID="13950" upstream_identifier="91.30.Mv">
 							<description isocode="de">Strong motions and shock waves</description>
@@ -15209,8 +15209,8 @@
 						</taxons>
 					</taxon>
 					<taxon ID="13965" upstream_identifier="91.35.-x">
-						<description isocode="de">Earth's interior structure and properties</description>
-						<description isocode="en">Earth's interior structure and properties</description>
+						<description isocode="de">Earth&apos;s interior structure and properties</description>
+						<description isocode="en">Earth&apos;s interior structure and properties</description>
 						<taxons>
 						<taxon ID="13966" upstream_identifier="91.35.Cb">
 							<description isocode="de">Models of interior structure</description>
@@ -15221,20 +15221,20 @@
 							<description isocode="en">Heat flow; geothermy (see also 91.50.Ln Heat flow (benthic)-in Marine geology and geophysics)</description>
 						</taxon>
 						<taxon ID="13968" upstream_identifier="91.35.Ed">
-							<description isocode="de">Structure of the Earth's interior below the upper mantle</description>
-							<description isocode="en">Structure of the Earth's interior below the upper mantle</description>
+							<description isocode="de">Structure of the Earth&apos;s interior below the upper mantle</description>
+							<description isocode="en">Structure of the Earth&apos;s interior below the upper mantle</description>
 						</taxon>
 						<taxon ID="13969" upstream_identifier="91.35.Gf">
 							<description isocode="en">Structure of the crust and upper mantle</description>
 							<description isocode="de">Structure of the crust and upper mantle</description>
 						</taxon>
 						<taxon ID="13970" upstream_identifier="91.35.Lj">
-							<description isocode="de">Composition and state of the Earth's interior (see also 91.67.gb-in Geophysics Appendix)</description>
-							<description isocode="en">Composition and state of the Earth's interior (see also 91.67.gb-in Geophysics Appendix)</description>
+							<description isocode="de">Composition and state of the Earth&apos;s interior (see also 91.67.gb-in Geophysics Appendix)</description>
+							<description isocode="en">Composition and state of the Earth&apos;s interior (see also 91.67.gb-in Geophysics Appendix)</description>
 						</taxon>
 						<taxon ID="13971" upstream_identifier="91.35.Pn">
-							<description isocode="de">Tomography of the Earth's interior (see also 91.30.Jk Tomography in seismology)</description>
-							<description isocode="en">Tomography of the Earth's interior (see also 91.30.Jk Tomography in seismology)</description>
+							<description isocode="de">Tomography of the Earth&apos;s interior (see also 91.30.Jk Tomography in seismology)</description>
+							<description isocode="en">Tomography of the Earth&apos;s interior (see also 91.30.Jk Tomography in seismology)</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -15827,8 +15827,8 @@
 								<description isocode="en">Ocean waves and oscillations</description>
 							</taxon>
 							<taxon ID="14114" upstream_identifier="92.10.Iv">
-								<description isocode="de">Ocean influence of Earth's rotation</description>
-								<description isocode="en">Ocean influence of Earth's rotation</description>
+								<description isocode="de">Ocean influence of Earth&apos;s rotation</description>
+								<description isocode="en">Ocean influence of Earth&apos;s rotation</description>
 							</taxon>
 							<taxon ID="14115" upstream_identifier="92.10.Kp">
 								<description isocode="en">Sea-air energy exchange processes (see also 92.60.Cc-in meteorology)</description>
@@ -17585,8 +17585,8 @@
 						</taxons>
 					</taxon>
 					<taxon ID="14534" upstream_identifier="97.21.+a">
-						<description isocode="de">Pre-main sequence objects, young stellar objects (YSO's) and protostars (T Tauri stars, Orion population, Herbig-Haro objects, Bok globules, bipolar outflows, cometary nebulae, etc.) (see also 98.38.Fs and 98.58.Fd Jets, outflows and bipolar flows-in the Milky Way and external galaxies respectively)</description>
-						<description isocode="en">Pre-main sequence objects, young stellar objects (YSO's) and protostars (T Tauri stars, Orion population, Herbig-Haro objects, Bok globules, bipolar outflows, cometary nebulae, etc.) (see also 98.38.Fs and 98.58.Fd Jets, outflows and bipolar flows-in the Milky Way and external galaxies respectively)</description>
+						<description isocode="de">Pre-main sequence objects, young stellar objects (YSO&apos;s) and protostars (T Tauri stars, Orion population, Herbig-Haro objects, Bok globules, bipolar outflows, cometary nebulae, etc.) (see also 98.38.Fs and 98.58.Fd Jets, outflows and bipolar flows-in the Milky Way and external galaxies respectively)</description>
+						<description isocode="en">Pre-main sequence objects, young stellar objects (YSO&apos;s) and protostars (T Tauri stars, Orion population, Herbig-Haro objects, Bok globules, bipolar outflows, cometary nebulae, etc.) (see also 98.38.Fs and 98.58.Fd Jets, outflows and bipolar flows-in the Milky Way and external galaxies respectively)</description>
 					</taxon>
 					<taxon ID="14535" upstream_identifier="97.30.-b">
 						<description isocode="en">Variable and peculiar stars (including novae)</description>
@@ -18177,8 +18177,8 @@
 							<description isocode="en">Errata</description>
 						</taxon>
 						<taxon ID="14674" upstream_identifier="99.10.Fg">
-							<description isocode="de">Publisher's note</description>
-							<description isocode="en">Publisher's note</description>
+							<description isocode="de">Publisher&apos;s note</description>
+							<description isocode="en">Publisher&apos;s note</description>
 						</taxon>
 						<taxon ID="14675" upstream_identifier="99.10.Jk">
 							<description isocode="de">Corrected article</description>
@@ -19653,8 +19653,8 @@
 							<description isocode="en">Photogrammetry</description>
 						</taxon>
 						<taxon ID="15032" upstream_identifier="91.10.Nj">
-							<description isocode="de">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth's rotation)</description>
-							<description isocode="en">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth's rotation)</description>
+							<description isocode="de">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth&apos;s rotation)</description>
+							<description isocode="en">Rotational variations; polar wobble (see also 92.10.Iv Ocean influence of Earth&apos;s rotation)</description>
 						</taxon>
 						<taxon ID="15033" upstream_identifier="91.10.Op">
 							<description isocode="de">Gravity anomalies; time variable gravity</description>
@@ -19863,8 +19863,8 @@
 							<description isocode="en">Transform faults</description>
 						</taxon>
 						<taxon ID="15081" upstream_identifier="91.30.Jk">
-							<description isocode="de">Tomography in seismology (see also 91.35.Pn Tomography of the Earth's interior)</description>
-							<description isocode="en">Tomography in seismology (see also 91.35.Pn Tomography of the Earth's interior)</description>
+							<description isocode="de">Tomography in seismology (see also 91.35.Pn Tomography of the Earth&apos;s interior)</description>
+							<description isocode="en">Tomography in seismology (see also 91.35.Pn Tomography of the Earth&apos;s interior)</description>
 						</taxon>
 						<taxon ID="15082" upstream_identifier="91.30.Mv">
 							<description isocode="de">Strong motions and shock waves</description>
@@ -19949,8 +19949,8 @@
 						</taxons>
 					</taxon>
 					<taxon ID="15101" upstream_identifier="91.35.-x">
-						<description isocode="de">Earth's interior structure and properties</description>
-						<description isocode="en">Earth's interior structure and properties</description>
+						<description isocode="de">Earth&apos;s interior structure and properties</description>
+						<description isocode="en">Earth&apos;s interior structure and properties</description>
 						<taxons>
 						<taxon ID="15102" upstream_identifier="91.35.Cb">
 							<description isocode="de">Models of interior structure</description>
@@ -19961,20 +19961,20 @@
 							<description isocode="en">Heat flow; geothermy (see also 91.50.Ln Heat flow (benthic)-in Marine geology and geophysics)</description>
 						</taxon>
 						<taxon ID="15104" upstream_identifier="91.35.Ed">
-							<description isocode="de">Structure of the Earth's interior below the upper mantle</description>
-							<description isocode="en">Structure of the Earth's interior below the upper mantle</description>
+							<description isocode="de">Structure of the Earth&apos;s interior below the upper mantle</description>
+							<description isocode="en">Structure of the Earth&apos;s interior below the upper mantle</description>
 						</taxon>
 						<taxon ID="15105" upstream_identifier="91.35.Gf">
 							<description isocode="en">Structure of the crust and upper mantle</description>
 							<description isocode="de">Structure of the crust and upper mantle</description>
 						</taxon>
 						<taxon ID="15106" upstream_identifier="91.35.Lj">
-							<description isocode="de">Composition and state of the Earth's interior (see also 91.67.gb-in Geophysics Appendix)</description>
-							<description isocode="en">Composition and state of the Earth's interior (see also 91.67.gb-in Geophysics Appendix)</description>
+							<description isocode="de">Composition and state of the Earth&apos;s interior (see also 91.67.gb-in Geophysics Appendix)</description>
+							<description isocode="en">Composition and state of the Earth&apos;s interior (see also 91.67.gb-in Geophysics Appendix)</description>
 						</taxon>
 						<taxon ID="15107" upstream_identifier="91.35.Pn">
-							<description isocode="de">Tomography of the Earth's interior (see also 91.30.Jk Tomography in seismology)</description>
-							<description isocode="en">Tomography of the Earth's interior (see also 91.30.Jk Tomography in seismology)</description>
+							<description isocode="de">Tomography of the Earth&apos;s interior (see also 91.30.Jk Tomography in seismology)</description>
+							<description isocode="en">Tomography of the Earth&apos;s interior (see also 91.30.Jk Tomography in seismology)</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -20567,8 +20567,8 @@
 							<description isocode="de">Chemical composition</description>
 							<taxons>
 							<taxon ID="15249" upstream_identifier="91.67.gb">
-								<description isocode="de">Earth's core (see also 91.35.Lj)</description>
-								<description isocode="en">Earth's core (see also 91.35.Lj)</description>
+								<description isocode="de">Earth&apos;s core (see also 91.35.Lj)</description>
+								<description isocode="en">Earth&apos;s core (see also 91.35.Lj)</description>
 							</taxon>
 							<taxon ID="15250" upstream_identifier="91.67.gd">
 								<description isocode="de">Continental crust</description>
@@ -20897,8 +20897,8 @@
 								<description isocode="en">Sea level variations (see also 92.70.Jw Oceans, sea level change-in Global change)</description>
 							</taxon>
 							<taxon ID="15326" upstream_identifier="92.10.Iv">
-								<description isocode="de">Ocean influence of Earth's rotation</description>
-								<description isocode="en">Ocean influence of Earth's rotation</description>
+								<description isocode="de">Ocean influence of Earth&apos;s rotation</description>
+								<description isocode="en">Ocean influence of Earth&apos;s rotation</description>
 							</taxon>
 							<taxon ID="15327" upstream_identifier="92.10.Kp">
 								<description isocode="de">Sea-air energy exchange processes (see also 92.60.Cc-in meteorology)</description>

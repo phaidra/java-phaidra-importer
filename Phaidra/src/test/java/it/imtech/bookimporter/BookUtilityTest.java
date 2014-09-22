@@ -21,7 +21,7 @@ import org.apache.commons.configuration.XMLConfiguration;
  * @author mede318
  */
 public class BookUtilityTest extends TestCase {
-    public final static String DEBUG_XML = "remote"+File.separator+"xml"+File.separator+"config.xml";
+    public final static String DEBUG_XML = "xml"+File.separator+"config.xml";
     public static String RESOURCES = "resources"+File.separator+"messages";
     
     public BookUtilityTest(String testName) {

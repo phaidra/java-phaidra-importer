@@ -7,7 +7,6 @@ package it.imtech.globals;
 import it.imtech.utility.Language;
 import it.imtech.utility.Utility;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Locale;
 
 /**
@@ -16,8 +15,8 @@ import java.util.Locale;
  */
 public class Globals {
     public final static boolean DEBUG = false;
-    public final static String DEBUG_FOLDER = "remote";
-    public final static String DEBUG_XML = Globals.DEBUG_FOLDER + Utility.getSep() + "xml" + Utility.getSep() + "config.xml";
+    public final static String DEBUG_FOLDER = "xml";
+    public final static String DEBUG_XML = Utility.getSep() + "xml" + Utility.getSep() + "config.xml";
     
     //Local files import/export metadata & bookstructure
     public final static String IMP_EXP_METADATA = "uwmetadata.xml";
@@ -51,8 +50,8 @@ public class Globals {
      
        
     //BACKUP_METADATA
-    public static String SESSION_METADATA = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "sessionuwmetadata.xml";
-    public static String BACKUP_METADATA  = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "backupuwmetadata.xml";
+    public static String SESSION_METADATA = USER_DIR + Utility.getSep() + "xml" + Utility.getSep() + "sessionuwmetadata.xml";
+    public static String BACKUP_METADATA  = "";//USER_DIR + Utility.getSep() + "xml" + Utility.getSep() + "uwmetadata.xml";
     public static String EXPORT_METADATA  = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
     //Path della cartella che contiene l'eseguibile dell'applicazione
     public static String JRPATH = null;
@@ -86,7 +85,7 @@ public class Globals {
         Globals.RESOURCES = JRPATH + BASE_RESOURCES;
         Globals.CURRENT_LOCALE = new Locale("en");
         
-        if(DEBUG || !ONLINE){
+        if(DEBUG){
             USER_DIR = "";
             CURRENT_VERSION = "2.0";
             UNDO_DIR = Globals.JRPATH + "appdata"+ Utility.getSep() + "undo"+Utility.getSep();
@@ -94,10 +93,9 @@ public class Globals {
             BLANKPAGE = Globals.JRPATH + "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "blankpage.jpg";
             INTERNAL_CONFIG = Globals.JRPATH + "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "config.xml";
             
-            BACKUP_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "backupuwmetadata.xml";
+            //BACKUP_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "backupuwmetadata.xml";
             EXPORT_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
             SESSION_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "sessionuwmetadata.xml";
-           
         }    
     }
     

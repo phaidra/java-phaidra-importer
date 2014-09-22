@@ -8,10 +8,11 @@ import at.ac.univie.phaidra.api.Phaidra;
 import at.ac.univie.phaidra.api.objekt.Book;
 import at.ac.univie.phaidra.api.objekt.Collection;
 import it.imtech.bookimporter.BookImporter;
+import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLTree;
-import it.imtech.globals.Globals;
 import java.awt.Cursor;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
@@ -21,8 +22,11 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.xml.parsers.ParserConfigurationException;
@@ -49,6 +53,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
     protected static String user = null;
     protected String type = null;
 
+    protected String uploadObjPID = null;
     class UplTask extends SwingWorker<Void, Void> {
 
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
@@ -79,8 +84,6 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 } else {
                     String pbundle = Globals.TYPE_BOOK == Globals.BOOK ? "book" : "coll";
                     addUploadInfoText(Utility.getBundleString("uperror" + pbundle + "1",bundle));
-                    jButton1.setEnabled(true);
-                    jButton1.setText(Utility.getBundleString("ok",bundle));
                     jProgressBar1.setValue(100);
                     setCursor(null);
                 }
@@ -106,33 +109,32 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             int progress = 0;
             int percent = 0;
             Collection coll;
-            String PID;
             
             //Creo la collezione principale
             try{
                 coll = obj.createCollection("Java Collection");
-                PID = coll.getPID();
+                uploadObjPID = coll.getPID();
             }
             catch (Exception ex) {
                 String exc = (ex.getMessage()!=null)?ex.getMessage():"";
                 throw new Exception(Utility.getBundleString("capigetpid",bundle)+" "+exc);
             }
             
-            updateProgress(progress, total, Utility.getBundleString("clogging10",bundle) + ":" + PID);
+            updateProgress(progress, total, Utility.getBundleString("clogging10",bundle) + ":" + uploadObjPID);
             
             //Aggiungo Metadati
-            if (PID != null) {
+            if (uploadObjPID != null) {
                 setTextField(path);
 
                 try{
-                    coll.addMetadata(obj.addPhaidraMetadata(PID,""));
+                    coll.addMetadata(obj.addPhaidraMetadata(uploadObjPID,""));
                 }
                 catch (Exception ex) {
                     String exc = (ex.getMessage()!=null)?ex.getMessage():"";
                     throw new Exception(Utility.getBundleString("cpiaddmeta",bundle)+" "+exc);
                 }
                 
-                updateProgress(progress, total, Utility.getBundleString("clogging6",bundle) + ":" + PID);
+                updateProgress(progress, total, Utility.getBundleString("clogging6",bundle) + ":" + uploadObjPID);
 
                 //Creo Sottocollezioni ed Elementi
                 try{
@@ -144,7 +146,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     throw new Exception(Utility.getBundleString("cpiaddpages",bundle)+" "+exc);
                 }
              
-                addUploadInfoText(Utility.getBundleString("clogging4",bundle) + Utility.getBundleString("clogging5",bundle) + ":" + PID);
+                addUploadInfoText(Utility.getBundleString("clogging4",bundle) + Utility.getBundleString("clogging5",bundle) + ":" + uploadObjPID);
 
                 
                 //Nel caso di pubblicazione postposta
@@ -153,7 +155,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                         if (!lock.equals("")) {
                             //coll.addDatastreamContent("RIGHTS", "text/xml", obj.create_rights(lock), "RIGHTS", "X");
                             coll.grantUsername(user, lock);
-                            progress = updateProgress(progress, total, Utility.getBundleString("logging9",bundle) + ":" + PID);
+                            progress = updateProgress(progress, total, Utility.getBundleString("logging9",bundle) + ":" + uploadObjPID);
                         }
                     }
                 }
@@ -171,8 +173,18 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     throw new Exception(Utility.getBundleString("cpisavebook",bundle)+" "+exc);
                 }
                 
-                addUploadInfoText(Utility.getBundleString("clogging12",bundle) + ":" + PID);
-                JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("cuploadterm",bundle) + ": " + PID);
+                if (task.isCancelled()){
+                    String message = Utility.getBundleString("uploadProgress11",bundle) + ": " + uploadObjPID;
+                    JOptionPane.showMessageDialog(new Frame(), message);
+                    setCursor(null);
+                    jButton1.setEnabled(true);
+                }
+                else{
+                    addUploadInfoText(Utility.getBundleString("logging12",bundle) + ":" + uploadObjPID);
+                    jButton2.setEnabled(true);
+                    JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("cuploadterm",bundle) + ": " + uploadObjPID);
+                }
+                jButton1.setEnabled(true);
             }
         }
 
@@ -186,13 +198,14 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         private void createBook(ImObject obj, int total, NodeList nodeLst) throws Exception {
             int progress = 0;
             int percent = 0;
-            String PID="";
             Book book;
             
+            try{
             //Creo il libro mediante API phaidra
             try{
                 book = obj.createBook();
-                PID = book.getPID();
+                uploadObjPID = book.getPID();
+                addUploadInfoText(Utility.getBundleString("uploadProgress4", bundle) + ": " + uploadObjPID);
             }
             catch (Exception ex) {
                 String exc = (ex.getMessage()!=null)?ex.getMessage():"";
@@ -200,10 +213,11 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             }
             
             //Aggiungo il file pdf
-            if (PID != null) {
+            if (uploadObjPID != null) {
                 setTextField(path);
                 
                 try{
+                	addUploadInfoText(Utility.getBundleString("uploadProgress5", bundle));
                     book.addPDF(path);
                 }
                 catch (Exception ex) {
@@ -211,22 +225,24 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     throw new Exception(Utility.getBundleString("apiaddpdf",bundle)+" "+exc);
                 }
                 
-                progress = updateProgress(progress, total, Utility.getBundleString("logging10",bundle) + ":" + PID);
+                progress = updateProgress(progress, total, Utility.getBundleString("logging10",bundle) + ":" + uploadObjPID);
 
                 //Aggiungo i metadati
                 try{
-                    book.addMetadata(obj.addPhaidraMetadata(PID,""));
+                        addUploadInfoText(Utility.getBundleString("uploadProgress6", bundle));
+                        book.addMetadata(obj.addPhaidraMetadata(uploadObjPID,""));
                 }
                 catch (Exception ex) {
                     String exc = (ex.getMessage()!=null)?ex.getMessage():"";
                     throw new Exception(Utility.getBundleString("apiaddmeta",bundle)+" "+exc);
                 }
                 
-                progress = updateProgress(progress, total, Utility.getBundleString("logging3",bundle) + ":" + PID);
+                progress = updateProgress(progress, total, Utility.getBundleString("logging3",bundle) + ":" + uploadObjPID);
 
                 //Aggiungo pagine e capitoli
                 try{
-                    progress = createPages(PID, obj, progress, total, nodeLst, book);
+                        addUploadInfoText(Utility.getBundleString("uploadProgress7", bundle));
+                        progress = createPages(uploadObjPID, obj, progress, total, nodeLst, book);
                 }
                 catch (Exception ex) {
                     String exc = (ex.getMessage()!=null)?ex.getMessage():"";
@@ -236,10 +252,11 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 //Aggiungo contenuto OCR per il libro
                 try{
                     if (BookImporter.getInstance().ocrBoxIsChecked()) {
+                    	addUploadInfoText(Utility.getBundleString("uploadProgress8", bundle));
                         String ocr = obj.getFulltext();
                         book.addDatastreamContent("FULLTEXT", "text/plain", ocr, "Fulltext of the Book", "M");
 
-                        progress = updateProgress(progress, total, Utility.getBundleString("logging7",bundle) + ":" + PID);
+                        progress = updateProgress(progress, total, Utility.getBundleString("logging7",bundle) + ":" + uploadObjPID);
                     }
                 }
                 catch (Exception ex) {
@@ -251,11 +268,9 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 try{
                     if (lock != null) {
                         if (lock != "") {
-                            //String rights = obj.create_rights(lock);
-                            book.grantUsername(user,lock);
-                            //book.addDatastreamContent("RIGHTS", "text/xml", rights, "RIGHTS", "X");
-
-                            progress = updateProgress(progress, total, Utility.getBundleString("logging9",bundle) + ":" + PID);
+                                addUploadInfoText(Utility.getBundleString("uploadProgress9", bundle));
+                                book.grantUsername(user, lock);
+                                progress = updateProgress(progress, total, Utility.getBundleString("logging9",bundle) + ":" + uploadObjPID);
                         }
                     }
                 }
@@ -266,6 +281,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 
                 //Salvo il libro
                 try{
+                    addUploadInfoText(Utility.getBundleString("uploadProgress10", bundle));
                     book.save();
                 }
                 catch (Exception ex) {
@@ -273,11 +289,28 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     throw new Exception(Utility.getBundleString("apisavebook",bundle)+" "+exc);
                 }
 
-                addUploadInfoText(Utility.getBundleString("logging12",bundle) + ":" + PID);
-                JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("buploadterm",bundle) + ": " + PID);
+                if (task.isCancelled()){
+                    String message = Utility.getBundleString("uploadProgress11",bundle) + ": " + uploadObjPID;
+                    JOptionPane.showMessageDialog(new Frame(), message);
+                    setCursor(null);
+                    jButton1.setEnabled(true);
+                }
+                else{
+                    addUploadInfoText(Utility.getBundleString("logging12",bundle) + ":" + uploadObjPID);
+                    String message = Utility.getBundleString("buploadterm",bundle) + ": " + uploadObjPID;
+                    jButton2.setEnabled(true);
+                    JOptionPane.showMessageDialog(new Frame(), message);
+                }
+                jButton1.setEnabled(true);
+                }
+            }
+            catch (Exception ex) {
+                jButton1.setEnabled(true);
+                setCursor(null);
+                throw new Exception(ex.getMessage());
             }
         }
-
+        
         private ArrayList<String> createElements(ImObject coll, int progress, int total, NodeList nodeLst) throws Exception {
             ArrayList<String> firsLevelEl = new ArrayList<String>();
 
@@ -377,7 +410,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
             setTextField(el.getAttribute("pid"));
 
-            String mimetype = Utility.getMimeType(el.getAttribute("href"));
+            String mimetype = Utility.getMimeType(file);
 
             String slPID = null;
 
@@ -437,11 +470,16 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                             firstPage = (page.getAttribute("firstpage").equals("true"))?true:false;
                             
                             setTextField(flnm);
-                            String pagePid = obj.createPage(flnm, bookPID, chapter.getAttribute("name"), pagenum, capitolo, book, firstPage);
+                            String pagePid = obj.createPage(flnm, bookPID, chapter.getAttribute("name"), pagenum, capitolo, book, firstPage, task);
 
                             pagenum++;
                             progress = updateProgress(progress, total, Utility.getBundleString("logging1",bundle) + ":" + pagePid);
                         }
+                    }
+                    
+                    if (isCancelled()){
+                        addUploadInfoText(Utility.getBundleString("suspendupload1", bundle) + ":" + uploadObjPID);
+                        addUploadInfoText(Utility.getBundleString("suspendupload4", bundle));
                     }
                 }
             }
@@ -466,11 +504,11 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
          */
         @Override
         public void done() {
-            ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-            jButton1.setEnabled(true);
-            jButton1.setText(Utility.getBundleString("ok",bundle));
-            jProgressBar1.setValue(100);
-            setCursor(null);
+            if (!task.isCancelled()){
+                jProgressBar1.setValue(100);
+                setCursor(null);
+                jButton1.setEnabled(true);
+            }
         }
     }
 
@@ -516,6 +554,8 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
         initComponents();
         jProgressBar1.setMaximum(100);
+        jButton1.setMinimumSize(new Dimension(120,20));
+        jButton2.setMinimumSize(new Dimension(120,20));
         updateLanguageLabel();
 
         setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -526,11 +566,28 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
         jButton1.setEnabled(false);
         jButton1.addActionListener(new ActionListener() {
-
             public void actionPerformed(ActionEvent e) {
-                //Close the application main form
-                task.cancel(true);
                 frame.dispose();
+            }
+        });
+
+        //Gestione della visualizzazione del URI del libro caricato
+        jButton2.setEnabled(false);
+        jButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+                    String uploaduriprotocol = Utility.getBundleString("uploaduriprotocol",bundle);
+                    String uploaduristatic = Utility.getBundleString("uploaduristatic",bundle);
+
+                    String uploaduri = uploaduriprotocol + SelectedServer.getInstance(null).getPhaidraURL();
+                    uploaduri += uploaduristatic + uploadObjPID;
+                              
+                    URI link = new URI(uploaduri);
+                    openWebpage(link);
+                } catch (URISyntaxException ex) {
+                    java.util.logging.Logger.getLogger(UploadProgress.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         
@@ -538,10 +595,10 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 task.cancel(true);
-                frame.dispose();
             }
         });
         
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (dim.width - getSize().width) / 2;
         int y = (dim.height - getSize().height) / 2;
@@ -551,6 +608,14 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
     private void updateLanguageLabel() {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         jButton1.setText(Utility.getBundleString("uplprbutton",bundle));
+        
+        if (Globals.COLLECTION == Globals.TYPE_BOOK){
+            jButton2.setText(Utility.getBundleString("opencollurl",bundle));
+        }
+        else{
+            jButton2.setText(Utility.getBundleString("openbookurl",bundle));
+        }
+        
         jLabel1.setText(Utility.getBundleString("uplprlbl1",bundle));
         jLabel2.setText(Utility.getBundleString("uplprlbl2",bundle));
         
@@ -608,6 +673,18 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         frame.dispose();
     }
 
+        
+    private static void openWebpage(URI uri) {
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(uri);
+            } catch (Exception ex) {
+                logger.error(ex.toString());
+            }
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -627,6 +704,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -701,6 +779,8 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
         jButton1.setText("jButton1");
 
+        jButton2.setText("jButton2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -710,8 +790,10 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -723,16 +805,22 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

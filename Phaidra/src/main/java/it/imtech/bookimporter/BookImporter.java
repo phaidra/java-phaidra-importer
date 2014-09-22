@@ -48,9 +48,6 @@ public class BookImporter extends javax.swing.JFrame {
    
     //Oggetto che identifica l'albero del libro/collezione
     public static XMLTree xmlTree;
-    
-    //Mappatura del file file di configurazione delle classificazioni contenuto nella cartella di output del libro
-    //public static XMLConfiguration classifConf = null;
      
     private JLabel jLabel1 = new JLabel();
     private JLabel jLabel3 = new JLabel();
@@ -115,6 +112,7 @@ public class BookImporter extends javax.swing.JFrame {
 
                     if (close == true){
                         dispose();
+                        System.exit(0);
                     }
                 }
             });
@@ -128,13 +126,19 @@ public class BookImporter extends javax.swing.JFrame {
             //Inizializzazione classificazione e vocabolario    
             MetaUtility.getInstance().preInitializeData();
             
+            //Creazione interfaccia metadati
+            if (Globals.TYPE_BOOK == Globals.COLLECTION){
+                Utility.makeBackupMetadata(Globals.URL_METADATA_COLL);
+            }
+            else{
+                Utility.makeBackupMetadata(Globals.URL_METADATA);
+            }
+            
             //Inizializzazione dell'albero di struttura
             boolean fromFile = askForStructure();
             
             initializeXmlTree(fromFile, false);
             
-            //Creazione interfaccia metadati
-            Utility.makeBackupMetadata(Globals.URL_METADATA);
             initializeData();
             
             //Posizionamento interfaccia
@@ -503,43 +507,6 @@ public class BookImporter extends javax.swing.JFrame {
     }
 
     /**
-     * Crea un file nella cartella di lavoro che definisce la classificazione scelta
-     */
-    /*
-    private void setDefaultClassificationFile() {
-        try {
-            if (!new File(Globals.SELECTED_FOLDER_SEP + Globals.CLASSIF_CONFIG).isFile()) {
-                DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-                Document doc = docBuilder.newDocument();
-
-                Element rootElement = doc.createElement("classification");
-                rootElement.setAttribute("default", "");
-                rootElement.setTextContent("File di Classificazione");
-                doc.appendChild(rootElement);
-
-                Transformer t = TransformerFactory.newInstance().newTransformer();
-                t.setOutputProperty(OutputKeys.INDENT, "yes");
-                t.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-                t.setOutputProperty(OutputKeys.STANDALONE, "");
-                t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-
-                it.imtech.xmltree.XMLUtil.xmlWriter(doc, Globals.SELECTED_FOLDER_SEP + Globals.CLASSIF_CONFIG);
-            }
-
-            classifConf = new XMLConfiguration(Globals.SELECTED_FOLDER_SEP + Globals.CLASSIF_CONFIG);
-
-        } catch (TransformerConfigurationException ex) {
-             logger.error(ex.getMessage());
-        } catch (ParserConfigurationException ex) {
-             logger.error(ex.getMessage());
-        } catch (ConfigurationException ex) {
-             logger.error(ex.getMessage());
-        }
-    }
-    */
-    
-    /**
      * Setta tutte le strutture dati necessarie per la creazione
      * dell'interfaccia dei metadati
      *
@@ -549,12 +516,8 @@ public class BookImporter extends javax.swing.JFrame {
             //Inserisce tutti i campi dinamici visibili nella struttura dati metadata
             this.metadata = MetaUtility.getInstance().metadata_reader();
 
-            //Setta il file di classificazione scelto
-            //if(Globals.FOLDER_WRITABLE)
-            //    setDefaultClassificationFile();
-
             //Inserisce tutte le classificazione nella struttura dati oefos
-            MetaUtility.getInstance().classifications_reader();
+            MetaUtility.getInstance().classifications_reader("");
 
             //Crea Interfaccia dei metadatai
             this.setMetadataTab();
@@ -880,13 +843,11 @@ public class BookImporter extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -978,14 +939,6 @@ public class BookImporter extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem3);
 
-        jMenuItem12.setText("Metadata Template");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem12);
-
         jMenuItem8.setText("Struttura del libro in XML");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1021,14 +974,6 @@ public class BookImporter extends javax.swing.JFrame {
             }
         });
         jMenu4.add(jMenuItem1);
-
-        jMenuItem11.setText("Metadata Template");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem11);
 
         jMenuItem2.setText("Bookstructure");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -1216,8 +1161,13 @@ public class BookImporter extends javax.swing.JFrame {
      * @param evt
      */
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        UploadSettings.getInstance(Globals.CURRENT_LOCALE).setVisible(true);
-        //this.setVisible(false);
+        if (Globals.ONLINE){
+            UploadSettings.getInstance(Globals.CURRENT_LOCALE).setVisible(true);
+        }
+        else{
+            ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
+            JOptionPane.showMessageDialog(this, Utility.getBundleString("offline_upload", bundle));
+        }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
@@ -1311,38 +1261,6 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
-        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
-
-        try {
-            XMLTree.exportBookstructure(Globals.SELECTED_FOLDER_SEP);
-
-            String location = chooseFileImpExport(true,"template","xml");
-
-            if (location != null) {
-                exportMetadata(location);
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
-        }
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        // TODO add your handling code here:
-        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-        
-        try {
-            String location = chooseFileImpExport(false, "template", "xml");
-
-            if (location != null) {
-                importMetadata(location);
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
-        }
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1410,8 +1328,6 @@ public class BookImporter extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

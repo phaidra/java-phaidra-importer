@@ -270,7 +270,7 @@ public class ImObject {
     protected String getFulltext() {
         return this.bookFulltext.getFulltext();
     }
-
+          
     /**
      * Crea una pagina del libro con metadati/pubblicazione postposta e OCR
      * @param filename Nome del file da caricare
@@ -283,14 +283,18 @@ public class ImObject {
      * @param meta
      * @throws Exception
      */
-    protected String createPage(String filename, String bookPID, String structure, int pagenum, Book.Chapter chapter, Book book,boolean startPage) throws Exception {
+    protected String createPage(String filename, String bookPID, String structure, int pagenum, Book.Chapter chapter, Book book,boolean startPage, UploadProgress.UplTask task) throws Exception {
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadpage1",bundle));
+      
         // create page
         Page page = phaidra.createPage("Book Page " + pagenum, book, pagenum, Integer.toString(pagenum), structure, startPage);
+        task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric2",bundle));
         String PID = page.getPID();  
         
         if (PID != null) {
             page.addPicture(Globals.SELECTED_FOLDER_SEP + filename, Utility.getMimeType(Globals.SELECTED_FOLDER_SEP + filename));
-
+            task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
+            
             page.addMetadata(this.addPhaidraMetadata(PID,""));
 
             if (BookImporter.getInstance().ocrBoxIsChecked()) {
@@ -307,13 +311,13 @@ public class ImObject {
 
             if (lockObjectsUntil != null) {
                 if (lockObjectsUntil != "") {
+                    task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric4",bundle));
                     page.grantUsername(username, lockObjectsUntil);
-                    //page.addDatastreamContent("RIGHTS", "text/xml", create_rights(lockObjectsUntil), "RIGHTS", "X");
                 }
             }
-
+            
+            task.addUploadInfoInnerText(Utility.getBundleString("uploadpage5",bundle));
             book.addPage(chapter, page);
-
             page.save();
         }
 

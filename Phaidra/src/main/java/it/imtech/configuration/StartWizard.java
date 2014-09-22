@@ -64,7 +64,6 @@ public class StartWizard  {
         
     }
     
-    
     /**
      * Creates new form Main
      */
@@ -74,7 +73,8 @@ public class StartWizard  {
         if(Utility.internetConnectionAvailable()){
             Globals.ONLINE = true;
         }
-                Globals.setGlobalVariables();
+        
+        Globals.setGlobalVariables();
         
         bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
@@ -83,7 +83,6 @@ public class StartWizard  {
             Utility.getBundleString("copy_appdata_title", bundle), JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }
-        
         
         DOMConfigurator.configure(Globals.LOG4J);
         
@@ -109,15 +108,14 @@ public class StartWizard  {
             {
                 if(getCurrentCard() instanceof ChooseServer){
                     mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                    Server selected = chooseServer.getSelectedServer();
+                    if (Globals.ONLINE){
+                        Server selected = chooseServer.getSelectedServer();
+                        SelectedServer.getInstance(null).makeEmpty();
+                        SelectedServer.getInstance(selected);
                     
-                    SelectedServer.getInstance(null).makeEmpty();
-                    SelectedServer.getInstance(selected);
-                    
-                    ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
+                        ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
+                    }
                     chooseFolder.updateLanguage();
-                    
-                    backupOnlineFiles();
                     
                     c1.next(cardsPanel);
                     mainFrame.setCursor(null);
@@ -164,18 +162,12 @@ public class StartWizard  {
         cardsPanel = new JPanel(new CardLayout());
         cardsPanel.setBackground(Color.WHITE);
         
-        if (Globals.ONLINE){
-            chooseServer = new ChooseServer(config);
-            chooseFolder = new ChooseFolder();
+        chooseServer = new ChooseServer(config);
+        chooseFolder = new ChooseFolder();
        
-            cardsPanel.add(chooseServer, "1");
-            cardsPanel.add(chooseFolder, "2");
-        }
-        else{
-            chooseFolder = new ChooseFolder();
-            cardsPanel.add(chooseFolder, "1");
-        }
-        
+        cardsPanel.add(chooseServer, "1");
+        cardsPanel.add(chooseFolder, "2");
+    
         cardsPanel.setLayout(c1);
         c1.show(cardsPanel, "1");
         
@@ -244,7 +236,13 @@ public class StartWizard  {
             File blank = new File(currentpath + "config" + Utility.getSep() + "blankpage.jpg");
             File xmlconfnew = new File(currentpath + "config" + Utility.getSep() + "config.xml");
             File logforj = new File(currentpath + "config" + Utility.getSep() + "log4j.xml");
-            File uncompleteduploads = new File(currentpath + "uploads" + Utility.getSep() + "uncompleteduploads.xml");
+            
+            File backupxml = new File(currentpath + "xml");
+            File remotexml = new File(Globals.USER_DIR + "xml");
+            
+            if (!remotexml.exists()){
+                FileUtils.copyDirectory(backupxml, remotexml);
+            }
             
             if (!appdata.exists()){
                 appdata.mkdir();
@@ -307,11 +305,6 @@ public class StartWizard  {
                 FileUtils.copyFile(blank, blanknew);
             }
             
-            File newuploads = new File(Globals.USER_DIR + "config" + Utility.getSep() +"uncompleteduploads.xml");
-            if (!newuploads.exists()){
-                FileUtils.copyFile(uncompleteduploads, newuploads);
-            }
-            
             result = true;
         } catch (IOException ex) {
             logger.error("ERR:0002 Cannot copy application data");
@@ -372,14 +365,21 @@ public class StartWizard  {
                     logger.info("File di configurazione non settato");
                 }
             } else {
-                Globals.URL_CONFIG = new URL(n);
+                if (Globals.ONLINE){
+                    Globals.URL_CONFIG = new URL(n);
+                }   
             }
             
             if (Globals.URL_CONFIG != null){
                 if(Globals.DEBUG)
-                    configuration = new XMLConfiguration(new File(Globals.JRPATH+Globals.DEBUG_XML));
+                    configuration = new XMLConfiguration(new File(Globals.JRPATH + Globals.DEBUG_XML));
                 else
                     configuration = new XMLConfiguration(Globals.URL_CONFIG);
+            }
+            else{
+                if (!Globals.ONLINE){
+                    configuration = new XMLConfiguration(new File(Globals.USER_DIR + Utility.getSep() + Globals.FOLD_XML + "config.xml"));
+                }
             }
         } catch (final MalformedURLException ex) {
             logger.error(ex.getMessage());

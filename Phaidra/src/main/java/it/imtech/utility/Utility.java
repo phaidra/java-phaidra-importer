@@ -415,19 +415,18 @@ public class Utility {
         byte[] buffer = new byte[1024];
         int bytesRead;
         String path = "";
+        Globals.BACKUP_METADATA = Globals.USER_DIR + filename;
         
         File f = new File(Globals.BACKUP_METADATA);
         File s = new File(Globals.SESSION_METADATA);
         
         try {
-            if (!Globals.DEBUG){
+            if (Globals.ONLINE){
                 path = SelectedServer.getInstance(null).getHTTPStaticBaseURL() + filename;
                 URL url = new URL(path);
                 URLConnection connection = url.openConnection();
 
                 inputStream = new BufferedInputStream(connection.getInputStream());
-                
-
                 outputStream = new BufferedOutputStream(new FileOutputStream(f));
 
                 while ((bytesRead = inputStream.read(buffer)) != -1) {
@@ -450,28 +449,34 @@ public class Utility {
        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
        
-       File urlf;
-       URL url;
+       File urlf = null;
+       URL url = null;
        Document doc;
        String path;
       
-       if(Globals.DEBUG) {      
-           if(classif){
-               int i = filename.lastIndexOf("/");
-               String name = filename.substring(i, filename.length());
-               path = filename.replace(SelectedServer.getInstance(null).getHTTPStaticBaseURL(),Globals.JRPATH + Globals.DEBUG_FOLDER);
-           }
-           else{
-               path = Globals.JRPATH+Globals.DEBUG_FOLDER+Utility.getSep()+filename;
-           }
+       if (!Globals.ONLINE){
+           path = Globals.USER_DIR + Utility.getSep() + filename;
            urlf = new File(path);
        }
-       else {
-            path = (classif)?filename:SelectedServer.getInstance(null).getHTTPStaticBaseURL()+filename;
-            url = new URL(path);
-        }
-       
-        if(Globals.DEBUG)
+       else{
+            if(Globals.DEBUG) {      
+                 if(classif){
+                     int i = filename.lastIndexOf("/");
+                     String name = filename.substring(i, filename.length());
+                     path = filename.replace(SelectedServer.getInstance(null).getHTTPStaticBaseURL(),Globals.JRPATH + Globals.DEBUG_FOLDER);
+                 }
+                 else{
+                     path = Globals.JRPATH+Globals.DEBUG_FOLDER+Utility.getSep()+filename;
+                 }
+                 urlf = new File(path);
+             }
+             else {
+                 path = (classif)?filename:SelectedServer.getInstance(null).getHTTPStaticBaseURL()+filename;
+                 url = new URL(path);
+             }
+       }
+               
+        if(Globals.DEBUG || !Globals.ONLINE)
             doc = dBuilder.parse(urlf);
         else
             doc = dBuilder.parse(url.openStream());

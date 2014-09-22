@@ -1,0 +1,2292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vocabularies>
+    <vocabulary forxmlname="status" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" description="LOM 2.2 Status" MID="8">
+        <entry ID="43">
+            <description isocode="en">Draft</description>
+            <description isocode="it">Bozza</description>
+            <description isocode="de">Entwurf</description>
+            <description isocode="sr">nacrt</description>
+        </entry>
+        <entry ID="44">
+            <description isocode="de">Fertig</description>
+            <description isocode="it">Completo</description>
+            <description isocode="en">Complete</description>
+            <description isocode="sr">kompletno</description>
+        </entry>
+        <entry ID="45">
+            <description isocode="de">Nicht verfügbar</description>
+            <description isocode="it">Non Disponibile</description>
+            <description isocode="sr">nije prisutno</description>
+            <description isocode="en">Not Available</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="role" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" description="LOM 2.3.1 Role" MID="12">
+        <entry ID="46">
+            <description isocode="en">Author of the digital object</description>
+            <description isocode="it">Autore dell'oggetto digitale</description>
+            <description isocode="de">AutorIn des digitalen Objekts</description>
+            <description isocode="sr">autor digitalnog objekta</description>
+        </entry>
+        <entry ID="47">
+            <description isocode="en">Publisher</description>
+            <description isocode="sr">izdavač</description>
+            <description isocode="it">Editore</description>
+            <description isocode="de">HerausgeberIn</description>
+        </entry>
+        <entry ID="49">
+            <description isocode="en">Initiator</description>
+            <description isocode="sr">pokretač</description>
+            <description isocode="de">InitiatorIn</description>
+            <description isocode="it">Iniziatore</description>
+        </entry>
+        <entry ID="51">
+            <description isocode="sr">evaluator</description>
+            <description isocode="de">EvaluatorIn</description>
+            <description isocode="en">Evaluator</description>
+            <description isocode="it">Valutatore</description>
+        </entry>
+        <entry ID="52">
+            <description isocode="de">EditorIn</description>
+            <description isocode="it">Curatore</description>
+            <description isocode="en">Editor</description>
+            <description isocode="sr">urednik</description>
+        </entry>
+        <entry ID="53">
+            <description isocode="it">Grafico</description>
+            <description isocode="en">Graphic Designer</description>
+            <description isocode="sr">grafički dizajner</description>
+            <description isocode="de">GrafikdesignerIn</description>
+        </entry>
+        <entry ID="54">
+            <description isocode="en">Technical Translator</description>
+            <description isocode="it">Traduttore Tecnico</description>
+            <description isocode="sr">tehnički prevodilac</description>
+            <description isocode="de">Technische/r UmsetzerIn</description>
+        </entry>
+        <entry ID="55">
+            <description isocode="en">Data Supplier</description>
+            <description isocode="sr">dobavljač podataka</description>
+            <description isocode="de">DatenlieferantIn</description>
+            <description isocode="it">Fornitore dei dati</description>
+        </entry>
+        <entry ID="56">
+            <description isocode="sr">tehnički nadzornik</description>
+            <description isocode="de">Technische/r PrüferIn</description>
+            <description isocode="en">Technical Inspector</description>
+            <description isocode="it">Ispettore tecnico</description>
+        </entry>
+        <entry ID="58">
+            <description isocode="sr">tekst procesor</description>
+            <description isocode="it">Estensore del testo</description>
+            <description isocode="de">TextbearbeiterIn</description>
+            <description isocode="en">Text Processor</description>
+        </entry>
+        <entry ID="59">
+            <description isocode="de">Pädagogische/r ExpertIn</description>
+            <description isocode="it">Esperto pedagogico</description>
+            <description isocode="en">Pedagogic Expert</description>
+            <description isocode="sr">pedagoški stručnjak</description>
+        </entry>
+        <entry ID="60">
+            <description isocode="en">Domain Expert</description>
+            <description isocode="it">Esperto del settore</description>
+            <description isocode="sr">stručnjak za domene</description>
+            <description isocode="de">FachexpertIn</description>
+        </entry>
+        <entry ID="61">
+            <description isocode="en">Interpreter</description>
+            <description isocode="it">Interprete</description>
+            <description isocode="sr">tumač</description>
+            <description isocode="de">InterpretIn</description>
+        </entry>
+        <entry ID="63">
+            <description isocode="it">Altro</description>
+            <description isocode="sr">drugo</description>
+            <description isocode="de">Andere</description>
+            <description isocode="en">Other</description>
+        </entry>
+        <entry ID="10867">
+            <description isocode="de">KünstlerIn</description>
+            <description isocode="it">Artista</description>
+            <description isocode="sr">umetnik</description>
+            <description isocode="en">Artist</description>
+        </entry>
+        <entry ID="10868">
+            <description isocode="it">Cliente/Donatore</description>
+            <description isocode="sr">klijent/primalac</description>
+            <description isocode="de">AuftraggeberIn/StifterIn</description>
+            <description isocode="en">Client/Donor</description>
+        </entry>
+        <entry ID="10869">
+            <description isocode="en">Photographer</description>
+            <description isocode="sr">fotograf</description>
+            <description isocode="de">FotografIn</description>
+            <description isocode="it">Fotografo</description>
+        </entry>
+        <entry ID="1552095">
+            <description isocode="sr">autor analognog objekta</description>
+            <description isocode="it">Autore dell'oggetto  analogico</description>
+            <description isocode="en">Author of the analogue object</description>
+            <description isocode="de">AutorIn des analogen Objekts</description>
+        </entry>
+        <entry ID="1552154">
+            <description isocode="it">Autore della digitalizzazione</description>
+            <description isocode="en">Digitiser</description>
+            <description isocode="de">DigitalisiererIn</description>
+            <description isocode="sr">digitalizator</description>
+        </entry>
+        <entry ID="1552155">
+            <description isocode="de">AufbewahrerIn des Originals</description>
+            <description isocode="sr">čuvar orginala</description>
+            <description isocode="it">Affidatario dell'originale</description>
+            <description isocode="en">Keeper of the original</description>
+        </entry>
+        <entry ID="1552167">
+            <description isocode="sr">savetnik</description>
+            <description isocode="en">Adviser</description>
+            <description isocode="de">BetreuerIn</description>
+            <description isocode="it">Consigliere</description>
+        </entry>
+        <entry ID="1552168">
+            <description isocode="en">Judge</description>
+            <description isocode="de">BeurteilerIn</description>
+            <description isocode="it">Giudice</description>
+            <description isocode="sr">sudija</description>
+        </entry>
+        <entry ID="1557098">
+            <description isocode="en">Etcher</description>
+            <description isocode="it">Acquafortista</description>
+            <description isocode="de">RadiererIn</description>
+        </entry>
+        <entry ID="1557099">
+            <description isocode="en">Adapter</description>
+            <description isocode="it">Adattatore</description>
+            <description isocode="de">BearbeiterIn</description>
+        </entry>
+        <entry ID="1557100">
+            <description isocode="de">ArchitektIn</description>
+            <description isocode="it">Architetto</description>
+            <description isocode="en">Architect</description>
+        </entry>
+        <entry ID="1557101">
+            <description isocode="de">ArrangeurIn</description>
+            <description isocode="en">Arranger</description>
+            <description isocode="it">Arrangiatore</description>
+        </entry>
+        <entry ID="1557102">
+            <description isocode="de">SchauspielerIn</description>
+            <description isocode="en">Actor</description>
+            <description isocode="it">Attore</description>
+        </entry>
+        <entry ID="1557103">
+            <description isocode="it">Autore del materiale allegato</description>
+            <description isocode="en">Writer of accompanying material</description>
+            <description isocode="de">AutorIn von Begleitmaterial</description>
+        </entry>
+        <entry ID="1557104">
+            <description isocode="en">Dubious author</description>
+            <description isocode="it">Autore incerto</description>
+            <description isocode="de">zweifelhafte AutorIn</description>
+        </entry>
+        <entry ID="1557105">
+            <description isocode="de">MetallstecherIn</description>
+            <description isocode="it">Calcografo</description>
+            <description isocode="en">Metal-engraver</description>
+        </entry>
+        <entry ID="1557106">
+            <description isocode="de">SÃ¤ngerIn</description>
+            <description isocode="it">Cantante</description>
+            <description isocode="en">Singer</description>
+        </entry>
+        <entry ID="1557107">
+            <description isocode="de">KartografIn</description>
+            <description isocode="en">Cartographer</description>
+            <description isocode="it">Cartografo</description>
+        </entry>
+        <entry ID="1557108">
+            <description isocode="it">Compilatore</description>
+            <description isocode="en">Compiler</description>
+            <description isocode="de">HerausgeberIn einer Sammlung</description>
+        </entry>
+        <entry ID="1557109">
+            <description isocode="en">Composer</description>
+            <description isocode="it">Compositore</description>
+            <description isocode="de">KomponistIn</description>
+        </entry>
+        <entry ID="1557110">
+            <description isocode="en">Scientific advisor</description>
+            <description isocode="de">wissenschaftliche BeraterIn</description>
+            <description isocode="it">Consulente scientifico</description>
+        </entry>
+        <entry ID="1557111">
+            <description isocode="it">Controrelatore</description>
+            <description isocode="de">WidersacherIn</description>
+            <description isocode="en">Opponent</description>
+        </entry>
+        <entry ID="1557112">
+            <description isocode="it">Coreografo</description>
+            <description isocode="de">ChoreographIn</description>
+            <description isocode="en">Choreographer</description>
+        </entry>
+        <entry ID="1557113">
+            <description isocode="de">Widmende/r</description>
+            <description isocode="en">Dedicator</description>
+            <description isocode="it">Dedicante</description>
+        </entry>
+        <entry ID="1557114">
+            <description isocode="en">Dedicatee</description>
+            <description isocode="it">Dedicatario</description>
+            <description isocode="de">WidmungstrÃ¤gerIn</description>
+        </entry>
+        <entry ID="1557115">
+            <description isocode="en">Artistic director</description>
+            <description isocode="de">kÃ¼nstlerische/r LeiterIn</description>
+            <description isocode="it">Direttore artistico</description>
+        </entry>
+        <entry ID="1557116">
+            <description isocode="de">KapellmeisterIn</description>
+            <description isocode="it">Direttore d'orchestra</description>
+            <description isocode="en">Conductor</description>
+        </entry>
+        <entry ID="1557117">
+            <description isocode="de">Kameramann/frau</description>
+            <description isocode="it">Direttore della fotografia</description>
+            <description isocode="en">Cinematographer</description>
+        </entry>
+        <entry ID="1557118">
+            <description isocode="de">musikalische/r LeiterIn</description>
+            <description isocode="it">Direttore musicale</description>
+            <description isocode="en">Musical director</description>
+        </entry>
+        <entry ID="1557119">
+            <description isocode="it">Illustratore</description>
+            <description isocode="en">Illustrator</description>
+            <description isocode="de">IllustratorIn</description>
+        </entry>
+        <entry ID="1557120">
+            <description isocode="it">Incisore</description>
+            <description isocode="en">Engraver</description>
+            <description isocode="de">GraveurIn</description>
+        </entry>
+        <entry ID="1557121">
+            <description isocode="en">Engineer</description>
+            <description isocode="de">IngenieurIn</description>
+            <description isocode="it">Ingegnere</description>
+        </entry>
+        <entry ID="1557122">
+            <description isocode="de">InterviewpartnerIn</description>
+            <description isocode="it">Intervistato</description>
+            <description isocode="en">Interviewee</description>
+        </entry>
+        <entry ID="1557123">
+            <description isocode="de">InterviewerIn</description>
+            <description isocode="it">Intervistatore</description>
+            <description isocode="en">Interviewer</description>
+        </entry>
+        <entry ID="1557124">
+            <description isocode="de">VerleiherIn des Diploms</description>
+            <description isocode="it">Istituzione che rilascia il titolo accademico</description>
+            <description isocode="en">Degree grantor</description>
+        </entry>
+        <entry ID="1557125">
+            <description isocode="it">Librettista</description>
+            <description isocode="en">Librettist</description>
+            <description isocode="de">LibrettistIn</description>
+        </entry>
+        <entry ID="1557126">
+            <description isocode="en">Illuminator</description>
+            <description isocode="de">IlluminatorIn</description>
+            <description isocode="it">Miniatore</description>
+        </entry>
+        <entry ID="1557127">
+            <description isocode="de">MusikerIn</description>
+            <description isocode="it">Musicista</description>
+            <description isocode="en">Musician</description>
+        </entry>
+        <entry ID="1557128">
+            <description isocode="de">zugeschriebene/r AutorIn</description>
+            <description isocode="it">Nome attribuito</description>
+            <description isocode="en">Attributed name</description>
+        </entry>
+        <entry ID="1557129">
+            <description isocode="de">SongwriterIn</description>
+            <description isocode="it">Paroliere</description>
+            <description isocode="en">Lyricist</description>
+        </entry>
+        <entry ID="1557130">
+            <description isocode="en">Performer</description>
+        </entry>
+        <entry ID="1557131">
+            <description isocode="it">Precedente proprietario</description>
+            <description isocode="en">Former owner</description>
+            <description isocode="de">VorbesitzerIn</description>
+        </entry>
+        <entry ID="1557132">
+            <description isocode="it">Produttore</description>
+            <description isocode="en">Producer</description>
+            <description isocode="de">ProduzentIn</description>
+        </entry>
+        <entry ID="1557133">
+            <description isocode="en">Sound designer</description>
+            <description isocode="de">SounddesignerIn</description>
+            <description isocode="it">Progettista del suono</description>
+        </entry>
+        <entry ID="1557134">
+            <description isocode="de">EigentÃ¼merIn</description>
+            <description isocode="it">Proprietario</description>
+            <description isocode="en">Owner</description>
+        </entry>
+        <entry ID="1557135">
+            <description isocode="de">KritikerIn</description>
+            <description isocode="it">Recensore</description>
+            <description isocode="en">Reviewer</description>
+        </entry>
+        <entry ID="1557136">
+            <description isocode="de">DissertationsbetreuerIn</description>
+            <description isocode="it">Relatore</description>
+            <description isocode="en">Thesis advisor</description>
+        </entry>
+        <entry ID="1557137">
+            <description isocode="it">Responsabile del montaggio</description>
+            <description isocode="en">Film editor</description>
+            <description isocode="de">Film-EditorIn</description>
+        </entry>
+        <entry ID="1557138">
+            <description isocode="en">Author of screenplay</description>
+            <description isocode="de">AutorIn des Drehbuches</description>
+            <description isocode="it">Sceneggiatore</description>
+        </entry>
+        <entry ID="1557139">
+            <description isocode="de">SzenentexterIn</description>
+            <description isocode="it">Scenografo</description>
+            <description isocode="en">Scenarist</description>
+        </entry>
+        <entry ID="1557140">
+            <description isocode="de">BildhauerIn</description>
+            <description isocode="it">Scultore</description>
+            <description isocode="en">Sculptor</description>
+        </entry>
+        <entry ID="1557141">
+            <description isocode="de">DruckerIn</description>
+            <description isocode="it">Stampatore</description>
+            <description isocode="en">Printer</description>
+        </entry>
+        <entry ID="1557142">
+            <description isocode="it">Tecnico della registrazione</description>
+            <description isocode="en">Recording engineer</description>
+            <description isocode="de">TonmeisterIn</description>
+        </entry>
+        <entry ID="1557143">
+            <description isocode="it">Tesista</description>
+            <description isocode="en">Dissertant</description>
+            <description isocode="de">DissertantIn</description>
+        </entry>
+        <entry ID="1557144">
+            <description isocode="en">Videographer</description>
+            <description isocode="de">VideoanbieterIn</description>
+            <description isocode="it">Videografo</description>
+        </entry>
+        <entry ID="1557145">
+            <description isocode="de">HolzstecherIn</description>
+            <description isocode="it">Xilografo</description>
+            <description isocode="en">Wood-engraver</description>
+        </entry>
+        <entry ID="1557146">
+            <description isocode="en">Uploader</description>
+        </entry>
+        <entry ID="1557231">
+            <description isocode="de">SpenderIn</description>
+            <description isocode="en">Sponsor</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/requirement" description="LOM 4.4.1.1 Type" MID="28">
+        <entry ID="64">
+            <description isocode="sr">operativni sistem</description>
+            <description isocode="en">Operating system</description>
+            <description isocode="de">Betriebssystem</description>
+            <description isocode="it">Sistema operativo</description>
+        </entry>
+        <entry ID="65">
+            <description isocode="en">Browser</description>
+            <description isocode="de">Browser</description>
+            <description isocode="sr">pretraživač</description>
+            <description isocode="it">Navigatore web</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="name" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/requirement" description="LOM 4.4.1.2 Name" MID="29">
+        <entry ID="66">
+            <description isocode="de">Windows XP</description>
+            <description isocode="it">Windows XP</description>
+            <description isocode="en">Windows XP</description>
+            <description isocode="sr">Windows XP</description>
+        </entry>
+        <entry ID="67">
+            <description isocode="de">Mac OS X</description>
+            <description isocode="it">Mac OS X</description>
+            <description isocode="sr">Mac OS X</description>
+            <description isocode="en">Mac OS X</description>
+        </entry>
+        <entry ID="68">
+            <description isocode="en">Internet Explorer</description>
+            <description isocode="it">Internet Explorer</description>
+            <description isocode="sr">Internet eksplorer</description>
+            <description isocode="de">Internet Explorer</description>
+        </entry>
+        <entry ID="69">
+            <description isocode="it">Mozilla Firefox</description>
+            <description isocode="sr">Mozila Firefox</description>
+            <description isocode="en">Mozilla Firefox</description>
+            <description isocode="de">Mozilla Firefox</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="purpose" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" description="LOM 9.1 Purpose" MID="44">
+        <entry ID="70">
+            <description isocode="it">Materia</description>
+            <description isocode="en">Discipline</description>
+            <description isocode="sr">disciplina</description>
+            <description isocode="de">Disziplin</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="interactivitytype" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" description="LOM 5.1 Interactivity Type" MID="52">
+        <entry ID="1685">
+            <description isocode="de">Aktiv</description>
+            <description isocode="sr">aktivna</description>
+            <description isocode="en">Active</description>
+            <description isocode="it">Dinamica</description>
+        </entry>
+        <entry ID="1686">
+            <description isocode="en">Expositive</description>
+            <description isocode="sr">opisna</description>
+            <description isocode="de">Erklärend</description>
+            <description isocode="it">Descrittiva</description>
+        </entry>
+        <entry ID="1687">
+            <description isocode="en">Mixed</description>
+            <description isocode="de">Gemischt</description>
+            <description isocode="it">Mista</description>
+            <description isocode="sr">mešana</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="learningresourcetype" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" description="LOM 5.2 Learning Resource Type" MID="53">
+        <entry ID="1688">
+            <description isocode="sr">vežba</description>
+            <description isocode="it">Esercizio</description>
+            <description isocode="en">Exercise</description>
+            <description isocode="de">Übung</description>
+        </entry>
+        <entry ID="1689">
+            <description isocode="de">Simulation</description>
+            <description isocode="en">Simulation</description>
+            <description isocode="sr">simulacija</description>
+            <description isocode="it">Simulazione</description>
+        </entry>
+        <entry ID="1690">
+            <description isocode="de">Fragebogen</description>
+            <description isocode="sr">upitnik</description>
+            <description isocode="en">Questionnaire</description>
+            <description isocode="it">Questionario</description>
+        </entry>
+        <entry ID="1691">
+            <description isocode="en">Diagram</description>
+            <description isocode="sr">dijagram</description>
+            <description isocode="it">Diagramma</description>
+            <description isocode="de">Diagramm</description>
+        </entry>
+        <entry ID="1692">
+            <description isocode="it">Figura</description>
+            <description isocode="de">Abbildung</description>
+            <description isocode="en">Figure</description>
+            <description isocode="sr">slika</description>
+        </entry>
+        <entry ID="1693">
+            <description isocode="it">Grafico</description>
+            <description isocode="sr">graf</description>
+            <description isocode="de">Graphik</description>
+            <description isocode="en">Graph</description>
+        </entry>
+        <entry ID="1694">
+            <description isocode="en">Index</description>
+            <description isocode="it">Indice</description>
+            <description isocode="sr">indeks</description>
+            <description isocode="de">Inhaltsverzeichnis</description>
+        </entry>
+        <entry ID="1695">
+            <description isocode="sr">slajd</description>
+            <description isocode="en">Slide</description>
+            <description isocode="de">Präsentationsfolie</description>
+            <description isocode="it">Diapositiva</description>
+        </entry>
+        <entry ID="1696">
+            <description isocode="de">Tabelle</description>
+            <description isocode="en">Table</description>
+            <description isocode="sr">tabela</description>
+            <description isocode="it">Tavola</description>
+        </entry>
+        <entry ID="1697">
+            <description isocode="it">Testo narrativo</description>
+            <description isocode="en">Narrative text</description>
+            <description isocode="de">Erzählung</description>
+            <description isocode="sr">narativni tekst</description>
+        </entry>
+        <entry ID="1698">
+            <description isocode="de">Prüfung</description>
+            <description isocode="sr">ispit</description>
+            <description isocode="en">Exam</description>
+            <description isocode="it">Esame</description>
+        </entry>
+        <entry ID="1699">
+            <description isocode="it">Esperimento</description>
+            <description isocode="de">Experiment</description>
+            <description isocode="sr">eksperiment</description>
+            <description isocode="en">Experiment</description>
+        </entry>
+        <entry ID="1700">
+            <description isocode="sr">problem</description>
+            <description isocode="de">Problemstellung</description>
+            <description isocode="it">Enunciato di un problema</description>
+            <description isocode="en">Problem Statement</description>
+        </entry>
+        <entry ID="1701">
+            <description isocode="en">Self Assessment</description>
+            <description isocode="sr">samoocenjivanje</description>
+            <description isocode="de">Selbsteinschätzung</description>
+            <description isocode="it">Autovalutazione</description>
+        </entry>
+        <entry ID="1702">
+            <description isocode="de">Vortrag</description>
+            <description isocode="it">Conferenza</description>
+            <description isocode="en">Lecture</description>
+            <description isocode="sr">predavanje</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="interactivitylevel" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" description="LOM 5.3 Interactivity Level" MID="54">
+        <entry ID="1703">
+            <description isocode="en">Very low</description>
+            <description isocode="it">Molto bassa</description>
+            <description isocode="sr">veoma nizak</description>
+            <description isocode="de">Sehr niedrig</description>
+        </entry>
+        <entry ID="1704">
+            <description isocode="en">Low</description>
+            <description isocode="it">Basso</description>
+            <description isocode="sr">nizak</description>
+            <description isocode="de">Niedrig</description>
+        </entry>
+        <entry ID="1705">
+            <description isocode="de">Mittel</description>
+            <description isocode="sr">srednji</description>
+            <description isocode="en">Medium</description>
+            <description isocode="it">Medio</description>
+        </entry>
+        <entry ID="1706">
+            <description isocode="de">Hoch</description>
+            <description isocode="it">Alto</description>
+            <description isocode="sr">visok</description>
+            <description isocode="en">High</description>
+        </entry>
+        <entry ID="1707">
+            <description isocode="sr">veoma visok</description>
+            <description isocode="en">Very High</description>
+            <description isocode="de">Sehr hoch</description>
+            <description isocode="it">Molto alto</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="enduserrole" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" description="LOM 5.5 Intended End User Role" MID="56">
+        <entry ID="1713">
+            <description isocode="de">Lehrende</description>
+            <description isocode="sr">nastavnik</description>
+            <description isocode="en">Teacher</description>
+            <description isocode="it">Docente</description>
+        </entry>
+        <entry ID="1715">
+            <description isocode="it">Allievo</description>
+            <description isocode="de">Studierende</description>
+            <description isocode="sr">učenik</description>
+            <description isocode="en">Learner</description>
+        </entry>
+        <entry ID="1716">
+            <description isocode="en">Manager</description>
+            <description isocode="sr">rukovodilac</description>
+            <description isocode="de">StudienprogrammleiterIn</description>
+            <description isocode="it">Gestore</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="context" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" description="LOM 5.6 Context" MID="57">
+        <entry ID="1717">
+            <description isocode="de">Schule</description>
+            <description isocode="it">Scuola</description>
+            <description isocode="en">School</description>
+            <description isocode="sr">škola</description>
+        </entry>
+        <entry ID="1718">
+            <description isocode="sr">visoko obrazovanje</description>
+            <description isocode="de">Hochschule</description>
+            <description isocode="it">Istruzione universitaria</description>
+            <description isocode="en">Higher Education</description>
+        </entry>
+        <entry ID="1719">
+            <description isocode="it">Formazione</description>
+            <description isocode="en">Training</description>
+            <description isocode="sr">obuka</description>
+            <description isocode="de">Training</description>
+        </entry>
+        <entry ID="1720">
+            <description isocode="de">Sonstiges</description>
+            <description isocode="en">Other</description>
+            <description isocode="it">Altro</description>
+            <description isocode="sr">drugo</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="difficulty" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" description="LOM 5.8 Difficulty" MID="59">
+        <entry ID="1721">
+            <description isocode="it">Molto facile</description>
+            <description isocode="de">Sehr leicht</description>
+            <description isocode="sr">veoma lako</description>
+            <description isocode="en">Very easy</description>
+        </entry>
+        <entry ID="1722">
+            <description isocode="de">Leicht</description>
+            <description isocode="en">Easy</description>
+            <description isocode="sr">lako</description>
+            <description isocode="it">Facile</description>
+        </entry>
+        <entry ID="1723">
+            <description isocode="sr">srednje</description>
+            <description isocode="it">Medio</description>
+            <description isocode="en">Medium</description>
+            <description isocode="de">Mittel</description>
+        </entry>
+        <entry ID="1724">
+            <description isocode="it">Difficile</description>
+            <description isocode="de">Schwer</description>
+            <description isocode="sr">teško</description>
+            <description isocode="en">Difficult</description>
+        </entry>
+        <entry ID="1725">
+            <description isocode="de">Sehr schwer</description>
+            <description isocode="it">Molto difficile</description>
+            <description isocode="en">Very difficult</description>
+            <description isocode="sr">veoma teško</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="hoschtyp" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" description="LOM 10.1 Hochschulschriftentyp" MID="72">
+        <entry ID="1738">
+            <description isocode="de">Bakkalaureatsarbeit</description>
+            <description isocode="it">Tesi di Baccalaureato</description>
+            <description isocode="sr">doktorska disertacija</description>
+            <description isocode="en">Baccalaureate Dissertation</description>
+        </entry>
+        <entry ID="1739">
+            <description isocode="en">Master's Dissertation</description>
+            <description isocode="it">Tesi di Master</description>
+            <description isocode="sr">magistarski rad</description>
+            <description isocode="de">Masterarbeit</description>
+        </entry>
+        <entry ID="1740">
+            <description isocode="en">Diploma Dissertation</description>
+            <description isocode="sr">diplomski rad</description>
+            <description isocode="it">Tesi di Diploma</description>
+            <description isocode="de">Diplomarbeit</description>
+        </entry>
+        <entry ID="1741">
+            <description isocode="de">Magisterarbeit</description>
+            <description isocode="sr">master </description>
+            <description isocode="en">Master's (Austria) Dissertation</description>
+            <description isocode="it">Tesi di Master (austriaco)</description>
+        </entry>
+        <entry ID="1742">
+            <description isocode="sr">završni rad</description>
+            <description isocode="de">Dissertation</description>
+            <description isocode="it">Dissertazione</description>
+            <description isocode="en">Dissertation</description>
+        </entry>
+        <entry ID="1743">
+            <description isocode="de">Habilitationsschrift</description>
+            <description isocode="it">Tesi magistrale</description>
+            <description isocode="sr">stručni rad</description>
+            <description isocode="en">Professorial Dissertation</description>
+        </entry>
+        <entry ID="1552253">
+            <description isocode="en">Article</description>
+            <description isocode="it">Articolo</description>
+            <description isocode="de">Artikel in Zeitschrift</description>
+        </entry>
+        <entry ID="1552257">
+            <description isocode="en">Book</description>
+            <description isocode="de">Buch</description>
+            <description isocode="it">Libro</description>
+        </entry>
+        <entry ID="1552258">
+            <description isocode="en">Theses</description>
+            <description isocode="de">Hochschulschrift</description>
+            <description isocode="it">Tesi</description>
+        </entry>
+        <entry ID="1552259">
+            <description isocode="de">Multimedia</description>
+            <description isocode="it">Supporto multimediale</description>
+            <description isocode="en">Multimedia</description>
+        </entry>
+        <entry ID="1552260">
+            <description isocode="en">other</description>
+            <description isocode="it">altro</description>
+            <description isocode="de">sonstige</description>
+        </entry>
+        <entry ID="1552261">
+            <description isocode="en">Lecture series (one person)</description>
+            <description isocode="it">Atti di conferenza (una persona)</description>
+            <description isocode="de">Vortragsserie (eine Person)</description>
+        </entry>
+        <entry ID="1552262">
+            <description isocode="en">Lecture</description>
+            <description isocode="it">Conferenza</description>
+            <description isocode="de">Vortrag</description>
+        </entry>
+        <entry ID="1552263">
+            <description isocode="it">Articolo di miscellanea</description>
+            <description isocode="de">Beitrag im Sammelwerk</description>
+            <description isocode="en">Article in collected edition</description>
+        </entry>
+        <entry ID="1556235">
+            <description isocode="it">Contributo in libro</description>
+            <description isocode="de">Book Part</description>
+            <description isocode="sr">Book Part</description>
+            <description isocode="en">Book Part</description>
+        </entry>
+        <entry ID="1556236">
+            <description isocode="de">Review</description>
+            <description isocode="sr">Review</description>
+            <description isocode="en">Review</description>
+            <description isocode="it">Periodico</description>
+        </entry>
+        <entry ID="1556237">
+            <description isocode="en">Conference Object</description>
+            <description isocode="it">Conference Object</description>
+            <description isocode="de">Conference Object</description>
+            <description isocode="sr">Conference Object</description>
+        </entry>
+        <entry ID="1556239">
+            <description isocode="it">Working Paper</description>
+            <description isocode="de">Working Paper</description>
+            <description isocode="sr">Working Paper</description>
+            <description isocode="en">Working Paper</description>
+        </entry>
+        <entry ID="1556240">
+            <description isocode="de">Preprint</description>
+            <description isocode="sr">Preprint</description>
+            <description isocode="en">Preprint</description>
+            <description isocode="it">Preprint</description>
+        </entry>
+        <entry ID="1556241">
+            <description isocode="en">Report</description>
+            <description isocode="it">Rapporto</description>
+            <description isocode="de">Report</description>
+            <description isocode="sr">Report</description>
+        </entry>
+        <entry ID="1556242">
+            <description isocode="it">Annotazione</description>
+            <description isocode="de">Annotation</description>
+            <description isocode="sr">Annotation</description>
+            <description isocode="en">Annotation</description>
+        </entry>
+        <entry ID="1556244">
+            <description isocode="sr">Patent</description>
+            <description isocode="en">Patent</description>
+            <description isocode="it">Brevetto</description>
+            <description isocode="de">Patent</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="dimension_unit" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" description="Maßeinheiten" MID="88">
+        <entry ID="10877">
+            <description isocode="de">km</description>
+            <description isocode="it">km</description>
+            <description isocode="sr">km</description>
+            <description isocode="en">km</description>
+        </entry>
+        <entry ID="10878">
+            <description isocode="de">m</description>
+            <description isocode="en">m</description>
+            <description isocode="sr">m</description>
+            <description isocode="it">m</description>
+        </entry>
+        <entry ID="10879">
+            <description isocode="sr">dm</description>
+            <description isocode="en">dm</description>
+            <description isocode="it">dm</description>
+            <description isocode="de">dm</description>
+        </entry>
+        <entry ID="10880">
+            <description isocode="en">cm</description>
+            <description isocode="sr">cm</description>
+            <description isocode="de">cm</description>
+            <description isocode="it">cm</description>
+        </entry>
+        <entry ID="10881">
+            <description isocode="it">mm</description>
+            <description isocode="de">mm</description>
+            <description isocode="sr">mm</description>
+            <description isocode="en">mm</description>
+        </entry>
+        <entry ID="10882">
+            <description isocode="en">in.</description>
+            <description isocode="it">in.</description>
+            <description isocode="sr">in.</description>
+            <description isocode="de">in.</description>
+        </entry>
+        <entry ID="10883">
+            <description isocode="en">yd.</description>
+            <description isocode="it">yd.</description>
+            <description isocode="sr">yd.</description>
+            <description isocode="de">yd.</description>
+        </entry>
+        <entry ID="10884">
+            <description isocode="en">ft.</description>
+            <description isocode="it">ft</description>
+            <description isocode="de">ft.</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="stamp" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" description="HISTKULT Stempel" MID="90">
+        <entry ID="10888">
+            <description isocode="de">Öffentliche Hauptschule für Mädchen</description>
+            <description isocode="it">Öffentliche Hauptschule für Mädchen</description>
+            <description isocode="en">Öffentliche Hauptschule für Mädchen</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10889">
+            <description isocode="en">Ovalstempel k.k. Universitätbibliothek zu Wien</description>
+            <description isocode="sr"/>
+            <description isocode="de">Ovalstempel k.k. Universitätbibliothek zu Wien</description>
+            <description isocode="it">Ovalstempel k.k. Universitätbibliothek zu Wien</description>
+        </entry>
+        <entry ID="10891">
+            <description isocode="sr"/>
+            <description isocode="de">Aus dem Nachlass Frh. Heinrich v. Ferstel</description>
+            <description isocode="it">Aus dem Nachlass Frh. Heinrich v. Ferstel</description>
+            <description isocode="en">Aus dem Nachlass Frh. Heinrich v. Ferstel</description>
+        </entry>
+        <entry ID="10892">
+            <description isocode="it">Kunsthistorische Institut - Schenkung Prof. K. M. Swoboda</description>
+            <description isocode="en">Kunsthistorische Institut - Schenkung Prof. K. M. Swoboda</description>
+            <description isocode="de">Kunsthistorische Institut - Schenkung Prof. K. M. Swoboda</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10893">
+            <description isocode="sr"/>
+            <description isocode="it">Rundstempel - Schenkung Prof. V. Oberhammer</description>
+            <description isocode="en">Rundstempel - Schenkung Prof. V. Oberhammer</description>
+            <description isocode="de">Rundstempel - Schenkung Prof. V. Oberhammer</description>
+        </entry>
+        <entry ID="10894">
+            <description isocode="it">Langstempel Kunsthistorische Sammlungen des allerhöchsten Kaiserhauses Direktion der Sammlungen von Waffen und kunstindustriellen Gegenständen</description>
+            <description isocode="de">Langstempel Kunsthistorische Sammlungen des allerhöchsten Kaiserhauses Direktion der Sammlungen von Waffen und kunstindustriellen Gegenständen</description>
+            <description isocode="en">Langstempel Kunsthistorische Sammlungen des allerhöchsten Kaiserhauses Direktion der Sammlungen von Waffen und kunstindustriellen Gegenständen</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10895">
+            <description isocode="sr"/>
+            <description isocode="de">Ovalstempel Kunsthistorisches Institut Universität Wien</description>
+            <description isocode="it">Ovalstempel Kunsthistorisches Institut Universität Wien</description>
+            <description isocode="en">Ovalstempel Kunsthistorisches Institut Universität Wien</description>
+        </entry>
+        <entry ID="10896">
+            <description isocode="sr"/>
+            <description isocode="de">Lehrapparat Universität Wien</description>
+            <description isocode="it">Lehrapparat Universität Wien</description>
+            <description isocode="en">Lehrapparat Universität Wien</description>
+        </entry>
+        <entry ID="10897">
+            <description isocode="it">Langstempel Kunsthistorisches Institut der Universität Wien, Wien I., Dr. Karl Lueger-Ring 1, vor 1962</description>
+            <description isocode="en">Langstempel Kunsthistorisches Institut der Universität Wien, Wien I., Dr. Karl Lueger-Ring 1, vor 1962</description>
+            <description isocode="de">Langstempel Kunsthistorisches Institut der Universität Wien, Wien I., Dr. Karl Lueger-Ring 1, vor 1962</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10898">
+            <description isocode="sr"/>
+            <description isocode="it">Rundstempel mit Universitätssiegel, Institut für Kunstgeschichte Universität Wien, ab 2005</description>
+            <description isocode="en">Rundstempel mit Universitätssiegel, Institut für Kunstgeschichte Universität Wien, ab 2005</description>
+            <description isocode="de">Rundstempel mit Universitätssiegel, Institut für Kunstgeschichte Universität Wien, ab 2005</description>
+        </entry>
+        <entry ID="10899">
+            <description isocode="it">Rundstempel - mit Adler (neu)</description>
+            <description isocode="en">Rundstempel - mit Adler (neu)</description>
+            <description isocode="de">Rundstempel - mit Adler (neu)</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10900">
+            <description isocode="sr"/>
+            <description isocode="de">Rundstempel - mit Adler (Fraktur), Variante 1</description>
+            <description isocode="it">Rundstempel - mit Adler (Fraktur), Variante 1</description>
+            <description isocode="en">Rundstempel - mit Adler (Fraktur), Variante 1</description>
+        </entry>
+        <entry ID="10901">
+            <description isocode="de">Rundstempel - mit Adler (Fraktur), Variante 2</description>
+            <description isocode="it">Rundstempel - mit Adler (Fraktur), Variante 2</description>
+            <description isocode="en">Rundstempel - mit Adler (Fraktur), Variante 2</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10902">
+            <description isocode="it">Rundstempel - mit Adler (Fraktur), Variante 3</description>
+            <description isocode="en">Rundstempel - mit Adler (Fraktur), Variante 3</description>
+            <description isocode="sr"/>
+            <description isocode="de">Rundstempel - mit Adler (Fraktur), Variante 3</description>
+        </entry>
+        <entry ID="10903">
+            <description isocode="sr"/>
+            <description isocode="it">Rundstempel - ohne Adler, Kunsthistorisches Institut der Universität Wien</description>
+            <description isocode="en">Rundstempel - ohne Adler, Kunsthistorisches Institut der Universität Wien</description>
+            <description isocode="de">Rundstempel - ohne Adler, Kunsthistorisches Institut der Universität Wien</description>
+        </entry>
+        <entry ID="10904">
+            <description isocode="it">Hakenkreuzstempel whs. ab 1941 (neues Inventar)</description>
+            <description isocode="en">Hakenkreuzstempel whs. ab 1941 (neues Inventar)</description>
+            <description isocode="de">Hakenkreuzstempel whs. ab 1941 (neues Inventar)</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10905">
+            <description isocode="sr"/>
+            <description isocode="de">Rundstempel 2. Kunsthistorisches Institut der Universität Wien 1920-1938 (bzw. 1941)</description>
+            <description isocode="it">Rundstempel 2. Kunsthistorisches Institut der Universität Wien 1920-1938 (bzw. 1941)</description>
+            <description isocode="en">Rundstempel 2. Kunsthistorisches Institut der Universität Wien 1920-1938 (bzw. 1941)</description>
+        </entry>
+        <entry ID="10906">
+            <description isocode="de">Quadratstempel 1. Kunsthistorisches Institut Universität Wien 1911-1938 (bzw. 1941)</description>
+            <description isocode="en">Quadratstempel 1. Kunsthistorisches Institut Universität Wien 1911-1938 (bzw. 1941)</description>
+            <description isocode="it">Quadratstempel 1. Kunsthistorisches Institut Universität Wien 1911-1938 (bzw. 1941)</description>
+            <description isocode="sr"/>
+        </entry>
+        <entry ID="10907">
+            <description isocode="it">Ovalstempel Kunsthistorisches Institut der k.k. Universität Wien</description>
+            <description isocode="en">Ovalstempel Kunsthistorisches Institut der k.k. Universität Wien</description>
+            <description isocode="sr"/>
+            <description isocode="de">Ovalstempel Kunsthistorisches Institut der k.k. Universität Wien</description>
+        </entry>
+        <entry ID="10908">
+            <description isocode="de">Kunsthistorischer Apparat der Universität Wien</description>
+            <description isocode="sr"/>
+            <description isocode="it">Kunsthistorischer Apparat der Universität Wien</description>
+            <description isocode="en">Kunsthistorischer Apparat der Universität Wien</description>
+        </entry>
+        <entry ID="1552075">
+            <description isocode="en">KHI Bonn (gerahmt von KHI Bonn)</description>
+            <description isocode="sr"/>
+            <description isocode="de">KHI Bonn (gerahmt von KHI Bonn)</description>
+            <description isocode="it">KHI Bonn (gerahmt von KHI Bonn)</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="resource" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" description="HISTKULT Abbildungen" MID="93">
+        <entry ID="10910">
+            <description isocode="it">Oggetto</description>
+            <description isocode="en">Object</description>
+            <description isocode="de">Objekt</description>
+            <description isocode="sr">predmet</description>
+        </entry>
+        <entry ID="10911">
+            <description isocode="sr">nosilac slike</description>
+            <description isocode="de">Bildträger</description>
+            <description isocode="it">Supporto dell'immagine</description>
+            <description isocode="en">Image Carrier</description>
+        </entry>
+        <entry ID="1552077">
+            <description isocode="de">Glasplattendia</description>
+            <description isocode="sr">Staklene ploče Dia</description>
+            <description isocode="it">Diapositiva su lastra di vetro</description>
+            <description isocode="en">Glass Plate Dia</description>
+        </entry>
+        <entry ID="1552149">
+            <description isocode="de">Analoges Video</description>
+            <description isocode="sr">analogni video</description>
+            <description isocode="en">Analog Video</description>
+            <description isocode="it">Video analogico</description>
+        </entry>
+        <entry ID="1552150">
+            <description isocode="de">Analoger Film</description>
+            <description isocode="sr">analogni film</description>
+            <description isocode="en">Analog Film</description>
+            <description isocode="it">Pellicola analogica</description>
+        </entry>
+        <entry ID="1557147">
+            <description isocode="en">filmloop</description>
+            <description isocode="de">Filmschleife</description>
+            <description isocode="it">anello cinematografico</description>
+        </entry>
+        <entry ID="1557148">
+            <description isocode="de">Filmrolle</description>
+            <description isocode="it">bobina di pellicola</description>
+            <description isocode="en">film reel</description>
+        </entry>
+        <entry ID="1557149">
+            <description isocode="en">film cartridge</description>
+            <description isocode="it">cartuccia di pellicola</description>
+            <description isocode="de">Filmpatrone</description>
+        </entry>
+        <entry ID="1557150">
+            <description isocode="it">cassetta di pellicola</description>
+            <description isocode="en">film cassette</description>
+            <description isocode="de">Filmkassette</description>
+        </entry>
+        <entry ID="1557151">
+            <description isocode="de">Wandkarte</description>
+            <description isocode="it">carta murale</description>
+            <description isocode="en">wallchart</description>
+        </entry>
+        <entry ID="1557152">
+            <description isocode="de">Postkarte</description>
+            <description isocode="it">cartolina</description>
+            <description isocode="en">postcard</description>
+        </entry>
+        <entry ID="1557153">
+            <description isocode="en">painting</description>
+            <description isocode="it">dipinto</description>
+            <description isocode="de">GemÃ¤lde</description>
+        </entry>
+        <entry ID="1557154">
+            <description isocode="it">disegno</description>
+            <description isocode="de">Zeichnung</description>
+            <description isocode="en">drawing</description>
+        </entry>
+        <entry ID="1557155">
+            <description isocode="en">photograph</description>
+            <description isocode="de">Foto</description>
+            <description isocode="it">fotografia</description>
+        </entry>
+        <entry ID="1557156">
+            <description isocode="en">picture</description>
+            <description isocode="de">Bild</description>
+            <description isocode="it">immagine</description>
+        </entry>
+        <entry ID="1557157">
+            <description isocode="it">manifesto</description>
+            <description isocode="de">Plakat</description>
+            <description isocode="en">poster</description>
+        </entry>
+        <entry ID="1557158">
+            <description isocode="de">Druckwerk</description>
+            <description isocode="it">stampa</description>
+            <description isocode="en">print</description>
+        </entry>
+        <entry ID="1557159">
+            <description isocode="it">stampa fotomeccanica</description>
+            <description isocode="en">photomechanical print</description>
+            <description isocode="de">Photomechanischer (Ab)Druck</description>
+        </entry>
+        <entry ID="1557160">
+            <description isocode="de">Mikrofilm</description>
+            <description isocode="it">microfilm</description>
+            <description isocode="en">microfilm</description>
+        </entry>
+        <entry ID="1557161">
+            <description isocode="it">microfiche</description>
+            <description isocode="de">Mikrofiche</description>
+            <description isocode="en">microfiche</description>
+        </entry>
+        <entry ID="1557162">
+            <description isocode="en">slide</description>
+            <description isocode="it">diapositiva</description>
+            <description isocode="de">Dia</description>
+        </entry>
+        <entry ID="1557163">
+            <description isocode="en">negative</description>
+            <description isocode="de">Negativ</description>
+            <description isocode="it">negativo</description>
+        </entry>
+        <entry ID="1557164">
+            <description isocode="de">Filmstreifen</description>
+            <description isocode="it">filmina</description>
+            <description isocode="en">filmstrip</description>
+        </entry>
+        <entry ID="1557165">
+            <description isocode="it">spezzone di pellicola</description>
+            <description isocode="en">filmslip</description>
+            <description isocode="de">Filmausschnitt</description>
+        </entry>
+        <entry ID="1557166">
+            <description isocode="de">Diapositiv</description>
+            <description isocode="it">trasparente</description>
+            <description isocode="en">transparency</description>
+        </entry>
+        <entry ID="1557167">
+            <description isocode="en">microscope slide</description>
+            <description isocode="de">MikroskopobjekttrÃ¤ger</description>
+            <description isocode="it">vetrino da microscopio</description>
+        </entry>
+        <entry ID="1557168">
+            <description isocode="de">Audiokassette</description>
+            <description isocode="en">sound cassette</description>
+            <description isocode="it">audiocassetta</description>
+        </entry>
+        <entry ID="1557169">
+            <description isocode="it">bobina sonora</description>
+            <description isocode="en">sound reel</description>
+            <description isocode="de">Tonband</description>
+        </entry>
+        <entry ID="1557170">
+            <description isocode="de">Audiokassette</description>
+            <description isocode="it">cartuccia sonora</description>
+            <description isocode="en">sound cartridge</description>
+        </entry>
+        <entry ID="1557171">
+            <description isocode="it">disco sonoro</description>
+            <description isocode="de">Schallplatte</description>
+            <description isocode="en">sound disc</description>
+        </entry>
+        <entry ID="1557172">
+            <description isocode="it">DVD audio</description>
+            <description isocode="de">DVD-Audio</description>
+            <description isocode="en">DVD-Audio</description>
+        </entry>
+        <entry ID="1557173">
+            <description isocode="en">CD-Audio</description>
+            <description isocode="de">CD-Audio</description>
+            <description isocode="it">CD audio</description>
+        </entry>
+        <entry ID="1557174">
+            <description isocode="en">atlas</description>
+            <description isocode="de">Atlas</description>
+            <description isocode="it">atlante</description>
+        </entry>
+        <entry ID="1557175">
+            <description isocode="en">map</description>
+            <description isocode="it">carta geografica</description>
+            <description isocode="de">Karte</description>
+        </entry>
+        <entry ID="1557176">
+            <description isocode="it">diagramma</description>
+            <description isocode="en">diagram</description>
+            <description isocode="de">Diagramm</description>
+        </entry>
+        <entry ID="1557177">
+            <description isocode="it">globo</description>
+            <description isocode="en">globe</description>
+            <description isocode="de">Globus</description>
+        </entry>
+        <entry ID="1557178">
+            <description isocode="de">Fernerkundungsbild</description>
+            <description isocode="en">remote sensing image</description>
+            <description isocode="it">immagine di telerilevamento</description>
+        </entry>
+        <entry ID="1557179">
+            <description isocode="de">Einstellung</description>
+            <description isocode="en">view</description>
+            <description isocode="it">inquadratura</description>
+        </entry>
+        <entry ID="1557180">
+            <description isocode="de">Modell</description>
+            <description isocode="en">model</description>
+            <description isocode="it">modello</description>
+        </entry>
+        <entry ID="1557181">
+            <description isocode="en">profile</description>
+            <description isocode="de">Schnitt</description>
+            <description isocode="it">profilo</description>
+        </entry>
+        <entry ID="1557182">
+            <description isocode="it">sezione</description>
+            <description isocode="de">Abschnitt</description>
+            <description isocode="en">section</description>
+        </entry>
+        <entry ID="1557183">
+            <description isocode="it">parte di pianoforte (violino, etc.) conduttore</description>
+            <description isocode="de">Stimme</description>
+            <description isocode="en">piano (violin, etc.) conductor part</description>
+        </entry>
+        <entry ID="1557184">
+            <description isocode="de">Teilbereich</description>
+            <description isocode="en">part</description>
+            <description isocode="it">parte</description>
+        </entry>
+        <entry ID="1557185">
+            <description isocode="en">score</description>
+            <description isocode="it">partitura</description>
+            <description isocode="de">Partitur</description>
+        </entry>
+        <entry ID="1557186">
+            <description isocode="de">Particell</description>
+            <description isocode="it">partitura condensata</description>
+            <description isocode="en">condensed score</description>
+        </entry>
+        <entry ID="1557187">
+            <description isocode="en">close score</description>
+            <description isocode="it">partitura ristretta</description>
+            <description isocode="de">Partiturauszug</description>
+        </entry>
+        <entry ID="1557188">
+            <description isocode="en">chorus score</description>
+            <description isocode="it">partitura vocale</description>
+            <description isocode="de">Chorpartitur</description>
+        </entry>
+        <entry ID="1557189">
+            <description isocode="it">partiturina</description>
+            <description isocode="de">Studienpartitur</description>
+            <description isocode="en">study score</description>
+        </entry>
+        <entry ID="1557190">
+            <description isocode="en">vocal score</description>
+            <description isocode="de">Notenblatt</description>
+            <description isocode="it">spartito</description>
+        </entry>
+        <entry ID="1557191">
+            <description isocode="en">annotation</description>
+            <description isocode="de">Anmerkung</description>
+            <description isocode="it">annotazione</description>
+        </entry>
+        <entry ID="1557192">
+            <description isocode="en">article of periodical</description>
+            <description isocode="it">articolo di periodico</description>
+            <description isocode="de">Artikel in Zeitschrift</description>
+        </entry>
+        <entry ID="1557193">
+            <description isocode="it">contributo in libro</description>
+            <description isocode="en">book part</description>
+            <description isocode="de">Buchteil</description>
+        </entry>
+        <entry ID="1557194">
+            <description isocode="it">libro</description>
+            <description isocode="de">Buch</description>
+            <description isocode="en">book</description>
+        </entry>
+        <entry ID="1557195">
+            <description isocode="en">manuscript</description>
+            <description isocode="de">Manuskript</description>
+            <description isocode="it">manoscritto</description>
+        </entry>
+        <entry ID="1557196">
+            <description isocode="de">Zeitschrift</description>
+            <description isocode="en">periodical</description>
+            <description isocode="it">periodico</description>
+        </entry>
+        <entry ID="1557197">
+            <description isocode="de">Diplomarbeit/Dissertation</description>
+            <description isocode="en">thesis &amp; dissertation</description>
+            <description isocode="it">tesi / dissertazione</description>
+        </entry>
+        <entry ID="1557198">
+            <description isocode="it">DVD video</description>
+            <description isocode="de">DVD-Video</description>
+            <description isocode="en">DVD-Video</description>
+        </entry>
+        <entry ID="1557199">
+            <description isocode="it">videobobina</description>
+            <description isocode="en">videoreel</description>
+            <description isocode="de">Videoband</description>
+        </entry>
+        <entry ID="1557200">
+            <description isocode="it">videocartuccia</description>
+            <description isocode="de">Videopatrone</description>
+            <description isocode="en">videocartridge</description>
+        </entry>
+        <entry ID="1557201">
+            <description isocode="de">Videokassette</description>
+            <description isocode="it">videocassetta</description>
+            <description isocode="en">videocassette</description>
+        </entry>
+        <entry ID="1557202">
+            <description isocode="en">videodisc</description>
+            <description isocode="de">Bildplatte</description>
+            <description isocode="it">videodisco</description>
+        </entry>
+        <entry ID="1557203">
+            <description isocode="it">CD</description>
+            <description isocode="en">CD</description>
+            <description isocode="de">CD</description>
+        </entry>
+        <entry ID="1557204">
+            <description isocode="en">DVD</description>
+            <description isocode="it">DVD</description>
+            <description isocode="de">DVD</description>
+        </entry>
+        <entry ID="1557205">
+            <description isocode="it">modello, esemplare</description>
+            <description isocode="en">specimen</description>
+            <description isocode="de">Vorlage</description>
+        </entry>
+        <entry ID="1557206">
+            <description isocode="en">other</description>
+            <description isocode="de">anderes</description>
+            <description isocode="it">altro</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="reference" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" description="HISTKULT Bezugsnummern" MID="94">
+        <entry ID="10885">
+            <description isocode="sr">inventarski broj</description>
+            <description isocode="de">Inventarnummer</description>
+            <description isocode="it">Inventario</description>
+            <description isocode="en">Inventory Number</description>
+        </entry>
+        <entry ID="10914">
+            <description isocode="it">Numero negativo</description>
+            <description isocode="en">Negative Number</description>
+            <description isocode="de">Negativnummer</description>
+            <description isocode="sr">negativni broj</description>
+        </entry>
+        <entry ID="10917">
+            <description isocode="sr">serijski broj</description>
+            <description isocode="de">Stammnummer</description>
+            <description isocode="it">Matricola</description>
+            <description isocode="en">Serial Number</description>
+        </entry>
+        <entry ID="1552000">
+            <description isocode="it">certificato dell'immagine</description>
+            <description isocode="en">Image Certificate</description>
+            <description isocode="de">Abbildungsnachweis</description>
+            <description isocode="sr">sertifikat slike</description>
+        </entry>
+        <entry ID="1552079">
+            <description isocode="it">UNIDAM ID</description>
+            <description isocode="de">UNIDAM ID</description>
+            <description isocode="en">UNIDAM ID</description>
+            <description isocode="sr">UNIDAM ID</description>
+        </entry>
+        <entry ID="1552118">
+            <description isocode="it">RAD</description>
+            <description isocode="de">RAD ID</description>
+            <description isocode="en">RAD ID</description>
+            <description isocode="sr">RAD ID</description>
+        </entry>
+        <entry ID="1552119">
+            <description isocode="de">Signatur</description>
+            <description isocode="sr">signatura</description>
+            <description isocode="en">Signature</description>
+            <description isocode="it">Firma</description>
+        </entry>
+        <entry ID="1552137">
+            <description isocode="sr">ID E-teze</description>
+            <description isocode="en">E-Theses ID</description>
+            <description isocode="it">Tesi elettronica</description>
+            <description isocode="de">E-Theses ID</description>
+        </entry>
+        <entry ID="1552144">
+            <description isocode="sr">UAW signatura</description>
+            <description isocode="de">UAW Signatur</description>
+            <description isocode="it">Firma UAW</description>
+            <description isocode="en">UAW Signature</description>
+        </entry>
+        <entry ID="1552145">
+            <description isocode="it">Firma UAW 2</description>
+            <description isocode="de">UAW Signatur 2</description>
+            <description isocode="sr">UAW signatura 2</description>
+            <description isocode="en">UAW Signature 2</description>
+        </entry>
+        <entry ID="1552146">
+            <description isocode="sr">taksonomija rada na traci</description>
+            <description isocode="en">Taxonomy Tape Work</description>
+            <description isocode="de">Systematik Kasette Werk</description>
+            <description isocode="it">Tassonomia opera su nastro</description>
+        </entry>
+        <entry ID="1552147">
+            <description isocode="de">Systematik Digitale Kunst</description>
+            <description isocode="it">Tassonomia arte digitale</description>
+            <description isocode="sr">taksonomija digitalna umetnost</description>
+            <description isocode="en">Taxonomy Digital Art</description>
+        </entry>
+        <entry ID="1552148">
+            <description isocode="sr">Broj Dia staklene ploče</description>
+            <description isocode="en">Glass Plate Dia Number</description>
+            <description isocode="de">Glasplattendianummer</description>
+            <description isocode="it">Numero Diapositive su lastra di vetro</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="role" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" description="LOM 2.3.1 Role" MID="107">
+        <entry ID="46">
+            <description isocode="de">AutorIn des digitalen Objekts</description>
+            <description isocode="sr">autor digitalnog objekta</description>
+            <description isocode="en">Author of the digital object</description>
+            <description isocode="it">Autore dell'oggetto digitale</description>
+        </entry>
+        <entry ID="47">
+            <description isocode="it">Editore</description>
+            <description isocode="de">HerausgeberIn</description>
+            <description isocode="en">Publisher</description>
+            <description isocode="sr">izdavač</description>
+        </entry>
+        <entry ID="49">
+            <description isocode="it">Iniziatore</description>
+            <description isocode="en">Initiator</description>
+            <description isocode="sr">pokretač</description>
+            <description isocode="de">InitiatorIn</description>
+        </entry>
+        <entry ID="51">
+            <description isocode="en">Evaluator</description>
+            <description isocode="it">Valutatore</description>
+            <description isocode="sr">evaluator</description>
+            <description isocode="de">EvaluatorIn</description>
+        </entry>
+        <entry ID="52">
+            <description isocode="en">Editor</description>
+            <description isocode="sr">urednik</description>
+            <description isocode="de">EditorIn</description>
+            <description isocode="it">Curatore</description>
+        </entry>
+        <entry ID="53">
+            <description isocode="sr">grafički dizajner</description>
+            <description isocode="de">GrafikdesignerIn</description>
+            <description isocode="it">Grafico</description>
+            <description isocode="en">Graphic Designer</description>
+        </entry>
+        <entry ID="54">
+            <description isocode="sr">tehnički prevodilac</description>
+            <description isocode="de">Technische/r UmsetzerIn</description>
+            <description isocode="en">Technical Translator</description>
+            <description isocode="it">Traduttore Tecnico</description>
+        </entry>
+        <entry ID="55">
+            <description isocode="it">Fornitore dei dati</description>
+            <description isocode="en">Data Supplier</description>
+            <description isocode="sr">dobavljač podataka</description>
+            <description isocode="de">DatenlieferantIn</description>
+        </entry>
+        <entry ID="56">
+            <description isocode="en">Technical Inspector</description>
+            <description isocode="it">Ispettore tecnico</description>
+            <description isocode="sr">tehnički nadzornik</description>
+            <description isocode="de">Technische/r PrüferIn</description>
+        </entry>
+        <entry ID="58">
+            <description isocode="en">Text Processor</description>
+            <description isocode="sr">tekst procesor</description>
+            <description isocode="it">Estensore del testo</description>
+            <description isocode="de">TextbearbeiterIn</description>
+        </entry>
+        <entry ID="59">
+            <description isocode="sr">pedagoški stručnjak</description>
+            <description isocode="de">Pädagogische/r ExpertIn</description>
+            <description isocode="it">Esperto pedagogico</description>
+            <description isocode="en">Pedagogic Expert</description>
+        </entry>
+        <entry ID="60">
+            <description isocode="sr">stručnjak za domene</description>
+            <description isocode="de">FachexpertIn</description>
+            <description isocode="en">Domain Expert</description>
+            <description isocode="it">Esperto del settore</description>
+        </entry>
+        <entry ID="61">
+            <description isocode="de">InterpretIn</description>
+            <description isocode="en">Interpreter</description>
+            <description isocode="it">Interprete</description>
+            <description isocode="sr">tumač</description>
+        </entry>
+        <entry ID="63">
+            <description isocode="en">Other</description>
+            <description isocode="it">Altro</description>
+            <description isocode="sr">drugo</description>
+            <description isocode="de">Andere</description>
+        </entry>
+        <entry ID="10867">
+            <description isocode="sr">umetnik</description>
+            <description isocode="en">Artist</description>
+            <description isocode="de">KünstlerIn</description>
+            <description isocode="it">Artista</description>
+        </entry>
+        <entry ID="10868">
+            <description isocode="sr">klijent/primalac</description>
+            <description isocode="de">AuftraggeberIn/StifterIn</description>
+            <description isocode="en">Client/Donor</description>
+            <description isocode="it">Cliente/Donatore</description>
+        </entry>
+        <entry ID="10869">
+            <description isocode="de">FotografIn</description>
+            <description isocode="it">Fotografo</description>
+            <description isocode="en">Photographer</description>
+            <description isocode="sr">fotograf</description>
+        </entry>
+        <entry ID="1552095">
+            <description isocode="en">Author of the analogue object</description>
+            <description isocode="de">AutorIn des analogen Objekts</description>
+            <description isocode="sr">autor analognog objekta</description>
+            <description isocode="it">Autore dell'oggetto  analogico</description>
+        </entry>
+        <entry ID="1552154">
+            <description isocode="it">Autore della digitalizzazione</description>
+            <description isocode="en">Digitiser</description>
+            <description isocode="de">DigitalisiererIn</description>
+            <description isocode="sr">digitalizator</description>
+        </entry>
+        <entry ID="1552155">
+            <description isocode="it">Affidatario dell'originale</description>
+            <description isocode="en">Keeper of the original</description>
+            <description isocode="de">AufbewahrerIn des Originals</description>
+            <description isocode="sr">čuvar orginala</description>
+        </entry>
+        <entry ID="1552167">
+            <description isocode="de">BetreuerIn</description>
+            <description isocode="it">Consigliere</description>
+            <description isocode="sr">savetnik</description>
+            <description isocode="en">Adviser</description>
+        </entry>
+        <entry ID="1552168">
+            <description isocode="it">Giudice</description>
+            <description isocode="sr">sudija</description>
+            <description isocode="en">Judge</description>
+            <description isocode="de">BeurteilerIn</description>
+        </entry>
+        <entry ID="1557098">
+            <description isocode="de">RadiererIn</description>
+            <description isocode="en">Etcher</description>
+            <description isocode="it">Acquafortista</description>
+        </entry>
+        <entry ID="1557099">
+            <description isocode="en">Adapter</description>
+            <description isocode="it">Adattatore</description>
+            <description isocode="de">BearbeiterIn</description>
+        </entry>
+        <entry ID="1557100">
+            <description isocode="it">Architetto</description>
+            <description isocode="en">Architect</description>
+            <description isocode="de">ArchitektIn</description>
+        </entry>
+        <entry ID="1557101">
+            <description isocode="en">Arranger</description>
+            <description isocode="it">Arrangiatore</description>
+            <description isocode="de">ArrangeurIn</description>
+        </entry>
+        <entry ID="1557102">
+            <description isocode="it">Attore</description>
+            <description isocode="de">SchauspielerIn</description>
+            <description isocode="en">Actor</description>
+        </entry>
+        <entry ID="1557103">
+            <description isocode="de">AutorIn von Begleitmaterial</description>
+            <description isocode="it">Autore del materiale allegato</description>
+            <description isocode="en">Writer of accompanying material</description>
+        </entry>
+        <entry ID="1557104">
+            <description isocode="de">zweifelhafte AutorIn</description>
+            <description isocode="en">Dubious author</description>
+            <description isocode="it">Autore incerto</description>
+        </entry>
+        <entry ID="1557105">
+            <description isocode="en">Metal-engraver</description>
+            <description isocode="de">MetallstecherIn</description>
+            <description isocode="it">Calcografo</description>
+        </entry>
+        <entry ID="1557106">
+            <description isocode="it">Cantante</description>
+            <description isocode="en">Singer</description>
+            <description isocode="de">SÃ¤ngerIn</description>
+        </entry>
+        <entry ID="1557107">
+            <description isocode="en">Cartographer</description>
+            <description isocode="it">Cartografo</description>
+            <description isocode="de">KartografIn</description>
+        </entry>
+        <entry ID="1557108">
+            <description isocode="de">HerausgeberIn einer Sammlung</description>
+            <description isocode="it">Compilatore</description>
+            <description isocode="en">Compiler</description>
+        </entry>
+        <entry ID="1557109">
+            <description isocode="it">Compositore</description>
+            <description isocode="de">KomponistIn</description>
+            <description isocode="en">Composer</description>
+        </entry>
+        <entry ID="1557110">
+            <description isocode="de">wissenschaftliche BeraterIn</description>
+            <description isocode="it">Consulente scientifico</description>
+            <description isocode="en">Scientific advisor</description>
+        </entry>
+        <entry ID="1557111">
+            <description isocode="en">Opponent</description>
+            <description isocode="it">Controrelatore</description>
+            <description isocode="de">WidersacherIn</description>
+        </entry>
+        <entry ID="1557112">
+            <description isocode="en">Choreographer</description>
+            <description isocode="it">Coreografo</description>
+            <description isocode="de">ChoreographIn</description>
+        </entry>
+        <entry ID="1557113">
+            <description isocode="it">Dedicante</description>
+            <description isocode="de">Widmende/r</description>
+            <description isocode="en">Dedicator</description>
+        </entry>
+        <entry ID="1557114">
+            <description isocode="de">WidmungstrÃ¤gerIn</description>
+            <description isocode="en">Dedicatee</description>
+            <description isocode="it">Dedicatario</description>
+        </entry>
+        <entry ID="1557115">
+            <description isocode="de">kÃ¼nstlerische/r LeiterIn</description>
+            <description isocode="it">Direttore artistico</description>
+            <description isocode="en">Artistic director</description>
+        </entry>
+        <entry ID="1557116">
+            <description isocode="it">Direttore d'orchestra</description>
+            <description isocode="en">Conductor</description>
+            <description isocode="de">KapellmeisterIn</description>
+        </entry>
+        <entry ID="1557117">
+            <description isocode="it">Direttore della fotografia</description>
+            <description isocode="en">Cinematographer</description>
+            <description isocode="de">Kameramann/frau</description>
+        </entry>
+        <entry ID="1557118">
+            <description isocode="en">Musical director</description>
+            <description isocode="de">musikalische/r LeiterIn</description>
+            <description isocode="it">Direttore musicale</description>
+        </entry>
+        <entry ID="1557119">
+            <description isocode="de">IllustratorIn</description>
+            <description isocode="it">Illustratore</description>
+            <description isocode="en">Illustrator</description>
+        </entry>
+        <entry ID="1557120">
+            <description isocode="de">GraveurIn</description>
+            <description isocode="it">Incisore</description>
+            <description isocode="en">Engraver</description>
+        </entry>
+        <entry ID="1557121">
+            <description isocode="de">IngenieurIn</description>
+            <description isocode="it">Ingegnere</description>
+            <description isocode="en">Engineer</description>
+        </entry>
+        <entry ID="1557122">
+            <description isocode="it">Intervistato</description>
+            <description isocode="en">Interviewee</description>
+            <description isocode="de">InterviewpartnerIn</description>
+        </entry>
+        <entry ID="1557123">
+            <description isocode="en">Interviewer</description>
+            <description isocode="de">InterviewerIn</description>
+            <description isocode="it">Intervistatore</description>
+        </entry>
+        <entry ID="1557124">
+            <description isocode="de">VerleiherIn des Diploms</description>
+            <description isocode="it">Istituzione che rilascia il titolo accademico</description>
+            <description isocode="en">Degree grantor</description>
+        </entry>
+        <entry ID="1557125">
+            <description isocode="de">LibrettistIn</description>
+            <description isocode="it">Librettista</description>
+            <description isocode="en">Librettist</description>
+        </entry>
+        <entry ID="1557126">
+            <description isocode="de">IlluminatorIn</description>
+            <description isocode="it">Miniatore</description>
+            <description isocode="en">Illuminator</description>
+        </entry>
+        <entry ID="1557127">
+            <description isocode="it">Musicista</description>
+            <description isocode="en">Musician</description>
+            <description isocode="de">MusikerIn</description>
+        </entry>
+        <entry ID="1557128">
+            <description isocode="it">Nome attribuito</description>
+            <description isocode="en">Attributed name</description>
+            <description isocode="de">zugeschriebene/r AutorIn</description>
+        </entry>
+        <entry ID="1557129">
+            <description isocode="en">Lyricist</description>
+            <description isocode="de">SongwriterIn</description>
+            <description isocode="it">Paroliere</description>
+        </entry>
+        <entry ID="1557130">
+            <description isocode="en">Performer</description>
+        </entry>
+        <entry ID="1557131">
+            <description isocode="de">VorbesitzerIn</description>
+            <description isocode="it">Precedente proprietario</description>
+            <description isocode="en">Former owner</description>
+        </entry>
+        <entry ID="1557132">
+            <description isocode="de">ProduzentIn</description>
+            <description isocode="it">Produttore</description>
+            <description isocode="en">Producer</description>
+        </entry>
+        <entry ID="1557133">
+            <description isocode="de">SounddesignerIn</description>
+            <description isocode="it">Progettista del suono</description>
+            <description isocode="en">Sound designer</description>
+        </entry>
+        <entry ID="1557134">
+            <description isocode="it">Proprietario</description>
+            <description isocode="en">Owner</description>
+            <description isocode="de">EigentÃ¼merIn</description>
+        </entry>
+        <entry ID="1557135">
+            <description isocode="en">Reviewer</description>
+            <description isocode="de">KritikerIn</description>
+            <description isocode="it">Recensore</description>
+        </entry>
+        <entry ID="1557136">
+            <description isocode="de">DissertationsbetreuerIn</description>
+            <description isocode="it">Relatore</description>
+            <description isocode="en">Thesis advisor</description>
+        </entry>
+        <entry ID="1557137">
+            <description isocode="de">Film-EditorIn</description>
+            <description isocode="it">Responsabile del montaggio</description>
+            <description isocode="en">Film editor</description>
+        </entry>
+        <entry ID="1557138">
+            <description isocode="de">AutorIn des Drehbuches</description>
+            <description isocode="it">Sceneggiatore</description>
+            <description isocode="en">Author of screenplay</description>
+        </entry>
+        <entry ID="1557139">
+            <description isocode="it">Scenografo</description>
+            <description isocode="en">Scenarist</description>
+            <description isocode="de">SzenentexterIn</description>
+        </entry>
+        <entry ID="1557140">
+            <description isocode="it">Scultore</description>
+            <description isocode="en">Sculptor</description>
+            <description isocode="de">BildhauerIn</description>
+        </entry>
+        <entry ID="1557141">
+            <description isocode="en">Printer</description>
+            <description isocode="de">DruckerIn</description>
+            <description isocode="it">Stampatore</description>
+        </entry>
+        <entry ID="1557142">
+            <description isocode="de">TonmeisterIn</description>
+            <description isocode="it">Tecnico della registrazione</description>
+            <description isocode="en">Recording engineer</description>
+        </entry>
+        <entry ID="1557143">
+            <description isocode="de">DissertantIn</description>
+            <description isocode="it">Tesista</description>
+            <description isocode="en">Dissertant</description>
+        </entry>
+        <entry ID="1557144">
+            <description isocode="de">VideoanbieterIn</description>
+            <description isocode="it">Videografo</description>
+            <description isocode="en">Videographer</description>
+        </entry>
+        <entry ID="1557145">
+            <description isocode="it">Xilografo</description>
+            <description isocode="en">Wood-engraver</description>
+            <description isocode="de">HolzstecherIn</description>
+        </entry>
+        <entry ID="1557146">
+            <description isocode="en">Uploader</description>
+        </entry>
+        <entry ID="1557231">
+            <description isocode="de">SpenderIn</description>
+            <description isocode="en">Sponsor</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="resource" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" description="HISTKULT Abbildungen" MID="121">
+        <entry ID="10910">
+            <description isocode="sr">predmet</description>
+            <description isocode="it">Oggetto</description>
+            <description isocode="en">Object</description>
+            <description isocode="de">Objekt</description>
+        </entry>
+        <entry ID="10911">
+            <description isocode="it">Supporto dell'immagine</description>
+            <description isocode="en">Image Carrier</description>
+            <description isocode="sr">nosilac slike</description>
+            <description isocode="de">Bildträger</description>
+        </entry>
+        <entry ID="1552077">
+            <description isocode="it">Diapositiva su lastra di vetro</description>
+            <description isocode="en">Glass Plate Dia</description>
+            <description isocode="sr">Staklene ploče Dia</description>
+            <description isocode="de">Glasplattendia</description>
+        </entry>
+        <entry ID="1552149">
+            <description isocode="en">Analog Video</description>
+            <description isocode="it">Video analogico</description>
+            <description isocode="de">Analoges Video</description>
+            <description isocode="sr">analogni video</description>
+        </entry>
+        <entry ID="1552150">
+            <description isocode="it">Pellicola analogica</description>
+            <description isocode="de">Analoger Film</description>
+            <description isocode="sr">analogni film</description>
+            <description isocode="en">Analog Film</description>
+        </entry>
+        <entry ID="1557147">
+            <description isocode="it">anello cinematografico</description>
+            <description isocode="en">filmloop</description>
+            <description isocode="de">Filmschleife</description>
+        </entry>
+        <entry ID="1557148">
+            <description isocode="en">film reel</description>
+            <description isocode="de">Filmrolle</description>
+            <description isocode="it">bobina di pellicola</description>
+        </entry>
+        <entry ID="1557149">
+            <description isocode="en">film cartridge</description>
+            <description isocode="it">cartuccia di pellicola</description>
+            <description isocode="de">Filmpatrone</description>
+        </entry>
+        <entry ID="1557150">
+            <description isocode="it">cassetta di pellicola</description>
+            <description isocode="en">film cassette</description>
+            <description isocode="de">Filmkassette</description>
+        </entry>
+        <entry ID="1557151">
+            <description isocode="en">wallchart</description>
+            <description isocode="de">Wandkarte</description>
+            <description isocode="it">carta murale</description>
+        </entry>
+        <entry ID="1557152">
+            <description isocode="de">Postkarte</description>
+            <description isocode="it">cartolina</description>
+            <description isocode="en">postcard</description>
+        </entry>
+        <entry ID="1557153">
+            <description isocode="it">dipinto</description>
+            <description isocode="de">GemÃ¤lde</description>
+            <description isocode="en">painting</description>
+        </entry>
+        <entry ID="1557154">
+            <description isocode="de">Zeichnung</description>
+            <description isocode="en">drawing</description>
+            <description isocode="it">disegno</description>
+        </entry>
+        <entry ID="1557155">
+            <description isocode="en">photograph</description>
+            <description isocode="de">Foto</description>
+            <description isocode="it">fotografia</description>
+        </entry>
+        <entry ID="1557156">
+            <description isocode="de">Bild</description>
+            <description isocode="it">immagine</description>
+            <description isocode="en">picture</description>
+        </entry>
+        <entry ID="1557157">
+            <description isocode="de">Plakat</description>
+            <description isocode="en">poster</description>
+            <description isocode="it">manifesto</description>
+        </entry>
+        <entry ID="1557158">
+            <description isocode="en">print</description>
+            <description isocode="de">Druckwerk</description>
+            <description isocode="it">stampa</description>
+        </entry>
+        <entry ID="1557159">
+            <description isocode="de">Photomechanischer (Ab)Druck</description>
+            <description isocode="it">stampa fotomeccanica</description>
+            <description isocode="en">photomechanical print</description>
+        </entry>
+        <entry ID="1557160">
+            <description isocode="en">microfilm</description>
+            <description isocode="de">Mikrofilm</description>
+            <description isocode="it">microfilm</description>
+        </entry>
+        <entry ID="1557161">
+            <description isocode="it">microfiche</description>
+            <description isocode="de">Mikrofiche</description>
+            <description isocode="en">microfiche</description>
+        </entry>
+        <entry ID="1557162">
+            <description isocode="it">diapositiva</description>
+            <description isocode="de">Dia</description>
+            <description isocode="en">slide</description>
+        </entry>
+        <entry ID="1557163">
+            <description isocode="it">negativo</description>
+            <description isocode="en">negative</description>
+            <description isocode="de">Negativ</description>
+        </entry>
+        <entry ID="1557164">
+            <description isocode="en">filmstrip</description>
+            <description isocode="de">Filmstreifen</description>
+            <description isocode="it">filmina</description>
+        </entry>
+        <entry ID="1557165">
+            <description isocode="de">Filmausschnitt</description>
+            <description isocode="it">spezzone di pellicola</description>
+            <description isocode="en">filmslip</description>
+        </entry>
+        <entry ID="1557166">
+            <description isocode="it">trasparente</description>
+            <description isocode="de">Diapositiv</description>
+            <description isocode="en">transparency</description>
+        </entry>
+        <entry ID="1557167">
+            <description isocode="de">MikroskopobjekttrÃ¤ger</description>
+            <description isocode="it">vetrino da microscopio</description>
+            <description isocode="en">microscope slide</description>
+        </entry>
+        <entry ID="1557168">
+            <description isocode="it">audiocassetta</description>
+            <description isocode="de">Audiokassette</description>
+            <description isocode="en">sound cassette</description>
+        </entry>
+        <entry ID="1557169">
+            <description isocode="it">bobina sonora</description>
+            <description isocode="en">sound reel</description>
+            <description isocode="de">Tonband</description>
+        </entry>
+        <entry ID="1557170">
+            <description isocode="en">sound cartridge</description>
+            <description isocode="de">Audiokassette</description>
+            <description isocode="it">cartuccia sonora</description>
+        </entry>
+        <entry ID="1557171">
+            <description isocode="en">sound disc</description>
+            <description isocode="it">disco sonoro</description>
+            <description isocode="de">Schallplatte</description>
+        </entry>
+        <entry ID="1557172">
+            <description isocode="de">DVD-Audio</description>
+            <description isocode="en">DVD-Audio</description>
+            <description isocode="it">DVD audio</description>
+        </entry>
+        <entry ID="1557173">
+            <description isocode="en">CD-Audio</description>
+            <description isocode="de">CD-Audio</description>
+            <description isocode="it">CD audio</description>
+        </entry>
+        <entry ID="1557174">
+            <description isocode="it">atlante</description>
+            <description isocode="en">atlas</description>
+            <description isocode="de">Atlas</description>
+        </entry>
+        <entry ID="1557175">
+            <description isocode="de">Karte</description>
+            <description isocode="en">map</description>
+            <description isocode="it">carta geografica</description>
+        </entry>
+        <entry ID="1557176">
+            <description isocode="en">diagram</description>
+            <description isocode="de">Diagramm</description>
+            <description isocode="it">diagramma</description>
+        </entry>
+        <entry ID="1557177">
+            <description isocode="it">globo</description>
+            <description isocode="en">globe</description>
+            <description isocode="de">Globus</description>
+        </entry>
+        <entry ID="1557178">
+            <description isocode="de">Fernerkundungsbild</description>
+            <description isocode="it">immagine di telerilevamento</description>
+            <description isocode="en">remote sensing image</description>
+        </entry>
+        <entry ID="1557179">
+            <description isocode="it">inquadratura</description>
+            <description isocode="en">view</description>
+            <description isocode="de">Einstellung</description>
+        </entry>
+        <entry ID="1557180">
+            <description isocode="it">modello</description>
+            <description isocode="de">Modell</description>
+            <description isocode="en">model</description>
+        </entry>
+        <entry ID="1557181">
+            <description isocode="en">profile</description>
+            <description isocode="de">Schnitt</description>
+            <description isocode="it">profilo</description>
+        </entry>
+        <entry ID="1557182">
+            <description isocode="de">Abschnitt</description>
+            <description isocode="en">section</description>
+            <description isocode="it">sezione</description>
+        </entry>
+        <entry ID="1557183">
+            <description isocode="en">piano (violin, etc.) conductor part</description>
+            <description isocode="it">parte di pianoforte (violino, etc.) conduttore</description>
+            <description isocode="de">Stimme</description>
+        </entry>
+        <entry ID="1557184">
+            <description isocode="en">part</description>
+            <description isocode="it">parte</description>
+            <description isocode="de">Teilbereich</description>
+        </entry>
+        <entry ID="1557185">
+            <description isocode="it">partitura</description>
+            <description isocode="de">Partitur</description>
+            <description isocode="en">score</description>
+        </entry>
+        <entry ID="1557186">
+            <description isocode="en">condensed score</description>
+            <description isocode="de">Particell</description>
+            <description isocode="it">partitura condensata</description>
+        </entry>
+        <entry ID="1557187">
+            <description isocode="en">close score</description>
+            <description isocode="it">partitura ristretta</description>
+            <description isocode="de">Partiturauszug</description>
+        </entry>
+        <entry ID="1557188">
+            <description isocode="de">Chorpartitur</description>
+            <description isocode="en">chorus score</description>
+            <description isocode="it">partitura vocale</description>
+        </entry>
+        <entry ID="1557189">
+            <description isocode="en">study score</description>
+            <description isocode="it">partiturina</description>
+            <description isocode="de">Studienpartitur</description>
+        </entry>
+        <entry ID="1557190">
+            <description isocode="de">Notenblatt</description>
+            <description isocode="it">spartito</description>
+            <description isocode="en">vocal score</description>
+        </entry>
+        <entry ID="1557191">
+            <description isocode="it">annotazione</description>
+            <description isocode="de">Anmerkung</description>
+            <description isocode="en">annotation</description>
+        </entry>
+        <entry ID="1557192">
+            <description isocode="de">Artikel in Zeitschrift</description>
+            <description isocode="en">article of periodical</description>
+            <description isocode="it">articolo di periodico</description>
+        </entry>
+        <entry ID="1557193">
+            <description isocode="it">contributo in libro</description>
+            <description isocode="en">book part</description>
+            <description isocode="de">Buchteil</description>
+        </entry>
+        <entry ID="1557194">
+            <description isocode="it">libro</description>
+            <description isocode="de">Buch</description>
+            <description isocode="en">book</description>
+        </entry>
+        <entry ID="1557195">
+            <description isocode="en">manuscript</description>
+            <description isocode="de">Manuskript</description>
+            <description isocode="it">manoscritto</description>
+        </entry>
+        <entry ID="1557196">
+            <description isocode="en">periodical</description>
+            <description isocode="de">Zeitschrift</description>
+            <description isocode="it">periodico</description>
+        </entry>
+        <entry ID="1557197">
+            <description isocode="it">tesi / dissertazione</description>
+            <description isocode="de">Diplomarbeit/Dissertation</description>
+            <description isocode="en">thesis &amp; dissertation</description>
+        </entry>
+        <entry ID="1557198">
+            <description isocode="en">DVD-Video</description>
+            <description isocode="it">DVD video</description>
+            <description isocode="de">DVD-Video</description>
+        </entry>
+        <entry ID="1557199">
+            <description isocode="en">videoreel</description>
+            <description isocode="de">Videoband</description>
+            <description isocode="it">videobobina</description>
+        </entry>
+        <entry ID="1557200">
+            <description isocode="de">Videopatrone</description>
+            <description isocode="en">videocartridge</description>
+            <description isocode="it">videocartuccia</description>
+        </entry>
+        <entry ID="1557201">
+            <description isocode="de">Videokassette</description>
+            <description isocode="it">videocassetta</description>
+            <description isocode="en">videocassette</description>
+        </entry>
+        <entry ID="1557202">
+            <description isocode="it">videodisco</description>
+            <description isocode="en">videodisc</description>
+            <description isocode="de">Bildplatte</description>
+        </entry>
+        <entry ID="1557203">
+            <description isocode="en">CD</description>
+            <description isocode="de">CD</description>
+            <description isocode="it">CD</description>
+        </entry>
+        <entry ID="1557204">
+            <description isocode="de">DVD</description>
+            <description isocode="en">DVD</description>
+            <description isocode="it">DVD</description>
+        </entry>
+        <entry ID="1557205">
+            <description isocode="it">modello, esemplare</description>
+            <description isocode="en">specimen</description>
+            <description isocode="de">Vorlage</description>
+        </entry>
+        <entry ID="1557206">
+            <description isocode="it">altro</description>
+            <description isocode="en">other</description>
+            <description isocode="de">anderes</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="resource" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" description="Universität Wien Objektidentifikatoren" MID="124">
+        <entry ID="1552099">
+            <description isocode="de">DOI</description>
+            <description isocode="it">DOI</description>
+            <description isocode="sr">DOI</description>
+            <description isocode="en">DOI</description>
+        </entry>
+        <entry ID="1552100">
+            <description isocode="sr">ISBN</description>
+            <description isocode="de">ISBN</description>
+            <description isocode="it">ISBN</description>
+            <description isocode="en">ISBN</description>
+        </entry>
+        <entry ID="1552101">
+            <description isocode="de">ISSN</description>
+            <description isocode="en">ISSN</description>
+            <description isocode="sr">ISSN</description>
+            <description isocode="it">ISSN</description>
+        </entry>
+        <entry ID="1552102">
+            <description isocode="sr">HTTP/WWW</description>
+            <description isocode="en">HTTP/WWW</description>
+            <description isocode="it">HTTP/WWW</description>
+            <description isocode="de">HTTP/WWW</description>
+        </entry>
+        <entry ID="1552103">
+            <description isocode="it">URN</description>
+            <description isocode="en">URN</description>
+            <description isocode="sr">URN</description>
+            <description isocode="de">URN</description>
+        </entry>
+        <entry ID="1552104">
+            <description isocode="en">ISMN</description>
+            <description isocode="de">ISMN</description>
+            <description isocode="it">ISMN</description>
+            <description isocode="sr">ISMN</description>
+        </entry>
+        <entry ID="1552105">
+            <description isocode="sr">PI</description>
+            <description isocode="it">PI</description>
+            <description isocode="de">PI</description>
+            <description isocode="en">PI</description>
+        </entry>
+        <entry ID="1552151">
+            <description isocode="sr">AC-broj</description>
+            <description isocode="de">AC-Nummer</description>
+            <description isocode="it">SYS Aleph / BID SBN</description>
+            <description isocode="en">AC-Number</description>
+        </entry>
+        <entry ID="1552255">
+            <description isocode="en">PrintISSN</description>
+            <description isocode="it">PrintISSN</description>
+            <description isocode="de">PrintISSN</description>
+        </entry>
+        <entry ID="1552256">
+            <description isocode="en">eISSN</description>
+            <description isocode="de">eISSN</description>
+            <description isocode="it">eISSN</description>
+        </entry>
+        <entry ID="1556222">
+            <description isocode="it">Grant Agreement Number</description>
+            <description isocode="de">Grant Agreement Number</description>
+            <description isocode="sr">Grant Agreement Number</description>
+            <description isocode="en">Grant Agreement Number</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="medium" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" description="Medium - Book Reiter" MID="128">
+        <entry ID="1552129">
+            <description isocode="de">DVD</description>
+            <description isocode="it">DVD</description>
+            <description isocode="en">DVD</description>
+            <description isocode="sr">DVD</description>
+        </entry>
+        <entry ID="1552130">
+            <description isocode="de">CD</description>
+            <description isocode="sr">CD</description>
+            <description isocode="en">CD</description>
+            <description isocode="it">CD</description>
+        </entry>
+        <entry ID="1552131">
+            <description isocode="it">Nastro</description>
+            <description isocode="en">Band</description>
+            <description isocode="sr">tom</description>
+            <description isocode="de">Band</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="infoeurepoaccess" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" description="info-eu-repo-AccessRights" MID="150">
+        <entry ID="1556224">
+            <description isocode="sr">closedAccess</description>
+            <description isocode="en">closedAccess</description>
+            <description isocode="it">closedAccess</description>
+            <description isocode="de">closedAccess</description>
+        </entry>
+        <entry ID="1556225">
+            <description isocode="it">embargoedAccess</description>
+            <description isocode="de">embargoedAccess</description>
+            <description isocode="sr">embargoedAccess</description>
+            <description isocode="en">embargoedAccess</description>
+        </entry>
+        <entry ID="1556226">
+            <description isocode="de">restrictedAccess</description>
+            <description isocode="sr">restrictedAccess</description>
+            <description isocode="en">restrictedAccess</description>
+            <description isocode="it">restrictedAccess</description>
+        </entry>
+        <entry ID="1556227">
+            <description isocode="sr">openAccess</description>
+            <description isocode="en">openAccess</description>
+            <description isocode="it">openAccess</description>
+            <description isocode="de">openAccess</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="infoeurepoversion" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" description="info-eu-repo-Version-type" MID="152">
+        <entry ID="1556247">
+            <description isocode="en">draft</description>
+            <description isocode="it">draft</description>
+            <description isocode="de">draft</description>
+            <description isocode="sr">draft</description>
+        </entry>
+        <entry ID="1556248">
+            <description isocode="it">submittedVersion</description>
+            <description isocode="de">submittedVersion</description>
+            <description isocode="sr">submittedVersion</description>
+            <description isocode="en">submittedVersion</description>
+        </entry>
+        <entry ID="1556249">
+            <description isocode="sr">acceptedVersion</description>
+            <description isocode="en">acceptedVersion</description>
+            <description isocode="it">acceptedVersion</description>
+            <description isocode="de">acceptedVersion</description>
+        </entry>
+        <entry ID="1556250">
+            <description isocode="it">publishedVersion</description>
+            <description isocode="de">publishedVersion</description>
+            <description isocode="sr">publishedVersion</description>
+            <description isocode="en">publishedVersion</description>
+        </entry>
+        <entry ID="1556251">
+            <description isocode="de">updatedVersion</description>
+            <description isocode="sr">updatedVersion</description>
+            <description isocode="en">updatedVersion</description>
+            <description isocode="it">updatedVersion</description>
+        </entry>
+    </vocabulary>
+    <vocabulary forxmlname="license" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" description="Lizenzen" MID="81">
+        <entry ID="1">
+            <description isocode="it">Tutti i diritti riservati</description>
+            <description isocode="de">Keine Lizenz</description>
+            <description isocode="sr">Bez licence - direktna primena zakona</description>
+            <description isocode="en">No Licence</description>
+        </entry>
+        <entry ID="2">
+            <description isocode="it">Attribuzione 2.0 Italia.</description>
+            <description isocode="de">Namensnennung 2.0 Österreich</description>
+            <description isocode="sr">Autorstvo 3.0 Srbija (CC BY 3.0)</description>
+            <description isocode="en">Attribution 2.0. UK: England &amp; Wales</description>
+        </entry>
+        <entry ID="3">
+            <description isocode="sr">Autorstvo - Nekomercijalno - 3.0 Srbija (CC BY - NC   3.0)</description>
+            <description isocode="en">Attribution – Non-Commercial  2.0. UK: England &amp; Wales</description>
+            <description isocode="it">Attribuzione - Non commerciale 2.0 Italia.</description>
+            <description isocode="de">Namensnennung-Keine kommerzielle Nutzung 2.0 Österreich</description>
+        </entry>
+        <entry ID="4">
+            <description isocode="it">Attribuzione - Non commerciale - Non opere derivate 2.0 Italia.</description>
+            <description isocode="de">Namensnennung-Keine kommerzielle Nutzung-Keine Bearbeitung 2.0 Österreich</description>
+            <description isocode="sr">Autorstvo - Nekomercijalno - Bez prerada 3.0 Srbija (CC BY - NC - ND 3.0)</description>
+            <description isocode="en">Attribution – Non-Commercial – No Derivative Works 2.0. UK: England &amp; Wales</description>
+        </entry>
+        <entry ID="5">
+            <description isocode="it">Attribuzione - Non commerciale - Condividi allo stesso modo 2.0 Italia</description>
+            <description isocode="de">Namensnennung-Keine kommerzielle Nutzung-Weitergabe unter gleichen Bedingungen 2.0 Österreich</description>
+            <description isocode="sr">Autorstvo - Nekomercijalno - Deliti pod istim uslovima 3.0 Srbija ( CC BY - NC - SA 3.0)</description>
+            <description isocode="en">Attribution – Non-Commercial – Share Alike 2.0. UK: England &amp; Wales</description>
+        </entry>
+        <entry ID="6">
+            <description isocode="sr">Autorstvo - Bez prerada 3.0 Srbija (CC BY - ND 3.0)</description>
+            <description isocode="en">Attribution - No Derivative Works 2.0. UK: England &amp; Wales</description>
+            <description isocode="it">Attribuzione - Non opere derivate 2.0 Italia</description>
+            <description isocode="de">Namensnennung-Keine Bearbeitung 2.0 Österreich</description>
+        </entry>
+        <entry ID="7">
+            <description isocode="it">Attribuzione - Condividi allo stesso modo 2.0 Italia</description>
+            <description isocode="de">Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 Österreich</description>
+            <description isocode="sr">Autorstvo - Deliti pod istim uslovima 3.0 Srbija ( CC BY - SA 3.0)</description>
+            <description isocode="en">Attribution – Share Alike 2.0. UK: England &amp; Wales</description>
+        </entry>
+        <entry ID="8">
+            <description isocode="de">GNU-Lizenz</description>
+            <description isocode="sr">GNU/GPL licenca za softver </description>
+            <description isocode="en">GNU-Licence</description>
+            <description isocode="it">Licenza GNU</description>
+        </entry>
+    </vocabulary>
+</vocabularies>

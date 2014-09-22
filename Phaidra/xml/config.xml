@@ -2,7 +2,7 @@
 <gui-definition>
 <servers>
     <server>
-        <servername>PROVA TEST PADOVA</servername>
+        <servername>PhaidraTestServerPaduaName</servername>
         <fedoraurl>fedora.cab.unipd.it</fedoraurl>
         <phaidraurl>phaidratest.cab.unipd.it</phaidraurl>
         <staticurl>phaidrastatic.cab.unipd.it</staticurl>
@@ -10,7 +10,7 @@
         <oaiIdentifier>cab.unipd.it</oaiIdentifier>
     </server>
     <server>
-        <servername>PROVA TEST PADOVA 2</servername>
+        <servername>PhaidraDevServerPaduaName</servername>
         <fedoraurl>fedoradev.cab.unipd.it</fedoraurl>
         <phaidraurl>phaidradev.cab.unipd.it</phaidraurl>
         <staticurl>phaidrastaticdev.cab.unipd.it</staticurl>
@@ -18,19 +18,11 @@
         <oaiIdentifier>cab.unipd.it</oaiIdentifier>
     </server>
     <server>
-        <servername>PROVA TEST VIENNA</servername>
+        <servername>Phaidra Test</servername>
 	<fedoraurl>fedora.phaidra-test.univie.ac.at</fedoraurl>
 	<phaidraurl>phaidra-test.univie.ac.at</phaidraurl>
 	<staticurl>static.phaidra-test.univie.ac.at</staticurl>
 	<stylesheeturl>http://static.phaidra-test.univie.ac.at/stylesheets/externalview.xsl</stylesheeturl>
-        <oaiIdentifier>univie.ac.at</oaiIdentifier>
-    </server> 
-	<server>
-        <servername>PROVA TEST VIENNA SANDBOX</servername>
-	<fedoraurl>fedora.phaidra-sandbox.univie.ac.at</fedoraurl>
-	<phaidraurl>phaidra-sandbox.univie.ac.at</phaidraurl>
-	<staticurl>static.phaidra-sandbox.univie.ac.at</staticurl>
-	<stylesheeturl>http://static.phaidra-sandbox.univie.ac.at/stylesheets/externalview.xsl</stylesheeturl>
         <oaiIdentifier>univie.ac.at</oaiIdentifier>
     </server> 
   </servers>

@@ -35,7 +35,6 @@ public class Vocabulary {
      try {
         Document doc = Utility.getDocument(Globals.URL_VOCABULARY,false);
         
-        
         Node n = doc.getFirstChild();
         if (n.getNodeType() == Node.ELEMENT_NODE) {
             Element iENode = (Element) n;

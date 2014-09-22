@@ -69,10 +69,12 @@ public class ChooseServer extends javax.swing.JPanel {
         
         bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
-        Server[] servers = getServersFromConfig(config, bundle);
-        choose_server.setModel(new javax.swing.DefaultComboBoxModel(servers));
-        choose_server.setSelectedItem(servers[0]);
-        choose_server.setMinimumSize(new Dimension(400,20));  
+        if (Globals.ONLINE){
+            Server[] servers = getServersFromConfig(config, bundle);
+            choose_server.setModel(new javax.swing.DefaultComboBoxModel(servers));
+            choose_server.setSelectedItem(servers[0]);
+            choose_server.setMinimumSize(new Dimension(400,20));  
+        }
         
         getLanguagesFromConfig(config, bundle);
         choose_language.setModel(new javax.swing.DefaultComboBoxModel(Globals.LANGUAGES));
@@ -82,11 +84,15 @@ public class ChooseServer extends javax.swing.JPanel {
         updateLanguage();
         MigLayout choose_layout = new MigLayout("fillx, insets 10 20 10 50");  
         main_panel = new JPanel(choose_layout);
-
+        
         main_panel.add(label_server_1, "wrap 20");
         main_panel.add(label_server_2, "wrap 30");
         main_panel.add(label_server_3, "wrap 5");
-        main_panel.add(choose_server, "wrap 10");
+        
+        if (Globals.ONLINE){    
+            main_panel.add(choose_server, "wrap 10");
+        }
+      
         main_panel.add(label_server_4, "wrap 5");
         main_panel.add(choose_language, "wrap 10");
         
@@ -170,7 +176,13 @@ public class ChooseServer extends javax.swing.JPanel {
         
         label_server_1.setText("<html>"+Utility.getBundleString("server_1", bundle)+"</html>");
         label_server_2.setText("<html>"+Utility.getBundleString("server_2", bundle)+"</html>");
-        label_server_3.setText("<html>"+Utility.getBundleString("server_3", bundle)+"</html>");
+        
+        if (Globals.ONLINE){
+            label_server_3.setText("<html>"+Utility.getBundleString("server_3", bundle)+"</html>");
+        }
+        else{
+            label_server_3.setText("<html>"+Utility.getBundleString("server_offline", bundle)+"<br/><br/></html>");
+        }
         label_server_4.setText("<html>"+Utility.getBundleString("server_4", bundle)+"</html>");
         
         JButton nextButton = (JButton) StartWizard.footerPanel.getComponentByName("next_button");

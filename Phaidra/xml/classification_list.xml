@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<gui-definition>
+	<bookclassifications>
+	<bookclassification name="Dewey Decimal Classification">classifications_13.xml</bookclassification>
+		<bookclassification name="The ACM Computing Classification System [1998 Version]">classifications_2.xml</bookclassification>
+		<bookclassification name="EuroVoc 4.2">classifications_3.xml</bookclassification>
+		
+                <bookclassification name="PACS">classifications_4.xml</bookclassification>
+	</bookclassifications>
+	<collclassifications>
+		<collclassification name="EuroVoc 4.2">classifications_3.xml</collclassification>
+		<collclassification name="The ACM Computing Classification System [1998 Version]">classifications_2.xml</collclassification>
+		<collclassification name="Dewey Decimal Classification">classifications_13.xml</collclassification>
+                <collclassification name="PACS">classifications_4.xml</collclassification>
+	</collclassifications>
+</gui-definition>

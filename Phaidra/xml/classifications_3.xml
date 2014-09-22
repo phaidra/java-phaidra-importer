@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <classifications>
 		<classification mandatory="N" ID="3">
 		<description isocode="de">EuroVoc 4.2</description>
@@ -286,7 +286,7 @@
 						</taxon>
 						<taxon ID="3110" upstream_identifier="2578">
 							<description isocode="en">power of initiative</description>
-							<description isocode="it">potere d'iniziativa</description>
+							<description isocode="it">potere d&apos;iniziativa</description>
 							<description isocode="de">Initiativrecht</description>
 						</taxon>
 						<taxon ID="3111" upstream_identifier="2579">
@@ -346,7 +346,7 @@
 						<taxon ID="3121" upstream_identifier="382">
 							<description isocode="it">democrazia popolare</description>
 							<description isocode="de">Volksdemokratie</description>
-							<description isocode="en">people's democracy</description>
+							<description isocode="en">people&apos;s democracy</description>
 						</taxon>
 						<taxon ID="3122" upstream_identifier="436">
 							<description isocode="de">Diktatur</description>
@@ -1151,7 +1151,7 @@
 							<taxon ID="3270" upstream_identifier="15">
 								<description isocode="de">Untersuchungsausschuss</description>
 								<description isocode="en">committee of inquiry</description>
-								<description isocode="it">commissione d'inchiesta</description>
+								<description isocode="it">commissione d&apos;inchiesta</description>
 							</taxon>
 							<taxon ID="3271" upstream_identifier="21">
 								<description isocode="en">standing committee</description>
@@ -1532,7 +1532,7 @@
 					<description isocode="it">vita politica e sicurezza pubblica</description>
 					<taxons>
 					<taxon ID="3339" upstream_identifier="2001">
-						<description isocode="it">movimento d'opinione</description>
+						<description isocode="it">movimento d&apos;opinione</description>
 						<description isocode="de">politische Bewegung</description>
 						<description isocode="en">trends of opinion</description>
 						<taxons>
@@ -1555,7 +1555,7 @@
 						</taxon>
 						<taxon ID="3343" upstream_identifier="1198">
 							<description isocode="en">human rights movement</description>
-							<description isocode="it">movimento per i diritti dell'uomo</description>
+							<description isocode="it">movimento per i diritti dell&apos;uomo</description>
 							<description isocode="de">Menschenrechtsbewegung</description>
 						</taxon>
 						<taxon ID="3344" upstream_identifier="1751">
@@ -1581,7 +1581,7 @@
 						<taxon ID="3348" upstream_identifier="2003">
 							<description isocode="it">movimento femminista</description>
 							<description isocode="de">Frauenbewegung</description>
-							<description isocode="en">women's movement</description>
+							<description isocode="en">women&apos;s movement</description>
 						</taxon>
 						<taxon ID="3349" upstream_identifier="2004">
 							<description isocode="de">Jugendbewegung</description>
@@ -1595,12 +1595,12 @@
 						</taxon>
 						<taxon ID="3351" upstream_identifier="2009">
 							<description isocode="de">Arbeiterbewegung</description>
-							<description isocode="en">workers' movement</description>
+							<description isocode="en">workers&apos; movement</description>
 							<description isocode="it">movimento operaio</description>
 						</taxon>
 						<taxon ID="3352" upstream_identifier="2010">
 							<description isocode="de">Bauernbewegung</description>
-							<description isocode="en">farmers' movement</description>
+							<description isocode="en">farmers&apos; movement</description>
 							<description isocode="it">movimento contadino</description>
 						</taxon>
 						<taxon ID="3353" upstream_identifier="2011">
@@ -1675,10 +1675,10 @@
 							<taxon ID="3366" upstream_identifier="885">
 								<description isocode="de">Ausnahmezustand</description>
 								<description isocode="en">rule under emergency powers</description>
-								<description isocode="it">stato d'eccezione</description>
+								<description isocode="it">stato d&apos;eccezione</description>
 								<taxons>
 								<taxon ID="3367" upstream_identifier="886">
-									<description isocode="it">stato d'emergenza</description>
+									<description isocode="it">stato d&apos;emergenza</description>
 									<description isocode="de">Notstand</description>
 									<description isocode="en">state of emergency</description>
 								</taxon>
@@ -1755,7 +1755,7 @@
 							<taxon ID="3380" upstream_identifier="253">
 								<description isocode="it">colpo di Stato</description>
 								<description isocode="de">Staatsstreich</description>
-								<description isocode="en">coup d'état</description>
+								<description isocode="en">coup d&apos;état</description>
 							</taxon>
 							<taxon ID="3381" upstream_identifier="769">
 								<description isocode="de">politische Entführung</description>
@@ -1827,7 +1827,7 @@
 						</taxon>
 						<taxon ID="3393" upstream_identifier="4180">
 							<description isocode="en">seat of Community institution</description>
-							<description isocode="it">sede dell'istituzione</description>
+							<description isocode="it">sede dell&apos;istituzione</description>
 							<description isocode="de">Sitz der Institution</description>
 						</taxon>
 						<taxon ID="3394" upstream_identifier="4181">
@@ -1947,7 +1947,7 @@
 						<taxon ID="3414" upstream_identifier="1192">
 							<description isocode="de">Interessengruppe</description>
 							<description isocode="en">interest group</description>
-							<description isocode="it">gruppo d'interesse</description>
+							<description isocode="it">gruppo d&apos;interesse</description>
 						</taxon>
 						<taxon ID="3415" upstream_identifier="1437">
 							<description isocode="de">politischer Wechsel</description>
@@ -1977,7 +1977,7 @@
 							<taxon ID="3420" upstream_identifier="5960">
 								<description isocode="de">Oppositionsführer</description>
 								<description isocode="en">leader of the opposition</description>
-								<description isocode="it">capo dell'opposizione</description>
+								<description isocode="it">capo dell&apos;opposizione</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -2036,7 +2036,7 @@
 						<taxon ID="3431" upstream_identifier="6893">
 							<description isocode="de">Abgeordnetenrechte</description>
 							<description isocode="en">status of the person elected</description>
-							<description isocode="it">status dell'eletto</description>
+							<description isocode="it">status dell&apos;eletto</description>
 						</taxon>
 						<taxon ID="3432" upstream_identifier="7187">
 							<description isocode="de">öffentliches Amt</description>
@@ -2304,7 +2304,7 @@
 						<description isocode="it">esecutivo</description>
 						<taxons>
 						<taxon ID="3481" upstream_identifier="39">
-							<description isocode="it">competenza dell'esecutivo</description>
+							<description isocode="it">competenza dell&apos;esecutivo</description>
 							<description isocode="de">Zuständigkeit der Exekutive</description>
 							<description isocode="en">executive competence</description>
 							<taxons>
@@ -2414,12 +2414,12 @@
 						<taxon ID="3501" upstream_identifier="391">
 							<description isocode="de">überseeisches Departement</description>
 							<description isocode="en">overseas department (France)</description>
-							<description isocode="it">dipartimento d'oltremare</description>
+							<description isocode="it">dipartimento d&apos;oltremare</description>
 						</taxon>
 						<taxon ID="3502" upstream_identifier="2296">
 							<description isocode="de">überseeische Länder und Gebiete</description>
 							<description isocode="en">overseas countries and territories</description>
-							<description isocode="it">paesi e territori d'oltremare</description>
+							<description isocode="it">paesi e territori d&apos;oltremare</description>
 						</taxon>
 						<taxon ID="3503" upstream_identifier="2854">
 							<description isocode="de">Provinz</description>
@@ -2432,7 +2432,7 @@
 							<description isocode="it">regione</description>
 						</taxon>
 						<taxon ID="3505" upstream_identifier="4451">
-							<description isocode="it">territorio d'oltremare</description>
+							<description isocode="it">territorio d&apos;oltremare</description>
 							<description isocode="de">überseeisches Gebiet</description>
 							<description isocode="en">overseas territory</description>
 						</taxon>
@@ -2555,13 +2555,13 @@
 						</taxon>
 						<taxon ID="3527" upstream_identifier="6372">
 							<description isocode="en">exclusion from an international organisation</description>
-							<description isocode="it">esclusione da un'organizzazione internazionale</description>
+							<description isocode="it">esclusione da un&apos;organizzazione internazionale</description>
 							<description isocode="de">Ausschluss aus einer internationalen Organisation</description>
 						</taxon>
 						<taxon ID="3528" upstream_identifier="6704">
 							<description isocode="de">Erweiterung einer internationalen Organisation</description>
 							<description isocode="en">enlargement of an international organisation</description>
-							<description isocode="it">ampliamento di un'organizzazione internazionale</description>
+							<description isocode="it">ampliamento di un&apos;organizzazione internazionale</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -2578,7 +2578,7 @@
 						<taxon ID="3531" upstream_identifier="1663">
 							<description isocode="de">Assoziierungsabkommen</description>
 							<description isocode="en">association agreement</description>
-							<description isocode="it">accordo d'associazione</description>
+							<description isocode="it">accordo d&apos;associazione</description>
 						</taxon>
 						<taxon ID="3532" upstream_identifier="2095">
 							<description isocode="en">cooperation agreement</description>
@@ -2635,10 +2635,10 @@
 						<taxon ID="3542" upstream_identifier="5537">
 							<description isocode="de">Gegenleistung für ein Abkommen</description>
 							<description isocode="en">financial compensation of an agreement</description>
-							<description isocode="it">contropartita d'accordo</description>
+							<description isocode="it">contropartita d&apos;accordo</description>
 						</taxon>
 						<taxon ID="3543" upstream_identifier="5574">
-							<description isocode="it">denuncia d'accordo</description>
+							<description isocode="it">denuncia d&apos;accordo</description>
 							<description isocode="de">Kündigung eines Abkommens</description>
 							<description isocode="en">withdrawal from an agreement</description>
 						</taxon>
@@ -2648,7 +2648,7 @@
 							<description isocode="it">rinnovo di un accordo</description>
 						</taxon>
 						<taxon ID="3545" upstream_identifier="5870">
-							<description isocode="it">revisione d'accordo</description>
+							<description isocode="it">revisione d&apos;accordo</description>
 							<description isocode="de">Abkommensrevision</description>
 							<description isocode="en">revision of an agreement</description>
 						</taxon>
@@ -2685,7 +2685,7 @@
 								<description isocode="it">convenzione europea</description>
 								<taxons>
 								<taxon ID="3552" upstream_identifier="5326">
-									<description isocode="it">Convenzione europea dei diritti dell'uomo</description>
+									<description isocode="it">Convenzione europea dei diritti dell&apos;uomo</description>
 									<description isocode="de">Europäische Konvention der Menschenrechte und Grundfreiheiten</description>
 									<description isocode="en">European Convention on Human Rights</description>
 								</taxon>
@@ -2797,7 +2797,7 @@
 								<taxon ID="3572" upstream_identifier="7417">
 									<description isocode="de">Ständige Vertretung beim Rat der EU</description>
 									<description isocode="en">permanent representation to the EU</description>
-									<description isocode="it">rappresentanza permanente presso l'UE</description>
+									<description isocode="it">rappresentanza permanente presso l&apos;UE</description>
 								</taxon>
 								</taxons>
 							</taxon>
@@ -2874,7 +2874,7 @@
 								<description isocode="de">internationale Konferenz</description>
 								<taxons>
 								<taxon ID="3587" upstream_identifier="91">
-									<description isocode="it">conferenza dell'ONU</description>
+									<description isocode="it">conferenza dell&apos;ONU</description>
 									<description isocode="de">Konferenz UNO</description>
 									<description isocode="en">UN Conference</description>
 								</taxon>
@@ -2900,7 +2900,7 @@
 						<taxon ID="3591" upstream_identifier="5744">
 							<description isocode="de">Untersuchungskommission</description>
 							<description isocode="en">fact-finding mission</description>
-							<description isocode="it">missione d'inchiesta</description>
+							<description isocode="it">missione d&apos;inchiesta</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -2924,7 +2924,7 @@
 						<taxon ID="3595" upstream_identifier="737">
 							<description isocode="de">Auslandshilfe</description>
 							<description isocode="en">foreign aid</description>
-							<description isocode="it">aiuto all'estero</description>
+							<description isocode="it">aiuto all&apos;estero</description>
 						</taxon>
 						<taxon ID="3596" upstream_identifier="807">
 							<description isocode="en">food aid</description>
@@ -2982,7 +2982,7 @@
 							<description isocode="en">aid system</description>
 							<taxons>
 							<taxon ID="3607" upstream_identifier="80">
-								<description isocode="it">condizione dell'aiuto</description>
+								<description isocode="it">condizione dell&apos;aiuto</description>
 								<description isocode="de">Voraussetzung für die Beihilfegewährung</description>
 								<description isocode="en">terms for aid</description>
 							</taxon>
@@ -2999,7 +2999,7 @@
 							<taxon ID="3610" upstream_identifier="1008">
 								<description isocode="de">Finanzierung der Hilfe</description>
 								<description isocode="en">financing of aid</description>
-								<description isocode="it">finanziamento dell'aiuto</description>
+								<description isocode="it">finanziamento dell&apos;aiuto</description>
 							</taxon>
 							<taxon ID="3611" upstream_identifier="2294">
 								<description isocode="de">Geberland</description>
@@ -3014,7 +3014,7 @@
 							<taxon ID="3613" upstream_identifier="3295">
 								<description isocode="de">Verteilung der Hilfe</description>
 								<description isocode="en">distribution of aid</description>
-								<description isocode="it">ripartizione dell'aiuto</description>
+								<description isocode="it">ripartizione dell&apos;aiuto</description>
 							</taxon>
 							<taxon ID="3614" upstream_identifier="4348">
 								<description isocode="it">sospensione degli aiuti</description>
@@ -3028,13 +3028,13 @@
 							</taxon>
 							<taxon ID="3616" upstream_identifier="4843">
 								<description isocode="en">aid recipient</description>
-								<description isocode="it">beneficiario dell'aiuto</description>
+								<description isocode="it">beneficiario dell&apos;aiuto</description>
 								<description isocode="de">Empfänger der Hilfe</description>
 							</taxon>
 							<taxon ID="3617" upstream_identifier="6374">
 								<description isocode="de">Bewertung der Hilfe</description>
 								<description isocode="en">aid evaluation</description>
-								<description isocode="it">valutazione dell'aiuto</description>
+								<description isocode="it">valutazione dell&apos;aiuto</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -3051,7 +3051,7 @@
 						<taxon ID="3620" upstream_identifier="4221">
 							<description isocode="de">Ursprung der Hilfe</description>
 							<description isocode="en">source of aid</description>
-							<description isocode="it">provenienza dell'aiuto</description>
+							<description isocode="it">provenienza dell&apos;aiuto</description>
 						</taxon>
 						<taxon ID="3621" upstream_identifier="5337">
 							<description isocode="en">development worker</description>
@@ -3142,17 +3142,17 @@
 									<taxon ID="3637" upstream_identifier="4061">
 										<description isocode="de">Geschichte des europäischen Einigungswerks</description>
 										<description isocode="en">history of Europe</description>
-										<description isocode="it">storia dell'Europa</description>
+										<description isocode="it">storia dell&apos;Europa</description>
 									</taxon>
 									<taxon ID="3638" upstream_identifier="5137">
 										<description isocode="en">anti-European movement</description>
-										<description isocode="it">movimento contro l'Europa</description>
+										<description isocode="it">movimento contro l&apos;Europa</description>
 										<description isocode="de">Bewegung gegen Europa</description>
 									</taxon>
 									<taxon ID="3639" upstream_identifier="5826">
 										<description isocode="de">Verbreitung des Europagedankens</description>
 										<description isocode="en">promotion of the European idea</description>
-										<description isocode="it">promozione dell'idea europea</description>
+										<description isocode="it">promozione dell&apos;idea europea</description>
 										<taxons>
 										<taxon ID="3640" upstream_identifier="5312">
 											<description isocode="it">simbolo europeo</description>
@@ -3162,7 +3162,7 @@
 										<taxon ID="3641" upstream_identifier="7138">
 											<description isocode="de">Vision Europas</description>
 											<description isocode="en">vision of Europe</description>
-											<description isocode="it">visione dell'Europa</description>
+											<description isocode="it">visione dell&apos;Europa</description>
 										</taxon>
 										</taxons>
 									</taxon>
@@ -3276,7 +3276,7 @@
 							<description isocode="it">cooperazione doganale</description>
 						</taxon>
 						<taxon ID="3661" upstream_identifier="5546">
-							<description isocode="it">cooperazione sull'ambiente</description>
+							<description isocode="it">cooperazione sull&apos;ambiente</description>
 							<description isocode="de">umweltpolitische Zusammenarbeit</description>
 							<description isocode="en">environmental cooperation</description>
 						</taxon>
@@ -3354,7 +3354,7 @@
 							<description isocode="it">guerra</description>
 							<taxons>
 							<taxon ID="3675" upstream_identifier="1212">
-								<description isocode="it">guerra d'indipendenza</description>
+								<description isocode="it">guerra d&apos;indipendenza</description>
 								<description isocode="de">Unabhängigkeitskrieg</description>
 								<description isocode="en">war of independence</description>
 							</taxon>
@@ -3495,7 +3495,7 @@
 							</taxon>
 							<taxon ID="3701" upstream_identifier="6919">
 								<description isocode="de">Waffenvernichtung</description>
-								<description isocode="en">weapons' destruction</description>
+								<description isocode="en">weapons&apos; destruction</description>
 								<description isocode="it">distruzione delle armi</description>
 							</taxon>
 							</taxons>
@@ -3823,7 +3823,7 @@
 						<taxon ID="3762" upstream_identifier="3441">
 							<description isocode="de">im Ausland stationierte Streitkräfte</description>
 							<description isocode="en">forces abroad</description>
-							<description isocode="it">contingente militare all'estero</description>
+							<description isocode="it">contingente militare all&apos;estero</description>
 						</taxon>
 						<taxon ID="3763" upstream_identifier="3442">
 							<description isocode="de">Kriegsmarine</description>
@@ -3846,7 +3846,7 @@
 								<description isocode="it">obiezione di coscienza</description>
 							</taxon>
 							<taxon ID="3767" upstream_identifier="3444">
-								<description isocode="en">women's military service</description>
+								<description isocode="en">women&apos;s military service</description>
 								<description isocode="it">servizio militare femminile</description>
 								<description isocode="de">Wehrdienst für Frauen</description>
 							</taxon>
@@ -4102,17 +4102,17 @@
 				<description isocode="de">EUROPÄISCHE GEMEINSCHAFTEN</description>
 				<taxons>
 				<taxon ID="3813" upstream_identifier="MT1006">
-					<description isocode="it">istituzioni dell'Unione europea e funzione pubblica europea</description>
+					<description isocode="it">istituzioni dell&apos;Unione europea e funzione pubblica europea</description>
 					<description isocode="de">Organe und Einrichtungen der Europäischen Union und europäischer öffentlicher Dienst</description>
 					<description isocode="en">Community institutions and European civil service</description>
 					<taxons>
 					<taxon ID="3814" upstream_identifier="1451">
-						<description isocode="it">istituzione dell'Unione europea</description>
+						<description isocode="it">istituzione dell&apos;Unione europea</description>
 						<description isocode="de">Gemeinschaftsorgan</description>
 						<description isocode="en">EU institution</description>
 						<taxons>
 						<taxon ID="3815" upstream_identifier="114">
-							<description isocode="it">Consiglio dell'Unione europea</description>
+							<description isocode="it">Consiglio dell&apos;Unione europea</description>
 							<description isocode="de">Rat der Europäischen Union</description>
 							<description isocode="en">Council of the European Union</description>
 							<taxons>
@@ -4124,7 +4124,7 @@
 							<taxon ID="3817" upstream_identifier="5806">
 								<description isocode="de">Vorsitz des Rates der Europäischen Union</description>
 								<description isocode="en">EU Council Presidency</description>
-								<description isocode="it">presidenza del Consiglio dell'Unione europea</description>
+								<description isocode="it">presidenza del Consiglio dell&apos;Unione europea</description>
 							</taxon>
 							<taxon ID="3818" upstream_identifier="5942">
 								<description isocode="en">Community Troika</description>
@@ -4134,7 +4134,7 @@
 							<taxon ID="3819" upstream_identifier="6053">
 								<description isocode="de">Ausschuss des Rates der Europäischen Union</description>
 								<description isocode="en">EU Council committee</description>
-								<description isocode="it">comitato del Consiglio dell'Unione europea</description>
+								<description isocode="it">comitato del Consiglio dell&apos;Unione europea</description>
 							</taxon>
 							<taxon ID="3820" upstream_identifier="6358">
 								<description isocode="de">Ecofin</description>
@@ -4266,7 +4266,7 @@
 							<description isocode="de">EIB</description>
 							<taxons>
 							<taxon ID="3843" upstream_identifier="5645">
-								<description isocode="it">Fondo europeo d'investimento</description>
+								<description isocode="it">Fondo europeo d&apos;investimento</description>
 								<description isocode="de">Europäischer Investitionsfonds</description>
 								<description isocode="en">European Investment Fund</description>
 							</taxon>
@@ -4332,7 +4332,7 @@
 						<taxon ID="3855" upstream_identifier="5885">
 							<description isocode="de">Sekretariat der Institution</description>
 							<description isocode="en">secretariat of an Institution</description>
-							<description isocode="it">segretariato dell'istituzione</description>
+							<description isocode="it">segretariato dell&apos;istituzione</description>
 							<taxons>
 							<taxon ID="3856" upstream_identifier="4178">
 								<description isocode="it">segretario generale</description>
@@ -4398,7 +4398,7 @@
 						<description isocode="it">funzionamento istituzionale</description>
 						<taxons>
 						<taxon ID="3867" upstream_identifier="5421">
-							<description isocode="it">amministrazione dell'istituzione</description>
+							<description isocode="it">amministrazione dell&apos;istituzione</description>
 							<description isocode="de">Verwaltung der Institution</description>
 							<description isocode="en">administration of the Institutions</description>
 						</taxon>
@@ -4449,14 +4449,14 @@
 							<description isocode="it">trasparenza del processo decisionale</description>
 							<taxons>
 							<taxon ID="3876" upstream_identifier="5399">
-								<description isocode="it">accesso all'informazione comunitaria</description>
+								<description isocode="it">accesso all&apos;informazione comunitaria</description>
 								<description isocode="de">Zugang zu Gemeinschaftsinformationen</description>
 								<description isocode="en">access to Community information</description>
 							</taxon>
 							<taxon ID="3877" upstream_identifier="5589">
 								<description isocode="de">Verbreitung der Gemeinschaftsinformationen</description>
 								<description isocode="en">dissemination of Community information</description>
-								<description isocode="it">diffusione dell'informazione comunitaria</description>
+								<description isocode="it">diffusione dell&apos;informazione comunitaria</description>
 							</taxon>
 							<taxon ID="3878" upstream_identifier="5829">
 								<description isocode="en">public conduct of debates</description>
@@ -4545,7 +4545,7 @@
 								<description isocode="it">Osservatorio europeo delle droghe e delle tossicodipendenze</description>
 							</taxon>
 							<taxon ID="3894" upstream_identifier="6072">
-								<description isocode="it">Centro di traduzione degli organismi dell'Unione europea</description>
+								<description isocode="it">Centro di traduzione degli organismi dell&apos;Unione europea</description>
 								<description isocode="de">Übersetzungszentrum für die Einrichtungen der Europäischen Union</description>
 								<description isocode="en">Translation Centre for the Bodies of the European Union</description>
 							</taxon>
@@ -4555,7 +4555,7 @@
 								<description isocode="it">Ufficio comunitario delle varietà vegetali</description>
 							</taxon>
 							<taxon ID="3896" upstream_identifier="6128">
-								<description isocode="it">Ufficio per l'armonizzazione nel mercato interno</description>
+								<description isocode="it">Ufficio per l&apos;armonizzazione nel mercato interno</description>
 								<description isocode="de">Harmonisierungsamt für den Binnenmarkt</description>
 								<description isocode="en">Office for Harmonization in the Internal Market</description>
 							</taxon>
@@ -4675,13 +4675,13 @@
 						</taxon>
 						<taxon ID="3919" upstream_identifier="7953">
 							<description isocode="en">European Union Institute for Security Studies  [V4.2]</description>
-							<description isocode="it">Istituto dell'Unione europea per gli studi sulla sicurezza  [V4.2]</description>
+							<description isocode="it">Istituto dell&apos;Unione europea per gli studi sulla sicurezza  [V4.2]</description>
 							<description isocode="de">Institut der Europäischen Union für Sicherheitsstudien  [V4.2]</description>
 						</taxon>
 						<taxon ID="3920" upstream_identifier="7954">
 							<description isocode="de">Satellitenzentrum der Europäischen Union  [V4.2]</description>
 							<description isocode="en">European Union Satellite Centre  [V4.2]</description>
-							<description isocode="it">Centro satellitare dell'Unione europea  [V4.2]</description>
+							<description isocode="it">Centro satellitare dell&apos;Unione europea  [V4.2]</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -4737,7 +4737,7 @@
 								<taxon ID="3930" upstream_identifier="5648">
 									<description isocode="de">Betrug zu Lasten der Europäischen Union</description>
 									<description isocode="en">fraud against the European Union</description>
-									<description isocode="it">frode a danno dell'Unione europea</description>
+									<description isocode="it">frode a danno dell&apos;Unione europea</description>
 								</taxon>
 								<taxon ID="3931" upstream_identifier="5790">
 									<description isocode="en">complaint to the Commission</description>
@@ -4747,7 +4747,7 @@
 								<taxon ID="3932" upstream_identifier="5814">
 									<description isocode="de">EG-Vertragsverletzungsverfahren</description>
 									<description isocode="en">EC infringement procedure</description>
-									<description isocode="it">procedura CE d'infrazione</description>
+									<description isocode="it">procedura CE d&apos;infrazione</description>
 								</taxon>
 								</taxons>
 							</taxon>
@@ -4957,7 +4957,7 @@
 						<taxon ID="3970" upstream_identifier="4068">
 							<description isocode="de">Vertrag zur Gründung einer Europäischen Union</description>
 							<description isocode="en">Treaty on European Union</description>
-							<description isocode="it">trattato sull'Unione europea</description>
+							<description isocode="it">trattato sull&apos;Unione europea</description>
 							<taxons>
 							<taxon ID="3971" upstream_identifier="6142">
 								<description isocode="it">trattato di Amsterdam</description>
@@ -5087,7 +5087,7 @@
 							<taxon ID="3994" upstream_identifier="4023">
 								<description isocode="de">Durchführungsverordnung</description>
 								<description isocode="en">implementing Regulation</description>
-								<description isocode="it">regolamento d'applicazione</description>
+								<description isocode="it">regolamento d&apos;applicazione</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -5104,7 +5104,7 @@
 							<taxon ID="3997" upstream_identifier="6289">
 								<description isocode="de">Entschließung des Rats der Europäischen Union</description>
 								<description isocode="en">Resolution of the Council of the European Union</description>
-								<description isocode="it">risoluzione del Consiglio dell'Unione europea</description>
+								<description isocode="it">risoluzione del Consiglio dell&apos;Unione europea</description>
 							</taxon>
 							<taxon ID="3998" upstream_identifier="6290">
 								<description isocode="en">resolution of the European Council</description>
@@ -5174,7 +5174,7 @@
 					<description isocode="de">europäisches Einigungswerk</description>
 					<taxons>
 					<taxon ID="4009" upstream_identifier="4040">
-						<description isocode="it">relazioni dell'Unione europea</description>
+						<description isocode="it">relazioni dell&apos;Unione europea</description>
 						<description isocode="de">Beziehungen der Union</description>
 						<description isocode="en">EU relations</description>
 						<taxons>
@@ -5245,7 +5245,7 @@
 								<taxon ID="4022" upstream_identifier="5406">
 									<description isocode="de">europäisches Assoziierungsabkommen</description>
 									<description isocode="en">European Association Agreement</description>
-									<description isocode="it">accordo europeo d'associazione</description>
+									<description isocode="it">accordo europeo d&apos;associazione</description>
 								</taxon>
 								<taxon ID="4023" upstream_identifier="5618">
 									<description isocode="en">European Economic Area</description>
@@ -5277,7 +5277,7 @@
 							<taxon ID="4028" upstream_identifier="5749">
 								<description isocode="de">Aushandlung eines EG-Abkommens</description>
 								<description isocode="en">negotiation of an EC agreement</description>
-								<description isocode="it">negoziato d'accordo CE</description>
+								<description isocode="it">negoziato d&apos;accordo CE</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -5287,7 +5287,7 @@
 							<description isocode="it">organo misto CE</description>
 							<taxons>
 							<taxon ID="4030" upstream_identifier="116">
-								<description isocode="it">consiglio d'associazione CE</description>
+								<description isocode="it">consiglio d&apos;associazione CE</description>
 								<description isocode="de">Assoziationsrat EG</description>
 								<description isocode="en">EC Association Council</description>
 							</taxon>
@@ -5348,8 +5348,8 @@
 							</taxons>
 						</taxon>
 						<taxon ID="4041" upstream_identifier="5873">
-							<description isocode="en">the EU's international role</description>
-							<description isocode="it">ruolo internazionale dell'Unione europea</description>
+							<description isocode="en">the EU&apos;s international role</description>
+							<description isocode="it">ruolo internazionale dell&apos;Unione europea</description>
 							<description isocode="de">internationale Rolle der Union</description>
 						</taxon>
 						<taxon ID="4042" upstream_identifier="7813">
@@ -5367,10 +5367,10 @@
 					<taxon ID="4044" upstream_identifier="4057">
 						<description isocode="de">Erweiterung der Europäischen Union</description>
 						<description isocode="en">enlargement of the Union</description>
-						<description isocode="it">allargamento dell'Unione europea</description>
+						<description isocode="it">allargamento dell&apos;Unione europea</description>
 						<taxons>
 						<taxon ID="4045" upstream_identifier="12">
-							<description isocode="it">adesione all'Unione europea</description>
+							<description isocode="it">adesione all&apos;Unione europea</description>
 							<description isocode="de">Beitritt zur Europäischen Union</description>
 							<description isocode="en">accession to the European Union</description>
 							<taxons>
@@ -5398,11 +5398,11 @@
 						</taxon>
 						<taxon ID="4050" upstream_identifier="4063">
 							<description isocode="en">European Union membership</description>
-							<description isocode="it">appartenenza all'Unione europea</description>
+							<description isocode="it">appartenenza all&apos;Unione europea</description>
 							<description isocode="de">Mitgliedschaft in der Europäischen Union</description>
 							<taxons>
 							<taxon ID="4051" upstream_identifier="5494">
-								<description isocode="it">clausola d'esenzione</description>
+								<description isocode="it">clausola d&apos;esenzione</description>
 								<description isocode="de">Opt-out-Klausel</description>
 								<description isocode="en">opt-out clause</description>
 							</taxon>
@@ -5443,23 +5443,23 @@
 							<description isocode="it">Unione economica e monetaria</description>
 							<taxons>
 							<taxon ID="4058" upstream_identifier="5474">
-								<description isocode="it">calendario dell'UEM</description>
+								<description isocode="it">calendario dell&apos;UEM</description>
 								<description isocode="de">Zeitplan der WWU</description>
 								<description isocode="en">timetable for EMU</description>
 								<taxons>
 								<taxon ID="4059" upstream_identifier="5584">
-									<description isocode="it">seconda fase dell'UEM</description>
+									<description isocode="it">seconda fase dell&apos;UEM</description>
 									<description isocode="de">zweite Phase der WWU</description>
 									<description isocode="en">second stage of EMU</description>
 								</taxon>
 								<taxon ID="4060" upstream_identifier="5804">
 									<description isocode="de">erste Phase der WWU</description>
 									<description isocode="en">first stage of EMU</description>
-									<description isocode="it">prima fase dell'UEM</description>
+									<description isocode="it">prima fase dell&apos;UEM</description>
 								</taxon>
 								<taxon ID="4061" upstream_identifier="5943">
 									<description isocode="en">third stage of EMU</description>
-									<description isocode="it">terza fase dell'UEM</description>
+									<description isocode="it">terza fase dell&apos;UEM</description>
 									<description isocode="de">dritte Phase der WWU</description>
 								</taxon>
 								</taxons>
@@ -5621,7 +5621,7 @@
 					<taxon ID="4088" upstream_identifier="5442">
 						<description isocode="de">Vertiefung der Europäischen Union</description>
 						<description isocode="en">deepening of the European Union</description>
-						<description isocode="it">approfondimento dell'Unione europea</description>
+						<description isocode="it">approfondimento dell&apos;Unione europea</description>
 						<taxons>
 						<taxon ID="4089" upstream_identifier="3234">
 							<description isocode="it">relazioni intracomunitarie</description>
@@ -5642,7 +5642,7 @@
 						</taxon>
 						<taxon ID="4092" upstream_identifier="4183">
 							<description isocode="en">EC situation</description>
-							<description isocode="it">situazione dell'Unione  europea</description>
+							<description isocode="it">situazione dell&apos;Unione  europea</description>
 							<description isocode="de">Lage EG</description>
 							<taxons>
 							<taxon ID="4093" upstream_identifier="5411">
@@ -5692,10 +5692,10 @@
 								<taxon ID="4101" upstream_identifier="5824">
 									<description isocode="de">Vorhaben von gemeinschaftlichem Interesse</description>
 									<description isocode="en">project of Community interest</description>
-									<description isocode="it">progetto d'interesse comunitario</description>
+									<description isocode="it">progetto d&apos;interesse comunitario</description>
 									<taxons>
 									<taxon ID="4102" upstream_identifier="5567">
-										<description isocode="it">dichiarazione d'interesse comunitario</description>
+										<description isocode="it">dichiarazione d&apos;interesse comunitario</description>
 										<description isocode="de">EG-Gemeinnützigkeitserklärung</description>
 										<description isocode="en">declaration of Community interest</description>
 									</taxon>
@@ -5724,11 +5724,11 @@
 						</taxon>
 						<taxon ID="4106" upstream_identifier="5629">
 							<description isocode="de">Europa der Bürger</description>
-							<description isocode="en">citizens' Europe</description>
+							<description isocode="en">citizens&apos; Europe</description>
 							<description isocode="it">Europa dei cittadini</description>
 							<taxons>
 							<taxon ID="4107" upstream_identifier="6286">
-								<description isocode="it">Carta dei diritti fondamentali dell'Unione europea</description>
+								<description isocode="it">Carta dei diritti fondamentali dell&apos;Unione europea</description>
 								<description isocode="de">Grundrechtscharta der Europäischen Union</description>
 								<description isocode="en">EU Charter of Fundamental Rights</description>
 							</taxon>
@@ -5864,7 +5864,7 @@
 								<description isocode="en">principle of additionality</description>
 								<taxons>
 								<taxon ID="4131" upstream_identifier="5926">
-									<description isocode="it">tasso d'intervento</description>
+									<description isocode="it">tasso d&apos;intervento</description>
 									<description isocode="de">Interventionssatz</description>
 									<description isocode="en">financing level</description>
 								</taxon>
@@ -5900,7 +5900,7 @@
 							<description isocode="it">prelievo CECA</description>
 						</taxon>
 						<taxon ID="4137" upstream_identifier="3259">
-							<description isocode="en">Member State's contribution</description>
+							<description isocode="en">Member State&apos;s contribution</description>
 							<description isocode="it">contributo degli Stati membri</description>
 							<description isocode="de">Beitrag der Mitgliedstaaten</description>
 							<taxons>
@@ -6444,7 +6444,7 @@
 							</taxon>
 							<taxon ID="4236" upstream_identifier="3635">
 								<description isocode="de">Herstellerhaftung</description>
-								<description isocode="en">producer's liability</description>
+								<description isocode="en">producer&apos;s liability</description>
 								<description isocode="it">responsabilità del produttore</description>
 							</taxon>
 							<taxon ID="4237" upstream_identifier="3926">
@@ -6839,7 +6839,7 @@
 						<taxon ID="4308" upstream_identifier="5571">
 							<description isocode="de">Umweltdelikt</description>
 							<description isocode="en">environmental offence</description>
-							<description isocode="it">delitto contro l'ambiente</description>
+							<description isocode="it">delitto contro l&apos;ambiente</description>
 						</taxon>
 						<taxon ID="4309" upstream_identifier="6612">
 							<description isocode="it">delitto preterintenzionale</description>
@@ -7152,7 +7152,7 @@
 							<description isocode="de">Zulässigkeit des Verfahrens</description>
 							<taxons>
 							<taxon ID="4365" upstream_identifier="3965">
-								<description isocode="it">prescrizione dell'azione</description>
+								<description isocode="it">prescrizione dell&apos;azione</description>
 								<description isocode="de">Verfolgungsverjährung</description>
 								<description isocode="en">limitation of legal proceedings</description>
 							</taxon>
@@ -7182,7 +7182,7 @@
 							</taxon>
 							<taxon ID="4370" upstream_identifier="5633">
 								<description isocode="de">gerichtlich angeordnetes Gutachten</description>
-								<description isocode="en">expert's report ordered by a court</description>
+								<description isocode="en">expert&apos;s report ordered by a court</description>
 								<description isocode="it">perizia giudiziaria</description>
 							</taxon>
 							</taxons>
@@ -7377,7 +7377,7 @@
 							</taxon>
 							<taxon ID="4405" upstream_identifier="1938">
 								<description isocode="de">Staatsanwaltschaft</description>
-								<description isocode="en">public prosecutor's department</description>
+								<description isocode="en">public prosecutor&apos;s department</description>
 								<description isocode="it">pubblico ministero</description>
 							</taxon>
 							</taxons>
@@ -7460,7 +7460,7 @@
 						</taxon>
 						<taxon ID="4420" upstream_identifier="1541">
 							<description isocode="en">court having special jurisdiction</description>
-							<description isocode="it">giurisdizione d'eccezione</description>
+							<description isocode="it">giurisdizione d&apos;eccezione</description>
 							<description isocode="de">Sondergerichte</description>
 						</taxon>
 						<taxon ID="4421" upstream_identifier="1543">
@@ -7584,7 +7584,7 @@
 						<description isocode="it">diritto internazionale privato</description>
 						<taxons>
 						<taxon ID="4443" upstream_identifier="488">
-							<description isocode="it">documento d'identità</description>
+							<description isocode="it">documento d&apos;identità</description>
 							<description isocode="de">Ausweis</description>
 							<description isocode="en">identity document</description>
 							<taxons>
@@ -7626,7 +7626,7 @@
 									<description isocode="en">political asylum</description>
 									<taxons>
 									<taxon ID="4451" upstream_identifier="5597">
-										<description isocode="it">diritto d'asilo</description>
+										<description isocode="it">diritto d&apos;asilo</description>
 										<description isocode="de">Asylrecht</description>
 										<description isocode="en">right of asylum</description>
 									</taxon>
@@ -7843,7 +7843,7 @@
 							<taxon ID="4490" upstream_identifier="5649">
 								<description isocode="de">Außengrenze der Europäischen Union</description>
 								<description isocode="en">external frontier of the European Union</description>
-								<description isocode="it">frontiera esterna dell'Unione europea</description>
+								<description isocode="it">frontiera esterna dell&apos;Unione europea</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -7908,14 +7908,14 @@
 					<description isocode="it">diritti e libertà</description>
 					<taxons>
 					<taxon ID="4501" upstream_identifier="538">
-						<description isocode="it">diritto dell'individuo</description>
+						<description isocode="it">diritto dell&apos;individuo</description>
 						<description isocode="de">Recht des Einzelnen</description>
 						<description isocode="en">rights of the individual</description>
 						<taxons>
 						<taxon ID="4502" upstream_identifier="585">
 							<description isocode="it">diritti della donna</description>
 							<description isocode="de">Rechte der Frau</description>
-							<description isocode="en">women's rights</description>
+							<description isocode="en">women&apos;s rights</description>
 						</taxon>
 						<taxon ID="4503" upstream_identifier="857">
 							<description isocode="de">Sklaverei</description>
@@ -7924,7 +7924,7 @@
 						</taxon>
 						<taxon ID="4504" upstream_identifier="1620">
 							<description isocode="en">freedom of opinion</description>
-							<description isocode="it">libertà d'opinione</description>
+							<description isocode="it">libertà d&apos;opinione</description>
 							<description isocode="de">Meinungsfreiheit</description>
 						</taxon>
 						<taxon ID="4505" upstream_identifier="1628">
@@ -7973,7 +7973,7 @@
 						</taxon>
 						<taxon ID="4513" upstream_identifier="3916">
 							<description isocode="de">Rechte des Kindes</description>
-							<description isocode="en">children's rights</description>
+							<description isocode="en">children&apos;s rights</description>
 							<description isocode="it">diritti del bambino</description>
 						</taxon>
 						<taxon ID="4514" upstream_identifier="3917">
@@ -7984,7 +7984,7 @@
 						<taxon ID="4515" upstream_identifier="7348">
 							<description isocode="de">Recht auf körperliche Unversehrtheit</description>
 							<description isocode="en">right to physical integrity</description>
-							<description isocode="it">diritto all'integrità fisica</description>
+							<description isocode="it">diritto all&apos;integrità fisica</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -8006,7 +8006,7 @@
 							<taxon ID="4519" upstream_identifier="3920">
 								<description isocode="de">Verbrechen gegen die Menschlichkeit</description>
 								<description isocode="en">crime against humanity</description>
-								<description isocode="it">crimine contro l'umanità</description>
+								<description isocode="it">crimine contro l&apos;umanità</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -8017,13 +8017,13 @@
 						</taxon>
 						<taxon ID="4521" upstream_identifier="3902">
 							<description isocode="en">charter on human rights</description>
-							<description isocode="it">Carta dei diritti dell'uomo</description>
+							<description isocode="it">Carta dei diritti dell&apos;uomo</description>
 							<description isocode="de">Charta der Menschenrechte</description>
 							<taxons>
 							<taxon ID="4522" upstream_identifier="6077">
-								<description isocode="it">Carta africana dei diritti dell'uomo e dei popoli</description>
+								<description isocode="it">Carta africana dei diritti dell&apos;uomo e dei popoli</description>
 								<description isocode="de">Afrikanische Charta der Menschenrechte und Rechte der Völker</description>
-								<description isocode="en">African Charter on Human and Peoples' Rights</description>
+								<description isocode="en">African Charter on Human and Peoples&apos; Rights</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -8035,14 +8035,14 @@
 						<description isocode="de">soziale Rechte</description>
 						<taxons>
 						<taxon ID="4524" upstream_identifier="512">
-							<description isocode="it">diritto all'istruzione</description>
+							<description isocode="it">diritto all&apos;istruzione</description>
 							<description isocode="de">Recht auf Bildung</description>
 							<description isocode="en">right to education</description>
 						</taxon>
 						<taxon ID="4525" upstream_identifier="513">
 							<description isocode="de">Informationsfreiheit</description>
 							<description isocode="en">right to information</description>
-							<description isocode="it">diritto all'informazione</description>
+							<description isocode="it">diritto all&apos;informazione</description>
 						</taxon>
 						<taxon ID="4526" upstream_identifier="514">
 							<description isocode="en">right to culture</description>
@@ -8087,7 +8087,7 @@
 						<taxon ID="4534" upstream_identifier="7411">
 							<description isocode="de">Recht auf eine Wohnung</description>
 							<description isocode="en">right to housing</description>
-							<description isocode="it">diritto all'alloggio</description>
+							<description isocode="it">diritto all&apos;alloggio</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -8120,18 +8120,18 @@
 						</taxon>
 						<taxon ID="4540" upstream_identifier="1618">
 							<description isocode="en">freedom of association</description>
-							<description isocode="it">libertà d'associazione</description>
+							<description isocode="it">libertà d&apos;associazione</description>
 							<description isocode="de">Vereinigungsfreiheit</description>
 						</taxon>
 						<taxon ID="4541" upstream_identifier="1619">
 							<description isocode="de">Redefreiheit</description>
 							<description isocode="en">freedom of expression</description>
-							<description isocode="it">libertà d'espressione</description>
+							<description isocode="it">libertà d&apos;espressione</description>
 						</taxon>
 						<taxon ID="4542" upstream_identifier="1621">
 							<description isocode="de">Recht der freien Meinungsäußerung</description>
 							<description isocode="en">freedom of communication</description>
-							<description isocode="it">libertà d'informazione</description>
+							<description isocode="it">libertà d&apos;informazione</description>
 							<taxons>
 							<taxon ID="4543" upstream_identifier="1622">
 								<description isocode="it">libertà di stampa</description>
@@ -8275,7 +8275,7 @@
 						<taxon ID="4568" upstream_identifier="6230">
 							<description isocode="de">Diskriminierung aufgrund des Alters</description>
 							<description isocode="en">age discrimination</description>
-							<description isocode="it">discriminazione fondata sull'età</description>
+							<description isocode="it">discriminazione fondata sull&apos;età</description>
 						</taxon>
 						<taxon ID="4569" upstream_identifier="6231">
 							<description isocode="de">Diskriminierung aufgrund der sexuellen Orientierung</description>
@@ -8298,7 +8298,7 @@
 					</taxon>
 					<taxon ID="4572" upstream_identifier="7347">
 						<description isocode="de">Bürgerpflichten</description>
-						<description isocode="en">citizen's duties</description>
+						<description isocode="en">citizen&apos;s duties</description>
 						<description isocode="it">doveri del cittadino</description>
 					</taxon>
 					</taxons>
@@ -8321,14 +8321,14 @@
 						<description isocode="en">economic support</description>
 						<taxons>
 						<taxon ID="4576" upstream_identifier="723">
-							<description isocode="it">aiuto all'occupazione</description>
+							<description isocode="it">aiuto all&apos;occupazione</description>
 							<description isocode="de">Beschäftigungsbeihilfe</description>
 							<description isocode="en">employment aid</description>
 						</taxon>
 						<taxon ID="4577" upstream_identifier="745">
 							<description isocode="de">Ausfuhrbeihilfe</description>
 							<description isocode="en">export aid</description>
-							<description isocode="it">aiuto all'esportazione</description>
+							<description isocode="it">aiuto all&apos;esportazione</description>
 						</taxon>
 						<taxon ID="4578" upstream_identifier="766">
 							<description isocode="en">investment aid</description>
@@ -8338,7 +8338,7 @@
 						<taxon ID="4579" upstream_identifier="786">
 							<description isocode="de">Modernisierungsbeihilfe</description>
 							<description isocode="en">modernisation aid</description>
-							<description isocode="it">aiuto per l'ammodernamento</description>
+							<description isocode="it">aiuto per l&apos;ammodernamento</description>
 						</taxon>
 						<taxon ID="4580" upstream_identifier="797">
 							<description isocode="de">Produktionsbeihilfe</description>
@@ -8395,7 +8395,7 @@
 						<taxon ID="4590" upstream_identifier="3071">
 							<description isocode="de">Industriebeihilfe</description>
 							<description isocode="en">aid to industry</description>
-							<description isocode="it">aiuto all'industria</description>
+							<description isocode="it">aiuto all&apos;industria</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -8493,7 +8493,7 @@
 							<description isocode="it">politica di austerità</description>
 						</taxon>
 						<taxon ID="4608" upstream_identifier="2462">
-							<description isocode="it">politica d'intervento</description>
+							<description isocode="it">politica d&apos;intervento</description>
 							<description isocode="de">Interventionspolitik</description>
 							<description isocode="en">intervention policy</description>
 							<taxons>
@@ -9232,10 +9232,10 @@
 						<taxon ID="4743" upstream_identifier="2575">
 							<description isocode="de">Kaufkraft</description>
 							<description isocode="en">purchasing power</description>
-							<description isocode="it">potere d'acquisto</description>
+							<description isocode="it">potere d&apos;acquisto</description>
 							<taxons>
 							<taxon ID="4744" upstream_identifier="2241">
-								<description isocode="it">parità di potere d'acquisto</description>
+								<description isocode="it">parità di potere d&apos;acquisto</description>
 								<description isocode="de">Kaufkraftparität</description>
 								<description isocode="en">purchasing power parity</description>
 							</taxon>
@@ -9378,7 +9378,7 @@
 						<taxon ID="4769" upstream_identifier="3085">
 							<description isocode="de">Wirkungsstudie</description>
 							<description isocode="en">impact study</description>
-							<description isocode="it">studio d'impatto</description>
+							<description isocode="it">studio d&apos;impatto</description>
 						</taxon>
 						<taxon ID="4770" upstream_identifier="3086">
 							<description isocode="it">conseguenza economica</description>
@@ -9586,7 +9586,7 @@
 						<description isocode="de">öffentlicher Auftrag</description>
 						<taxons>
 						<taxon ID="4807" upstream_identifier="20">
-							<description isocode="it">aggiudicazione d'appalto</description>
+							<description isocode="it">aggiudicazione d&apos;appalto</description>
 							<description isocode="de">öffentliche Auftragsvergabe</description>
 							<description isocode="en">award of contract</description>
 						</taxon>
@@ -9608,12 +9608,12 @@
 						<taxon ID="4811" upstream_identifier="2218">
 							<description isocode="de">Ausschreibung</description>
 							<description isocode="en">invitation to tender</description>
-							<description isocode="it">gara d'appalto</description>
+							<description isocode="it">gara d&apos;appalto</description>
 						</taxon>
 						<taxon ID="4812" upstream_identifier="4219">
 							<description isocode="de">Angebotseinreichung</description>
 							<description isocode="en">tendering</description>
-							<description isocode="it">presentazione dell'offerta d'appalto</description>
+							<description isocode="it">presentazione dell&apos;offerta d&apos;appalto</description>
 						</taxon>
 						<taxon ID="4813" upstream_identifier="5725">
 							<description isocode="de">Dienstleistungsmarkt</description>
@@ -9689,7 +9689,7 @@
 								</taxon>
 								<taxon ID="4827" upstream_identifier="4284">
 									<description isocode="en">intervention stock</description>
-									<description isocode="it">scorte d'intervento</description>
+									<description isocode="it">scorte d&apos;intervento</description>
 									<description isocode="de">Interventionsbestände</description>
 								</taxon>
 								<taxon ID="4828" upstream_identifier="5025">
@@ -9745,7 +9745,7 @@
 							</taxon>
 							<taxon ID="4837" upstream_identifier="5666">
 								<description isocode="en">trading hours</description>
-								<description isocode="it">orario d'apertura dei negozi</description>
+								<description isocode="it">orario d&apos;apertura dei negozi</description>
 								<description isocode="de">Ladenöffnungszeiten</description>
 							</taxon>
 							</taxons>
@@ -9758,7 +9758,7 @@
 						<taxon ID="4839" upstream_identifier="3170">
 							<description isocode="de">Interventionsstelle</description>
 							<description isocode="en">intervention agency</description>
-							<description isocode="it">organismo d'intervento</description>
+							<description isocode="it">organismo d&apos;intervento</description>
 						</taxon>
 						<taxon ID="4840" upstream_identifier="3172">
 							<description isocode="it">controllo delle transazioni</description>
@@ -9835,7 +9835,7 @@
 							<description isocode="it">finanziamento delle esportazioni</description>
 							<taxons>
 							<taxon ID="4854" upstream_identifier="287">
-								<description isocode="it">credito all'esportazione</description>
+								<description isocode="it">credito all&apos;esportazione</description>
 								<description isocode="de">Ausfuhrkredit</description>
 								<description isocode="en">export credit</description>
 							</taxon>
@@ -9846,18 +9846,18 @@
 							</taxon>
 							<taxon ID="4856" upstream_identifier="3267">
 								<description isocode="en">remission of export duties</description>
-								<description isocode="it">sgravio all'esportazione</description>
+								<description isocode="it">sgravio all&apos;esportazione</description>
 								<description isocode="de">Abgabenerlass bei der Ausfuhr</description>
 							</taxon>
 							<taxon ID="4857" upstream_identifier="3568">
 								<description isocode="de">Erstattung bei der Ausfuhr</description>
 								<description isocode="en">export refund</description>
-								<description isocode="it">restituzione all'esportazione</description>
+								<description isocode="it">restituzione all&apos;esportazione</description>
 							</taxon>
 							<taxon ID="4858" upstream_identifier="4310">
 								<description isocode="de">Ausfuhrsubvention</description>
 								<description isocode="en">export subsidy</description>
-								<description isocode="it">sovvenzione all'esportazione</description>
+								<description isocode="it">sovvenzione all&apos;esportazione</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -9869,7 +9869,7 @@
 						<taxon ID="4860" upstream_identifier="3166">
 							<description isocode="de">Abschöpfung bei der Ausfuhr</description>
 							<description isocode="en">export levy</description>
-							<description isocode="it">prelievo all'esportazione</description>
+							<description isocode="it">prelievo all&apos;esportazione</description>
 						</taxon>
 						<taxon ID="4861" upstream_identifier="5542">
 							<description isocode="de">Überwachung der Ausfuhren</description>
@@ -9884,14 +9884,14 @@
 						<description isocode="it">politica delle importazioni</description>
 						<taxons>
 						<taxon ID="4863" upstream_identifier="288">
-							<description isocode="it">credito all'importazione</description>
+							<description isocode="it">credito all&apos;importazione</description>
 							<description isocode="de">Einfuhrkredit</description>
 							<description isocode="en">import credit</description>
 						</taxon>
 						<taxon ID="4864" upstream_identifier="3167">
 							<description isocode="de">Abschöpfung bei der Einfuhr</description>
 							<description isocode="en">import levy</description>
-							<description isocode="it">prelievo all'importazione</description>
+							<description isocode="it">prelievo all&apos;importazione</description>
 						</taxon>
 						<taxon ID="4865" upstream_identifier="3271">
 							<description isocode="en">import substitution</description>
@@ -9901,12 +9901,12 @@
 						<taxon ID="4866" upstream_identifier="3570">
 							<description isocode="de">Erstattung bei der Einfuhr</description>
 							<description isocode="en">import refund</description>
-							<description isocode="it">restituzione all'importazione</description>
+							<description isocode="it">restituzione all&apos;importazione</description>
 						</taxon>
 						<taxon ID="4867" upstream_identifier="6268">
 							<description isocode="de">Einfuhrüberwachung</description>
 							<description isocode="en">surveillance concerning imports</description>
-							<description isocode="it">sorveglianza all'importazione</description>
+							<description isocode="it">sorveglianza all&apos;importazione</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -9970,7 +9970,7 @@
 							<taxon ID="4879" upstream_identifier="5750">
 								<description isocode="de">Uruguay-Runde</description>
 								<description isocode="en">Uruguay Round</description>
-								<description isocode="it">negoziato d'Uruguay</description>
+								<description isocode="it">negoziato d&apos;Uruguay</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -10066,14 +10066,14 @@
 							<description isocode="en">customs document</description>
 							<taxons>
 							<taxon ID="4897" upstream_identifier="1642">
-								<description isocode="it">licenza d'esportazione</description>
+								<description isocode="it">licenza d&apos;esportazione</description>
 								<description isocode="de">Ausfuhrlizenz</description>
 								<description isocode="en">export licence</description>
 							</taxon>
 							<taxon ID="4898" upstream_identifier="1644">
 								<description isocode="de">Einfuhrlizenz</description>
 								<description isocode="en">import licence</description>
-								<description isocode="it">licenza d'importazione</description>
+								<description isocode="it">licenza d&apos;importazione</description>
 							</taxon>
 							<taxon ID="4899" upstream_identifier="3180">
 								<description isocode="en">single document</description>
@@ -10231,7 +10231,7 @@
 						</taxon>
 						<taxon ID="4927" upstream_identifier="5843">
 							<description isocode="en">export customs procedure</description>
-							<description isocode="it">regime doganale d'esportazione</description>
+							<description isocode="it">regime doganale d&apos;esportazione</description>
 							<description isocode="de">Ausfuhrzollverfahren</description>
 						</taxon>
 						</taxons>
@@ -10339,7 +10339,7 @@
 						<taxon ID="4946" upstream_identifier="4025">
 							<description isocode="de">Sicherung der Versorgung</description>
 							<description isocode="en">security of supply</description>
-							<description isocode="it">sicurezza d'approvvigionamento</description>
+							<description isocode="it">sicurezza d&apos;approvvigionamento</description>
 						</taxon>
 						<taxon ID="4947" upstream_identifier="4186">
 							<description isocode="en">self-supply</description>
@@ -10356,7 +10356,7 @@
 						<taxon ID="4949" upstream_identifier="4885">
 							<description isocode="de">Versorgungsbilanz</description>
 							<description isocode="en">supply balance sheet</description>
-							<description isocode="it">bilancio d'approvvigionamento</description>
+							<description isocode="it">bilancio d&apos;approvvigionamento</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -10425,7 +10425,7 @@
 								<description isocode="it">prodotto originario</description>
 								<taxons>
 								<taxon ID="4962" upstream_identifier="5367">
-									<description isocode="it">certificato d'origine</description>
+									<description isocode="it">certificato d&apos;origine</description>
 									<description isocode="de">Ursprungszeugnis</description>
 									<description isocode="en">certificate of origin</description>
 								</taxon>
@@ -10444,7 +10444,7 @@
 							<taxon ID="4965" upstream_identifier="5393">
 								<description isocode="de">Havanna-Charta</description>
 								<description isocode="en">Havana Charter</description>
-								<description isocode="it">Carta dell'Avana</description>
+								<description isocode="it">Carta dell&apos;Avana</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -10601,7 +10601,7 @@
 							<taxon ID="4994" upstream_identifier="4403">
 								<description isocode="de">Abgabe gleicher Wirkung</description>
 								<description isocode="en">charge having equivalent effect</description>
-								<description isocode="it">imposta d'effetto equivalente</description>
+								<description isocode="it">imposta d&apos;effetto equivalente</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -10612,13 +10612,13 @@
 						</taxon>
 						<taxon ID="4996" upstream_identifier="3577">
 							<description isocode="en">export restriction</description>
-							<description isocode="it">restrizione all'esportazione</description>
+							<description isocode="it">restrizione all&apos;esportazione</description>
 							<description isocode="de">Ausfuhrbeschränkung</description>
 						</taxon>
 						<taxon ID="4997" upstream_identifier="3579">
 							<description isocode="de">Einfuhrbeschränkung</description>
 							<description isocode="en">import restriction</description>
-							<description isocode="it">restrizione all'importazione</description>
+							<description isocode="it">restrizione all&apos;importazione</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -10647,7 +10647,7 @@
 							<taxon ID="5002" upstream_identifier="1226">
 								<description isocode="de">Kaufgewohnheit</description>
 								<description isocode="en">purchasing habits</description>
-								<description isocode="it">abitudine d'acquisto</description>
+								<description isocode="it">abitudine d&apos;acquisto</description>
 							</taxon>
 							<taxon ID="5003" upstream_identifier="1996">
 								<description isocode="en">consumer motivation</description>
@@ -10805,7 +10805,7 @@
 						</taxon>
 						<taxon ID="5031" upstream_identifier="3198">
 							<description isocode="en">used goods</description>
-							<description isocode="it">bene d'occasione</description>
+							<description isocode="it">bene d&apos;occasione</description>
 							<description isocode="de">Gebrauchtgegenstand</description>
 						</taxon>
 						<taxon ID="5032" upstream_identifier="4099">
@@ -10999,7 +10999,7 @@
 							<description isocode="en">packaging</description>
 							<taxons>
 							<taxon ID="5066" upstream_identifier="2746">
-								<description isocode="it">materiale d'imballaggio</description>
+								<description isocode="it">materiale d&apos;imballaggio</description>
 								<description isocode="de">Verpackungsartikel</description>
 								<description isocode="en">packaging product</description>
 							</taxon>
@@ -11038,7 +11038,7 @@
 						<description isocode="de">Handelsgeschäft</description>
 						<taxons>
 						<taxon ID="5073" upstream_identifier="1688">
-							<description isocode="it">locazione con opzione d'acquisto</description>
+							<description isocode="it">locazione con opzione d&apos;acquisto</description>
 							<description isocode="de">Mietkauf</description>
 							<description isocode="en">hire purchase</description>
 						</taxon>
@@ -11080,7 +11080,7 @@
 							<taxon ID="5081" upstream_identifier="4668">
 								<description isocode="de">Versteigerung</description>
 								<description isocode="en">auction sale</description>
-								<description isocode="it">vendita all'asta</description>
+								<description isocode="it">vendita all&apos;asta</description>
 							</taxon>
 							<taxon ID="5082" upstream_identifier="4669">
 								<description isocode="de">Direktverkauf</description>
@@ -11088,7 +11088,7 @@
 								<description isocode="it">vendita diretta</description>
 							</taxon>
 							<taxon ID="5083" upstream_identifier="4670">
-								<description isocode="it">vendita all'ingrosso</description>
+								<description isocode="it">vendita all&apos;ingrosso</description>
 								<description isocode="de">En-gros-Verkauf</description>
 								<description isocode="en">wholesale selling</description>
 							</taxon>
@@ -11231,7 +11231,7 @@
 						<taxon ID="5108" upstream_identifier="6">
 							<description isocode="de">Großhandel</description>
 							<description isocode="en">wholesale trade</description>
-							<description isocode="it">commercio all'ingrosso</description>
+							<description isocode="it">commercio all&apos;ingrosso</description>
 							<taxons>
 							<taxon ID="5109" upstream_identifier="1199">
 								<description isocode="it">cooperativa di acquisti</description>
@@ -11576,7 +11576,7 @@
 						</taxon>
 						<taxon ID="5170" upstream_identifier="1850">
 							<description isocode="en">exchange-rate mechanism</description>
-							<description isocode="it">meccanismo d'intervento monetario</description>
+							<description isocode="it">meccanismo d&apos;intervento monetario</description>
 							<description isocode="de">währungspolitischer Interventionsmechanismus</description>
 						</taxon>
 						<taxon ID="5171" upstream_identifier="1851">
@@ -12048,7 +12048,7 @@
 							<taxon ID="5255" upstream_identifier="4795">
 								<description isocode="de">Investitionsbank</description>
 								<description isocode="en">investment bank</description>
-								<description isocode="it">banca d'investimenti</description>
+								<description isocode="it">banca d&apos;investimenti</description>
 							</taxon>
 							<taxon ID="5256" upstream_identifier="4806">
 								<description isocode="de">Entwicklungsbank</description>
@@ -12089,7 +12089,7 @@
 							</taxon>
 							<taxon ID="5263" upstream_identifier="4813">
 								<description isocode="de">Volksbank</description>
-								<description isocode="en">people's bank</description>
+								<description isocode="en">people&apos;s bank</description>
 								<description isocode="it">banca popolare</description>
 							</taxon>
 							<taxon ID="5264" upstream_identifier="4814">
@@ -12196,7 +12196,7 @@
 							<taxon ID="5283" upstream_identifier="5023">
 								<description isocode="de">Zinszuschuss</description>
 								<description isocode="en">interest rate subsidy</description>
-								<description isocode="it">abbuono d'interesse</description>
+								<description isocode="it">abbuono d&apos;interesse</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -12479,7 +12479,7 @@
 							</taxon>
 							<taxon ID="5335" upstream_identifier="3240">
 								<description isocode="en">corporate finance</description>
-								<description isocode="it">finanziamento dell'impresa</description>
+								<description isocode="it">finanziamento dell&apos;impresa</description>
 								<description isocode="de">Unternehmensfinanzierung</description>
 								<taxons>
 								<taxon ID="5336" upstream_identifier="6902">
@@ -12519,7 +12519,7 @@
 						<description isocode="it">investimento</description>
 						<taxons>
 						<taxon ID="5342" upstream_identifier="1489">
-							<description isocode="it">investimento all'estero</description>
+							<description isocode="it">investimento all&apos;estero</description>
 							<description isocode="de">Auslandsinvestition</description>
 							<description isocode="en">investment abroad</description>
 						</taxon>
@@ -12561,7 +12561,7 @@
 						<taxon ID="5350" upstream_identifier="2463">
 							<description isocode="de">Investitionspolitik</description>
 							<description isocode="en">investment policy</description>
-							<description isocode="it">politica d'investimento</description>
+							<description isocode="it">politica d&apos;investimento</description>
 							<taxons>
 							<taxon ID="5351" upstream_identifier="1132">
 								<description isocode="it">garanzia degli investimenti</description>
@@ -12571,7 +12571,7 @@
 							<taxon ID="5352" upstream_identifier="2798">
 								<description isocode="de">Investitionsvorhaben</description>
 								<description isocode="en">investment project</description>
-								<description isocode="it">progetto d'investimento</description>
+								<description isocode="it">progetto d&apos;investimento</description>
 							</taxon>
 							<taxon ID="5353" upstream_identifier="2805">
 								<description isocode="en">investment promotion</description>
@@ -12605,7 +12605,7 @@
 						<description isocode="en">insurance</description>
 						<taxons>
 						<taxon ID="5358" upstream_identifier="34">
-							<description isocode="it">compagnia d'assicurazioni</description>
+							<description isocode="it">compagnia d&apos;assicurazioni</description>
 							<description isocode="de">Versicherungsgesellschaft</description>
 							<description isocode="en">insurance company</description>
 						</taxon>
@@ -12622,7 +12622,7 @@
 							<taxon ID="5361" upstream_identifier="2623">
 								<description isocode="de">Versicherungsprämie</description>
 								<description isocode="en">insurance premium</description>
-								<description isocode="it">premio d'assicurazione</description>
+								<description isocode="it">premio d&apos;assicurazione</description>
 							</taxon>
 							<taxon ID="5362" upstream_identifier="3728">
 								<description isocode="en">insured risk</description>
@@ -12649,7 +12649,7 @@
 						<taxon ID="5366" upstream_identifier="3187">
 							<description isocode="de">Ausfuhrversicherung</description>
 							<description isocode="en">export credit insurance</description>
-							<description isocode="it">assicurazione all'esportazione</description>
+							<description isocode="it">assicurazione all&apos;esportazione</description>
 						</taxon>
 						<taxon ID="5367" upstream_identifier="3222">
 							<description isocode="de">Unfallversicherung</description>
@@ -13133,7 +13133,7 @@
 						<taxon ID="5456" upstream_identifier="5566">
 							<description isocode="de">Steuererklärung</description>
 							<description isocode="en">tax return</description>
-							<description isocode="it">dichiarazione d'imposta</description>
+							<description isocode="it">dichiarazione d&apos;imposta</description>
 							<taxons>
 							<taxon ID="5457" upstream_identifier="7351">
 								<description isocode="it">rimborso fiscale</description>
@@ -13209,11 +13209,11 @@
 						<taxon ID="5470" upstream_identifier="4399">
 							<description isocode="de">Ausfuhrabgabe</description>
 							<description isocode="en">export tax</description>
-							<description isocode="it">imposta all'esportazione</description>
+							<description isocode="it">imposta all&apos;esportazione</description>
 						</taxon>
 						<taxon ID="5471" upstream_identifier="4400">
 							<description isocode="en">import tax</description>
-							<description isocode="it">imposta all'importazione</description>
+							<description isocode="it">imposta all&apos;importazione</description>
 							<description isocode="de">Einfuhrabgabe</description>
 						</taxon>
 						<taxon ID="5472" upstream_identifier="4401">
@@ -13284,7 +13284,7 @@
 						</taxon>
 						<taxon ID="5484" upstream_identifier="1323">
 							<description isocode="en">capital gains tax</description>
-							<description isocode="it">imposta sull'incremento di valore</description>
+							<description isocode="it">imposta sull&apos;incremento di valore</description>
 							<description isocode="de">Wertzuwachssteuer</description>
 						</taxon>
 						<taxon ID="5485" upstream_identifier="1327">
@@ -13634,17 +13634,17 @@
 						<taxon ID="5549" upstream_identifier="2644">
 							<description isocode="de">Interventionspreis</description>
 							<description isocode="en">intervention price</description>
-							<description isocode="it">prezzo d'intervento</description>
+							<description isocode="it">prezzo d&apos;intervento</description>
 						</taxon>
 						<taxon ID="5550" upstream_identifier="2645">
 							<description isocode="en">norm price</description>
-							<description isocode="it">prezzo d'obiettivo</description>
+							<description isocode="it">prezzo d&apos;obiettivo</description>
 							<description isocode="de">Zielpreis</description>
 						</taxon>
 						<taxon ID="5551" upstream_identifier="2649">
 							<description isocode="de">Orientierungspreis</description>
 							<description isocode="en">guide price</description>
-							<description isocode="it">prezzo d'orientamento</description>
+							<description isocode="it">prezzo d&apos;orientamento</description>
 						</taxon>
 						<taxon ID="5552" upstream_identifier="2650">
 							<description isocode="de">Grundpreis</description>
@@ -13654,7 +13654,7 @@
 						<taxon ID="5553" upstream_identifier="2651">
 							<description isocode="de">Auslösungspreis</description>
 							<description isocode="en">activating price</description>
-							<description isocode="it">prezzo limite per l'intervento</description>
+							<description isocode="it">prezzo limite per l&apos;intervento</description>
 						</taxon>
 						<taxon ID="5554" upstream_identifier="2657">
 							<description isocode="de">Referenzpreis</description>
@@ -13669,7 +13669,7 @@
 						<taxon ID="5556" upstream_identifier="2661">
 							<description isocode="de">Schwellenpreis</description>
 							<description isocode="en">threshold price</description>
-							<description isocode="it">prezzo d'entrata</description>
+							<description isocode="it">prezzo d&apos;entrata</description>
 						</taxon>
 						<taxon ID="5557" upstream_identifier="2662">
 							<description isocode="en">support price</description>
@@ -13704,14 +13704,14 @@
 						<description isocode="it">prezzo di mercato</description>
 						<taxons>
 						<taxon ID="5563" upstream_identifier="2634">
-							<description isocode="it">prezzo all'esportazione</description>
+							<description isocode="it">prezzo all&apos;esportazione</description>
 							<description isocode="de">Ausfuhrpreis</description>
 							<description isocode="en">export price</description>
 						</taxon>
 						<taxon ID="5564" upstream_identifier="2635">
 							<description isocode="de">Einfuhrpreis</description>
 							<description isocode="en">import price</description>
-							<description isocode="it">prezzo all'importazione</description>
+							<description isocode="it">prezzo all&apos;importazione</description>
 						</taxon>
 						<taxon ID="5565" upstream_identifier="2636">
 							<description isocode="en">consumer price</description>
@@ -13731,12 +13731,12 @@
 						<taxon ID="5568" upstream_identifier="2642">
 							<description isocode="de">Einkaufspreis</description>
 							<description isocode="en">purchase price</description>
-							<description isocode="it">prezzo d'acquisto</description>
+							<description isocode="it">prezzo d&apos;acquisto</description>
 						</taxon>
 						<taxon ID="5569" upstream_identifier="2648">
 							<description isocode="de">Angebotspreis</description>
 							<description isocode="en">offer price</description>
-							<description isocode="it">prezzo d'offerta</description>
+							<description isocode="it">prezzo d&apos;offerta</description>
 						</taxon>
 						<taxon ID="5570" upstream_identifier="2652">
 							<description isocode="it">prezzo al minuto</description>
@@ -13746,7 +13746,7 @@
 						<taxon ID="5571" upstream_identifier="2653">
 							<description isocode="de">Großhandelspreis</description>
 							<description isocode="en">wholesale price</description>
-							<description isocode="it">prezzo all'ingrosso</description>
+							<description isocode="it">prezzo all&apos;ingrosso</description>
 						</taxon>
 						<taxon ID="5572" upstream_identifier="2664">
 							<description isocode="en">selling price</description>
@@ -14746,7 +14746,7 @@
 							<description isocode="en">gaming</description>
 							<taxons>
 							<taxon ID="5753" upstream_identifier="1527">
-								<description isocode="it">gioco d'azzardo</description>
+								<description isocode="it">gioco d&apos;azzardo</description>
 								<description isocode="de">Glücksspiel</description>
 								<description isocode="en">game of chance</description>
 							</taxon>
@@ -15061,7 +15061,7 @@
 						<taxon ID="5810" upstream_identifier="3919">
 							<description isocode="de">Jugendschutz</description>
 							<description isocode="en">child protection</description>
-							<description isocode="it">protezione dell'infanzia</description>
+							<description isocode="it">protezione dell&apos;infanzia</description>
 						</taxon>
 						<taxon ID="5811" upstream_identifier="4086">
 							<description isocode="it">reddito minimo di sussistenza</description>
@@ -15485,7 +15485,7 @@
 							<description isocode="it">patrimonio culturale</description>
 							<taxons>
 							<taxon ID="5888" upstream_identifier="2122">
-								<description isocode="it">opera d'arte</description>
+								<description isocode="it">opera d&apos;arte</description>
 								<description isocode="de">Kunstwerk</description>
 								<description isocode="en">work of art</description>
 							</taxon>
@@ -15880,7 +15880,7 @@
 							</taxon>
 							<taxon ID="5962" upstream_identifier="2601">
 								<description isocode="de">Leistung für Hinterbliebene</description>
-								<description isocode="en">survivor's benefit</description>
+								<description isocode="en">survivor&apos;s benefit</description>
 								<description isocode="it">prestazione ai superstiti</description>
 							</taxon>
 							<taxon ID="5963" upstream_identifier="2604">
@@ -16486,7 +16486,7 @@
 								<taxon ID="6073" upstream_identifier="3370">
 									<description isocode="it">diritti del malato</description>
 									<description isocode="de">Patientenrechte</description>
-									<description isocode="en">patient's rights</description>
+									<description isocode="en">patient&apos;s rights</description>
 									<taxons>
 									<taxon ID="6074" upstream_identifier="6566">
 										<description isocode="it">errore medico</description>
@@ -16970,7 +16970,7 @@
 						<taxon ID="6161" upstream_identifier="3134">
 							<description isocode="de">Bauordnung</description>
 							<description isocode="en">building regulations</description>
-							<description isocode="it">norme per l'edilizia</description>
+							<description isocode="it">norme per l&apos;edilizia</description>
 						</taxon>
 						<taxon ID="6162" upstream_identifier="3378">
 							<description isocode="de">Immobilienmarkt</description>
@@ -16995,7 +16995,7 @@
 						<description isocode="it">politica della casa</description>
 						<taxons>
 						<taxon ID="6166" upstream_identifier="1456">
-							<description isocode="it">miglioramento dell'habitat</description>
+							<description isocode="it">miglioramento dell&apos;habitat</description>
 							<description isocode="de">Verbesserung des Wohnmilieus</description>
 							<description isocode="en">housing improvements</description>
 						</taxon>
@@ -17115,7 +17115,7 @@
 							<taxon ID="6188" upstream_identifier="477">
 								<description isocode="de">Stromversorgung</description>
 								<description isocode="en">electricity supply</description>
-								<description isocode="it">distribuzione dell'elettricità</description>
+								<description isocode="it">distribuzione dell&apos;elettricità</description>
 							</taxon>
 							<taxon ID="6189" upstream_identifier="4741">
 								<description isocode="en">road services department</description>
@@ -17217,21 +17217,21 @@
 					<taxon ID="6206" upstream_identifier="2467">
 						<description isocode="de">Bildungspolitik</description>
 						<description isocode="en">education policy</description>
-						<description isocode="it">politica dell'istruzione</description>
+						<description isocode="it">politica dell&apos;istruzione</description>
 						<taxons>
 						<taxon ID="6207" upstream_identifier="269">
-							<description isocode="it">costo dell'istruzione</description>
+							<description isocode="it">costo dell&apos;istruzione</description>
 							<description isocode="de">Bildungskosten</description>
 							<description isocode="en">education costs</description>
 						</taxon>
 						<taxon ID="6208" upstream_identifier="280">
 							<description isocode="de">Zugang zur Bildung</description>
 							<description isocode="en">access to education</description>
-							<description isocode="it">accesso all'istruzione</description>
+							<description isocode="it">accesso all&apos;istruzione</description>
 						</taxon>
 						<taxon ID="6209" upstream_identifier="384">
 							<description isocode="en">democratisation of education</description>
-							<description isocode="it">democratizzazione dell'istruzione</description>
+							<description isocode="it">democratizzazione dell&apos;istruzione</description>
 							<description isocode="de">Demokratisierung des Bildungswesens</description>
 						</taxon>
 						<taxon ID="6210" upstream_identifier="590">
@@ -17269,7 +17269,7 @@
 						<taxon ID="6216" upstream_identifier="2397">
 							<description isocode="de">Bildungsplanung</description>
 							<description isocode="en">educational planning</description>
-							<description isocode="it">pianificazione dell'istruzione</description>
+							<description isocode="it">pianificazione dell&apos;istruzione</description>
 						</taxon>
 						<taxon ID="6217" upstream_identifier="2932">
 							<description isocode="en">recognition of diplomas</description>
@@ -17287,7 +17287,7 @@
 							<description isocode="it">selezione degli alunni</description>
 						</taxon>
 						<taxon ID="6220" upstream_identifier="5175">
-							<description isocode="it">bilancio dell'insegnamento</description>
+							<description isocode="it">bilancio dell&apos;insegnamento</description>
 							<description isocode="de">Bildungshaushalt</description>
 							<description isocode="en">education budget</description>
 						</taxon>
@@ -17308,13 +17308,13 @@
 						</taxon>
 						<taxon ID="6224" upstream_identifier="5905">
 							<description isocode="en">education statistics</description>
-							<description isocode="it">statistica dell'istruzione</description>
+							<description isocode="it">statistica dell&apos;istruzione</description>
 							<description isocode="de">Erziehungsstatistik</description>
 						</taxon>
 						<taxon ID="6225" upstream_identifier="6763">
 							<description isocode="de">Qualität des Unterrichts</description>
 							<description isocode="en">teaching quality</description>
-							<description isocode="it">qualità dell'insegnamento</description>
+							<description isocode="it">qualità dell&apos;insegnamento</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -17516,7 +17516,7 @@
 						<description isocode="it">istituto di istruzione</description>
 						<taxons>
 						<taxon ID="6263" upstream_identifier="627">
-							<description isocode="it">scuola all'estero</description>
+							<description isocode="it">scuola all&apos;estero</description>
 							<description isocode="de">Auslandsschule</description>
 							<description isocode="en">school abroad</description>
 						</taxon>
@@ -17925,7 +17925,7 @@
 							<description isocode="en">report</description>
 							<taxons>
 							<taxon ID="6338" upstream_identifier="2894">
-								<description isocode="it">relazione d'attività</description>
+								<description isocode="it">relazione d&apos;attività</description>
 								<description isocode="de">Tätigkeitsbericht</description>
 								<description isocode="en">annual report</description>
 							</taxon>
@@ -18217,7 +18217,7 @@
 							<taxon ID="6392" upstream_identifier="4866">
 								<description isocode="it">biblioteca per la gioventù</description>
 								<description isocode="de">Jugendbücherei</description>
-								<description isocode="en">children's library</description>
+								<description isocode="en">children&apos;s library</description>
 							</taxon>
 							<taxon ID="6393" upstream_identifier="4867">
 								<description isocode="de">Staatsbibliothek</description>
@@ -18254,7 +18254,7 @@
 						<taxon ID="6399" upstream_identifier="5066">
 							<description isocode="de">Informationsbüro</description>
 							<description isocode="en">information centre</description>
-							<description isocode="it">centro d'informazione</description>
+							<description isocode="it">centro d&apos;informazione</description>
 						</taxon>
 						<taxon ID="6400" upstream_identifier="5356">
 							<description isocode="de">Dokumentationsstelle</description>
@@ -18298,7 +18298,7 @@
 							<taxon ID="6407" upstream_identifier="5569">
 								<description isocode="de">Erscheinungsfrist</description>
 								<description isocode="en">publishing deadline</description>
-								<description isocode="it">termine per l'edizione</description>
+								<description isocode="it">termine per l&apos;edizione</description>
 							</taxon>
 							<taxon ID="6408" upstream_identifier="6104">
 								<description isocode="en">legal deposit</description>
@@ -18383,7 +18383,7 @@
 						<taxon ID="6422" upstream_identifier="5188">
 							<description isocode="de">Informationstechnologie</description>
 							<description isocode="en">information technology</description>
-							<description isocode="it">tecnologia dell'informazione</description>
+							<description isocode="it">tecnologia dell&apos;informazione</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -18496,7 +18496,7 @@
 							<description isocode="it">controllo della comunicazione</description>
 							<taxons>
 							<taxon ID="6443" upstream_identifier="1984">
-								<description isocode="it">monopolio dell'informazione</description>
+								<description isocode="it">monopolio dell&apos;informazione</description>
 								<description isocode="de">Informationsmonopol</description>
 								<description isocode="en">monopoly of information</description>
 							</taxon>
@@ -18520,7 +18520,7 @@
 						<taxon ID="6447" upstream_identifier="5191">
 							<description isocode="de">Politik im audiovisuellen Bereich</description>
 							<description isocode="en">audiovisual communications policy</description>
-							<description isocode="it">politica dell'audiovisivo</description>
+							<description isocode="it">politica dell&apos;audiovisivo</description>
 							<taxons>
 							<taxon ID="6448" upstream_identifier="5192">
 								<description isocode="it">pirateria audiovisiva</description>
@@ -18842,7 +18842,7 @@
 				<taxon ID="6505" upstream_identifier="MT3231">
 					<description isocode="de">Information und Informationsverarbeitung</description>
 					<description isocode="en">information and information processing</description>
-					<description isocode="it">informazione ed elaborazione dell'informazione</description>
+					<description isocode="it">informazione ed elaborazione dell&apos;informazione</description>
 					<taxons>
 					<taxon ID="6506" upstream_identifier="1422">
 						<description isocode="it">informazione</description>
@@ -18857,7 +18857,7 @@
 						<taxon ID="6508" upstream_identifier="616">
 							<description isocode="de">Informationsaustausch</description>
 							<description isocode="en">information transfer</description>
-							<description isocode="it">scambio d'informazioni</description>
+							<description isocode="it">scambio d&apos;informazioni</description>
 						</taxon>
 						<taxon ID="6509" upstream_identifier="3404">
 							<description isocode="en">duplicating</description>
@@ -18867,10 +18867,10 @@
 						<taxon ID="6510" upstream_identifier="3422">
 							<description isocode="de">Informationsnetz</description>
 							<description isocode="en">information network</description>
-							<description isocode="it">rete d'informazione</description>
+							<description isocode="it">rete d&apos;informazione</description>
 							<taxons>
 							<taxon ID="6511" upstream_identifier="6176">
-								<description isocode="it">autostrada dell'informazione</description>
+								<description isocode="it">autostrada dell&apos;informazione</description>
 								<description isocode="de">Datenautobahn</description>
 								<description isocode="en">information highway</description>
 							</taxon>
@@ -18879,17 +18879,17 @@
 						<taxon ID="6512" upstream_identifier="3585">
 							<description isocode="de">Beruf in der Informationsbranche</description>
 							<description isocode="en">information profession</description>
-							<description isocode="it">professioni dell'informazione</description>
+							<description isocode="it">professioni dell&apos;informazione</description>
 						</taxon>
 						<taxon ID="6513" upstream_identifier="4220">
 							<description isocode="de">Informationsquelle</description>
 							<description isocode="en">source of information</description>
-							<description isocode="it">fonte d'informazione</description>
+							<description isocode="it">fonte d&apos;informazione</description>
 						</taxon>
 						<taxon ID="6514" upstream_identifier="4330">
 							<description isocode="de">Informationsträger</description>
 							<description isocode="en">information medium</description>
-							<description isocode="it">supporto d'informazione</description>
+							<description isocode="it">supporto d&apos;informazione</description>
 						</taxon>
 						<taxon ID="6515" upstream_identifier="4359">
 							<description isocode="it">sistema di informazione</description>
@@ -18906,10 +18906,10 @@
 					<taxon ID="6517" upstream_identifier="2472">
 						<description isocode="de">Informationspolitik</description>
 						<description isocode="en">information policy</description>
-						<description isocode="it">politica dell'informazione</description>
+						<description isocode="it">politica dell&apos;informazione</description>
 						<taxons>
 						<taxon ID="6518" upstream_identifier="453">
-							<description isocode="it">accesso all'informazione</description>
+							<description isocode="it">accesso all&apos;informazione</description>
 							<description isocode="de">Informationszugang</description>
 							<description isocode="en">access to information</description>
 							<taxons>
@@ -18940,7 +18940,7 @@
 						<taxon ID="6523" upstream_identifier="1367">
 							<description isocode="de">Informationsindustrie</description>
 							<description isocode="en">information industry</description>
-							<description isocode="it">industria dell'informazione</description>
+							<description isocode="it">industria dell&apos;informazione</description>
 						</taxon>
 						<taxon ID="6524" upstream_identifier="5196">
 							<description isocode="en">law relating to information</description>
@@ -18955,7 +18955,7 @@
 						<taxon ID="6526" upstream_identifier="6140">
 							<description isocode="de">Informationsgesellschaft</description>
 							<description isocode="en">information society</description>
-							<description isocode="it">società dell'informazione</description>
+							<description isocode="it">società dell&apos;informazione</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -19014,7 +19014,7 @@
 					<description isocode="it">informatica e trattamento dei dati</description>
 					<taxons>
 					<taxon ID="6537" upstream_identifier="1405">
-						<description isocode="it">industria dell'informatica</description>
+						<description isocode="it">industria dell&apos;informatica</description>
 						<description isocode="de">Datenverarbeitungsindustrie</description>
 						<description isocode="en">information technology industry</description>
 						<taxons>
@@ -19197,7 +19197,7 @@
 						<taxon ID="6570" upstream_identifier="5333">
 							<description isocode="de">Auswirkung der Informatik</description>
 							<description isocode="en">impact of information technology</description>
-							<description isocode="it">impatto dell'informatica</description>
+							<description isocode="it">impatto dell&apos;informatica</description>
 						</taxon>
 						<taxon ID="6571" upstream_identifier="6261">
 							<description isocode="de">virtuelle Realität</description>
@@ -19338,7 +19338,7 @@
 						<taxon ID="6595" upstream_identifier="5441">
 							<description isocode="de">Informatikanwendung</description>
 							<description isocode="en">information technology applications</description>
-							<description isocode="it">applicazione dell'informatica</description>
+							<description isocode="it">applicazione dell&apos;informatica</description>
 						</taxon>
 						<taxon ID="6596" upstream_identifier="5684">
 							<description isocode="en">systems interconnection</description>
@@ -19370,10 +19370,10 @@
 						<taxon ID="6601" upstream_identifier="5949">
 							<description isocode="de">EDV-Benutzer</description>
 							<description isocode="en">information technology user</description>
-							<description isocode="it">utilizzatore dell'informatica</description>
+							<description isocode="it">utilizzatore dell&apos;informatica</description>
 							<taxons>
 							<taxon ID="6602" upstream_identifier="5915">
-								<description isocode="it">supporto per l'utilizzatore</description>
+								<description isocode="it">supporto per l&apos;utilizzatore</description>
 								<description isocode="de">Benutzerunterstützung</description>
 								<description isocode="en">help desk</description>
 							</taxon>
@@ -19629,7 +19629,7 @@
 						<taxon ID="6648" upstream_identifier="3925">
 							<description isocode="de">Informationswissenschaft</description>
 							<description isocode="en">information science</description>
-							<description isocode="it">scienze dell'informazione</description>
+							<description isocode="it">scienze dell&apos;informazione</description>
 						</taxon>
 						<taxon ID="6649" upstream_identifier="5968">
 							<description isocode="de">Industriechemie</description>
@@ -20030,7 +20030,7 @@
 							<taxon ID="6721" upstream_identifier="7393">
 								<description isocode="de">Erziehungssoziologie</description>
 								<description isocode="en">sociology of education</description>
-								<description isocode="it">sociologia dell'educazione</description>
+								<description isocode="it">sociologia dell&apos;educazione</description>
 							</taxon>
 							<taxon ID="6722" upstream_identifier="7394">
 								<description isocode="de">politische Soziologie</description>
@@ -20068,7 +20068,7 @@
 						<taxon ID="6727" upstream_identifier="1122">
 							<description isocode="de">Fusion von Unternehmen</description>
 							<description isocode="en">merger</description>
-							<description isocode="it">fusione d'imprese</description>
+							<description isocode="it">fusione d&apos;imprese</description>
 							<taxons>
 							<taxon ID="6728" upstream_identifier="6750">
 								<description isocode="it">fusione internazionale</description>
@@ -20125,7 +20125,7 @@
 					</taxon>
 					<taxon ID="6737" upstream_identifier="2469">
 						<description isocode="en">business policy</description>
-						<description isocode="it">politica dell'impresa</description>
+						<description isocode="it">politica dell&apos;impresa</description>
 						<description isocode="de">Unternehmenspolitik</description>
 						<taxons>
 						<taxon ID="6738" upstream_identifier="45">
@@ -20151,7 +20151,7 @@
 							<description isocode="de">Unternehmensleitung</description>
 							<taxons>
 							<taxon ID="6742" upstream_identifier="6751">
-								<description isocode="it">direzione d'azienda</description>
+								<description isocode="it">direzione d&apos;azienda</description>
 								<description isocode="de">Unternehmensführungskultur</description>
 								<description isocode="en">corporate governance</description>
 							</taxon>
@@ -20175,7 +20175,7 @@
 						<taxon ID="6746" upstream_identifier="4492">
 							<description isocode="de">Unternehmensverlagerung</description>
 							<description isocode="en">transfer of businesses</description>
-							<description isocode="it">trasferimento d'impresa</description>
+							<description isocode="it">trasferimento d&apos;impresa</description>
 						</taxon>
 						<taxon ID="6747" upstream_identifier="5205">
 							<description isocode="it">creazione di imprese</description>
@@ -20189,13 +20189,13 @@
 						</taxon>
 						<taxon ID="6749" upstream_identifier="7942">
 							<description isocode="en">corporate social responsibility  [V4.2]</description>
-							<description isocode="it">responsabilità sociale dell'impresa  [V4.2]</description>
+							<description isocode="it">responsabilità sociale dell&apos;impresa  [V4.2]</description>
 							<description isocode="de">soziale Verantwortung von Unternehmen  [V4.2]</description>
 						</taxon>
 						<taxon ID="6750" upstream_identifier="7948">
 							<description isocode="de">Organisationskultur  [V4.2]</description>
 							<description isocode="en">organisational culture  [V4.2]</description>
-							<description isocode="it">cultura dell'organizzazione  [V4.2]</description>
+							<description isocode="it">cultura dell&apos;organizzazione  [V4.2]</description>
 						</taxon>
 						<taxon ID="6751" upstream_identifier="7956">
 							<description isocode="de">Verlagerung  [V4.2]</description>
@@ -20229,10 +20229,10 @@
 					<taxon ID="6756" upstream_identifier="4300">
 						<description isocode="de">Unternehmensstruktur</description>
 						<description isocode="en">company structure</description>
-						<description isocode="it">struttura dell'impresa</description>
+						<description isocode="it">struttura dell&apos;impresa</description>
 						<taxons>
 						<taxon ID="6757" upstream_identifier="115">
-							<description isocode="it">consiglio d'amministrazione</description>
+							<description isocode="it">consiglio d&apos;amministrazione</description>
 							<description isocode="de">Verwaltungsrat</description>
 							<description isocode="en">board of directors</description>
 						</taxon>
@@ -20242,7 +20242,7 @@
 							<description isocode="it">stabilimento</description>
 							<taxons>
 							<taxon ID="6759" upstream_identifier="380">
-								<description isocode="it">agenzia all'estero</description>
+								<description isocode="it">agenzia all&apos;estero</description>
 								<description isocode="de">Auslandsvertretung</description>
 								<description isocode="en">agency abroad</description>
 							</taxon>
@@ -20351,7 +20351,7 @@
 						<taxon ID="6778" upstream_identifier="5372">
 							<description isocode="de">Betriebseinstellung</description>
 							<description isocode="en">cessation of trading</description>
-							<description isocode="it">cessazione d'attività</description>
+							<description isocode="it">cessazione d&apos;attività</description>
 						</taxon>
 						<taxon ID="6779" upstream_identifier="5374">
 							<description isocode="de">Zahlungseinstellung</description>
@@ -20373,17 +20373,17 @@
 						<taxon ID="6782" upstream_identifier="6748">
 							<description isocode="de">Steigerung der Unternehmenstätigkeiten</description>
 							<description isocode="en">company growth</description>
-							<description isocode="it">crescita dell'impresa</description>
+							<description isocode="it">crescita dell&apos;impresa</description>
 						</taxon>
 						<taxon ID="6783" upstream_identifier="6749">
-							<description isocode="it">spirito d'impresa</description>
+							<description isocode="it">spirito d&apos;impresa</description>
 							<description isocode="de">Unternehmergeist</description>
 							<description isocode="en">entrepreneurship</description>
 						</taxon>
 						<taxon ID="6784" upstream_identifier="6753">
 							<description isocode="de">Unternehmensübernahme</description>
 							<description isocode="en">company buyout</description>
-							<description isocode="it">acquisizione d'impresa</description>
+							<description isocode="it">acquisizione d&apos;impresa</description>
 						</taxon>
 						<taxon ID="6785" upstream_identifier="7201">
 							<description isocode="en">business morals</description>
@@ -20397,10 +20397,10 @@
 				<taxon ID="6786" upstream_identifier="MT4011">
 					<description isocode="de">Unternehmensarten</description>
 					<description isocode="en">business classification</description>
-					<description isocode="it">tipo d'impresa</description>
+					<description isocode="it">tipo d&apos;impresa</description>
 					<taxons>
 					<taxon ID="6787" upstream_identifier="445">
-						<description isocode="it">dimensioni dell'impresa</description>
+						<description isocode="it">dimensioni dell&apos;impresa</description>
 						<description isocode="de">Unternehmensgröße</description>
 						<description isocode="en">size of business</description>
 						<taxons>
@@ -20493,13 +20493,13 @@
 						<taxon ID="6804" upstream_identifier="6754">
 							<description isocode="de">Eingliederungsunternehmen</description>
 							<description isocode="en">reintegration enterprise</description>
-							<description isocode="it">impresa d'inserimento</description>
+							<description isocode="it">impresa d&apos;inserimento</description>
 						</taxon>
 						</taxons>
 					</taxon>
 					<taxon ID="6805" upstream_identifier="5985">
 						<description isocode="en">branch of activity</description>
-						<description isocode="it">attività dell'impresa</description>
+						<description isocode="it">attività dell&apos;impresa</description>
 						<description isocode="de">Tätigkeitsbereich des Unternehmens</description>
 						<taxons>
 						<taxon ID="6806" upstream_identifier="815">
@@ -20572,7 +20572,7 @@
 						</taxon>
 						<taxon ID="6818" upstream_identifier="1200">
 							<description isocode="en">Economic Interest Grouping</description>
-							<description isocode="it">gruppo d'interesse economico</description>
+							<description isocode="it">gruppo d&apos;interesse economico</description>
 							<description isocode="de">wirtschaftliche Interessengemeinschaft</description>
 							<taxons>
 							<taxon ID="6819" upstream_identifier="5658">
@@ -20585,7 +20585,7 @@
 						<taxon ID="6820" upstream_identifier="3007">
 							<description isocode="de">gemeinnütziges Unternehmen</description>
 							<description isocode="en">partly nationalised undertaking</description>
-							<description isocode="it">impresa d'interesse collettivo</description>
+							<description isocode="it">impresa d&apos;interesse collettivo</description>
 						</taxon>
 						<taxon ID="6821" upstream_identifier="3060">
 							<description isocode="de">Gemeinschaftsunternehmen</description>
@@ -20627,7 +20627,7 @@
 								<taxon ID="6828" upstream_identifier="4195">
 									<description isocode="de">Kapitalanlagegesellschaft</description>
 									<description isocode="en">investment company</description>
-									<description isocode="it">società d'investimento</description>
+									<description isocode="it">società d&apos;investimento</description>
 								</taxon>
 								</taxons>
 							</taxon>
@@ -20644,7 +20644,7 @@
 							</taxons>
 						</taxon>
 						<taxon ID="6831" upstream_identifier="4194">
-							<description isocode="it">società d'economia mista</description>
+							<description isocode="it">società d&apos;economia mista</description>
 							<description isocode="de">gemischtwirtschaftliche Gesellschaft</description>
 							<description isocode="en">mixed-ownership company</description>
 						</taxon>
@@ -20685,7 +20685,7 @@
 						<description isocode="en">management</description>
 						<taxons>
 						<taxon ID="6838" upstream_identifier="1156">
-							<description isocode="it">gestione d'impresa</description>
+							<description isocode="it">gestione d&apos;impresa</description>
 							<description isocode="de">Unternehmensführung</description>
 							<description isocode="en">business management</description>
 						</taxon>
@@ -20702,7 +20702,7 @@
 						<taxon ID="6841" upstream_identifier="2792">
 							<description isocode="de">Aktionsprogramm</description>
 							<description isocode="en">action programme</description>
-							<description isocode="it">programma d'azione</description>
+							<description isocode="it">programma d&apos;azione</description>
 							<taxons>
 							<taxon ID="6842" upstream_identifier="894">
 								<description isocode="it">studio di fattibilità</description>
@@ -20795,7 +20795,7 @@
 						<taxon ID="6858" upstream_identifier="4360">
 							<description isocode="de">Management-Informationssystem</description>
 							<description isocode="en">management information system</description>
-							<description isocode="it">sistema d'informazione manageriale</description>
+							<description isocode="it">sistema d&apos;informazione manageriale</description>
 						</taxon>
 						<taxon ID="6859" upstream_identifier="5480">
 							<description isocode="de">Qualtitätszirkel</description>
@@ -20888,7 +20888,7 @@
 						<taxon ID="6875" upstream_identifier="3602">
 							<description isocode="de">Betriebsergebnis</description>
 							<description isocode="en">operating result</description>
-							<description isocode="it">risultato dell'esercizio</description>
+							<description isocode="it">risultato dell&apos;esercizio</description>
 							<taxons>
 							<taxon ID="6876" upstream_identifier="367">
 								<description isocode="it">disavanzo</description>
@@ -20925,7 +20925,7 @@
 						<taxon ID="6882" upstream_identifier="5964">
 							<description isocode="de">Umsatz</description>
 							<description isocode="en">turnover</description>
-							<description isocode="it">giro d'affari</description>
+							<description isocode="it">giro d&apos;affari</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -21013,7 +21013,7 @@
 							<taxon ID="6898" upstream_identifier="265">
 								<description isocode="de">Anlagekosten</description>
 								<description isocode="en">investment cost</description>
-								<description isocode="it">costo d'investimento</description>
+								<description isocode="it">costo d&apos;investimento</description>
 							</taxon>
 							<taxon ID="6899" upstream_identifier="266">
 								<description isocode="en">cost of capital</description>
@@ -21028,7 +21028,7 @@
 							<taxon ID="6901" upstream_identifier="268">
 								<description isocode="de">Betriebsbereitschaftskosten</description>
 								<description isocode="en">operating cost</description>
-								<description isocode="it">costo d'esercizio</description>
+								<description isocode="it">costo d&apos;esercizio</description>
 							</taxon>
 							<taxon ID="6902" upstream_identifier="275">
 								<description isocode="de">Produktionskosten</description>
@@ -21114,18 +21114,18 @@
 							<description isocode="it">regolamentazione delle intese</description>
 							<taxons>
 							<taxon ID="6917" upstream_identifier="354">
-								<description isocode="it">dichiarazione d'intesa</description>
+								<description isocode="it">dichiarazione d&apos;intesa</description>
 								<description isocode="de">Kartellanmeldung</description>
 								<description isocode="en">restrictive-practice notification</description>
 							</taxon>
 							<taxon ID="6918" upstream_identifier="931">
 								<description isocode="de">Befreiung von der Genehmigungspflicht</description>
 								<description isocode="en">exemption from restrictive-practice authorisation</description>
-								<description isocode="it">esenzione dall'autorizzazione d'intesa</description>
+								<description isocode="it">esenzione dall&apos;autorizzazione d&apos;intesa</description>
 							</taxon>
 							<taxon ID="6919" upstream_identifier="4309">
 								<description isocode="en">restrictive-practice authorisation</description>
-								<description isocode="it">autorizzazione d'intesa</description>
+								<description isocode="it">autorizzazione d&apos;intesa</description>
 								<description isocode="de">Kartellgenehmigung</description>
 							</taxon>
 							</taxons>
@@ -21253,7 +21253,7 @@
 							<description isocode="it">monopolio</description>
 							<taxons>
 							<taxon ID="6942" upstream_identifier="1980">
-								<description isocode="it">monopolio d'acquisto</description>
+								<description isocode="it">monopolio d&apos;acquisto</description>
 								<description isocode="de">Nachfragemonopol</description>
 								<description isocode="en">monopsony</description>
 							</taxon>
@@ -21264,7 +21264,7 @@
 							</taxon>
 							<taxon ID="6944" upstream_identifier="1982">
 								<description isocode="en">import monopoly</description>
-								<description isocode="it">monopolio dell'importazione</description>
+								<description isocode="it">monopolio dell&apos;importazione</description>
 								<description isocode="de">Einfuhrmonopol</description>
 							</taxon>
 							</taxons>
@@ -21302,7 +21302,7 @@
 						<taxon ID="6951" upstream_identifier="2993">
 							<description isocode="de">Ablehnung eines Angebots</description>
 							<description isocode="en">refusal to bid</description>
-							<description isocode="it">rifiuto d'offerta</description>
+							<description isocode="it">rifiuto d&apos;offerta</description>
 						</taxon>
 						<taxon ID="6952" upstream_identifier="2998">
 							<description isocode="en">refusal to sell</description>
@@ -21422,7 +21422,7 @@
 							<description isocode="en">job creation</description>
 							<taxons>
 							<taxon ID="6973" upstream_identifier="3524">
-								<description isocode="it">iniziativa locale per l'occupazione</description>
+								<description isocode="it">iniziativa locale per l&apos;occupazione</description>
 								<description isocode="de">örtliche Arbeitsplatzinitiative</description>
 								<description isocode="en">local employment initiative</description>
 							</taxon>
@@ -21456,7 +21456,7 @@
 						<taxon ID="6979" upstream_identifier="2454">
 							<description isocode="de">Beschäftigungspolitik der Gemeinschaft</description>
 							<description isocode="en">Community employment policy</description>
-							<description isocode="it">politica comunitaria dell'occupazione</description>
+							<description isocode="it">politica comunitaria dell&apos;occupazione</description>
 							<taxons>
 							<taxon ID="6980" upstream_identifier="532">
 								<description isocode="it">diritto di stabilimento</description>
@@ -21481,12 +21481,12 @@
 							<taxon ID="6984" upstream_identifier="6346">
 								<description isocode="de">EG-Beschäftigungsausschuss</description>
 								<description isocode="en">Employment Committee</description>
-								<description isocode="it">comitato dell'occupazione CE</description>
+								<description isocode="it">comitato dell&apos;occupazione CE</description>
 							</taxon>
 							<taxon ID="6985" upstream_identifier="6347">
 								<description isocode="de">europäische Beschäftigungsstrategie</description>
 								<description isocode="en">European Employment Strategy</description>
-								<description isocode="it">strategia europea per l'occupazione</description>
+								<description isocode="it">strategia europea per l&apos;occupazione</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -21538,7 +21538,7 @@
 					</taxon>
 					<taxon ID="6994" upstream_identifier="3522">
 						<description isocode="en">termination of employment</description>
-						<description isocode="it">cessazione d'impiego</description>
+						<description isocode="it">cessazione d&apos;impiego</description>
 						<description isocode="de">Beendigung des Arbeitsverhältnisses</description>
 						<taxons>
 						<taxon ID="6995" upstream_identifier="1646">
@@ -21875,7 +21875,7 @@
 						<description isocode="it">mercato del lavoro</description>
 						<taxons>
 						<taxon ID="7058" upstream_identifier="372">
-							<description isocode="it">accesso all'occupazione</description>
+							<description isocode="it">accesso all&apos;occupazione</description>
 							<description isocode="de">Zugang zur Beschäftigung</description>
 							<description isocode="en">job access</description>
 						</taxon>
@@ -21949,7 +21949,7 @@
 						<taxon ID="7072" upstream_identifier="5755">
 							<description isocode="de">neue Beschäftigungsform</description>
 							<description isocode="en">new type of employment</description>
-							<description isocode="it">nuova forma d'impiego</description>
+							<description isocode="it">nuova forma d&apos;impiego</description>
 						</taxon>
 						<taxon ID="7073" upstream_identifier="6348">
 							<description isocode="it">adattabilità del lavoratore</description>
@@ -22201,7 +22201,7 @@
 							<taxon ID="7118" upstream_identifier="2953">
 								<description isocode="de">Arbeitszeitverkürzung</description>
 								<description isocode="en">reduction of working time</description>
-								<description isocode="it">riduzione dell'orario di lavoro</description>
+								<description isocode="it">riduzione dell&apos;orario di lavoro</description>
 							</taxon>
 							<taxon ID="7119" upstream_identifier="3548">
 								<description isocode="de">Sonntagsarbeit</description>
@@ -22330,7 +22330,7 @@
 						<taxon ID="7141" upstream_identifier="414">
 							<description isocode="de">Stellenbeschreibung</description>
 							<description isocode="en">job description</description>
-							<description isocode="it">descrizione dell'impiego</description>
+							<description isocode="it">descrizione dell&apos;impiego</description>
 						</taxon>
 						<taxon ID="7142" upstream_identifier="2267">
 							<description isocode="en">staff assessment</description>
@@ -22566,7 +22566,7 @@
 						<taxon ID="7185" upstream_identifier="4887">
 							<description isocode="de">Sozialbilanz</description>
 							<description isocode="en">social audit</description>
-							<description isocode="it">bilancio sociale dell'impresa</description>
+							<description isocode="it">bilancio sociale dell&apos;impresa</description>
 						</taxon>
 						<taxon ID="7186" upstream_identifier="6022">
 							<description isocode="de">Arbeitsgesetzbuch</description>
@@ -22685,7 +22685,7 @@
 							</taxon>
 							<taxon ID="7207" upstream_identifier="5604">
 								<description isocode="de">Belegschaftsaktien</description>
-								<description isocode="en">workers' stock ownership</description>
+								<description isocode="en">workers&apos; stock ownership</description>
 								<description isocode="it">azionariato operaio</description>
 							</taxon>
 							<taxon ID="7208" upstream_identifier="6026">
@@ -22697,7 +22697,7 @@
 						</taxon>
 						<taxon ID="7209" upstream_identifier="3374">
 							<description isocode="de">Personalvertretung</description>
-							<description isocode="en">workers' representation</description>
+							<description isocode="en">workers&apos; representation</description>
 							<description isocode="it">rappresentanza del personale</description>
 							<taxons>
 							<taxon ID="7210" upstream_identifier="3363">
@@ -22732,12 +22732,12 @@
 							<taxon ID="7215" upstream_identifier="2279">
 								<description isocode="it">padronato</description>
 								<description isocode="de">Arbeitgeberverband</description>
-								<description isocode="en">employers' organisation</description>
+								<description isocode="en">employers&apos; organisation</description>
 								<taxons>
 								<taxon ID="7216" upstream_identifier="5521">
 									<description isocode="it">confederazione imprenditoriale</description>
 									<description isocode="de">Gesamtverband der Arbeitgeber</description>
-									<description isocode="en">employers' confederation</description>
+									<description isocode="en">employers&apos; confederation</description>
 								</taxon>
 								</taxons>
 							</taxon>
@@ -22809,7 +22809,7 @@
 							<description isocode="de">Transportinfrastruktur</description>
 							<taxons>
 							<taxon ID="7228" upstream_identifier="2206">
-								<description isocode="it">opere d'arte</description>
+								<description isocode="it">opere d&apos;arte</description>
 								<description isocode="de">Straßen- und Brückenbau</description>
 								<description isocode="en">structure</description>
 								<taxons>
@@ -23026,7 +23026,7 @@
 						</taxon>
 						<taxon ID="7268" upstream_identifier="3100">
 							<description isocode="de">Schiffspatent</description>
-							<description isocode="en">ship's passport</description>
+							<description isocode="en">ship&apos;s passport</description>
 							<description isocode="it">patente nautica</description>
 						</taxon>
 						<taxon ID="7269" upstream_identifier="3107">
@@ -23209,7 +23209,7 @@
 							<taxon ID="7302" upstream_identifier="4652">
 								<description isocode="de">Luftkissenfahrzeug</description>
 								<description isocode="en">air-cushion vehicle</description>
-								<description isocode="it">veicolo a cuscino d'aria</description>
+								<description isocode="it">veicolo a cuscino d&apos;aria</description>
 							</taxon>
 							<taxon ID="7303" upstream_identifier="4654">
 								<description isocode="de">Kraftfahrzeug</description>
@@ -23478,7 +23478,7 @@
 						<taxon ID="7351" upstream_identifier="4508">
 							<description isocode="de">Transport ins Hinterland</description>
 							<description isocode="en">hinterland transport</description>
-							<description isocode="it">trasporto nell'entroterra</description>
+							<description isocode="it">trasporto nell&apos;entroterra</description>
 						</taxon>
 						<taxon ID="7352" upstream_identifier="4517">
 							<description isocode="en">intercontinental transport</description>
@@ -23745,14 +23745,14 @@
 							<description isocode="it">rete navigabile</description>
 							<taxons>
 							<taxon ID="7400" upstream_identifier="4735">
-								<description isocode="it">via d'acqua interna</description>
+								<description isocode="it">via d&apos;acqua interna</description>
 								<description isocode="de">Binnenwasserstraße</description>
 								<description isocode="en">inland waterway</description>
 							</taxon>
 							<taxon ID="7401" upstream_identifier="4736">
 								<description isocode="de">internationale Wasserstraße</description>
 								<description isocode="en">international waterway</description>
-								<description isocode="it">via d'acqua internazionale</description>
+								<description isocode="it">via d&apos;acqua internazionale</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -23776,7 +23776,7 @@
 							<taxon ID="7405" upstream_identifier="2282">
 								<description isocode="it">bandiera della nave</description>
 								<description isocode="de">Schiffsflagge</description>
-								<description isocode="en">ship's flag</description>
+								<description isocode="en">ship&apos;s flag</description>
 							</taxon>
 							<taxon ID="7406" upstream_identifier="2283">
 								<description isocode="de">Billigflagge</description>
@@ -23973,7 +23973,7 @@
 				<description isocode="it">AMBIENTE</description>
 				<taxons>
 				<taxon ID="7440" upstream_identifier="MT5206">
-					<description isocode="it">politica dell'ambiente</description>
+					<description isocode="it">politica dell&apos;ambiente</description>
 					<description isocode="de">Umweltpolitik</description>
 					<description isocode="en">environmental policy</description>
 					<taxons>
@@ -24021,10 +24021,10 @@
 					<taxon ID="7448" upstream_identifier="1707">
 						<description isocode="de">Bekämpfung der Umweltbelastungen</description>
 						<description isocode="en">pollution control measures</description>
-						<description isocode="it">lotta contro l'inquinamento</description>
+						<description isocode="it">lotta contro l&apos;inquinamento</description>
 						<taxons>
 						<taxon ID="7449" upstream_identifier="177">
-							<description isocode="it">controllo dell'inquinamento</description>
+							<description isocode="it">controllo dell&apos;inquinamento</description>
 							<description isocode="de">Kontrolle der Umweltbelastungen</description>
 							<description isocode="en">pollution control</description>
 							<taxons>
@@ -24045,7 +24045,7 @@
 						<taxon ID="7452" upstream_identifier="2611">
 							<description isocode="de">Verhütung von Umweltbelastungen</description>
 							<description isocode="en">prevention of pollution</description>
-							<description isocode="it">prevenzione dell'inquinamento</description>
+							<description isocode="it">prevenzione dell&apos;inquinamento</description>
 							<taxons>
 							<taxon ID="7453" upstream_identifier="4891">
 								<description isocode="it">biodegradabilità</description>
@@ -24087,14 +24087,14 @@
 						<description isocode="de">Umweltpolitik</description>
 						<taxons>
 						<taxon ID="7460" upstream_identifier="272">
-							<description isocode="it">costo dell'inquinamento</description>
+							<description isocode="it">costo dell&apos;inquinamento</description>
 							<description isocode="de">Kosten der Umweltbelastungen</description>
 							<description isocode="en">cost of pollution</description>
 						</taxon>
 						<taxon ID="7461" upstream_identifier="535">
 							<description isocode="de">Umweltrecht</description>
 							<description isocode="en">environmental law</description>
-							<description isocode="it">diritto dell'ambiente</description>
+							<description isocode="it">diritto dell&apos;ambiente</description>
 							<taxons>
 							<taxon ID="7462" upstream_identifier="5754">
 								<description isocode="it">norma ambientale</description>
@@ -24172,12 +24172,12 @@
 						<taxon ID="7475" upstream_identifier="2869">
 							<description isocode="de">Umweltqualität</description>
 							<description isocode="en">quality of the environment</description>
-							<description isocode="it">qualità dell'ambiente</description>
+							<description isocode="it">qualità dell&apos;ambiente</description>
 						</taxon>
 						<taxon ID="7476" upstream_identifier="2919">
 							<description isocode="de">Umweltforschung</description>
 							<description isocode="en">environmental research</description>
-							<description isocode="it">ricerca sull'ambiente</description>
+							<description isocode="it">ricerca sull&apos;ambiente</description>
 							<taxons>
 							<taxon ID="7477" upstream_identifier="6402">
 								<description isocode="it">statistica ambientale</description>
@@ -24194,7 +24194,7 @@
 						<taxon ID="7479" upstream_identifier="3140">
 							<description isocode="de">Umweltüberwachung</description>
 							<description isocode="en">environmental monitoring</description>
-							<description isocode="it">sorveglianza dell'ambiente</description>
+							<description isocode="it">sorveglianza dell&apos;ambiente</description>
 						</taxon>
 						<taxon ID="7480" upstream_identifier="4074">
 							<description isocode="en">risk prevention</description>
@@ -24216,7 +24216,7 @@
 						<taxon ID="7483" upstream_identifier="5682">
 							<description isocode="de">Wirtschaftsinstrument für die Umwelt</description>
 							<description isocode="en">economic instrument for the environment</description>
-							<description isocode="it">strumento economico per l'ambiente</description>
+							<description isocode="it">strumento economico per l&apos;ambiente</description>
 							<taxons>
 							<taxon ID="7484" upstream_identifier="5533">
 								<description isocode="it">deposito di prodotti inquinanti</description>
@@ -24238,10 +24238,10 @@
 						<taxon ID="7487" upstream_identifier="5794">
 							<description isocode="de">EG-Umweltpolitik</description>
 							<description isocode="en">Community environmental policy</description>
-							<description isocode="it">politica comunitaria dell'ambiente</description>
+							<description isocode="it">politica comunitaria dell&apos;ambiente</description>
 						</taxon>
 						<taxon ID="7488" upstream_identifier="6396">
-							<description isocode="it">economia dell'ambiente</description>
+							<description isocode="it">economia dell&apos;ambiente</description>
 							<description isocode="de">Umweltwirtschaft</description>
 							<description isocode="en">environmental economics</description>
 						</taxon>
@@ -24255,7 +24255,7 @@
 					<taxon ID="7490" upstream_identifier="2825">
 						<description isocode="de">Umweltschutz</description>
 						<description isocode="en">environmental protection</description>
-						<description isocode="it">protezione dell'ambiente</description>
+						<description isocode="it">protezione dell&apos;ambiente</description>
 						<taxons>
 						<taxon ID="7491" upstream_identifier="134">
 							<description isocode="it">salvaguardia delle risorse</description>
@@ -24346,17 +24346,17 @@
 						<taxon ID="7507" upstream_identifier="1741">
 							<description isocode="de">Wasseranalyse</description>
 							<description isocode="en">water analysis</description>
-							<description isocode="it">analisi dell'acqua</description>
+							<description isocode="it">analisi dell&apos;acqua</description>
 						</taxon>
 						<taxon ID="7508" upstream_identifier="4485">
 							<description isocode="en">water treatment</description>
-							<description isocode="it">trattamento dell'acqua</description>
+							<description isocode="it">trattamento dell&apos;acqua</description>
 							<description isocode="de">Wasseraufbereitung</description>
 						</taxon>
 						<taxon ID="7509" upstream_identifier="4628">
 							<description isocode="de">Wassernutzung</description>
 							<description isocode="en">use of water</description>
-							<description isocode="it">utilizzazione dell'acqua</description>
+							<description isocode="it">utilizzazione dell&apos;acqua</description>
 						</taxon>
 						<taxon ID="7510" upstream_identifier="4853">
 							<description isocode="de">Wasserbedarf</description>
@@ -24439,7 +24439,7 @@
 								<description isocode="en">water</description>
 								<taxons>
 								<taxon ID="7524" upstream_identifier="599">
-									<description isocode="it">acqua d'infiltrazione</description>
+									<description isocode="it">acqua d&apos;infiltrazione</description>
 									<description isocode="de">Sickerwasser</description>
 									<description isocode="en">percolation water</description>
 								</taxon>
@@ -24524,7 +24524,7 @@
 						<description isocode="it">ambiente geofisico</description>
 						<taxons>
 						<taxon ID="7539" upstream_identifier="260">
-							<description isocode="it">corso d'acqua</description>
+							<description isocode="it">corso d&apos;acqua</description>
 							<description isocode="de">Wasserlauf</description>
 							<description isocode="en">watercourse</description>
 						</taxon>
@@ -24629,7 +24629,7 @@
 								</taxon>
 								<taxon ID="7559" upstream_identifier="1872">
 									<description isocode="en">Irish Sea</description>
-									<description isocode="it">Mare d'Irlanda</description>
+									<description isocode="it">Mare d&apos;Irlanda</description>
 									<description isocode="de">Irische See</description>
 								</taxon>
 								<taxon ID="7560" upstream_identifier="1875">
@@ -24995,7 +24995,7 @@
 					<taxon ID="7626" upstream_identifier="371">
 						<description isocode="de">Umweltverschlechterung</description>
 						<description isocode="en">degradation of the environment</description>
-						<description isocode="it">degradazione dell'ambiente</description>
+						<description isocode="it">degradazione dell&apos;ambiente</description>
 						<taxons>
 						<taxon ID="7627" upstream_identifier="243">
 							<description isocode="it">corrosione</description>
@@ -25009,7 +25009,7 @@
 						</taxon>
 						<taxon ID="7629" upstream_identifier="412">
 							<description isocode="en">man-made disaster</description>
-							<description isocode="it">disastro causato dall'uomo</description>
+							<description isocode="it">disastro causato dall&apos;uomo</description>
 							<description isocode="de">von Menschen verursachte Katastrophe</description>
 						</taxon>
 						<taxon ID="7630" upstream_identifier="413">
@@ -25112,7 +25112,7 @@
 							<description isocode="en">pollutant</description>
 							<taxons>
 							<taxon ID="7649" upstream_identifier="2522">
-								<description isocode="it">agente inquinante dell'atmosfera</description>
+								<description isocode="it">agente inquinante dell&apos;atmosfera</description>
 								<description isocode="de">luftverunreinigender Stoff</description>
 								<description isocode="en">atmospheric pollutant</description>
 								<taxons>
@@ -25141,7 +25141,7 @@
 							<taxon ID="7654" upstream_identifier="2523">
 								<description isocode="de">Wasserschadstoff</description>
 								<description isocode="en">water pollutant</description>
-								<description isocode="it">agente inquinante dell'acqua</description>
+								<description isocode="it">agente inquinante dell&apos;acqua</description>
 							</taxon>
 							<taxon ID="7655" upstream_identifier="3469">
 								<description isocode="en">pesticide residue</description>
@@ -25238,7 +25238,7 @@
 						<taxon ID="7671" upstream_identifier="2529">
 							<description isocode="de">Verschmutzung vom Lande aus</description>
 							<description isocode="en">pollution from land-based sources</description>
-							<description isocode="it">inquinamento d'origine tellurica</description>
+							<description isocode="it">inquinamento d&apos;origine tellurica</description>
 						</taxon>
 						<taxon ID="7672" upstream_identifier="2530">
 							<description isocode="de">Wasserverschmutzung</description>
@@ -25253,7 +25253,7 @@
 							<taxon ID="7674" upstream_identifier="2533">
 								<description isocode="de">Verschmutzung der Wasserläufe</description>
 								<description isocode="en">pollution of waterways</description>
-								<description isocode="it">inquinamento dei corsi d'acqua</description>
+								<description isocode="it">inquinamento dei corsi d&apos;acqua</description>
 							</taxon>
 							<taxon ID="7675" upstream_identifier="2535">
 								<description isocode="en">marine pollution</description>
@@ -25284,7 +25284,7 @@
 						</taxon>
 						<taxon ID="7680" upstream_identifier="2538">
 							<description isocode="en">pollution from agricultural sources</description>
-							<description isocode="it">inquinamento d'origine agricola</description>
+							<description isocode="it">inquinamento d&apos;origine agricola</description>
 							<description isocode="de">Verunreinigung durch die Landwirtschaft</description>
 						</taxon>
 						<taxon ID="7681" upstream_identifier="2539">
@@ -25486,7 +25486,7 @@
 						<taxon ID="7717" upstream_identifier="4117">
 							<description isocode="de">Lage der Landwirtschaft</description>
 							<description isocode="en">agricultural situation</description>
-							<description isocode="it">situazione dell'agricoltura</description>
+							<description isocode="it">situazione dell&apos;agricoltura</description>
 						</taxon>
 						<taxon ID="7718" upstream_identifier="6100">
 							<description isocode="it">controllo della qualità dei prodotti agricoli</description>
@@ -25532,7 +25532,7 @@
 							</taxon>
 							<taxon ID="7726" upstream_identifier="6048">
 								<description isocode="en">EC agriculture committee</description>
-								<description isocode="it">comitato per l'agricoltura CE</description>
+								<description isocode="it">comitato per l&apos;agricoltura CE</description>
 								<description isocode="de">Agrarausschuss EG</description>
 							</taxon>
 							</taxons>
@@ -25711,7 +25711,7 @@
 						<taxon ID="7758" upstream_identifier="4312">
 							<description isocode="de">Weiterführung landwirtschaftlicher Betriebe</description>
 							<description isocode="en">transfer of farms</description>
-							<description isocode="it">successione nell'attività agricola</description>
+							<description isocode="it">successione nell&apos;attività agricola</description>
 						</taxon>
 						<taxon ID="7759" upstream_identifier="4771">
 							<description isocode="de">landwirtschaftliche Beratung</description>
@@ -25726,7 +25726,7 @@
 							</taxons>
 						</taxon>
 						<taxon ID="7761" upstream_identifier="5373">
-							<description isocode="it">cessazione d'azienda agricola</description>
+							<description isocode="it">cessazione d&apos;azienda agricola</description>
 							<description isocode="de">Stilllegung landwirtschaftlicher Betriebe</description>
 							<description isocode="en">cessation of farming</description>
 						</taxon>
@@ -25819,7 +25819,7 @@
 						<taxon ID="7778" upstream_identifier="4337">
 							<description isocode="de">landwirtschaftliche Betriebsfläche</description>
 							<description isocode="en">area of holding</description>
-							<description isocode="it">superficie dell'azienda agricola</description>
+							<description isocode="it">superficie dell&apos;azienda agricola</description>
 							<taxons>
 							<taxon ID="7779" upstream_identifier="1179">
 								<description isocode="it">grande azienda agricola</description>
@@ -25881,7 +25881,7 @@
 							<description isocode="it">affittanza</description>
 							<taxons>
 							<taxon ID="7790" upstream_identifier="2667">
-								<description isocode="it">canone d'affitto di podere</description>
+								<description isocode="it">canone d&apos;affitto di podere</description>
 								<description isocode="de">Pachtpreis</description>
 								<description isocode="en">farm rent</description>
 							</taxon>
@@ -25983,7 +25983,7 @@
 					<taxon ID="7808" upstream_identifier="3605">
 						<description isocode="de">landwirtschaftliches Betriebsergebnis</description>
 						<description isocode="en">agricultural performance</description>
-						<description isocode="it">risultato dell'attività agricola</description>
+						<description isocode="it">risultato dell&apos;attività agricola</description>
 						<taxons>
 						<taxon ID="7809" upstream_identifier="2725">
 							<description isocode="it">produttività agricola</description>
@@ -26015,7 +26015,7 @@
 						<taxon ID="7814" upstream_identifier="3424">
 							<description isocode="de">Informationsnetz landwirtschaftlicher Buchführungen</description>
 							<description isocode="en">farm accountancy data network</description>
-							<description isocode="it">rete d'informazione contabile</description>
+							<description isocode="it">rete d&apos;informazione contabile</description>
 							<taxons>
 							<taxon ID="7815" upstream_identifier="2984">
 								<description isocode="it">scheda di azienda agricola</description>
@@ -26025,14 +26025,14 @@
 							</taxons>
 						</taxon>
 						<taxon ID="7816" upstream_identifier="3679">
-							<description isocode="en">farmers' income</description>
+							<description isocode="en">farmers&apos; income</description>
 							<description isocode="it">reddito del coltivatore</description>
 							<description isocode="de">landwirtschaftliches Unternehmereinkommen</description>
 						</taxon>
 						<taxon ID="7817" upstream_identifier="3682">
 							<description isocode="de">landwirtschaftliches Einkommen</description>
 							<description isocode="en">farm income</description>
-							<description isocode="it">reddito dell'azienda agricola</description>
+							<description isocode="it">reddito dell&apos;azienda agricola</description>
 						</taxon>
 						<taxon ID="7818" upstream_identifier="4257">
 							<description isocode="de">Agrarstatistik</description>
@@ -26919,7 +26919,7 @@
 						<taxon ID="7980" upstream_identifier="1065">
 							<description isocode="de">Hochwald</description>
 							<description isocode="en">high forest</description>
-							<description isocode="it">bosco d'alto fusto</description>
+							<description isocode="it">bosco d&apos;alto fusto</description>
 						</taxon>
 						<taxon ID="7981" upstream_identifier="1066">
 							<description isocode="en">coppiced woodland</description>
@@ -27121,7 +27121,7 @@
 						<description isocode="it">luogo di pesca</description>
 						<taxons>
 						<taxon ID="8016" upstream_identifier="2305">
-							<description isocode="it">pesca d'acqua dolce</description>
+							<description isocode="it">pesca d&apos;acqua dolce</description>
 							<description isocode="de">Süßwasserfischerei</description>
 							<description isocode="en">freshwater fishing</description>
 						</taxon>
@@ -27138,7 +27138,7 @@
 							<taxon ID="8019" upstream_identifier="2306">
 								<description isocode="de">Hochseefischerei</description>
 								<description isocode="en">deep-sea fishing</description>
-								<description isocode="it">pesca d'altura</description>
+								<description isocode="it">pesca d&apos;altura</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -27341,7 +27341,7 @@
 							<description isocode="it">pesce</description>
 							<taxons>
 							<taxon ID="8056" upstream_identifier="2436">
-								<description isocode="it">pesce d'acqua dolce</description>
+								<description isocode="it">pesce d&apos;acqua dolce</description>
 								<description isocode="de">Süßwasserfisch</description>
 								<description isocode="en">freshwater fish</description>
 							</taxon>
@@ -27753,7 +27753,7 @@
 						<taxon ID="8132" upstream_identifier="5361">
 							<description isocode="de">Getreide für die menschliche Ernährung</description>
 							<description isocode="en">food cereals</description>
-							<description isocode="it">cereali destinati all'alimentazione</description>
+							<description isocode="it">cereali destinati all&apos;alimentazione</description>
 							<taxons>
 							<taxon ID="8133" upstream_identifier="5364">
 								<description isocode="it">cereali per panificazione</description>
@@ -27944,7 +27944,7 @@
 								<taxon ID="8167" upstream_identifier="1264">
 									<description isocode="de">Olivenöl</description>
 									<description isocode="en">olive oil</description>
-									<description isocode="it">olio d'oliva</description>
+									<description isocode="it">olio d&apos;oliva</description>
 								</taxon>
 								<taxon ID="8168" upstream_identifier="2951">
 									<description isocode="en">soya bean oil</description>
@@ -28029,7 +28029,7 @@
 							</taxon>
 							<taxon ID="8183" upstream_identifier="1108">
 								<description isocode="de">Schafskäse</description>
-								<description isocode="en">sheep's milk cheese</description>
+								<description isocode="en">sheep&apos;s milk cheese</description>
 								<description isocode="it">formaggio di pecora</description>
 							</taxon>
 							<taxon ID="8184" upstream_identifier="1109">
@@ -28357,7 +28357,7 @@
 							</taxon>
 							<taxon ID="8245" upstream_identifier="1553">
 								<description isocode="en">vegetable juice</description>
-								<description isocode="it">succo d'ortaggi</description>
+								<description isocode="it">succo d&apos;ortaggi</description>
 								<description isocode="de">Gemüsesaft</description>
 							</taxon>
 							<taxon ID="8246" upstream_identifier="1665">
@@ -28483,12 +28483,12 @@
 						<taxon ID="8268" upstream_identifier="1240">
 							<description isocode="de">Kindernahrung</description>
 							<description isocode="en">baby food</description>
-							<description isocode="it">alimento per l'infanzia</description>
+							<description isocode="it">alimento per l&apos;infanzia</description>
 							<taxons>
 							<taxon ID="8269" upstream_identifier="5698">
 								<description isocode="it">latte materno</description>
 								<description isocode="de">Muttermilch</description>
-								<description isocode="en">mother's milk</description>
+								<description isocode="en">mother&apos;s milk</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -29627,14 +29627,14 @@
 						<description isocode="it">proprietà intellettuale</description>
 						<taxons>
 						<taxon ID="8478" upstream_identifier="529">
-							<description isocode="it">diritto d'autore</description>
+							<description isocode="it">diritto d&apos;autore</description>
 							<description isocode="de">Urheberrecht</description>
 							<description isocode="en">copyright</description>
 							<taxons>
 							<taxon ID="8479" upstream_identifier="7129">
 								<description isocode="it">diritto di seguito</description>
 								<description isocode="de">Folgerecht des Urhebers des Originals eines Kunstwerkes</description>
-								<description isocode="en">artist's resale right</description>
+								<description isocode="en">artist&apos;s resale right</description>
 							</taxon>
 							</taxons>
 						</taxon>
@@ -29803,14 +29803,14 @@
 							<description isocode="it">esperimento su animali</description>
 						</taxon>
 						<taxon ID="8510" upstream_identifier="3668">
-							<description isocode="it">esperimento sull'uomo</description>
+							<description isocode="it">esperimento sull&apos;uomo</description>
 							<description isocode="de">Versuch am Menschen</description>
 							<description isocode="en">experiment on humans</description>
 						</taxon>
 						<taxon ID="8511" upstream_identifier="3669">
 							<description isocode="de">innerbetriebliche Forschung</description>
 							<description isocode="en">company research</description>
-							<description isocode="it">ricerca in seno all'impresa</description>
+							<description isocode="it">ricerca in seno all&apos;impresa</description>
 						</taxon>
 						<taxon ID="8512" upstream_identifier="3670">
 							<description isocode="en">basic research</description>
@@ -29895,7 +29895,7 @@
 						<taxon ID="8526" upstream_identifier="475">
 							<description isocode="de">Energieverteilung</description>
 							<description isocode="en">energy distribution</description>
-							<description isocode="it">distribuzione d'energia</description>
+							<description isocode="it">distribuzione d&apos;energia</description>
 						</taxon>
 						<taxon ID="8527" upstream_identifier="534">
 							<description isocode="en">energy law</description>
@@ -29922,14 +29922,14 @@
 							<taxon ID="8531" upstream_identifier="2945">
 								<description isocode="de">Energierückgewinnung</description>
 								<description isocode="en">energy recovery</description>
-								<description isocode="it">recupero dell'energia</description>
+								<description isocode="it">recupero dell&apos;energia</description>
 							</taxon>
 							</taxons>
 						</taxon>
 						<taxon ID="8532" upstream_identifier="1685">
 							<description isocode="de">Energiestandort</description>
 							<description isocode="en">energy site</description>
-							<description isocode="it">localizzazione dell'energia</description>
+							<description isocode="it">localizzazione dell&apos;energia</description>
 						</taxon>
 						<taxon ID="8533" upstream_identifier="2917">
 							<description isocode="de">Energieforschung</description>
@@ -29953,7 +29953,7 @@
 						</taxon>
 						<taxon ID="8537" upstream_identifier="4293">
 							<description isocode="en">energy storage</description>
-							<description isocode="it">immagazzinamento dell'energia</description>
+							<description isocode="it">immagazzinamento dell&apos;energia</description>
 							<description isocode="de">Energiespeicherung</description>
 							<taxons>
 							<taxon ID="8538" upstream_identifier="6701">
@@ -29966,12 +29966,12 @@
 						<taxon ID="8539" upstream_identifier="4507">
 							<description isocode="de">Energietransport</description>
 							<description isocode="en">energy transport</description>
-							<description isocode="it">trasporto d'energia</description>
+							<description isocode="it">trasporto d&apos;energia</description>
 						</taxon>
 						<taxon ID="8540" upstream_identifier="4631">
 							<description isocode="de">friedliche Nutzung von Energie</description>
 							<description isocode="en">peaceful use of energy</description>
-							<description isocode="it">impiego pacifico dell'energia</description>
+							<description isocode="it">impiego pacifico dell&apos;energia</description>
 						</taxon>
 						<taxon ID="8541" upstream_identifier="4886">
 							<description isocode="it">bilancio energetico</description>
@@ -29979,7 +29979,7 @@
 							<description isocode="en">energy audit</description>
 							<taxons>
 							<taxon ID="8542" upstream_identifier="142">
-								<description isocode="it">consumo d'energia</description>
+								<description isocode="it">consumo d&apos;energia</description>
 								<description isocode="de">Energieverbrauch</description>
 								<description isocode="en">energy consumption</description>
 							</taxon>
@@ -29990,31 +29990,31 @@
 							</taxon>
 							<taxon ID="8544" upstream_identifier="466">
 								<description isocode="en">available energy resources</description>
-								<description isocode="it">disponibilità d'energia</description>
+								<description isocode="it">disponibilità d&apos;energia</description>
 								<description isocode="de">verfügbare Energiemenge</description>
 							</taxon>
 							<taxon ID="8545" upstream_identifier="2127">
 								<description isocode="de">Energieangebot</description>
 								<description isocode="en">available energy</description>
-								<description isocode="it">offerta d'energia</description>
+								<description isocode="it">offerta d&apos;energia</description>
 							</taxon>
 							<taxon ID="8546" upstream_identifier="2312">
 								<description isocode="de">Energieversorgung</description>
 								<description isocode="en">energy supply</description>
-								<description isocode="it">approvvigionamento d'energia</description>
+								<description isocode="it">approvvigionamento d&apos;energia</description>
 							</taxon>
 							<taxon ID="8547" upstream_identifier="2654">
 								<description isocode="de">Energiepreis</description>
 								<description isocode="en">price of energy</description>
-								<description isocode="it">prezzo dell'energia</description>
+								<description isocode="it">prezzo dell&apos;energia</description>
 							</taxon>
 							<taxon ID="8548" upstream_identifier="2715">
 								<description isocode="de">Energieerzeugung</description>
 								<description isocode="en">energy production</description>
-								<description isocode="it">produzione d'energia</description>
+								<description isocode="it">produzione d&apos;energia</description>
 							</taxon>
 							<taxon ID="8549" upstream_identifier="4629">
-								<description isocode="it">utilizzazione dell'energia</description>
+								<description isocode="it">utilizzazione dell&apos;energia</description>
 								<description isocode="de">Energienutzung</description>
 								<description isocode="en">energy use</description>
 							</taxon>
@@ -30064,7 +30064,7 @@
 						</taxon>
 						<taxon ID="8558" upstream_identifier="6079">
 							<description isocode="en">European Energy Charter</description>
-							<description isocode="it">Carta europea dell'energia</description>
+							<description isocode="it">Carta europea dell&apos;energia</description>
 							<description isocode="de">Europäische Energiecharta</description>
 						</taxon>
 						<taxon ID="8559" upstream_identifier="6697">
@@ -30080,7 +30080,7 @@
 						<description isocode="it">industria energetica</description>
 						<taxons>
 						<taxon ID="8561" upstream_identifier="203">
-							<description isocode="it">conversione dell'energia</description>
+							<description isocode="it">conversione dell&apos;energia</description>
 							<description isocode="de">Energieumwandlung</description>
 							<description isocode="en">energy conversion</description>
 						</taxon>
@@ -30488,7 +30488,7 @@
 								</taxon>
 								<taxon ID="8634" upstream_identifier="3776">
 									<description isocode="en">aviation fuel</description>
-									<description isocode="it">carburante d'aviazione</description>
+									<description isocode="it">carburante d&apos;aviazione</description>
 									<description isocode="de">Kerosin</description>
 								</taxon>
 								</taxons>
@@ -30782,7 +30782,7 @@
 						<taxon ID="8685" upstream_identifier="1009">
 							<description isocode="de">Finanzierung der Industrie</description>
 							<description isocode="en">industrial financing</description>
-							<description isocode="it">finanziamento dell'industria</description>
+							<description isocode="it">finanziamento dell&apos;industria</description>
 							<taxons>
 							<taxon ID="8686" upstream_identifier="299">
 								<description isocode="it">credito industriale</description>
@@ -31088,7 +31088,7 @@
 						</taxon>
 						<taxon ID="8740" upstream_identifier="2716">
 							<description isocode="en">hydrogen production</description>
-							<description isocode="it">produzione d'idrogeno</description>
+							<description isocode="it">produzione d&apos;idrogeno</description>
 							<description isocode="de">Wasserstofferzeugung</description>
 						</taxon>
 						<taxon ID="8741" upstream_identifier="2739">
@@ -31895,7 +31895,7 @@
 						<description isocode="it">industria elettrotecnica</description>
 						<taxons>
 						<taxon ID="8890" upstream_identifier="1828">
-							<description isocode="it">materiale d'illuminazione</description>
+							<description isocode="it">materiale d&apos;illuminazione</description>
 							<description isocode="de">elektrischer Leuchtkörper</description>
 							<description isocode="en">lighting equipment</description>
 						</taxon>
@@ -32006,7 +32006,7 @@
 						</taxon>
 						<taxon ID="8910" upstream_identifier="1830">
 							<description isocode="en">construction equipment</description>
-							<description isocode="it">attrezzatura per l'edilizia</description>
+							<description isocode="it">attrezzatura per l&apos;edilizia</description>
 							<description isocode="de">Baumaschinen</description>
 						</taxon>
 						<taxon ID="8911" upstream_identifier="3880">
@@ -32260,7 +32260,7 @@
 						<description isocode="it">industria tessile</description>
 						<taxons>
 						<taxon ID="8957" upstream_identifier="1397">
-							<description isocode="it">industria dell'abbigliamento</description>
+							<description isocode="it">industria dell&apos;abbigliamento</description>
 							<description isocode="de">Bekleidungsindustrie</description>
 							<description isocode="en">clothing industry</description>
 							<taxons>
@@ -32426,7 +32426,7 @@
 						</taxon>
 						<taxon ID="8988" upstream_identifier="3897">
 							<description isocode="de">Schmuck- und Goldwarenerzeugung</description>
-							<description isocode="en">jewellery and goldsmith's articles</description>
+							<description isocode="en">jewellery and goldsmith&apos;s articles</description>
 							<description isocode="it">bigiotteria e oreficeria</description>
 						</taxon>
 						<taxon ID="8989" upstream_identifier="5245">
@@ -32654,7 +32654,7 @@
 							<taxon ID="9031" upstream_identifier="5931">
 								<description isocode="de">Gebiete des ehemaligen Jugoslawiens</description>
 								<description isocode="en">territories of the former Yugoslavia</description>
-								<description isocode="it">territori dell'ex Iugoslavia</description>
+								<description isocode="it">territori dell&apos;ex Iugoslavia</description>
 								<taxons>
 								<taxon ID="9032" upstream_identifier="5469">
 									<description isocode="it">Bosnia-Erzegovina</description>
@@ -32847,7 +32847,7 @@
 				<taxon ID="9066" upstream_identifier="MT7211">
 					<description isocode="de">Regionen der Mitgliedstaaten der Europäischen Union</description>
 					<description isocode="en">regions of EU Member States</description>
-					<description isocode="it">regioni degli Stati membri dell'Unione europea</description>
+					<description isocode="it">regioni degli Stati membri dell&apos;Unione europea</description>
 					<taxons>
 					<taxon ID="9067" upstream_identifier="337">
 						<description isocode="it">regioni della Danimarca</description>
@@ -33130,8 +33130,8 @@
 						</taxon>
 						<taxon ID="9122" upstream_identifier="2853">
 							<description isocode="it">Provenza-Alpi-Costa Azzurra</description>
-							<description isocode="de">Provence-Alpes-Côte d'Azur</description>
-							<description isocode="en">Provence-Alpes-Côte d'Azur</description>
+							<description isocode="de">Provence-Alpes-Côte d&apos;Azur</description>
+							<description isocode="en">Provence-Alpes-Côte d&apos;Azur</description>
 						</taxon>
 						<taxon ID="9123" upstream_identifier="3714">
 							<description isocode="de">Rhône-Alpes</description>
@@ -33346,7 +33346,7 @@
 					<taxon ID="9163" upstream_identifier="1506">
 						<description isocode="de">Regionen Irlands</description>
 						<description isocode="en">regions of Ireland</description>
-						<description isocode="it">regioni dell'Irlanda</description>
+						<description isocode="it">regioni dell&apos;Irlanda</description>
 						<taxons>
 						<taxon ID="9164" upstream_identifier="113">
 							<description isocode="it">Connacht</description>
@@ -33373,7 +33373,7 @@
 					<taxon ID="9168" upstream_identifier="1520">
 						<description isocode="de">Regionen Italiens</description>
 						<description isocode="en">regions of Italy</description>
-						<description isocode="it">regioni dell'Italia</description>
+						<description isocode="it">regioni dell&apos;Italia</description>
 						<taxons>
 						<taxon ID="9169" upstream_identifier="725">
 							<description isocode="it">Emilia-Romagna</description>
@@ -33458,9 +33458,9 @@
 							</taxons>
 						</taxon>
 						<taxon ID="9185" upstream_identifier="4640">
-							<description isocode="it">Valle d'Aosta</description>
+							<description isocode="it">Valle d&apos;Aosta</description>
 							<description isocode="de">Aostatal</description>
-							<description isocode="en">Valle d'Aosta</description>
+							<description isocode="en">Valle d&apos;Aosta</description>
 						</taxon>
 						<taxon ID="9186" upstream_identifier="4660">
 							<description isocode="de">Venetien</description>
@@ -33803,7 +33803,7 @@
 						</taxons>
 					</taxon>
 					<taxon ID="9250" upstream_identifier="6136">
-						<description isocode="it">regioni dell'Austria</description>
+						<description isocode="it">regioni dell&apos;Austria</description>
 						<description isocode="de">Regionen Österreichs</description>
 						<description isocode="en">regions of Austria</description>
 						<taxons>
@@ -34296,7 +34296,7 @@
 					<taxon ID="9343" upstream_identifier="7855">
 						<description isocode="de">Regionen Estlands  [V4.2]</description>
 						<description isocode="en">regions of Estonia  [V4.2]</description>
-						<description isocode="it">regioni dell'Estonia  [V4.2]</description>
+						<description isocode="it">regioni dell&apos;Estonia  [V4.2]</description>
 						<taxons>
 						<taxon ID="9344" upstream_identifier="7856">
 							<description isocode="it">Estonia settentrionale  [V4.2]</description>
@@ -34388,9 +34388,9 @@
 							<description isocode="it">PanevÄÅ¾ys  [V4.2]</description>
 						</taxon>
 						<taxon ID="9361" upstream_identifier="7874">
-							<description isocode="de">Å iauliai  [V4.2]</description>
-							<description isocode="en">Å iauliai  [V4.2]</description>
-							<description isocode="it">Å iauliai  [V4.2]</description>
+							<description isocode="de">Å iauliai  [V4.2]</description>
+							<description isocode="en">Å iauliai  [V4.2]</description>
+							<description isocode="it">Å iauliai  [V4.2]</description>
 						</taxon>
 						<taxon ID="9362" upstream_identifier="7875">
 							<description isocode="de">TauragÄ  [V4.2]</description>
@@ -34415,7 +34415,7 @@
 						</taxons>
 					</taxon>
 					<taxon ID="9366" upstream_identifier="7879">
-						<description isocode="it">regioni dell'Ungheria  [V4.2]</description>
+						<description isocode="it">regioni dell&apos;Ungheria  [V4.2]</description>
 						<description isocode="de">Regionen Ungarns  [V4.2]</description>
 						<description isocode="en">regions of Hungary  [V4.2]</description>
 						<taxons>
@@ -34755,7 +34755,7 @@
 									<taxon ID="9430" upstream_identifier="3812">
 										<description isocode="de">St. Eustatius</description>
 										<description isocode="en">Saint Eustatius</description>
-										<description isocode="it">Sant'Eustachio</description>
+										<description isocode="it">Sant&apos;Eustachio</description>
 									</taxon>
 									<taxon ID="9431" upstream_identifier="3816">
 										<description isocode="en">Saint Martin</description>
@@ -35019,7 +35019,7 @@
 						<taxon ID="9478" upstream_identifier="3830">
 							<description isocode="de">St. Helena</description>
 							<description isocode="en">Saint Helena</description>
-							<description isocode="it">Sant'Elena</description>
+							<description isocode="it">Sant&apos;Elena</description>
 						</taxon>
 						<taxon ID="9479" upstream_identifier="4148">
 							<description isocode="de">Seychellen</description>
@@ -35054,9 +35054,9 @@
 						<description isocode="it">Africa occidentale</description>
 						<taxons>
 						<taxon ID="9485" upstream_identifier="249">
-							<description isocode="it">Costa d'Avorio</description>
+							<description isocode="it">Costa d&apos;Avorio</description>
 							<description isocode="de">Elfenbeinküste</description>
-							<description isocode="en">Côte d'Ivoire</description>
+							<description isocode="en">Côte d&apos;Ivoire</description>
 						</taxon>
 						<taxon ID="9486" upstream_identifier="1128">
 							<description isocode="de">Gambia</description>
@@ -35178,7 +35178,7 @@
 						<taxon ID="9509" upstream_identifier="5556">
 							<description isocode="de">Horn von Afrika</description>
 							<description isocode="en">Horn of Africa</description>
-							<description isocode="it">Corno d'Africa</description>
+							<description isocode="it">Corno d&apos;Africa</description>
 							<taxons>
 							<taxon ID="9510" upstream_identifier="484">
 								<description isocode="it">Gibuti</description>
@@ -35769,7 +35769,7 @@
 					</taxon>
 					<taxon ID="9619" upstream_identifier="1105">
 						<description isocode="en">Lafta countries</description>
-						<description isocode="it">paesi dell'ALADI</description>
+						<description isocode="it">paesi dell&apos;ALADI</description>
 						<description isocode="de">ALADI-Staaten</description>
 						<taxons>
 						<taxon ID="9620" upstream_identifier="314">
@@ -36281,7 +36281,7 @@
 					</taxon>
 					<taxon ID="9717" upstream_identifier="2148">
 						<description isocode="en">OPEC countries</description>
-						<description isocode="it">paesi dell'OPEC</description>
+						<description isocode="it">paesi dell&apos;OPEC</description>
 						<description isocode="de">OPEC-Staaten</description>
 						<taxons>
 						<taxon ID="9718" upstream_identifier="726">
@@ -36568,14 +36568,14 @@
 						</taxons>
 					</taxon>
 					<taxon ID="9773" upstream_identifier="4607">
-						<description isocode="it">paesi dell'UEMOA</description>
+						<description isocode="it">paesi dell&apos;UEMOA</description>
 						<description isocode="de">Länder der Westafrikanischen Wirtschafts- und Währungsunion</description>
 						<description isocode="en">WAEMU countries</description>
 						<taxons>
 						<taxon ID="9774" upstream_identifier="249">
-							<description isocode="it">Costa d'Avorio</description>
+							<description isocode="it">Costa d&apos;Avorio</description>
 							<description isocode="de">Elfenbeinküste</description>
-							<description isocode="en">Côte d'Ivoire</description>
+							<description isocode="en">Côte d&apos;Ivoire</description>
 						</taxon>
 						<taxon ID="9775" upstream_identifier="1217">
 							<description isocode="de">Guinea-Bissau</description>
@@ -36658,8 +36658,8 @@
 						</taxon>
 						<taxon ID="9790" upstream_identifier="249">
 							<description isocode="de">Elfenbeinküste</description>
-							<description isocode="en">Côte d'Ivoire</description>
-							<description isocode="it">Costa d'Avorio</description>
+							<description isocode="en">Côte d&apos;Ivoire</description>
+							<description isocode="it">Costa d&apos;Avorio</description>
 						</taxon>
 						<taxon ID="9791" upstream_identifier="314">
 							<description isocode="de">Kuba</description>
@@ -37320,9 +37320,9 @@
 						<description isocode="it">paesi membri della CEAO</description>
 						<taxons>
 						<taxon ID="9921" upstream_identifier="249">
-							<description isocode="it">Costa d'Avorio</description>
+							<description isocode="it">Costa d&apos;Avorio</description>
 							<description isocode="de">Elfenbeinküste</description>
-							<description isocode="en">Côte d'Ivoire</description>
+							<description isocode="en">Côte d&apos;Ivoire</description>
 						</taxon>
 						<taxon ID="9922" upstream_identifier="1128">
 							<description isocode="de">Gambia</description>
@@ -37596,7 +37596,7 @@
 					</taxon>
 					<taxon ID="9974" upstream_identifier="7207">
 						<description isocode="en">NAFTA countries</description>
-						<description isocode="it">paesi dell'ALENA</description>
+						<description isocode="it">paesi dell&apos;ALENA</description>
 						<description isocode="de">NAFTA-Länder</description>
 						<taxons>
 						<taxon ID="9975" upstream_identifier="888">
@@ -37624,7 +37624,7 @@
 					<description isocode="it">geografia politica</description>
 					<taxons>
 					<taxon ID="9979" upstream_identifier="122">
-						<description isocode="it">paesi membri del Consiglio d'Europa</description>
+						<description isocode="it">paesi membri del Consiglio d&apos;Europa</description>
 						<description isocode="de">Staaten des Europarates</description>
 						<description isocode="en">Council of Europe countries</description>
 						<taxons>
@@ -38112,7 +38112,7 @@
 					<taxon ID="10073" upstream_identifier="2119">
 						<description isocode="de">OAS-Staaten</description>
 						<description isocode="en">OAS countries</description>
-						<description isocode="it">paesi dell'OAS</description>
+						<description isocode="it">paesi dell&apos;OAS</description>
 						<taxons>
 						<taxon ID="10074" upstream_identifier="247">
 							<description isocode="it">Costa Rica</description>
@@ -38533,7 +38533,7 @@
 						<description isocode="de">ehemalige sozialistische Länder</description>
 						<taxons>
 						<taxon ID="10156" upstream_identifier="2291">
-							<description isocode="it">paesi dell'Est</description>
+							<description isocode="it">paesi dell&apos;Est</description>
 							<description isocode="de">Ostblockländer</description>
 							<description isocode="en">Eastern Bloc countries</description>
 							<taxons>
@@ -38668,7 +38668,7 @@
 					</taxons>
 				</taxon>
 				<taxon ID="10181" upstream_identifier="MT7241">
-					<description isocode="it">paesi e territori d'oltremare</description>
+					<description isocode="it">paesi e territori d&apos;oltremare</description>
 					<description isocode="de">Überseeische Länder und Gebiete</description>
 					<description isocode="en">overseas countries and territories</description>
 					<taxons>
@@ -38754,7 +38754,7 @@
 								<taxon ID="10197" upstream_identifier="3812">
 									<description isocode="de">St. Eustatius</description>
 									<description isocode="en">Saint Eustatius</description>
-									<description isocode="it">Sant'Eustachio</description>
+									<description isocode="it">Sant&apos;Eustachio</description>
 								</taxon>
 								<taxon ID="10198" upstream_identifier="3816">
 									<description isocode="en">Saint Martin</description>
@@ -38837,7 +38837,7 @@
 						<taxon ID="10212" upstream_identifier="3830">
 							<description isocode="de">St. Helena</description>
 							<description isocode="en">Saint Helena</description>
-							<description isocode="it">Sant'Elena</description>
+							<description isocode="it">Sant&apos;Elena</description>
 						</taxon>
 						</taxons>
 					</taxon>
@@ -38856,7 +38856,7 @@
 					<description isocode="en">United Nations</description>
 					<taxons>
 					<taxon ID="10215" upstream_identifier="1455">
-						<description isocode="it">istituzioni specializzate dell'ONU</description>
+						<description isocode="it">istituzioni specializzate dell&apos;ONU</description>
 						<description isocode="de">Sonderorganisation der Vereinten Nationen</description>
 						<description isocode="en">UN specialist institution</description>
 						<taxons>
@@ -38962,24 +38962,24 @@
 						<description isocode="it">ONU</description>
 						<taxons>
 						<taxon ID="10235" upstream_identifier="17">
-							<description isocode="it">commissione dell'ONU</description>
+							<description isocode="it">commissione dell&apos;ONU</description>
 							<description isocode="de">Kommission UNO</description>
 							<description isocode="en">UN Commission</description>
 						</taxon>
 						<taxon ID="10236" upstream_identifier="23">
 							<description isocode="de">Technische Kommission UNO</description>
 							<description isocode="en">UN Technical Commission</description>
-							<description isocode="it">commissione tecnica dell'ONU</description>
+							<description isocode="it">commissione tecnica dell&apos;ONU</description>
 						</taxon>
 						<taxon ID="10237" upstream_identifier="123">
 							<description isocode="en">UN Security Council</description>
-							<description isocode="it">Consiglio di sicurezza dell'ONU</description>
+							<description isocode="it">Consiglio di sicurezza dell&apos;ONU</description>
 							<description isocode="de">Sicherheitsrat UNO</description>
 						</taxon>
 						<taxon ID="10238" upstream_identifier="124">
 							<description isocode="de">Treuhandrat UNO</description>
 							<description isocode="en">UN Trusteeship Council</description>
-							<description isocode="it">Consiglio di tutela dell'ONU</description>
+							<description isocode="it">Consiglio di tutela dell&apos;ONU</description>
 						</taxon>
 						<taxon ID="10239" upstream_identifier="258">
 							<description isocode="de">Internationaler Gerichtshof</description>
@@ -38989,7 +38989,7 @@
 						<taxon ID="10240" upstream_identifier="2885">
 							<description isocode="de">Generalversammlung UNO</description>
 							<description isocode="en">UN General Assembly</description>
-							<description isocode="it">Assemblea generale dell'ONU</description>
+							<description isocode="it">Assemblea generale dell&apos;ONU</description>
 						</taxon>
 						<taxon ID="10241" upstream_identifier="3709">
 							<description isocode="de">Ecosoc</description>
@@ -38997,14 +38997,14 @@
 							<description isocode="it">Ecosoc</description>
 						</taxon>
 						<taxon ID="10242" upstream_identifier="4002">
-							<description isocode="it">segretariato dell'ONU</description>
+							<description isocode="it">segretariato dell&apos;ONU</description>
 							<description isocode="de">Sekretariat der Vereinten Nationen</description>
 							<description isocode="en">UN Secretariat</description>
 						</taxon>
 						<taxon ID="10243" upstream_identifier="6058">
 							<description isocode="de">Ständiger Ausschuss UNO</description>
 							<description isocode="en">UN Standing Committee</description>
-							<description isocode="it">comitato permanente dell'ONU</description>
+							<description isocode="it">comitato permanente dell&apos;ONU</description>
 						</taxon>
 						<taxon ID="10244" upstream_identifier="7137">
 							<description isocode="en">International Criminal Tribunal</description>
@@ -39150,12 +39150,12 @@
 						<description isocode="en">European organisation</description>
 						<taxons>
 						<taxon ID="10271" upstream_identifier="121">
-							<description isocode="it">Consiglio d'Europa</description>
+							<description isocode="it">Consiglio d&apos;Europa</description>
 							<description isocode="de">Europarat</description>
 							<description isocode="en">Council of Europe</description>
 							<taxons>
 							<taxon ID="10272" upstream_identifier="16">
-								<description isocode="it">Commissione dei diritti dell'uomo</description>
+								<description isocode="it">Commissione dei diritti dell&apos;uomo</description>
 								<description isocode="de">Menschenrechtskommission</description>
 								<description isocode="en">Commission on Human Rights</description>
 							</taxon>
@@ -39166,13 +39166,13 @@
 							</taxon>
 							<taxon ID="10274" upstream_identifier="257">
 								<description isocode="en">European Court of Human Rights</description>
-								<description isocode="it">Corte europea dei diritti dell'uomo</description>
+								<description isocode="it">Corte europea dei diritti dell&apos;uomo</description>
 								<description isocode="de">Europäischer Gerichtshof für Menschenrechte</description>
 							</taxon>
 							<taxon ID="10275" upstream_identifier="5644">
 								<description isocode="de">Fonds des Europarates</description>
 								<description isocode="en">Council of Europe fund</description>
-								<description isocode="it">fondi del Consiglio d'Europa</description>
+								<description isocode="it">fondi del Consiglio d&apos;Europa</description>
 							</taxon>
 							<taxon ID="10276" upstream_identifier="7346">
 								<description isocode="de">KGRE</description>
@@ -39468,7 +39468,7 @@
 							<description isocode="en">OAS</description>
 							<taxons>
 							<taxon ID="10331" upstream_identifier="7192">
-								<description isocode="it">Corte interamericana dei diritti dell'uomo</description>
+								<description isocode="it">Corte interamericana dei diritti dell&apos;uomo</description>
 								<description isocode="de">Interamerikanischer Gerichtshof für Menschenrechte</description>
 								<description isocode="en">Inter-American Court of Human Rights</description>
 							</taxon>
@@ -39671,10 +39671,10 @@
 						<taxon ID="10368" upstream_identifier="121">
 							<description isocode="de">Europarat</description>
 							<description isocode="en">Council of Europe</description>
-							<description isocode="it">Consiglio d'Europa</description>
+							<description isocode="it">Consiglio d&apos;Europa</description>
 							<taxons>
 							<taxon ID="10369" upstream_identifier="16">
-								<description isocode="it">Commissione dei diritti dell'uomo</description>
+								<description isocode="it">Commissione dei diritti dell&apos;uomo</description>
 								<description isocode="de">Menschenrechtskommission</description>
 								<description isocode="en">Commission on Human Rights</description>
 							</taxon>
@@ -39685,13 +39685,13 @@
 							</taxon>
 							<taxon ID="10371" upstream_identifier="257">
 								<description isocode="en">European Court of Human Rights</description>
-								<description isocode="it">Corte europea dei diritti dell'uomo</description>
+								<description isocode="it">Corte europea dei diritti dell&apos;uomo</description>
 								<description isocode="de">Europäischer Gerichtshof für Menschenrechte</description>
 							</taxon>
 							<taxon ID="10372" upstream_identifier="5644">
 								<description isocode="de">Fonds des Europarates</description>
 								<description isocode="en">Council of Europe fund</description>
-								<description isocode="it">fondi del Consiglio d'Europa</description>
+								<description isocode="it">fondi del Consiglio d&apos;Europa</description>
 							</taxon>
 							<taxon ID="10373" upstream_identifier="7346">
 								<description isocode="de">KGRE</description>
@@ -39765,11 +39765,11 @@
 							<taxon ID="10386" upstream_identifier="428">
 								<description isocode="de">Kernenergie-Agentur</description>
 								<description isocode="en">Nuclear Energy Agency</description>
-								<description isocode="it">Agenzia per l'energia nucleare</description>
+								<description isocode="it">Agenzia per l&apos;energia nucleare</description>
 							</taxon>
 							<taxon ID="10387" upstream_identifier="1024">
 								<description isocode="en">International Energy Agency</description>
-								<description isocode="it">Agenzia internazionale per l'energia</description>
+								<description isocode="it">Agenzia internazionale per l&apos;energia</description>
 								<description isocode="de">Internationale Energie-Agentur</description>
 							</taxon>
 							</taxons>
@@ -39797,7 +39797,7 @@
 							<description isocode="it">OAS</description>
 							<taxons>
 							<taxon ID="10392" upstream_identifier="7192">
-								<description isocode="it">Corte interamericana dei diritti dell'uomo</description>
+								<description isocode="it">Corte interamericana dei diritti dell&apos;uomo</description>
 								<description isocode="de">Interamerikanischer Gerichtshof für Menschenrechte</description>
 								<description isocode="en">Inter-American Court of Human Rights</description>
 							</taxon>
@@ -40004,7 +40004,7 @@
 						<taxon ID="10431" upstream_identifier="125">
 							<description isocode="de">Rat der Gemeinden und Regionen Europas</description>
 							<description isocode="en">Council of European Municipalities and Regions</description>
-							<description isocode="it">Consiglio dei comuni e delle regioni d'Europa</description>
+							<description isocode="it">Consiglio dei comuni e delle regioni d&apos;Europa</description>
 						</taxon>
 						<taxon ID="10432" upstream_identifier="168">
 							<description isocode="en">EADI</description>

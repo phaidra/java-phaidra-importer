@@ -72,10 +72,10 @@ public class MetaUtility {
     
     //Contiene i nodi scelti dall'utente per la classification
     private TreeMap<String, TreeMap<Integer, Integer>> oefos_path = new TreeMap<String, TreeMap<Integer, Integer>>();
-    private TreeMap<String, TreeMap<Object, Taxon>> oefos = null;
+    private TreeMap<String, TreeMap<Object, Taxon>> oefos = new TreeMap<String, TreeMap<Object, Taxon>>();
     
     //Contiene coppie di valori link classificazioni -> ID (source)
-    private TreeMap<String, String> classificationIDS  = null;
+    private TreeMap<String, String> classificationIDS  = new TreeMap<String, String> ();
     
     //Contiene coppie di valori link classificazioni -> nome da visualizzare nel combo
     private LinkedHashMap<String, String> availableClassifications = null;    
@@ -179,7 +179,7 @@ public class MetaUtility {
                 innerPanel.removeAll();
                 
                 try {
-                    classifications_reader();
+                    classifications_reader(sequence);
                     addClassification(innerPanel, classificationMID, sequence);
                 } 
                 catch (Exception ex) {
@@ -208,8 +208,13 @@ public class MetaUtility {
         for (int z = 0; z < nList.getLength(); z++) {
             if (nList.item(z).getNodeType() == Node.ELEMENT_NODE) {
                 Element c = (Element) nList.item(z);
-                fl = SelectedServer.getInstance(null).getHTTPStaticBaseURL() + Globals.FOLD_XML + c.getTextContent();
                 
+                if (Globals.ONLINE){
+                    fl = SelectedServer.getInstance(null).getHTTPStaticBaseURL() + Globals.FOLD_XML + c.getTextContent();
+                }
+                else{
+                    fl =  Globals.FOLD_XML + c.getTextContent();
+                }
                 String cla_nome = "Classification "+count;
                 
                 try{
@@ -229,56 +234,73 @@ public class MetaUtility {
      * @return TreeMap<Object, Taxon>
      * @throws Exception
      */
-    public void classifications_reader() throws Exception {
+    public void classifications_reader(String sequence) throws Exception {
         setClassificationChoice();
-        classificationIDS = new TreeMap<String, String> ();
-        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-        
 
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        String currentlink = "";
+        
         try {
-            oefos = new TreeMap<String, TreeMap<Object, Taxon>>();
+            boolean defaultclassification = true;
+            boolean alreadyread = false;
+            
+            if (!sequence.isEmpty()){
+                defaultclassification = false;
+                currentlink = selectedClassificationList.get(sequence);
+                
+                if (!currentlink.isEmpty()){
+                    if (oefos.containsKey(currentlink))
+                        alreadyread = true;
+                }
+            }
+            
             for (String classificationLink : this.availableClassifications.keySet())
             {
-                TreeMap<Object, Taxon> rval = new TreeMap<Object, Taxon>();
-                Document doc = Utility.getDocument(classificationLink,true);
-                Node n = doc.getFirstChild();
-                Element classification = null;
-                
-                if (n.getNodeType() == Node.ELEMENT_NODE) {
-                    Element classifications = (Element) n;
+                if (!alreadyread && (defaultclassification || (!currentlink.isEmpty() && classificationLink.equals(currentlink)))){
+                    defaultclassification = false;
 
-                    if (classifications.getTagName().equals("classifications")) {
-                        NodeList nList = classifications.getChildNodes();
-                        int s = 0;
+                    TreeMap<Object, Taxon> rval = new TreeMap<Object, Taxon>();
+                    Document doc = Utility.getDocument(classificationLink,true);
+                    Node n = doc.getFirstChild();
+                    Element classification = null;
 
-                        do {
-                            if (nList.item(s).getNodeType() == Node.ELEMENT_NODE) {
-                                classification = (Element) nList.item(s);
+                    if (n.getNodeType() == Node.ELEMENT_NODE) {
+                        Element classifications = (Element) n;
 
-                                if (classification.getTagName().equals("classification")) {
-                                    classificationIDS.put(classificationLink, classification.getAttribute("ID"));
+                        if (classifications.getTagName().equals("classifications")) {
+                            NodeList nList = classifications.getChildNodes();
+                            int s = 0;
+
+                            do {
+                                if (nList.item(s).getNodeType() == Node.ELEMENT_NODE) {
+                                    classification = (Element) nList.item(s);
+
+                                    if (classification.getTagName().equals("classification")) {
+                                        classificationIDS.put(classificationLink, classification.getAttribute("ID"));
+                                    }
+                                }
+                                s++;
+                            } while (s < nList.getLength());
+
+                            if (classification == null) {
+                                throw new Exception("Classification 1 not found");
+                            }
+
+                            NodeList tList = classification.getChildNodes();
+                            for (int z = 0; z < tList.getLength(); z++) {
+                                if (tList.item(z).getNodeType() == Node.ELEMENT_NODE) {
+                                    Element taxons = (Element) tList.item(z);
+
+                                    if (taxons.getTagName().equals("taxons")) {
+                                        classifications_reader_taxons(taxons, rval);
+                                    }
                                 }
                             }
-                            s++;
-                        } while (s < nList.getLength());
-
-                        if (classification == null) {
-                            throw new Exception("Classification 1 not found");
                         }
 
-                        NodeList tList = classification.getChildNodes();
-                        for (int z = 0; z < tList.getLength(); z++) {
-                            if (tList.item(z).getNodeType() == Node.ELEMENT_NODE) {
-                                Element taxons = (Element) tList.item(z);
-
-                                if (taxons.getTagName().equals("taxons")) {
-                                    classifications_reader_taxons(taxons, rval);
-                                }
-                            }
-                        }
+                        oefos.put(classificationLink, rval);
                     }
                 }
-                oefos.put(classificationLink, rval);
             }
             
         } catch (Exception ex) {
@@ -1059,7 +1081,13 @@ public class MetaUtility {
             }
 
             JLabel label = (JLabel) controls;
-            label.setText(completePath);
+            if (completePath.length() > 120){
+                label.setText(completePath.substring(0, 120));
+            }
+            else{
+                label.setText(completePath);
+            }
+                    
             label.revalidate();
         } catch (Exception ex) {
             throw new Exception("Exception in setOEFOS: " + ex.getStackTrace() + "\n");
