@@ -10,6 +10,7 @@ import it.imtech.bookimporter.BookImporter;
 import it.imtech.globals.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
+import it.imtech.upload.UploadSettings;
 import it.imtech.utility.Server;
 import it.imtech.utility.Utility;
 import java.awt.BorderLayout;
@@ -33,9 +34,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
-import javax.swing.UnsupportedLookAndFeelException;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.io.FileUtils;
@@ -108,11 +106,12 @@ public class StartWizard  {
             {
                 if(getCurrentCard() instanceof ChooseServer){
                     mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                    if (Globals.ONLINE){
-                        Server selected = chooseServer.getSelectedServer();
-                        SelectedServer.getInstance(null).makeEmpty();
-                        SelectedServer.getInstance(selected);
                     
+                    Server selected = chooseServer.getSelectedServer();
+                    SelectedServer.getInstance(null).makeEmpty();
+                    SelectedServer.getInstance(selected);
+                    
+                    if (Globals.ONLINE){
                         ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
                     }
                     chooseFolder.updateLanguage();
@@ -237,15 +236,20 @@ public class StartWizard  {
             File xmlconfnew = new File(currentpath + "config" + Utility.getSep() + "config.xml");
             File logforj = new File(currentpath + "config" + Utility.getSep() + "log4j.xml");
             
+            if (!appdata.exists()){
+                appdata.mkdir();
+            }
+            
             File backupxml = new File(currentpath + "xml");
             File remotexml = new File(Globals.USER_DIR + "xml");
             
-            if (!remotexml.exists()){
-                FileUtils.copyDirectory(backupxml, remotexml);
+            File templates = new File (Globals.USER_DIR + "templates");
+            if (!templates.exists()){
+                templates.mkdir();
             }
             
-            if (!appdata.exists()){
-                appdata.mkdir();
+            if (!remotexml.exists()){
+                FileUtils.copyDirectory(backupxml, remotexml);
             }
             
             File config = new File(Globals.USER_DIR + "config");
@@ -397,27 +401,23 @@ public class StartWizard  {
         SwingUtilities.invokeLater(new Runnable(){
             @Override
             public void run(){
-                try {
-                    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+               try {
+                    for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                         if ("Nimbus".equals(info.getName())) {
-                            UIManager.setLookAndFeel(info.getClassName());
+                            javax.swing.UIManager.setLookAndFeel(info.getClassName());
                             break;
                         }
                     }
-                } catch (Exception e) {
-                    try {
-                        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                     } catch (ClassNotFoundException ex) {
-                         logger.fatal(StartWizard.class.getName() + ":" + ex.getMessage()); 
+                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                     } catch (InstantiationException ex) {
-                         logger.fatal(StartWizard.class.getName() + ":" + ex.getMessage());
+                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                     } catch (IllegalAccessException ex) {
-                         logger.fatal(StartWizard.class.getName() + ":" + ex.getMessage());
-                    } catch (UnsupportedLookAndFeelException ex) {
-                         logger.fatal(StartWizard.class.getName() + ":" + ex.getMessage());
+                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                     }
-                }
-                 
+
                 new StartWizard();
             }
         });

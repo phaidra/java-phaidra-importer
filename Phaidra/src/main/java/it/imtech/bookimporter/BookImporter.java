@@ -1,10 +1,12 @@
 package it.imtech.bookimporter;
 
 import it.imtech.about.About;
+import it.imtech.dialogs.InputDialog;
 import it.imtech.globals.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.metadata.Metadata;
+import it.imtech.metadata.Templates;
 import it.imtech.pdfepub.Epub;
 import it.imtech.pdfepub.PdfCreateMonitor;
 import it.imtech.upload.UploadSettings;
@@ -25,6 +27,7 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import net.miginfocom.swing.MigLayout;
 import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -73,7 +76,7 @@ public class BookImporter extends javax.swing.JFrame {
             instance = new BookImporter();
             
             if (new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA).isFile()) {
-                instance.importMetadata("");
+                instance.importMetadata();
             }
         }
         
@@ -136,11 +139,12 @@ public class BookImporter extends javax.swing.JFrame {
             
             //Inizializzazione dell'albero di struttura
             boolean fromFile = askForStructure();
-            
+            setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             initializeXmlTree(fromFile, false);
             
-            initializeData();
             
+            initializeData();
+            setCursor(null);
             //Posizionamento interfaccia
             Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
             int x = (dim.width - getSize().width) / 2;
@@ -272,7 +276,7 @@ public class BookImporter extends javax.swing.JFrame {
     }
     
     
-    protected void importMetadataSilent(String xmlFile){
+    public void importMetadataSilent(String xmlFile){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         try {
             //Leggi il file uwmetadata.xml
@@ -298,32 +302,29 @@ public class BookImporter extends javax.swing.JFrame {
      * uwmetadata.xml contenuto nella cartella di lavoro corrente.
      *
      */
-    protected void importMetadata(String location) {
+    protected void importMetadata() {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
 
         try {
-            if (new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA).isFile() || !location.isEmpty()) {
+            if (new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA).isFile()) {
                 boolean importmetadata = false;
                 
-                if (location.isEmpty()){
-                    Object[] options = {Utility.getBundleString("voc1", bundle), Utility.getBundleString("voc2", bundle)};
-                    int n = JOptionPane.showOptionDialog(this, Utility.getBundleString("loadUwmetadataText", bundle),
-                        Utility.getBundleString("loadUwmetadata", bundle),
-                        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+          
+                Object[] options = {Utility.getBundleString("voc1", bundle), Utility.getBundleString("voc2", bundle)};
+                int n = JOptionPane.showOptionDialog(this, Utility.getBundleString("loadUwmetadataText", bundle),
+                    Utility.getBundleString("loadUwmetadata", bundle),
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
-                    if (n == JOptionPane.YES_OPTION) {
-                        importmetadata = true;
-                    }
+                if (n == JOptionPane.YES_OPTION) {
+                    importmetadata = true;
                 }
-                else{
-                        importmetadata = true;
-                }
+             
                 
                 if (importmetadata){
                     //Leggi il file uwmetadata.xml
                     setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 
-                    MetaUtility.getInstance().setSessionMetadataFile(location);
+                    MetaUtility.getInstance().setSessionMetadataFile();
                     
                     //Ridisegna l'interfaccia
                     this.metadata = MetaUtility.getInstance().metadata_reader();
@@ -848,6 +849,7 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -975,6 +977,14 @@ public class BookImporter extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem1);
 
+        jMenuItem11.setText("Export Template");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem11);
+
         jMenuItem2.setText("Bookstructure");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1060,7 +1070,7 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }                          
     
-    private boolean exportMetadataSilent(String xmlFile){
+    public boolean exportMetadataSilent(String xmlFile){
         componentMap = new HashMap<String, Component>();
         createComponentMap(main_panel);
         
@@ -1127,7 +1137,7 @@ public class BookImporter extends javax.swing.JFrame {
      * @param evt
      */
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        importMetadata("");
+        importMetadata();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
@@ -1261,46 +1271,79 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
+
+        try {
+            String title = Utility.getBundleString("exporttemplatetitle", bundle);
+            String text = Utility.getBundleString("exporttemplatetext1", bundle)+"<br/><br/>"+Utility.getBundleString("exporttemplatetext2", bundle);
+            String buttonok = Utility.getBundleString("yesexport", bundle);
+            String buttoncancel = Utility.getBundleString("noexport", bundle);
+            
+            InputDialog inputdialog = new InputDialog(this, true, title, text, buttonok, buttoncancel);
+
+            inputdialog.setVisible(true);
+            boolean close = inputdialog.getChoice();
+            String filetitle = inputdialog.getInputText();
+            
+            inputdialog.dispose();
+
+            if (close == true){
+                if (filetitle != null && !filetitle.isEmpty()) {
+                    String filename = filetitle.replaceAll("[^a-zA-Z0-9\\.\\-]", "_");
+                    filename = filename.toLowerCase();
+                    
+                    File template = Utility.getUniqueFileName(Globals.TEMPLATES_FOLDER_SEP + filename, "xml");
+                    
+                    if(this.exportMetadataSilent(template.getAbsolutePath())){
+                        if(Templates.addTemplateXML(template.getName(), filetitle)){
+                            JOptionPane.showMessageDialog(this, Utility.getBundleString("exporttemplateok", bundle));
+                        }
+                        else{
+                            template.delete();
+                            JOptionPane.showMessageDialog(this, Utility.getBundleString("exporttemplateerror", bundle));
+                        }
+                    }
+                    else{
+                        template.delete();
+                        JOptionPane.showMessageDialog(this, Utility.getBundleString("exporttemplateerror", bundle));
+                    }
+                }
+            }
+        } catch (HeadlessException ex) {
+            JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
+        }  
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /*
-         * Set the Nimbus look and feel
-         */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /*
-         * If Nimbus (introduced in Java SE 6) is not available, stay with the
-         * default look and feel. For details see
-         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
         /*
          * Create and display the form
          */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
+                try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            }
+                
                 getInstance();
-
-
 
                 /*
                  * JFrame fm = new JFrame("System file properties of tree ");
@@ -1328,6 +1371,7 @@ public class BookImporter extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

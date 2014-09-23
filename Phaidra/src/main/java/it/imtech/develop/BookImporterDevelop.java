@@ -6,14 +6,14 @@
 package it.imtech.develop;
 
 import it.imtech.bookimporter.BookImporter;
-import static it.imtech.configuration.StartWizard.logger;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
+import it.imtech.upload.UploadSettings;
+import it.imtech.utility.Language;
 import it.imtech.utility.Server;
+import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -40,10 +40,20 @@ public class BookImporterDevelop {
         Server selected = getDevelopmentServer();
         SelectedServer.getInstance(selected);
     
-        Globals.SELECTED_FOLDER = "/Users/mede318/testphaidra";
-        Globals.SELECTED_FOLDER_SEP = "/Users/mede318/testphaidra/";
+        Globals.SELECTED_FOLDER = "C:\\Users\\mauro\\Documents\\testing\\";
+        Globals.SELECTED_FOLDER_SEP = "C:\\Users\\mauro\\Documents\\testing\\";
         Globals.CURRENT_LOCALE = new Locale("it");
         
+        ArrayList<Language> langs = new ArrayList<Language>();
+        Language lang = new Language("en", "binglese", "Inglese");
+        langs.add(lang);
+        lang = new Language("it", "bitaliano", "Italiano");
+        langs.add(lang);
+        lang = new Language("de", "btedesco", "Tedesco");
+        langs.add(lang);
+
+        Globals.LANGUAGES = langs.toArray(new Language[langs.size()]);
+            
         Globals.setGlobalVariables();
         Globals.TYPE_BOOK = Globals.BOOK;
         BookImporter x = BookImporter.getInstance();
@@ -54,26 +64,23 @@ public class BookImporterDevelop {
             @Override
             public void run(){
                 try {
-                    for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                    for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                         if ("Nimbus".equals(info.getName())) {
-                            UIManager.setLookAndFeel(info.getClassName());
+                            javax.swing.UIManager.setLookAndFeel(info.getClassName());
                             break;
                         }
                     }
-                } catch (Exception e) {
-                    try {
-                        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-                    } catch (ClassNotFoundException ex) {
-                         logger.fatal(ex.getMessage()); 
-                    } catch (InstantiationException ex) {
-                         logger.fatal(ex.getMessage());
-                    } catch (IllegalAccessException ex) {
-                         logger.fatal(ex.getMessage());
-                    } catch (UnsupportedLookAndFeelException ex) {
-                         logger.fatal(ex.getMessage());
-                    }
+                } catch (ClassNotFoundException ex) {
+                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                 }
-                  new BookImporterDevelop();
+                
+                new BookImporterDevelop();
             }
         });
     };

@@ -1,5 +1,6 @@
 package it.imtech.xmltree;
 
+
 import it.imtech.bookimporter.BookImporter;
 import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
@@ -21,12 +22,13 @@ import javax.swing.tree.TreeSelectionModel;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.ghost4j.document.DocumentException;
 import org.ghost4j.document.PDFDocument;
 import org.ghost4j.renderer.RendererException;
 import org.ghost4j.renderer.SimpleRenderer;
-import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -54,6 +56,7 @@ public class XMLTree extends JTree {
     ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
     //Oggetto contenente documento XML per non salvare il file
     public static Document savedXmlDoc = null;
+    public static ArrayList<String> videotypes = new ArrayList<String>(Arrays.asList(new String[]{".mp4",".avi",".mpeg",".mov",".wmv"}));
     
     public static XMLNode getRoot() {
        return root;
@@ -230,6 +233,9 @@ public class XMLTree extends JTree {
         AbstractAction setFirstpageAction;
         AbstractAction addBlankPageAction;
         AbstractAction addNewPageAction;
+        
+        AbstractAction exportSpecificMetadata;
+        AbstractAction viewSpecificMetadata;
 
         JPopupMenu popup = new JPopupMenu();
 
@@ -285,6 +291,55 @@ public class XMLTree extends JTree {
             }
         };
 
+        exportSpecificMetadata = new AbstractAction(Utility.getBundleString("mc_exmetadata", bundle), IconFactory.getIcon(
+                "blankpage", IconFactory.IconSize.SIZE_16X16)) {
+
+            public void actionPerformed(ActionEvent e) {
+                String singlemetadata = "";
+                    
+                if (Globals.FOLDER_WRITABLE) {
+                    XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
+                    String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                    
+                    if (metadata != null && !metadata.isEmpty()){
+                        singlemetadata = Globals.SELECTED_FOLDER_SEP + metadata;
+                    }
+                    else{
+                        File singlefile = Utility.getUniqueFileName(Globals.SELECTED_FOLDER_SEP + "uwmetadata", "xml");
+                        singlemetadata = singlefile.getAbsolutePath();
+                    }
+                    
+                    BookImporter.getInstance().exportMetadataSilent(singlemetadata );
+                    File metadatafile = new File(singlemetadata);
+                    
+                    ((Element) xmlNode.getUserObject()).setAttribute("metadata", metadatafile.getName());
+                } else {
+                    JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("opnotpermitted", bundle));
+                }
+            }
+        };
+        
+        viewSpecificMetadata = new AbstractAction(Utility.getBundleString("mc_vimetadata", bundle), IconFactory.getIcon(
+                "blankpage", IconFactory.IconSize.SIZE_16X16)) {
+
+            public void actionPerformed(ActionEvent e) {
+                if (Globals.FOLDER_WRITABLE) {
+                    XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
+                    String metadata = Globals.SELECTED_FOLDER_SEP + ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                    
+                    if (new File(metadata).isFile()){ 
+                        BookImporter.getInstance().importMetadataSilent(metadata);
+                    }
+                    else{
+                        
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("opnotpermitted", bundle));
+                }
+            }
+        };
+
+        
         addNewPageAction = new AbstractAction(Utility.getBundleString("mc_newpage", bundle), IconFactory.getIcon(
                 "newpage", IconFactory.IconSize.SIZE_16X16)) {
 
@@ -481,6 +536,10 @@ public class XMLTree extends JTree {
 
             popup.add (addAction);
 
+            //popup.add (exportSpecificMetadata);
+            
+            //popup.add (viewSpecificMetadata);
+            
             popup.add (undoAction);
             return popup ;
         }
@@ -739,8 +798,13 @@ public class XMLTree extends JTree {
                 IconFactory.IconSize.SIZE_16X16));
         icons.put("blankpage", IconFactory.getIcon("blankpage",
                 IconFactory.IconSize.SIZE_16X16));
-        icons.put("avi", IconFactory.getIcon("movie", IconFactory.IconSize.SIZE_16X16));
-
+        
+        for (int i = 0; i < XMLTree.videotypes.size(); i++) {
+            String extension = XMLTree.videotypes.get(i);
+            extension = extension.substring(1);
+            icons.put(extension, IconFactory.getIcon("movie", IconFactory.IconSize.SIZE_16X16));
+        }
+        
         return icons;
     }
 
@@ -821,12 +885,10 @@ public class XMLTree extends JTree {
 
             for (int i = 0; i < listOfFiles.length; i++) {
                 String name = listOfFiles[i].getName();
-                
-                //String mimetype = Utility.getMimeType(name);
-                //Utility.fileIsVideo(mimetype);
-                
+                String extension = "."+FilenameUtils.getExtension(name);
+                                
                 boolean loadPdf = (name.toLowerCase().endsWith(".pdf") ||
-                                   name.toLowerCase().endsWith(".avi")) && isCollectionLoading;
+                                   videotypes.contains(extension.toLowerCase())) && isCollectionLoading;
                 
                 if (listOfFiles[i].isFile() && loadPdf
                         || name.toLowerCase().endsWith(".jpg")

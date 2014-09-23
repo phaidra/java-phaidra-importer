@@ -370,7 +370,7 @@ public class MetaUtility {
         return metadatas;
     }
     
-    public void setSessionMetadataFile(String location){
+    public void setSessionMetadataFile(){
          try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc;
@@ -382,15 +382,9 @@ public class MetaUtility {
             XPathFactory factory = XPathFactory.newInstance();
 	    XPath xpath = factory.newXPath();
             
-            if (location.isEmpty()){
-                File impmetadata = new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA);
-                doc = dBuilder.parse(impmetadata);
-            }
-            else{
-                File impmetadata = new File(location);
-                doc = dBuilder.parse(impmetadata);
-            }
-            
+            File impmetadata = new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA);
+            doc = dBuilder.parse(impmetadata);
+                      
             String expression = "//*[local-name()='contribute']";
             NodeList nodeList = (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
             
@@ -1615,6 +1609,7 @@ public class MetaUtility {
                     String value = null;
                     if (field.getValue().foxmlname.equals("location")) {
                         value = SelectedServer.getInstance(null).getPhaidraURL() + "/" + defValues.get("identifier");
+                        value = defValues.get("identifier");
                     } else {
                         value = defValues.get(field.getValue().foxmlname);
                     }

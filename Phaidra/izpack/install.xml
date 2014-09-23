@@ -40,8 +40,6 @@
         <res id="IZPackLogo" src="install/phaidra.gif"/>
     	<res id="InfoPanel.info" src="install/Readme.txt"/>
     	<res id="HTMLInfoPanel.welcome" src="install/welcome.html"/>
-        
-        <!--<res src="install/info-border.png" id="Installer.image.0"/>-->
         <res src="install/shortcutSpec.xml" id="shortcutSpec.xml"/>
     </resources>
     
@@ -74,6 +72,7 @@
             <fileset dir="lib" targetdir="${INSTALL_PATH}/lib" override="true" />
             <fileset dir="resources" targetdir="${INSTALL_PATH}/resources" override="true" />
             <fileset dir="appdata/config" targetdir="${INSTALL_PATH}/appdata/config" override="asktrue" />
+            <fileset dir="appdata/xml" targetdir="${INSTALL_PATH}/appdata/xml" override="asktrue" />
         </pack>
     </packs>
     

@@ -69,12 +69,10 @@ public class ChooseServer extends javax.swing.JPanel {
         
         bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
-        if (Globals.ONLINE){
-            Server[] servers = getServersFromConfig(config, bundle);
-            choose_server.setModel(new javax.swing.DefaultComboBoxModel(servers));
-            choose_server.setSelectedItem(servers[0]);
-            choose_server.setMinimumSize(new Dimension(400,20));  
-        }
+        Server[] servers = getServersFromConfig(config, bundle);
+        choose_server.setModel(new javax.swing.DefaultComboBoxModel(servers));
+        choose_server.setSelectedItem(servers[0]);
+        choose_server.setMinimumSize(new Dimension(400,20));  
         
         getLanguagesFromConfig(config, bundle);
         choose_language.setModel(new javax.swing.DefaultComboBoxModel(Globals.LANGUAGES));
@@ -89,9 +87,9 @@ public class ChooseServer extends javax.swing.JPanel {
         main_panel.add(label_server_2, "wrap 30");
         main_panel.add(label_server_3, "wrap 5");
         
-        if (Globals.ONLINE){    
+        //if (Globals.ONLINE){    
             main_panel.add(choose_server, "wrap 10");
-        }
+        //}
       
         main_panel.add(label_server_4, "wrap 5");
         main_panel.add(choose_language, "wrap 10");

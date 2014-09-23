@@ -19,7 +19,7 @@ public class Globals {
     public final static String DEBUG_XML = Utility.getSep() + "xml" + Utility.getSep() + "config.xml";
     
     //Local files import/export metadata & bookstructure
-    public final static String IMP_EXP_METADATA = "uwmetadata.xml";
+    public static String IMP_EXP_METADATA = "uwmetadata.xml";
     public final static String IMP_EXP_BOOK = "phaidraimporterstructure.xml";
     
     public final static int UNDO_MAX_FILE = 10;
@@ -40,7 +40,7 @@ public class Globals {
     public final static char COLLECTION = 'C';
     public final static char NOT_EXISTS = 'X';
     
-    public final static String HIDDEN_FOLDER = ".imphaidraimporter";
+    public final static String HIDDEN_FOLDER = ".imphaidraimportertwo";
     public static String USER_DIR  = System.getProperty("user.home") + Utility.getSep() + HIDDEN_FOLDER + Utility.getSep();
     
     public static String UNDO_DIR  = USER_DIR + "undo" +Utility.getSep();
@@ -51,8 +51,13 @@ public class Globals {
        
     //BACKUP_METADATA
     public static String SESSION_METADATA = USER_DIR + Utility.getSep() + "xml" + Utility.getSep() + "sessionuwmetadata.xml";
-    public static String BACKUP_METADATA  = "";//USER_DIR + Utility.getSep() + "xml" + Utility.getSep() + "uwmetadata.xml";
+    public static String BACKUP_METADATA  = "";
     public static String EXPORT_METADATA  = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
+    
+    //GESTIONE TEMPLATES
+    public static String TEMPLATES_FOLDER_SEP = USER_DIR + Utility.getSep() + "templates" + Utility.getSep();
+    public static String TEMPLATES_XML = TEMPLATES_FOLDER_SEP + "templates_list.xml";
+    
     //Path della cartella che contiene l'eseguibile dell'applicazione
     public static String JRPATH = null;
     public static String BASE_RESOURCES = "resources" +Utility.getSep()+ "messages";
@@ -98,6 +103,4 @@ public class Globals {
             SESSION_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "sessionuwmetadata.xml";
         }    
     }
-    
-    
 }
