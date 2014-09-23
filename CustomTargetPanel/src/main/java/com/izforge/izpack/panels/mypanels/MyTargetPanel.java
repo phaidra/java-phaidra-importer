@@ -57,10 +57,6 @@ public class MyTargetPanel extends PathInputPanel
 
         loadDefaultInstallDir();
         pathSelectionPanel.setPath(System.getProperty("user.home")+File.separatorChar+"PhaidraImporter");
-                
-        //if (getDefaultInstallDir() != null)
-        //{
-        //}
     }
     
     public MyTargetPanel(InstallerFrame parent, GUIInstallData idata, ResourceManager resourceManager)
