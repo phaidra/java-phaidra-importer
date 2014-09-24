@@ -536,9 +536,9 @@ public class XMLTree extends JTree {
 
             popup.add (addAction);
 
-            //popup.add (exportSpecificMetadata);
+            popup.add (exportSpecificMetadata);
             
-            //popup.add (viewSpecificMetadata);
+            popup.add (viewSpecificMetadata);
             
             popup.add (undoAction);
             return popup ;

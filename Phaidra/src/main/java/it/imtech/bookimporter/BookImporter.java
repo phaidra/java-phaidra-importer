@@ -829,6 +829,10 @@ public class BookImporter extends javax.swing.JFrame {
             if (components[i] instanceof JTree) {
                 componentMap.put(components[i].getName(), components[i]);
             }
+            
+             if (components[i] instanceof JCheckBox) {
+                componentMap.put(components[i].getName(), components[i]);
+            }
 
             if (components[i] instanceof JLabel) {
                 componentMap.put(components[i].getName(), components[i]);

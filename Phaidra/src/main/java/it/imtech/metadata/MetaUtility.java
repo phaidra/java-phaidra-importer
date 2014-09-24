@@ -868,9 +868,17 @@ public class MetaUtility {
                 } else if (datatype.equals("DateTime")) {
                     final JXDatePicker datePicker = new JXDatePicker();
                     datePicker.setName("MID_" + Integer.toString(kv.getValue().MID));
-
+                    
+                    JPanel test = new JPanel(new MigLayout());
+                    JLabel lbefore = new JLabel("Before Christ: ");
+                    JCheckBox beforechrist = new JCheckBox();
+                    beforechrist.setName("MID_" + Integer.toString(kv.getValue().MID) + "_check");
+                    
                     if (kv.getValue().value != null) {
                         try {
+                            if (kv.getValue().value.charAt(0) == '-'){
+                                beforechrist.setSelected(true);
+                            }
                             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                             Date date1 = sdf.parse(kv.getValue().value);
                             datePicker.setDate(date1);
@@ -879,7 +887,12 @@ public class MetaUtility {
                         }
                     }
                     
-                    innerPanel.add(datePicker, "wrap, width :200:");
+                    test.add(datePicker, "width :200:");
+                    test.add(lbefore, "gapleft 30");
+                    test.add(beforechrist, "wrap");
+                    
+                    
+                    innerPanel.add(test,"wrap");
                 }
             }
 
@@ -1362,6 +1375,9 @@ public class MetaUtility {
                         Map.Entry tmp2 = (Map.Entry) tmp.getSelectedItem();
                         field.getValue().language = tmp2.getKey().toString();
                     } else if (field.getValue().datatype.equals("DateTime")) {
+                        Component combobox = BookImporter.getInstance().getComponentByName("MID_" + Integer.toString(field.getValue().MID) + "_check");
+                        JCheckBox beforechrist = (JCheckBox) combobox;
+                        
                         JXDatePicker datePicker = (JXDatePicker) element;
                         Date data = datePicker.getDate();
 
@@ -1370,8 +1386,12 @@ public class MetaUtility {
                         if (data != null) {
                             Format formatter = new SimpleDateFormat("yyyy-MM-dd");
                             String stDate = formatter.format(data);
-
+                            
                             if (!stDate.equals("")) {
+                                if (beforechrist.isSelected()){
+                                    stDate = "-"+stDate;
+                                }
+                                
                                 field.getValue().value = stDate;
                             }
                         }
