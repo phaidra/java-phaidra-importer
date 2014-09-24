@@ -1,16 +1,19 @@
 package it.imtech.bookimporter;
 
 import it.imtech.about.About;
-import it.imtech.dialogs.InputDialog;
 import it.imtech.dialogs.ConfirmDialog;
+import it.imtech.dialogs.InputDialog;
+import it.imtech.dialogs.TemplateDialog;
 import it.imtech.globals.Globals;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.metadata.Metadata;
-import it.imtech.metadata.Templates;
+import it.imtech.metadata.Template;
+import it.imtech.metadata.TemplatesUtility;
 import it.imtech.pdfepub.Epub;
 import it.imtech.pdfepub.PdfCreateMonitor;
 import it.imtech.upload.UploadSettings;
 import it.imtech.utility.Language;
+import it.imtech.utility.Server;
 import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLNode;
 import it.imtech.xmltree.XMLTree;
@@ -33,7 +36,6 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import net.miginfocom.swing.MigLayout;
 import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -100,6 +102,7 @@ public class BookImporter extends javax.swing.JFrame {
             this.setTitle("Phaidra Importer v." + Globals.CURRENT_VERSION);
             jTextField2.setText("");
             
+            //createHeaderPane();
             //Create frontal panel
             createFrontalPane();
             
@@ -176,10 +179,12 @@ public class BookImporter extends javax.swing.JFrame {
     }
     
     private void styleButtonsFrontalPanel(){
+         /*
         try {
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             //PDF Button
             Image img = ImageIO.read(getClass().getResource("images/pdf32.png"));
+           
             jButton1.setIcon(new ImageIcon(img));
             
             jButton1.setContentAreaFilled(false);       
@@ -204,12 +209,109 @@ public class BookImporter extends javax.swing.JFrame {
                         jButton1.setBorder(emptyBorder);
                     }
                 }
-            });    
+            });  
         }
         catch (IOException ex) {
             java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
         } 
+        */  
+    }
+       
+    static JComboBox choose_template = new JComboBox();
+    private JPanel templatepanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
+
     
+    public void drawTemplatePanel(){
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        
+        templatepanel.removeAll();
+        templatepanel.revalidate();
+        TreeMap<String, String> templates = TemplatesUtility.getTemplatesList();
+        
+        templatepanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), Utility.getBundleString("paneltemplate", bundle), TitledBorder.LEFT, TitledBorder.TOP));
+        
+        ArrayList<Template> combolist = new ArrayList<Template>();
+        
+        if (!templates.isEmpty()){
+            choose_template.setEnabled(true);
+            for(Map.Entry<String, String> entry : templates.entrySet()) {
+                combolist.add(new Template(entry.getKey(), entry.getValue()));
+            }
+        
+            Template[] combo = combolist.toArray(new Template[combolist.size()]);
+            choose_template.setModel(new javax.swing.DefaultComboBoxModel(combo));
+            choose_template.setSelectedItem(combo[0]);
+            choose_template.setMinimumSize(new Dimension(250,20));
+
+            JButton templateimport = new JButton("Import Template");
+            templateimport.setMinimumSize(new Dimension(120,10));
+
+            templateimport.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent event)
+                {
+                    ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+
+                    String text = Utility.getBundleString("templateimporttext", bundle);
+                    String title = Utility.getBundleString("templateimporttitle", bundle);
+                    String buttonok = Utility.getBundleString("voc1", bundle);
+                    String buttonko = Utility.getBundleString("voc2", bundle);
+                    ConfirmDialog confirm = new ConfirmDialog(null, true, title, text, buttonok, buttonko);
+
+                    confirm.setVisible(true);
+                    boolean response = confirm.getChoice();
+                    confirm.dispose();
+        
+                    if (response==true) {
+                        Template selected = (Template) choose_template.getSelectedItem();
+                        importMetadataSilent(Globals.TEMPLATES_FOLDER_SEP + selected.getFileName());
+                    }
+                }
+            });
+
+            templatepanel.add(choose_template);
+            templatepanel.add(templateimport);
+        }
+        else{
+            choose_template.setMinimumSize(new Dimension(250,20));
+            choose_template.setEnabled(false);
+            JButton templateimport = new JButton("Import Template");
+            templateimport.setMinimumSize(new Dimension(120,10));
+            templateimport.setEnabled(false);
+            
+            templatepanel.add(choose_template);
+            templatepanel.add(templateimport);
+        }
+        
+        JButton templateexport = new JButton(Utility.getBundleString("templateexportbutton",bundle));
+        templateexport.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent event)
+            {
+                exportTemplate();
+            }
+        });
+        
+        JButton templatedelete = new JButton(Utility.getBundleString("templatedeletebutton",bundle));
+        templatedelete.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent event)
+            {
+                deleteTemplate();
+            }
+        });
+        
+        if (templates.isEmpty()){
+            templatedelete.setEnabled(false);
+        }
+          
+        templatepanel.add(templateexport);
+        templatepanel.add(templatedelete);
+        templatepanel.repaint();
+        templatepanel.revalidate();
     }
     
     public final void createFrontalPane(){
@@ -612,7 +714,11 @@ public class BookImporter extends javax.swing.JFrame {
         main_scroller.setViewportView(main_panel);
         main_scroller.setBorder(null);
         main_scroller.setBounds(5, 5, 750, 750);
-
+        
+        drawTemplatePanel();
+        
+        main_panel.add(templatepanel, "wrap, growx");
+        
         JPanel innerPanel = new JPanel(new MigLayout());
         innerPanel.setName("pannello000");
         JLabel label = new JLabel();
@@ -900,7 +1006,6 @@ public class BookImporter extends javax.swing.JFrame {
         jLayeredPane2 = new javax.swing.JLayeredPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -914,7 +1019,6 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -959,13 +1063,6 @@ public class BookImporter extends javax.swing.JFrame {
         jTabbedPane2.addTab("METADATI", jLayeredPane1);
 
         jSplitPane1.setRightComponent(jTabbedPane2);
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jMenuBar1.setAlignmentY(0.5F);
 
@@ -1049,14 +1146,6 @@ public class BookImporter extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem1);
 
-        jMenuItem11.setText("Export Template");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem11);
-
         jMenuItem2.setText("Bookstructure");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1096,10 +1185,6 @@ public class BookImporter extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1107,14 +1192,11 @@ public class BookImporter extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(507, 507, 507)
-                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(225, 225, 225))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1362,9 +1444,28 @@ public class BookImporter extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+    private void deleteTemplate(){
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String title = Utility.getBundleString("deletetemplatetitle", bundle);
+            String text = Utility.getBundleString("deletetemplatetext", bundle);
+            String buttonok = Utility.getBundleString("ok", bundle);
+            
+            TemplateDialog inputdialog = new TemplateDialog(this, true, title, text, buttonok);
+
+            inputdialog.setVisible(true);
+            boolean close = inputdialog.getChoice();
+            String filetitle = inputdialog.getInputText();
+            inputdialog.dispose();
+        } 
+        catch (HeadlessException ex) {
+            JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
+        }  
+    }
+    
+    
+    private void exportTemplate(){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
 
         try {
@@ -1389,12 +1490,9 @@ public class BookImporter extends javax.swing.JFrame {
                     File template = Utility.getUniqueFileName(Globals.TEMPLATES_FOLDER_SEP + filename, "xml");
                     
                     if(this.exportMetadataSilent(template.getAbsolutePath())){
-                        if(Templates.addTemplateXML(template.getName(), filetitle)){
+                        if(TemplatesUtility.addTemplateXML(template.getName(), filetitle)){
+                            BookImporter.getInstance().drawTemplatePanel();
                             JOptionPane.showMessageDialog(this, Utility.getBundleString("exporttemplateok", bundle));
-                        }
-                        else{
-                            template.delete();
-                            JOptionPane.showMessageDialog(this, Utility.getBundleString("exporttemplateerror", bundle));
                         }
                     }
                     else{
@@ -1403,31 +1501,13 @@ public class BookImporter extends javax.swing.JFrame {
                     }
                 }
             }
+            
         } catch (HeadlessException ex) {
             JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
         }  
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
-
-        try {
-            XMLTree.exportBookstructure(Globals.SELECTED_FOLDER_SEP);
-
-            String location = chooseFileImpExport(true, "pdf", "pdf");
-
-            if (location != null) {
-                PdfCreateMonitor.createAndShowGUI(true, location);
-                jTextField2.setText(location);
-                
-                
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -1473,7 +1553,6 @@ public class BookImporter extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JMenu jMenu1;
@@ -1484,7 +1563,6 @@ public class BookImporter extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

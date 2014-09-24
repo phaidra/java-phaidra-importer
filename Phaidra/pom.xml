@@ -40,7 +40,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <izpack.staging>${project.build.directory}/staging</izpack.staging>
-        <izpack.version>5.0.0-beta10</izpack.version>
+        <izpack.version>5.0.0-beta9</izpack.version>
     </properties>
     <build>
      
@@ -591,14 +591,9 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.jgoodies</groupId>
-            <artifactId>jgoodies-looks</artifactId>
-            <version>2.5.3</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-core</artifactId>
             <version>1.6</version>
         </dependency>
-    </dependencies>
+      </dependencies>
 </project>
