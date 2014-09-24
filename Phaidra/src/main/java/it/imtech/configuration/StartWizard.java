@@ -7,7 +7,7 @@
 package it.imtech.configuration;
 
 import it.imtech.bookimporter.BookImporter;
-import it.imtech.globals.ConfirmDialog;
+import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
 import it.imtech.upload.UploadSettings;
@@ -142,7 +142,7 @@ public class StartWizard  {
                    String title = Utility.getBundleString("dialog_1_title", bundle);
                    String text = Utility.getBundleString("dialog_1", bundle);
                    
-                   ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, "test");
+                   ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, Utility.getBundleString("confirm", bundle), Utility.getBundleString("confirm", bundle));
                    
                    confirm.setVisible(true);
                    boolean close = confirm.getChoice();
@@ -184,7 +184,7 @@ public class StartWizard  {
                 String title = Utility.getBundleString("dialog_1_title", bundle);
                 String text = Utility.getBundleString("dialog_1", bundle);
                    
-                ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, "test");
+                ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, Utility.getBundleString("confirm", bundle), Utility.getBundleString("confirm", bundle));
                    
                 confirm.setVisible(true);
                 boolean close = confirm.getChoice();

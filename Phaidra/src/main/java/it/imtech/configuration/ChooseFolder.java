@@ -6,6 +6,8 @@
 
 package it.imtech.configuration;
 
+import it.imtech.dialogs.BookCollectionDialog;
+import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLTree;
@@ -160,9 +162,21 @@ public class ChooseFolder extends javax.swing.JPanel {
         return error;
     }
     
-    private static void chooseBookOrCollection() {
+    private  void chooseBookOrCollection() {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        int result = 0;
+        
+        String text = Utility.getBundleString("collorbook", bundle);
+        String title = Utility.getBundleString("titlecollobook", bundle);
+        String buttoncoll = Utility.getBundleString("collection", bundle);
+        String buttonbook = Utility.getBundleString("book", bundle);
+        String buttonko = Utility.getBundleString("back", bundle);
+        BookCollectionDialog confirm = new BookCollectionDialog(null, true, title, text, buttoncoll, buttonbook, buttonko);
 
+        confirm.setVisible(true);
+        result = confirm.getChoice();
+        confirm.dispose();
+        /*
         Object[] options = {Utility.getBundleString("collection", bundle), Utility.getBundleString("book", bundle), Utility.getBundleString("back", bundle)};
         int answer = JOptionPane.showOptionDialog(null,
                 Utility.getBundleString("collorbook", bundle),
@@ -170,15 +184,15 @@ public class ChooseFolder extends javax.swing.JPanel {
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
                 null, options, options[1]);
-
-        switch (answer) {
-            case JOptionPane.YES_OPTION:
+        */
+        switch (result) {
+            case 0:
                 Globals.TYPE_BOOK = Globals.COLLECTION;
                 break;
-            case JOptionPane.NO_OPTION:
+            case 1:
                 Globals.TYPE_BOOK = Globals.BOOK;
                 break;
-            case JOptionPane.CANCEL_OPTION:
+            case 2:
                 Globals.TYPE_BOOK = Globals.NOT_EXISTS;
                 break;
             default:
