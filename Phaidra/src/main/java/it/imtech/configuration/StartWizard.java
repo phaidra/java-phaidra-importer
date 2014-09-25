@@ -267,7 +267,7 @@ public class StartWizard  {
                 certs.mkdir();
             }
             
-            File uploads = new File(Globals.USER_DIR + "uploads");
+            File uploads = new File(Globals.USER_DIR + "duplication");
             if (!uploads.exists()){
                 uploads.mkdir();
             }

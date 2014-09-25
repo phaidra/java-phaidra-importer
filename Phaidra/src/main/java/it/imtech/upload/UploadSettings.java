@@ -446,7 +446,7 @@ public class UploadSettings extends javax.swing.JFrame {
 
                 //Metadaten prüfen
                 if (error.length() < 1) {
-                    BookImporter.getInstance().createComponentMap();
+                    BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
                     error = MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true);
                 }
 

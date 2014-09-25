@@ -9,7 +9,6 @@ import it.imtech.utility.Utility;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.xmltree.XMLTree;
 import it.imtech.globals.Globals;
-import static it.imtech.pdfepub.PdfCreateMonitor.frame;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -64,7 +63,7 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
             jProgressBar2.setMaximum(100);
 
             //Export Metadata
-            BookImporter.getInstance().createComponentMap();
+            BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
             String error = MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true);
 
                     

@@ -136,7 +136,7 @@ public class MetaUtility {
         
     }
     
-    private JComboBox addClassificationChoice(JPanel choice, final String sequence){
+    private JComboBox addClassificationChoice(JPanel choice, final String sequence, final String panelname){
         
         int selected = 0;
         int index = 0;
@@ -174,13 +174,13 @@ public class MetaUtility {
                 
                 selectedClassificationList.put(sequence, c.getKey());      
                
-                BookImporter.getInstance().createComponentMap();
+                BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
                 JPanel innerPanel = (JPanel) BookImporter.getInstance().getComponentByName("ImPannelloClassif---"+sequence);
                 innerPanel.removeAll();
                 
                 try {
                     classifications_reader(sequence);
-                    addClassification(innerPanel, classificationMID, sequence);
+                    addClassification(innerPanel, classificationMID, sequence, panelname);
                 } 
                 catch (Exception ex) {
                     Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
@@ -315,7 +315,7 @@ public class MetaUtility {
      * @return TreeMap<Object, Metadata>
      * @throws Exception
      */
-    public TreeMap<Object, Metadata> metadata_reader() throws Exception {
+    public TreeMap<Object, Metadata> metadata_reader(String filepath) throws Exception {
         String lang = Globals.CURRENT_LOCALE.getLanguage();
         TreeMap<Object, Metadata> metadatas = new TreeMap<Object, Metadata>();
 
@@ -354,7 +354,7 @@ public class MetaUtility {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc;
            
-            File urlf = new File(Globals.SESSION_METADATA);
+            File urlf = new File(filepath);
             doc = dBuilder.parse(urlf);
 
             Node n = doc.getFirstChild();
@@ -370,13 +370,14 @@ public class MetaUtility {
         return metadatas;
     }
     
-    public void setSessionMetadataFile(){
+    public void setSessionMetadataFile(String panelname){
          try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc;
             
             File f = new File(Globals.BACKUP_METADATA);
-            File s = new File(Globals.SESSION_METADATA);
+            //File s = new File(Globals.SESSION_METADATA);
+            File s = new File(Globals.DUPLICATION_FOLDER_SEP + panelname);
             FileUtils.copyFile(f, s);
             
             XPathFactory factory = XPathFactory.newInstance();
@@ -389,14 +390,14 @@ public class MetaUtility {
             NodeList nodeList = (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
             
             for (int i=0;i<nodeList.getLength()-1;i++){
-                addContributorToMetadata();
+                addContributorToMetadata(panelname);
             }
             
             expression = "//*[local-name()='taxonpath']";
             nodeList = (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
             
             for (int i=0;i<nodeList.getLength()-1;i++){
-                addClassificationToMetadata();
+                addClassificationToMetadata(panelname);
             }
         } 
         catch (ParserConfigurationException ex) {
@@ -410,15 +411,15 @@ public class MetaUtility {
         } 
     }
     
-    private void addContributorToMetadata(){
+    private void addContributorToMetadata(String panelname){
         try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc;
             
             XPathFactory factory = XPathFactory.newInstance();
 	    XPath xpath = factory.newXPath();
-            
-            File backupmetadata = new File(Globals.SESSION_METADATA);
+            File backupmetadata = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+            //File backupmetadata = new File(Globals.SESSION_METADATA);
             doc = dBuilder.parse(backupmetadata);
             
             String expression = "//*[@ID='11']";
@@ -446,7 +447,7 @@ public class MetaUtility {
             Node copyOfn = doc.importNode(nodetocopy, true);
             nodeList.item(0).getParentNode().appendChild(copyOfn);
             
-            XMLUtil.xmlWriter(doc, Globals.SESSION_METADATA);
+            XMLUtil.xmlWriter(doc, Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
@@ -459,7 +460,7 @@ public class MetaUtility {
     }
     
     
-    private void addClassificationToMetadata(){
+    private void addClassificationToMetadata(String panelname){
         try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc;
@@ -467,7 +468,8 @@ public class MetaUtility {
             XPathFactory factory = XPathFactory.newInstance();
 	    XPath xpath = factory.newXPath();
             
-            File backupmetadata = new File(Globals.SESSION_METADATA);
+            //File backupmetadata = new File(Globals.SESSION_METADATA);
+            File backupmetadata = new File(Globals.DUPLICATION_FOLDER_SEP + "session" +panelname);
             doc = dBuilder.parse(backupmetadata);
             
             String expression = "//*[@ID='22']";
@@ -508,7 +510,7 @@ public class MetaUtility {
                 }
             }
 
-            XMLUtil.xmlWriter(doc, Globals.SESSION_METADATA);
+            XMLUtil.xmlWriter(doc, Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
@@ -530,7 +532,7 @@ public class MetaUtility {
      * @param parent Jpanel nel quale devono venir inseriti i metadati
      * @param level Livello corrente
      */
-    public void create_metadata_view(Map<Object, Metadata> submetadatas, JPanel parent, int level) throws Exception {
+    public void create_metadata_view(Map<Object, Metadata> submetadatas, JPanel parent, int level, final String panelname) throws Exception {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         int lenght = submetadatas.size();
         int labelwidth = 220;
@@ -554,7 +556,7 @@ public class MetaUtility {
 
             if (kv.getValue().MID == 45) {
                 JPanel choice = new JPanel(new MigLayout());
-                JComboBox combo = addClassificationChoice(choice, kv.getValue().sequence);
+                JComboBox combo = addClassificationChoice(choice, kv.getValue().sequence, panelname);
                 
                 JLabel labelc = new JLabel();
                 labelc.setText(Utility.getBundleString("selectclassif",bundle));
@@ -573,8 +575,8 @@ public class MetaUtility {
                         public void actionPerformed(ActionEvent event)
                         {
                             BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                            addClassificationToMetadata();
-                            BookImporter.getInstance().refreshMetadataTab(false);
+                            addClassificationToMetadata(panelname);
+                            BookImporter.getInstance().refreshMetadataTab(false, panelname);
                             BookImporter.getInstance().setCursor(null);
                         }
                     });
@@ -589,7 +591,7 @@ public class MetaUtility {
                 
                 innerPanel.setName("ImPannelloClassif---"+kv.getValue().sequence);
                 try{
-                   addClassification(innerPanel, classificationMID, kv.getValue().sequence);
+                   addClassification(innerPanel, classificationMID, kv.getValue().sequence, panelname);
                 }
                 catch (Exception ex) {
                     logger.error("Errore nell'aggiunta delle classificazioni");
@@ -617,8 +619,8 @@ public class MetaUtility {
                         public void actionPerformed(ActionEvent event)
                         {
                             BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                            addContributorToMetadata();
-                            BookImporter.getInstance().refreshMetadataTab(false);
+                            addContributorToMetadata(panelname);
+                            BookImporter.getInstance().refreshMetadataTab(false, panelname);
                             BookImporter.getInstance().setCursor(null);
                         }
                     });
@@ -897,7 +899,7 @@ public class MetaUtility {
             }
 
             //Recursive call
-            create_metadata_view(kv.getValue().submetadatas, innerPanel, level + 1);
+            create_metadata_view(kv.getValue().submetadatas, innerPanel, level + 1, panelname);
 
             if (kv.getValue().editable.equals("Y") || (datatype.equals("Node") && kv.getValue().hidden.equals("0"))) {
                 parent.add(innerPanel, "wrap, growx");
@@ -1055,12 +1057,12 @@ public class MetaUtility {
      *
      * @param e L'albero sul quale ricercare il path selezionato
      */
-    private void setOEFOS(JTree e, String sequence) throws Exception {
+    private void setOEFOS(JTree e, String sequence, String panelname) throws Exception {
         try {
             DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getLastSelectedPathComponent();
             String completePath = "";
 
-            BookImporter.getInstance().createComponentMap();
+            BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(panelname).getPanel());
             Component controls = BookImporter.getInstance().getComponentByName("classification_path---"+sequence);
 
             //Se e' una foglia aggiorna il path nell'interfaccia e oefos_path
@@ -1139,7 +1141,7 @@ public class MetaUtility {
      * @param innerPanel Pannello sul quale aggiungere i metadati
      * @param kv Valori dei metadati
      */
-    private void addClassification(JPanel innerPanel, Integer kv, final String sequence) throws Exception {
+    private void addClassification(JPanel innerPanel, Integer kv, final String sequence, final String panelname) throws Exception {
         try {
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
 
@@ -1174,7 +1176,7 @@ public class MetaUtility {
 
                 public void valueChanged(TreeSelectionEvent e) {
                     try {
-                        setOEFOS(tree, sequence);
+                        setOEFOS(tree, sequence, panelname);
                     } catch (Exception ex) {
                         Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
                     }

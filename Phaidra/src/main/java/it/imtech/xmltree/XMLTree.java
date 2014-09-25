@@ -22,6 +22,7 @@ import javax.swing.tree.TreeSelectionModel;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -129,7 +130,6 @@ public class XMLTree extends JTree {
         // attach the popup
         popupMenu = getJPopupForExplorerTree();
         add(popupMenu);
-        
         
         updateLanguage();
         
@@ -302,17 +302,28 @@ public class XMLTree extends JTree {
                     String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
                     
                     if (metadata != null && !metadata.isEmpty()){
-                        singlemetadata = Globals.SELECTED_FOLDER_SEP + metadata;
+                         JOptionPane.showMessageDialog(new Frame(), "La pagina e gia esportata");     
                     }
                     else{
-                        File singlefile = Utility.getUniqueFileName(Globals.SELECTED_FOLDER_SEP + "uwmetadata", "xml");
-                        singlemetadata = singlefile.getAbsolutePath();
+                        try {
+                            File singlefile = Utility.getUniqueFileName(Globals.SELECTED_FOLDER_SEP + "uwmetadata", "xml");
+                            singlemetadata = singlefile.getAbsolutePath();
+                            
+                            File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + singlefile.getName());
+                            FileUtils.copyFile(new File(Globals.BACKUP_METADATA), duplication);
+                            
+                            exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
+                            File metadatafile = new File(singlemetadata);
+                                
+                            ((Element) xmlNode.getUserObject()).setAttribute("metadata", metadatafile.getName());
+                                
+                            String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+                            String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                            BookImporter.getInstance().importSingleMetadata(filename, pid);
+                        } catch (IOException ex) {
+                            java.util.logging.Logger.getLogger(XMLTree.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
-                    
-                    BookImporter.getInstance().exportMetadataSilent(singlemetadata );
-                    File metadatafile = new File(singlemetadata);
-                    
-                    ((Element) xmlNode.getUserObject()).setAttribute("metadata", metadatafile.getName());
                 } else {
                     JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("opnotpermitted", bundle));
                 }
@@ -325,10 +336,20 @@ public class XMLTree extends JTree {
             public void actionPerformed(ActionEvent e) {
                 if (Globals.FOLDER_WRITABLE) {
                     XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
-                    String metadata = Globals.SELECTED_FOLDER_SEP + ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                    String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                    String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+                    String metadata = Globals.SELECTED_FOLDER_SEP + filename;
                     
                     if (new File(metadata).isFile()){ 
-                        BookImporter.getInstance().importMetadataSilent(metadata);
+                        try {
+                            File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + filename);
+                            File backupmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "backupuwmetadata.xml");
+                            FileUtils.copyFile(backupmeta, duplication);
+
+                            BookImporter.getInstance().importSingleMetadata(filename, pid);
+                        } catch (IOException ex) {
+                            java.util.logging.Logger.getLogger(XMLTree.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
                     else{
                         
@@ -535,10 +556,11 @@ public class XMLTree extends JTree {
             popup.add (deleteAction);
 
             popup.add (addAction);
-
-            popup.add (exportSpecificMetadata);
             
-            popup.add (viewSpecificMetadata);
+            if (Globals.TYPE_BOOK == Globals.COLLECTION){
+                popup.add (exportSpecificMetadata);
+                popup.add (viewSpecificMetadata);
+            }
             
             popup.add (undoAction);
             return popup ;

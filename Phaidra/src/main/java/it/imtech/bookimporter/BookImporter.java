@@ -5,6 +5,7 @@ import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.dialogs.InputDialog;
 import it.imtech.dialogs.TemplateDialog;
 import it.imtech.globals.Globals;
+import it.imtech.globals.MetaPanels;
 import it.imtech.helper.Helper;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.metadata.Metadata;
@@ -65,8 +66,11 @@ public class BookImporter extends javax.swing.JFrame {
     
     private JButton jButton2 = new JButton();
     
+    public TreeMap<String, MetaPanels> metadatapanels = new TreeMap<String, MetaPanels>(); 
+    
     public static IndexedFocusTraversalPolicy policy;
     
+    public static String mainpanel = "uwmetadata.xml";
     //public static Locale localConst = null;
     /**
      * Metodo di gestione del Singleton
@@ -78,7 +82,18 @@ public class BookImporter extends javax.swing.JFrame {
             instance = new BookImporter();
             
             if (new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA).isFile()) {
-                instance.importMetadata();
+                instance.importMetadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, mainpanel);
+                
+                File selected = new File (Globals.SELECTED_FOLDER_SEP);
+                
+                if (selected.isDirectory()){
+                    for(File file: selected.listFiles()) {
+                        if (file.getName().startsWith("uwmetadata") && file.getName().endsWith(".xml")){
+                            instance.importMetadata(Globals.SELECTED_FOLDER_SEP + file.getName(), file.getName());
+                        }
+                    }
+                }
+                
             }
         }
         
@@ -138,10 +153,10 @@ public class BookImporter extends javax.swing.JFrame {
             
             //Creazione interfaccia metadati
             if (Globals.TYPE_BOOK == Globals.COLLECTION){
-                Utility.makeBackupMetadata(Globals.URL_METADATA_COLL);
+                Utility.makeBackupMetadata(Globals.URL_METADATA_COLL, Globals.SESSION_METADATA);
             }
             else{
-                Utility.makeBackupMetadata(Globals.URL_METADATA);
+                Utility.makeBackupMetadata(Globals.URL_METADATA, Globals.SESSION_METADATA);
             }
             
             //Inizializzazione dell'albero di struttura
@@ -151,7 +166,7 @@ public class BookImporter extends javax.swing.JFrame {
             
             initializeXmlTree(fromFile, false);
             
-            initializeData();
+            initializeData("");
             
             setCursor(null);
             
@@ -171,52 +186,15 @@ public class BookImporter extends javax.swing.JFrame {
             System.exit(0);
         }
     }
-    
-    private void styleButtonsFrontalPanel(){
-         /*
-        try {
-            ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-            //PDF Button
-            Image img = ImageIO.read(getClass().getResource("images/pdf32.png"));
-           
-            jButton1.setIcon(new ImageIcon(img));
-            
-            jButton1.setContentAreaFilled(false);       
-            
-            final Border raisedBevelBorder = BorderFactory.createRaisedBevelBorder();
-            final Insets insets = raisedBevelBorder.getBorderInsets(jButton1);
-            final EmptyBorder emptyBorder = new EmptyBorder(insets);
-            jButton1.setBorder(emptyBorder);
-            jButton1.setFocusPainted(false);
-            jButton1.setOpaque(false);
-            jButton1.setContentAreaFilled(false);
-            jButton1.setText("");
-            jButton1.setToolTipText(Utility.getBundleString("bexportbook", bundle));
-            
-            jButton1.getModel().addChangeListener(new ChangeListener() {
-                public void stateChanged(ChangeEvent e) {
-                    ButtonModel model = (ButtonModel) e.getSource();
-                    if (model.isRollover()) {
-                        jButton1.setBorder(raisedBevelBorder);
-                    }   
-                    else{
-                        jButton1.setBorder(emptyBorder);
-                    }
-                }
-            });  
-        }
-        catch (IOException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-        */  
-    }
        
-    static JComboBox choose_template = new JComboBox();
-    private JPanel templatepanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
-
+    //static JComboBox choose_template = new JComboBox();
+    //private JPanel templatepanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
+    //private JPanel metadatapanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
     
-    public void drawTemplatePanel(){
+    public JPanel drawTemplatePanel(final String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        JPanel templatepanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
+        final JComboBox choose_template = new JComboBox();
         
         templatepanel.removeAll();
         templatepanel.revalidate();
@@ -259,7 +237,7 @@ public class BookImporter extends javax.swing.JFrame {
         
                     if (response==true) {
                         Template selected = (Template) choose_template.getSelectedItem();
-                        importMetadataSilent(Globals.TEMPLATES_FOLDER_SEP + selected.getFileName());
+                        importMetadataSilent(Globals.TEMPLATES_FOLDER_SEP + selected.getFileName(), panelname);
                     }
                 }
             });
@@ -284,7 +262,7 @@ public class BookImporter extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent event)
             {
-                exportTemplate();
+                exportTemplate(panelname);
             }
         });
         
@@ -294,7 +272,7 @@ public class BookImporter extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent event)
             {
-                deleteTemplate();
+                deleteTemplate(panelname);
             }
         });
         
@@ -306,6 +284,8 @@ public class BookImporter extends javax.swing.JFrame {
         templatepanel.add(templatedelete);
         templatepanel.repaint();
         templatepanel.revalidate();
+        
+        return templatepanel;
     }
     
     public final void createFrontalPane(){
@@ -387,10 +367,10 @@ public class BookImporter extends javax.swing.JFrame {
     /**
      * Resetta i componenti dell'interfaccia dei metadati
      */
-    public void createComponentMap() {
+    /*public void createComponentMap() {
         componentMap = new HashMap<String, Component>();
         createComponentMap(main_panel);
-    }
+    }*/
 
     public void initializeXmlTree(boolean fromFile, boolean refresh) {
         xmlTree = new XMLTree(Globals.SELECTED_FOLDER_SEP, fromFile, false, refresh);
@@ -421,22 +401,41 @@ public class BookImporter extends javax.swing.JFrame {
         jScrollPane1.setViewportView(xmlTree);
     }
     
+    public void importSingleMetadata(String filename, String PID){
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        try {
+            JLayeredPane singlemetadatapane = new JLayeredPane();
+            singlemetadatapane.setName(PID);
+            
+            String xmlFile = Globals.SELECTED_FOLDER_SEP + filename;
+            //Leggi il file uwmetadata.xml
+            setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + Globals.BACKUP_INIT);
+
+            //Ridisegna l'interfaccia
+            this.setMetadataTab(singlemetadatapane, filename);
+            jTabbedPane2.add(singlemetadatapane);
+            
+        } catch (Exception ex) {
+            setCursor(null);
+            JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
+        }
+    }
     
-    public void importMetadataSilent(String xmlFile){
+    public void importMetadataSilent(String xmlFile, String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         try {
             //Leggi il file uwmetadata.xml
             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
             MetaUtility.getInstance().read_uwmetadata(xmlFile);
 
-            jLayeredPane1.removeAll();
-            jLayeredPane1.revalidate();
+            this.metadatapanels.get(panelname).getPane().removeAll();
+            this.metadatapanels.get(panelname).getPane().revalidate();
 
             //Ridisegna l'interfaccia
-            this.setMetadataTab();
+            this.setMetadataTab(this.metadatapanels.get(panelname).getPane(), panelname);
+            
             setCursor(null);
-
-            //JOptionPane.showMessageDialog(this, Utility.getBundleString("import4", bundle));
         } catch (Exception ex) {
             setCursor(null);
             JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
@@ -448,11 +447,12 @@ public class BookImporter extends javax.swing.JFrame {
      * uwmetadata.xml contenuto nella cartella di lavoro corrente.
      *
      */
-    protected void importMetadata() {
+    protected void importMetadata(String xmlFile, String panelname) {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
 
         try {
-            if (new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA).isFile()) {
+            //if (new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA).isFile()) {
+            if (new File(xmlFile).isFile()) {
                 boolean importmetadata = false;
                 
                 String text = Utility.getBundleString("loadUwmetadataText", bundle);
@@ -469,15 +469,15 @@ public class BookImporter extends javax.swing.JFrame {
                     //Leggi il file uwmetadata.xml
                     setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 
-                    MetaUtility.getInstance().setSessionMetadataFile();
+                    MetaUtility.getInstance().setSessionMetadataFile(panelname);
                     
                     //Ridisegna l'interfaccia
-                    this.metadata = MetaUtility.getInstance().metadata_reader();
+                    this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
                     
-                    MetaUtility.getInstance().read_uwmetadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA);
+                    MetaUtility.getInstance().read_uwmetadata(xmlFile);
                     
                     //Ridisegna l'interfaccia
-                    this.setMetadataTab();
+                    this.setMetadataTab(this.metadatapanels.get(panelname).getPane(), panelname);
                     
                     setCursor(null);
                     
@@ -532,19 +532,19 @@ public class BookImporter extends javax.swing.JFrame {
         return ordered_res;
     }
     
-    public void refreshMetadataTab(boolean updateLang){
+    public void refreshMetadataTab(boolean updateLang, String panelname){
         try {
-            boolean exported = this.exportMetadataSilent(Globals.EXPORT_METADATA);
-            jLayeredPane1.removeAll();
+            boolean exported = this.exportMetadataSilent(Globals.DUPLICATION_FOLDER_SEP + "export" + panelname, panelname);
+            this.metadatapanels.get(panelname).getPane().removeAll();
             
             if (updateLang){
                 MetaUtility.getInstance().preInitializeData();
             }
             
-            initializeData();
+            initializeData(panelname);
             
             if(exported){
-                this.importMetadataSilent(Globals.EXPORT_METADATA);
+                this.importMetadataSilent(Globals.DUPLICATION_FOLDER_SEP + "export"+panelname, panelname);
             }
         } catch (Exception ex) {
             logger.error(ex.getMessage());
@@ -592,19 +592,21 @@ public class BookImporter extends javax.swing.JFrame {
                 if (language.equals(bundle.getLocale().getLanguage())) {
                     try {
                         String backup_metadata = Globals.USER_DIR+"metadata_backup.xml";
-                                                
                         updateLanguageLabel(local);
-
+                        
                         if (instance != null) {
-                           setDefaultCurrent();
-                           boolean exported = this.exportMetadataSilent(backup_metadata);
-                           
-                           jLayeredPane1.removeAll();
-                           MetaUtility.getInstance().preInitializeData();
-                           initializeData();
-                           if(exported){
-                               this.importMetadataSilent(backup_metadata);
-                           }
+                            setDefaultCurrent();
+                            for (Map.Entry<String, MetaPanels> entry : this.metadatapanels.entrySet()) {
+                                boolean exported = this.exportMetadataSilent(backup_metadata, entry.getValue().getPanel().getName());
+                                entry.getValue().getPane().removeAll();
+                                
+                                MetaUtility.getInstance().preInitializeData();
+                                initializeData(entry.getValue().getPanel().getName());
+                                
+                                if(exported){
+                                    this.importMetadataSilent(backup_metadata, entry.getValue().getPanel().getName());
+                                }
+                            }
                         }
                                                        
                         int items = jMenu1.getItemCount();
@@ -665,16 +667,24 @@ public class BookImporter extends javax.swing.JFrame {
      * dell'interfaccia dei metadati
      *
      */
-    private void initializeData() {
+    private void initializeData(String panelname) {
        try {
-            //Inserisce tutti i campi dinamici visibili nella struttura dati metadata
-            this.metadata = MetaUtility.getInstance().metadata_reader();
-
+            
             //Inserisce tutte le classificazione nella struttura dati oefos
             MetaUtility.getInstance().classifications_reader("");
-
+            
             //Crea Interfaccia dei metadatai
-            this.setMetadataTab();
+            if (this.metadatapanels.isEmpty()){
+                //Inserisce tutti i campi dinamici visibili nella struttura dati metadata
+                this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP+ Globals.BACKUP_INIT);
+
+                this.setMetadataTab(jLayeredPane1, mainpanel);
+            }
+            else{
+               this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+
+               this.setMetadataTab(this.metadatapanels.get(panelname).getPane(), this.metadatapanels.get(panelname).getPanel().getName());
+            }
         } catch (Exception ex) {
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             logger.info(Utility.getBundleString("ExceptionMetadata", bundle) + ex);
@@ -687,20 +697,20 @@ public class BookImporter extends javax.swing.JFrame {
      *
      * @throws Exception
      */
-    private void setMetadataTab() throws Exception {
+    private void setMetadataTab(JLayeredPane metadatapane, String panelname) throws Exception {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
-        jLayeredPane1.removeAll();
-        jLayeredPane1.revalidate();
+        metadatapane.removeAll();
+        metadatapane.revalidate();
                     
         Dimension iDim = new Dimension(840, 0);
         int p_x = 10;
         int p_y = 10;
             
         javax.swing.JScrollPane main_scroller = new javax.swing.JScrollPane();
-        main_panel = new JPanel(new MigLayout("fillx, insets 10 10 10 10"));
-        setName("main_panel");
-
+        final JPanel main_panel = new JPanel(new MigLayout("fillx, insets 10 10 10 10"));
+        main_panel.setName(panelname);
+        
         main_scroller.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         main_scroller.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
@@ -709,7 +719,7 @@ public class BookImporter extends javax.swing.JFrame {
         main_scroller.setBorder(null);
         main_scroller.setBounds(5, 5, 750, 750);
         
-        drawTemplatePanel();
+        JPanel templatepanel = drawTemplatePanel(panelname);
         
         main_panel.add(templatepanel, "wrap, growx");
         
@@ -725,10 +735,13 @@ public class BookImporter extends javax.swing.JFrame {
         
         //Metodo che si occupa della costruzione dell'interfaccia a partire dalle strutture dati
         MetaUtility.getInstance().classificationAddButton = null;
-        MetaUtility.getInstance().create_metadata_view(metadata,  main_panel, 0);
+        MetaUtility.getInstance().create_metadata_view(metadata,  main_panel, 0, panelname);
         
-        jLayeredPane1.setLayout(new MigLayout("fillx, insets 10 10 10 10"));
-        jLayeredPane1.add(main_scroller, "wrap, growx");
+        MetaPanels item = new MetaPanels(main_panel, metadatapane);
+        this.metadatapanels.put(main_panel.getName(), item);
+        
+        metadatapane.setLayout(new MigLayout("fillx, insets 10 10 10 10"));
+        metadatapane.add(main_scroller, "wrap, growx");
         
         KeyboardFocusManager.getCurrentKeyboardFocusManager()
                             .addPropertyChangeListener("focusOwner", 
@@ -746,6 +759,8 @@ public class BookImporter extends javax.swing.JFrame {
             }
           }
         });
+        
+        
         
         setFocusTraversalPolicy(policy);        
         setCursor(null);
@@ -800,7 +815,7 @@ public class BookImporter extends javax.swing.JFrame {
      *
      * @param panel
      */
-    private void createComponentMap(JPanel panel) {
+    public void createComponentMap(JPanel panel) {
         Component[] components = panel.getComponents();
 
         for (int i = 0; i < components.length; i++) {
@@ -1237,9 +1252,10 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }                          
     
-    public boolean exportMetadataSilent(String xmlFile){
+    public boolean exportMetadataSilent(String xmlFile, String panelname){
         componentMap = new HashMap<String, Component>();
-        createComponentMap(main_panel);
+
+        createComponentMap(this.metadatapanels.get(panelname).getPanel());
         
         String error = MetaUtility.getInstance().check_and_save_metadata(xmlFile, true, false);
         
@@ -1251,13 +1267,13 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }
     
-    private boolean exportMetadata(String location){
+    private boolean exportMetadata(String location, String panelname, boolean alertresult){
         boolean result = false;
         
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         if (Globals.FOLDER_WRITABLE) {
             componentMap = new HashMap<String, Component>();
-            createComponentMap(main_panel);
+            createComponentMap(this.metadatapanels.get(panelname).getPanel());
             
             if (location.isEmpty())
                 location = Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA;
@@ -1268,7 +1284,9 @@ public class BookImporter extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, error);
             } 
             else {
-                JOptionPane.showMessageDialog(this, Utility.getBundleString("export4", bundle));
+                if (alertresult){
+                    JOptionPane.showMessageDialog(this, Utility.getBundleString("export4", bundle));
+                }
                 result = true;
             }
         } else {
@@ -1280,10 +1298,26 @@ public class BookImporter extends javax.swing.JFrame {
     /**
      * Gestisce l'esportazione dei metadati sul file uwmetadata.xml nella
      * cartella locale di lavoro
-     *
      */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        exportMetadata("");
+        boolean alertexport = false;
+        int i = 1;
+        
+        for(Map.Entry<String,MetaPanels> entry : this.metadatapanels.entrySet()) {
+            String namepanel = entry.getValue().getPanel().getName();
+            
+            if (i == this.metadatapanels.size()){
+                alertexport = true;
+            }
+            
+            if (namepanel.equals(mainpanel)){
+                exportMetadata("", entry.getValue().getPanel().getName(), alertexport);
+            }
+            else{
+                exportMetadata(Globals.SELECTED_FOLDER_SEP + namepanel, namepanel, alertexport);
+            }
+            i++;
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -1304,7 +1338,14 @@ public class BookImporter extends javax.swing.JFrame {
      * @param evt
      */
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        importMetadata();
+        if (this.metadatapanels.size()>1){
+            for(Map.Entry<String, MetaPanels> entry : this.metadatapanels.entrySet()){
+                importMetadata(Globals.SELECTED_FOLDER_SEP + entry.getValue().getPanel().getName(), entry.getValue().getPanel().getName());
+            }
+        }
+        else{
+            importMetadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, mainpanel);
+        }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
@@ -1458,7 +1499,7 @@ public class BookImporter extends javax.swing.JFrame {
 
         helper.openHelp();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
-    private void deleteTemplate(){
+    private void deleteTemplate(String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
 
         try {
@@ -1466,7 +1507,7 @@ public class BookImporter extends javax.swing.JFrame {
             String text = Utility.getBundleString("deletetemplatetext", bundle);
             String buttonok = Utility.getBundleString("ok", bundle);
             
-            TemplateDialog inputdialog = new TemplateDialog(this, true, title, text, buttonok);
+            TemplateDialog inputdialog = new TemplateDialog(this, true, title, text, buttonok, panelname);
 
             inputdialog.setVisible(true);
             boolean close = inputdialog.getChoice();
@@ -1479,7 +1520,7 @@ public class BookImporter extends javax.swing.JFrame {
     }
     
     
-    private void exportTemplate(){
+    private void exportTemplate(String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
 
         try {
@@ -1503,9 +1544,9 @@ public class BookImporter extends javax.swing.JFrame {
                     
                     File template = Utility.getUniqueFileName(Globals.TEMPLATES_FOLDER_SEP + filename, "xml");
                     
-                    if(this.exportMetadataSilent(template.getAbsolutePath())){
+                    if(this.exportMetadataSilent(template.getAbsolutePath(), mainpanel)){
                         if(TemplatesUtility.addTemplateXML(template.getName(), filetitle)){
-                            BookImporter.getInstance().drawTemplatePanel();
+                            BookImporter.getInstance().drawTemplatePanel(panelname);
                             JOptionPane.showMessageDialog(this, Utility.getBundleString("exporttemplateok", bundle));
                         }
                     }
@@ -1563,7 +1604,7 @@ public class BookImporter extends javax.swing.JFrame {
             }
         });
     }
-    private javax.swing.JPanel main_panel;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;

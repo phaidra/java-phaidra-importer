@@ -48,7 +48,7 @@ public class TemplateDialog extends javax.swing.JDialog {
     }
     
     
-    private void createTemplateListPanel(TreeMap<String, String> templates){
+    private void createTemplateListPanel(TreeMap<String, String> templates, final String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         templatelist.removeAll();
         templatelist.revalidate();
@@ -103,8 +103,8 @@ public class TemplateDialog extends javax.swing.JDialog {
                         BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                         if(TemplatesUtility.deleteTemplateXML(key, value)){
                             TreeMap<String, String> updatedtemplates = TemplatesUtility.getTemplatesList();
-                            createTemplateListPanel(updatedtemplates);
-                            BookImporter.getInstance().drawTemplatePanel();
+                            createTemplateListPanel(updatedtemplates, panelname);
+                            BookImporter.getInstance().drawTemplatePanel(panelname);
                             JOptionPane.showMessageDialog(null, Utility.getBundleString("templatedeleteok", innerbundle));
                         }
                         else{
@@ -136,7 +136,7 @@ public class TemplateDialog extends javax.swing.JDialog {
      * @param title
      * @param type
      */
-    public TemplateDialog(java.awt.Frame parent, boolean modal,  String title, String text, String buttonok) {
+    public TemplateDialog(java.awt.Frame parent, boolean modal,  String title, String text, String buttonok, String panelname) {
         super(parent, modal);
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
@@ -174,7 +174,7 @@ public class TemplateDialog extends javax.swing.JDialog {
             template_scroller.setBorder(null);
             template_scroller.setBounds(5, 5, 500, 350);
             
-            createTemplateListPanel(templates);
+            createTemplateListPanel(templates, panelname);
             
             JPanel upper = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
             upper.add(picture);
@@ -288,7 +288,7 @@ public class TemplateDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                TemplateDialog dialog = new TemplateDialog(new javax.swing.JFrame(), true, "", "", "");
+                TemplateDialog dialog = new TemplateDialog(new javax.swing.JFrame(), true, "", "", "", "");
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -406,7 +406,7 @@ public class Utility {
         return leaves;
     }
     
-    public static void makeBackupMetadata(String filename){
+    public static void makeBackupMetadata(String filename, String outputpath){
         BufferedInputStream inputStream = null;
         BufferedOutputStream outputStream = null;
         byte[] buffer = new byte[1024];
@@ -415,7 +415,7 @@ public class Utility {
         Globals.BACKUP_METADATA = Globals.USER_DIR + filename;
         
         File f = new File(Globals.BACKUP_METADATA);
-        File s = new File(Globals.SESSION_METADATA);
+        File s = new File(outputpath);
         
         try {
             if (Globals.ONLINE){
@@ -435,6 +435,7 @@ public class Utility {
             }
             
             FileUtils.copyFile(f, s);
+            FileUtils.copyFile(f, new File (Globals.DUPLICATION_FOLDER_SEP + Globals.BACKUP_INIT));
         } catch (MalformedURLException ex) {
             logger.error("Cannot donwload file: "+path+"  "+ex.getMessage());
         } catch (IOException ex) {

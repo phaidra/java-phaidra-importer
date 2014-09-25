@@ -6,6 +6,7 @@ package it.imtech.globals;
 
 import it.imtech.utility.Language;
 import it.imtech.utility.Utility;
+import java.io.File;
 import java.net.URL;
 import java.util.Locale;
 
@@ -50,9 +51,11 @@ public class Globals {
      
        
     //BACKUP_METADATA
-    public static String SESSION_METADATA = USER_DIR + Utility.getSep() + "xml" + Utility.getSep() + "sessionuwmetadata.xml";
+    public static String DUPLICATION_FOLDER_SEP = USER_DIR + Utility.getSep() + "duplication" + Utility.getSep();
+    public static String SESSION_METADATA = DUPLICATION_FOLDER_SEP + "sessionuwmetadata.xml";
     public static String BACKUP_METADATA  = "";
-    public static String EXPORT_METADATA  = USER_DIR + Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
+    public static String EXPORT_METADATA  = DUPLICATION_FOLDER_SEP + "exportuwmetadata.xml";
+    public static String BACKUP_INIT = "backupuwmetadata.xml";
     
     //GESTIONE TEMPLATES
     public static String TEMPLATES_FOLDER_SEP = USER_DIR + Utility.getSep() + "templates" + Utility.getSep();
@@ -90,6 +93,19 @@ public class Globals {
         Globals.RESOURCES = JRPATH + BASE_RESOURCES;
         Globals.CURRENT_LOCALE = new Locale("en");
         
+        File backup = new File(Globals.DUPLICATION_FOLDER_SEP);
+        
+        if (backup.isDirectory()){
+            for(File file: backup.listFiles()) {
+                if (file.getName().startsWith("sessionuwmetadata")){
+                    file.delete();
+                }
+                if (file.getName().startsWith("exportuwmetadata")){
+                    file.delete();
+                }
+            }
+        }
+        
         if(DEBUG){
             USER_DIR = "";
             CURRENT_VERSION = "2.0";
@@ -99,8 +115,8 @@ public class Globals {
             INTERNAL_CONFIG = Globals.JRPATH + "appdata"+ Utility.getSep() + "config" + Utility.getSep() + "config.xml";
             
             //BACKUP_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "backupuwmetadata.xml";
-            EXPORT_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
-            SESSION_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "sessionuwmetadata.xml";
+            //EXPORT_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "exportuwmetadata.xml";
+            //SESSION_METADATA = Globals.JRPATH + "appdata"+ Utility.getSep() + "uploads" + Utility.getSep() + "sessionuwmetadata.xml";
         }    
     }
 }
