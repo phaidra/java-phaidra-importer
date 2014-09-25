@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+   <tocitem text="Garage Tasks" target="tasks_garagetaskoverview">
+      <tocitem text="Changing the oil in your car" target="tasks_changingtheoil"/>
+      <tocitem text="Organizing the workbench and tools" target="tasks_organizing"/>
+      <tocitem text="Shovelling snow" target="tasks_shovellingsnow"/>
+      <tocitem text="Spray painting" target="tasks_spraypainting"/>
+      <tocitem text="Taking out the garbage" target="tasks_takinggarbage"/>
+      <tocitem text="Washing the car" target="tasks_washingthecar"/>
+   </tocitem>
+   <tocitem text="Garage Concepts" target="concepts_garageconceptsoverview">
+      <tocitem text="Lawnmower" target="concepts_lawnmower"/>
+      <tocitem text="Oil" target="concepts_oil"/>
+      <tocitem text="Paint" target="concepts_paint"/>
+      <tocitem text="Shelving" target="concepts_shelving"/>
+      <tocitem text="Snow shovel" target="concepts_snowshovel"/>
+      <tocitem text="Tool box" target="concepts_toolbox"/>
+      <tocitem text="Tools" target="concepts_tools"/>
+      <tocitem text="Water hose" target="concepts_waterhose"/>
+      <tocitem text="Wheel barrow" target="concepts_wheelbarrow"/>
+      <tocitem text="Workbench" target="concepts_workbench"/>
+      <tocitem text="Windshield washer fluid" target="concepts_wwfluid"/>
+   </tocitem>
+</toc>

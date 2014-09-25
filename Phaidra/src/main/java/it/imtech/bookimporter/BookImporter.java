@@ -5,6 +5,7 @@ import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.dialogs.InputDialog;
 import it.imtech.dialogs.TemplateDialog;
 import it.imtech.globals.Globals;
+import it.imtech.helper.Helper;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.metadata.Metadata;
 import it.imtech.metadata.Template;
@@ -13,7 +14,6 @@ import it.imtech.pdfepub.Epub;
 import it.imtech.pdfepub.PdfCreateMonitor;
 import it.imtech.upload.UploadSettings;
 import it.imtech.utility.Language;
-import it.imtech.utility.Server;
 import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLNode;
 import it.imtech.xmltree.XMLTree;
@@ -24,14 +24,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import net.miginfocom.swing.MigLayout;
@@ -1013,6 +1007,7 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -1079,6 +1074,14 @@ public class BookImporter extends javax.swing.JFrame {
             }
         });
         jMenu6.add(jMenuItem10);
+
+        jMenuItem11.setText("Help");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem11);
 
         jMenuItem9.setText("Exit");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
@@ -1448,6 +1451,13 @@ public class BookImporter extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        Helper helper = new Helper();
+
+        helper.openHelp();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
     private void deleteTemplate(){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
 
@@ -1567,6 +1577,7 @@ public class BookImporter extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
