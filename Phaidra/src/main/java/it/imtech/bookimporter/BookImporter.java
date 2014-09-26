@@ -25,12 +25,14 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.util.*;
+import java.util.logging.Level;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import net.miginfocom.swing.MigLayout;
 import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -71,6 +73,37 @@ public class BookImporter extends javax.swing.JFrame {
     public static IndexedFocusTraversalPolicy policy;
     
     public static String mainpanel = "uwmetadata.xml";
+    
+    
+    private  void manageSingleCollectionMetadataFiles(){
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+            
+        ArrayList<String> metadatafiles = XMLTree.getSingleMetadataFiles();
+                    
+        if(metadatafiles.size()>0){
+            String text = "Importare anche i singoli file di metadatai?";
+            String title= "Importazione singola";
+            ConfirmDialog confirm = new ConfirmDialog(null, true, title, text, Utility.getBundleString("confirm", bundle),Utility.getBundleString("annulla", bundle));
+
+            confirm.setVisible(true);
+            boolean close = confirm.getChoice();
+            confirm.dispose();
+
+            if (close == true){
+                for (String metadatafile : metadatafiles) {
+                    try {
+                        File metadatasingle = new File(metadatafile);
+                        File sessionmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + metadatasingle.getName());
+                        FileUtils.copyFile(new File(Globals.BACKUP_METADATA), sessionmeta);
+                        importSingleMetadata(metadatafile, "Test");
+                    }catch (IOException ex) {
+                        java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }                
+            }
+        }
+    }
+    
     //public static Locale localConst = null;
     /**
      * Metodo di gestione del Singleton
@@ -82,18 +115,7 @@ public class BookImporter extends javax.swing.JFrame {
             instance = new BookImporter();
             
             if (new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA).isFile()) {
-                instance.importMetadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, mainpanel);
-                
-                File selected = new File (Globals.SELECTED_FOLDER_SEP);
-                
-                if (selected.isDirectory()){
-                    for(File file: selected.listFiles()) {
-                        if (file.getName().startsWith("uwmetadata") && file.getName().endsWith(".xml")){
-                            instance.importMetadata(Globals.SELECTED_FOLDER_SEP + file.getName(), file.getName());
-                        }
-                    }
-                }
-                
+                instance.importMetadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, mainpanel);                
             }
         }
         
@@ -190,7 +212,41 @@ public class BookImporter extends javax.swing.JFrame {
     //static JComboBox choose_template = new JComboBox();
     //private JPanel templatepanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
     //private JPanel metadatapanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
-    
+     TreeMap<String, JComboBox> templatelists = new TreeMap<String, JComboBox>();
+     
+    public void redrawTemplatePanels(){
+        ArrayList<Template> combolist = new ArrayList<Template>();
+        TreeMap<String, String> templates = TemplatesUtility.getTemplatesList();
+        Template[] combo = null;
+        
+        if (!templates.isEmpty()){
+            for(Map.Entry<String, String> entry : templates.entrySet()) {
+                combolist.add(new Template(entry.getKey(), entry.getValue()));
+            }  
+        }
+        
+        if (!templates.isEmpty()){
+            combo = combolist.toArray(new Template[combolist.size()]);
+        }
+        
+        for(Map.Entry<String, JComboBox> combos: this.templatelists.entrySet()){
+            combos.getValue().removeAllItems();
+
+            if(!templates.isEmpty()){
+                for(Map.Entry<String, String> entry : templates.entrySet()) {
+                    combos.getValue().setModel(new javax.swing.DefaultComboBoxModel(combo));
+                    combos.getValue().setSelectedItem(combo[0]);
+                    combos.getValue().setMinimumSize(new Dimension(250,20));
+                }
+            }
+            else{
+                combos.getValue().setEnabled(false);
+            }
+            combos.getValue().repaint();
+            combos.getValue().revalidate();
+        }
+    }
+   
     public JPanel drawTemplatePanel(final String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         JPanel templatepanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
@@ -255,6 +311,7 @@ public class BookImporter extends javax.swing.JFrame {
             templatepanel.add(choose_template);
             templatepanel.add(templateimport);
         }
+        templatelists.put(panelname, choose_template);
         
         JButton templateexport = new JButton(Utility.getBundleString("templateexportbutton",bundle));
         templateexport.addActionListener(new ActionListener()
@@ -1000,6 +1057,9 @@ public class BookImporter extends javax.swing.JFrame {
             jMenuItem4.setVisible(false);
             jMenuItem7.setVisible(false);
         }        
+        else{
+            jMenuItem12.setVisible(false);
+        }
     }
 
     /**
@@ -1029,6 +1089,7 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -1139,6 +1200,14 @@ public class BookImporter extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem8);
+
+        jMenuItem12.setText("jMenuItem12");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem12);
 
         jMenuBar1.add(jMenu3);
 
@@ -1499,6 +1568,12 @@ public class BookImporter extends javax.swing.JFrame {
 
         helper.openHelp();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        manageSingleCollectionMetadataFiles();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+   
     private void deleteTemplate(String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
 
@@ -1546,7 +1621,7 @@ public class BookImporter extends javax.swing.JFrame {
                     
                     if(this.exportMetadataSilent(template.getAbsolutePath(), mainpanel)){
                         if(TemplatesUtility.addTemplateXML(template.getName(), filetitle)){
-                            BookImporter.getInstance().drawTemplatePanel(panelname);
+                            BookImporter.getInstance().redrawTemplatePanels();
                             JOptionPane.showMessageDialog(this, Utility.getBundleString("exporttemplateok", bundle));
                         }
                     }
@@ -1619,6 +1694,7 @@ public class BookImporter extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

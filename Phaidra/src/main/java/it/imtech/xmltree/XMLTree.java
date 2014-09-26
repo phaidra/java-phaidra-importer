@@ -67,6 +67,26 @@ public class XMLTree extends JTree {
         return xmlTreeModel;
     }
 
+    
+    public static ArrayList<String> getSingleMetadataFiles(){
+        NodeList elements = savedXmlDoc.getElementsByTagName("book:page");
+        ArrayList<String> singlemeta = new ArrayList<String>();
+        
+        for (int i=0;i<elements.getLength();i++){
+            if (elements.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                Element node = (Element) elements.item(i);
+                String type = node.getAttribute("type");
+                
+                if (node.getAttribute("metadata") != null && !node.getAttribute("metadata").isEmpty()) {   
+                    singlemeta.add(node.getAttribute("metadata"));
+                }
+            }
+        }
+        
+        return singlemeta;
+    }
+    
+    
     /**
      *
      * @param selectedFolderOrFile

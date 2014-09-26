@@ -104,7 +104,8 @@ public class TemplateDialog extends javax.swing.JDialog {
                         if(TemplatesUtility.deleteTemplateXML(key, value)){
                             TreeMap<String, String> updatedtemplates = TemplatesUtility.getTemplatesList();
                             createTemplateListPanel(updatedtemplates, panelname);
-                            BookImporter.getInstance().drawTemplatePanel(panelname);
+                            //BookImporter.getInstance().drawTemplatePanel(panelname);
+                            BookImporter.getInstance().redrawTemplatePanels();
                             JOptionPane.showMessageDialog(null, Utility.getBundleString("templatedeleteok", innerbundle));
                         }
                         else{
@@ -188,37 +189,7 @@ public class TemplateDialog extends javax.swing.JDialog {
             north.add(picture);
             north.add(right, "wrap");
         }
-        /*
-        JPanel south = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
-        JButton nextButton = new JButton(buttonok);
-        nextButton.setMinimumSize(new Dimension(120,10));
-        nextButton.setName("next_button");
         
-        nextButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent event)
-            {
-                ResourceBundle innerbundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-                
-                if (input.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(null, Utility.getBundleString("inputfieldempty", innerbundle));
-                }
-                else{
-                    if(TemplatesUtility.templateExists(input.getText())){
-                         JOptionPane.showMessageDialog(null, Utility.getBundleString("exporttemplateexists", innerbundle));
-                    }
-                    else{
-                        next = true;
-                        setVisible(false);
-                    }
-                }
-            }
-        });
-                
-        south.add(new JSeparator(), "growx, wrap");
-        south.add(nextButton);
-        */
         this.add(north, "wrap, growx");
         //this.add(south, "wrap, growx");
         this.pack();
