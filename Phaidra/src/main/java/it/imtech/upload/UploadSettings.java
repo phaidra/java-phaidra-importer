@@ -22,8 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -39,6 +37,7 @@ import javax.xml.validation.Validator;
 import net.miginfocom.swing.MigLayout;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
+import org.apache.log4j.Logger;
 import org.jdesktop.swingx.JXDatePicker;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -52,7 +51,7 @@ import org.xml.sax.SAXException;
  */
 public class UploadSettings extends javax.swing.JFrame {
     //Gestore dei log
-    public final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(UploadSettings.class);
+    private final static Logger logger = Logger.getLogger(UploadSettings.class);
     
     private String username = null;
     private String password = null;
@@ -423,7 +422,7 @@ public class UploadSettings extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(this, Utility.getBundleString("datemaggiore",bundle));
                         }
                     } catch (ParseException ex) {
-                        Logger.getLogger(UploadSettings.class.getName()).log(Level.SEVERE, null, ex);
+                        logger.error(ex.getMessage());
                     }
                 }
                 else
@@ -514,13 +513,13 @@ public class UploadSettings extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
         //</editor-fold>
 

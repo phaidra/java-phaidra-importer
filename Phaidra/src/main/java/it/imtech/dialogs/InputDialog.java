@@ -22,12 +22,14 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import net.miginfocom.swing.MigLayout;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author mauro
  */
 public class InputDialog extends javax.swing.JDialog {
+    private static final org.apache.log4j.Logger logger = Logger.getLogger(InputDialog.class);
     
     private boolean next;
     private JTextField input;
@@ -168,13 +170,13 @@ public class InputDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InputDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InputDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InputDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InputDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
         //</editor-fold>
 

@@ -43,7 +43,7 @@ import org.xml.sax.SAXException;
  */
 public class ImObject {
     //Gestore dei log
-    public final static Logger logger = Logger.getLogger(ImObject.class);
+    private final static Logger logger = Logger.getLogger(ImObject.class);
     
     FullText bookFulltext = new FullText();
     String title = "";

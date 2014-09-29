@@ -57,7 +57,7 @@ import org.xml.sax.SAXException;
  */
 public class Utility {
     //Gestore dei log
-    public final static Logger logger = Logger.getLogger(Utility.class);
+    private final static Logger logger = Logger.getLogger(Utility.class);
     
     /**
      * Setta la directory dell'eseguibile dell'applicazione

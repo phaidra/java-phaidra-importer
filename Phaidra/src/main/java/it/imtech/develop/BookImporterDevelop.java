@@ -14,12 +14,15 @@ import it.imtech.utility.Server;
 import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.SwingUtilities;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author mede318
  */
 public class BookImporterDevelop {
+    
+    private final static Logger logger = Logger.getLogger(BookImporterDevelop.class);
     
     public BookImporterDevelop(){
         testBookLayout();
@@ -76,13 +79,13 @@ public class BookImporterDevelop {
                         }
                     }
                 } catch (ClassNotFoundException ex) {
-                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 } catch (InstantiationException ex) {
-                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());        
                 } catch (IllegalAccessException ex) {
-                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                    java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 }
                 
                 new BookImporterDevelop();

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0">
+   <mapID target="header_header" url="header/header.html"/>
+   <mapID target="header_description" url="header/description.html"/>
+   <mapID target="header_access" url="header/access.html"/>
+   <mapID target="header_whyphaidra" url="header/whyphaidra.html"/>
+   
+   <mapID target="wizard" url="wizard/wizard.html"/>
+   <mapID target="wizard_serverlang" url="wizard/serverlang.html"/>
+   <mapID target="wizard_workfolder" url="wizard/workfolder.html"/>
+   
+   <mapID target="book" url="book/book.html"/>
+   
+   <mapID target="book_importmetadata" url="book/importmetadata.html"/>
+   <mapID target="book_exportmetadata" url="book/exportmetadata.html"/>
+   <mapID target="book_treeview" url="collection/treeview.html"/>
+   <mapID target="book_addpage" url="collection/addpage.html"/>
+   <mapID target="book_importpdf" url="book/importpdf.html"/>
+   <mapID target="book_exportpdf" url="book/exportpdf.html"/>
+   <mapID target="book_exportepub" url="book/exportepub.html"/>
+   <mapID target="book_upload" url="book/upload.html"/>
+   <mapID target="collection" url="collection/collection.html"/>
+   <mapID target="collection_importsinglemetadata" url="collection/importsinglemetadata.html"/>
+   <mapID target="collection_upload" url="collection/upload.html"/>
+</map>

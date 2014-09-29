@@ -10,7 +10,6 @@ import it.imtech.bookimporter.BookImporter;
 import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
-import it.imtech.upload.UploadSettings;
 import it.imtech.utility.Server;
 import it.imtech.utility.Utility;
 import java.awt.BorderLayout;
@@ -41,7 +40,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
 public class StartWizard  {
-    public static final Logger logger = Logger.getLogger(StartWizard.class);
+    private static Logger logger = Logger.getLogger(StartWizard.class);
     
     CardLayout c1 = new CardLayout();
     
@@ -67,6 +66,7 @@ public class StartWizard  {
      */
     public StartWizard() {
         mainFrame = new JFrame();
+        logger.info("Start Wizard");
         
         if(Utility.internetConnectionAvailable()){
             Globals.ONLINE = true;
@@ -83,8 +83,9 @@ public class StartWizard  {
         }
         
         DOMConfigurator.configure(Globals.LOG4J);
+        logger = Logger.getLogger(StartWizard.class);
         
-        logger.debug("Starting Application Phaidra Importer");
+        logger.info("Starting Application Phaidra Importer");
         
         it.imtech.utility.Utility.cleanUndoDir();
         
@@ -409,13 +410,13 @@ public class StartWizard  {
                         }
                     }
                     } catch (ClassNotFoundException ex) {
-                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        logger.error(ex.getMessage());
                     } catch (InstantiationException ex) {
-                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        logger.error(ex.getMessage());
                     } catch (IllegalAccessException ex) {
-                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        logger.error(ex.getMessage());
                     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                        java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                        logger.error(ex.getMessage());
                     }
 
                 new StartWizard();

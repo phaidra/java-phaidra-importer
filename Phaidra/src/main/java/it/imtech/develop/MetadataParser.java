@@ -6,11 +6,8 @@
 
 package it.imtech.develop;
 
-import it.imtech.bookimporter.BookImporter;
-import it.imtech.metadata.MetaUtility;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
 import javax.swing.SwingUtilities;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,6 +16,7 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -28,6 +26,8 @@ import org.xml.sax.SAXException;
  * @author mauro
  */
 public class MetadataParser {
+    private static final Logger logger = Logger.getLogger(MetadataParser.class);
+    
     public MetadataParser(){
         String filetoparse = "/Users/mede318/testphaidra/uwmetadata.xml";
               
@@ -63,13 +63,13 @@ public class MetadataParser {
             
             
         } catch (ParserConfigurationException ex) {
-            java.util.logging.Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (XPathExpressionException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (SAXException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } 
     }
     

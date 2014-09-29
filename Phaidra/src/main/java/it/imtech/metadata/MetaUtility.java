@@ -25,8 +25,6 @@ import java.io.StringWriter;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.TreeSelectionEvent;
@@ -183,7 +181,7 @@ public class MetaUtility {
                     addClassification(innerPanel, classificationMID, sequence, panelname);
                 } 
                 catch (Exception ex) {
-                    Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 }
                 
                 innerPanel.revalidate();
@@ -401,13 +399,13 @@ public class MetaUtility {
             }
         } 
         catch (ParserConfigurationException ex) {
-            java.util.logging.Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (XPathExpressionException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (SAXException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } 
     }
     
@@ -449,13 +447,13 @@ public class MetaUtility {
             
             XMLUtil.xmlWriter(doc, Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (SAXException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IOException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (XPathExpressionException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
     }
     
@@ -512,13 +510,13 @@ public class MetaUtility {
 
             XMLUtil.xmlWriter(doc, Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (SAXException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IOException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (XPathExpressionException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
     }
         
@@ -1178,7 +1176,7 @@ public class MetaUtility {
                     try {
                         setOEFOS(tree, sequence, panelname);
                     } catch (Exception ex) {
-                        Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+                        logger.error(ex.getMessage());
                     }
                 }
             });
@@ -1203,7 +1201,7 @@ public class MetaUtility {
 
             innerPanel.add(iPanel, "wrap,width :700:");
         } catch (Exception ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, "addClassification", ex);
+            logger.error(ex.getMessage());
             throw new Exception("Exception in addClassification: " + ex.getStackTrace() + "\n");
         }
     }
@@ -1343,7 +1341,7 @@ public class MetaUtility {
                 }
             }
         } catch (Exception ex) {
-            Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
     }
 

@@ -12,11 +12,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -28,7 +27,7 @@ import org.xml.sax.SAXException;
  * @author mauro
  */
 public  class TemplatesUtility {
-    public final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(TemplatesUtility.class);
+    private final static Logger logger = Logger.getLogger(TemplatesUtility.class);
     
     public static boolean deleteTemplateXML(String filetitle,String filename){
         File templatexml = new File(Globals.TEMPLATES_XML);
@@ -65,11 +64,11 @@ public  class TemplatesUtility {
                     }
                 }
             } catch (SAXException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (IOException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (ParserConfigurationException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             }
         }
         return result;
@@ -103,11 +102,11 @@ public  class TemplatesUtility {
                 
                 
             } catch (SAXException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (IOException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (ParserConfigurationException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             }
         }
         return templatelist;
@@ -138,11 +137,11 @@ public  class TemplatesUtility {
                     }
                 }
             } catch (SAXException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (IOException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (ParserConfigurationException ex) {
-                Logger.getLogger(TemplatesUtility.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             }
         }
         

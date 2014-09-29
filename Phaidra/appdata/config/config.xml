@@ -5,7 +5,7 @@
     <!--<configurl path="http://phaidrastaticdev.cab.unipd.it/xml/config.xml">Url configuration</configurl>-->
     <configurl path="http://phaidrastaticdev.cab.unipd.it/xml/config.xml">Url configuration</configurl>
     <locale>
-                <current value="it">lingua</current>
-            </locale>
-    <version current="2.2">version</version>
+        <current value="it">lingua</current>
+    </locale>
+    <version current="2.3">version</version>
 </gui-definition>

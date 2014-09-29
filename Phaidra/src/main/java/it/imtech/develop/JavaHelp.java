@@ -1,5 +1,7 @@
 package it.imtech.develop;
 
+import it.imtech.globals.Globals;
+import it.imtech.helper.Helper;
 import java.awt.Dimension;
 import java.net.URL;
 import javax.help.HelpBroker;
@@ -47,7 +49,11 @@ public class JavaHelp extends JFrame{
         SwingUtilities.invokeLater(new Runnable(){
             @Override
             public void run(){
-                   new JavaHelp();
+                   //new JavaHelp();
+                Globals.setGlobalVariables();
+                Helper helper = new Helper();
+                
+                helper.openHelp();
             }
         });
     };

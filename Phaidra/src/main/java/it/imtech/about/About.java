@@ -10,18 +10,18 @@ import it.imtech.utility.Utility;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.border.TitledBorder;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author mauro
  */
 public class About extends javax.swing.JFrame {
-
+    private final static Logger logger = Logger.getLogger(About.class);
+    
     /**
      * Creates new form About
      */
@@ -59,7 +59,7 @@ public class About extends javax.swing.JFrame {
             
             
         } catch (Exception ex) {
-            Logger.getLogger(About.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
             jPanel2.setVisible(false);
         }
     }
@@ -289,13 +289,13 @@ public class About extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(About.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error("Errore during about interface creation:" + ex.getMessage());
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(About.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error("Errore during about interface creation:" + ex.getMessage());
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(About.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error("Errore during about interface creation:" + ex.getMessage());
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(About.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error("Errore during about interface creation:" + ex.getMessage());
         }
         //</editor-fold>
 

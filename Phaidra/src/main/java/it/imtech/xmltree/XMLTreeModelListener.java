@@ -15,7 +15,7 @@ import org.apache.log4j.Logger;
  * @author luigi
  */
 public class XMLTreeModelListener implements TreeModelListener {
-    public final static Logger logger = Logger.getLogger(XMLTreeModelListener.class.getName());
+    private final static Logger logger = Logger.getLogger(XMLTreeModelListener.class.getName());
 
     public void treeNodesChanged(TreeModelEvent e) {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) (e.getTreePath().getLastPathComponent());

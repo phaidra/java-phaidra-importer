@@ -7,7 +7,6 @@
 package it.imtech.dialogs;
 
 import it.imtech.globals.Globals;
-import it.imtech.utility.Utility;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -20,12 +19,15 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.UIManager;
 import net.miginfocom.swing.MigLayout;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author mauro
  */
 public class ConfirmDialog extends javax.swing.JDialog {
+    
+    private static final Logger logger = Logger.getLogger(ConfirmDialog.class);
     
     private boolean next;
     
@@ -153,13 +155,13 @@ public class ConfirmDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ConfirmDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ConfirmDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ConfirmDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ConfirmDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
         //</editor-fold>
 

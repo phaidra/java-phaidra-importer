@@ -31,12 +31,11 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.SwingWorker;
+import org.apache.log4j.Logger;
 import org.ghost4j.document.PDFDocument;
 import org.ghost4j.renderer.SimpleRenderer;
 
@@ -47,7 +46,7 @@ import org.ghost4j.renderer.SimpleRenderer;
  */
 public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.PropertyChangeListener {
     //Gestore dei log
-    public final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(PdfCreateMonitor.class);
+    private final static Logger logger = Logger.getLogger(PdfCreateMonitor.class);
     
     private String pdfLocation = null;
     private Task task;
@@ -168,22 +167,22 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
                 }
             } catch (FileNotFoundException ex) {
                 jLabel4.setText("Error:" + jLabel4.getText() + " File not found!");
-                Logger.getLogger(PdfCreateMonitor.class.getName()).log(Level.SEVERE, "File not found " + jLabel4.getText(), ex);
+                logger.error("Error:" + jLabel4.getText() + " File not found!" + ex.getMessage());
             } catch (BadElementException ex) {
                 jLabel4.setText("Error:" + jLabel4.getText() + " Bad Element!");
-                Logger.getLogger(PdfCreateMonitor.class.getName()).log(Level.SEVERE, "Bad Element " + jLabel4.getText(), ex);
+                 logger.error("Error:" + jLabel4.getText() + " Bad Element!" + ex.getMessage());
             } catch (MalformedURLException ex) {
                 jLabel4.setText("Error:" + jLabel4.getText() + " Malformed URL!");
-                Logger.getLogger(PdfCreateMonitor.class.getName()).log(Level.SEVERE, "malformed url " + jLabel4.getText(), ex);
+                 logger.error("Error:" + jLabel4.getText() + " Malformed URL!" + ex.getMessage());
             } catch (IOException ex) {
                 jLabel4.setText("Error:" + jLabel4.getText() + " IO Exception!");
-                Logger.getLogger(PdfCreateMonitor.class.getName()).log(Level.SEVERE, "IO Exception " + jLabel4.getText(), ex);
+                 logger.error("Error:" + jLabel4.getText() +  " IO Exception!" + ex.getMessage());
             }  catch (com.itextpdf.text.DocumentException ex) {
                 jLabel4.setText("Error: " + jLabel4.getText() + " Document Exception!");
-                Logger.getLogger(PdfCreateMonitor.class.getName()).log(Level.SEVERE, "Document Exception " + jLabel4.getText(), ex);
+                logger.error("Error:" + jLabel4.getText() + " Document Exception!" + ex.getMessage());
             } catch (Exception ex) {
                 jLabel4.setText("Error: " + jLabel4.getText() + " Document Exception!");
-                Logger.getLogger(PdfCreateMonitor.class.getName()).log(Level.SEVERE, "Document Exception " + jLabel4.getText(), ex);
+                logger.error("Error:" + jLabel4.getText() + " Document Exception!" + ex.getMessage());
             }
 
             document.close();

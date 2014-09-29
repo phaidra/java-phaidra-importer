@@ -4,6 +4,7 @@
  */
 package it.imtech.pdfepub;
 
+import it.imtech.about.About;
 import it.imtech.bookimporter.BookImporter;
 import it.imtech.utility.Utility;
 import it.imtech.metadata.MetaUtility;
@@ -19,8 +20,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -34,6 +33,7 @@ import nl.siegmann.epublib.domain.Author;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.domain.Resource;
 import nl.siegmann.epublib.epub.EpubWriter;
+import org.apache.log4j.Logger;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -42,7 +42,8 @@ import org.xml.sax.SAXException;
  * @author mauro
  */
 public class Epub extends javax.swing.JPanel implements java.beans.PropertyChangeListener {
-
+    private final static Logger logger = Logger.getLogger(Epub.class);
+    
     private Task task = null;
     private static JFrame frame = null;
     private static boolean disposed = false;
@@ -91,22 +92,22 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
                     addUploadInfoText(Utility.getBundleString("epubbookend",bundle));
                 } catch (SAXException ex) {
                     addUploadInfoText(ex.getMessage());
-                    Logger.getLogger(Epub.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 } catch (ParserConfigurationException ex) {
                     addUploadInfoText(ex.getMessage());
-                    Logger.getLogger(Epub.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 } catch (IOException ex) {
                     addUploadInfoText(ex.getMessage());
-                    Logger.getLogger(Epub.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 } catch (TransformerConfigurationException ex) {
                     addUploadInfoText(ex.getMessage());
-                    Logger.getLogger(Epub.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 } catch (TransformerException ex) {
                     addUploadInfoText(ex.getMessage());
-                    Logger.getLogger(Epub.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 } catch (Exception ex) {
                     addUploadInfoText(ex.getMessage());
-                    Logger.getLogger(Epub.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 }
             } else {
                 addUploadInfoText(error.toString());

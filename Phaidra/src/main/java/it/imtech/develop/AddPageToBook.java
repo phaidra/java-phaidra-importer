@@ -3,12 +3,10 @@ package it.imtech.develop;
 import at.ac.univie.phaidra.api.Phaidra;
 import at.ac.univie.phaidra.api.objekt.Book;
 import at.ac.univie.phaidra.api.objekt.Page;
-import it.imtech.upload.SelectedServer;
-import it.imtech.utility.Server;
+import it.imtech.certificate.AddToStoreKey;
 import java.util.HashSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
+import org.apache.log4j.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +19,8 @@ import javax.swing.SwingUtilities;
  * @author mauro
  */
 public class AddPageToBook {
+    private static final Logger logger = Logger.getLogger(AddPageToBook.class);
+    
     String username = "testphaidra";
     String password = "H83HC5Zq";
     String baseurl = "fedoradev.cab.unipd.it";
@@ -41,7 +41,7 @@ public class AddPageToBook {
             
             //x = book.members;
         } catch (Exception ex) {
-            Logger.getLogger(AddPageToBook.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
         String y = "y";
     }

@@ -5,8 +5,8 @@
 package it.imtech.certificate;
 
 import it.imtech.bookimporter.BookImporter;
-import it.imtech.utility.Utility;
 import it.imtech.globals.Globals;
+import it.imtech.utility.Utility;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -18,19 +18,18 @@ import java.security.*;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.net.ssl.*;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.SwingWorker;
+import org.apache.log4j.Logger;
 
 /**
  *
  * @author mauro
  */
 public class AddToStoreKey extends javax.swing.JPanel implements java.beans.PropertyChangeListener {
-
+    private static final Logger logger = Logger.getLogger(AddToStoreKey.class);
     String[] args = null;
     private static final char[] HEXDIGITS = "0123456789abcdef".toCharArray();
     private static JFrame frame = null;
@@ -251,7 +250,7 @@ public class AddToStoreKey extends javax.swing.JPanel implements java.beans.Prop
                     Runtime.getRuntime().exec("java -jar "+Globals.JRPATH+"PhaidraImporter.jar");
             }    
             catch (IOException ex) {
-                Logger.getLogger(AddToStoreKey.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             }
             System.exit(0);
         }
@@ -396,7 +395,7 @@ public class AddToStoreKey extends javax.swing.JPanel implements java.beans.Prop
                 Runtime.getRuntime().exec("java -jar "+Globals.JRPATH+"BookImporter.jar");
         } 
         catch (IOException ex) {
-            Logger.getLogger(AddToStoreKey.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed

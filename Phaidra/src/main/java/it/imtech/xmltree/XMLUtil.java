@@ -29,7 +29,7 @@ import org.w3c.dom.Node;
  */
 public class XMLUtil {
 
-    public final static Logger logger = Logger.getLogger(XMLTree.class.getName());
+    private final static Logger logger = Logger.getLogger(XMLUtil.class.getName());
 
     /**
      * xml writer document on console

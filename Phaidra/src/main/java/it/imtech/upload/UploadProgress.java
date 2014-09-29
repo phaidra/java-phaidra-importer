@@ -9,6 +9,7 @@ import at.ac.univie.phaidra.api.objekt.Book;
 import at.ac.univie.phaidra.api.objekt.Collection;
 import it.imtech.bookimporter.BookImporter;
 import it.imtech.globals.Globals;
+import it.imtech.metadata.MetaUtility;
 import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLTree;
 import java.awt.Cursor;
@@ -26,7 +27,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.xml.parsers.ParserConfigurationException;
@@ -43,7 +43,7 @@ import org.xml.sax.SAXException;
 public class UploadProgress extends javax.swing.JPanel implements java.beans.PropertyChangeListener {
     
     //Gestore dei log
-    public final static Logger logger = Logger.getLogger(UploadProgress.class);
+    private final static Logger logger = Logger.getLogger(UploadProgress.class);
     
     private UplTask task;
     protected static JFrame frame = null;
@@ -79,6 +79,12 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     if (Globals.TYPE_BOOK == Globals.BOOK) {
                         createBook(obj, total, nodeLst);
                     } else {
+                        
+                        if (XMLTree.getSingleMetadataFiles().size()>0){
+                            XMLTree.exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
+                            //BookImporter.getInstance().exportAllMetadatas();
+                        }
+                        
                         createCollection(obj, total, nodeLst);
                     }
                 } else {
@@ -217,7 +223,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 setTextField(path);
                 
                 try{
-                	addUploadInfoText(Utility.getBundleString("uploadProgress5", bundle));
+                    addUploadInfoText(Utility.getBundleString("uploadProgress5", bundle));
                     book.addPDF(path);
                 }
                 catch (Exception ex) {
@@ -349,7 +355,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                         updateProgress(progress, total, Utility.getBundleString("clogging10",bundle) + ":" + flPID);
 
                         //Aggiungo i metadati per questa collezione
-                        flColl.addMetadata(coll.addPhaidraMetadata(flPID,container.getAttribute("name")));
+                        flColl.addMetadata(coll.addPhaidraMetadata(flPID, container.getAttribute("name")));
 
                         updateProgress(progress, total, Utility.getBundleString("clogging6",bundle) + ":" + flPID);
 
@@ -404,7 +410,13 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         
         private String addElementToCollection(Element el, ImObject coll) throws Exception {
             type = null;
-
+            
+            String metadata = el.getAttribute("metadata");
+            if (metadata != null && !metadata.isEmpty()){
+                BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(metadata).getPanel());
+                MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + metadata, false, true);
+            }
+           
             //Ricava nome file e path 
             String file = Globals.SELECTED_FOLDER_SEP + el.getAttribute("folder") + Utility.getSep() + el.getAttribute("href");
 
@@ -413,7 +425,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             String mimetype = Utility.getMimeType(file);
 
             String slPID = null;
-
+            
             if (Utility.fileIsPicture(mimetype)) {
                 slPID = coll.createPicture(file, mimetype, this);
                 type = Utility.getBundleString("clogging2",bundle);
@@ -424,7 +436,12 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 slPID = coll.createVideo(file, mimetype, this);
                 type = Utility.getBundleString("clogging13",bundle);
             }
-
+            
+            if (metadata != null && !metadata.isEmpty()){
+                BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
+                MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true);
+            }
+            
             return slPID;
         }
 
@@ -586,7 +603,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     URI link = new URI(uploaduri);
                     openWebpage(link);
                 } catch (URISyntaxException ex) {
-                    java.util.logging.Logger.getLogger(UploadProgress.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.error(ex.getMessage());
                 }
             }
         });

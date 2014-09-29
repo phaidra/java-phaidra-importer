@@ -1,19 +1,16 @@
 package it.imtech.develop;
 
 import it.imtech.globals.Globals;
-import it.imtech.upload.SelectedServer;
-import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLUtil;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -28,6 +25,7 @@ import org.xml.sax.SAXException;
  * @author mauro
  */
 public class GetUnivieXML {
+    private static final Logger logger = Logger.getLogger(AddPageToBook.class);
     
     public GetUnivieXML(){
         try {
@@ -47,13 +45,13 @@ public class GetUnivieXML {
 
             XMLUtil.xmlWriter(doc, "C:\\Users\\mauro\\Desktop\\univie\\config.xml");
         } catch (MalformedURLException ex) {
-            Logger.getLogger(GetUnivieXML.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (IOException ex) {
-            Logger.getLogger(GetUnivieXML.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(GetUnivieXML.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         } catch (SAXException ex) {
-            Logger.getLogger(GetUnivieXML.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());
         }
     }
     

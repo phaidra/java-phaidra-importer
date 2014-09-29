@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * @author luigi
  */
 public class IconFactory {
-    public final static Logger logger = Logger.getLogger(IconFactory.class.getName());
+    private final static Logger logger = Logger.getLogger(IconFactory.class.getName());
     private static final double SCALE_FACTOR = 540;
 
     public enum IconSize {

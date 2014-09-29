@@ -25,7 +25,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileFilter;
@@ -43,13 +42,13 @@ import org.jdesktop.swingx.JXDatePicker;
  */
 public class BookImporter extends javax.swing.JFrame {
     //Gestore dei log
-    public final static Logger logger = Logger.getLogger(BookImporter.class);
+    private final static Logger logger = Logger.getLogger(BookImporter.class);
     
     //Istanza della classe SingleTon BookImporter
     private static BookImporter instance = null;
 
     //Contiene la mappatura del file dei metadati preso da URL
-    protected TreeMap<Object, Metadata> metadata = new TreeMap<Object, Metadata>();
+    public TreeMap<Object, Metadata> metadata = new TreeMap<Object, Metadata>();
     
     //Contiene una mappatura gli elementi dell'interfaccia dei metadati con i quali l'utente puo interagire
     protected HashMap componentMap;
@@ -81,8 +80,8 @@ public class BookImporter extends javax.swing.JFrame {
         ArrayList<String> metadatafiles = XMLTree.getSingleMetadataFiles();
                     
         if(metadatafiles.size()>0){
-            String text = "Importare anche i singoli file di metadatai?";
-            String title= "Importazione singola";
+            String text = Utility.getBundleString("singlemetadata1", bundle);
+            String title= Utility.getBundleString("singlemetadata1title", bundle);
             ConfirmDialog confirm = new ConfirmDialog(null, true, title, text, Utility.getBundleString("confirm", bundle),Utility.getBundleString("annulla", bundle));
 
             confirm.setVisible(true);
@@ -97,7 +96,7 @@ public class BookImporter extends javax.swing.JFrame {
                         FileUtils.copyFile(new File(Globals.BACKUP_METADATA), sessionmeta);
                         importSingleMetadata(metadatafile, "Test");
                     }catch (IOException ex) {
-                        java.util.logging.Logger.getLogger(BookImporter.class.getName()).log(Level.SEVERE, null, ex);
+                        logger.error(ex.getMessage());
                     }
                 }                
             }
@@ -128,7 +127,7 @@ public class BookImporter extends javax.swing.JFrame {
     public BookImporter() {
         try {
             initComponents();
-
+            
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             this.setTitle("Phaidra Importer v." + Globals.CURRENT_VERSION);
             jTextField2.setText("");
@@ -188,6 +187,8 @@ public class BookImporter extends javax.swing.JFrame {
             
             initializeXmlTree(fromFile, false);
             
+            setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            
             initializeData("");
             
             setCursor(null);
@@ -209,10 +210,7 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }
        
-    //static JComboBox choose_template = new JComboBox();
-    //private JPanel templatepanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
-    //private JPanel metadatapanel = new JPanel(new MigLayout("fillx,insets 5 5 5 5"));
-     TreeMap<String, JComboBox> templatelists = new TreeMap<String, JComboBox>();
+    TreeMap<String, JComboBox> templatelists = new TreeMap<String, JComboBox>();
      
     public void redrawTemplatePanels(){
         ArrayList<Template> combolist = new ArrayList<Template>();
@@ -231,13 +229,12 @@ public class BookImporter extends javax.swing.JFrame {
         
         for(Map.Entry<String, JComboBox> combos: this.templatelists.entrySet()){
             combos.getValue().removeAllItems();
-
+            combos.getValue().setName("IMTemplateCombo");
             if(!templates.isEmpty()){
-                for(Map.Entry<String, String> entry : templates.entrySet()) {
-                    combos.getValue().setModel(new javax.swing.DefaultComboBoxModel(combo));
-                    combos.getValue().setSelectedItem(combo[0]);
-                    combos.getValue().setMinimumSize(new Dimension(250,20));
-                }
+                combos.getValue().setModel(new javax.swing.DefaultComboBoxModel(combo));
+                combos.getValue().setSelectedItem(combo[0]);
+                combos.getValue().setMinimumSize(new Dimension(250,20));
+                combos.getValue().setEnabled(true);
             }
             else{
                 combos.getValue().setEnabled(false);
@@ -270,8 +267,9 @@ public class BookImporter extends javax.swing.JFrame {
             choose_template.setModel(new javax.swing.DefaultComboBoxModel(combo));
             choose_template.setSelectedItem(combo[0]);
             choose_template.setMinimumSize(new Dimension(250,20));
-
-            JButton templateimport = new JButton("Import Template");
+            choose_template.setName("IMTemplateCombo");
+            JButton templateimport = new JButton(Utility.getBundleString("importtemplate", bundle));
+            templateimport.setName("IMTemplateImportButton");
             templateimport.setMinimumSize(new Dimension(120,10));
 
             templateimport.addActionListener(new ActionListener()
@@ -304,7 +302,8 @@ public class BookImporter extends javax.swing.JFrame {
         else{
             choose_template.setMinimumSize(new Dimension(250,20));
             choose_template.setEnabled(false);
-            JButton templateimport = new JButton("Import Template");
+            JButton templateimport = new JButton(Utility.getBundleString("importtemplate",bundle));
+            templateimport.setName("IMTemplateImportButton");
             templateimport.setMinimumSize(new Dimension(120,10));
             templateimport.setEnabled(false);
             
@@ -314,6 +313,7 @@ public class BookImporter extends javax.swing.JFrame {
         templatelists.put(panelname, choose_template);
         
         JButton templateexport = new JButton(Utility.getBundleString("templateexportbutton",bundle));
+        templateexport.setName("IMTemplateExportButton");
         templateexport.addActionListener(new ActionListener()
         {
             @Override
@@ -324,6 +324,7 @@ public class BookImporter extends javax.swing.JFrame {
         });
         
         JButton templatedelete = new JButton(Utility.getBundleString("templatedeletebutton",bundle));
+        templatedelete.setName("IMTemplateDeleteButton");
         templatedelete.addActionListener(new ActionListener()
         {
             @Override
@@ -430,23 +431,25 @@ public class BookImporter extends javax.swing.JFrame {
     }*/
 
     public void initializeXmlTree(boolean fromFile, boolean refresh) {
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         xmlTree = new XMLTree(Globals.SELECTED_FOLDER_SEP, fromFile, false, refresh);
-
+        
         if (XMLTree.getRoot() == null) {
-            logger.info("Errore inizializzazione file bookstructure");
-            JOptionPane.showMessageDialog(new Frame(), "Errore inizializzazione file bookstructure");
+            logger.info("Error during bookstructure initialization!");
+            JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("xmltreeinitialization", bundle));
             System.exit(0);
         }
         
         setViewXmltree(xmlTree);
     }
 
-    public void initializeUndoXmlTree(String file) {
-        xmlTree = new XMLTree(file, true, true,false);
+    public void initializeUndoXmlTree(String file) { 
+       ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+       xmlTree = new XMLTree(file, true, true,false);
 
         if (XMLTree.getRoot() == null) {
-            logger.info("Errore inizializzazione file bookstructure");
-            JOptionPane.showMessageDialog(new Frame(), "Errore inizializzazione file bookstructure");
+            logger.info("Error during bookstructure initialization!");
+            JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("xmltreeinitialization", bundle));
             System.exit(0);
         }
 
@@ -885,7 +888,9 @@ public class BookImporter extends javax.swing.JFrame {
             }
 
             if (components[i] instanceof javax.swing.JComboBox) {
-                componentMap.put(components[i].getName(), components[i]);
+                if (!components[i].getName().equals("IMTemplateCombo")){
+                    componentMap.put(components[i].getName(), components[i]);
+                }
             }
 
             if (components[i] instanceof JXDatePicker) {
@@ -901,7 +906,9 @@ public class BookImporter extends javax.swing.JFrame {
             }
 
             if (components[i] instanceof JLabel) {
-                componentMap.put(components[i].getName(), components[i]);
+                if (components[i].getName() != null){
+                    componentMap.put(components[i].getName(), components[i]);
+                }
             }
 
             if (components[i] instanceof javax.swing.JScrollPane) {
@@ -1038,7 +1045,10 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuItem8.setText(Utility.getBundleString("bimportbook", bundle));
         jMenuItem9.setText(Utility.getBundleString("bexit", bundle));       
         jMenuItem10.setText(Utility.getBundleString("phinfo", bundle));
-
+        jMenuItem12.setText(Utility.getBundleString("importallmetadatas", bundle));
+        jMenuItem12.setVisible(false);
+        //jTree2.setSize(new Dimension (jMenuItem12.getHeight(), 350));
+        
         jLabel1.setText(Utility.getBundleString("blabellocal", bundle));
 
         jTabbedPane2.setTitleAt(0, Utility.getBundleString("bpane2", bundle));
@@ -1364,11 +1374,7 @@ public class BookImporter extends javax.swing.JFrame {
         return result;
     }
     
-    /**
-     * Gestisce l'esportazione dei metadati sul file uwmetadata.xml nella
-     * cartella locale di lavoro
-     */
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    public void exportAllMetadatas(){
         boolean alertexport = false;
         int i = 1;
         
@@ -1387,6 +1393,13 @@ public class BookImporter extends javax.swing.JFrame {
             }
             i++;
         }
+    }
+    /**
+     * Gestisce l'esportazione dei metadati sul file uwmetadata.xml nella
+     * cartella locale di lavoro
+     */
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        exportAllMetadatas();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -1656,13 +1669,13 @@ public class BookImporter extends javax.swing.JFrame {
                 }
             }
             } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());              
             } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(UploadSettings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             }
                 
                 getInstance();

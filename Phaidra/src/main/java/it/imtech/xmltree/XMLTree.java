@@ -13,7 +13,6 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.logging.Level;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.MutableTreeNode;
@@ -39,7 +38,7 @@ import org.xml.sax.SAXException;
  */
 public class XMLTree extends JTree {
 
-    public final static Logger logger = Logger.getLogger(XMLTree.class.getName());
+    private final static Logger logger = Logger.getLogger(XMLTree.class.getName());
     private static XMLTreeModel xmlTreeModel;
     private static XMLNode root;
     private XMLTreeCellRenderer xmlTreeCellRenderer;
@@ -332,16 +331,17 @@ public class XMLTree extends JTree {
                             File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + singlefile.getName());
                             FileUtils.copyFile(new File(Globals.BACKUP_METADATA), duplication);
                             
-                            exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
                             File metadatafile = new File(singlemetadata);
                                 
                             ((Element) xmlNode.getUserObject()).setAttribute("metadata", metadatafile.getName());
-                                
+                            
+                            exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
+                            
                             String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
                             String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
                             BookImporter.getInstance().importSingleMetadata(filename, pid);
                         } catch (IOException ex) {
-                            java.util.logging.Logger.getLogger(XMLTree.class.getName()).log(Level.SEVERE, null, ex);
+                            logger.error(ex.getMessage());
                         }
                     }
                 } else {
@@ -368,7 +368,7 @@ public class XMLTree extends JTree {
 
                             BookImporter.getInstance().importSingleMetadata(filename, pid);
                         } catch (IOException ex) {
-                            java.util.logging.Logger.getLogger(XMLTree.class.getName()).log(Level.SEVERE, null, ex);
+                            logger.error(ex.getMessage());
                         }
                     }
                     else{
@@ -746,11 +746,11 @@ public class XMLTree extends JTree {
                     labelImage.setMinimumSize(new Dimension(scaledIcon.getIconWidth(), scaledIcon.getIconHeight()));
                 }
             } catch (IOException ex) {
-                java.util.logging.Logger.getLogger(XMLTree.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (RendererException ex) {
-                java.util.logging.Logger.getLogger(XMLTree.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } catch (DocumentException ex) {
-                java.util.logging.Logger.getLogger(XMLTree.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex.getMessage());
             } 
         }
         else {
