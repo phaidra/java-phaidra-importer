@@ -521,6 +521,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
          */
         @Override
         public void done() {
+            BookImporter.getInstance().setVisible(true);
             if (!task.isCancelled()){
                 jProgressBar1.setValue(100);
                 setCursor(null);

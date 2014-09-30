@@ -94,7 +94,7 @@ public class BookImporter extends javax.swing.JFrame {
                         File metadatasingle = new File(metadatafile);
                         File sessionmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + metadatasingle.getName());
                         FileUtils.copyFile(new File(Globals.BACKUP_METADATA), sessionmeta);
-                        importSingleMetadata(metadatafile, "Test");
+                        importSingleMetadata(metadatafile, "Test", true);
                     }catch (IOException ex) {
                         logger.error(ex.getMessage());
                     }
@@ -473,7 +473,7 @@ public class BookImporter extends javax.swing.JFrame {
         jScrollPane1.setViewportView(xmlTree);
     }
     
-    public void importSingleMetadata(String filename, String PID){
+    public void importSingleMetadata(String filename, String PID, boolean view){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         try {
             JLayeredPane singlemetadatapane = new JLayeredPane();
@@ -482,12 +482,18 @@ public class BookImporter extends javax.swing.JFrame {
             String xmlFile = Globals.SELECTED_FOLDER_SEP + filename;
             //Leggi il file uwmetadata.xml
             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + Globals.BACKUP_INIT);
+            this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + filename);
 
             //Ridisegna l'interfaccia
             this.setMetadataTab(singlemetadatapane, filename);
             jTabbedPane2.add(singlemetadatapane);
             
+            if (view == true){
+                this.importMetadataSilent(xmlFile, filename);
+            }
+            else{
+                this.exportMetadataSilent(xmlFile, filename);
+            }
         } catch (Exception ex) {
             setCursor(null);
             JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
@@ -1537,6 +1543,7 @@ public class BookImporter extends javax.swing.JFrame {
      */
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         if (Globals.ONLINE){
+            this.setVisible(false);
             UploadSettings.getInstance(Globals.CURRENT_LOCALE).setVisible(true);
         }
         else{
