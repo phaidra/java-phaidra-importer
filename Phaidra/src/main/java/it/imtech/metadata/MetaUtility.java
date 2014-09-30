@@ -870,7 +870,7 @@ public class MetaUtility {
                     datePicker.setName("MID_" + Integer.toString(kv.getValue().MID));
                     
                     JPanel test = new JPanel(new MigLayout());
-                    JLabel lbefore = new JLabel("Before Christ: ");
+                    JLabel lbefore = new JLabel(Utility.getBundleString("beforechristlabel",bundle));
                     JCheckBox beforechrist = new JCheckBox();
                     beforechrist.setName("MID_" + Integer.toString(kv.getValue().MID) + "_check");
                     
