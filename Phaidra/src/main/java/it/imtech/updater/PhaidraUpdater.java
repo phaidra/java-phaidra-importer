@@ -25,7 +25,8 @@ public class PhaidraUpdater {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         
-        URL url = new URL(config.getString("urlupdater.descrurl"));
+        //URL url = new URL(config.getString("urlupdater.descrurl"));
+        URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
         Document doc = dBuilder.parse(url.openStream());
          
         NodeList nl = doc.getElementsByTagName("version");
@@ -41,7 +42,8 @@ public class PhaidraUpdater {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             
-        URL url = new URL(config.getString("urlupdater.descrurl"));
+        //URL url = new URL(config.getString("urlupdater.descrurl"));
+        URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
         
         Document doc = dBuilder.parse(url.openStream());
         

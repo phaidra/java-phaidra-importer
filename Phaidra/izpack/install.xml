@@ -71,8 +71,8 @@
             
             <fileset dir="lib" targetdir="${INSTALL_PATH}/lib" override="true" />
             <fileset dir="resources" targetdir="${INSTALL_PATH}/resources" override="true" />
-            <fileset dir="appdata/config" targetdir="${INSTALL_PATH}/appdata/config" override="askfalse" />
-            <fileset dir="appdata/xml" targetdir="${INSTALL_PATH}/appdata/xml" override="askfalse" />
+            <fileset dir="appdata/config" targetdir="${INSTALL_PATH}/appdata/config" override="true" />
+            <fileset dir="appdata/xml" targetdir="${INSTALL_PATH}/appdata/xml" override="true" />
         </pack>
     </packs>
     

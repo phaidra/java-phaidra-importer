@@ -7,7 +7,6 @@
 package it.imtech.configuration;
 
 import it.imtech.dialogs.BookCollectionDialog;
-import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
 import it.imtech.xmltree.XMLTree;

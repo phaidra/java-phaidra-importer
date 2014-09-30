@@ -339,7 +339,8 @@ public class Updater extends JFrame{
         URL url2 = new URL(config.getString("configurl[@path]"));
         XMLConfiguration config2 = new XMLConfiguration(url2);
         
-        URL url = new URL(config2.getString("urlupdater.descrurl"));
+        //URL url = new URL(config2.getString("urlupdater.descrurl"));
+        URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
         Document doc = dBuilder.parse(url.openStream());
          
         NodeList nl = doc.getElementsByTagName("release");

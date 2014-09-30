@@ -49,7 +49,6 @@ public class Globals {
     public static String BLANKPAGE = USER_DIR + "config" + Utility.getSep() + "blankpage.jpg";
     public static String INTERNAL_CONFIG = USER_DIR +"config" + Utility.getSep() + "config.xml";
      
-       
     //BACKUP_METADATA
     public static String DUPLICATION_FOLDER_SEP = USER_DIR + Utility.getSep() + "duplication" + Utility.getSep();
     public static String SESSION_METADATA = DUPLICATION_FOLDER_SEP + "sessionuwmetadata.xml";

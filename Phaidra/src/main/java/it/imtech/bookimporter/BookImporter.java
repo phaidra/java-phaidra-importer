@@ -437,10 +437,10 @@ public class BookImporter extends javax.swing.JFrame {
     /**
      * Resetta i componenti dell'interfaccia dei metadati
      */
-    /*public void createComponentMap() {
+    public void createComponentMap(JPanel panel) {
         componentMap = new HashMap<String, Component>();
-        createComponentMap(main_panel);
-    }*/
+        createComponentMap(panel, true);
+    }
 
     public void initializeXmlTree(boolean fromFile, boolean refresh) {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
@@ -763,6 +763,7 @@ public class BookImporter extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, Utility.getBundleString("ExceptionMetadata", bundle) + "\n" + ex);
         }
     }
+    
 
     /**
      * Crea interfaccia dei metadati a partire dal main_panel
@@ -792,7 +793,7 @@ public class BookImporter extends javax.swing.JFrame {
         main_scroller.setBounds(5, 5, 750, 750);
         main_scroller.getVerticalScrollBar().setUnitIncrement(16);
         JPanel templatepanel = drawTemplatePanel(panelname);
-        
+
         main_panel.add(templatepanel, "wrap, growx");
         
         JPanel innerPanel = new JPanel(new MigLayout());
@@ -887,73 +888,135 @@ public class BookImporter extends javax.swing.JFrame {
      *
      * @param panel
      */
-    public void createComponentMap(JPanel panel) {
+    private void createComponentMap(JPanel panel, boolean x) {
+        
         Component[] components = panel.getComponents();
+        try{
+            for (int i = 0; i < components.length; i++) {
+                if (components[i] != null){
+                    try{
+                        if (components[i] instanceof javax.swing.JTextField) {
+                            if (components[i].getName() != null){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                     
+                    try{
+                        if (components[i] instanceof javax.swing.JTextArea) {
+                            if (components[i].getName() != null){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
+                        if (components[i] instanceof javax.swing.JComboBox) {
+                            if (components[i].getName() != null && !components[i].getName().equals("IMTemplateCombo")){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
+                        if (components[i] instanceof JXDatePicker) {
+                            if (components[i].getName() != null){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
+                        if (components[i] instanceof JTree) {
+                            if (components[i].getName() != null){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
+                        if (components[i] instanceof JCheckBox) {
+                            if (components[i].getName() != null){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
+                        if (components[i] instanceof JLabel) {
+                            if (components[i].getName() != null){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
+                        if (components[i] instanceof javax.swing.JScrollPane) {
+                            if (components[i].getName() != null) {
+                                if (components[i].getName().equals("langStringScroll")) {
+                                    JScrollPane scroller = (JScrollPane) components[i];
 
-        for (int i = 0; i < components.length; i++) {
-            if (components[i] instanceof javax.swing.JTextField) {
-                componentMap.put(components[i].getName(), components[i]);
-            }
+                                    Component[] textareas = scroller.getComponents();
+                                    for (int j = 0; j < textareas.length; j++) {
+                                        if (textareas[j] instanceof javax.swing.JViewport) {
+                                            JViewport viewport = (JViewport) textareas[j];
+                                            Component[] viewports = viewport.getComponents();
 
-            if (components[i] instanceof javax.swing.JTextArea) {
-                componentMap.put(components[i].getName(), components[i]);
-            }
-
-            if (components[i] instanceof javax.swing.JComboBox) {
-                if (components[i].getName() != null && !components[i].getName().equals("IMTemplateCombo")){
-                    componentMap.put(components[i].getName(), components[i]);
-                }
-            }
-
-            if (components[i] instanceof JXDatePicker) {
-                componentMap.put(components[i].getName(), components[i]);
-            }
-
-            if (components[i] instanceof JTree) {
-                componentMap.put(components[i].getName(), components[i]);
-            }
-            
-             if (components[i] instanceof JCheckBox) {
-                componentMap.put(components[i].getName(), components[i]);
-            }
-
-            if (components[i] instanceof JLabel) {
-                if (components[i].getName() != null){
-                    componentMap.put(components[i].getName(), components[i]);
-                }
-            }
-
-            if (components[i] instanceof javax.swing.JScrollPane) {
-                if (components[i].getName() != null) {
-                    if (components[i].getName().equals("langStringScroll")) {
-                        JScrollPane scroller = (JScrollPane) components[i];
-                        
-                        Component[] textareas = scroller.getComponents();
-                        for (int j = 0; j < textareas.length; j++) {
-                            if (textareas[j] instanceof javax.swing.JViewport) {
-                                JViewport viewport = (JViewport) textareas[j];
-                                Component[] viewports = viewport.getComponents();
-                                
-                                for (int z = 0; z < viewports.length; z++) {
-                                    if (viewports[z] instanceof JTextArea) {
-                                        componentMap.put(viewports[z].getName(), viewports[z]);
-                                    }
+                                            for (int z = 0; z < viewports.length; z++) {
+                                                if (viewports[z] instanceof JTextArea) {
+                                                    componentMap.put(viewports[z].getName(), viewports[z]);
+                                                }
+                                            }
+                                        }
+                                    } 
+                                } 
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
+                        if (components[i] instanceof javax.swing.JPanel) {
+                            if (components[i].getName() != null) {
+                                if (components[i].getName().startsWith("ImPannelloClassif")) {
+                                    componentMap.put(components[i].getName(), components[i]);
                                 }
                             }
-                        } 
-                    } 
-                }
-            }
-            
-            if (components[i] instanceof javax.swing.JPanel) {
-                if (components[i].getName() != null) {
-                    if (components[i].getName().startsWith("ImPannelloClassif")) {
-                        componentMap.put(components[i].getName(), components[i]);
+
+                            this.createComponentMap((JPanel) components[i], true);
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
                     }
                 }
-
-                this.createComponentMap((JPanel) components[i]);
             }
+        }
+        catch(Exception ex){
+            logger.error(ex.getMessage());
         }
     }
 

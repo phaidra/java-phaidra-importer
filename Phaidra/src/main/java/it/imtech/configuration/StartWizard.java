@@ -241,17 +241,14 @@ public class StartWizard  {
                 appdata.mkdir();
             }
             
-            File backupxml = new File(currentpath + "xml");
-            File remotexml = new File(Globals.USER_DIR + "xml");
-            
             File templates = new File (Globals.USER_DIR + "templates");
             if (!templates.exists()){
                 templates.mkdir();
             }
             
-            if (!remotexml.exists()){
-                FileUtils.copyDirectory(backupxml, remotexml);
-            }
+            File backupxml = new File(currentpath + "xml");
+            File remotexml = new File(Globals.USER_DIR + "xml");
+            FileUtils.copyDirectory(backupxml, remotexml);
             
             File config = new File(Globals.USER_DIR + "config");
             if (!config.exists()){
