@@ -43,11 +43,11 @@ public class BookImporterDevelop {
         Server selected = getDevelopmentServer();
         SelectedServer.getInstance(selected);
     
-        Globals.SELECTED_FOLDER = "C:\\Users\\mauro\\Documents\\testing";
-        Globals.SELECTED_FOLDER_SEP = "C:\\Users\\mauro\\Documents\\testing\\";
+        //Globals.SELECTED_FOLDER = "C:\\Users\\mauro\\Documents\\testing";
+        //Globals.SELECTED_FOLDER_SEP = "C:\\Users\\mauro\\Documents\\testing\\";
         
-        //Globals.SELECTED_FOLDER = "/Users/mede318/testphaidra";
-        //Globals.SELECTED_FOLDER_SEP = "/Users/mede318/testphaidra/";
+        Globals.SELECTED_FOLDER = "/Users/mede318/testphaidra";
+        Globals.SELECTED_FOLDER_SEP = "/Users/mede318/testphaidra/";
         
         Globals.CURRENT_LOCALE = new Locale("it");
         

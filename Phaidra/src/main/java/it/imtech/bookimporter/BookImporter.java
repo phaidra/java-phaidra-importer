@@ -211,6 +211,7 @@ public class BookImporter extends javax.swing.JFrame {
     }
        
     TreeMap<String, JComboBox> templatelists = new TreeMap<String, JComboBox>();
+    TreeMap<String, JButton> templatebuttons = new TreeMap<String, JButton>();
      
     public void redrawTemplatePanels(){
         ArrayList<Template> combolist = new ArrayList<Template>();
@@ -235,10 +236,16 @@ public class BookImporter extends javax.swing.JFrame {
                 combos.getValue().setSelectedItem(combo[0]);
                 combos.getValue().setMinimumSize(new Dimension(250,20));
                 combos.getValue().setEnabled(true);
+                
+                this.templatebuttons.get(combos.getKey()+"_import").setEnabled(true);
+                this.templatebuttons.get(combos.getKey()+"_delete").setEnabled(true);
             }
             else{
                 combos.getValue().setEnabled(false);
+                this.templatebuttons.get(combos.getKey()+"_import").setEnabled(false);
+                this.templatebuttons.get(combos.getKey()+"_delete").setEnabled(false);
             }
+           
             combos.getValue().repaint();
             combos.getValue().revalidate();
         }
@@ -256,6 +263,7 @@ public class BookImporter extends javax.swing.JFrame {
         templatepanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), Utility.getBundleString("paneltemplate", bundle), TitledBorder.LEFT, TitledBorder.TOP));
         
         ArrayList<Template> combolist = new ArrayList<Template>();
+        JButton templateimport = new JButton(Utility.getBundleString("templateimportbutton",bundle));
         
         if (!templates.isEmpty()){
             choose_template.setEnabled(true);
@@ -268,7 +276,6 @@ public class BookImporter extends javax.swing.JFrame {
             choose_template.setSelectedItem(combo[0]);
             choose_template.setMinimumSize(new Dimension(250,20));
             choose_template.setName("IMTemplateCombo");
-            JButton templateimport = new JButton(Utility.getBundleString("importtemplate", bundle));
             templateimport.setName("IMTemplateImportButton");
             templateimport.setMinimumSize(new Dimension(120,10));
 
@@ -302,7 +309,7 @@ public class BookImporter extends javax.swing.JFrame {
         else{
             choose_template.setMinimumSize(new Dimension(250,20));
             choose_template.setEnabled(false);
-            JButton templateimport = new JButton(Utility.getBundleString("importtemplate",bundle));
+            
             templateimport.setName("IMTemplateImportButton");
             templateimport.setMinimumSize(new Dimension(120,10));
             templateimport.setEnabled(false);
@@ -311,6 +318,7 @@ public class BookImporter extends javax.swing.JFrame {
             templatepanel.add(templateimport);
         }
         templatelists.put(panelname, choose_template);
+        templatebuttons.put(panelname+"_import", templateimport);
         
         JButton templateexport = new JButton(Utility.getBundleString("templateexportbutton",bundle));
         templateexport.setName("IMTemplateExportButton");
@@ -320,8 +328,11 @@ public class BookImporter extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent event)
             {
                 exportTemplate(panelname);
+                redrawTemplatePanels();
             }
         });
+    
+        templatebuttons.put(panelname+"_export", templateexport);
         
         JButton templatedelete = new JButton(Utility.getBundleString("templatedeletebutton",bundle));
         templatedelete.setName("IMTemplateDeleteButton");
@@ -331,9 +342,10 @@ public class BookImporter extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent event)
             {
                 deleteTemplate(panelname);
+                redrawTemplatePanels();
             }
         });
-        
+        templatebuttons.put(panelname+"_delete", templatedelete);
         if (templates.isEmpty()){
             templatedelete.setEnabled(false);
         }
@@ -778,7 +790,7 @@ public class BookImporter extends javax.swing.JFrame {
         main_scroller.setViewportView(main_panel);
         main_scroller.setBorder(null);
         main_scroller.setBounds(5, 5, 750, 750);
-        
+        main_scroller.getVerticalScrollBar().setUnitIncrement(16);
         JPanel templatepanel = drawTemplatePanel(panelname);
         
         main_panel.add(templatepanel, "wrap, growx");
@@ -888,7 +900,7 @@ public class BookImporter extends javax.swing.JFrame {
             }
 
             if (components[i] instanceof javax.swing.JComboBox) {
-                if (!components[i].getName().equals("IMTemplateCombo")){
+                if (components[i].getName() != null && !components[i].getName().equals("IMTemplateCombo")){
                     componentMap.put(components[i].getName(), components[i]);
                 }
             }
