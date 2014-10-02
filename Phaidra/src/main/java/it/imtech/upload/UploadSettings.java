@@ -73,6 +73,7 @@ public class UploadSettings extends javax.swing.JFrame {
                 istance.setVisible(false);
                 istance.password = "";
                 istance.jTextField3.setText("");
+                BookImporter.getInstance().setVisible(true);
             }
         });
         }
@@ -351,7 +352,7 @@ public class UploadSettings extends javax.swing.JFrame {
         this.setVisible(false);
         //this.password = "";
         jTextField3.setText("");
-        //BookImporter.getInstance().setVisible(true);
+        BookImporter.getInstance().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
     
     private void saveCredentials(String usr, String pwd, ResourceBundle bundle){
@@ -432,7 +433,7 @@ public class UploadSettings extends javax.swing.JFrame {
 
         if (dateOk) {
             this.setVisible(false);
-            //BookImporter.getInstance().setVisible(true);
+            BookImporter.getInstance().setVisible(true);
 
             String error = "";
             try {

@@ -9,6 +9,7 @@ package it.imtech.configuration;
 import it.imtech.bookimporter.BookImporter;
 import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
+import it.imtech.metadata.MetaUtility;
 import it.imtech.upload.SelectedServer;
 import it.imtech.utility.Server;
 import it.imtech.utility.Utility;
@@ -37,9 +38,16 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
 
+/**
+ * Represents the starting wizard with two cards 
+ * (Select Folder and Select Server/Language)
+ * @author I.M. Technologies
+ */
 public class StartWizard  {
+    /**
+     * Represents the log configuration for this class
+     */
     private static Logger logger = Logger.getLogger(StartWizard.class);
     
     CardLayout c1 = new CardLayout();
@@ -55,26 +63,12 @@ public class StartWizard  {
     
     JFrame mainFrame;
     
-    ResourceBundle bundle;
-     
-    private void backupOnlineFiles(){
-        
-    }
-    
     /**
-     * Creates new form Main
+     * Creates a new wizard with active card (Select Language/Server)
      */
     public StartWizard() {
-        mainFrame = new JFrame();
-        logger.info("Start Wizard");
-        
-        if(Utility.internetConnectionAvailable()){
-            Globals.ONLINE = true;
-        }
-        
         Globals.setGlobalVariables();
-        
-        bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
         if(!checkAppDataFiles()){
             JOptionPane.showMessageDialog(null, Utility.getBundleString("copy_appdata", bundle), 
@@ -82,18 +76,22 @@ public class StartWizard  {
             System.exit(1);
         }
         
-        DOMConfigurator.configure(Globals.LOG4J);
         logger = Logger.getLogger(StartWizard.class);
-        
         logger.info("Starting Application Phaidra Importer");
+        
+        mainFrame = new JFrame();
+        
+        if(Utility.internetConnectionAvailable()){
+            Globals.ONLINE = true;
+        }
         
         it.imtech.utility.Utility.cleanUndoDir();
         
         XMLConfiguration internalConf = setConfiguration();
-
-        XMLConfiguration config = setConfigurationPaths(false, internalConf, bundle);
+        logger.info("Configuration path estabilished");
         
-        //Creazione Header
+        XMLConfiguration config = setConfigurationPaths(internalConf, bundle);
+        
         headerPanel = new HeaderPanel();
         footerPanel = new FooterPanel();
         
@@ -106,19 +104,31 @@ public class StartWizard  {
             public void actionPerformed(ActionEvent event)
             {
                 if(getCurrentCard() instanceof ChooseServer){
-                    mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                    
-                    Server selected = chooseServer.getSelectedServer();
-                    SelectedServer.getInstance(null).makeEmpty();
-                    SelectedServer.getInstance(selected);
-                    
-                    if (Globals.ONLINE){
-                        ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
+                    ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        
+                    try {
+                        mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                        
+                        Server selected = chooseServer.getSelectedServer();
+                        logger.info("Selected Server = "+selected.getServername());
+                        SelectedServer.getInstance(null).makeEmpty();
+                        SelectedServer.getInstance(selected);
+                        
+                        if (Globals.ONLINE){
+                            logger.info("Testing server connection...");
+                            ChooseServer.testServerConnection(SelectedServer.getInstance(null).getBaseUrl());
+                        }
+                        chooseFolder.updateLanguage();
+                        
+                        MetaUtility.getInstance().preInitializeData();
+                        logger.info("Preinitialization done (Vocabulary and Languages");
+                        
+                        c1.next(cardsPanel);
+                        mainFrame.setCursor(null);
+                    } catch (Exception ex) {
+                        logger.error(ex.getMessage());
+                        JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("preinitializemetadataex",bundle));
                     }
-                    chooseFolder.updateLanguage();
-                    
-                    c1.next(cardsPanel);
-                    mainFrame.setCursor(null);
                 }
                 else if(getCurrentCard() instanceof ChooseFolder){
                     mainFrame.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -143,7 +153,7 @@ public class StartWizard  {
                    String title = Utility.getBundleString("dialog_1_title", bundle);
                    String text = Utility.getBundleString("dialog_1", bundle);
                    
-                   ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, Utility.getBundleString("confirm", bundle), Utility.getBundleString("confirm", bundle));
+                   ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, Utility.getBundleString("confirm", bundle), Utility.getBundleString("back", bundle));
                    
                    confirm.setVisible(true);
                    boolean close = confirm.getChoice();
@@ -171,7 +181,7 @@ public class StartWizard  {
         cardsPanel.setLayout(c1);
         c1.show(cardsPanel, "1");
         
-        //Composizione pannello principale
+        //Main Panel style
         mainPanel = new JPanel(new BorderLayout());
         mainPanel.add(BorderLayout.NORTH, headerPanel);
         mainPanel.add(BorderLayout.CENTER, cardsPanel);
@@ -185,7 +195,7 @@ public class StartWizard  {
                 String title = Utility.getBundleString("dialog_1_title", bundle);
                 String text = Utility.getBundleString("dialog_1", bundle);
                    
-                ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, Utility.getBundleString("confirm", bundle), Utility.getBundleString("confirm", bundle));
+                ConfirmDialog confirm = new ConfirmDialog(mainFrame, true, title, text, Utility.getBundleString("confirm", bundle), Utility.getBundleString("back", bundle));
                    
                 confirm.setVisible(true);
                 boolean close = confirm.getChoice();
@@ -197,15 +207,14 @@ public class StartWizard  {
             }
         });
         
-        //Stile interfaccia
+        //Add Style 
         mainFrame.getContentPane().setBackground(Color.white);
         mainFrame.getContentPane().setLayout(new BorderLayout());
         mainFrame.getContentPane().setPreferredSize(new Dimension(640, 400));
         mainFrame.getContentPane().add(BorderLayout.CENTER, mainPanel);
-        //mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         mainFrame.pack();
         
-        //Centra il frame in mezzo allo schermo
+        //Center frame in the screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (dim.width - mainFrame.getSize().width) / 2;
         int y = (dim.height - mainFrame.getSize().height) / 2;
@@ -214,6 +223,10 @@ public class StartWizard  {
         mainFrame.setVisible(true);
     }
     
+    /**
+     * Returns the current active card
+     * @return 
+     */
     public JPanel getCurrentCard()
     {
         JPanel card = null;
@@ -227,6 +240,10 @@ public class StartWizard  {
         return card;
     }
 
+    /**
+     * Creates necessary folders in home user menu
+     * @return 
+     */
     private boolean checkAppDataFiles(){
         boolean result = false;
         
@@ -298,9 +315,7 @@ public class StartWizard  {
             }
 
             File logforjnew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"log4j.xml");
-            if (!logforjnew.exists()){
-                FileUtils.copyFile(logforj, logforjnew);
-            }
+            FileUtils.copyFile(logforj, logforjnew);
             
             File blanknew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"blankpage.jpg");
             if (!blanknew.exists()){
@@ -316,6 +331,10 @@ public class StartWizard  {
         return result;
     }
     
+    /**
+     * Sets the version and default locale
+     * @return 
+     */
     private XMLConfiguration setConfiguration(){
         XMLConfiguration config = null;
         
@@ -336,15 +355,12 @@ public class StartWizard  {
     }
     
     /**
-     * Setta il percorso del file di configurazione se è la prima volta che
-     * viene avviata l'applicazione
+     * Retrieve online configuration filepath
      *
-     * @param change Definisce se è l'avvio dell'applicazione o se si vuole
-     * modificare il percorso
      * @throws MalformedURLException
      * @throws ConfigurationException
      */
-    private XMLConfiguration setConfigurationPaths(boolean change, XMLConfiguration internalConf, ResourceBundle bundle) {
+    private XMLConfiguration setConfigurationPaths(XMLConfiguration internalConf, ResourceBundle bundle) {
         XMLConfiguration configuration = null;
         
         try{

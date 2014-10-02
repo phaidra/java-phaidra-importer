@@ -6,6 +6,7 @@
 
 package it.imtech.configuration;
 
+import it.imtech.dialogs.AlertDialog;
 import it.imtech.dialogs.BookCollectionDialog;
 import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
@@ -32,9 +33,10 @@ import net.miginfocom.swing.MigLayout;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
+
 /**
- *
- * @author mede318
+ * Represent the card used to select the working folder
+ * @author I.M. Technologies
  */
 public class ChooseFolder extends javax.swing.JPanel {
     
@@ -63,7 +65,6 @@ public class ChooseFolder extends javax.swing.JPanel {
         updateLanguage();
     
         main_panel = new JPanel(choose_layout);
-        //main_panel.setBackground(Color.WHITE);
         main_panel.add(label_folder_1, "wrap 20, span 2");
         main_panel.add(label_folder_2, "wrap 30, span 2");
         main_panel.add(label_folder_3, "wrap 20, span 2");
@@ -99,6 +100,7 @@ public class ChooseFolder extends javax.swing.JPanel {
 
                 if (fileChooser.showOpenDialog(ChooseFolder.this) == JFileChooser.APPROVE_OPTION) {
                     folder_path.setText(fileChooser.getSelectedFile().toString());
+                    logger.info("Selected Working Folder = "+fileChooser.getSelectedFile().toString());
                 } else {
                     folder_path.setText("");
                 }
@@ -106,6 +108,10 @@ public class ChooseFolder extends javax.swing.JPanel {
         });
     }
     
+    /**
+     * Verifies if the folder contains non compatible files
+     * @return boolean (Check result)
+     */
     public boolean checkFolderSelectionValidity() {
         String message = "";
         boolean error = true;
@@ -114,6 +120,7 @@ public class ChooseFolder extends javax.swing.JPanel {
             String path = folder_path.getText();
             if (new File(path).isDirectory()){
                 Globals.SELECTED_FOLDER = path;
+                File pathfile = new File(path);
                 Globals.SELECTED_FOLDER_SEP = Globals.SELECTED_FOLDER + Utility.getSep();
 
                 checkWritableFolder();
@@ -132,6 +139,14 @@ public class ChooseFolder extends javax.swing.JPanel {
                 }
                 else{
                     error = false;
+                }
+
+                String file = Utility.checkDirectory(pathfile, Utility.getAvailableExtensions());
+                if(!file.isEmpty()) {
+                    ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+                    AlertDialog alert = new AlertDialog(null, true, 
+                            Utility.getBundleString("dialog_2_title", bundle), 
+                            Utility.getBundleString("dialog_2", bundle)+" "+file, "Ok");
                 }
             }
             else{
@@ -161,6 +176,11 @@ public class ChooseFolder extends javax.swing.JPanel {
         return error;
     }
     
+    /**
+     * Creates a dialog to select the structure type of the object to 
+     * create / upload.It is called only if there isn't a phaidrastructure.xml 
+     * file in worrking folder.
+     */
     private  void chooseBookOrCollection() {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         int result = 0;
@@ -175,31 +195,31 @@ public class ChooseFolder extends javax.swing.JPanel {
         confirm.setVisible(true);
         result = confirm.getChoice();
         confirm.dispose();
-        /*
-        Object[] options = {Utility.getBundleString("collection", bundle), Utility.getBundleString("book", bundle), Utility.getBundleString("back", bundle)};
-        int answer = JOptionPane.showOptionDialog(null,
-                Utility.getBundleString("collorbook", bundle),
-                Utility.getBundleString("titlecollobook", bundle),
-                JOptionPane.YES_NO_CANCEL_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null, options, options[1]);
-        */
+ 
         switch (result) {
             case 0:
+                logger.info("Object Type selected: Collection");
                 Globals.TYPE_BOOK = Globals.COLLECTION;
                 break;
             case 1:
+                logger.info("Object Type selected: Book");
                 Globals.TYPE_BOOK = Globals.BOOK;
                 break;
             case 2:
+                logger.info("Object Type selected: Nothing");
                 Globals.TYPE_BOOK = Globals.NOT_EXISTS;
                 break;
             default:
+                logger.info("Object Type selected: Nothing");
                 Globals.TYPE_BOOK = Globals.NOT_EXISTS;
                 break;
         }
     }
        
+    /**
+     * Checks if the selected folder is writable and 
+     * initialise the globals variable FOLDER_WRITABLE
+     */
     private void checkWritableFolder(){
         try{
             File testFile = Utility.getUniqueFileName(Globals.SELECTED_FOLDER_SEP+"testfile", "txt");
@@ -214,7 +234,7 @@ public class ChooseFolder extends javax.swing.JPanel {
     }
     
     /**
-     * Aggiorna tutte i labels
+     * Updates all the labels contained in the form
      */
     public void updateLanguage(){
         bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);

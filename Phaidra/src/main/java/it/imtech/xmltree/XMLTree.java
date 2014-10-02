@@ -2,6 +2,8 @@ package it.imtech.xmltree;
 
 
 import it.imtech.bookimporter.BookImporter;
+import it.imtech.dialogs.AlertDialog;
+import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
 import java.awt.Dimension;
@@ -55,8 +57,8 @@ public class XMLTree extends JTree {
     List<XMLNode> nodesToInsert;
     ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
     //Oggetto contenente documento XML per non salvare il file
-    public static Document savedXmlDoc = null;
-    public static ArrayList<String> videotypes = new ArrayList<String>(Arrays.asList(new String[]{".mp4",".avi",".mpeg",".mov",".wmv"}));
+    public static Document savedXmlDoc = null;                                                 
+    public static ArrayList<String> videotypes = new ArrayList<String>(Arrays.asList(new String[]{".mp4",".avi",".mpeg",".mpeg2",".mpeg4",".mov",".wmv",".flv"}));
     
     public static XMLNode getRoot() {
        return root;
@@ -66,7 +68,35 @@ public class XMLTree extends JTree {
         return xmlTreeModel;
     }
 
-    
+    public static boolean setPanelIfNotExists(String metadata, String pid){
+        boolean exists = false;
+        
+        if (pid != null){
+            pid = FilenameUtils.removeExtension(pid);
+        }
+
+        if (metadata != null && !metadata.isEmpty()) {   
+            if (BookImporter.getInstance().metadatapanels.get(metadata) == null){
+                if (new File(Globals.SELECTED_FOLDER_SEP + metadata).isFile()){ 
+                  try {
+                        File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + metadata);
+                        File backupmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "backupuwmetadata.xml");
+                        FileUtils.copyFile(backupmeta, duplication);
+                        BookImporter.getInstance().importSingleMetadata(metadata, pid, true, false);
+                    } 
+                    catch (IOException ex) {
+                        logger.error(ex.getMessage());
+                    }
+                } 
+            }
+            else{
+                exists = true;
+            }
+        }
+        
+        return exists;
+    }
+        
     public static ArrayList<String> getSingleMetadataFiles(){
         NodeList elements = savedXmlDoc.getElementsByTagName("book:page");
         ArrayList<String> singlemeta = new ArrayList<String>();
@@ -209,10 +239,8 @@ public class XMLTree extends JTree {
                         TreePath path = BookImporter.xmlTree.getPathForRow(selRowsForMenuAction[i]);
                         XMLNode xmlNode = (XMLNode) path.getLastPathComponent();
                         listNodesForMenuAction.add(xmlNode);
-
                     }
                 }
-
 
                 if (clickedPath != null) {
                     XMLNode node = (XMLNode) clickedPath.getLastPathComponent();
@@ -224,8 +252,11 @@ public class XMLTree extends JTree {
                             expandCollapseAction.putValue(Action.NAME, Utility.getBundleString("mc_expand", bundle));
                         }
                     } else {
+                        
                         expandCollapseAction.putValue(Action.NAME, Utility.getBundleString("mc_open", bundle));
                     }
+                    
+                    
                     popupMenu.show((JComponent) e.getSource(), e.getX(), e.getY());
                     setSelectionPaths(selPaths);
 
@@ -253,8 +284,6 @@ public class XMLTree extends JTree {
         AbstractAction addBlankPageAction;
         AbstractAction addNewPageAction;
         
-        
-
         JPopupMenu popup = new JPopupMenu();
 
         expandCollapseAction = new AbstractAction() {
@@ -515,66 +544,96 @@ public class XMLTree extends JTree {
             return popup ;
         }
     
+        public void exportSpecificMetadata(XMLNode xmlNode){
+            String singlemetadata = "";
+                   
+            String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+
+            if (metadata != null && !metadata.isEmpty()){
+                 JOptionPane.showMessageDialog(new Frame(), "La pagina e gia esportata");     
+            }
+            else{
+                try {
+                    File singlefile = Utility.getUniqueFileName(Globals.SELECTED_FOLDER_SEP + "uwmetadata", "xml");
+                    singlemetadata = singlefile.getAbsolutePath();
+
+                    File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + singlefile.getName());
+                    FileUtils.copyFile(new File(Globals.BACKUP_METADATA), duplication);
+
+                    File metadatafile = new File(singlemetadata);
+
+                    ((Element) xmlNode.getUserObject()).setAttribute("metadata", metadatafile.getName());
+
+                    exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
+
+                    String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+                    String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+
+                    BookImporter.getInstance().importSingleMetadata(filename, pid, false, true);
+                } catch (IOException ex) {
+                    logger.error(ex.getMessage());
+                }
+            }
+        }
+    
         public JMenu createMenu(String title){
-            AbstractAction exportSpecificMetadata;
             AbstractAction viewSpecificMetadata;
             AbstractAction closeSpecificMetadata;
-            
+                       
             closeSpecificMetadata = new AbstractAction(Utility.getBundleString("mc_closemetadata", bundle), IconFactory.getIcon(
                 "blankpage", IconFactory.IconSize.SIZE_16X16)) {
 
                 public void actionPerformed(ActionEvent e) {
                     if (Globals.FOLDER_WRITABLE) {
                         XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
-                        String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
-                        BookImporter.getInstance().metadatapanels.get(metadata).getPane().getParent().remove(BookImporter.getInstance().metadatapanels.get(metadata).getPane());
-                        BookImporter.getInstance().metadatapanels.remove(metadata);
+                        if (!xmlNode.isLeaf()) {
+                            AlertDialog leafdialog = new AlertDialog(BookImporter.getInstance(), true, 
+                                Utility.getBundleString("exportsinglenotleaftitle", bundle), 
+                                Utility.getBundleString("exportsinglenotleaf", bundle),
+                                Utility.getBundleString("ok", bundle));
+                        }
+                        else{
+                            String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                            
+                            if (BookImporter.getInstance().metadatapanels.get(metadata) == null){
+                                AlertDialog leafdialog = new AlertDialog(BookImporter.getInstance(), true, 
+                                    Utility.getBundleString("exportsinglenotopenedtitle", bundle), 
+                                    Utility.getBundleString("exportsinglenotopened", bundle),
+                                    Utility.getBundleString("ok", bundle));
+                            }
+                            else{
+                                String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+
+                                ConfirmDialog confirm = new ConfirmDialog(BookImporter.getInstance(), true, 
+                                        Utility.getBundleString("exportsinglemetadatatitle", bundle), 
+                                        Utility.getBundleString("exportsinglemetadata", bundle),
+                                        Utility.getBundleString("voc1", bundle), 
+                                        Utility.getBundleString("voc2", bundle));
+
+                                confirm.setVisible(true);
+                                boolean response = confirm.getChoice();
+                                confirm.dispose();
+                                boolean metadataexported = true;
+
+                                if (response==true){
+                                    metadataexported = BookImporter.getInstance().exportMetadata(Globals.SELECTED_FOLDER_SEP + metadata, metadata, true, pid);
+                                }
+                                if(metadataexported){
+                                    BookImporter.getInstance().metadatapanels.get(metadata).getPane().getParent().remove(BookImporter.getInstance().metadatapanels.get(metadata).getPane());
+                                    BookImporter.getInstance().metadatapanels.remove(metadata);
+                                }
+                            }
+                        }
                     } else {
-                        JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("opnotpermitted", bundle));
+                        AlertDialog writabledialog = new AlertDialog(BookImporter.getInstance(), true, 
+                                Utility.getBundleString("exportsinglenotwritabletitle", bundle),
+                                Utility.getBundleString("exportsinglenotwritabletitle", bundle),
+                                Utility.getBundleString("voc1", bundle));
                     }
                 }
             };
 
-            exportSpecificMetadata = new AbstractAction(Utility.getBundleString("mc_createmetadata", bundle), IconFactory.getIcon(
-                "blankpage", IconFactory.IconSize.SIZE_16X16)) {
-
-            public void actionPerformed(ActionEvent e) {
-                String singlemetadata = "";
-                    
-                if (Globals.FOLDER_WRITABLE) {
-                    XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
-                    String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
-                    
-                    if (metadata != null && !metadata.isEmpty()){
-                         JOptionPane.showMessageDialog(new Frame(), "La pagina e gia esportata");     
-                    }
-                    else{
-                        try {
-                            File singlefile = Utility.getUniqueFileName(Globals.SELECTED_FOLDER_SEP + "uwmetadata", "xml");
-                            singlemetadata = singlefile.getAbsolutePath();
-                            
-                            File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + singlefile.getName());
-                            FileUtils.copyFile(new File(Globals.BACKUP_METADATA), duplication);
-                            
-                            File metadatafile = new File(singlemetadata);
-                                
-                            ((Element) xmlNode.getUserObject()).setAttribute("metadata", metadatafile.getName());
-                            
-                            exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
-                           
-                            String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
-                            String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
-                            
-                            BookImporter.getInstance().importSingleMetadata(filename, pid, false);
-                        } catch (IOException ex) {
-                            logger.error(ex.getMessage());
-                        }
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("opnotpermitted", bundle));
-                }
-            }
-        };
+          
         
         viewSpecificMetadata = new AbstractAction(Utility.getBundleString("mc_vimetadata", bundle), IconFactory.getIcon(
                 "blankpage", IconFactory.IconSize.SIZE_16X16)) {
@@ -582,32 +641,58 @@ public class XMLTree extends JTree {
             public void actionPerformed(ActionEvent e) {
                 if (Globals.FOLDER_WRITABLE) {
                     XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
-                    String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
-                    String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
-                    String metadata = Globals.SELECTED_FOLDER_SEP + filename;
-                    
-                    if (new File(metadata).isFile()){ 
-                        try {
-                            File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + filename);
-                            File backupmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "backupuwmetadata.xml");
-                            FileUtils.copyFile(backupmeta, duplication);
-                            BookImporter.getInstance().importSingleMetadata(filename, pid, true);
-                        } catch (IOException ex) {
-                            logger.error(ex.getMessage());
-                        }
+                    if (!xmlNode.isLeaf()) {
+                        AlertDialog leafdialog = new AlertDialog(BookImporter.getInstance(), true, 
+                                Utility.getBundleString("exportsinglenotleaftitle", bundle), 
+                                Utility.getBundleString("exportsinglenotleaf", bundle),
+                                Utility.getBundleString("voc1", bundle));
                     }
                     else{
+                        String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                        String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+                        String metadata = Globals.SELECTED_FOLDER_SEP + filename;
                         
+                        if (BookImporter.getInstance().metadatapanels.get(filename) == null){
+                            if (new File(metadata).isFile()){ 
+                                try {
+                                    File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + filename);
+                                    File backupmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "backupuwmetadata.xml");
+                                    FileUtils.copyFile(backupmeta, duplication);
+                                    BookImporter.getInstance().importSingleMetadata(filename, pid, true, true);
+                                } catch (IOException ex) {
+                                    logger.error(ex.getMessage());
+                                }
+                            }
+                            else{
+                                ConfirmDialog confirm = new ConfirmDialog(BookImporter.getInstance(), true, 
+                                    Utility.getBundleString("exportsinglemetadatacreatetitle", bundle), 
+                                    Utility.getBundleString("exportsinglemetadatacreate", bundle),
+                                    Utility.getBundleString("voc1", bundle), 
+                                    Utility.getBundleString("voc2", bundle));
+
+                                confirm.setVisible(true);
+                                boolean response = confirm.getChoice();
+                                confirm.dispose();
+
+                                if (response==true){
+                                    exportSpecificMetadata(xmlNode);
+                                }
+                            }
+                        }
                     }
                 } else {
-                    JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("opnotpermitted", bundle));
+                    AlertDialog writabledialog = new AlertDialog(BookImporter.getInstance(), true, 
+                                Utility.getBundleString("exportsinglenotwritabletitle", bundle),
+                                Utility.getBundleString("exportsinglenotwritable", bundle),
+                                Utility.getBundleString("voc1", bundle));
                 }
             }
         };
 
         
             JMenu m = new JMenu(title);
-            m.add (exportSpecificMetadata);
+                        
+            //m.add (exportSpecificMetadata);
             m.add (viewSpecificMetadata);
             m.add (closeSpecificMetadata);
             return m;

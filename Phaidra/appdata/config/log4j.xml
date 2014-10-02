@@ -13,7 +13,7 @@
    <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
       <param name="Threshold" value="INFO" />
       <param name="File" value="PhaidraLogs/phaidraimporter.log"/>
-      <param name="MaxFileSize" value="100KB"/>
+      <param name="MaxFileSize" value="1000KB"/>
       <param name="MaxBackupIndex" value="1"/>
       <layout class="org.apache.log4j.PatternLayout">
          <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
@@ -38,67 +38,67 @@
       <appender-ref ref="fileAppender"/>
    </logger>
 
-   <logger name="it.imtech.metadata.uemplatesutility" additivity="false" >
+   <logger name="it.imtech.metadata.TemplatesUtility" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
 
-   <logger name="it.imtech.pdfepub.epub" additivity="false" >
+   <logger name="it.imtech.pdfepub.Epub" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
 
-   <logger name="it.imtech.pdfepub.pdfcreatemonitor" additivity="false" >
+   <logger name="it.imtech.pdfepub.PdfCreateMonitor" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
   
-    <logger name="it.imtech.upload.imobject.imobject" additivity="false" >
+    <logger name="it.imtech.upload.ImObject" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
    
-   <logger name="it.imtech.upload.imobject.uploadprogress" additivity="false" >
+   <logger name="it.imtech.upload.UploadProgress" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
    
-   <logger name="it.imtech.upload.upload.uploadsettings" additivity="false" >
+   <logger name="it.imtech.upload.UploadSettings" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
   
-   <logger name="it.imtech.upload.utility.utility" additivity="false" >
+   <logger name="it.imtech.utility.Utility" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
   
-   <logger name="it.imtech.upload.xmltree.iconfactory" additivity="false" >
+   <logger name="it.imtech.xmltree.IconFactory" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
   
-    <logger name="it.imtech.upload.xmltree.xmltreemodellistener" additivity="false" >
+    <logger name="it.imtech.xmltree.XMLTreeModelListener" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
    
-   <logger name="it.imtech.upload.xmltree.xmltree" additivity="false" >
+   <logger name="it.imtech.xmltree.XMLTree" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>
    </logger>
 
-   <logger name="it.imtech.upload.xmltree.xmlutil" additivity="false" >
+   <logger name="it.imtech.xmltree.XMLUtil" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
       <appender-ref ref="fileAppender"/>

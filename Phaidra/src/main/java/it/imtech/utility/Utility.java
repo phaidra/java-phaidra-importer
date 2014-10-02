@@ -84,12 +84,12 @@ public class Utility {
         try {
             try {
                 URL url = new URL("http://www.google.com");
-                System.out.println(url.getHost());
                 HttpURLConnection con = (HttpURLConnection) url.openConnection();
                 con.connect();
                 
                 if (con.getResponseCode() == 200){
                     connected = true;
+                    logger.info("Client Online");
                 }
             } catch (Exception exception) {
                 logger.info("Internet Connection not available!");
@@ -390,12 +390,6 @@ public class Utility {
         return f;
     }
 
-    /**
-     *
-     */
-    /*
- 
-*/
     public static int countXmlTreeLeaves() {
         int leaves = 0;
 
@@ -488,10 +482,12 @@ public class Utility {
      * 
      * @param pathway the name of the file
      * @param avaiableExt list of avaiable extensions
+     * @param filename Not compatible file name
      * @return false if there are 'bad' file
      */
-    public static boolean checkDirectory(File pathway, List<String> avaiableExt) {
+    public static String checkDirectory(File pathway, List<String> avaiableExt) {
         boolean result = true;
+        String file = "";
         
         try {
             if(pathway != null && pathway.isDirectory()) {
@@ -500,6 +496,10 @@ public class Utility {
                 for (int i = 0; i < listOfFiles.length && result; i++) {
                     if (listOfFiles[i].isFile()) {
                         result = checkFile(listOfFiles[i],avaiableExt);
+                        
+                        if (!result){
+                            file = listOfFiles[i].getName();
+                        }
                     } 
                 }
             } else {
@@ -508,9 +508,15 @@ public class Utility {
         } catch(Exception e) {
             result = false;
         }
-        return result;
+        return file;
     }
     
+    public static List<String> getAvailableExtensions(){
+        if (Globals.TYPE_BOOK == Globals.BOOK)
+            return Globals.AVAILABLE_EXT_BOOK;
+        else
+            return Globals.AVAILABLE_EXT_COLLECTION;
+    }
     /**
      * method that check extensions' file in a pathway
      * 
@@ -520,12 +526,21 @@ public class Utility {
      */
     public static boolean checkFile(File filename, List<String> avaiableExt) {
         String ext = FilenameUtils.getExtension(filename.getAbsolutePath());
+        String name = FilenameUtils.removeExtension(filename.getName());
         boolean contains = false;
-        
-        if(ext != null) {
-            ext = ext.toLowerCase();
-            System.out.println(ext);
-            contains = avaiableExt.contains(ext);
+       
+        if (name == null || name.isEmpty()){
+            contains = true;
+        }
+        else{
+            if(ext != null ) {
+                ext = ext.toLowerCase();
+                contains = avaiableExt.contains(ext);
+                
+                if (!contains){
+                    logger.info("Not compatible file: "+filename.getAbsolutePath());
+                }
+            }
         }
         
         return contains;

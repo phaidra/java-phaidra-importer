@@ -318,6 +318,7 @@ public class ImObject {
             
             task.addUploadInfoInnerText(Utility.getBundleString("uploadpage5",bundle));
             book.addPage(chapter, page);
+            //book.addPage(page);
             page.save();
         }
 

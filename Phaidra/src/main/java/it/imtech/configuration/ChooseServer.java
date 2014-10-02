@@ -39,8 +39,8 @@ import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.log4j.Logger;
 
 /**
- *
- * @author mede318
+ * Represents the server and language selection
+ * @author I.M. Technologies
  */
 public class ChooseServer extends javax.swing.JPanel {
     
@@ -65,7 +65,6 @@ public class ChooseServer extends javax.swing.JPanel {
      */
     public ChooseServer(XMLConfiguration config) {
         initComponents();
-        //this.setBackground(Color.WHITE); 
         
         bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
@@ -86,11 +85,8 @@ public class ChooseServer extends javax.swing.JPanel {
         main_panel.add(label_server_1, "wrap 20");
         main_panel.add(label_server_2, "wrap 30");
         main_panel.add(label_server_3, "wrap 5");
+        main_panel.add(choose_server, "wrap 10");
         
-        //if (Globals.ONLINE){    
-            main_panel.add(choose_server, "wrap 10");
-        //}
-      
         main_panel.add(label_server_4, "wrap 5");
         main_panel.add(choose_language, "wrap 10");
         
@@ -115,16 +111,19 @@ public class ChooseServer extends javax.swing.JPanel {
         this.repaint();
     }
     
+    
+    /**
+     * Public method to retrieve the selected server from StartWizard class
+     * @return 
+     */
     public Server getSelectedServer(){
-        Server selected = (Server) choose_server.getSelectedItem();
-        SelectedServer server = SelectedServer.getInstance(selected);
-        
+        Server selected = (Server) choose_server.getSelectedItem();    
         return selected;
     }
+    
     /**
-     * Test della connessione al server per l'acquisizione del certificato
-     * Acquisice il certificato e restart dell'applicazione
-     * @param uri
+     * Connection serrver test, acquiring certificate if exists.
+     * @param uri - Selected server URI
      * @return 
      */
     public static boolean testServerConnection(String uri) {

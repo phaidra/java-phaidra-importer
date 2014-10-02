@@ -8,6 +8,7 @@ import at.ac.univie.phaidra.api.Phaidra;
 import at.ac.univie.phaidra.api.objekt.Book;
 import at.ac.univie.phaidra.api.objekt.Collection;
 import it.imtech.bookimporter.BookImporter;
+import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.utility.Utility;
@@ -82,7 +83,6 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                         
                         if (XMLTree.getSingleMetadataFiles().size()>0){
                             XMLTree.exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
-                            //BookImporter.getInstance().exportAllMetadatas();
                         }
                         
                         createCollection(obj, total, nodeLst);
@@ -410,9 +410,13 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         
         private String addElementToCollection(Element el, ImObject coll) throws Exception {
             type = null;
+            boolean panelexists = false;
             
             String metadata = el.getAttribute("metadata");
+            
             if (metadata != null && !metadata.isEmpty()){
+                panelexists = XMLTree.setPanelIfNotExists(el.getAttribute("metadata"), el.getAttribute("pid"));
+                
                 BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(metadata).getPanel());
                 MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + metadata, false, true);
             }
@@ -438,6 +442,11 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             }
             
             if (metadata != null && !metadata.isEmpty()){
+                if (!panelexists){
+                    BookImporter.getInstance().metadatapanels.get(metadata).getPane().getParent().remove(BookImporter.getInstance().metadatapanels.get(metadata).getPane());
+                    BookImporter.getInstance().metadatapanels.remove(metadata);
+                }
+                
                 BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
                 MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true);
             }
@@ -521,7 +530,6 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
          */
         @Override
         public void done() {
-            BookImporter.getInstance().setVisible(true);
             if (!task.isCancelled()){
                 jProgressBar1.setValue(100);
                 setCursor(null);
@@ -569,7 +577,8 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         lock = locks;
         path = pdfPth;
         user = usernm;
-
+        BookImporter.getInstance().setVisible(false);
+        
         initComponents();
         jProgressBar1.setMaximum(100);
         jButton1.setMinimumSize(new Dimension(120,20));
@@ -585,6 +594,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         jButton1.setEnabled(false);
         jButton1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                BookImporter.getInstance().setVisible(true);
                 frame.dispose();
             }
         });
@@ -612,7 +622,19 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         frame.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                task.cancel(true);
+                ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+                   String title = Utility.getBundleString("stopupload_title", bundle);
+                   String text = Utility.getBundleString("stopupload", bundle);
+                   
+                   ConfirmDialog confirm = new ConfirmDialog(frame, true, title, text, Utility.getBundleString("confirm", bundle), Utility.getBundleString("back", bundle));
+                   
+                   confirm.setVisible(true);
+                   boolean close = confirm.getChoice();
+                   confirm.dispose();
+
+                   if (close == true){
+                        task.cancel(true);
+                   }
             }
         });
         
@@ -666,6 +688,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
+                BookImporter.getInstance().setVisible(true);
                 frame.dispose();
             }
         });

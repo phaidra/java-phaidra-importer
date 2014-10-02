@@ -94,7 +94,7 @@ public class BookImporter extends javax.swing.JFrame {
                         File metadatasingle = new File(metadatafile);
                         File sessionmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + metadatasingle.getName());
                         FileUtils.copyFile(new File(Globals.BACKUP_METADATA), sessionmeta);
-                        importSingleMetadata(metadatafile, "Test", true);
+                        importSingleMetadata(metadatafile, "Test", true, true);
                     }catch (IOException ex) {
                         logger.error(ex.getMessage());
                     }
@@ -130,14 +130,9 @@ public class BookImporter extends javax.swing.JFrame {
             
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             this.setTitle("Phaidra Importer v." + Globals.CURRENT_VERSION);
-            jTextField2.setText("");
             
-            //createHeaderPane();
             //Create frontal panel
             createFrontalPane();
-            
-            //Style buttons frontal panel
-            //styleButtonsFrontalPanel();
             
             jTextField2.setText("");
             
@@ -169,8 +164,7 @@ public class BookImporter extends javax.swing.JFrame {
             //Aggiorna tutti i label in base alla lingua di default
             updateLanguageLabel(Globals.CURRENT_LOCALE);
             
-            //Inizializzazione classificazione e vocabolario    
-            MetaUtility.getInstance().preInitializeData();
+            
             
             //Creazione interfaccia metadati
             if (Globals.TYPE_BOOK == Globals.COLLECTION){
@@ -199,11 +193,7 @@ public class BookImporter extends javax.swing.JFrame {
             int y = (dim.height - getSize().height) / 2;
             setLocation(x, y);
             setVisible(true);
-        } catch (ConfigurationException ex) {
-            logger.error(ex.getMessage());
-            JOptionPane.showMessageDialog(new Frame(), ex.getMessage());
-            System.exit(0);
-        } catch (Exception ex) {
+        }  catch (Exception ex) {
             logger.error(ex.getMessage());
             JOptionPane.showMessageDialog(new Frame(), ex.getMessage());
             System.exit(0);
@@ -274,7 +264,7 @@ public class BookImporter extends javax.swing.JFrame {
             Template[] combo = combolist.toArray(new Template[combolist.size()]);
             choose_template.setModel(new javax.swing.DefaultComboBoxModel(combo));
             choose_template.setSelectedItem(combo[0]);
-            choose_template.setMinimumSize(new Dimension(250,20));
+            //choose_template.setMinimumSize(new Dimension(250,20));
             choose_template.setName("IMTemplateCombo");
             templateimport.setName("IMTemplateImportButton");
             templateimport.setMinimumSize(new Dimension(120,10));
@@ -303,18 +293,18 @@ public class BookImporter extends javax.swing.JFrame {
                 }
             });
 
-            templatepanel.add(choose_template);
+            templatepanel.add(choose_template, "width 100:250:250, height :20:");
             templatepanel.add(templateimport);
         }
         else{
-            choose_template.setMinimumSize(new Dimension(250,20));
+            //choose_template.setMinimumSize(new Dimension(250,20));
             choose_template.setEnabled(false);
             
             templateimport.setName("IMTemplateImportButton");
             templateimport.setMinimumSize(new Dimension(120,10));
             templateimport.setEnabled(false);
             
-            templatepanel.add(choose_template);
+            templatepanel.add(choose_template, "width 100:250:250, height :20:");
             templatepanel.add(templateimport);
         }
         templatelists.put(panelname, choose_template);
@@ -389,13 +379,13 @@ public class BookImporter extends javax.swing.JFrame {
             book_panel.add(jCheckBox1, "gapleft 50");
 
             jLayeredPane2.add(book_panel, "wrap, grow, height 80:80:80");
-            jLayeredPane2.add(jPanel3, "wrap, grow, height 100:600:600, align center");
+            jLayeredPane2.add(jPanel3, "wrap, grow, height 100:540:540, align center");
         }
         else{
             MigLayout path_layout = new MigLayout("fillx, inset 10 10 10 10");
             jLayeredPane2.setLayout(path_layout);
 
-            jLayeredPane2.add(jPanel3, "h 100%, align center, growx");
+            jLayeredPane2.add(jPanel3, "height 100:620:620, align center, growx");
         }
 
         jLayeredPane2.validate();
@@ -473,12 +463,12 @@ public class BookImporter extends javax.swing.JFrame {
         jScrollPane1.setViewportView(xmlTree);
     }
     
-    public void importSingleMetadata(String filename, String PID, boolean view){
+    public void importSingleMetadata(String filename, String PID, boolean view, boolean visible){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         try {
             JLayeredPane singlemetadatapane = new JLayeredPane();
             singlemetadatapane.setName(PID);
-            
+            singlemetadatapane.setVisible(visible);
             String xmlFile = Globals.SELECTED_FOLDER_SEP + filename;
             //Leggi il file uwmetadata.xml
             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -747,7 +737,6 @@ public class BookImporter extends javax.swing.JFrame {
      */
     private void initializeData(String panelname) {
        try {
-            
             //Inserisce tutte le classificazione nella struttura dati oefos
             MetaUtility.getInstance().classifications_reader("");
             
@@ -793,10 +782,10 @@ public class BookImporter extends javax.swing.JFrame {
         main_scroller.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         main_scroller.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        main_scroller.setPreferredSize(new java.awt.Dimension(100, 750));
+        main_scroller.setPreferredSize(new java.awt.Dimension(100, 730));
         main_scroller.setViewportView(main_panel);
         main_scroller.setBorder(null);
-        main_scroller.setBounds(5, 5, 750, 750);
+        main_scroller.setBounds(5, 5, 730, 730);
         main_scroller.getVerticalScrollBar().setUnitIncrement(16);
         JPanel templatepanel = drawTemplatePanel(panelname);
 
@@ -833,13 +822,10 @@ public class BookImporter extends javax.swing.JFrame {
             }
             JComponent focused = (JComponent) evt.getNewValue();
             if (main_panel.isAncestorOf(focused)) {
-              System.out.println("Scrolling to " + focused.getName());
               focused.scrollRectToVisible(focused.getBounds());
             }
           }
         });
-        
-        
         
         setFocusTraversalPolicy(policy);        
         setCursor(null);
@@ -1190,6 +1176,7 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1137, 735));
 
         jSplitPane1.setPreferredSize(new java.awt.Dimension(232, 414));
 
@@ -1377,10 +1364,9 @@ public class BookImporter extends javax.swing.JFrame {
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -1427,7 +1413,9 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }
     
-    private boolean exportMetadata(String location, String panelname, boolean alertresult){
+    private String exportError = "";
+    
+    public boolean exportMetadata(String location, String panelname, boolean alertresult, String panename){
         boolean result = false;
         
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
@@ -1441,10 +1429,10 @@ public class BookImporter extends javax.swing.JFrame {
             String error = MetaUtility.getInstance().check_and_save_metadata(location, true, true);
            
             if (error.length() > 0) {
-                JOptionPane.showMessageDialog(this, error);
+                this.exportError += "\nMetadata TAB: " + panename + "\n"+ error;
             } 
             else {
-                if (alertresult){
+                if (alertresult && this.exportError.isEmpty()){
                     JOptionPane.showMessageDialog(this, Utility.getBundleString("export4", bundle));
                 }
                 result = true;
@@ -1455,32 +1443,42 @@ public class BookImporter extends javax.swing.JFrame {
         return result;
     }
     
-    public void exportAllMetadatas(){
+    public boolean exportAllMetadatas(boolean showokmessage){
         boolean alertexport = false;
         int i = 1;
+        boolean result = false;
         
         for(Map.Entry<String,MetaPanels> entry : this.metadatapanels.entrySet()) {
             String namepanel = entry.getValue().getPanel().getName();
+            String namepane = entry.getValue().getPane().getName();
             
-            if (i == this.metadatapanels.size()){
+            if (namepane==null){
+                namepane = "General";
+            }
+            
+            if (i == this.metadatapanels.size() && showokmessage){
                 alertexport = true;
             }
             
-            if (namepanel.equals(mainpanel)){
-                exportMetadata("", entry.getValue().getPanel().getName(), alertexport);
-            }
-            else{
-                exportMetadata(Globals.SELECTED_FOLDER_SEP + namepanel, namepanel, alertexport);
-            }
+            exportMetadata(Globals.SELECTED_FOLDER_SEP + namepanel, namepanel, alertexport, namepane);
             i++;
         }
+        
+        if (!this.exportError.isEmpty()){
+            JOptionPane.showMessageDialog(this, this.exportError);
+            this.exportError = "";
+        }
+        else{
+            result = true;
+        }
+        return result;
     }
     /**
      * Gestisce l'esportazione dei metadati sul file uwmetadata.xml nella
      * cartella locale di lavoro
      */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        exportAllMetadatas();
+        exportAllMetadatas(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -1542,13 +1540,25 @@ public class BookImporter extends javax.swing.JFrame {
      * @param evt
      */
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
+        boolean canupload = false;    
         if (Globals.ONLINE){
-            this.setVisible(false);
-            UploadSettings.getInstance(Globals.CURRENT_LOCALE).setVisible(true);
+            if(XMLTree.getSingleMetadataFiles().size()>0){
+                if(!this.exportAllMetadatas(false)){
+                    JOptionPane.showMessageDialog(this, Utility.getBundleString("multimetadataerror", bundle));
+                }
+                else{
+                    canupload = true;
+                }
+            }         
         }
         else{
-            ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
             JOptionPane.showMessageDialog(this, Utility.getBundleString("offline_upload", bundle));
+        }
+        
+        if(canupload){
+            this.setVisible(false);
+            UploadSettings.getInstance(Globals.CURRENT_LOCALE).setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 

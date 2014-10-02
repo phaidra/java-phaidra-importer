@@ -8,7 +8,10 @@ import it.imtech.utility.Language;
 import it.imtech.utility.Utility;
 import java.io.File;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
+import org.apache.log4j.xml.DOMConfigurator;
 
 /**
  *
@@ -87,10 +90,14 @@ public class Globals {
     
     public static URL URL_CONFIG = null;
     
+    public static List<String> AVAILABLE_EXT_BOOK = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg");
+    public static List<String> AVAILABLE_EXT_COLLECTION = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg", "pdf", "avi", "wmv", "flv", "mov", "mpeg2","mpeg","mpeg4");
+    
     public static void setGlobalVariables(){
         Globals.JRPATH = Utility.getCurrentJarDirectory();
         Globals.RESOURCES = JRPATH + BASE_RESOURCES;
         Globals.CURRENT_LOCALE = new Locale("en");
+        DOMConfigurator.configure(Globals.LOG4J);
         
         File backup = new File(Globals.DUPLICATION_FOLDER_SEP);
         

@@ -344,7 +344,27 @@ public class MetaUtility {
         forceAddMID.put("125", 1); //identifiers
         forceAddMID.put("5", 1); //keywords
 	forceAddMID.put("96", 1); // GPS
+        forceAddMID.put("6", 1); // Copertura
+        forceAddMID.put("84", 1); // Dimensioni
+        forceAddMID.put("93", 1); // Tipo Materiale
+        forceAddMID.put("88", 1); // Unita di misura
+        forceAddMID.put("85", 1); // Lunghezza
+        forceAddMID.put("86", 1); // Larghezza
+        forceAddMID.put("87", 1); // Altezza
+        forceAddMID.put("92", 1); // Diametro
         
+        forceAddMID.put("11", 1); // Diametro
+        forceAddMID.put("12", 1); // Diametro
+        forceAddMID.put("126", 1); // Diametro
+        forceAddMID.put("13", 1); // Diametro
+        forceAddMID.put("14", 1); // Diametro
+        forceAddMID.put("15", 1); // Diametro
+        forceAddMID.put("63", 1); // Diametro
+        forceAddMID.put("64", 1); // Diametro
+        forceAddMID.put("65", 1); // Diametro
+        forceAddMID.put("66", 1); // Diametro
+        forceAddMID.put("148", 1); // Diametro
+        //forceAddMID.put("16", 1); // Diametro
         try {
             selectedClassificationList = new TreeMap<String, String>();
             
@@ -546,7 +566,7 @@ public class MetaUtility {
             }
 
             //Crea un jpanel nuovo e fa appen su parent
-            JPanel innerPanel = new JPanel(new MigLayout("fillx, insets 2 2 2 2"));
+            JPanel innerPanel = new JPanel(new MigLayout("fillx, insets 1 1 1 1"));
             innerPanel.setName("pannello" + level + i);
             
             i++;
@@ -563,7 +583,7 @@ public class MetaUtility {
                 choice.add(labelc);
     
                 if (classificationAddButton == null){
-                    choice.add(combo, "width :600:");
+                    choice.add(combo, "width 100:600:600");
                 
                     classificationAddButton = new JButton("+");
           
@@ -582,9 +602,9 @@ public class MetaUtility {
                     choice.add(classificationAddButton, "width :50:");
                 }
                 else{
-                    choice.add(combo, "wrap,width :700:");
+                    choice.add(combo, "wrap,width 100:700:700");
                 }
-                parent.add(choice, "wrap,width :700:");
+                parent.add(choice, "wrap,width 100:700:700");
                 classificationMID = kv.getValue().MID;
                 
                 innerPanel.setName("ImPannelloClassif---"+kv.getValue().sequence);
@@ -594,7 +614,7 @@ public class MetaUtility {
                 catch (Exception ex) {
                     logger.error("Errore nell'aggiunta delle classificazioni");
                 }
-                parent.add(innerPanel, "wrap,growx");
+                parent.add(innerPanel, "wrap, growx");
                 BookImporter.policy.addIndexedComponent(combo);
                 continue;
             }
@@ -749,14 +769,14 @@ public class MetaUtility {
                     jTextArea1.setWrapStyleWord(true);
 
                     inner_scroll.setViewportView(jTextArea1);
-                    innerPanel.add(inner_scroll, "width :350:");
+                    innerPanel.add(inner_scroll, "width :300:");
 
                     //Add combo language box
                     JComboBox voc = getComboLangBox(kv.getValue().language);
                     voc.setName("MID_" + Integer.toString(kv.getValue().MID) + "_lang");
 
                     voc.setPreferredSize(new Dimension(200, 20));
-                    innerPanel.add(voc, "wrap, width :400:");
+                    innerPanel.add(voc, "wrap, width :300:");
                     
                     jTextArea1.addKeyListener(new KeyAdapter() {
                         @Override
@@ -1184,22 +1204,19 @@ public class MetaUtility {
             javax.swing.JScrollPane tree_scroller = new javax.swing.JScrollPane();
             tree_scroller.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
             tree_scroller.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-            tree_scroller.setPreferredSize(new Dimension(700, 400));
             tree_scroller.setViewportView(tree);
             tree_scroller.setBorder(null);
 
-            innerPanel.add(tree_scroller, "wrap");
+            innerPanel.add(tree_scroller, "wrap, growx");
 
             JPanel iPanel = new JPanel(new MigLayout());
             iPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), Utility.getBundleString("choose2",bundle), TitledBorder.LEFT, TitledBorder.TOP));
             JLabel label = new JLabel();
             label.setName("classification_path"+"---"+sequence);
-
-            label.setPreferredSize(new Dimension(700, 30));
             label.setText(selectedPath);
-            iPanel.add(label, "wrap");
+            iPanel.add(label, "wrap, width 100:680:680, height 30:30:30");
 
-            innerPanel.add(iPanel, "wrap,width :700:");
+            innerPanel.add(iPanel, "wrap, width 100:700:700");
         } catch (Exception ex) {
             logger.error(ex.getMessage());
             throw new Exception("Exception in addClassification: " + ex.getStackTrace() + "\n");

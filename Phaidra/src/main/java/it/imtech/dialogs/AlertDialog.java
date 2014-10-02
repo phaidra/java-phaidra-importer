@@ -25,16 +25,11 @@ import org.apache.log4j.Logger;
  *
  * @author mauro
  */
-public class ConfirmDialog extends javax.swing.JDialog {
+public class AlertDialog extends javax.swing.JDialog {
     
-    private static final Logger logger = Logger.getLogger(ConfirmDialog.class);
+    private static final Logger logger = Logger.getLogger(AlertDialog.class);
     
-    private boolean next;
-    
-    public boolean getChoice(){
-        return next;
-    }
-    
+
     /**
      * Creates new form ConfirmDialog
      * @param parent
@@ -43,7 +38,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
      * @param title
      * @param type
      */
-    public ConfirmDialog(java.awt.Frame parent, boolean modal,  String title, String text, String buttonok, String buttonko) {
+    public AlertDialog(java.awt.Frame parent, boolean modal,  String title, String text, String buttonok) {
         super(parent, modal);
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
@@ -57,7 +52,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
         //getContentPane().setBackground(Color.white);
         getContentPane().setLayout(main);
         
-        Icon ico = UIManager.getIcon("OptionPane.questionIcon");
+        Icon ico = UIManager.getIcon("OptionPane.informationIcon");
        
         JLabel picture = new JLabel();
         JLabel sentence = new JLabel(text);
@@ -80,28 +75,13 @@ public class ConfirmDialog extends javax.swing.JDialog {
             @Override
             public void actionPerformed(ActionEvent event)
             {
-                next = true;
                 setVisible(false);
-            }
-        });
-                
-        JButton  prevButton = new JButton(buttonko);//Utility.getBundleString("annulla", bundle));
-        prevButton.setMinimumSize(new Dimension(120,10));
-        prevButton.setName("prev_button");
-        
-        prevButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent event)
-            {
-                next = false;
-                setVisible(false);
+                dispose();
             }
         });
                 
         south.add(new JSeparator(), "growx, wrap");
-        south.add(prevButton, "split, right");
-        south.add(nextButton);
+        south.add(nextButton," split, right");
         
         this.add(north, "wrap, growx");
         this.add(south, "wrap, growx");
@@ -111,6 +91,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
         int x = (dim.width - getSize().width) / 2;
         int y = (dim.height - getSize().height) / 2;
         setLocation(x, y);
+        setVisible(true);
     }
 
     /**
@@ -168,7 +149,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ConfirmDialog dialog = new ConfirmDialog(new javax.swing.JFrame(), true, "", "","","");
+                AlertDialog dialog = new AlertDialog(new javax.swing.JFrame(), true, "", "","");
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -60,10 +60,9 @@ public class BookImporterDevelop {
         langs.add(lang);
 
         Globals.LANGUAGES = langs.toArray(new Language[langs.size()]);
-        
-            
+          
         Globals.setGlobalVariables();
-        Globals.TYPE_BOOK = Globals.COLLECTION;
+        Globals.TYPE_BOOK = Globals.BOOK;
         BookImporter x = BookImporter.getInstance();
     }
     
