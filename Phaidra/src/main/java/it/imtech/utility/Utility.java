@@ -4,13 +4,13 @@
  */
 package it.imtech.utility;
 
-import it.imtech.upload.UnicodeUtil;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfImportedPage;
 import com.itextpdf.text.pdf.PdfReader;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
+import it.imtech.upload.UnicodeUtil;
 import it.imtech.xmltree.XMLTree;
 import java.awt.Frame;
 import java.awt.image.BufferedImage;
@@ -38,6 +38,7 @@ import javax.xml.xpath.*;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -480,6 +481,54 @@ public class Utility {
             doc = dBuilder.parse(url.openStream());
     
         return doc;
+    }
+    
+    /**
+     * method that check extensions' file in a pathway
+     * 
+     * @param pathway the name of the file
+     * @param avaiableExt list of avaiable extensions
+     * @return false if there are 'bad' file
+     */
+    public static boolean checkDirectory(File pathway, List<String> avaiableExt) {
+        boolean result = true;
+        
+        try {
+            if(pathway != null && pathway.isDirectory()) {
+                File[] listOfFiles = pathway.listFiles();
+
+                for (int i = 0; i < listOfFiles.length && result; i++) {
+                    if (listOfFiles[i].isFile()) {
+                        result = checkFile(listOfFiles[i],avaiableExt);
+                    } 
+                }
+            } else {
+                logger.error("Passed parameter not initialized");
+            }
+        } catch(Exception e) {
+            result = false;
+        }
+        return result;
+    }
+    
+    /**
+     * method that check extensions' file in a pathway
+     * 
+     * @param filename the name of the file
+     * @param avaiableExt list of avaiable extensions
+     * @return false if there are 'bad' file
+     */
+    public static boolean checkFile(File filename, List<String> avaiableExt) {
+        String ext = FilenameUtils.getExtension(filename.getAbsolutePath());
+        boolean contains = false;
+        
+        if(ext != null) {
+            ext = ext.toLowerCase();
+            System.out.println(ext);
+            contains = avaiableExt.contains(ext);
+        }
+        
+        return contains;
     }
 
     /**
