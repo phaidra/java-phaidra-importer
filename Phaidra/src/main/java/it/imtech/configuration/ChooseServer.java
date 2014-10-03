@@ -118,6 +118,8 @@ public class ChooseServer extends javax.swing.JPanel {
      */
     public Server getSelectedServer(){
         Server selected = (Server) choose_server.getSelectedItem();    
+        
+        SelectedServer server = SelectedServer.getInstance(selected);
         return selected;
     }
     

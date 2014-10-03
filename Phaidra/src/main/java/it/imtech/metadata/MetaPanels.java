@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package it.imtech.globals;
+package it.imtech.metadata;
 
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;

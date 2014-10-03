@@ -353,18 +353,18 @@ public class MetaUtility {
         forceAddMID.put("87", 1); // Altezza
         forceAddMID.put("92", 1); // Diametro
         
-        forceAddMID.put("11", 1); // Diametro
-        forceAddMID.put("12", 1); // Diametro
-        forceAddMID.put("126", 1); // Diametro
-        forceAddMID.put("13", 1); // Diametro
-        forceAddMID.put("14", 1); // Diametro
-        forceAddMID.put("15", 1); // Diametro
-        forceAddMID.put("63", 1); // Diametro
-        forceAddMID.put("64", 1); // Diametro
-        forceAddMID.put("65", 1); // Diametro
-        forceAddMID.put("66", 1); // Diametro
-        forceAddMID.put("148", 1); // Diametro
-        //forceAddMID.put("16", 1); // Diametro
+        forceAddMID.put("11", 1); // Contributo
+        forceAddMID.put("12", 1); // Ruolo
+        //forceAddMID.put("126", 1); // Altro Ruolo
+        forceAddMID.put("13", 1); // Dati Personali
+        forceAddMID.put("14", 1); // Nome
+        forceAddMID.put("15", 1); // Cognome 
+        forceAddMID.put("63", 1); // Ente
+        forceAddMID.put("64", 1); // Titolo
+        forceAddMID.put("65", 1); // Titolo
+        forceAddMID.put("66", 1); // Tipo
+        forceAddMID.put("148", 1); // Numero Matricola
+        
         try {
             selectedClassificationList = new TreeMap<String, String>();
             

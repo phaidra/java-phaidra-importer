@@ -5,7 +5,7 @@ import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.dialogs.InputDialog;
 import it.imtech.dialogs.TemplateDialog;
 import it.imtech.globals.Globals;
-import it.imtech.globals.MetaPanels;
+import it.imtech.metadata.MetaPanels;
 import it.imtech.helper.Helper;
 import it.imtech.metadata.MetaUtility;
 import it.imtech.metadata.Metadata;
