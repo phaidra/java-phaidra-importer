@@ -346,6 +346,7 @@ public class MetaUtility {
 	forceAddMID.put("96", 1); // GPS
         forceAddMID.put("6", 1); // Copertura
         forceAddMID.put("84", 1); // Dimensioni
+        forceAddMID.put("83", 1); // Descrizione
         forceAddMID.put("93", 1); // Tipo Materiale
         forceAddMID.put("88", 1); // Unita di misura
         forceAddMID.put("85", 1); // Lunghezza
@@ -1214,7 +1215,7 @@ public class MetaUtility {
             JLabel label = new JLabel();
             label.setName("classification_path"+"---"+sequence);
             label.setText(selectedPath);
-            iPanel.add(label, "wrap, width 100:680:680, height 30:30:30");
+            iPanel.add(label, "wrap, growx, height 30:30:30");
 
             innerPanel.add(iPanel, "wrap, width 100:700:700");
         } catch (Exception ex) {

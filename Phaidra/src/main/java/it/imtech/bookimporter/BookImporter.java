@@ -1541,11 +1541,12 @@ public class BookImporter extends javax.swing.JFrame {
      */
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
-        boolean canupload = false;    
+        boolean canupload = true;    
         if (Globals.ONLINE){
             if(XMLTree.getSingleMetadataFiles().size()>0){
                 if(!this.exportAllMetadatas(false)){
                     JOptionPane.showMessageDialog(this, Utility.getBundleString("multimetadataerror", bundle));
+                    canupload=false;
                 }
                 else{
                     canupload = true;
