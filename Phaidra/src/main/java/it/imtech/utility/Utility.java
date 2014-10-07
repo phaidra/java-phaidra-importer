@@ -236,10 +236,14 @@ public class Utility {
     }
 
     public static String changeFileExt(String filename) {
-        String[] parts = filename.split(Utility.getSep() + ".");
+        File file = new File(filename);
+       
+        String name = FilenameUtils.removeExtension(file.getName());
+        return name + ".xml";
+        /*String[] parts = filename.split(Utility.getSep() + ".");
         int i = parts.length - 1;
         parts[i] = "xml";
-        return StringUtils.join(parts, ".");
+        return StringUtils.join(parts, ".");*/
     }
 
     public static String getStringFromDocument(Document doc) {
