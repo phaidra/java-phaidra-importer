@@ -80,7 +80,7 @@ public class BookUtilityTest extends TestCase {
             assertEquals(de, result);
         }
         catch(ConfigurationException e){
-            fail("Ordering Language Test failed: ConfigurationException");
+            fail("Ordering Language Test failed: ConfigurationException: " + e.getMessage());
         }
     }
 }
