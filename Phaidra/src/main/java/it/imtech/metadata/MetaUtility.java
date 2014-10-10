@@ -644,15 +644,7 @@ public class MetaUtility {
                 counter++;
             }
             
-            //Node newNode = nodeList.item(0).cloneNode(true);
-            //Element nodetocopy = (Element) newNode;
-            //NamedNodeMap attr = nodeList.item(0).getAttributes();
-            //Node nodeAttr = attr.getNamedItem("sequence");
-            //nodeAttr.setTextContent(Integer.toString(maxseq));     // impostazione nuovo sequence
-            //
-            //Node copyOfn = doc.importNode(nodetocopy, true);
-            //nodeList.item(0).getParentNode().appendChild(copyOfn); // append new child
-            //
+            
             Element root = doc.getDocumentElement();                 // ripristino sequenze esatte
             NodeList firstlevelnodes = root.getChildNodes();
             
@@ -1422,7 +1414,7 @@ public class MetaUtility {
             tree_scroller.setViewportView(tree);
             tree_scroller.setBorder(null);
 
-            innerPanel.add(tree_scroller, "wrap, growx");
+            innerPanel.add(tree_scroller, "wrap, width 100:800:800");
 
             JPanel iPanel = new JPanel(new MigLayout());
             iPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), Utility.getBundleString("choose2",bundle), TitledBorder.LEFT, TitledBorder.TOP));
@@ -1431,7 +1423,7 @@ public class MetaUtility {
             label.setText(selectedPath);
             iPanel.add(label, "wrap, growx, height 30:30:30");
 
-            innerPanel.add(iPanel, "wrap, width 100:700:700");
+            innerPanel.add(iPanel, "wrap, width 100:800:800");
             
             findLastClassification(panelname);
             

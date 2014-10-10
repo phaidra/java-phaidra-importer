@@ -231,7 +231,6 @@ public class BookImporter extends javax.swing.JFrame {
                 this.templatebuttons.get(combos.getKey()+"_import").setEnabled(true);
                 this.templatebuttons.get(combos.getKey()+"_delete").setEnabled(true);
                 AddImportHandler(this.templatebuttons.get(combos.getKey()+"_import"),
-                                 this.templatelists.get(combos.getKey()+"_import"),
                                  combos.getKey());
             }
             else{
@@ -245,7 +244,7 @@ public class BookImporter extends javax.swing.JFrame {
         }
     }
     
-    public void AddImportHandler(JButton import_button, final JComboBox choose_template, final String panelname) {
+    public void AddImportHandler(JButton import_button, final String panelname) {
         import_button.addActionListener(new ActionListener()
         {
             @Override
@@ -263,7 +262,8 @@ public class BookImporter extends javax.swing.JFrame {
                 confirm.dispose();
 
                 if (response==true) {
-                    Template selected = (Template) choose_template.getSelectedItem();
+                    JComboBox combo = (JComboBox) templatelists.get(panelname);
+                    Template selected = (Template) combo.getSelectedItem();
                     importMetadataSilent(Globals.TEMPLATES_FOLDER_SEP + selected.getFileName(), panelname);
                 }
             }
@@ -298,7 +298,7 @@ public class BookImporter extends javax.swing.JFrame {
             templateimport.setName("IMTemplateImportButton");
             templateimport.setMinimumSize(new Dimension(120,10));
             logger.info("Adding a new template");
-            AddImportHandler(templateimport, choose_template, panelname);
+            AddImportHandler(templateimport, panelname);
             
             templatepanel.add(choose_template, "width 100:250:250, height :20:");
             templatepanel.add(templateimport);
