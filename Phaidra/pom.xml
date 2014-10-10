@@ -434,16 +434,6 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/gsdll32.lib</systemPath>
         </dependency>
-        <!--
-        <dependency>
-            <groupId>Ghost4J</groupId>
-            <artifactId>Ghost4J</artifactId>
-            <version>0.4.5</version>
-            <type>jar</type>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/ghost4j-0.4.5.jar</systemPath>
-        </dependency> 
-        -->        
         <dependency>
 		<groupId>org.ghost4j</groupId>
 		<artifactId>ghost4j</artifactId>

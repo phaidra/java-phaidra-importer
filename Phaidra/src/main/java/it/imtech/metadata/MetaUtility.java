@@ -25,6 +25,8 @@ import java.io.StringWriter;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.TreeSelectionEvent;
@@ -88,6 +90,8 @@ public class MetaUtility {
     private Integer classificationMID = null;
     
     public  JButton classificationAddButton = null;
+    
+    public  JButton classificationRemoveButton = null;
     //Mappatura del file delle classificazioni preso da URL
     
     //Mappatura dei namespace contenuti nel file dei metadati
@@ -96,6 +100,10 @@ public class MetaUtility {
     protected TreeMap<String, String> languages = null;
     //Mappatura del file vocabularies.xml preso da URL
     public HashMap<String, TreeMap<String,VocEntry>> vocabularies = null;
+    
+    public int last_classification = 0;
+    public int last_contribute = 0;
+    public JButton removeContribute;
     
     private MetaUtility() {}
 
@@ -395,8 +403,7 @@ public class MetaUtility {
             Document doc;
             
             File f = new File(Globals.BACKUP_METADATA);
-            //File s = new File(Globals.SESSION_METADATA);
-            File s = new File(Globals.DUPLICATION_FOLDER_SEP + panelname);
+            File s = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
             FileUtils.copyFile(f, s);
             
             XPathFactory factory = XPathFactory.newInstance();
@@ -478,6 +485,59 @@ public class MetaUtility {
         }
     }
     
+    private void removeContributorToMetadata(String panelname){
+        try {
+            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc;
+            
+            XPathFactory factory = XPathFactory.newInstance();
+	    XPath xpath = factory.newXPath();
+            File backupmetadata = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+            //File backupmetadata = new File(Globals.SESSION_METADATA);
+            doc = dBuilder.parse(backupmetadata);
+            
+            String expression = "//*[@ID='11']";
+            NodeList nodeList = (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
+            int maxseq = 0;
+            int tmpseq = 0;
+            
+            for (int i = 0; i < nodeList.getLength(); i++) {
+               NamedNodeMap attr = nodeList.item(i).getAttributes();
+               Node nodeAttr = attr.getNamedItem("sequence");
+               tmpseq = Integer.parseInt(nodeAttr.getNodeValue());
+            
+               if (tmpseq > maxseq){
+                   maxseq = tmpseq;
+               }
+	    }
+            //maxseq++;
+            
+            int nLast, idLast, counter = 0;
+            
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                NamedNodeMap attr = nodeList.item(i).getAttributes();
+                Node nodeAttr = attr.getNamedItem("sequence");
+                if(maxseq == Integer.parseInt(nodeAttr.getNodeValue())) {
+                    nLast = counter;
+                    nodeAttr = attr.getNamedItem("ID");
+                    idLast = Integer.parseInt(nodeAttr.getNodeValue());
+                    nodeList.item(i).getParentNode().removeChild(nodeList.item(i));
+                }
+                counter++;
+            }
+            
+            XMLUtil.xmlWriter(doc, Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+        } catch (ParserConfigurationException ex) {
+            logger.error(ex.getMessage());
+        } catch (SAXException ex) {
+            logger.error(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(ex.getMessage());
+        } catch (XPathExpressionException ex) {
+            logger.error(ex.getMessage());
+        }
+    }
+    
     
     private void addClassificationToMetadata(String panelname){
         try {
@@ -540,6 +600,83 @@ public class MetaUtility {
             logger.error(ex.getMessage());
         }
     }
+    
+    private void removeClassificationToMetadata(String panelname){
+        try {
+            System.out.println("Search for lest classification..");
+            
+            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc;
+            
+            XPathFactory factory = XPathFactory.newInstance();
+	    XPath xpath = factory.newXPath();
+            
+            //File backupmetadata = new File(Globals.SESSION_METADATA);
+            File backupmetadata = new File(Globals.DUPLICATION_FOLDER_SEP + "session" +panelname);
+            doc = dBuilder.parse(backupmetadata);
+            
+            String expression = "//*[@ID='22']";
+            NodeList nodeList = (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
+            int maxseq = 0;
+            int tmpseq;
+            
+            for (int i = 0; i < nodeList.getLength(); i++) {
+               NamedNodeMap attr = nodeList.item(i).getAttributes();
+               Node nodeAttr = attr.getNamedItem("sequence");
+               tmpseq = Integer.parseInt(nodeAttr.getNodeValue());
+            
+               if (tmpseq > maxseq){
+                   maxseq = tmpseq;
+               }
+	    }
+            
+            int nLast, idLast, counter = 0;
+            
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                NamedNodeMap attr = nodeList.item(i).getAttributes();
+                Node nodeAttr = attr.getNamedItem("sequence");
+                if(maxseq == Integer.parseInt(nodeAttr.getNodeValue())) {
+                    nLast = counter;
+                    nodeAttr = attr.getNamedItem("ID");
+                    idLast = Integer.parseInt(nodeAttr.getNodeValue());
+                    nodeList.item(i).getParentNode().removeChild(nodeList.item(i));
+                }
+                counter++;
+            }
+            
+            //Node newNode = nodeList.item(0).cloneNode(true);
+            //Element nodetocopy = (Element) newNode;
+            //NamedNodeMap attr = nodeList.item(0).getAttributes();
+            //Node nodeAttr = attr.getNamedItem("sequence");
+            //nodeAttr.setTextContent(Integer.toString(maxseq));     // impostazione nuovo sequence
+            //
+            //Node copyOfn = doc.importNode(nodetocopy, true);
+            //nodeList.item(0).getParentNode().appendChild(copyOfn); // append new child
+            //
+            Element root = doc.getDocumentElement();                 // ripristino sequenze esatte
+            NodeList firstlevelnodes = root.getChildNodes();
+            
+            for (int i=0; i<firstlevelnodes.getLength();i++){
+                if (firstlevelnodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                    Element node = (Element) firstlevelnodes.item(i);
+                    Integer sequence = Integer.parseInt(node.getAttribute("sequence"));
+                    if (!node.getAttribute("ID").equals("22") && sequence>=maxseq){
+                        node.setAttribute("sequence", Integer.toString(sequence-1));
+                    }
+                }
+            }
+            
+            XMLUtil.xmlWriter(doc, Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+        } catch (ParserConfigurationException ex) {
+            logger.error(ex.getMessage());
+        } catch (SAXException ex) {
+            logger.error(ex.getMessage());
+        } catch (IOException ex) {
+            logger.error(ex.getMessage());
+        } catch (XPathExpressionException ex) {
+            logger.error(ex.getMessage());
+        }
+    }
         
     /**
      * Metodo adibito alla creazione dinamica ricorsiva dell'interfaccia dei
@@ -582,8 +719,31 @@ public class MetaUtility {
                 labelc.setPreferredSize(new Dimension(100, 20));
                 
                 choice.add(labelc);
-    
+                
+                findLastClassification(panelname);
+                if(last_classification != 0 && classificationRemoveButton == null) {
+                    logger.info("Removing last clasification");
+                    classificationRemoveButton = new JButton("-");
+
+                    classificationRemoveButton.addActionListener(new ActionListener()
+                    {
+                        @Override
+                        public void actionPerformed(ActionEvent event)
+                        {
+                            BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                            removeClassificationToMetadata(panelname);
+                            BookImporter.getInstance().refreshMetadataTab(false, panelname);
+                            findLastClassification(panelname); //update last_classification
+                            BookImporter.getInstance().setCursor(null);
+                        }
+                    });
+                    if(Integer.parseInt(kv.getValue().sequence) == last_classification) {
+                        choice.add(classificationRemoveButton, "wrap, width :50:");
+                    }
+                }
+                
                 if (classificationAddButton == null){
+                    logger.info("Adding a new classification");
                     choice.add(combo, "width 100:600:600");
                 
                     classificationAddButton = new JButton("+");
@@ -603,7 +763,11 @@ public class MetaUtility {
                     choice.add(classificationAddButton, "width :50:");
                 }
                 else{
-                    choice.add(combo, "wrap,width 100:700:700");
+                    //choice.add(combo, "wrap,width 100:700:700");
+                    choice.add(combo, "width 100:700:700");
+                    if(Integer.parseInt(kv.getValue().sequence) == last_classification) {
+                        choice.add(classificationRemoveButton, "wrap, width :50");
+                    }
                 }
                 parent.add(choice, "wrap,width 100:700:700");
                 classificationMID = kv.getValue().MID;
@@ -617,6 +781,7 @@ public class MetaUtility {
                 }
                 parent.add(innerPanel, "wrap, growx");
                 BookImporter.policy.addIndexedComponent(combo);
+                
                 continue;
             }
 
@@ -629,29 +794,64 @@ public class MetaUtility {
                 Font myFont = new Font("MS Sans Serif", Font.PLAIN, size);
                 label.setFont(myFont);
                 
-                if (Integer.toString(kv.getValue().MID).equals("11") && addcontribute == null){
-                    addcontribute = new JButton("+");
-          
-                    addcontribute.addActionListener(new ActionListener()
-                    {
-                        @Override
-                        public void actionPerformed(ActionEvent event)
-                        {
-                            BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                            addContributorToMetadata(panelname);
-                            BookImporter.getInstance().refreshMetadataTab(false, panelname);
-                            BookImporter.getInstance().setCursor(null);
-                        }
-                    });
-                    
+                if (Integer.toString(kv.getValue().MID).equals("11")){
                     JPanel temppanel = new JPanel(new MigLayout());
-                    temppanel.add(label, " width :200:");
-                    temppanel.add(addcontribute, "width :50:");
-                    innerPanel.add(temppanel, "wrap, growx");
                     
-                }
-                else{
-                    innerPanel.add(label, "wrap, growx");
+                    //update last_contribute
+                    findLastContribute(panelname);
+                    
+                    if(last_contribute != 0 && removeContribute == null){
+                        logger.info("Removing last contribute");
+                        removeContribute = new JButton("-");
+
+                        removeContribute.addActionListener(new ActionListener()
+                        {
+                            @Override
+                            public void actionPerformed(ActionEvent event)
+                            {
+                                BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                                removeContributorToMetadata(panelname);
+                                BookImporter.getInstance().refreshMetadataTab(false, panelname);
+                                BookImporter.getInstance().setCursor(null);
+                            }
+                        });
+
+                        if(!kv.getValue().sequence.equals("")) { 
+                            if(Integer.parseInt(kv.getValue().sequence) == last_contribute) {
+                                innerPanel.add(removeContribute, "width :50:");
+                            }
+                        }
+                    }
+                    
+                    if(addcontribute == null){
+                        logger.info("Adding a new contribute");
+                        addcontribute = new JButton("+");
+
+                        addcontribute.addActionListener(new ActionListener()
+                        {
+                            @Override
+                            public void actionPerformed(ActionEvent event)
+                            {
+                                BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                                addContributorToMetadata(panelname);
+                                BookImporter.getInstance().refreshMetadataTab(false, panelname);
+                                BookImporter.getInstance().setCursor(null);
+                            }
+                        });
+
+                        temppanel.add(label, " width :200:");
+                        temppanel.add(addcontribute, "width :50:");
+                        innerPanel.add(temppanel, "wrap, growx");
+                    } else{
+                        temppanel.add(label, " width :200:");
+                        findLastContribute(panelname);
+                        if(!kv.getValue().sequence.equals("")) {
+                            if(Integer.parseInt(kv.getValue().sequence) == last_contribute) {
+                                temppanel.add(removeContribute, "width :50:");
+                            }
+                        }
+                        innerPanel.add(temppanel, "wrap, growx");
+                    }
                 }
             } else {
                 String title = "";
@@ -900,8 +1100,14 @@ public class MetaUtility {
                             if (kv.getValue().value.charAt(0) == '-'){
                                 beforechrist.setSelected(true);
                             }
+                            
+                            Date date1 = new Date();
                             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                            Date date1 = sdf.parse(kv.getValue().value);
+                            if(kv.getValue().value.charAt(0) == '-'){
+                                date1 = sdf.parse(adjustDate(kv.getValue().value));
+                            } else {
+                                date1 = sdf.parse(kv.getValue().value);
+                            }
                             datePicker.setDate(date1);
                         } catch (Exception e) {
                             //Console.WriteLine("ERROR import date:" + ex.Message);
@@ -916,7 +1122,7 @@ public class MetaUtility {
                     innerPanel.add(test,"wrap");
                 }
             }
-
+            
             //Recursive call
             create_metadata_view(kv.getValue().submetadatas, innerPanel, level + 1, panelname);
 
@@ -928,6 +1134,14 @@ public class MetaUtility {
                 }
             }
         }
+    }
+    
+    public String adjustDate(String date) {
+        
+        StringBuilder sb = new StringBuilder(date);
+        sb.deleteCharAt(0);
+        
+        return sb.toString();
     }
 
     /**
@@ -1218,6 +1432,9 @@ public class MetaUtility {
             iPanel.add(label, "wrap, growx, height 30:30:30");
 
             innerPanel.add(iPanel, "wrap, width 100:700:700");
+            
+            findLastClassification(panelname);
+            
         } catch (Exception ex) {
             logger.error(ex.getMessage());
             throw new Exception("Exception in addClassification: " + ex.getStackTrace() + "\n");
@@ -1290,7 +1507,12 @@ public class MetaUtility {
                                     }
                                 }
                             }
-                                  
+                             
+                            if (MID.equals("11")){
+                                Element x = (Element) iInnerNode;
+                                sequencemulti = x.getAttribute("sequence");
+                            }
+                            
                             String foxmlnamespace = iInnerNode.getAttribute("fornamespace");
                             
                             if (!metadata_namespaces.containsValue(foxmlnamespace)) {
@@ -1691,5 +1913,82 @@ public class MetaUtility {
         model.specialRenderCombo(result);
 
         return result;
+    }
+    
+    public void findLastClassification(String panelname) {
+        try {
+            int tmpseq;
+            last_classification = 0;
+            
+            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc;
+            
+            File s = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+            
+            String expression = "//*[@ID='22']";
+            XPathFactory factory = XPathFactory.newInstance();
+            XPath xpath = factory.newXPath();
+       
+            doc = dBuilder.parse(s.getAbsolutePath());
+            
+            NodeList nodeList = (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
+            
+            for (int i=0;i<nodeList.getLength() && nodeList.getLength() > 1;i++){
+                NamedNodeMap attr = nodeList.item(i).getAttributes();
+                Node nodeAttr = attr.getNamedItem("sequence");
+                tmpseq = Integer.parseInt(nodeAttr.getNodeValue());
+                if (tmpseq > last_classification){
+                    last_classification = tmpseq;
+                }
+            }
+            
+        } catch (SAXException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void findLastContribute(String panelname) {
+        try {
+            int tmpseq;
+            last_contribute = 0;
+            
+            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc;
+            
+            File s = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+            
+            String expression = "//*[@ID='11']";
+            XPathFactory factory = XPathFactory.newInstance();
+            XPath xpath = factory.newXPath();
+       
+            doc = dBuilder.parse(s.getAbsolutePath());
+            
+            NodeList nodeList = (NodeList) xpath.evaluate(expression, doc, XPathConstants.NODESET);
+            
+            for (int i=0;i<nodeList.getLength() && nodeList.getLength() > 1;i++){
+                NamedNodeMap attr = nodeList.item(i).getAttributes();
+                Node nodeAttr = attr.getNamedItem("sequence");
+                tmpseq = Integer.parseInt(nodeAttr.getNodeValue());
+                System.out.println("contribute sequence: " + tmpseq);
+                if (tmpseq > last_contribute){
+                    last_contribute = tmpseq;
+                }
+            }
+            
+        } catch (SAXException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

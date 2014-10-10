@@ -90,7 +90,8 @@ public class UploadSettings extends javax.swing.JFrame {
      */
     public UploadSettings() {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-
+        
+        // crea la finestra di autenticazione
         initComponents();
 
         JLabel label = new JLabel();
@@ -462,7 +463,20 @@ public class UploadSettings extends javax.swing.JFrame {
 
                         if (pdfPath.length() > 0 || Globals.TYPE_BOOK != Globals.BOOK) {
                             String text = Utility.getBundleString("info1",bundle);
-                            text += (Globals.TYPE_BOOK == Globals.BOOK) ? Utility.getBundleString("info5",bundle) : Utility.getBundleString("info6",bundle);
+                            
+                            switch(Globals.TYPE_BOOK) {
+                                case Globals.BOOK:
+                                    text += Utility.getBundleString("info5",bundle);
+                                    break;
+                                case Globals.COLLECTION:
+                                    text += Utility.getBundleString("info6",bundle);
+                                    break;
+                                case Globals.SINGLE_VIDEO:
+                                    text += Utility.getBundleString("info8",bundle);
+                                    break;
+                                default:
+                                    logger.error("Object not recognized!");
+                            }
                             text += " " + Utility.getBundleString("info7",bundle);
 
                             Object[] options = {Utility.getBundleString("voc1",bundle), Utility.getBundleString("voc2",bundle)};

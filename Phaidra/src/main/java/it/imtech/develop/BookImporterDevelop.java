@@ -7,12 +7,14 @@ package it.imtech.develop;
 
 import it.imtech.bookimporter.BookImporter;
 import it.imtech.globals.Globals;
+import it.imtech.metadata.MetaUtility;
 import it.imtech.upload.SelectedServer;
 import it.imtech.upload.UploadSettings;
 import it.imtech.utility.Language;
 import it.imtech.utility.Server;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.logging.Level;
 import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 
@@ -40,30 +42,38 @@ public class BookImporterDevelop {
     }
     
     public final void testBookLayout(){
-        Server selected = getDevelopmentServer();
-        SelectedServer.getInstance(selected);
-    
-        //Globals.SELECTED_FOLDER = "C:\\Users\\mauro\\Documents\\testing";
-        //Globals.SELECTED_FOLDER_SEP = "C:\\Users\\mauro\\Documents\\testing\\";
-        
-        Globals.SELECTED_FOLDER = "/Users/mede318/testphaidra";
-        Globals.SELECTED_FOLDER_SEP = "/Users/mede318/testphaidra/";
-        
-        Globals.CURRENT_LOCALE = new Locale("it");
-        
-        ArrayList<Language> langs = new ArrayList<Language>();
-        Language lang = new Language("en", "binglese", "Inglese");
-        langs.add(lang);
-        lang = new Language("it", "bitaliano", "Italiano");
-        langs.add(lang);
-        lang = new Language("de", "btedesco", "Tedesco");
-        langs.add(lang);
-
-        Globals.LANGUAGES = langs.toArray(new Language[langs.size()]);
-          
-        Globals.setGlobalVariables();
-        Globals.TYPE_BOOK = Globals.BOOK;
-        BookImporter x = BookImporter.getInstance();
+        try {
+            Server selected = getDevelopmentServer();
+            SelectedServer.getInstance(selected);
+            
+            //Globals.SELECTED_FOLDER = "C:\\Users\\mauro\\Documents\\testing";
+            //Globals.SELECTED_FOLDER_SEP = "C:\\Users\\mauro\\Documents\\testing\\";
+            
+            Globals.SELECTED_FOLDER = "C:\\Users\\davide\\Documents\\test2";
+            Globals.SELECTED_FOLDER_SEP = "C:\\Users\\davide\\Documents\\test2\\";
+            
+            //Globals.SELECTED_FOLDER = "/Users/davide/testphaidra";
+            //Globals.SELECTED_FOLDER_SEP = "/Users/mede318/testphaidra/";
+            
+            Globals.CURRENT_LOCALE = new Locale("it");
+            
+            ArrayList<Language> langs = new ArrayList<Language>();
+            Language lang = new Language("en", "binglese", "Inglese");
+            langs.add(lang);
+            lang = new Language("it", "bitaliano", "Italiano");
+            langs.add(lang);
+            lang = new Language("de", "btedesco", "Tedesco");
+            langs.add(lang);
+            
+            Globals.LANGUAGES = langs.toArray(new Language[langs.size()]);
+            
+            Globals.setGlobalVariables();
+            MetaUtility.getInstance().preInitializeData();
+            Globals.TYPE_BOOK = Globals.BOOK;
+            BookImporter x = BookImporter.getInstance();
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(BookImporterDevelop.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public static void main(String[] args){

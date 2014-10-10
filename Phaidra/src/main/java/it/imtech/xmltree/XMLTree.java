@@ -52,6 +52,7 @@ public class XMLTree extends JTree {
     private static int abspagenum;
     private static int seq;
     private static int pagenum;
+    private static String videopath;
     //int[] selRowsShowPopup;
     List<XMLNode> listNodesForMenuAction;
     List<XMLNode> nodesToInsert;
@@ -113,6 +114,29 @@ public class XMLTree extends JTree {
         }
         
         return singlemeta;
+    }
+    
+    public static String getVideoPath(){
+        return videopath;
+    }
+    
+    public static int getVideoFromStructure(){
+        XMLTree.savedXmlDoc.getDocumentElement().normalize();
+        NodeList elements =  XMLTree.savedXmlDoc.getElementsByTagName("book:page");
+        int n_video = 0;
+        
+        for (int i=0;i<elements.getLength();i++){
+            if (elements.item(i).getNodeType() == Node.ELEMENT_NODE) {
+                Element node = (Element) elements.item(i);
+                videopath = Globals.SELECTED_FOLDER_SEP + node.getAttribute("href");
+                
+                if(Utility.getMimeType(videopath).contains("video")) {
+                    n_video++;
+                }
+            }
+        }
+        
+        return n_video;
     }
     
     

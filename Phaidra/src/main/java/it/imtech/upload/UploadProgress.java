@@ -23,6 +23,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -78,14 +79,19 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     NodeList nodeLst = getNodeList();
 
                     if (Globals.TYPE_BOOK == Globals.BOOK) {
+                        logger.info("Create a book");
                         createBook(obj, total, nodeLst);
-                    } else {
-                        
+                    } else if(Globals.TYPE_BOOK == Globals.COLLECTION){
+                        logger.info("Create a collection");
                         if (XMLTree.getSingleMetadataFiles().size()>0){
                             XMLTree.exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
                         }
                         
                         createCollection(obj, total, nodeLst);
+                    } else if(Globals.TYPE_BOOK == Globals.SINGLE_VIDEO){
+                        logger.info("Create a single video");
+                        jButton2.setText(Utility.getBundleString("openvideourl",bundle));
+                        createSingleVideo(XMLTree.getVideoPath(), Utility.getMimeType(XMLTree.getVideoPath()), this, obj);
                     }
                 } else {
                     String pbundle = Globals.TYPE_BOOK == Globals.BOOK ? "book" : "coll";
@@ -191,6 +197,30 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("cuploadterm",bundle) + ": " + uploadObjPID);
                 }
                 jButton1.setEnabled(true);
+            }
+        }
+        
+        private void createSingleVideo(String path, String mimetype, UploadProgress.UplTask task, ImObject obj) throws Exception{
+            File file = new File(path);
+            
+            if(file.isFile()) {
+                
+                logger.info("Start upload video with PID: " + uploadObjPID);
+                addUploadInfoText(Utility.getBundleString("logging15",bundle));
+                
+                setTextField(path);
+                
+                //call api method
+                uploadObjPID = obj.createVideo(path, mimetype, task);
+                
+                jButton2.setEnabled(true);
+                addUploadInfoText(Utility.getBundleString("logging17",bundle) + uploadObjPID);
+                String message = Utility.getBundleString("uploadProgress12",bundle) + ": " 
+                                 + uploadObjPID + " " + Utility.getBundleString("uploadProgress2",bundle);
+                JOptionPane.showMessageDialog(new Frame(), message);
+            } else {
+                addUploadInfoText(Utility.getBundleString("logging16",bundle));
+                logger.error("The file in this path is not valid");
             }
         }
 
@@ -583,6 +613,10 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         jProgressBar1.setMaximum(100);
         jButton1.setMinimumSize(new Dimension(120,20));
         jButton2.setMinimumSize(new Dimension(120,20));
+        
+        jTextField1.setEditable(false);
+        jTextPane1.setEditable(false);
+        
         updateLanguageLabel();
 
         setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -776,6 +810,12 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
 
         jLabel2.setText("File");
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -833,7 +873,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -858,6 +898,10 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

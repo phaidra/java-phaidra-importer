@@ -40,6 +40,9 @@ public class Globals {
     public static boolean ONLINE = false;
     
     //Book Collection definition
+    //E' stato scelto di creare un libro o una collezzione
+    public static char TYPE_BOOK = 'X';
+    public final static char SINGLE_VIDEO = 'V';
     public final static char BOOK = 'B';
     public final static char COLLECTION = 'C';
     public final static char NOT_EXISTS = 'X';
@@ -83,8 +86,7 @@ public class Globals {
     public static String SELECTED_FOLDER_SEP = null;
     //La cartella di output e scrivibile
     public static boolean FOLDER_WRITABLE = true;
-    //E' stato scelto di creare un libro o una collezzione
-    public static char TYPE_BOOK = 'X';
+    
     //Lingue possibili
     public static Language[] LANGUAGES;
     

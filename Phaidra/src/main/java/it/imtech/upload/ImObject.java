@@ -238,6 +238,24 @@ public class ImObject {
             taxon.removeAttribute("seq");
         }
         
+        XPath lifecycle = XPathFactory.newInstance().newXPath();
+        expression = "//*[local-name()='lifecycle']";
+        nodeList = (NodeList) lifecycle.evaluate(expression, doc, XPathConstants.NODESET);
+        
+        for(int i=0;i<nodeList.getLength();i++){
+            Element cycle = (Element) nodeList.item(i);
+            cycle.removeAttribute("seq");
+        }
+        
+        XPath contribute = XPathFactory.newInstance().newXPath();
+        expression = "//*[local-name()='contribute']";
+        nodeList = (NodeList) contribute.evaluate(expression, doc, XPathConstants.NODESET);
+        
+        for(int i=0;i<nodeList.getLength();i++){
+            Element contr = (Element) nodeList.item(i);
+            contr.removeAttribute("seq");
+        }
+        
         String meta = Utility.getStringFromDocument(doc);
 
         String metadata = meta.replace("PID", PID);
