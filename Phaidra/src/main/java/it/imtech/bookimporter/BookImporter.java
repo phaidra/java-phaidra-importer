@@ -1,5 +1,6 @@
 package it.imtech.bookimporter;
 
+import com.toedter.calendar.JDateChooser;
 import it.imtech.about.About;
 import it.imtech.dialogs.AlertDialog;
 import it.imtech.dialogs.ConfirmDialog;
@@ -136,6 +137,7 @@ public class BookImporter extends javax.swing.JFrame {
             createFrontalPane();
             
             jTextField2.setText("");
+            
             
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         
@@ -940,6 +942,17 @@ public class BookImporter extends javax.swing.JFrame {
                     }
                     
                     try{
+                        if (components[i] instanceof JDateChooser) {
+                            if (components[i].getName() != null){
+                                componentMap.put(components[i].getName(), components[i]);
+                            }
+                        }
+                    }
+                    catch(Exception ex){
+                        logger.error(ex.getMessage());
+                    }
+                    
+                    try{
                         if (components[i] instanceof JTree) {
                             if (components[i].getName() != null){
                                 componentMap.put(components[i].getName(), components[i]);
@@ -1501,6 +1514,7 @@ public class BookImporter extends javax.swing.JFrame {
      * cartella locale di lavoro
      */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        
         exportAllMetadatas(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 

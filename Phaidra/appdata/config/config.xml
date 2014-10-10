@@ -7,5 +7,5 @@
     <locale>
         <current value="it">lingua</current>
     </locale>
-    <version current="2.4">version</version>
+    <version current="2.5">version</version>
 </gui-definition>

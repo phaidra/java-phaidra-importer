@@ -47,7 +47,7 @@ public class Globals {
     public final static char COLLECTION = 'C';
     public final static char NOT_EXISTS = 'X';
     
-    public final static String HIDDEN_FOLDER = ".imphaidraimportertwo";
+    public final static String HIDDEN_FOLDER = ".imphaidraimporter2014";
     public static String USER_DIR  = System.getProperty("user.home") + Utility.getSep() + HIDDEN_FOLDER + Utility.getSep();
     
     public static String UNDO_DIR  = USER_DIR + "undo" +Utility.getSep();

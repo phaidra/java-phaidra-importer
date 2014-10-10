@@ -4,6 +4,7 @@
  */
 package it.imtech.metadata;
 
+import com.toedter.calendar.JDateChooser;
 import it.imtech.bookimporter.*;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
@@ -1079,7 +1080,8 @@ public class MetaUtility {
                     //BookImporter.policy.addIndexedComponent(voc);
                     tabobjects.add(voc);
                 } else if (datatype.equals("DateTime")) {
-                    final JXDatePicker datePicker = new JXDatePicker();
+                    //final JXDatePicker datePicker = new JXDatePicker();
+                    JDateChooser datePicker = new JDateChooser();
                     datePicker.setName("MID_" + Integer.toString(kv.getValue().MID));
                     
                     JPanel test = new JPanel(new MigLayout());
@@ -1610,7 +1612,7 @@ public class MetaUtility {
                         Component combobox = BookImporter.getInstance().getComponentByName("MID_" + Integer.toString(field.getValue().MID) + "_check");
                         JCheckBox beforechrist = (JCheckBox) combobox;
                         
-                        JXDatePicker datePicker = (JXDatePicker) element;
+                        JDateChooser datePicker = (JDateChooser) element;
                         Date data = datePicker.getDate();
 
                         field.getValue().value = "";
