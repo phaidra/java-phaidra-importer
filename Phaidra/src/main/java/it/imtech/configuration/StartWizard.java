@@ -61,7 +61,17 @@ public class StartWizard  {
     ChooseServer chooseServer;
     ChooseFolder chooseFolder;
     
-    JFrame mainFrame;
+    public JFrame mainFrame;
+    
+    private static StartWizard instance;
+    
+    public static StartWizard getInstance() {
+        if (instance == null) {
+            instance = new StartWizard();
+        }
+        
+        return instance;
+    }
     
     /**
      * Creates a new wizard with active card (Select Language/Server)
@@ -137,7 +147,7 @@ public class StartWizard  {
                     if (error==false){
                         BookImporter x = BookImporter.getInstance();
                         mainFrame.setCursor(null);
-                        mainFrame.dispose();
+                        mainFrame.setVisible(false);
                     }
                 }
             }
@@ -432,7 +442,7 @@ public class StartWizard  {
                         logger.error(ex.getMessage());
                     }
 
-                new StartWizard();
+                StartWizard.getInstance();
             }
         });
     }

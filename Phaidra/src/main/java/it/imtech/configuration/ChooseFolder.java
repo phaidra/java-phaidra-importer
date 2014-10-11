@@ -52,6 +52,7 @@ public class ChooseFolder extends javax.swing.JPanel {
     
     private ResourceBundle bundle;
     
+    
     /**
      * Creates new form chooseFolder
      */
@@ -144,7 +145,7 @@ public class ChooseFolder extends javax.swing.JPanel {
                 String file = Utility.checkDirectory(pathfile, Utility.getAvailableExtensions());
                 if(!file.isEmpty()) {
                     ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-                    AlertDialog alert = new AlertDialog(null, true, 
+                    AlertDialog alert = new AlertDialog(StartWizard.getInstance().mainFrame, true, 
                             Utility.getBundleString("dialog_2_title", bundle), 
                             Utility.getBundleString("dialog_2", bundle)+" "+file, "Ok");
                 }
@@ -190,7 +191,7 @@ public class ChooseFolder extends javax.swing.JPanel {
         String buttoncoll = Utility.getBundleString("collection", bundle);
         String buttonbook = Utility.getBundleString("book", bundle);
         String buttonko = Utility.getBundleString("back", bundle);
-        BookCollectionDialog confirm = new BookCollectionDialog(null, true, title, text, buttoncoll, buttonbook, buttonko);
+        BookCollectionDialog confirm = new BookCollectionDialog(StartWizard.getInstance().mainFrame, true, title, text, buttoncoll, buttonbook, buttonko);
 
         confirm.setVisible(true);
         result = confirm.getChoice();

@@ -65,7 +65,7 @@ public class Epub extends javax.swing.JPanel implements java.beans.PropertyChang
 
             //Export Metadata
             BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
-            String error = MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true);
+            String error = MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true, BookImporter.mainpanel);
 
                     
             if (error.length() < 1) {

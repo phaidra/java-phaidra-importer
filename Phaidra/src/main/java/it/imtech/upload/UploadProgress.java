@@ -139,7 +139,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 setTextField(path);
 
                 try{
-                    coll.addMetadata(obj.addPhaidraMetadata(uploadObjPID,""));
+                    coll.addMetadata(obj.addPhaidraMetadata(uploadObjPID,"", BookImporter.mainpanel));
                 }
                 catch (Exception ex) {
                     String exc = (ex.getMessage()!=null)?ex.getMessage():"";
@@ -211,7 +211,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 setTextField(path);
                 
                 //call api method
-                uploadObjPID = obj.createVideo(path, mimetype, task);
+                uploadObjPID = obj.createVideo(path, mimetype, task, BookImporter.mainpanel);
                 
                 jButton2.setEnabled(true);
                 addUploadInfoText(Utility.getBundleString("logging17",bundle) + uploadObjPID);
@@ -266,7 +266,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 //Aggiungo i metadati
                 try{
                         addUploadInfoText(Utility.getBundleString("uploadProgress6", bundle));
-                        book.addMetadata(obj.addPhaidraMetadata(uploadObjPID,""));
+                        book.addMetadata(obj.addPhaidraMetadata(uploadObjPID,"", BookImporter.mainpanel));
                 }
                 catch (Exception ex) {
                     String exc = (ex.getMessage()!=null)?ex.getMessage():"";
@@ -385,7 +385,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                         updateProgress(progress, total, Utility.getBundleString("clogging10",bundle) + ":" + flPID);
 
                         //Aggiungo i metadati per questa collezione
-                        flColl.addMetadata(coll.addPhaidraMetadata(flPID, container.getAttribute("name")));
+                        flColl.addMetadata(coll.addPhaidraMetadata(flPID, container.getAttribute("name"), BookImporter.mainpanel));
 
                         updateProgress(progress, total, Utility.getBundleString("clogging6",bundle) + ":" + flPID);
 
@@ -443,12 +443,17 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             boolean panelexists = false;
             
             String metadata = el.getAttribute("metadata");
-            
+            String panelname = "";
             if (metadata != null && !metadata.isEmpty()){
                 panelexists = XMLTree.setPanelIfNotExists(el.getAttribute("metadata"), el.getAttribute("pid"));
+                panelname = BookImporter.getInstance().metadatapanels.get(metadata).getPanel().getName();
+                BookImporter.getInstance().metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
                 
                 BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(metadata).getPanel());
-                MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + metadata, false, true);
+                MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + metadata, false, true, panelname);
+            }
+            else{
+                panelname = BookImporter.mainpanel;
             }
            
             //Ricava nome file e path 
@@ -461,13 +466,13 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             String slPID = null;
             
             if (Utility.fileIsPicture(mimetype)) {
-                slPID = coll.createPicture(file, mimetype, this);
+                slPID = coll.createPicture(file, mimetype, this, panelname);
                 type = Utility.getBundleString("clogging2",bundle);
             } else if (Utility.fileIsPdf(file)) {
-                slPID = coll.createDocument(file, mimetype, this);
+                slPID = coll.createDocument(file, mimetype, this, panelname);
                 type = Utility.getBundleString("clogging3",bundle);
             } else if (Utility.fileIsVideo(mimetype)) {
-                slPID = coll.createVideo(file, mimetype, this);
+                slPID = coll.createVideo(file, mimetype, this, panelname);
                 type = Utility.getBundleString("clogging13",bundle);
             }
             
@@ -478,7 +483,8 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 }
                 
                 BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
-                MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true);
+                BookImporter.getInstance().metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);                
+                MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA, false, true, panelname);
             }
             
             return slPID;
