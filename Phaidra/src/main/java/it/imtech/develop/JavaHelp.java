@@ -4,6 +4,7 @@ import it.imtech.globals.Globals;
 import it.imtech.helper.Helper;
 import java.awt.Dimension;
 import java.net.URL;
+import java.util.Locale;
 import javax.help.HelpBroker;
 import javax.help.HelpSet;
 import javax.swing.JFrame;
@@ -51,6 +52,7 @@ public class JavaHelp extends JFrame{
             public void run(){
                    //new JavaHelp();
                 Globals.setGlobalVariables();
+                Globals.CURRENT_LOCALE = new Locale("it");
                 Helper helper = new Helper();
                 
                 helper.openHelp();

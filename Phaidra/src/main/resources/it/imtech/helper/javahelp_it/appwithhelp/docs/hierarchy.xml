@@ -2,18 +2,20 @@
 <!DOCTYPE toc
   PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
 <toc version="1.0">
-   <tocitem text="Phaidra Importer" target="header_header">
-      <tocitem text="Description" target="header_description" />
-      <tocitem text="Access to Phaidra" target="header_access" />
-      <tocitem text="Why Phaidra" target="header_whyphaidra" />
+   <tocitem text="Phaidra" target="header_header">
+      <tocitem text="Descrizione" target="header_description" />
+      <tocitem text="Accesso a Phaidra" target="header_access" />
+      <tocitem text="Perche' Phaidra" target="header_whyphaidra" />
       
    </tocitem>
 
-   <tocitem text="PI Wizard" target="wizard">
-      <tocitem text="Server and language" target="wizard_serverlang" />
-      <tocitem text="Working folder" target="wizard_workfolder" />
+   <tocitem text="PHaidra Importer" target="pi">
+      <tocitem text="wizard" target="pi_wizard">
+        <tocitem text="Lingua e Server" target="pi_wizard_serverlang" />
+        <tocitem text="Cartella di lavoro" target="pi_wizard_workfolder" />
+      </tocitem>
    </tocitem>
-
+<!--
    <tocitem text="Book Creation" target="book">
         <tocitem text="Import Metadata" target="book_importmetadata"/>
         <tocitem text="Export Metadata" target="book_exportmetadata"/>
@@ -32,5 +34,5 @@
    <tocitem text="Collection Creation" target="header_collection">
         <tocitem text="Import Single Page Metadata" target="collection_importsinglemetadata"/>
         <tocitem text="Upload" target="collection_upload"/>
-   </tocitem>
+   </tocitem>-->
 </toc>

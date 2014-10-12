@@ -78,7 +78,36 @@ public class BookImporter extends javax.swing.JFrame {
     public static IndexedFocusTraversalPolicy policy;
     
     public static String mainpanel = "uwmetadata.xml";
-        
+    
+    private  void manageSingleCollectionMetadataFiles(){
+        ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+            
+        ArrayList<String> metadatafiles = XMLTree.getSingleMetadataFiles();
+                    
+        if(metadatafiles.size()>0){
+            String text = Utility.getBundleString("singlemetadata1", bundle);
+            String title= Utility.getBundleString("singlemetadata1title", bundle);
+            ConfirmDialog confirm = new ConfirmDialog(this, true, title, text, Utility.getBundleString("confirm", bundle),Utility.getBundleString("annulla", bundle));
+
+            confirm.setVisible(true);
+            boolean close = confirm.getChoice();
+            confirm.dispose();
+
+            if (close == true){
+                for (String metadatafile : metadatafiles) {
+                    try {
+                        File metadatasingle = new File(metadatafile);
+                        File sessionmeta = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + metadatasingle.getName());
+                        FileUtils.copyFile(new File(Globals.BACKUP_METADATA), sessionmeta);
+                        importSingleMetadata(metadatafile, "Test", true, true);
+                    }catch (IOException ex) {
+                        logger.error(ex.getMessage());
+                    }
+                }                
+            }
+        }
+    }
+    
     //public static Locale localConst = null;
     /**
      * Metodo di gestione del Singleton
@@ -456,6 +485,7 @@ public class BookImporter extends javax.swing.JFrame {
     
     public void importSingleMetadata(String filename, String PID, boolean view, boolean visible){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+        
         try {
             JLayeredPane singlemetadatapane = new JLayeredPane();
             singlemetadatapane.setName(PID);
@@ -480,7 +510,7 @@ public class BookImporter extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
         }
     }
-    /*
+    
     public void importMetadataSilent(String xmlFile, String panelname){
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         try {
@@ -500,7 +530,6 @@ public class BookImporter extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, Utility.getBundleString("errorloadUwmetadataText", bundle) + ": " + ex.getMessage());
         }
     }
-    */
     
     /**
      * Effettua il reload dell'interfaccia dinamica dei metadati in base al file
@@ -616,7 +645,7 @@ public class BookImporter extends javax.swing.JFrame {
             initializeData(panelname);
             
             if(exported){
-                this.importMetadata(Globals.DUPLICATION_FOLDER_SEP + "export"+panelname, panelname, false, false, true);
+                this.importMetadataSilent(Globals.DUPLICATION_FOLDER_SEP + "export"+panelname, panelname);
             }
         } catch (Exception ex) {
             logger.error(ex.getMessage());
@@ -676,7 +705,7 @@ public class BookImporter extends javax.swing.JFrame {
                                 initializeData(entry.getValue().getPanel().getName());
                                 
                                 if(exported){
-                                    this.importMetadata(backup_metadata, entry.getValue().getPanel().getName(), false, false, true);
+                                    this.importMetadataSilent(backup_metadata, entry.getValue().getPanel().getName());
                                 }
                             }
                         }
@@ -1152,7 +1181,6 @@ public class BookImporter extends javax.swing.JFrame {
             jMenuItem7.setVisible(false);
             jMenuItem14.setVisible(true);
         } else if(Globals.TYPE_BOOK == Globals.BOOK) {
-            
             jMenuItem14.setVisible(false);
         }
     }

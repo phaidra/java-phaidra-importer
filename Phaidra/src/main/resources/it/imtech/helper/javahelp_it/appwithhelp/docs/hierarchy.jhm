@@ -5,10 +5,13 @@
    <mapID target="header_access" url="header/access.html"/>
    <mapID target="header_whyphaidra" url="header/whyphaidra.html"/>
    
-   <mapID target="wizard" url="wizard/wizard.html"/>
-   <mapID target="wizard_serverlang" url="wizard/serverlang.html"/>
-   <mapID target="wizard_workfolder" url="wizard/workfolder.html"/>
+   <mapID target="pi" url="pi/pi.html"/>
    
+   <mapID target="pi_wizard" url="pi/wizard/wizard.html"/>
+   <mapID target="pi_wizard_serverlang" url="pi/wizard/serverlang.html"/>
+   <mapID target="pi_wizard_workfolder" url="pi/wizard/workfolder.html"/>
+   
+   <!--
    <mapID target="book" url="book/book.html"/>
    
    <mapID target="book_importmetadata" url="book/importmetadata.html"/>
@@ -22,4 +25,5 @@
    <mapID target="collection" url="collection/collection.html"/>
    <mapID target="collection_importsinglemetadata" url="collection/importsinglemetadata.html"/>
    <mapID target="collection_upload" url="collection/upload.html"/>
+   -->
 </map>
