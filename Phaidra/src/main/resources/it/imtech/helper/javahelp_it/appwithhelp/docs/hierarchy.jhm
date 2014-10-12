@@ -8,8 +8,12 @@
    <mapID target="pi" url="pi/pi.html"/>
    
    <mapID target="pi_wizard" url="pi/wizard/wizard.html"/>
-   <mapID target="pi_wizard_serverlang" url="pi/wizard/serverlang.html"/>
-   <mapID target="pi_wizard_workfolder" url="pi/wizard/workfolder.html"/>
+   <mapID target="pi_requisiti" url="pi/requisiti.html"/>
+   <mapID target="pi_serverlang" url="pi/serverlang.html"/>
+   <mapID target="pi_workfolder" url="pi/workfolder.html"/>
+   <mapID target="pi_maininterface" url="pi/maininterface.html"/>
+   <mapID target="pi_bookcreation" url="pi/bookcreation.html"/>
+   <mapID target="pi_popupmenu" url="pi/popupmenu.html"/>
    
    <!--
    <mapID target="book" url="book/book.html"/>

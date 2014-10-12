@@ -561,7 +561,7 @@ public class XMLTree extends JTree {
             popup.add (addAction);
             
             if (Globals.TYPE_BOOK == Globals.COLLECTION){
-                popup.add(createMenu("Single Metadata"));
+                popup.add(createMenu(Utility.getBundleString("mc_singlemetadata", bundle)));
             }
             
             popup.add (undoAction);
