@@ -574,7 +574,7 @@ public class XMLTree extends JTree {
             String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
 
             if (metadata != null && !metadata.isEmpty()){
-                 JOptionPane.showMessageDialog(new Frame(), "La pagina e gia esportata");     
+                 JOptionPane.showMessageDialog(new Frame(), Utility.getBundleString("alreadyexported", bundle));     
             }
             else{
                 try {
@@ -603,7 +603,61 @@ public class XMLTree extends JTree {
         public JMenu createMenu(String title){
             AbstractAction viewSpecificMetadata;
             AbstractAction closeSpecificMetadata;
-                       
+            AbstractAction mergeSpecificMetadata;       
+            
+            mergeSpecificMetadata = new AbstractAction(Utility.getBundleString("mc_mergemetadata", bundle), IconFactory.getIcon(
+                "blankpage", IconFactory.IconSize.SIZE_16X16)) {
+
+                public void actionPerformed(ActionEvent e) {
+                    XMLNode xmlNode = (XMLNode) getSelectionPath().getLastPathComponent();
+                        
+                    String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+                    logger.info("Merge "+pid+" metadata tab required!");
+                    
+                    ConfirmDialog confirm = new ConfirmDialog(BookImporter.getInstance(), true, 
+                            Utility.getBundleString("mergesinglemetadatatitle", bundle), 
+                            Utility.getBundleString("mergesinglemetadata", bundle),
+                            Utility.getBundleString("voc1", bundle), 
+                            Utility.getBundleString("voc2", bundle));
+
+                    confirm.setVisible(true);
+                    boolean response = confirm.getChoice();
+                    confirm.dispose();
+                    
+                    if (response==true){
+                        logger.info("Merge "+pid+" metadata tab confirmed!");
+                        String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
+                        ((Element) xmlNode.getUserObject()).removeAttribute("metadata");
+                        exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
+                        logger.info("Metadata tab deleted from object structure");
+                        
+                        File duplication = new File(Globals.DUPLICATION_FOLDER_SEP + "session" + filename);
+                        File uwmetadata = new File(Globals.SELECTED_FOLDER_SEP  + filename);
+                    
+                        BookImporter.getInstance().metadatapanels.get(filename).getPane().getParent().remove(BookImporter.getInstance().metadatapanels.get(filename).getPane());
+                        BookImporter.getInstance().metadatapanels.remove(filename);
+                        logger.info("Metadata tab deleted from main panel");
+                        
+                        if (duplication.isFile()){
+                            logger.info("Session metadata file deleted!" + filename);
+                            duplication.delete();
+                        }
+                        if(uwmetadata.isFile()){
+                            logger.info("UWmetadata file deleted!" + filename);
+                            uwmetadata.delete();
+                        }
+                        
+                        AlertDialog leafdialog = new AlertDialog(BookImporter.getInstance(), true, 
+                                Utility.getBundleString("mergedsinglemetadatatitle", bundle), 
+                                Utility.getBundleString("mergedsinglemetadata", bundle),
+                                Utility.getBundleString("ok", bundle));
+                    }
+                    else{
+                        logger.info("Merge "+pid+" cancelled by user!");
+                    }
+                }
+            };
+            
             closeSpecificMetadata = new AbstractAction(Utility.getBundleString("mc_closemetadata", bundle), IconFactory.getIcon(
                 "blankpage", IconFactory.IconSize.SIZE_16X16)) {
 
@@ -645,6 +699,10 @@ public class XMLTree extends JTree {
                                 if(metadataexported){
                                     BookImporter.getInstance().metadatapanels.get(metadata).getPane().getParent().remove(BookImporter.getInstance().metadatapanels.get(metadata).getPane());
                                     BookImporter.getInstance().metadatapanels.remove(metadata);
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(BookImporter.getInstance(), BookImporter.getInstance().exportError);
+                                    BookImporter.getInstance().exportError = "";
                                 }
                             }
                         }
@@ -716,8 +774,8 @@ public class XMLTree extends JTree {
         
             JMenu m = new JMenu(title);
                         
-            //m.add (exportSpecificMetadata);
             m.add (viewSpecificMetadata);
+            m.add (mergeSpecificMetadata);
             m.add (closeSpecificMetadata);
             return m;
         }

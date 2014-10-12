@@ -52,6 +52,8 @@ public class Globals {
     
     public static String UNDO_DIR  = USER_DIR + "undo" +Utility.getSep();
     public static String LOG4J     = USER_DIR + "config" + Utility.getSep() + "log4j.xml";
+    public static String UPLLOG4J     = USER_DIR + "config" + Utility.getSep() + "upllog4j.xml";
+    
     public static String BLANKPAGE = USER_DIR + "config" + Utility.getSep() + "blankpage.jpg";
     public static String INTERNAL_CONFIG = USER_DIR +"config" + Utility.getSep() + "config.xml";
      
@@ -99,7 +101,7 @@ public class Globals {
         Globals.JRPATH = Utility.getCurrentJarDirectory();
         Globals.RESOURCES = JRPATH + BASE_RESOURCES;
         Globals.CURRENT_LOCALE = new Locale("en");
-        DOMConfigurator.configure(Globals.LOG4J);
+        
         
         File backup = new File(Globals.DUPLICATION_FOLDER_SEP);
         

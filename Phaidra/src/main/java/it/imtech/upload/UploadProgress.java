@@ -27,12 +27,15 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.xml.parsers.ParserConfigurationException;
 import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -68,6 +71,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         @Override
         public Void doInBackground() {
             try {
+                logger.info("Starting upload...");
                 if (Utility.countXmlTreeLeaves() > 0) {
                     //Crea oggetto ImObject per interfacciarsi a Phaidra
                     ImObject obj = new ImObject(phaidra, lock, user);
@@ -614,6 +618,9 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         path = pdfPth;
         user = usernm;
         BookImporter.getInstance().setVisible(false);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHms");
+        System.setProperty("current.date", dateFormat.format(new Date()));
+        DOMConfigurator.configure(Globals.UPLLOG4J);
         
         initComponents();
         jProgressBar1.setMaximum(100);
@@ -748,6 +755,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
         text += "\n" + add;
         jTextPane1.setText(text);
         jTextPane1.revalidate();
+        logger.info(add);
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {

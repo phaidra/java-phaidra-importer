@@ -394,7 +394,7 @@ public class MetaUtility {
         return metadatas;
     }
     
-    public void setSessionMetadataFile(String panelname){
+    public void setSessionMetadataFile(String filetoparse, String panelname){
          try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc;
@@ -406,7 +406,7 @@ public class MetaUtility {
             XPathFactory factory = XPathFactory.newInstance();
 	    XPath xpath = factory.newXPath();
             
-            File impmetadata = new File(Globals.SELECTED_FOLDER_SEP + panelname);
+            File impmetadata = new File(filetoparse);
             doc = dBuilder.parse(impmetadata);
                       
             String expression = "//*[local-name()='contribute']";
@@ -1639,7 +1639,6 @@ public class MetaUtility {
                         Map.Entry tmp2 = (Map.Entry) tmp.getSelectedItem();
                         
                         if(field.getValue().datatype.equals("License") || field.getValue().datatype.equals("Vocabulary")){
-                            //ResourceBundle tmpBundle = ResourceBundle.getBundle(Globals.RESOURCES, BookImporter.localConst, Globals.loader); 
                             ResourceBundle tmpBundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader); 
                             
                             if(checkMandatory && tmp2.getValue().toString().equals(Utility.getBundleString("comboselect",tmpBundle)) && field.getValue().mandatory.equals("Y"))
@@ -1652,6 +1651,11 @@ public class MetaUtility {
                         }                        
                         else
                             field.getValue().value = tmp2.getKey().toString();
+                    }
+                }
+                else{
+                    if (midp.equals("11") || midp.equals("13")){
+                        field.getValue().value ="";
                     }
                 }
             }

@@ -38,6 +38,7 @@ import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 
 /**
  * Represents the starting wizard with two cards 
@@ -86,6 +87,7 @@ public class StartWizard  {
             System.exit(1);
         }
         
+        DOMConfigurator.configure(Globals.LOG4J);
         logger = Logger.getLogger(StartWizard.class);
         logger.info("Starting Application Phaidra Importer");
         
@@ -263,6 +265,7 @@ public class StartWizard  {
             File blank = new File(currentpath + "config" + Utility.getSep() + "blankpage.jpg");
             File xmlconfnew = new File(currentpath + "config" + Utility.getSep() + "config.xml");
             File logforj = new File(currentpath + "config" + Utility.getSep() + "log4j.xml");
+            File upllogforj = new File(currentpath + "config" + Utility.getSep() + "upllog4j.xml");
             
             if (!appdata.exists()){
                 appdata.mkdir();
@@ -316,8 +319,6 @@ public class StartWizard  {
                   }
                   catch (ConfigurationException ex)
                   {
-                    logger.error("ERR:0002 Cannot copy configuration application data");
-                    logger.error(ex.getMessage());
                     result = false;
                   }
             } else {
@@ -326,6 +327,8 @@ public class StartWizard  {
 
             File logforjnew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"log4j.xml");
             FileUtils.copyFile(logforj, logforjnew);
+            File upllogforjnew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"upllog4j.xml");
+            FileUtils.copyFile(upllogforj, upllogforjnew);
             
             File blanknew = new File(Globals.USER_DIR + "config" + Utility.getSep() +"blankpage.jpg");
             if (!blanknew.exists()){
@@ -334,8 +337,6 @@ public class StartWizard  {
             
             result = true;
         } catch (IOException ex) {
-            logger.error("ERR:0002 Cannot copy application data");
-            logger.error(ex.getMessage());
             result = false;
         }
         return result;

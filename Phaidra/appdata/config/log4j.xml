@@ -14,12 +14,22 @@
       <param name="Threshold" value="INFO" />
       <param name="File" value="PhaidraLogs/phaidraimporter.log"/>
       <param name="MaxFileSize" value="1000KB"/>
-      <param name="MaxBackupIndex" value="1"/>
+      <param name="MaxBackupIndex" value="10"/>
       <layout class="org.apache.log4j.PatternLayout">
          <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
       </layout>
    </appender>
- 
+   <!--
+   <appender name="uploadAppender" class="org.apache.log4j.RollingFileAppender">
+      <param name="Threshold" value="INFO" />
+      <param name="File" value="PhaidraLogs/upload${current.date}.log" append="false" />
+      <param name="MaxFileSize" value="10000KB"/>
+      <param name="MaxBackupIndex" value="10"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
+      </layout>
+   </appender>
+ -->
    <logger name="it.imtech.configuration.StartWizard" additivity="false" >
       <level value="INFO" />
       <appender-ref ref="consoleAppender"/>
