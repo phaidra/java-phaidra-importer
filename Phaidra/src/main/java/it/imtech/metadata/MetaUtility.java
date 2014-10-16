@@ -139,23 +139,28 @@ public class MetaUtility {
     }
     
     private JComboBox addClassificationChoice(JPanel choice, final String sequence, final String panelname){
-        
+       
         int selected = 0;
         int index = 0;
         int count = 1;
-        
+
         for (Map.Entry<String, String> vc : availableClassifications.entrySet()) {
             if(count==1 && !selectedClassificationList.containsKey(panelname+"---"+sequence)){
                 selected = index;
                 selectedClassificationList.put(panelname+"---"+sequence,vc.getKey());
             }
-            
+
             if(selectedClassificationList.containsKey(panelname+"---"+sequence)){
                 if (selectedClassificationList.get(panelname+"---"+sequence).equals(vc.getKey())) {
                     selected = index;
                 }
             }
             index++;
+        }
+        try {
+            classifications_reader(sequence, panelname);
+            } catch (Exception ex) {
+            logger.error(ex.getMessage());
         }
 
         final ComboMapImpl model = new ComboMapImpl();
@@ -167,37 +172,37 @@ public class MetaUtility {
         model.specialRenderCombo(result);
 
         result.addActionListener(new ActionListener() {
-           
+
             public void actionPerformed(ActionEvent event) {
                 BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        
+
                 JComboBox comboBox = (JComboBox) event.getSource();
                 Map.Entry<String,String> c = (Map.Entry<String,String>) comboBox.getSelectedItem();
-                
-                selectedClassificationList.put(panelname+"---"+sequence, c.getKey());      
-               
+
+                selectedClassificationList.put(panelname+"---"+sequence, c.getKey());
+
                 
                 BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(panelname).getPanel());
                 JPanel innerPanel = (JPanel) BookImporter.getInstance().getComponentByName(panelname +"---ImPannelloClassif---"+sequence);
                 innerPanel.removeAll();
-                
+
                 try {
                     classifications_reader(sequence, panelname);
                     addClassification(innerPanel, classificationMID, sequence, panelname);
-                } 
+                }
                 catch (Exception ex) {
                     logger.error(ex.getMessage());
                 }
-                
+
                 innerPanel.revalidate();
                 BookImporter.getInstance().setCursor(null);
             }
         });
-
+  
         return result;
     }    
     
-    private void setClassificationChoice() throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
+    public void setClassificationChoice() throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
         Document doc = Utility.getDocument(Globals.URL_CLASS_LIST,false);
         
         String fl ="";
@@ -229,8 +234,53 @@ public class MetaUtility {
             }
         }
     }
-    
-    
+   
+    public String addClassificationLinkFromid(String id){
+        boolean found = false;
+        String link = "";
+        
+        if (this.classificationIDS.containsValue(id)){
+            return Utility.getValueFromKey(this.classificationIDS, id);
+        }
+        else{
+            for (String classificationLink : this.availableClassifications.keySet())
+            {
+                try {
+                    if(found == false &&  !classificationIDS.containsKey(classificationLink)){
+                        Document doc = Utility.getDocument(classificationLink,true);
+                        XPath taxonpath = XPathFactory.newInstance().newXPath();
+                        String expression = "//*[local-name()='classification']";
+
+                        NodeList nodeList = (NodeList) taxonpath.evaluate(expression, doc, XPathConstants.NODESET);
+
+                        for(int i=0;i<nodeList.getLength();i++){
+                            Element node = (Element) nodeList.item(i);
+
+                            if (node.getAttribute("ID").equals(id)){
+                                classificationIDS.put(classificationLink, id);
+                                link = classificationLink;
+                                found = true;
+                            } 
+                            else{
+                                classificationIDS.put(classificationLink, id);
+                            }
+                        }
+                    }
+                } catch (ParserConfigurationException ex) {
+                    logger.error(ex.getMessage());   
+                } catch (SAXException ex) {
+                    logger.error(ex.getMessage());   
+                } catch (IOException ex) {
+                    logger.error(ex.getMessage());   
+                } catch (XPathExpressionException ex) {
+                    logger.error(ex.getMessage());   
+                }
+            }
+            
+            return link;
+        }
+    }
+            
     /**
      * Metodo adibito alla lettura ricorsiva dei file delle classificazioni
      *
@@ -238,8 +288,6 @@ public class MetaUtility {
      * @throws Exception
      */
     public void classifications_reader(String sequence, String panelname) throws Exception {
-        setClassificationChoice();
-
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         String currentlink = "";
         
@@ -258,37 +306,26 @@ public class MetaUtility {
             }
             
             for (String classificationLink : this.availableClassifications.keySet())
-            {
+            { 
                 if (!alreadyread && (defaultclassification || (!currentlink.isEmpty() && classificationLink.equals(currentlink)))){
                     defaultclassification = false;
 
                     TreeMap<Object, Taxon> rval = new TreeMap<Object, Taxon>();
                     Document doc = Utility.getDocument(classificationLink,true);
-                    Node n = doc.getFirstChild();
-                    Element classification = null;
+                    XPath taxonpath = XPathFactory.newInstance().newXPath();
+                    String expression = "//*[local-name()='classification']";
 
-                    if (n.getNodeType() == Node.ELEMENT_NODE) {
-                        Element classifications = (Element) n;
+                    NodeList nList = (NodeList) taxonpath.evaluate(expression, doc, XPathConstants.NODESET);
 
-                        if (classifications.getTagName().equals("classifications")) {
-                            NodeList nList = classifications.getChildNodes();
-                            int s = 0;
-
-                            do {
-                                if (nList.item(s).getNodeType() == Node.ELEMENT_NODE) {
-                                    classification = (Element) nList.item(s);
-
-                                    if (classification.getTagName().equals("classification")) {
-                                        classificationIDS.put(classificationLink, classification.getAttribute("ID"));
-                                    }
-                                }
-                                s++;
-                            } while (s < nList.getLength());
-
-                            if (classification == null) {
-                                throw new Exception("Classification 1 not found");
-                            }
-
+                    for(int s=0;s<nList.getLength();s++){
+                        Element classification = (Element) nList.item(s);
+                        
+                        if (classification == null) {
+                            throw new Exception("Classification 1 not found");
+                        }
+                        else{
+                            classificationIDS.put(classificationLink, classification.getAttribute("ID"));
+                        
                             NodeList tList = classification.getChildNodes();
                             for (int z = 0; z < tList.getLength(); z++) {
                                 if (tList.item(z).getNodeType() == Node.ELEMENT_NODE) {
@@ -299,9 +336,9 @@ public class MetaUtility {
                                     }
                                 }
                             }
+                            
+                            oefos.put(classificationLink, rval);
                         }
-
-                        oefos.put(classificationLink, rval);
                     }
                 }
             }
@@ -701,6 +738,7 @@ public class MetaUtility {
 
             if (kv.getValue().MID == 45) {
                 JPanel choice = new JPanel(new MigLayout());
+                
                 JComboBox combo = addClassificationChoice(choice, kv.getValue().sequence, panelname);
                 
                 JLabel labelc = new JLabel();
@@ -763,6 +801,7 @@ public class MetaUtility {
                 
                 innerPanel.setName(panelname+"---ImPannelloClassif---"+kv.getValue().sequence);
                 try{
+                   
                    addClassification(innerPanel, classificationMID, kv.getValue().sequence, panelname);
                 }
                 catch (Exception ex) {
@@ -1745,7 +1784,7 @@ public class MetaUtility {
                             for (int i=0; i<children.getLength();i++){
                                 Node nodetaxon = (Node) children.item(i);
                                 if (nodetaxon.getNodeName().equals("ns7:source")){
-                                    String link = Utility.getValueFromKey(this.classificationIDS, nodetaxon.getTextContent());
+                                    String link = this.addClassificationLinkFromid(nodetaxon.getTextContent());
                                     this.selectedClassificationList.put(panelname+"---"+field.getValue().sequence,link);
                                 }
                                 if (nodetaxon.getNodeName().equals("ns7:taxon")){
@@ -1979,13 +2018,13 @@ public class MetaUtility {
             }
             
         } catch (SAXException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         } catch (IOException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         } catch (XPathExpressionException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         }
     }
 }

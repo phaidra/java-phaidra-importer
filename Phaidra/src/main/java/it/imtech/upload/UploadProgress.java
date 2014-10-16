@@ -143,7 +143,13 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 setTextField(path);
 
                 try{
+                    BookImporter.getInstance().metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + BookImporter.mainpanel);
+                    BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
+                    MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + BookImporter.mainpanel, false, true, BookImporter.mainpanel);
+                
                     coll.addMetadata(obj.addPhaidraMetadata(uploadObjPID,"", BookImporter.mainpanel));
+                
+                
                 }
                 catch (Exception ex) {
                     String exc = (ex.getMessage()!=null)?ex.getMessage():"";
@@ -389,6 +395,10 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                         updateProgress(progress, total, Utility.getBundleString("clogging10",bundle) + ":" + flPID);
 
                         //Aggiungo i metadati per questa collezione
+                        BookImporter.getInstance().metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + BookImporter.mainpanel);
+                        BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
+                        MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + BookImporter.mainpanel, false, true, BookImporter.mainpanel);
+                
                         flColl.addMetadata(coll.addPhaidraMetadata(flPID, container.getAttribute("name"), BookImporter.mainpanel));
 
                         updateProgress(progress, total, Utility.getBundleString("clogging6",bundle) + ":" + flPID);

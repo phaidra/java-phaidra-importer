@@ -256,6 +256,17 @@ public class ImObject {
             contr.removeAttribute("seq");
         }
         
+        if (nodeList.getLength()<=1){
+            XPath entity = XPathFactory.newInstance().newXPath();
+            expression = "//*[local-name()='entity']";
+            nodeList = (NodeList) entity.evaluate(expression, doc, XPathConstants.NODESET);
+            
+            for(int i=0;i<nodeList.getLength();i++){
+                Element contr = (Element) nodeList.item(i);
+                contr.removeAttribute("seq");
+            }
+        }
+        
         String meta = Utility.getStringFromDocument(doc);
 
         String metadata = meta.replace("PID", PID);

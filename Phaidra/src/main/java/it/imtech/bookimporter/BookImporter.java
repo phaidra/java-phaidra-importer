@@ -11,6 +11,7 @@ import it.imtech.globals.Globals;
 import it.imtech.helper.Helper;
 import it.imtech.metadata.MetaPanels;
 import it.imtech.metadata.MetaUtility;
+import static it.imtech.metadata.MetaUtility.logger;
 import it.imtech.metadata.Metadata;
 import it.imtech.metadata.Template;
 import it.imtech.metadata.TemplatesUtility;
@@ -188,6 +189,8 @@ public class BookImporter extends javax.swing.JFrame {
             initializeXmlTree(fromFile, false);
             
             setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            
+            MetaUtility.getInstance().setClassificationChoice();
             
             initializeData("");
             
@@ -491,18 +494,22 @@ public class BookImporter extends javax.swing.JFrame {
             singlemetadatapane.setName(PID);
             singlemetadatapane.setVisible(visible);
             String xmlFile = Globals.SELECTED_FOLDER_SEP + filename;
-            //Leggi il file uwmetadata.xml
-            setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + filename);
-
-            //Ridisegna l'interfaccia
-            this.setMetadataTab(singlemetadatapane, filename);
+            
+            javax.swing.JScrollPane main_scroller = new javax.swing.JScrollPane();
+            final JPanel main_panel = new JPanel(new MigLayout("fillx, insets 10 10 10 10"));
+            main_panel.setName(filename);
+            MetaPanels item = new MetaPanels(main_panel, singlemetadatapane);
+            this.metadatapanels.put(main_panel.getName(), item);
+            singlemetadatapane.add(main_scroller, "wrap, growx");
+   
             jTabbedPane2.add(singlemetadatapane);
             
             if (view == true){
                 this.importMetadata(xmlFile, filename, false, false, false);
             }
             else{
+                this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + filename);
+                this.setMetadataTab(singlemetadatapane, filename);
                 this.exportMetadataSilent(xmlFile, filename);
             }
         } catch (Exception ex) {
@@ -771,13 +778,13 @@ public class BookImporter extends javax.swing.JFrame {
     private void initializeData(String panelname) {
        try {
             //Inserisce tutte le classificazione nella struttura dati oefos
-            MetaUtility.getInstance().classifications_reader("", panelname);
+            //MetaUtility.getInstance().classifications_reader("", panelname);
             
             //Crea Interfaccia dei metadatai
             if (this.metadatapanels.isEmpty()){
                 //Inserisce tutti i campi dinamici visibili nella struttura dati metadata
                 this.metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP+ Globals.BACKUP_INIT);
-
+                
                 this.setMetadataTab(jLayeredPane1, mainpanel);
             }
             else{
