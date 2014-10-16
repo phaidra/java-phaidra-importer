@@ -1782,14 +1782,19 @@ public class BookImporter extends javax.swing.JFrame {
         logger.info("Upload: check internet connection...");
 
         if (Globals.ONLINE){
+            canupload = true;
             logger.info("Upload: connection [OK]");
             
             XMLTree.exportBookstructure(Globals.SELECTED_FOLDER_SEP);
-            
+            AlertDialog alert = null;
             switch(XMLTree.getVideoFromStructure()) {
                 case 0:
-                    logger.error("No video founded in the structure!");
+                    logger.error("No videos founded!");
                     canupload = false;
+                    bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+                    alert = new AlertDialog(null, true, 
+                            Utility.getBundleString("dialog_4_title", bundle), 
+                            Utility.getBundleString("dialog_4", bundle)+" "+file, "Ok");
                     break;
                 case 1:
                     logger.info("One video founded");
@@ -1798,7 +1803,7 @@ public class BookImporter extends javax.swing.JFrame {
                     logger.error("Too many videos founded, only one is accepted!");
                     canupload = false;
                     bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
-                    AlertDialog alert = new AlertDialog(null, true, 
+                    alert = new AlertDialog(null, true, 
                             Utility.getBundleString("dialog_3_title", bundle), 
                             Utility.getBundleString("dialog_3", bundle)+" "+file, "Ok");
                     break;

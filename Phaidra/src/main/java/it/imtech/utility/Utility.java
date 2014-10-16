@@ -940,7 +940,7 @@ public class Utility {
             languages.put("Urdu", "ur");
             languages.put("Uzbeco", "uz");
             languages.put("Vietnamita", "vi");
-            languages.put("Volap?k", "vo");
+            languages.put("Volap\u00E4k", "vo");
             languages.put("Wallon", "wa");
             languages.put("Wolof", "wo");
             languages.put("Xhosa", "xh");
@@ -1129,7 +1129,7 @@ public class Utility {
             languages.put("Urdu", "ur");
             languages.put("Uzbek", "uz");
             languages.put("Vietnamese", "vi");
-            languages.put("Volapuk", "vo");
+            languages.put("Volap\u00E4k", "vo");
             languages.put("Walloon", "wa");
             languages.put("Wolof", "wo");
             languages.put("Xhosa", "xh");

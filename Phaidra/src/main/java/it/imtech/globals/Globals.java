@@ -94,8 +94,8 @@ public class Globals {
     
     public static URL URL_CONFIG = null;
     
-    public static List<String> AVAILABLE_EXT_BOOK = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg");
-    public static List<String> AVAILABLE_EXT_COLLECTION = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg", "pdf", "avi", "wmv", "flv", "mov", "mpeg2","mpeg","mpeg4");
+    public static List<String> AVAILABLE_EXT_BOOK = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg","db");
+    public static List<String> AVAILABLE_EXT_COLLECTION = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg", "pdf", "avi", "wmv", "flv", "mov", "mpeg2","mpeg","mpeg4","db");
     
     public static void setGlobalVariables(){
         Globals.JRPATH = Utility.getCurrentJarDirectory();
