@@ -103,7 +103,7 @@ public class ImObject {
      * @return Identificativo dell'oggetto
      * @throws Exception 
      */
-    protected String createPicture(String path, String mimetype, UploadProgress.UplTask task) throws Exception {
+    protected String createPicture(String path, String mimetype, UploadProgress.UplTask task, String panelname) throws Exception {
         task.addUploadInfoInnerText(Utility.getBundleString("uploadimage1",bundle));
         Picture picture = phaidra.createPicture("Picture Java");
         
@@ -111,7 +111,7 @@ public class ImObject {
         picture.addPicture(path, mimetype);
         
         task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
-        picture.addMetadata(addPhaidraMetadata(picture.getPID(),""));
+        picture.addMetadata(addPhaidraMetadata(picture.getPID(),"", panelname));
 
         //Nel caso di pubblicazione postposta
         if (lockObjectsUntil != null) {
@@ -135,7 +135,7 @@ public class ImObject {
      * @return Identificativo dell'oggetto
      * @throws Exception 
      */
-    protected String createVideo(String path, String mimetype, UploadProgress.UplTask task) throws Exception {
+    protected String createVideo(String path, String mimetype, UploadProgress.UplTask task, String panelname) throws Exception {
         task.addUploadInfoInnerText(Utility.getBundleString("uploadvideo1",bundle));
         Video video = phaidra.createVideo("Video Java");
         
@@ -143,7 +143,7 @@ public class ImObject {
         video.addVideo(path, mimetype);
         
         task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
-        video.addMetadata(addPhaidraMetadata(video.getPID(),""));
+        video.addMetadata(addPhaidraMetadata(video.getPID(),"", panelname));
 
         //Nel caso di pubblicazione postposta
         if (lockObjectsUntil != null) {
@@ -165,7 +165,7 @@ public class ImObject {
      * @return
      * @throws Exception 
      */
-    protected String createDocument(String path, String mimetype, UploadProgress.UplTask task) throws Exception {
+    protected String createDocument(String path, String mimetype, UploadProgress.UplTask task, String panelname) throws Exception {
         task.addUploadInfoInnerText(Utility.getBundleString("uploaddocument1",bundle));
         Document doc = phaidra.createDocument("Document Java");
         
@@ -173,7 +173,7 @@ public class ImObject {
         doc.addPDF(path);
         
         task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
-        doc.addMetadata(addPhaidraMetadata(doc.getPID(),""));
+        doc.addMetadata(addPhaidraMetadata(doc.getPID(),"", panelname));
 
         //Nel caso di pubblicazione postposta
         if (lockObjectsUntil != null) {
@@ -220,14 +220,14 @@ public class ImObject {
      * @return
      * @throws Exception 
      */
-    protected String addPhaidraMetadata(String PID,String title) throws Exception {
+    protected String addPhaidraMetadata(String PID,String title, String panelname) throws Exception {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         String uploadDate = df.format(new Date());
 
         ByteArrayInputStream dataContent = getDataStreamContent(PID);
         HashMap<String, String> objectDefaultValues = getDefaultValues(PID, dataContent);
 
-        org.w3c.dom.Document doc = MetaUtility.getInstance().create_uwmetadata(PID, -1, objectDefaultValues,title);
+        org.w3c.dom.Document doc = MetaUtility.getInstance().create_uwmetadata(PID, -1, objectDefaultValues,title, panelname);
         
         XPath taxonpath = XPathFactory.newInstance().newXPath();
         String expression = "//*[local-name()='taxonpath']";
@@ -254,6 +254,17 @@ public class ImObject {
         for(int i=0;i<nodeList.getLength();i++){
             Element contr = (Element) nodeList.item(i);
             contr.removeAttribute("seq");
+        }
+        
+        if (nodeList.getLength()<=1){
+            XPath entity = XPathFactory.newInstance().newXPath();
+            expression = "//*[local-name()='entity']";
+            nodeList = (NodeList) entity.evaluate(expression, doc, XPathConstants.NODESET);
+            
+            for(int i=0;i<nodeList.getLength();i++){
+                Element contr = (Element) nodeList.item(i);
+                contr.removeAttribute("seq");
+            }
         }
         
         String meta = Utility.getStringFromDocument(doc);
@@ -313,7 +324,7 @@ public class ImObject {
             page.addPicture(Globals.SELECTED_FOLDER_SEP + filename, Utility.getMimeType(Globals.SELECTED_FOLDER_SEP + filename));
             task.addUploadInfoInnerText(Utility.getBundleString("uploadgeneric3",bundle));
             
-            page.addMetadata(this.addPhaidraMetadata(PID,""));
+            page.addMetadata(this.addPhaidraMetadata(PID,"", BookImporter.mainpanel));
 
             if (BookImporter.getInstance().ocrBoxIsChecked()) {
                 ImPage dummy = new ImPage();

@@ -94,7 +94,7 @@ public class TemplateDialog extends javax.swing.JDialog {
                     String mstitle = Utility.getBundleString("templatedeletetitle", innerbundle);
                     String buttonok = Utility.getBundleString("voc1", innerbundle);
                     String buttonko = Utility.getBundleString("voc2", innerbundle);
-                    ConfirmDialog confirm = new ConfirmDialog(null, true, mstitle, mstext, buttonok, buttonko);
+                    ConfirmDialog confirm = new ConfirmDialog(BookImporter.getInstance(), true, mstitle, mstext, buttonok, buttonko);
 
                     boolean response = false;
 
@@ -142,6 +142,7 @@ public class TemplateDialog extends javax.swing.JDialog {
      */
     public TemplateDialog(java.awt.Frame parent, boolean modal,  String title, String text, String buttonok, String panelname) {
         super(parent, modal);
+        setModal(true);
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
         initComponents();

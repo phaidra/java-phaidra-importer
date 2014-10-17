@@ -57,7 +57,7 @@ public class Updater extends JFrame{
     private JScrollPane sp;
     private JPanel pan1;
     private JPanel pan2;
-    private String USER_DIR = System.getProperty("user.home")+getSep()+".imphaidraimportertwo";
+    private String USER_DIR = System.getProperty("user.home")+getSep()+".imphaidraimporter2014";
      
     public Updater() {   
         this.setAlwaysOnTop(true);
@@ -116,7 +116,7 @@ public class Updater extends JFrame{
     }
 
     private void updateVersion() throws ConfigurationException, ParserConfigurationException, MalformedURLException, SAXException, IOException{
-        XMLConfiguration config = new XMLConfiguration(USER_DIR + getSep() + "config" + getSep() + "config.xml");
+        XMLConfiguration config = new XMLConfiguration(jarpath + getSep() + "appdata" + getSep() + "config" + getSep() + "config.xml");
         config.setAutoSave(true);
 
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -125,6 +125,7 @@ public class Updater extends JFrame{
         URL url2 = new URL(config.getString("configurl[@path]"));
         XMLConfiguration config2 = new XMLConfiguration(url2);
         
+        //URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
         URL url = new URL(config2.getString("urlupdater.descrurl"));
         Document doc = dBuilder.parse(url.openStream());
          
@@ -339,8 +340,8 @@ public class Updater extends JFrame{
         URL url2 = new URL(config.getString("configurl[@path]"));
         XMLConfiguration config2 = new XMLConfiguration(url2);
         
-        //URL url = new URL(config2.getString("urlupdater.descrurl"));
-        URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
+        URL url = new URL(config2.getString("urlupdater.descrurl"));
+        //URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
         Document doc = dBuilder.parse(url.openStream());
          
         NodeList nl = doc.getElementsByTagName("release");

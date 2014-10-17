@@ -83,7 +83,7 @@ public class Vocabulary {
            
            if (iNode.getTagName().equals("entry") && ID==null) {
                 ID = iNode.getAttribute("ID");
-                
+               
                 //Inner description nodes
                 NodeList descrList = iNode.getChildNodes();
                 for (int z = 0; z < descrList.getLength(); z++) {
@@ -93,10 +93,11 @@ public class Vocabulary {
                              if (descrNode.getAttribute("isocode").equals(sLang)){
                                 description = descrNode.getTextContent();
                              }
-                             else 
+                             else {
                                  if (descrNode.getAttribute("isocode").equals("de") && description == null){
                                      DE_VOC = descrNode.getTextContent();
                                  }
+                             }
                          }
                     }
                 }
@@ -111,7 +112,8 @@ public class Vocabulary {
                 values.put(description,new VocEntry(ID, description));
                 ID = null;
                 description = null;
-           }                       
+           } 
+           DE_VOC = null;
         }
     }
     return values;    

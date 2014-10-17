@@ -47,11 +47,13 @@ public class Globals {
     public final static char COLLECTION = 'C';
     public final static char NOT_EXISTS = 'X';
     
-    public final static String HIDDEN_FOLDER = ".imphaidraimportertwo";
+    public final static String HIDDEN_FOLDER = ".imphaidraimporter2014";
     public static String USER_DIR  = System.getProperty("user.home") + Utility.getSep() + HIDDEN_FOLDER + Utility.getSep();
     
     public static String UNDO_DIR  = USER_DIR + "undo" +Utility.getSep();
     public static String LOG4J     = USER_DIR + "config" + Utility.getSep() + "log4j.xml";
+    public static String UPLLOG4J     = USER_DIR + "config" + Utility.getSep() + "upllog4j.xml";
+    
     public static String BLANKPAGE = USER_DIR + "config" + Utility.getSep() + "blankpage.jpg";
     public static String INTERNAL_CONFIG = USER_DIR +"config" + Utility.getSep() + "config.xml";
      
@@ -92,14 +94,14 @@ public class Globals {
     
     public static URL URL_CONFIG = null;
     
-    public static List<String> AVAILABLE_EXT_BOOK = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg");
-    public static List<String> AVAILABLE_EXT_COLLECTION = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg", "pdf", "avi", "wmv", "flv", "mov", "mpeg2","mpeg","mpeg4");
+    public static List<String> AVAILABLE_EXT_BOOK = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg","db");
+    public static List<String> AVAILABLE_EXT_COLLECTION = Arrays.asList("jpg", "png", "tif", "tiff", "xml", "jpeg", "pdf", "avi", "wmv", "flv", "mov", "mpeg2","mpeg","mpeg4","db");
     
     public static void setGlobalVariables(){
         Globals.JRPATH = Utility.getCurrentJarDirectory();
         Globals.RESOURCES = JRPATH + BASE_RESOURCES;
         Globals.CURRENT_LOCALE = new Locale("en");
-        DOMConfigurator.configure(Globals.LOG4J);
+        
         
         File backup = new File(Globals.DUPLICATION_FOLDER_SEP);
         

@@ -45,6 +45,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
      */
     public ConfirmDialog(java.awt.Frame parent, boolean modal,  String title, String text, String buttonok, String buttonko) {
         super(parent, modal);
+        setModal(true);
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
         initComponents();

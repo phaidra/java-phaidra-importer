@@ -39,7 +39,8 @@ public class AlertDialog extends javax.swing.JDialog {
      * @param type
      */
     public AlertDialog(java.awt.Frame parent, boolean modal,  String title, String text, String buttonok) {
-        super(parent, modal);
+        super(parent, true);
+        setModal(true);
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         
         initComponents();
@@ -64,7 +65,6 @@ public class AlertDialog extends javax.swing.JDialog {
         north.add(sentence, "wrap");
         
         JPanel south = new JPanel(sud);
-        //south.setBackground(Color.WHITE);
   
         JButton nextButton = new JButton(buttonok);//Utility.getBundleString("confirm", bundle));
         nextButton.setMinimumSize(new Dimension(120,10));

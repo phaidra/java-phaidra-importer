@@ -9,6 +9,7 @@ import it.imtech.globals.Globals;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.io.File;
 import java.net.URL;
 import javax.help.HelpBroker;
 import javax.help.HelpSet;
@@ -28,6 +29,14 @@ public class Helper {
         String language = Globals.CURRENT_LOCALE.getLanguage();
         // Identify the location of the .hs file 
         String pathToHS = "javahelp_"+language+"/appwithhelp/docs/hierarchy_helpset.hs";
+        
+        File help = new File(pathToHS);
+        if (!help.exists()){
+            language = "en";
+        }
+        
+        pathToHS = "javahelp_"+language+"/appwithhelp/docs/hierarchy_helpset.hs";
+        
         //Create a URL for the location of the help set
         try {
             URL hsURL = getClass().getResource(pathToHS);

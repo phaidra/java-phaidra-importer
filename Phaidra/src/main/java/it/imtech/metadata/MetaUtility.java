@@ -4,6 +4,7 @@
  */
 package it.imtech.metadata;
 
+import com.toedter.calendar.JDateChooser;
 import it.imtech.bookimporter.*;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
@@ -50,7 +51,6 @@ import javax.xml.xpath.XPathFactory;
 import net.miginfocom.swing.MigLayout;
 import org.apache.commons.io.FileUtils;
 import org.apache.ws.commons.util.NamespaceContextImpl;
-import org.jdesktop.swingx.JXDatePicker;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -81,7 +81,7 @@ public class MetaUtility {
     private LinkedHashMap<String, String> availableClassifications = null;    
     
     //Contiene coppie di valori sequenza della classificazione -> link della classificazione
-    private TreeMap<String, String> selectedClassificationList;
+    private TreeMap<String, String> selectedClassificationList = new TreeMap<String, String>();;
     
     //Il nodo selezionato dall'utente durante l'importazione dei metadati
     private DefaultMutableTreeNode selected = null;
@@ -138,32 +138,33 @@ public class MetaUtility {
         this.objectTitle = newObj;
     }
     
-    public void setSelectedClassificationList(){
-        
-    }
-    
     private JComboBox addClassificationChoice(JPanel choice, final String sequence, final String panelname){
-        
+       
         int selected = 0;
         int index = 0;
         int count = 1;
-        
+
         for (Map.Entry<String, String> vc : availableClassifications.entrySet()) {
-            if(count==1 && !selectedClassificationList.containsKey(sequence)){
+            if(count==1 && !selectedClassificationList.containsKey(panelname+"---"+sequence)){
                 selected = index;
-                selectedClassificationList.put(sequence,vc.getKey());
+                selectedClassificationList.put(panelname+"---"+sequence,vc.getKey());
             }
-            
-            if(selectedClassificationList.containsKey(sequence)){
-                if (selectedClassificationList.get(sequence).equals(vc.getKey())) {
+
+            if(selectedClassificationList.containsKey(panelname+"---"+sequence)){
+                if (selectedClassificationList.get(panelname+"---"+sequence).equals(vc.getKey())) {
                     selected = index;
                 }
             }
             index++;
         }
+        try {
+            classifications_reader(sequence, panelname);
+            } catch (Exception ex) {
+            logger.error(ex.getMessage());
+        }
 
         final ComboMapImpl model = new ComboMapImpl();
-        model.putAll(availableClassifications);
+        model.putAllLinked(availableClassifications);
 
         JComboBox result = new javax.swing.JComboBox(model);
 
@@ -171,36 +172,37 @@ public class MetaUtility {
         model.specialRenderCombo(result);
 
         result.addActionListener(new ActionListener() {
-           
+
             public void actionPerformed(ActionEvent event) {
                 BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        
+
                 JComboBox comboBox = (JComboBox) event.getSource();
                 Map.Entry<String,String> c = (Map.Entry<String,String>) comboBox.getSelectedItem();
+
+                selectedClassificationList.put(panelname+"---"+sequence, c.getKey());
+
                 
-                selectedClassificationList.put(sequence, c.getKey());      
-               
-                BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(BookImporter.mainpanel).getPanel());
-                JPanel innerPanel = (JPanel) BookImporter.getInstance().getComponentByName("ImPannelloClassif---"+sequence);
+                BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(panelname).getPanel());
+                JPanel innerPanel = (JPanel) BookImporter.getInstance().getComponentByName(panelname +"---ImPannelloClassif---"+sequence);
                 innerPanel.removeAll();
-                
+
                 try {
-                    classifications_reader(sequence);
+                    classifications_reader(sequence, panelname);
                     addClassification(innerPanel, classificationMID, sequence, panelname);
-                } 
+                }
                 catch (Exception ex) {
                     logger.error(ex.getMessage());
                 }
-                
+
                 innerPanel.revalidate();
                 BookImporter.getInstance().setCursor(null);
             }
         });
-
+  
         return result;
     }    
     
-    private void setClassificationChoice() throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
+    public void setClassificationChoice() throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
         Document doc = Utility.getDocument(Globals.URL_CLASS_LIST,false);
         
         String fl ="";
@@ -232,17 +234,60 @@ public class MetaUtility {
             }
         }
     }
-    
-    
+   
+    public String addClassificationLinkFromid(String id){
+        boolean found = false;
+        String link = "";
+        
+        if (this.classificationIDS.containsValue(id)){
+            return Utility.getValueFromKey(this.classificationIDS, id);
+        }
+        else{
+            for (String classificationLink : this.availableClassifications.keySet())
+            {
+                try {
+                    if(found == false &&  !classificationIDS.containsKey(classificationLink)){
+                        Document doc = Utility.getDocument(classificationLink,true);
+                        XPath taxonpath = XPathFactory.newInstance().newXPath();
+                        String expression = "//*[local-name()='classification']";
+
+                        NodeList nodeList = (NodeList) taxonpath.evaluate(expression, doc, XPathConstants.NODESET);
+
+                        for(int i=0;i<nodeList.getLength();i++){
+                            Element node = (Element) nodeList.item(i);
+
+                            if (node.getAttribute("ID").equals(id)){
+                                classificationIDS.put(classificationLink, id);
+                                link = classificationLink;
+                                found = true;
+                            } 
+                            else{
+                                classificationIDS.put(classificationLink, id);
+                            }
+                        }
+                    }
+                } catch (ParserConfigurationException ex) {
+                    logger.error(ex.getMessage());   
+                } catch (SAXException ex) {
+                    logger.error(ex.getMessage());   
+                } catch (IOException ex) {
+                    logger.error(ex.getMessage());   
+                } catch (XPathExpressionException ex) {
+                    logger.error(ex.getMessage());   
+                }
+            }
+            
+            return link;
+        }
+    }
+            
     /**
      * Metodo adibito alla lettura ricorsiva dei file delle classificazioni
      *
      * @return TreeMap<Object, Taxon>
      * @throws Exception
      */
-    public void classifications_reader(String sequence) throws Exception {
-        setClassificationChoice();
-
+    public void classifications_reader(String sequence, String panelname) throws Exception {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
         String currentlink = "";
         
@@ -252,7 +297,7 @@ public class MetaUtility {
             
             if (!sequence.isEmpty()){
                 defaultclassification = false;
-                currentlink = selectedClassificationList.get(sequence);
+                currentlink = selectedClassificationList.get(panelname+"---"+sequence);
                 
                 if (!currentlink.isEmpty()){
                     if (oefos.containsKey(currentlink))
@@ -261,37 +306,26 @@ public class MetaUtility {
             }
             
             for (String classificationLink : this.availableClassifications.keySet())
-            {
+            { 
                 if (!alreadyread && (defaultclassification || (!currentlink.isEmpty() && classificationLink.equals(currentlink)))){
                     defaultclassification = false;
 
                     TreeMap<Object, Taxon> rval = new TreeMap<Object, Taxon>();
                     Document doc = Utility.getDocument(classificationLink,true);
-                    Node n = doc.getFirstChild();
-                    Element classification = null;
+                    XPath taxonpath = XPathFactory.newInstance().newXPath();
+                    String expression = "//*[local-name()='classification']";
 
-                    if (n.getNodeType() == Node.ELEMENT_NODE) {
-                        Element classifications = (Element) n;
+                    NodeList nList = (NodeList) taxonpath.evaluate(expression, doc, XPathConstants.NODESET);
 
-                        if (classifications.getTagName().equals("classifications")) {
-                            NodeList nList = classifications.getChildNodes();
-                            int s = 0;
-
-                            do {
-                                if (nList.item(s).getNodeType() == Node.ELEMENT_NODE) {
-                                    classification = (Element) nList.item(s);
-
-                                    if (classification.getTagName().equals("classification")) {
-                                        classificationIDS.put(classificationLink, classification.getAttribute("ID"));
-                                    }
-                                }
-                                s++;
-                            } while (s < nList.getLength());
-
-                            if (classification == null) {
-                                throw new Exception("Classification 1 not found");
-                            }
-
+                    for(int s=0;s<nList.getLength();s++){
+                        Element classification = (Element) nList.item(s);
+                        
+                        if (classification == null) {
+                            throw new Exception("Classification 1 not found");
+                        }
+                        else{
+                            classificationIDS.put(classificationLink, classification.getAttribute("ID"));
+                        
                             NodeList tList = classification.getChildNodes();
                             for (int z = 0; z < tList.getLength(); z++) {
                                 if (tList.item(z).getNodeType() == Node.ELEMENT_NODE) {
@@ -302,9 +336,9 @@ public class MetaUtility {
                                     }
                                 }
                             }
+                            
+                            oefos.put(classificationLink, rval);
                         }
-
-                        oefos.put(classificationLink, rval);
                     }
                 }
             }
@@ -375,7 +409,7 @@ public class MetaUtility {
         forceAddMID.put("148", 1); // Numero Matricola
         
         try {
-            selectedClassificationList = new TreeMap<String, String>();
+            //selectedClassificationList = new TreeMap<String, String>();
             
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -397,7 +431,7 @@ public class MetaUtility {
         return metadatas;
     }
     
-    public void setSessionMetadataFile(String panelname){
+    public void setSessionMetadataFile(String filetoparse, String panelname){
          try {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             Document doc;
@@ -409,7 +443,7 @@ public class MetaUtility {
             XPathFactory factory = XPathFactory.newInstance();
 	    XPath xpath = factory.newXPath();
             
-            File impmetadata = new File(Globals.SELECTED_FOLDER_SEP + Globals.IMP_EXP_METADATA);
+            File impmetadata = new File(filetoparse);
             doc = dBuilder.parse(impmetadata);
                       
             String expression = "//*[local-name()='contribute']";
@@ -704,6 +738,7 @@ public class MetaUtility {
 
             if (kv.getValue().MID == 45) {
                 JPanel choice = new JPanel(new MigLayout());
+                
                 JComboBox combo = addClassificationChoice(choice, kv.getValue().sequence, panelname);
                 
                 JLabel labelc = new JLabel();
@@ -764,8 +799,9 @@ public class MetaUtility {
                 parent.add(choice, "wrap,width 100:700:700");
                 classificationMID = kv.getValue().MID;
                 
-                innerPanel.setName("ImPannelloClassif---"+kv.getValue().sequence);
+                innerPanel.setName(panelname+"---ImPannelloClassif---"+kv.getValue().sequence);
                 try{
+                   
                    addClassification(innerPanel, classificationMID, kv.getValue().sequence, panelname);
                 }
                 catch (Exception ex) {
@@ -1079,7 +1115,8 @@ public class MetaUtility {
                     //BookImporter.policy.addIndexedComponent(voc);
                     tabobjects.add(voc);
                 } else if (datatype.equals("DateTime")) {
-                    final JXDatePicker datePicker = new JXDatePicker();
+                    //final JXDatePicker datePicker = new JXDatePicker();
+                    JDateChooser datePicker = new JDateChooser();
                     datePicker.setName("MID_" + Integer.toString(kv.getValue().MID));
                     
                     JPanel test = new JPanel(new MigLayout());
@@ -1144,7 +1181,7 @@ public class MetaUtility {
      * @param checkMandatory
      * @return
      */
-    public String check_and_save_metadata(String xmlFile,Boolean toFile, boolean checkMandatory) {
+    public String check_and_save_metadata(String xmlFile,Boolean toFile, boolean checkMandatory, String panelname) {
         String result = "";
 
         result = check_and_save_metadata_recursive(BookImporter.getInstance().getMetadata(), checkMandatory);
@@ -1158,7 +1195,7 @@ public class MetaUtility {
                 this.objectDefaultValues.put("format", "DEFAULT");
                 this.objectDefaultValues.put("peer_reviewed", "no");
                 
-                Document savedXmlMetadata = create_uwmetadata(null, -1, null,"");
+                Document savedXmlMetadata = create_uwmetadata(null, -1, null,"", panelname);
                 
                 if(toFile)
                     it.imtech.xmltree.XMLUtil.xmlWriter(savedXmlMetadata, xmlFile);
@@ -1177,7 +1214,7 @@ public class MetaUtility {
      * @param filePath File da cui importare i metadati
      * @throws Exception
      */
-    public void read_uwmetadata(String filePath) throws Exception {
+    public void read_uwmetadata(String filePath, String panelname) throws Exception {
         try {
             File xmlFile = new File(filePath);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -1195,7 +1232,7 @@ public class MetaUtility {
                 count++;
             }
             
-            this.read_uwmetadata_recursive(BookImporter.getInstance().getMetadata(), "//phaidra0:uwmetadata", nsContext, doc);
+            this.read_uwmetadata_recursive(BookImporter.getInstance().getMetadata(), "//phaidra0:uwmetadata", nsContext, doc, panelname);
         } catch (Exception ex) {
             ResourceBundle ex_bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             throw new Exception(Utility.getBundleString("error22",ex_bundle) + ": " + ex.getMessage());
@@ -1213,7 +1250,7 @@ public class MetaUtility {
      * dell'interfaccia
      * @throws Exception
      */
-    public Document create_uwmetadata(String pid, int pagenum, HashMap<String, String> objectDefaultValues,String collTitle) throws Exception {
+    public Document create_uwmetadata(String pid, int pagenum, HashMap<String, String> objectDefaultValues,String collTitle, String panelname) throws Exception {
         String xmlFile = "";
 
         if (objectDefaultValues != null) {
@@ -1246,7 +1283,7 @@ public class MetaUtility {
             for (Map.Entry<String, String> field : metadata_namespaces.entrySet()) {
                 rootElement.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:" + field.getKey().toString(), field.getValue().toString());
             }
-            create_uwmetadata_recursive(xmlDoc, rootElement, BookImporter.getInstance().getMetadata(), this.objectDefaultValues, pagenum, collTitle);
+            create_uwmetadata_recursive(xmlDoc, rootElement, BookImporter.getInstance().getMetadata(), this.objectDefaultValues, pagenum, collTitle, panelname);
         } catch (TransformerConfigurationException e) {
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -1286,7 +1323,8 @@ public class MetaUtility {
         try {
             DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getLastSelectedPathComponent();
             String completePath = "";
-
+            //OefosPaths path = new OefosPaths(panelname, sequence);
+            
             BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(panelname).getPanel());
             Component controls = BookImporter.getInstance().getComponentByName("classification_path---"+sequence);
 
@@ -1309,9 +1347,9 @@ public class MetaUtility {
                     completePath += (i != nodes.length - 1) ? "/" : "";
                 }
                 
-                this.oefos_path.put(sequence, single_path);
+                this.oefos_path.put(panelname+"----"+sequence, single_path);
             } else {
-                this.oefos_path.put(sequence, null);
+                this.oefos_path.put(panelname+"----"+sequence, null);
             }
 
             JLabel label = (JLabel) controls;
@@ -1337,21 +1375,21 @@ public class MetaUtility {
      * @param taxons La lista di nodi per livello
      */
     
-    private void recursiveOefosTreeviewBuild(DefaultMutableTreeNode nodes, TreeMap<Object, Taxon> taxons, String sequence) throws Exception {
+    private void recursiveOefosTreeviewBuild(DefaultMutableTreeNode nodes, TreeMap<Object, Taxon> taxons, String sequence, String panelname) throws Exception {
         try {
             for (Map.Entry<Object, Taxon> kv : taxons.entrySet()) {
                 ClassNode iNode = new ClassNode("" + kv.getKey(), kv.getValue().upstream_identifier + ": " + kv.getValue().description);
               
                 ClassMutableNode inner = new ClassMutableNode(iNode);
                 nodes.add(inner);
-
-                if (this.oefos_path.get(sequence) != null) {
-                    if (this.oefos_path.get(sequence).containsValue(kv.getValue().TID)) {
+                String oefosname = panelname+"----"+sequence;
+                if (this.oefos_path.get(oefosname) != null) {
+                    if (this.oefos_path.get(oefosname).containsValue(kv.getValue().TID)) {
                         selected = inner;
                     }
                 }
 
-                recursiveOefosTreeviewBuild(inner, kv.getValue().subtaxons, sequence);
+                recursiveOefosTreeviewBuild(inner, kv.getValue().subtaxons, sequence, panelname);
             }
 
  //          Utility.sortTreeChildren(nodes);
@@ -1374,9 +1412,9 @@ public class MetaUtility {
             selected = null;
             String selectedPath = "";
             
-            String link = selectedClassificationList.get(sequence);
+            String link = selectedClassificationList.get(panelname+"---"+sequence);
             
-            recursiveOefosTreeviewBuild(hierarchy, oefos.get(link), sequence);
+            recursiveOefosTreeviewBuild(hierarchy, oefos.get(link), sequence, panelname);
             DefaultTreeModel model = new DefaultTreeModel(hierarchy);
 
             final JTree tree = new JTree(model);
@@ -1610,7 +1648,7 @@ public class MetaUtility {
                         Component combobox = BookImporter.getInstance().getComponentByName("MID_" + Integer.toString(field.getValue().MID) + "_check");
                         JCheckBox beforechrist = (JCheckBox) combobox;
                         
-                        JXDatePicker datePicker = (JXDatePicker) element;
+                        JDateChooser datePicker = (JDateChooser) element;
                         Date data = datePicker.getDate();
 
                         field.getValue().value = "";
@@ -1640,7 +1678,6 @@ public class MetaUtility {
                         Map.Entry tmp2 = (Map.Entry) tmp.getSelectedItem();
                         
                         if(field.getValue().datatype.equals("License") || field.getValue().datatype.equals("Vocabulary")){
-                            //ResourceBundle tmpBundle = ResourceBundle.getBundle(Globals.RESOURCES, BookImporter.localConst, Globals.loader); 
                             ResourceBundle tmpBundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader); 
                             
                             if(checkMandatory && tmp2.getValue().toString().equals(Utility.getBundleString("comboselect",tmpBundle)) && field.getValue().mandatory.equals("Y"))
@@ -1653,6 +1690,11 @@ public class MetaUtility {
                         }                        
                         else
                             field.getValue().value = tmp2.getKey().toString();
+                    }
+                }
+                else{
+                    if (midp.equals("11") || midp.equals("13")){
+                        field.getValue().value ="";
                     }
                 }
             }
@@ -1711,7 +1753,7 @@ public class MetaUtility {
         }
     }
 
-    private void read_uwmetadata_recursive(Map<Object, Metadata> submetadatas, String xpath, NamespaceContextImpl nsmgr, Document nav) throws XPathExpressionException {
+    private void read_uwmetadata_recursive(Map<Object, Metadata> submetadatas, String xpath, NamespaceContextImpl nsmgr, Document nav, String panelname) throws XPathExpressionException {
         for (Map.Entry<Object, Metadata> field : submetadatas.entrySet()) {
             String actXpath = "";
             if (field.getValue().MID_parent==11 || field.getValue().MID_parent==13){
@@ -1742,15 +1784,16 @@ public class MetaUtility {
                             for (int i=0; i<children.getLength();i++){
                                 Node nodetaxon = (Node) children.item(i);
                                 if (nodetaxon.getNodeName().equals("ns7:source")){
-                                    String link = Utility.getValueFromKey(this.classificationIDS, nodetaxon.getTextContent());
-                                    this.selectedClassificationList.put(field.getValue().sequence,link);
+                                    String link = this.addClassificationLinkFromid(nodetaxon.getTextContent());
+                                    this.selectedClassificationList.put(panelname+"---"+field.getValue().sequence,link);
                                 }
                                 if (nodetaxon.getNodeName().equals("ns7:taxon")){
                                     single_path.put(countpaths, Integer.parseInt(nodetaxon.getTextContent()));
                                     countpaths++;
                                 }
                             }
-                            this.oefos_path.put(field.getValue().sequence, single_path);
+                            //OefosPaths path = new OefosPaths(panelname, field.getValue().sequence);
+                            this.oefos_path.put(panelname+"----"+field.getValue().sequence, single_path);
                         }
                     } else {
                         field.getValue().value = node.getTextContent();
@@ -1758,12 +1801,12 @@ public class MetaUtility {
                 }
             }
             if (field.getValue().submetadatas != null) {
-                read_uwmetadata_recursive(field.getValue().submetadatas, actXpath, nsmgr, nav);
+                read_uwmetadata_recursive(field.getValue().submetadatas, actXpath, nsmgr, nav, panelname);
             }
         }
     }
 
-    private void create_uwmetadata_recursive(Document w, Element e, Map<Object, Metadata> submetadatas, HashMap<String, String> defValues, int pagenum, String collTitle) throws Exception {
+    private void create_uwmetadata_recursive(Document w, Element e, Map<Object, Metadata> submetadatas, HashMap<String, String> defValues, int pagenum, String collTitle, String panelname) throws Exception {
         try {
             ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
             boolean classificationtag = false;
@@ -1771,13 +1814,14 @@ public class MetaUtility {
             XPath xpath = XPathFactory.newInstance().newXPath();
 	 
             for (Map.Entry<Object, Metadata> field : submetadatas.entrySet()) {
+                String oefospath = panelname + "----"+field.getValue().sequence;
                 if (field.getValue().MID == 2) {
                     this.objectTitle = field.getValue().value;
                 }
                 if (field.getValue().datatype.equals("Node")) {
-                    if (field.getValue().MID == 45 && this.oefos_path.get(field.getValue().sequence) == null) {
+                    if (field.getValue().MID == 45 && this.oefos_path.get(oefospath) == null) {
                         continue;
-                    } else if (field.getValue().MID == 45 && this.oefos_path.get(field.getValue().sequence).size() < 1) {
+                    } else if (field.getValue().MID == 45 && this.oefos_path.get(oefospath).size() < 1) {
                         continue;
                     } else {
                         //Set classification tag
@@ -1795,24 +1839,24 @@ public class MetaUtility {
                                 nodeList.item(0).appendChild(link);
                             }
                         }
-                        create_uwmetadata_recursive(w, link, field.getValue().submetadatas, defValues, pagenum, collTitle);
+                        create_uwmetadata_recursive(w, link, field.getValue().submetadatas, defValues, pagenum, collTitle, panelname);
                     }
                 } else if (field.getValue().MID == 46) {
                     //Set source tag
-                    if (this.oefos_path.get(field.getValue().sequence).size() > 0) {
+                    if (this.oefos_path.get(oefospath).size() > 0) {
                         String book = Utility.getValueFromKey(metadata_namespaces, field.getValue().foxmlnamespace);
                         Element link = w.createElement(book + ":" + field.getValue().foxmlname);
                         
-                        String classiflink = this.selectedClassificationList.get(field.getValue().sequence);
+                        String classiflink = this.selectedClassificationList.get(panelname+"---"+field.getValue().sequence);
                         String CID = this.classificationIDS.get(classiflink);
                         
                         link.setTextContent(CID);
                         
                         e.appendChild(link);
                     }
-                } else if (field.getValue().MID == 47 && this.oefos_path.get(field.getValue().sequence).size() > 0) {
+                } else if (field.getValue().MID == 47 && this.oefos_path.get(oefospath).size() > 0) {
                     //Set taxonpaths tags
-                    for (Map.Entry<Integer, Integer> iField : this.oefos_path.get(field.getValue().sequence).entrySet()) {
+                    for (Map.Entry<Integer, Integer> iField : this.oefos_path.get(oefospath).entrySet()) {
                         String book = Utility.getValueFromKey(metadata_namespaces, field.getValue().foxmlnamespace);
                         Element link = w.createElement(book + ":" + field.getValue().foxmlname);
                       
@@ -1974,13 +2018,13 @@ public class MetaUtility {
             }
             
         } catch (SAXException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         } catch (IOException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         } catch (XPathExpressionException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         } catch (ParserConfigurationException ex) {
-            Logger.getLogger(MetaUtility.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex.getMessage());   
         }
     }
 }
