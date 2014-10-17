@@ -1236,10 +1236,10 @@ public class BookImporter extends javax.swing.JFrame {
 
         jSplitPane1.setPreferredSize(new java.awt.Dimension(232, 414));
 
-        jTree2.setMaximumSize(new java.awt.Dimension(300, 76));
-        jTree2.setMinimumSize(new java.awt.Dimension(300, 76));
         jTree2.setPreferredSize(new java.awt.Dimension(300, 76));
         jScrollPane1.setViewportView(jTree2);
+        jScrollPane1.createVerticalScrollBar();
+        jScrollPane1.createHorizontalScrollBar();
 
         jSplitPane1.setLeftComponent(jScrollPane1);
 
