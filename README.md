@@ -10,4 +10,4 @@ Source code of Phaidra Importer, see:
 
 more information on the Phaidra project at PHAIDRA INTERNATIONAL - http://phaidra.org/
 
-This is the second version
+This is the second version. 

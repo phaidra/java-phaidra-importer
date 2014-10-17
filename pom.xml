@@ -10,6 +10,13 @@
         <module>CustomTargetPanel</module>
         <module>Phaidra</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.michaelbaranov</groupId>
+            <artifactId>microba</artifactId>
+            <version>0.4.4.3</version>
+        </dependency>
+    </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

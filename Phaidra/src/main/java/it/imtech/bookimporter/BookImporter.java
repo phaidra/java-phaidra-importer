@@ -1719,6 +1719,7 @@ public class BookImporter extends javax.swing.JFrame {
         logger.info("Upload: check internet connection...");
 
         if (Globals.ONLINE){
+            canupload = true;
             logger.info("Upload: connection [OK]");
             
             XMLTree.exportBookstructure(Globals.SELECTED_FOLDER_SEP);

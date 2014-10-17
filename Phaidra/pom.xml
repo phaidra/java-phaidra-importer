@@ -60,7 +60,7 @@
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
                         <manifestEntries>
-                            <Class-Path>lib/epublib-core-3.0-SNAPSHOT.jar lib/gsdll32.lib lib/gsdll32.dll  lib/fedora-client.jar lib/axis.jar  lib/commons-discovery.jar lib/jaxrpc.jar lib/wsdl4j-1.5.1.jar lib/trippi-1.1.2-core.jar lib/java-api-2.8.padova.jar</Class-Path>
+                            <Class-Path>lib/epublib-core-3.0-SNAPSHOT.jar lib/gsdll32.lib lib/gsdll32.dll  lib/fedora-client.jar lib/axis.jar lib/commons-discovery.jar lib/jaxrpc.jar lib/wsdl4j-1.5.1.jar lib/trippi-1.1.2-core.jar lib/java-api-2.8.padova.jar</Class-Path>
                         </manifestEntries>
                     </archive>
                    <outputDirectory>${project.build.directory}/staging</outputDirectory>
@@ -590,5 +590,10 @@
             <artifactId>javahelp</artifactId>
             <version>2.0.05</version>
         </dependency>
-      </dependencies>
+        <dependency>
+            <groupId>com.toedter</groupId>
+            <artifactId>jcalendar</artifactId>
+            <version>1.4</version>
+        </dependency>
+    </dependencies>
 </project>
