@@ -166,7 +166,7 @@
                 <description isocode="de">Titel</description>
                 <description isocode="sr">naslov</description>
               </metadata>
-              <metadata mandatory="N" ID="66" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1731" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+              <metadata mandatory="N" ID="66" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1731" lomref="" searchable="N" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="^.*$">
                 <description isocode="sr">vrsta</description>
                 <description isocode="it">Tipo</description>
                 <description isocode="en">Type</description>
@@ -532,7 +532,7 @@
           </metadata>
           <metadata mandatory="N" ID="75" forxmlname="department" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1736" lomref="10.2.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Department" mid_parent="73" cardinality="1" ordered="N" fgslabel="uw.organization.orgassignment.department" vid="" defaultvalue="" sequence="2" valuespace="^.*$">
             <description isocode="sr">institut</description>
-            <description isocode="it">Struttura o progettoo</description>
+            <description isocode="it">Struttura o progetto</description>
             <description isocode="en">Institute</description>
             <description isocode="de">Institut</description>
           </metadata>
@@ -565,7 +565,7 @@
       </metadata>
     </metadatas>
   </metadata>
-  <metadata mandatory="N" ID="82" hidden="1" forxmlname="histkult" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10870" lomref="" searchable="N" autofield="N" editable="N" oid="2" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="10" valuespace="">
+  <metadata mandatory="N" ID="82" hidden="" forxmlname="histkult" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10870" lomref="" searchable="N" autofield="N" editable="N" oid="2" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="10" valuespace="">
     <description isocode="sr">detalji o objektu</description>
     <description isocode="it">Dati dell'oggetto originale</description>
     <description isocode="en">Contextual Allegation</description>
