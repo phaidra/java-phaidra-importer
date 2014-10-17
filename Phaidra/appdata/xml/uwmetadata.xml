@@ -166,7 +166,7 @@
                 <description isocode="de">Titel</description>
                 <description isocode="sr">naslov</description>
               </metadata>
-              <metadata mandatory="N" ID="66" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1731" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+              <metadata mandatory="N" ID="66" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1731" lomref="" searchable="N" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="^.*$">
                 <description isocode="sr">vrsta</description>
                 <description isocode="it">Tipo</description>
                 <description isocode="en">Type</description>
@@ -565,7 +565,7 @@
       </metadata>
     </metadatas>
   </metadata>
-  <metadata mandatory="N" ID="82" forxmlname="histkult" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10870" lomref="" searchable="N" autofield="N" editable="N" oid="2" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="10" valuespace="">
+  <metadata mandatory="N" ID="82" hidden="" forxmlname="histkult" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10870" lomref="" searchable="N" autofield="N" editable="N" oid="2" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="10" valuespace="">
     <description isocode="sr">detalji o objektu</description>
     <description isocode="it">Dati dell'oggetto originale</description>
     <description isocode="en">Contextual Allegation</description>
@@ -583,6 +583,12 @@
         <description isocode="en">Dimensions</description>
         <description isocode="de">Abmessungen</description>
         <metadatas>
+	  <metadata mandatory="N" ID="83" forxmlname="inscription" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10871" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="LangString" mid_parent="82" cardinality="*" ordered="N" fgslabel="uw.histkult.inscription" vid="" defaultvalue="" sequence="" valuespace=".*">
+        	<description isocode="sr">zapis</description>
+        	<description isocode="it">Descrizione</description>
+          	<description isocode="en">Inscription</description>
+          	<description isocode="de">Inschrift</description>
+      	  </metadata> 
           <metadata mandatory="N" ID="93" forxmlname="resource" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10912" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="Vocabulary" mid_parent="84" cardinality="1" ordered="N" fgslabel="uw.histkult.dimensions.resource" vid="24" defaultvalue="" sequence="1" valuespace="^.*$">
             <description isocode="sr">Izvor</description>
             <description isocode="it">Tipo di materiale</description>
