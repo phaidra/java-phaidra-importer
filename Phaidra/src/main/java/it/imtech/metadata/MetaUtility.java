@@ -6,6 +6,8 @@ package it.imtech.metadata;
 
 import com.toedter.calendar.JDateChooser;
 import it.imtech.bookimporter.*;
+import it.imtech.dialogs.AlertDialog;
+import it.imtech.dialogs.ConfirmDialog;
 import it.imtech.globals.Globals;
 import it.imtech.upload.SelectedServer;
 import it.imtech.utility.Utility;
@@ -1635,7 +1637,7 @@ public class MetaUtility {
                         JTextArea textTemp = (JTextArea) element;
                         field.getValue().value = textTemp.getText();
                        
-                        if (checkMandatory && field.getValue().value.length() < 1 && (field.getValue().mandatory.equals("Y") || field.getValue().MID == 14 || field.getValue().MID == 15)) {
+                        if (checkMandatory && field.getValue().value.length() < 1 && (field.getValue().mandatory.equals("Y") || field.getValue().value.length() < 1)) {
                             error += Utility.getBundleString("error10",bundle) + " " + field.getValue().description.toString() + " " + Utility.getBundleString("error11",bundle) + "!\n";
                         }
                     }
@@ -1702,6 +1704,7 @@ public class MetaUtility {
 
             error += check_and_save_metadata_recursive(field.getValue().submetadatas, checkMandatory);
         }
+        
         return error;
     }
 
@@ -1903,6 +1906,15 @@ public class MetaUtility {
                         e.appendChild(link);
                         
                         if (field.getValue().datatype.equals("CharacterString") && field.getValue().MID == 63) {
+                            bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
+                            //String text = ;
+                            //String title= ;
+                            ConfirmDialog confirm = new ConfirmDialog(BookImporter.getInstance(), true, 
+                                                      Utility.getBundleString("singlemetadata1title", bundle), 
+                                                      Utility.getBundleString("singlemetadata1", bundle), 
+                                                      Utility.getBundleString("confirm", bundle),
+                                                      Utility.getBundleString("annulla", bundle));
+                    
                             Element type = w.createElement(book + ":type");
                             type.setTextContent("institution");
                             e.appendChild(type);

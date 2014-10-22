@@ -36,7 +36,7 @@ public class About extends javax.swing.JFrame {
             
             updateLanguage();
             
-            Double oldVersion = Double.valueOf(Globals.CURRENT_VERSION);
+            //Double oldVersion = Double.valueOf(Globals.CURRENT_VERSION);
             jLabel2.setText(jLabel2.getText() + " " + Globals.CURRENT_VERSION);
             
             PhaidraUpdater ph = new PhaidraUpdater();
@@ -44,7 +44,7 @@ public class About extends javax.swing.JFrame {
             String nv = ph.getLatestVersion();
             String descr = ph.getWhatsNew();
 
-            Double newVersion = Double.valueOf(nv);
+            //Double newVersion = Double.valueOf(nv);
 
             //if (newVersion > oldVersion && !newVersion.equals("")) {
             if (versionCompare(nv, Globals.CURRENT_VERSION) > 0 && !nv.equals("")) {

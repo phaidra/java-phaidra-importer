@@ -88,7 +88,9 @@ public class BookImporter extends javax.swing.JFrame {
         if(metadatafiles.size()>0){
             String text = Utility.getBundleString("singlemetadata1", bundle);
             String title= Utility.getBundleString("singlemetadata1title", bundle);
-            ConfirmDialog confirm = new ConfirmDialog(this, true, title, text, Utility.getBundleString("confirm", bundle),Utility.getBundleString("annulla", bundle));
+            ConfirmDialog confirm = new ConfirmDialog(this, true, title, text, 
+                                                      Utility.getBundleString("confirm", bundle),
+                                                      Utility.getBundleString("annulla", bundle));
 
             confirm.setVisible(true);
             boolean close = confirm.getChoice();

@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -50,6 +51,8 @@ public class Updater extends JFrame{
     private final String root = "update"+getSep();
     private String namezip = "imphaidrazip.zip";
     private String jarpath = getCurrentJarDirectory();
+    
+    public String version;
     
     private JTextArea outText;
     private JButton cancle;
@@ -125,15 +128,15 @@ public class Updater extends JFrame{
         URL url2 = new URL(config.getString("configurl[@path]"));
         XMLConfiguration config2 = new XMLConfiguration(url2);
         
-        //URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
-        URL url = new URL(config2.getString("urlupdater.descrurl"));
+        URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
+        //URL url = new URL(config2.getString("urlupdater.descrurl"));
         Document doc = dBuilder.parse(url.openStream());
          
         NodeList nl = doc.getElementsByTagName("version");
         
         Element el = (Element) nl.item(0);
         
-        String version = el.getTextContent();
+        version = el.getTextContent();
         
         config.setProperty("version[@current]", version);
     }    
@@ -169,6 +172,7 @@ public class Updater extends JFrame{
     private void launch()
     {
         String path = getCurrentJarDirectory()+"PhaidraImporter.jar";
+        
         String[] run = {"java", "-jar", path};
         try {
             Runtime.getRuntime().exec(run);
@@ -340,8 +344,8 @@ public class Updater extends JFrame{
         URL url2 = new URL(config.getString("configurl[@path]"));
         XMLConfiguration config2 = new XMLConfiguration(url2);
         
-        URL url = new URL(config2.getString("urlupdater.descrurl"));
-        //URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
+        //URL url = new URL(config2.getString("urlupdater.descrurl"));
+        URL url = new URL("http://www.im-tech.it/releases/phaidra/updatertwo.xml");
         Document doc = dBuilder.parse(url.openStream());
          
         NodeList nl = doc.getElementsByTagName("release");

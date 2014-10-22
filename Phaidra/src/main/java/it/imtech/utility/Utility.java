@@ -751,7 +751,7 @@ public class Utility {
             languages.put("Urdu", "ur");
             languages.put("Usbekisch", "uz");
             languages.put("Vietnamesisch", "vi");
-            languages.put("Volap\u00E4k", "vo");
+            languages.put("Volap\u00FCk", "vo");
             languages.put("Wallon", "wa");
             languages.put("Wolof", "wo");
             languages.put("Xhosa", "xh");
