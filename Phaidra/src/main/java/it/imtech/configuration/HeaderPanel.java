@@ -6,6 +6,7 @@
 
 package it.imtech.configuration;
 
+import static gnu.cajo.invoke.Remote.config;
 import it.imtech.globals.Globals;
 import it.imtech.utility.Utility;
 import java.awt.BorderLayout;
@@ -60,7 +61,7 @@ public class HeaderPanel extends javax.swing.JPanel {
         wizard_head_1.setFont(boldFont);  
         wizard_head_1.setHorizontalAlignment(SwingConstants.RIGHT);
         
-        wizard_head_2.setText(Utility.getBundleString("header_2", bundle));
+        wizard_head_2.setText(Utility.getBundleString("header_2", bundle) + " " + Globals.CURRENT_VERSION);
         wizard_head_2.setFont(boldFont);  
         wizard_head_2.setHorizontalAlignment(SwingConstants.RIGHT);
        
