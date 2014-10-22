@@ -31,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.xml.parsers.ParserConfigurationException;
@@ -452,12 +453,47 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
             addUploadInfoText(message);
         }
         
+        /**
+         * metodo che capisce l'elemento che ha in mano è un capitolo o una pagina
+         * @param el
+         * @param panelexists 
+         */
+        private void prepareMetadataUpload(Element el, boolean panelexists, String metadata, String panelname) {
+            
+            panelname = "";
+            metadata = el.getAttribute("metadata");
+            String pid = el.getAttribute("pid");
+            
+            if (metadata != null && !metadata.isEmpty()){
+                
+                if(pid.isEmpty()) {
+                    pid = el.getAttribute("name");
+                    pid += "-" + el.getAttribute("seq");
+                }
+                
+                try {
+                    panelexists = XMLTree.setPanelIfNotExists(metadata, pid);
+                    panelname = BookImporter.getInstance().metadatapanels.get(metadata).getPanel().getName();
+                    BookImporter.getInstance().metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+                    
+                    BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(metadata).getPanel());
+                    MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + metadata, false, true, panelname);
+                } catch (Exception ex) {
+                    logger.error(ex.getMessage());
+                }
+            }
+            else{
+                panelname = BookImporter.mainpanel;
+            }
+        }
+        
         private String addElementToCollection(Element el, ImObject coll) throws Exception {
             type = null;
             boolean panelexists = false;
-            
             String metadata = el.getAttribute("metadata");
             String panelname = "";
+            String pid = el.getAttribute("pid");
+            
             if (metadata != null && !metadata.isEmpty()){
                 panelexists = XMLTree.setPanelIfNotExists(el.getAttribute("metadata"), el.getAttribute("pid"));
                 panelname = BookImporter.getInstance().metadatapanels.get(metadata).getPanel().getName();
@@ -465,10 +501,23 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                 
                 BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(metadata).getPanel());
                 MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + metadata, false, true, panelname);
+            } else {
+                panelname = BookImporter.mainpanel; //metadati generici
+                
+                    //Altrimenti prende i metadati del padre
+                    //pid = el.getAttribute("name");
+                    //pid += "-" + el.getAttribute("seq");
+                    //
+                    //panelexists = XMLTree.setPanelIfNotExists(el.getAttribute("metadata"), pid);
+                    //panelname = BookImporter.getInstance().metadatapanels.get(metadata).getPanel().getName();
+                    //BookImporter.getInstance().metadata = MetaUtility.getInstance().metadata_reader(Globals.DUPLICATION_FOLDER_SEP + "session" + panelname);
+                    //
+                    //D) BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(metadata).getPanel());
+                    //M) BookImporter.getInstance().createComponentMap(BookImporter.getInstance().metadatapanels.get(panel name).getPanel());
+                    //MetaUtility.getInstance().check_and_save_metadata(Globals.SELECTED_FOLDER_SEP + metadata, false, true, panelname);
             }
-            else{
-                panelname = BookImporter.mainpanel;
-            }
+            
+            //prepareMetadataUpload(el, panelexists, metadata, panelname);
            
             //Ricava nome file e path 
             String file = Globals.SELECTED_FOLDER_SEP + el.getAttribute("folder") + Utility.getSep() + el.getAttribute("href");

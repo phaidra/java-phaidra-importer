@@ -568,7 +568,7 @@ public class XMLTree extends JTree {
             return popup ;
         }
     
-        public void exportSpecificMetadata(XMLNode xmlNode){
+        public void exportSpecificMetadata(XMLNode xmlNode, String pid){
             String singlemetadata = "";
                    
             String metadata = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
@@ -590,7 +590,7 @@ public class XMLTree extends JTree {
 
                     exportBookStructureToFile(Globals.SELECTED_FOLDER_SEP);
 
-                    String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+                    //String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
                     String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
 
                     BookImporter.getInstance().importSingleMetadata(filename, pid, false, true);
@@ -732,6 +732,12 @@ public class XMLTree extends JTree {
                     else{
                         String filename = ((Element) xmlNode.getUserObject()).getAttribute("metadata");
                         String pid = ((Element) xmlNode.getUserObject()).getAttribute("pid");
+                        
+                        if(pid.isEmpty()) { // mi prendo il nome del capitolo + sequenza per rendere univoco il pid
+                            pid = ((Element) xmlNode.getUserObject()).getAttribute("name");
+                            pid = pid + "-" + ((Element) xmlNode.getUserObject()).getAttribute("seq");
+                        }
+                        
                         String metadata = Globals.SELECTED_FOLDER_SEP + filename;
                         
                         if (BookImporter.getInstance().metadatapanels.get(filename) == null){
@@ -757,7 +763,7 @@ public class XMLTree extends JTree {
                                 confirm.dispose();
 
                                 if (response==true){
-                                    exportSpecificMetadata(xmlNode);
+                                    exportSpecificMetadata(xmlNode, pid);
                                 }
                             }
                         }

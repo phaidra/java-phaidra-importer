@@ -251,6 +251,8 @@ public class About extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         PhaidraUpdater ph = new PhaidraUpdater();
+        
+        logger.info("Start update");
 
         String name = "";
         if(System.getProperty("os.name").toLowerCase().startsWith("win"))

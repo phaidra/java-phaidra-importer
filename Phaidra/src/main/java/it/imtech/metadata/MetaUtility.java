@@ -405,7 +405,7 @@ public class MetaUtility {
         forceAddMID.put("63", 1); // Ente
         forceAddMID.put("64", 1); // Titolo
         forceAddMID.put("65", 1); // Titolo
-        forceAddMID.put("66", 1); // Tipo
+        //forceAddMID.put("66", 1); // Tipo
         forceAddMID.put("148", 1); // Numero Matricola
         
         try {
@@ -1634,6 +1634,7 @@ public class MetaUtility {
                     if (field.getValue().datatype.equals("CharacterString") || field.getValue().datatype.equals("LangString") || field.getValue().datatype.equals("GPS")) {
                         JTextArea textTemp = (JTextArea) element;
                         field.getValue().value = textTemp.getText();
+                       
                         if (checkMandatory && field.getValue().value.length() < 1 && (field.getValue().mandatory.equals("Y") || field.getValue().MID == 14 || field.getValue().MID == 15)) {
                             error += Utility.getBundleString("error10",bundle) + " " + field.getValue().description.toString() + " " + Utility.getBundleString("error11",bundle) + "!\n";
                         }
@@ -1894,12 +1895,18 @@ public class MetaUtility {
                         if (field.getValue().datatype.equals("LangString")) {
                             link.setAttribute("language", field.getValue().language);
                         }
-
+                                                                        
                         link.setTextContent(value);
                         if (!field.getValue().sequence.equals(""))
                             e.setAttribute("seq", field.getValue().sequence);
                         
                         e.appendChild(link);
+                        
+                        if (field.getValue().datatype.equals("CharacterString") && field.getValue().MID == 63) {
+                            Element type = w.createElement(book + ":type");
+                            type.setTextContent("institution");
+                            e.appendChild(type);
+                        }
                     }
                 } else if (field.getValue().editable.equals("N") && defValues != null) {
                     String value = null;
