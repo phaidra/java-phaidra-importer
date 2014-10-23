@@ -1637,7 +1637,7 @@ public class MetaUtility {
                         JTextArea textTemp = (JTextArea) element;
                         field.getValue().value = textTemp.getText();
                        
-                        if (checkMandatory && field.getValue().value.length() < 1 && (field.getValue().mandatory.equals("Y") || field.getValue().value.length() < 1)) {
+                        if (checkMandatory && field.getValue().value.length() < 1 && (field.getValue().mandatory.equals("Y") || field.getValue().MID == 14 || field.getValue().MID == 15)) {
                             error += Utility.getBundleString("error10",bundle) + " " + field.getValue().description.toString() + " " + Utility.getBundleString("error11",bundle) + "!\n";
                         }
                     }
