@@ -1234,7 +1234,7 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuItem13.setText("jMenuItem13");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1000, 600));
+        setMinimumSize(new java.awt.Dimension(1145, 600));
         setPreferredSize(new java.awt.Dimension(1137, 735));
 
         jSplitPane1.setPreferredSize(new java.awt.Dimension(232, 414));
