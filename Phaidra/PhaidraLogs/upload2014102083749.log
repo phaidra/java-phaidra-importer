@@ -1,0 +1,16 @@
+2014-10-20 08:37:49,111 INFO   [UploadProgress] Starting upload... 
+2014-10-20 08:37:49,153 INFO   [UploadProgress] Create a collection 
+2014-10-20 08:38:00,942 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:9384 
+2014-10-20 08:38:07,812 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:9384 
+2014-10-20 08:38:13,666 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:9385 
+2014-10-20 08:38:18,796 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:9385 
+2014-10-20 08:38:23,056 INFO   [UploadProgress] Richiesta di creazione oggetto immagine in Phaidra 
+2014-10-20 08:38:44,132 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-20 08:38:58,874 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-20 08:39:05,903 INFO   [UploadProgress] - Salvataggio dell'oggetto immagine in Phaidra 
+2014-10-20 08:39:43,440 INFO   [UploadProgress] Crea identificatore PID per  l'immagine:o:9386 
+2014-10-20 08:39:43,441 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:9385 
+2014-10-20 08:40:03,270 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:9385 
+2014-10-20 08:40:03,272 INFO   [UploadProgress] Classificazione vuota: (new) , non caricata... 
+2014-10-20 08:40:10,076 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:9384 
+2014-10-20 08:40:22,368 INFO   [UploadProgress] Termina il libro - identificatore PID :o:9384 

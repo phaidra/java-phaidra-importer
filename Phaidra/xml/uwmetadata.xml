@@ -18,7 +18,7 @@
         <description isocode="en">Title</description>
         <description isocode="de">Titel</description>
       </metadata>
-      <metadata mandatory="N" ID="105" forxmlname="subtitle" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552078" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.subtitle" vid="" defaultvalue="" sequence="3" valuespace=".*">
+      <metadata mandatory="N" ID="105" forxmlname="subtitle" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552078" lomref="" searchable="Y" autofield="N" editable="N" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.subtitle" vid="" defaultvalue="" sequence="3" valuespace=".*">
         <description isocode="sr">podnaslov</description>
         <description isocode="it">Sottotitolo</description>
         <description isocode="en">Subtitle</description>
@@ -48,7 +48,7 @@
         <description isocode="de">Schlüsselwörter</description>
         <description isocode="sr">ključne reči</description>
       </metadata>
-      <metadata mandatory="N" ID="6" forxmlname="coverage" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="8" lomref="1.6" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.coverage" vid="" defaultvalue="" sequence="8" valuespace=".*">
+      <metadata mandatory="N" ID="6" forxmlname="coverage" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="8" lomref="1.6" searchable="Y" autofield="N" editable="N" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.coverage" vid="" defaultvalue="" sequence="8" valuespace=".*">
         <description isocode="sr">obseg</description>
         <description isocode="it">Copertura (temporale – geografica – amministrativa)</description>
         <description isocode="en">Coverage</description>

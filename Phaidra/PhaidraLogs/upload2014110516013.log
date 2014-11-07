@@ -1,0 +1,19 @@
+2014-11-05 16:00:13,704 INFO   [UploadProgress] Starting upload... 
+2014-11-05 16:00:13,704 INFO   [UploadProgress] Create a book 
+2014-11-05 16:00:13,704 INFO   [ImObject] Start upload Book 
+2014-11-05 16:00:18,730 INFO   [ImObject] End upload Book 
+2014-11-05 16:00:18,730 INFO   [UploadProgress] PID Assegnato: o:10595 
+2014-11-05 16:00:18,730 INFO   [UploadProgress] Aggiunta file pdf in corso... 
+2014-11-05 16:00:22,131 INFO   [UploadProgress] Crea identificatore PID per il libro :o:10595 
+2014-11-05 16:00:22,131 INFO   [UploadProgress] Aggiunta metadati del libro in corso... 
+2014-11-05 16:00:24,331 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:10595 
+2014-11-05 16:00:24,331 INFO   [UploadProgress] Creazione capitoli e pagine in corso... 
+2014-11-05 16:00:24,331 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-11-05 16:00:28,732 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-11-05 16:00:41,186 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-11-05 16:00:49,614 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-11-05 16:00:57,476 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:10596 
+2014-11-05 16:00:57,476 INFO   [UploadProgress] Aggiunta OCR in corso... 
+2014-11-05 16:00:59,452 INFO   [UploadProgress] Aggiungi flusso di dati OCRTEXT:o:10595 
+2014-11-05 16:00:59,452 INFO   [UploadProgress] Salvataggio finale del libro 
+2014-11-05 16:01:08,705 INFO   [UploadProgress] Termina il libro - identificatore PID :o:10595 

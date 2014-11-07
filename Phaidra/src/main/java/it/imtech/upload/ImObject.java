@@ -283,7 +283,9 @@ public class ImObject {
     protected Book createBook() throws Exception {
         Book book = null;
         try {
+           logger.info("Start upload Book");
            book = phaidra.createBook("Java Book API Test");
+           logger.info("End upload Book");
         }
         catch(Exception ex){
              logger.error("Errore nella creazione del libro");

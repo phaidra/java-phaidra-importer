@@ -410,6 +410,23 @@ public class MetaUtility {
         //forceAddMID.put("66", 1); // Tipo
         forceAddMID.put("148", 1); // Numero Matricola
         
+        forceAddMID.put("115", 1); // Provenienza
+        forceAddMID.put("114", 1); // Provenienza - info
+        forceAddMID.put("121", 1); // Provenienza - tipo materiale
+        forceAddMID.put("119", 1); // Provenienza - note
+        forceAddMID.put("107", 1); // Provenienza - ruolo
+        forceAddMID.put("106", 1); // Provenienza - dati personali
+        forceAddMID.put("108", 1); // Provenienza - Nome
+        forceAddMID.put("109", 1); // Provenienza - Cognome
+        forceAddMID.put("113", 1); // Provenienza - Ente
+        forceAddMID.put("110", 1); // Provenienza - Titolo uno
+        forceAddMID.put("111", 1); // Provenienza - Titolo due
+        forceAddMID.put("112", 1); // Provenienza - tipo
+        forceAddMID.put("117", 1); // Provenienza - contributo
+        forceAddMID.put("118", 1); // Provenienza - contributo
+        forceAddMID.put("116", 1); // Provenienza - contributo
+        forceAddMID.put("120", 1); // Provenienza - contributo
+        
         try {
             //selectedClassificationList = new TreeMap<String, String>();
             
@@ -882,6 +899,8 @@ public class MetaUtility {
                         }
                         innerPanel.add(temppanel, "wrap, growx");
                     }
+                } else if (Integer.toString(kv.getValue().MID).equals("115")){
+                    logger.info("Devo gestire una provenience!");
                 }
             } else {
                 String title = "";

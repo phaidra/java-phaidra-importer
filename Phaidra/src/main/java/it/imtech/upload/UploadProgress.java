@@ -582,6 +582,7 @@ public class UploadProgress extends javax.swing.JPanel implements java.beans.Pro
                     NodeList leaves = chapter.getChildNodes();
                     for (int z = 0; z < leaves.getLength() && !isCancelled(); z++) {
                         if (leaves.item(z).getNodeType() == Node.ELEMENT_NODE) {
+                            
                             //Se il capitolo ha una foglia aggiungilo
                             if (addChapter) {
                                 addChapter = false;

@@ -2,7 +2,7 @@
 <gui-definition>
 <servers>
     <server>
-        <servername>Testing Padua Server</servername>
+        <servername>PhaidraTestServerPaduaName</servername>
         <fedoraurl>fedora.cab.unipd.it</fedoraurl>
         <phaidraurl>phaidratest.cab.unipd.it</phaidraurl>
         <staticurl>phaidrastatic.cab.unipd.it</staticurl>
@@ -10,7 +10,7 @@
         <oaiIdentifier>cab.unipd.it</oaiIdentifier>
     </server>
     <server>
-        <servername>Development Padua Server</servername>
+        <servername>PhaidraDevServerPaduaName</servername>
         <fedoraurl>fedoradev.cab.unipd.it</fedoraurl>
         <phaidraurl>phaidradev.cab.unipd.it</phaidraurl>
         <staticurl>phaidrastaticdev.cab.unipd.it</staticurl>
@@ -18,7 +18,7 @@
         <oaiIdentifier>cab.unipd.it</oaiIdentifier>
     </server>
     <server>
-        <servername>Univie Testing Server</servername>
+        <servername>PhaidraServerPaduaName</servername>
 	<fedoraurl>fedora.phaidra-test.univie.ac.at</fedoraurl>
 	<phaidraurl>phaidra-test.univie.ac.at</phaidraurl>
 	<staticurl>static.phaidra-test.univie.ac.at</staticurl>
