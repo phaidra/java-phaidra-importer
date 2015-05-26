@@ -199,13 +199,13 @@ public class UploadSettings extends javax.swing.JFrame {
                 }
             }
         } catch(IllegalArgumentException ex){
-            result = "Check OCR: " + Utility.getBundleString("error23",bundle);
+            result = Utility.getBundleString("error23",bundle);
         } catch (SAXException ex) {
-            result = "Check OCR: " + Utility.getBundleString("error23",bundle);
+            result = Utility.getBundleString("error23",bundle);
         } catch (IOException ex) {
-            result = "Check OCR: " + Utility.getBundleString("error24",bundle);
+            result = Utility.getBundleString("error24",bundle);
         } catch (ParserConfigurationException ex) {
-            result = "Check OCR: " + Utility.getBundleString("error24",bundle);
+            result = Utility.getBundleString("error24",bundle);
         }
 
         return result;

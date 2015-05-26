@@ -410,7 +410,7 @@ public class MetaUtility {
         //forceAddMID.put("66", 1); // Tipo
         forceAddMID.put("148", 1); // Numero Matricola
         
-        forceAddMID.put("115", 1); // Provenienza
+        /*forceAddMID.put("115", 1); // Provenienza
         forceAddMID.put("114", 1); // Provenienza - info
         forceAddMID.put("121", 1); // Provenienza - tipo materiale
         forceAddMID.put("119", 1); // Provenienza - note
@@ -425,7 +425,7 @@ public class MetaUtility {
         forceAddMID.put("117", 1); // Provenienza - contributo
         forceAddMID.put("118", 1); // Provenienza - contributo
         forceAddMID.put("116", 1); // Provenienza - contributo
-        forceAddMID.put("120", 1); // Provenienza - contributo
+        forceAddMID.put("120", 1); // Provenienza - contributo*/
         
         try {
             //selectedClassificationList = new TreeMap<String, String>();

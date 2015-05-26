@@ -1,0 +1,24 @@
+2015-04-09 15:56:39,602 INFO   [UploadProgress] Starting upload... 
+2015-04-09 15:56:39,602 INFO   [UploadProgress] Create a collection 
+2015-04-09 15:56:41,923 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:33898 
+2015-04-09 15:56:44,654 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33898 
+2015-04-09 15:56:46,810 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:33899 
+2015-04-09 15:56:49,446 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33899 
+2015-04-09 15:56:49,456 INFO   [UploadProgress] Richiesta di creazione oggetto immagine in Phaidra 
+2015-04-09 15:56:51,466 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2015-04-09 15:56:54,644 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2015-04-09 15:56:56,368 INFO   [UploadProgress] - Salvataggio dell'oggetto immagine in Phaidra 
+2015-04-09 15:56:59,502 INFO   [UploadProgress] Crea identificatore PID per  l'immagine:o:33900 
+2015-04-09 15:56:59,502 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33899 
+2015-04-09 15:57:04,013 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:33899 
+2015-04-09 15:57:05,764 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:33901 
+2015-04-09 15:57:07,415 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33901 
+2015-04-09 15:57:07,415 INFO   [UploadProgress] Richiesta di creazione oggetto immagine in Phaidra 
+2015-04-09 15:57:10,255 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2015-04-09 15:57:12,439 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2015-04-09 15:57:15,629 INFO   [UploadProgress] - Salvataggio dell'oggetto immagine in Phaidra 
+2015-04-09 15:57:18,650 INFO   [UploadProgress] Crea identificatore PID per  l'immagine:o:33902 
+2015-04-09 15:57:18,650 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33901 
+2015-04-09 15:57:23,121 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:33901 
+2015-04-09 15:57:24,833 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:33898 
+2015-04-09 15:57:27,127 INFO   [UploadProgress] Termina il libro - identificatore PID :o:33898 

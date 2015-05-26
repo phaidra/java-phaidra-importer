@@ -124,14 +124,17 @@ public class XMLTree extends JTree {
         XMLTree.savedXmlDoc.getDocumentElement().normalize();
         NodeList elements =  XMLTree.savedXmlDoc.getElementsByTagName("book:page");
         int n_video = 0;
+        String nodepath = null;
         
         for (int i=0;i<elements.getLength();i++){
             if (elements.item(i).getNodeType() == Node.ELEMENT_NODE) {
                 Element node = (Element) elements.item(i);
-                videopath = Globals.SELECTED_FOLDER_SEP + node.getAttribute("href");
+                nodepath = Globals.SELECTED_FOLDER_SEP + node.getAttribute("href");
+                logger.info("Get video from structure: video found " + videopath);
                 
-                if(Utility.getMimeType(videopath).contains("video")) {
+                if(Utility.getMimeType(nodepath).contains("video")) {
                     n_video++;
+                    videopath = nodepath;
                 }
             }
         }

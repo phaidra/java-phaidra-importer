@@ -27,13 +27,16 @@ public class Helper {
     @Action
     public void openHelp() {
         String language = Globals.CURRENT_LOCALE.getLanguage();
+        System.out.println("DAVIDE-DEBUG: CURRENT LOCALE = " + language);
+        String classpath = Helper.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        System.out.println("DAVIDE-DEBUG: CLASSPATH = " + classpath);
         // Identify the location of the .hs file 
         String pathToHS = "javahelp_"+language+"/appwithhelp/docs/hierarchy_helpset.hs";
         
         File help = new File(pathToHS);
-        if (!help.exists()){
-            language = "en";
-        }
+        //if (!help.exists()){
+        //    language = "en";
+        //}
         
         pathToHS = "javahelp_"+language+"/appwithhelp/docs/hierarchy_helpset.hs";
         
@@ -57,7 +60,7 @@ public class Helper {
         int y = (dim.height - hb.getSize().height) / 2;
         Point z = new Point(x, y);
         hb.setLocation(z);
-            
+        
         //Display help set
         hb.setDisplayed(true);
     }

@@ -5,9 +5,13 @@
 package it.imtech.pdfepub;
 
 import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfTemplate;
+import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfWriter;
 import it.imtech.bookimporter.BookImporter;
 import it.imtech.globals.Globals;
@@ -131,16 +135,17 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
             int percent = 0;
             int total = Utility.countXmlTreeLeaves();
             String mimetype = null;
+            Rectangle r = null;
+
          
             jProgressBar1.setMaximum(100);
 
-            com.itextpdf.text.Document document = new com.itextpdf.text.Document(PageSize.A4);
+            //com.itextpdf.text.Document document = new com.itextpdf.text.Document(PageSize.A4);
+            com.itextpdf.text.Document document = new com.itextpdf.text.Document();
 
             try {
                 PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(pdfLocation));
-
-                document.open();
-
+                
                 ArrayList<XMLPage> images = XMLTree.getImagesFromStructure();
                 com.itextpdf.text.Image img;
                 XMLPage test = new XMLPage("test","test");
@@ -156,8 +161,16 @@ public class PdfCreateMonitor extends javax.swing.JPanel implements java.beans.P
                             img = Image.getInstance(Utility.convertImage(Globals.SELECTED_FOLDER_SEP + images.get(i).getHref(), quality));
                         
                         img.setAlignment(Element.ALIGN_CENTER);
-                        img.scaleToFit(PageSize.A4.getWidth(), PageSize.A4.getHeight());
-
+                        img.setAbsolutePosition(0, 0);
+                        
+                        r = new Rectangle(img.getScaledWidth(), img.getScaledHeight());
+                        document.setPageSize(r);
+                        
+                        if(!document.isOpen())
+                            document.open();
+                        else
+                            document.newPage();
+                        
                         document.add(img);
 
                         progress++;

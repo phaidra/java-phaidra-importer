@@ -1167,7 +1167,8 @@ public class BookImporter extends javax.swing.JFrame {
         jMenuItem8.setText(Utility.getBundleString("bimportbook", bundle));
         jMenuItem9.setText(Utility.getBundleString("bexit", bundle));       
         jMenuItem10.setText(Utility.getBundleString("phinfo", bundle));
-
+        jMenuItem11.setText(Utility.getBundleString("menuHelpLabel", bundle));
+        
         jMenuItem14.setText(Utility.getBundleString("uploadsinglevideo", bundle));
         jMenuItem14.setVisible(false);
         
@@ -1288,7 +1289,7 @@ public class BookImporter extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem10);
 
-        jMenuItem11.setText("Help");
+        jMenuItem11.setText("Aiuto");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem11ActionPerformed(evt);
@@ -1309,7 +1310,7 @@ public class BookImporter extends javax.swing.JFrame {
         jMenu1.setText("Lingua");
         jMenuBar1.add(jMenu1);
 
-        jMenu3.setText("Importa nel Phaidra Importer");
+        jMenu3.setText("Importa");
         jMenu3.setContentAreaFilled(false);
         jMenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -1340,7 +1341,7 @@ public class BookImporter extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Esporta nel Phaidra Importer");
+        jMenu4.setText("Esporta");
 
         jMenuItem4.setText("Export PDF Book");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -1376,7 +1377,7 @@ public class BookImporter extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu2.setText("Caricamento");
+        jMenu2.setText("Carica");
         jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         jMenuItem5.setText("Upload Data");
@@ -1406,9 +1407,9 @@ public class BookImporter extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1119, Short.MAX_VALUE)
+                    .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1111, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 1119, Short.MAX_VALUE)
+                        .addGap(0, 1111, Short.MAX_VALUE)
                         .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1782,29 +1783,28 @@ public class BookImporter extends javax.swing.JFrame {
         ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES,Globals.CURRENT_LOCALE, Globals.loader);
         boolean canupload = false;    
         
-        logger.info("Upload: check internet connection...");
+        logger.info("Upload single video: check internet connection...");
 
         if (Globals.ONLINE){
-            canupload = true;
-            logger.info("Upload: connection [OK]");
-            
+            canupload = false;
+            logger.info("Upload single video: connection [OK]");
+            logger.info("Upload single video: " + Globals.SELECTED_FOLDER_SEP);
             XMLTree.exportBookstructure(Globals.SELECTED_FOLDER_SEP);
             AlertDialog alert = null;
             switch(XMLTree.getVideoFromStructure()) {
                 case 0:
-                    logger.error("No videos founded!");
-                    canupload = false;
+                    logger.error("Upload single video: No videos founded!");
                     bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
                     alert = new AlertDialog(null, true, 
                             Utility.getBundleString("dialog_4_title", bundle), 
                             Utility.getBundleString("dialog_4", bundle)+" "+file, "Ok");
                     break;
                 case 1:
-                    logger.info("One video founded");
+                    logger.info("Upload single video: One video founded");
+                    canupload = true;
                     break;
                 default:
-                    logger.error("Too many videos founded, only one is accepted!");
-                    canupload = false;
+                    logger.error("Upload single video: Too many videos founded, only one is accepted!");
                     bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
                     alert = new AlertDialog(null, true, 
                             Utility.getBundleString("dialog_3_title", bundle), 
@@ -1814,7 +1814,7 @@ public class BookImporter extends javax.swing.JFrame {
             
         } else {
             JOptionPane.showMessageDialog(this, Utility.getBundleString("offline_upload", bundle));
-            logger.info("Upload: connection [X]");
+            logger.info("Upload single video: connection [X]");
         }
         
         if(canupload){

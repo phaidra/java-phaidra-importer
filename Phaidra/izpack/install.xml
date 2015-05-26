@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <installation version="1.0">
     <info>
-        <appname>PhaidraImporter</appname>
+        <appname>Phaidra Importer</appname>
         <appversion>2.0.0</appversion>
         <javaversion>1.6</javaversion>
         <!--<run-privileged condition="izpack.windowsinstall.vista|izpack.windowsinstall.7" />-->
@@ -30,11 +30,15 @@
 	<modifier key="filler3XGap" value="10"/>
     </guiprefs>
     <locale>
-      <langpack iso3="eng" />
+      <!--<langpack iso3="eng" />-->
       <langpack iso3="ita" />
-      <langpack iso3="deu" />
+      <!--<langpack iso3="deu" />-->
     </locale>
     <resources>
+        <!--<res id="CustomLangPack.xml_eng" src="resources/langpack/myeng.xml"/>-->
+        <res id="CustomLangPack.xml_ita" src="resources/langpack/myita.xml"/>
+        <!--<res id="CustomLangPack.xml_deu" src="resources/langpack/mydeu.xml"/>--> 
+        
         <res id="Installer.image" src="install/phaidra_install.png"/>
         <res id="HTMLHelloPanel.welcome" src="install/welcome.html"/>
         <res id="IZPackLogo" src="install/phaidra.gif"/>
@@ -62,7 +66,7 @@
  
     <packs>
         <pack name="BookImporter" required="yes" preselected="yes">
-            <description>The core files are needed for the application</description>
+            <description></description>
             <file src="PhaidraImporter.jar" targetdir="${INSTALL_PATH}" override="true" />
             <file src="updater.jar" targetdir="${INSTALL_PATH}" override="true" />
             

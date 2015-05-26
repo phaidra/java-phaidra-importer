@@ -2082,3 +2082,832 @@
     </book:pages>
 </book:book>
  
+2014-11-07 11:13:39,971 INFO   [StartWizard] Starting Application Phaidra Importer 
+2014-11-07 11:13:40,767 INFO   [Utility] Client Online 
+2014-11-07 11:13:40,767 INFO   [StartWizard] Configuration path estabilished 
+2014-11-07 11:16:37,818 INFO   [StartWizard] Starting Application Phaidra Importer 
+2014-11-07 11:16:38,567 INFO   [Utility] Client Online 
+2014-11-07 11:16:38,582 INFO   [StartWizard] Configuration path estabilished 
+2014-11-07 11:16:44,245 INFO   [StartWizard] Selected Server = PhaidraDevServerPaduaName 
+2014-11-07 11:16:44,245 INFO   [StartWizard] Testing server connection... 
+2014-11-07 11:16:46,445 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2014-11-07 11:17:34,618 INFO   [BookImporter] Export metadata required! 
+2014-11-07 11:17:34,618 INFO   [BookImporter] Exporting metadata tab:uwmetadata.xml 
+2014-11-07 11:19:29,761 INFO   [StartWizard] Starting Application Phaidra Importer 
+2014-11-07 11:19:30,136 INFO   [Utility] Client Online 
+2014-11-07 11:19:30,151 INFO   [StartWizard] Configuration path estabilished 
+2014-11-07 11:19:34,473 INFO   [StartWizard] Selected Server = PhaidraDevServerPaduaName 
+2014-11-07 11:19:34,473 INFO   [StartWizard] Testing server connection... 
+2014-11-07 11:19:35,861 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2014-11-07 11:20:21,211 INFO   [BookImporter] Export metadata required! 
+2014-11-07 11:20:21,211 INFO   [BookImporter] Exporting metadata tab:uwmetadata.xml 
+2014-11-07 11:42:13,700 INFO   [StartWizard] Starting Application Phaidra Importer 
+2014-11-07 11:42:22,280 INFO   [Utility] Client Online 
+2014-11-07 11:42:22,280 INFO   [StartWizard] Configuration path estabilished 
+2015-01-09 09:10:25,533 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-01-09 09:10:26,343 INFO   [Utility] Client Online 
+2015-01-09 09:10:26,353 INFO   [StartWizard] Configuration path estabilished 
+2015-01-09 09:10:33,736 INFO   [StartWizard] Selected Server = Phaidra Sviluppo - Universita' di Padova 
+2015-01-09 09:10:33,736 INFO   [StartWizard] Testing server connection... 
+2015-01-09 09:10:35,619 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-01-09 09:45:40,807 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-01-09 09:45:41,237 INFO   [Utility] Client Online 
+2015-01-09 09:45:41,247 INFO   [StartWizard] Configuration path estabilished 
+2015-01-09 09:45:50,054 INFO   [StartWizard] Selected Server = Phaidra Sviluppo - Universita' di Padova 
+2015-01-09 09:45:50,054 INFO   [StartWizard] Testing server connection... 
+2015-01-09 09:45:51,494 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-09 09:10:25,090 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-09 09:10:25,580 INFO   [Utility] Client Online 
+2015-03-09 09:10:25,590 INFO   [StartWizard] Configuration path estabilished 
+2015-03-09 09:10:30,753 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-09 09:10:30,753 INFO   [StartWizard] Testing server connection... 
+2015-03-09 09:10:32,417 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-09 09:11:47,472 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-09 09:11:47,757 INFO   [Utility] Client Online 
+2015-03-09 09:11:47,757 INFO   [StartWizard] Configuration path estabilished 
+2015-03-09 09:11:50,732 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-09 09:11:50,732 INFO   [StartWizard] Testing server connection... 
+2015-03-09 09:11:52,184 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-09 10:30:02,475 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-09 10:30:02,894 INFO   [Utility] Client Online 
+2015-03-09 10:30:02,904 INFO   [StartWizard] Configuration path estabilished 
+2015-03-09 10:30:05,860 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-09 10:30:05,860 INFO   [StartWizard] Testing server connection... 
+2015-03-09 10:30:07,352 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-09 10:32:09,271 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-09 10:32:09,647 INFO   [Utility] Client Online 
+2015-03-09 10:32:09,647 INFO   [StartWizard] Configuration path estabilished 
+2015-03-09 10:32:12,060 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-09 10:32:12,060 INFO   [StartWizard] Testing server connection... 
+2015-03-09 10:32:13,424 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-09 10:32:19,543 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-09 10:39:30,475 INFO   [BookImporter] Export template:  
+2015-03-09 10:39:36,245 INFO   [BookImporter] Export template:  
+2015-03-09 10:39:57,449 INFO   [BookImporter] Export template: Ciao 
+2015-03-09 10:52:39,042 INFO   [BookImporter] Upload: check internet connection 
+2015-03-09 10:52:39,042 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-09 11:26:48,606 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-09 11:26:49,026 INFO   [Utility] Client Online 
+2015-03-09 11:26:49,036 INFO   [StartWizard] Configuration path estabilished 
+2015-03-09 11:26:54,685 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-09 11:26:54,685 INFO   [StartWizard] Testing server connection... 
+2015-03-09 11:26:56,118 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-09 11:27:02,883 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-09 12:03:58,625 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-09 12:03:59,137 INFO   [Utility] Client Online 
+2015-03-09 12:03:59,147 INFO   [StartWizard] Configuration path estabilished 
+2015-03-09 12:04:03,179 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-09 12:04:03,179 INFO   [StartWizard] Testing server connection... 
+2015-03-09 12:04:04,694 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-09 12:04:12,112 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-09 12:19:48,273 INFO   [BookImporter] Upload: check internet connection 
+2015-03-09 12:19:48,273 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 09:17:07,627 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 09:17:08,243 INFO   [Utility] Client Online 
+2015-03-18 09:17:08,253 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 09:17:13,371 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 09:17:13,371 INFO   [StartWizard] Testing server connection... 
+2015-03-18 09:17:15,232 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 10:27:52,932 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 10:27:53,452 INFO   [Utility] Client Online 
+2015-03-18 10:27:53,452 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 10:27:58,883 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 10:27:58,883 INFO   [StartWizard] Testing server connection... 
+2015-03-18 10:28:00,418 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 10:28:09,987 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\miopdf.pdf 
+2015-03-18 10:36:25,480 INFO   [BookImporter] Upload: check internet connection 
+2015-03-18 10:36:25,480 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 10:37:26,818 INFO   [BookImporter] Export metadata required! 
+2015-03-18 10:37:26,818 INFO   [BookImporter] Exporting metadata tab:uwmetadata.xml 
+2015-03-18 10:37:29,145 INFO   [BookImporter] Upload: check internet connection 
+2015-03-18 10:37:29,145 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 10:45:47,348 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 10:45:47,741 INFO   [Utility] Client Online 
+2015-03-18 10:45:47,741 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 10:45:49,757 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 10:45:49,757 INFO   [StartWizard] Testing server connection... 
+2015-03-18 10:45:51,482 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 10:45:58,805 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\AWESOME_FACE!!!.png 
+2015-03-18 10:52:44,524 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 10:52:44,914 INFO   [Utility] Client Online 
+2015-03-18 10:52:44,914 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 10:52:47,969 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 10:52:47,969 INFO   [StartWizard] Testing server connection... 
+2015-03-18 10:52:49,402 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 10:52:56,809 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\miopdf.pdf 
+2015-03-18 11:23:11,339 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 11:23:11,813 INFO   [Utility] Client Online 
+2015-03-18 11:23:11,823 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 11:23:14,771 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 11:23:14,771 INFO   [StartWizard] Testing server connection... 
+2015-03-18 11:23:16,663 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 11:23:23,212 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-18 11:34:05,294 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 11:34:05,704 INFO   [Utility] Client Online 
+2015-03-18 11:34:05,714 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 11:34:08,278 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 11:34:08,278 INFO   [StartWizard] Testing server connection... 
+2015-03-18 11:34:12,179 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 11:34:17,512 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-18 11:38:39,636 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 11:38:39,997 INFO   [Utility] Client Online 
+2015-03-18 11:38:40,007 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 11:38:42,904 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 11:38:42,904 INFO   [StartWizard] Testing server connection... 
+2015-03-18 11:38:44,596 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 11:38:52,147 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-18 11:40:00,262 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 11:40:00,972 INFO   [Utility] Client Online 
+2015-03-18 11:40:00,982 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 11:40:03,785 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 11:40:03,785 INFO   [StartWizard] Testing server connection... 
+2015-03-18 11:40:05,509 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 11:40:13,599 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-18 11:41:01,979 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 11:41:02,320 INFO   [Utility] Client Online 
+2015-03-18 11:41:02,330 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 11:41:04,461 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 11:41:04,461 INFO   [StartWizard] Testing server connection... 
+2015-03-18 11:41:06,280 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 11:41:13,398 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-18 12:19:54,004 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 12:19:54,374 INFO   [Utility] Client Online 
+2015-03-18 12:19:54,374 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 12:19:57,976 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 12:19:57,976 INFO   [StartWizard] Testing server connection... 
+2015-03-18 12:19:59,356 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 12:20:49,409 INFO   [BookImporter] Upload: check internet connection 
+2015-03-18 12:20:49,409 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 12:20:55,641 INFO   [BookImporter] Upload: check internet connection... 
+2015-03-18 12:20:55,641 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 12:20:55,741 INFO   [BookImporter] One video founded 
+2015-03-18 12:21:13,849 INFO   [BookImporter] Upload: check internet connection... 
+2015-03-18 12:21:13,849 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 12:21:13,859 INFO   [BookImporter] One video founded 
+2015-03-18 12:22:23,753 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 12:22:24,080 INFO   [Utility] Client Online 
+2015-03-18 12:22:24,080 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 12:22:27,036 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 12:22:27,036 INFO   [StartWizard] Testing server connection... 
+2015-03-18 12:22:28,496 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 12:22:34,666 INFO   [XMLUtil] xmlString=<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<book:book xmlns:book="http://phaidra.univie.ac.at/XML/book/V1.0">
+    <coll:pages id="collection" name="Collezione"/>
+</book:book>
+ 
+2015-03-18 12:24:04,250 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 12:24:04,660 INFO   [Utility] Client Online 
+2015-03-18 12:24:04,670 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 12:24:08,524 INFO   [StartWizard] Selected Server = Phaidra Sviluppo - Universita' di Padova 
+2015-03-18 12:24:08,524 INFO   [StartWizard] Testing server connection... 
+2015-03-18 12:24:10,082 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 12:24:21,244 ERROR  [Utility] Cannot donwload file: http://phaidrastaticdev.cab.unipd.it/xml/colluwmetadata.xml  http://phaidrastaticdev.cab.unipd.it/xml/colluwmetadata.xml 
+2015-03-18 12:24:22,483 INFO   [XMLUtil] xmlString=<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<book:book xmlns:book="http://phaidra.univie.ac.at/XML/book/V1.0">
+    <coll:pages id="collection" name="Collezione"/>
+</book:book>
+ 
+2015-03-18 12:24:41,519 INFO   [BookImporter] Upload: check internet connection... 
+2015-03-18 12:24:41,519 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 12:24:41,619 INFO   [BookImporter] One video founded 
+2015-03-18 12:24:53,323 INFO   [BookImporter] Upload: check internet connection... 
+2015-03-18 12:24:53,323 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 12:24:53,323 INFO   [BookImporter] One video founded 
+2015-03-18 12:29:02,772 INFO   [BookImporter] Upload: check internet connection... 
+2015-03-18 12:29:02,772 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 12:29:02,782 INFO   [BookImporter] One video founded 
+2015-03-18 12:29:05,683 INFO   [BookImporter] Upload: check internet connection... 
+2015-03-18 12:29:05,683 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-18 12:29:05,693 INFO   [BookImporter] One video founded 
+2015-03-18 12:34:13,992 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 12:34:14,302 INFO   [Utility] Client Online 
+2015-03-18 12:34:14,302 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 12:34:19,710 INFO   [StartWizard] Selected Server = Phaidra Sviluppo - Universita' di Padova 
+2015-03-18 12:34:19,710 INFO   [StartWizard] Testing server connection... 
+2015-03-18 12:34:20,995 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 12:34:26,201 ERROR  [Utility] Cannot donwload file: http://phaidrastaticdev.cab.unipd.it/xml/colluwmetadata.xml  http://phaidrastaticdev.cab.unipd.it/xml/colluwmetadata.xml 
+2015-03-18 12:34:49,146 INFO   [BookImporter] Export metadata required! 
+2015-03-18 12:34:49,146 INFO   [BookImporter] Exporting metadata tab:uwmetadata.xml 
+2015-03-18 12:34:49,156 ERROR  [BookImporter] C:\Users\davide\.imphaidraimporter2014\duplication\sessionuwmetadata.xml (Impossibile trovare il file specificato) 
+2015-03-18 21:35:10,212 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-18 21:35:10,674 INFO   [Utility] Client Online 
+2015-03-18 21:35:10,684 INFO   [StartWizard] Configuration path estabilished 
+2015-03-18 21:35:20,544 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-18 21:35:20,544 INFO   [StartWizard] Testing server connection... 
+2015-03-18 21:35:22,218 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-18 21:35:43,064 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-03-19 08:25:16,486 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 08:25:16,986 INFO   [Utility] Client Online 
+2015-03-19 08:25:16,996 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 08:25:23,061 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 08:25:23,061 INFO   [StartWizard] Testing server connection... 
+2015-03-19 08:25:24,693 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 08:25:44,317 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 08:26:51,876 INFO   [BookImporter] Upload: check internet connection 
+2015-03-19 08:26:51,876 INFO   [BookImporter] Upload: connection [OK] 
+2015-03-19 08:43:34,392 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 08:43:34,812 INFO   [Utility] Client Online 
+2015-03-19 08:43:34,822 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 08:43:56,595 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 08:43:56,595 INFO   [StartWizard] Testing server connection... 
+2015-03-19 08:43:58,167 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 08:44:19,084 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:01:41,659 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:01:42,080 INFO   [Utility] Client Online 
+2015-03-19 09:01:42,090 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:01:44,282 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:01:44,282 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:01:45,774 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:01:55,192 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:03:33,970 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:03:34,260 INFO   [Utility] Client Online 
+2015-03-19 09:03:34,260 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:03:36,421 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:03:36,421 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:03:38,202 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:03:45,697 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:04:43,383 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:04:43,675 INFO   [Utility] Client Online 
+2015-03-19 09:04:43,675 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:04:46,579 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:04:46,579 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:04:48,064 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:04:55,489 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:08:57,305 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:08:57,715 INFO   [Utility] Client Online 
+2015-03-19 09:08:57,715 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:09:01,112 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:09:01,112 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:09:02,544 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:09:07,159 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:10:27,043 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:10:27,353 INFO   [Utility] Client Online 
+2015-03-19 09:10:27,353 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:10:30,037 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:10:30,037 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:10:31,971 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:10:53,685 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:13:37,885 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:13:38,235 INFO   [Utility] Client Online 
+2015-03-19 09:13:38,235 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:13:40,798 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:13:40,798 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:13:42,282 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:13:49,237 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:16:52,887 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:16:53,298 INFO   [Utility] Client Online 
+2015-03-19 09:16:53,308 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:16:55,788 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:16:55,788 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:16:57,371 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:17:03,444 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-03-19 09:21:09,849 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-03-19 09:21:10,266 INFO   [Utility] Client Online 
+2015-03-19 09:21:10,266 INFO   [StartWizard] Configuration path estabilished 
+2015-03-19 09:21:12,926 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-03-19 09:21:12,926 INFO   [StartWizard] Testing server connection... 
+2015-03-19 09:21:14,599 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-03-19 09:21:19,902 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\S7F2\S7F2.pdf 
+2015-04-02 14:38:29,730 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-02 14:38:31,640 INFO   [Utility] Client Online 
+2015-04-02 14:38:31,640 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 14:18:48,311 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 14:18:48,921 INFO   [Utility] Client Online 
+2015-04-09 14:18:48,931 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 14:19:00,394 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 14:19:00,394 INFO   [StartWizard] Testing server connection... 
+2015-04-09 14:19:02,275 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 14:19:12,184 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 14:24:44,947 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 14:24:45,709 INFO   [Utility] Client Online 
+2015-04-09 14:24:45,719 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 14:24:49,714 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 14:24:49,714 INFO   [StartWizard] Testing server connection... 
+2015-04-09 14:24:51,248 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 14:24:56,752 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 14:33:11,632 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 14:33:12,048 INFO   [Utility] Client Online 
+2015-04-09 14:33:12,048 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 14:33:16,685 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 14:33:16,685 INFO   [StartWizard] Testing server connection... 
+2015-04-09 14:33:18,047 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 14:33:24,402 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:05:34,294 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:05:34,688 INFO   [Utility] Client Online 
+2015-04-09 15:05:34,688 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:05:37,899 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 15:05:37,899 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:05:39,247 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:05:49,135 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:08:31,229 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:08:31,584 INFO   [Utility] Client Online 
+2015-04-09 15:08:31,584 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:08:38,620 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 15:08:38,620 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:08:39,991 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:08:44,998 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:13:01,099 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:13:05,509 INFO   [Utility] Client Online 
+2015-04-09 15:13:05,509 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:13:10,762 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 15:13:10,762 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:13:42,321 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:14:24,078 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:16:06,645 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:16:14,720 INFO   [Utility] Client Online 
+2015-04-09 15:16:14,720 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:16:19,552 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 15:16:19,552 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:16:28,228 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:16:38,639 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:18:57,835 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:18:58,195 INFO   [Utility] Client Online 
+2015-04-09 15:18:58,205 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:19:02,038 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 15:19:02,038 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:19:03,371 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:19:10,685 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:21:02,748 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:21:03,038 INFO   [Utility] Client Online 
+2015-04-09 15:21:03,048 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:21:06,925 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 15:21:06,925 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:21:08,223 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:21:12,709 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:28:37,241 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:28:37,649 INFO   [Utility] Client Online 
+2015-04-09 15:28:37,649 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:28:45,841 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 15:28:45,841 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:28:47,103 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:28:53,840 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\test metadata\README.txt 
+2015-04-09 15:48:35,352 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 15:48:35,752 INFO   [Utility] Client Online 
+2015-04-09 15:48:35,752 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 15:48:47,306 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-09 15:48:47,306 INFO   [StartWizard] Testing server connection... 
+2015-04-09 15:48:48,818 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 15:51:25,574 INFO   [BookImporter] Export metadata required! 
+2015-04-09 15:51:25,574 INFO   [BookImporter] Exporting metadata tab:uwmetadata.xml 
+2015-04-09 15:51:33,658 INFO   [BookImporter] Upload: check internet connection 
+2015-04-09 15:51:33,658 INFO   [BookImporter] Upload: connection [OK] 
+2015-04-09 16:15:39,546 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 16:15:40,128 INFO   [Utility] Client Online 
+2015-04-09 16:15:40,138 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 16:16:00,267 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-09 16:16:00,267 INFO   [StartWizard] Testing server connection... 
+2015-04-09 16:16:01,879 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 16:16:39,411 INFO   [BookImporter] Export metadata required! 
+2015-04-09 16:16:39,411 INFO   [BookImporter] Exporting metadata tab:uwmetadata.xml 
+2015-04-09 16:16:57,202 INFO   [BookImporter] Upload: check internet connection... 
+2015-04-09 16:16:57,202 INFO   [BookImporter] Upload: connection [OK] 
+2015-04-09 16:16:57,332 INFO   [BookImporter] One video founded 
+2015-04-09 16:48:24,373 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 16:48:24,793 INFO   [Utility] Client Online 
+2015-04-09 16:48:24,803 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 16:48:28,761 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-09 16:48:28,761 INFO   [StartWizard] Testing server connection... 
+2015-04-09 16:48:30,424 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 16:48:38,417 INFO   [XMLUtil] xmlString=<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<book:book xmlns:book="http://phaidra.univie.ac.at/XML/book/V1.0">
+    <coll:pages id="collection" name="Collezione">
+        <book:page abspagenum="1" folder="" href="blankpage_1.jpg" pagenum="1" pid="blankpage_1.jpg"/>
+        <book:page abspagenum="2" folder="" href="blankpage_2.jpg" pagenum="2" pid="blankpage_2.jpg"/>
+        <book:page abspagenum="3" folder="" href="blankpage_3.jpg" pagenum="3" pid="blankpage_3.jpg"/>
+        <book:page abspagenum="4" folder="" href="test.avi" pagenum="4" pid="test.avi"/>
+    </coll:pages>
+</book:book>
+ 
+2015-04-09 16:49:13,593 INFO   [BookImporter] Upload single video: check internet connection... 
+2015-04-09 16:49:13,593 INFO   [BookImporter] Upload single video: connection [OK] 
+2015-04-09 16:49:13,593 INFO   [BookImporter] Upload single video: C:\Users\davide\Desktop\collezione\ 
+2015-04-09 16:49:13,603 INFO   [XMLTree] Get video from structure: video found C:\Users\davide\Desktop\collezione\blankpage_1.jpg 
+2015-04-09 16:49:13,729 INFO   [XMLTree] Get video from structure: video found C:\Users\davide\Desktop\collezione\blankpage_2.jpg 
+2015-04-09 16:49:13,732 INFO   [XMLTree] Get video from structure: video found C:\Users\davide\Desktop\collezione\blankpage_3.jpg 
+2015-04-09 16:49:13,734 INFO   [XMLTree] Get video from structure: video found C:\Users\davide\Desktop\collezione\test.avi 
+2015-04-09 16:49:13,737 INFO   [BookImporter] Upload single video: One video founded 
+2015-04-09 16:52:25,930 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-09 16:52:26,340 INFO   [Utility] Client Online 
+2015-04-09 16:52:26,340 INFO   [StartWizard] Configuration path estabilished 
+2015-04-09 16:52:31,313 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-09 16:52:31,313 INFO   [StartWizard] Testing server connection... 
+2015-04-09 16:52:32,688 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 16:52:36,174 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-09 16:52:36,174 INFO   [StartWizard] Testing server connection... 
+2015-04-09 16:52:37,224 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-09 16:53:21,134 INFO   [XMLUtil] xmlString=<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<book:book xmlns:book="http://phaidra.univie.ac.at/XML/book/V1.0">
+    <coll:pages id="collection" name="Collezione">
+        <book:page abspagenum="1" folder="" href="blankpage_1.jpg" pagenum="1" pid="blankpage_1.jpg"/>
+        <book:page abspagenum="2" folder="" href="blankpage_2.jpg" pagenum="2" pid="blankpage_2.jpg"/>
+        <book:page abspagenum="3" folder="" href="blankpage_3.jpg" pagenum="3" pid="blankpage_3.jpg"/>
+        <book:page abspagenum="4" folder="" href="test.avi" pagenum="4" pid="test.avi"/>
+    </coll:pages>
+</book:book>
+ 
+2015-04-09 16:53:44,248 INFO   [BookImporter] Upload single video: check internet connection... 
+2015-04-09 16:53:44,248 INFO   [BookImporter] Upload single video: connection [OK] 
+2015-04-09 16:53:44,248 INFO   [BookImporter] Upload single video: C:\Users\davide\Desktop\collezione\ 
+2015-04-09 16:53:44,248 INFO   [XMLTree] Get video from structure: video found null 
+2015-04-09 16:53:44,348 INFO   [XMLTree] Get video from structure: video found null 
+2015-04-09 16:53:44,348 INFO   [XMLTree] Get video from structure: video found null 
+2015-04-09 16:53:44,348 INFO   [XMLTree] Get video from structure: video found null 
+2015-04-09 16:53:44,348 INFO   [BookImporter] Upload single video: One video founded 
+2015-04-10 10:50:10,226 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-10 10:50:10,778 INFO   [Utility] Client Online 
+2015-04-10 10:50:10,788 INFO   [StartWizard] Configuration path estabilished 
+2015-04-10 10:50:17,471 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-10 10:50:17,471 INFO   [StartWizard] Testing server connection... 
+2015-04-10 10:50:19,162 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-10 10:50:36,113 INFO   [XMLUtil] xmlString=<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<book:book xmlns:book="http://phaidra.univie.ac.at/XML/book/V1.0">
+    <coll:pages id="collection" name="Collezione">
+        <book:page abspagenum="1" folder="" href="blankpage_1.jpg" pagenum="1" pid="blankpage_1.jpg"/>
+        <book:page abspagenum="2" folder="" href="blankpage_2.jpg" pagenum="2" pid="blankpage_2.jpg"/>
+        <book:page abspagenum="3" folder="" href="blankpage_3.jpg" pagenum="3" pid="blankpage_3.jpg"/>
+        <book:page abspagenum="4" folder="" href="test.avi" pagenum="4" pid="test.avi"/>
+    </coll:pages>
+</book:book>
+ 
+2015-04-10 10:51:05,974 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-10 10:51:06,274 INFO   [Utility] Client Online 
+2015-04-10 10:51:06,287 INFO   [StartWizard] Configuration path estabilished 
+2015-04-10 10:51:09,971 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-10 10:51:09,971 INFO   [StartWizard] Testing server connection... 
+2015-04-10 10:51:11,435 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-10 10:51:24,283 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-10 10:54:08,485 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-10 10:54:08,895 INFO   [Utility] Client Online 
+2015-04-10 10:54:08,905 INFO   [StartWizard] Configuration path estabilished 
+2015-04-10 10:54:13,370 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-10 10:54:13,370 INFO   [StartWizard] Testing server connection... 
+2015-04-10 10:54:14,813 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-10 10:54:20,787 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-10 10:55:56,664 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-10 10:55:56,974 INFO   [Utility] Client Online 
+2015-04-10 10:55:56,974 INFO   [StartWizard] Configuration path estabilished 
+2015-04-10 10:56:00,217 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-10 10:56:00,217 INFO   [StartWizard] Testing server connection... 
+2015-04-10 10:56:01,699 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-10 10:56:09,546 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-10 10:58:13,393 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-10 10:58:13,813 INFO   [Utility] Client Online 
+2015-04-10 10:58:13,823 INFO   [StartWizard] Configuration path estabilished 
+2015-04-10 10:58:21,367 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-10 10:58:21,367 INFO   [StartWizard] Testing server connection... 
+2015-04-10 10:58:22,739 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-10 10:58:28,744 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-10 11:00:04,767 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-10 11:00:05,127 INFO   [Utility] Client Online 
+2015-04-10 11:00:05,127 INFO   [StartWizard] Configuration path estabilished 
+2015-04-10 11:00:09,682 INFO   [StartWizard] Selected Server = Phaidratest - Universita' di Padova 
+2015-04-10 11:00:09,682 INFO   [StartWizard] Testing server connection... 
+2015-04-10 11:00:11,098 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-10 11:00:18,131 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 10:55:53,187 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 10:55:55,038 INFO   [Utility] Client Online 
+2015-04-13 10:55:55,044 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 10:56:00,959 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 10:56:00,959 INFO   [StartWizard] Testing server connection... 
+2015-04-13 10:56:08,586 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 10:56:16,768 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 10:59:24,406 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 10:59:24,836 INFO   [Utility] Client Online 
+2015-04-13 10:59:24,846 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 10:59:27,941 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 10:59:27,941 INFO   [StartWizard] Testing server connection... 
+2015-04-13 10:59:29,393 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 10:59:36,603 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 11:16:55,246 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 11:16:55,686 INFO   [Utility] Client Online 
+2015-04-13 11:16:55,686 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 11:16:57,869 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 11:16:57,869 INFO   [StartWizard] Testing server connection... 
+2015-04-13 11:16:59,539 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 11:17:06,113 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 11:34:22,996 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 11:34:23,396 INFO   [Utility] Client Online 
+2015-04-13 11:34:23,396 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 11:34:38,877 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 11:34:38,877 INFO   [StartWizard] Testing server connection... 
+2015-04-13 11:34:41,019 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 11:34:47,698 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 11:45:01,239 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 11:45:01,633 INFO   [Utility] Client Online 
+2015-04-13 11:45:01,643 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 11:45:04,111 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 11:45:04,111 INFO   [StartWizard] Testing server connection... 
+2015-04-13 11:45:05,514 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 11:45:13,690 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 12:07:26,557 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 12:07:26,971 INFO   [Utility] Client Online 
+2015-04-13 12:07:26,971 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 12:07:37,475 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 12:07:37,475 INFO   [StartWizard] Testing server connection... 
+2015-04-13 12:07:39,082 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 12:07:47,399 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 12:10:14,574 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 12:10:14,924 INFO   [Utility] Client Online 
+2015-04-13 12:10:14,934 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 12:10:17,679 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 12:10:17,679 INFO   [StartWizard] Testing server connection... 
+2015-04-13 12:10:19,060 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 12:10:24,290 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 12:13:25,335 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 12:13:25,826 INFO   [Utility] Client Online 
+2015-04-13 12:13:25,826 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 12:13:28,194 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 12:13:28,194 INFO   [StartWizard] Testing server connection... 
+2015-04-13 12:13:30,149 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 12:14:05,638 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 13:46:22,024 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 13:46:22,480 INFO   [Utility] Client Online 
+2015-04-13 13:46:22,490 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 13:46:24,863 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 13:46:24,863 INFO   [StartWizard] Testing server connection... 
+2015-04-13 13:46:26,665 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 13:46:33,490 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 13:46:51,729 INFO   [PdfCreateMonitor] W: 595.0 x H: 842.0 
+2015-04-13 13:46:52,155 INFO   [PdfCreateMonitor] W: 595.0 x H: 842.0 
+2015-04-13 13:46:52,301 INFO   [PdfCreateMonitor] W: 595.0 x H: 842.0 
+2015-04-13 13:55:00,021 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 13:55:00,412 INFO   [Utility] Client Online 
+2015-04-13 13:55:00,422 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 13:55:02,866 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 13:55:02,866 INFO   [StartWizard] Testing server connection... 
+2015-04-13 13:55:04,226 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 13:55:21,039 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 14:00:25,955 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 14:00:26,377 INFO   [Utility] Client Online 
+2015-04-13 14:00:26,387 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 14:00:29,613 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 14:00:29,613 INFO   [StartWizard] Testing server connection... 
+2015-04-13 14:00:31,025 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 14:00:37,065 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 14:03:17,088 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 14:03:17,398 INFO   [Utility] Client Online 
+2015-04-13 14:03:17,408 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 14:03:20,933 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 14:03:20,933 INFO   [StartWizard] Testing server connection... 
+2015-04-13 14:03:22,887 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 14:03:28,561 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 14:07:26,325 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 14:07:26,745 INFO   [Utility] Client Online 
+2015-04-13 14:07:26,755 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 14:07:29,668 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 14:07:29,668 INFO   [StartWizard] Testing server connection... 
+2015-04-13 14:07:31,040 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 14:07:40,460 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 14:28:17,048 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 14:28:17,456 INFO   [Utility] Client Online 
+2015-04-13 14:28:17,466 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 14:28:19,685 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 14:28:19,685 INFO   [StartWizard] Testing server connection... 
+2015-04-13 14:28:21,067 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 14:28:31,882 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 14:30:53,507 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 14:30:53,867 INFO   [Utility] Client Online 
+2015-04-13 14:30:53,867 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 14:30:56,487 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 14:30:56,487 INFO   [StartWizard] Testing server connection... 
+2015-04-13 14:30:57,940 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 14:31:04,334 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 14:40:23,208 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 14:40:23,606 INFO   [Utility] Client Online 
+2015-04-13 14:40:23,606 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 14:40:26,301 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 14:40:26,301 INFO   [StartWizard] Testing server connection... 
+2015-04-13 14:40:27,723 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 14:40:33,831 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 14:43:17,100 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 14:43:17,460 INFO   [Utility] Client Online 
+2015-04-13 14:43:17,460 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 14:43:20,452 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 14:43:20,452 INFO   [StartWizard] Testing server connection... 
+2015-04-13 14:43:21,825 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 14:43:29,612 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:04:10,835 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:04:12,320 INFO   [Utility] Client Online 
+2015-04-13 15:04:12,326 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:04:14,438 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:04:14,438 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:04:15,696 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:04:21,643 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:07:12,761 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:07:13,136 INFO   [Utility] Client Online 
+2015-04-13 15:07:13,136 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:07:23,005 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:07:23,005 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:07:24,497 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:07:32,447 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:19:58,705 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:19:59,230 INFO   [Utility] Client Online 
+2015-04-13 15:19:59,230 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:20:02,298 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:20:02,298 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:20:03,849 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:20:15,631 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:34:08,444 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:34:08,884 INFO   [Utility] Client Online 
+2015-04-13 15:34:08,894 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:34:11,586 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:34:11,586 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:34:12,956 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:34:24,418 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:36:36,570 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:36:36,930 INFO   [Utility] Client Online 
+2015-04-13 15:36:36,930 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:36:40,065 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:36:40,065 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:36:41,457 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:36:48,274 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:39:01,388 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:39:01,760 INFO   [Utility] Client Online 
+2015-04-13 15:39:01,760 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:39:05,503 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:39:05,503 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:39:06,814 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:39:13,585 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:44:54,385 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:44:54,795 INFO   [Utility] Client Online 
+2015-04-13 15:44:54,805 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:44:57,880 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:44:57,880 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:45:02,955 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:45:13,104 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:45:29,958 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:45:30,368 INFO   [Utility] Client Online 
+2015-04-13 15:45:30,368 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:45:33,309 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:45:33,309 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:45:37,724 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:45:43,297 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:49:36,445 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:49:36,868 INFO   [Utility] Client Online 
+2015-04-13 15:49:36,878 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:49:40,492 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:49:40,492 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:49:45,276 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:49:51,066 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\TEST-PDF\essopdf.pdf 
+2015-04-13 15:50:06,468 ERROR  [PdfCreateMonitor] Error:Error: File not found! File not found!C:\Users\davide\Desktop\prova.pdf (Impossibile accedere al file. Il file è utilizzato da un altro processo) 
+2015-04-13 15:50:28,854 ERROR  [PdfCreateMonitor] Error:Error: File not found! File not found!C:\Users\davide\Desktop\prova.pdf (Impossibile accedere al file. Il file è utilizzato da un altro processo) 
+2015-04-13 15:52:42,372 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:52:42,742 INFO   [Utility] Client Online 
+2015-04-13 15:52:42,742 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:52:45,547 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:52:45,547 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:52:49,984 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 15:54:27,289 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 15:54:27,579 INFO   [Utility] Client Online 
+2015-04-13 15:54:27,589 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 15:55:32,957 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 15:55:32,957 INFO   [StartWizard] Testing server connection... 
+2015-04-13 15:55:38,229 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 16:01:07,958 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 16:01:08,348 INFO   [Utility] Client Online 
+2015-04-13 16:01:08,348 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 16:01:12,845 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 16:01:12,845 INFO   [StartWizard] Testing server connection... 
+2015-04-13 16:01:17,187 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 16:01:30,195 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\progetti\Phaidra Importer\Libri\S7F2\test_funzionamento.pdf 
+2015-04-13 16:17:10,229 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 16:17:10,629 INFO   [Utility] Client Online 
+2015-04-13 16:17:10,631 INFO   [StartWizard] Configuration path estabilished 
+2015-04-13 16:17:14,445 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-04-13 16:17:14,445 INFO   [StartWizard] Testing server connection... 
+2015-04-13 16:17:15,756 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-04-13 16:17:34,040 INFO   [Utility] Not compatible file: C:\Users\davide\Desktop\progetti\Phaidra Importer\Libri\S7F2\test_funzionamento.pdf 
+2015-04-13 16:18:27,054 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-04-13 16:18:27,341 INFO   [Utility] Client Online 
+2015-04-13 16:18:27,351 INFO   [StartWizard] Configuration path estabilished 
+2015-05-11 14:15:49,890 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-11 14:15:50,540 INFO   [Utility] Client Online 
+2015-05-11 14:15:50,540 INFO   [StartWizard] Configuration path estabilished 
+2015-05-11 14:16:07,043 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-11 14:16:07,043 INFO   [StartWizard] Testing server connection... 
+2015-05-11 14:16:08,933 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-11 14:19:39,977 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-11 14:19:40,367 INFO   [Utility] Client Online 
+2015-05-11 14:19:40,377 INFO   [StartWizard] Configuration path estabilished 
+2015-05-11 14:19:44,028 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-11 14:19:44,028 INFO   [StartWizard] Testing server connection... 
+2015-05-11 14:19:45,748 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-11 14:21:40,918 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-11 14:21:41,308 INFO   [Utility] Client Online 
+2015-05-11 14:21:41,318 INFO   [StartWizard] Configuration path estabilished 
+2015-05-11 14:22:10,075 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-11 14:22:10,075 INFO   [StartWizard] Testing server connection... 
+2015-05-11 14:22:11,715 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 09:15:11,203 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 09:15:12,974 INFO   [Utility] Client Online 
+2015-05-25 09:15:12,984 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 09:17:46,965 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 09:17:49,423 INFO   [Utility] Client Online 
+2015-05-25 09:17:49,428 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 09:20:34,429 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 09:20:35,401 INFO   [Utility] Client Online 
+2015-05-25 09:20:35,421 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 09:20:43,375 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 09:20:43,375 INFO   [StartWizard] Testing server connection... 
+2015-05-25 09:20:45,667 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 09:42:36,478 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 09:42:36,918 INFO   [Utility] Client Online 
+2015-05-25 09:42:36,918 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 09:56:55,004 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 09:56:55,446 INFO   [Utility] Client Online 
+2015-05-25 09:56:55,456 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 09:57:22,620 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 09:57:22,620 INFO   [StartWizard] Testing server connection... 
+2015-05-25 09:57:24,006 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 09:58:31,211 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 09:58:31,652 INFO   [Utility] Client Online 
+2015-05-25 09:58:31,722 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 09:58:36,184 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 09:58:36,184 INFO   [StartWizard] Testing server connection... 
+2015-05-25 09:58:37,544 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:01:29,321 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:01:29,700 INFO   [Utility] Client Online 
+2015-05-25 10:01:29,700 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:01:34,621 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:01:34,621 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:01:35,981 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:10:21,361 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:10:21,771 INFO   [Utility] Client Online 
+2015-05-25 10:10:21,771 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:10:32,731 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:10:32,731 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:10:34,853 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:14:53,086 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:14:53,516 INFO   [Utility] Client Online 
+2015-05-25 10:14:53,516 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:15:20,888 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:15:21,225 INFO   [Utility] Client Online 
+2015-05-25 10:15:21,225 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:15:38,970 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:15:38,970 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:15:40,460 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:17:56,671 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:17:57,091 INFO   [Utility] Client Online 
+2015-05-25 10:17:57,091 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:18:24,780 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:18:24,780 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:18:27,814 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:33:40,012 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:33:40,402 INFO   [Utility] Client Online 
+2015-05-25 10:33:40,402 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:33:53,979 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:33:53,979 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:33:55,431 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:44:57,338 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:44:57,728 INFO   [Utility] Client Online 
+2015-05-25 10:44:57,728 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:45:00,339 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:45:00,339 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:45:02,084 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:53:56,845 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:53:57,407 INFO   [Utility] Client Online 
+2015-05-25 10:53:57,407 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:54:02,822 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:54:02,822 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:54:06,852 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:54:41,839 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:54:42,739 INFO   [Utility] Client Online 
+2015-05-25 10:54:42,739 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:54:45,132 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:54:45,132 INFO   [StartWizard] Testing server connection... 
+2015-05-25 10:54:49,145 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 10:59:52,455 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 10:59:52,875 INFO   [Utility] Client Online 
+2015-05-25 10:59:52,875 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 10:59:59,544 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 10:59:59,554 INFO   [StartWizard] Testing server connection... 
+2015-05-25 11:00:01,218 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 11:00:46,925 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 11:00:47,225 INFO   [Utility] Client Online 
+2015-05-25 11:00:47,235 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 11:13:03,651 ERROR  [BookImporter] C:\Users\davide\.imphaidraimporter2014\duplication\sessionuwmetadata.xml (Impossibile trovare il file specificato) 
+2015-05-25 11:13:04,471 INFO   [BookImporter] Eccezione durante la costruzione dell'interfaccia metadatijava.io.FileNotFoundException: C:\Users\davide\.imphaidraimporter2014\duplication\sessionuwmetadata.xml (Impossibile trovare il file specificato) 
+2015-05-25 11:28:24,536 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 11:28:24,938 INFO   [Utility] Client Online 
+2015-05-25 11:28:24,948 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 11:28:31,366 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 11:28:31,366 INFO   [StartWizard] Testing server connection... 
+2015-05-25 11:28:32,769 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 12:32:50,139 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 12:32:50,569 INFO   [Utility] Client Online 
+2015-05-25 12:32:50,569 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 12:33:03,441 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 12:33:03,441 INFO   [StartWizard] Testing server connection... 
+2015-05-25 12:33:06,614 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 14:54:38,820 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 14:54:39,220 INFO   [Utility] Client Online 
+2015-05-25 14:54:39,300 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 14:55:16,441 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 14:55:16,441 INFO   [StartWizard] Testing server connection... 
+2015-05-25 14:55:17,866 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 
+2015-05-25 15:05:03,095 INFO   [StartWizard] Starting Application Phaidra Importer 
+2015-05-25 15:05:03,691 INFO   [Utility] Client Online 
+2015-05-25 15:05:03,691 INFO   [StartWizard] Configuration path estabilished 
+2015-05-25 15:05:34,190 INFO   [StartWizard] Selected Server = Phaidra - Universita' di Padova 
+2015-05-25 15:05:34,190 INFO   [StartWizard] Testing server connection... 
+2015-05-25 15:05:36,810 INFO   [StartWizard] Preinitialization done (Vocabulary and Languages 

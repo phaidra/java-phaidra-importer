@@ -3,19 +3,19 @@
   PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
 <toc version="1.0">
    <tocitem text="Phaidra" target="header_header">
-      <tocitem text="Descrizione" target="header_description" />
-      <tocitem text="Accesso a Phaidra" target="header_access" />
-      <tocitem text="Perche' Phaidra" target="header_whyphaidra" />
+      <tocitem text="Description" target="header_description" />
+      <tocitem text="Access to Phaidra" target="header_access" />
+      <tocitem text="Why Phaidra" target="header_whyphaidra" />
       
    </tocitem>
 
-   <tocitem text="PHaidra Importer" target="pi">
-      <tocitem text="Requisiti" target="pi_requisiti"/>
-      <tocitem text="Interfaccia Utente" target="pi_serverlang"/>
-      <tocitem text="Cartella di lavoro" target="pi_workfolder"/>
-      <tocitem text="Interfaccia Principale" target="pi_maininterface"/>   
-      <tocitem text="Creazione un libro" target="pi_bookcreation"/>   
-      <tocitem text="Suddivisione in capitoli" target="pi_popupmenu"/>    
+   <tocitem text="Phaidra Importer" target="pi">
+      <tocitem text="Requirements" target="pi_requisiti"/>
+      <tocitem text="User Interface" target="pi_serverlang"/>
+      <tocitem text="Workbench" target="pi_workfolder"/>
+      <tocitem text="Main Interface" target="pi_maininterface"/>   
+      <tocitem text="Create a book" target="pi_bookcreation"/>   
+      <tocitem text="Chapter divisions" target="pi_popupmenu"/>    
    </tocitem>
 <!--
    <tocitem text="Book Creation" target="book">

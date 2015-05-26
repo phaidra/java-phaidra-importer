@@ -1,0 +1,7 @@
+2015-03-18 12:21:17,582 INFO   [UploadProgress] Starting upload... 
+2015-03-18 12:21:17,623 INFO   [UploadProgress] Create a single video 
+2015-03-18 12:21:17,630 INFO   [UploadProgress] Start upload video with PID: null 
+2015-03-18 12:21:17,646 INFO   [UploadProgress] Caricamento video singolo iniziato 
+2015-03-18 12:21:17,647 INFO   [UploadProgress] Richiesta di creazione oggetto video in Phaidra 
+2015-03-18 12:21:19,422 INFO   [UploadProgress] Eccezione! Caricamento annullato::fedora.server.errors.authorization.AuthzDeniedException:  
+2015-03-18 12:21:19,422 ERROR  [UploadProgress] Eccezione! Caricamento annullato::fedora.server.errors.authorization.AuthzDeniedException:  
