@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+ 
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+ 
+   <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+      <param name="Threshold" value="INFO" />
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
+      </layout>
+   </appender>
+ 
+   <appender name="uploadAppender" class="org.apache.log4j.RollingFileAppender">
+      <param name="Threshold" value="INFO" />
+      <param name="File" value="PhaidraLogs/upload${current.date}.log" append="false" />
+      <param name="MaxFileSize" value="10000KB"/>
+      <param name="MaxBackupIndex" value="10"/>
+      <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d %-5p  [%c{1}] %m %n" />
+      </layout>
+   </appender>
+  
+    <logger name="it.imtech.upload.ImObject" additivity="false" >
+      <level value="INFO" />
+      <appender-ref ref="consoleAppender"/>
+      <appender-ref ref="uploadAppender"/>
+   </logger>
+   
+   <logger name="it.imtech.upload.UploadProgress" additivity="false" >
+      <level value="INFO" />
+      <appender-ref ref="consoleAppender"/>
+      <appender-ref ref="uploadAppender"/>
+   </logger>
+</log4j:configuration>

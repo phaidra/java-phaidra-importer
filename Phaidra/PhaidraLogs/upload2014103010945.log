@@ -1,0 +1,568 @@
+2014-10-30 10:09:45,417 INFO   [UploadProgress] Starting upload... 
+2014-10-30 10:09:45,479 INFO   [UploadProgress] Create a book 
+2014-10-30 10:09:53,747 INFO   [UploadProgress] PID Assegnato: o:23581 
+2014-10-30 10:09:53,747 INFO   [UploadProgress] Aggiunta file pdf in corso... 
+2014-10-30 10:09:57,866 INFO   [UploadProgress] Crea identificatore PID per il libro :o:23581 
+2014-10-30 10:09:57,866 INFO   [UploadProgress] Aggiunta metadati del libro in corso... 
+2014-10-30 10:10:01,953 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:23581 
+2014-10-30 10:10:01,953 INFO   [UploadProgress] Creazione capitoli e pagine in corso... 
+2014-10-30 10:10:01,968 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:10:05,978 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:10:09,503 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:10:12,998 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:10:25,415 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23582 
+2014-10-30 10:10:25,415 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:10:28,567 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:10:30,220 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:10:33,340 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:10:38,363 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23583 
+2014-10-30 10:10:38,379 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:10:41,405 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:10:43,745 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:10:46,850 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:10:52,497 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23584 
+2014-10-30 10:10:52,497 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:10:55,835 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:10:58,425 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:11:00,593 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:11:05,991 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23585 
+2014-10-30 10:11:05,991 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:11:10,000 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:11:11,607 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:11:13,651 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:11:18,237 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23586 
+2014-10-30 10:11:18,253 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:11:23,276 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:11:25,335 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:11:28,205 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:11:32,417 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23587 
+2014-10-30 10:11:32,433 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:11:34,617 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:11:36,941 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:11:39,437 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:11:43,665 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23588 
+2014-10-30 10:11:43,681 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:11:46,333 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:11:48,205 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:11:50,560 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:11:53,961 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23589 
+2014-10-30 10:11:53,961 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:11:55,630 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:11:57,019 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:11:58,657 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:12:02,307 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23590 
+2014-10-30 10:12:02,307 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:12:06,363 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:12:08,204 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:12:10,045 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:12:14,085 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23591 
+2014-10-30 10:12:14,101 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:12:16,503 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:12:18,765 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:12:20,824 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:12:26,269 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23592 
+2014-10-30 10:12:26,269 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:12:29,670 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:12:32,290 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:12:35,364 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:12:39,872 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23593 
+2014-10-30 10:12:39,872 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:12:42,399 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:12:44,911 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:12:47,032 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:12:50,964 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23594 
+2014-10-30 10:12:50,979 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:12:54,037 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:12:56,049 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:12:59,029 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:13:04,239 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23595 
+2014-10-30 10:13:04,239 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:13:07,094 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:13:09,200 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:13:11,259 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:13:16,548 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23596 
+2014-10-30 10:13:16,563 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:13:19,278 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:13:21,196 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:13:23,209 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:13:27,436 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23597 
+2014-10-30 10:13:27,436 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:13:30,806 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:13:32,834 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:13:34,394 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:13:39,277 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23598 
+2014-10-30 10:13:39,277 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:13:41,352 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:13:44,019 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:13:46,110 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:13:50,774 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23599 
+2014-10-30 10:13:50,774 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:13:53,364 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:13:55,657 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:13:57,669 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:14:01,148 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23600 
+2014-10-30 10:14:01,148 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:14:03,597 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:14:05,563 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:14:07,607 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:14:11,553 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23601 
+2014-10-30 10:14:11,553 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:14:14,471 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:14:17,216 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:14:19,244 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:14:24,891 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23602 
+2014-10-30 10:14:24,891 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:14:27,278 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:14:29,696 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:14:31,677 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:14:37,106 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23603 
+2014-10-30 10:14:37,122 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:14:40,429 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:14:42,223 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:14:44,969 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:14:49,617 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23604 
+2014-10-30 10:14:49,633 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:14:52,269 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:14:55,389 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:14:57,293 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:15:01,816 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23605 
+2014-10-30 10:15:01,827 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:15:05,135 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:15:07,456 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:15:09,864 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:15:13,542 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23606 
+2014-10-30 10:15:13,544 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:15:16,602 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:15:18,707 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:15:20,639 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:15:25,781 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23607 
+2014-10-30 10:15:25,781 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:15:28,528 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:15:31,590 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:15:33,306 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:15:36,954 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23608 
+2014-10-30 10:15:36,970 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:15:40,473 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:15:42,501 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:15:44,467 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:15:49,724 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23609 
+2014-10-30 10:15:49,724 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:15:53,141 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:15:56,073 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:15:58,476 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:16:05,543 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23610 
+2014-10-30 10:16:05,543 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:16:09,536 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:16:11,751 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:16:13,499 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:16:17,071 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23611 
+2014-10-30 10:16:17,071 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:16:19,099 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:16:21,314 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:16:23,614 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:16:28,875 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23612 
+2014-10-30 10:16:28,884 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:16:31,499 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:16:34,291 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:16:36,965 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:16:41,944 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23613 
+2014-10-30 10:16:41,959 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:16:47,019 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:16:49,310 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:16:51,784 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:16:56,296 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23614 
+2014-10-30 10:16:56,312 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:16:58,578 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:17:00,178 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:17:01,816 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:17:05,263 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23615 
+2014-10-30 10:17:05,274 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:17:08,038 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:17:09,859 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:17:12,447 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:17:16,082 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23616 
+2014-10-30 10:17:16,097 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:17:19,133 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:17:21,857 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:17:23,698 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:17:27,948 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23617 
+2014-10-30 10:17:27,963 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:17:30,468 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:17:32,871 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:17:35,098 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:17:39,750 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23618 
+2014-10-30 10:17:39,750 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:17:42,984 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:17:45,098 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:17:47,193 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:17:52,499 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23619 
+2014-10-30 10:17:52,502 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:17:55,527 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:17:57,580 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:17:59,639 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:18:04,605 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23620 
+2014-10-30 10:18:04,621 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:18:07,761 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:18:10,502 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:18:12,442 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:18:15,974 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23621 
+2014-10-30 10:18:15,990 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:18:19,003 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:18:20,968 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:18:23,355 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:18:30,077 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23622 
+2014-10-30 10:18:30,090 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:18:32,990 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:18:34,725 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:18:37,103 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:18:42,143 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23623 
+2014-10-30 10:18:42,159 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:18:48,206 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:18:50,000 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:18:52,059 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:18:57,336 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23624 
+2014-10-30 10:18:57,351 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:18:59,255 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:19:01,049 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:19:02,905 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:19:07,491 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23625 
+2014-10-30 10:19:07,491 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:19:10,050 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:19:13,029 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:19:14,996 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:19:20,097 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23626 
+2014-10-30 10:19:20,113 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:19:23,716 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:19:25,963 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:19:28,334 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:19:33,310 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23627 
+2014-10-30 10:19:33,310 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:19:35,220 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:19:37,778 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:19:39,619 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:19:45,262 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23628 
+2014-10-30 10:19:45,262 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:19:49,006 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:19:51,334 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:19:53,096 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:19:56,796 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23629 
+2014-10-30 10:19:56,811 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:19:58,808 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:20:00,898 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:20:03,129 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:20:07,978 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23630 
+2014-10-30 10:20:07,993 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:20:11,540 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:20:14,340 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:20:16,787 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:20:21,361 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23631 
+2014-10-30 10:20:21,372 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:20:23,923 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:20:25,947 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:20:27,581 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:20:32,071 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23632 
+2014-10-30 10:20:32,099 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:20:35,310 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:20:37,143 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:20:38,897 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:20:43,762 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23633 
+2014-10-30 10:20:43,776 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:20:47,998 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:20:51,151 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:20:56,284 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:21:01,555 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23634 
+2014-10-30 10:21:01,593 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:21:05,420 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:21:08,275 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:21:10,984 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:21:15,778 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23635 
+2014-10-30 10:21:15,794 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:21:19,632 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:21:23,081 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:21:25,749 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:21:30,106 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23636 
+2014-10-30 10:21:30,122 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:21:33,086 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:21:35,036 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:21:37,470 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:21:42,525 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23637 
+2014-10-30 10:21:42,525 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:21:46,253 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:21:49,093 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:21:51,979 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:21:55,208 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23638 
+2014-10-30 10:21:55,239 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:21:58,297 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:22:00,796 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:22:02,933 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:22:05,585 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23639 
+2014-10-30 10:22:05,585 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:22:07,363 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:22:08,814 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:22:10,343 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:22:13,993 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23640 
+2014-10-30 10:22:14,009 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:22:16,817 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:22:18,502 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:22:20,077 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:22:23,572 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23641 
+2014-10-30 10:22:23,572 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:22:25,256 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:22:27,066 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:22:29,328 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:22:33,150 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23642 
+2014-10-30 10:22:33,181 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:22:35,864 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:22:37,502 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:22:39,312 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:22:42,921 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23643 
+2014-10-30 10:22:42,936 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:22:46,774 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:22:48,443 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:22:50,066 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:22:55,167 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23644 
+2014-10-30 10:22:55,198 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:22:57,429 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:22:59,551 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:23:01,518 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:23:06,089 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23645 
+2014-10-30 10:23:06,105 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:23:09,568 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:23:12,064 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:23:14,342 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:23:18,912 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23646 
+2014-10-30 10:23:18,959 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:23:21,997 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:23:24,842 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:23:27,213 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:23:35,559 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23647 
+2014-10-30 10:23:35,575 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:23:45,194 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:24:01,171 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:24:04,995 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:24:08,544 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23648 
+2014-10-30 10:24:08,560 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:24:12,304 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:24:14,659 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:24:16,656 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:24:20,525 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23649 
+2014-10-30 10:24:20,541 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:24:23,723 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:24:27,061 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:24:29,589 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:24:34,331 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23650 
+2014-10-30 10:24:34,362 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:24:36,999 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:24:38,730 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:24:41,086 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:24:45,906 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23651 
+2014-10-30 10:24:45,922 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:24:49,260 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:24:52,053 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:24:54,377 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:24:59,249 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23652 
+2014-10-30 10:24:59,264 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:25:02,447 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:25:04,678 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:25:06,518 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:25:09,638 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23653 
+2014-10-30 10:25:09,654 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:25:13,320 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:25:15,910 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:25:17,657 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:25:22,664 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23654 
+2014-10-30 10:25:22,680 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:25:26,362 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:25:28,546 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:25:31,182 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:25:36,361 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23655 
+2014-10-30 10:25:36,377 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:25:38,826 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:25:41,821 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:25:44,348 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:25:49,028 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23656 
+2014-10-30 10:25:49,044 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:25:51,899 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:25:53,755 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:25:56,438 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:26:01,976 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23657 
+2014-10-30 10:26:02,008 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:26:05,331 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:26:10,011 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:26:13,193 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:26:18,388 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23658 
+2014-10-30 10:26:18,403 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:26:21,913 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:26:23,661 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:26:26,781 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:26:32,334 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23659 
+2014-10-30 10:26:32,350 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:26:34,971 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:26:37,404 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:26:39,760 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:26:45,017 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23660 
+2014-10-30 10:26:45,033 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:26:48,527 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:26:50,212 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:26:52,521 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:26:58,059 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23661 
+2014-10-30 10:26:58,090 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:27:00,430 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:27:02,536 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:27:04,767 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:27:09,353 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23662 
+2014-10-30 10:27:09,369 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:27:13,378 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:27:15,437 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:27:17,793 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:27:22,145 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23663 
+2014-10-30 10:27:22,176 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:27:26,295 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:27:28,135 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:27:30,351 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:27:35,140 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23664 
+2014-10-30 10:27:35,155 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:27:37,745 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:27:39,243 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:27:41,629 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:27:45,139 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23665 
+2014-10-30 10:27:45,155 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:27:48,306 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:27:50,287 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:27:52,674 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:27:56,949 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23666 
+2014-10-30 10:27:56,964 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:27:59,445 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:28:02,300 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:28:04,530 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:28:09,335 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23667 
+2014-10-30 10:28:09,335 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:28:13,360 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:28:15,497 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:28:17,931 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:28:22,190 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23668 
+2014-10-30 10:28:22,190 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:28:26,963 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:28:29,366 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:28:32,548 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:28:35,964 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23669 
+2014-10-30 10:28:35,980 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:28:40,239 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:28:42,875 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:28:45,324 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:28:49,739 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23670 
+2014-10-30 10:28:49,770 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:28:54,014 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:28:55,839 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:28:57,961 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:29:02,595 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23671 
+2014-10-30 10:29:02,641 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:29:05,808 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:29:08,351 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:29:11,019 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:29:15,574 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23672 
+2014-10-30 10:29:15,621 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:29:18,834 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:29:20,550 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:29:22,859 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:29:26,837 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23673 
+2014-10-30 10:29:26,837 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:29:29,863 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:29:32,297 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:29:34,434 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:29:38,833 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23674 
+2014-10-30 10:29:38,865 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:29:42,921 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:29:45,214 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:29:48,053 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:29:53,139 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23675 
+2014-10-30 10:29:53,154 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:29:56,337 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:29:59,348 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:30:02,624 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:30:07,132 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23676 
+2014-10-30 10:30:07,163 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:30:10,658 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:30:13,746 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:30:15,852 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:30:20,454 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23677 
+2014-10-30 10:30:20,486 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:30:24,105 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:30:26,211 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:30:28,535 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:30:33,262 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23678 
+2014-10-30 10:30:33,293 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:30:35,883 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:30:38,254 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:30:40,235 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:30:45,851 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23679 
+2014-10-30 10:30:45,882 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:30:49,970 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:30:52,310 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:30:54,462 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:30:59,735 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23680 
+2014-10-30 10:30:59,766 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:31:02,730 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:31:04,556 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:31:06,677 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:31:11,482 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23681 
+2014-10-30 10:31:11,544 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:31:14,992 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:31:16,724 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:31:18,642 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:31:23,603 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23682 
+2014-10-30 10:31:23,634 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:31:25,896 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:31:28,346 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:31:30,498 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:31:35,553 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23683 
+2014-10-30 10:31:35,584 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:31:40,030 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:31:43,010 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:31:45,319 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:31:50,186 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23684 
+2014-10-30 10:31:50,217 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:31:52,229 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:31:54,913 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:31:57,143 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:32:01,933 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23685 
+2014-10-30 10:32:01,964 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:32:05,224 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:32:07,003 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:32:09,265 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:32:12,790 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23686 
+2014-10-30 10:32:12,821 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:32:16,597 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:32:19,311 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:32:21,277 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:32:26,534 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23687 
+2014-10-30 10:32:26,581 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:32:30,527 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:32:33,803 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:32:35,800 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:32:40,496 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23688 
+2014-10-30 10:32:40,543 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:32:45,098 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:32:47,173 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:32:49,419 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:32:53,491 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23689 
+2014-10-30 10:32:53,506 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:32:56,002 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:32:57,469 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:33:00,058 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:33:03,646 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23690 
+2014-10-30 10:33:03,677 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:33:06,236 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:33:08,451 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:33:10,853 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:33:16,329 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23691 
+2014-10-30 10:33:16,376 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:33:21,617 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:33:24,784 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:33:27,202 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:33:31,289 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23692 
+2014-10-30 10:33:31,305 INFO   [UploadProgress] Richiesta di creazione oggetto Pagina in Phaidra 
+2014-10-30 10:33:37,093 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2014-10-30 10:33:40,135 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2014-10-30 10:33:42,225 INFO   [UploadProgress] - Salvataggio dell'oggetto Pagina pdf in Phaidra 
+2014-10-30 10:33:46,796 INFO   [UploadProgress] Crea identificatore PID per la pagina :o:23693 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://phaidra.univie.ac.at/XML/book/ocrtext/V1.0" targetNamespace="http://phaidra.univie.ac.at/XML/book/ocrtext/V1.0" elementFormDefault="qualified">
+
+<xs:element name="ocrtext">
+<xs:complexType>
+<xs:sequence>
+        <xs:element name="page" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+        <xs:sequence>
+                <xs:element name="ocrword" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                <xs:sequence>
+                        <xs:element name="ocrchar" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                        <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                        <xs:attribute name="char" type="xs:string" use="required" />
+                                        <xs:attribute name="x1" type="xs:int" use="required" />
+                                        <xs:attribute name="x2" type="xs:int" use="required" />
+                                        <xs:attribute name="y1" type="xs:int" use="required" />
+                                        <xs:attribute name="y2" type="xs:int" use="required" />
+                                </xs:extension>
+                        </xs:simpleContent>
+                        </xs:complexType>
+                        </xs:element>
+                </xs:sequence>
+                <xs:attribute name="word" type="xs:string" use="required" />
+                <xs:attribute name="x1" type="xs:int" use="required" />
+                <xs:attribute name="y1" type="xs:int" use="required" />
+                <xs:attribute name="x2" type="xs:int" use="required" />
+                <xs:attribute name="y2" type="xs:int" use="required" />
+                </xs:complexType>
+                </xs:element>
+        </xs:sequence>
+          <!-- PID und ABSPAGENUM sind hier optional, da diese vor dem importieren noch nicht feststehen -->
+          <xs:attribute name="pid" type="PID" use="optional" />
+          <xs:attribute name="abspagenum" type="xs:int" use="optional" />
+        </xs:complexType>
+        </xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+  <!-- eigene Datentypen -->
+  <xs:simpleType name="PID">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="o:\d+" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- /eigene Datentypen -->
+
+</xs:schema>

@@ -1,0 +1,29 @@
+2015-04-09 15:53:06,962 INFO   [UploadProgress] Starting upload... 
+2015-04-09 15:53:06,972 INFO   [UploadProgress] Create a collection 
+2015-04-09 15:53:14,909 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:33892 
+2015-04-09 15:53:17,059 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33892 
+2015-04-09 15:53:17,171 INFO   [UploadProgress] Richiesta di creazione oggetto immagine in Phaidra 
+2015-04-09 15:53:20,301 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2015-04-09 15:53:23,430 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2015-04-09 15:53:25,191 INFO   [UploadProgress] - Salvataggio dell'oggetto immagine in Phaidra 
+2015-04-09 15:53:35,082 INFO   [UploadProgress] Crea identificatore PID per  l'immagine:o:33893 
+2015-04-09 15:53:37,743 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:33894 
+2015-04-09 15:53:39,973 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33894 
+2015-04-09 15:53:39,973 INFO   [UploadProgress] Richiesta di creazione oggetto immagine in Phaidra 
+2015-04-09 15:53:43,804 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2015-04-09 15:53:45,914 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2015-04-09 15:53:48,100 INFO   [UploadProgress] - Salvataggio dell'oggetto immagine in Phaidra 
+2015-04-09 15:53:50,455 INFO   [UploadProgress] Crea identificatore PID per  l'immagine:o:33895 
+2015-04-09 15:53:50,455 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33894 
+2015-04-09 15:53:54,848 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:33894 
+2015-04-09 15:53:59,725 INFO   [UploadProgress] Crea identificatore PID per la collezione :o:33896 
+2015-04-09 15:54:01,726 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33896 
+2015-04-09 15:54:01,736 INFO   [UploadProgress] Richiesta di creazione oggetto immagine in Phaidra 
+2015-04-09 15:54:05,967 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
+2015-04-09 15:54:08,715 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
+2015-04-09 15:54:10,665 INFO   [UploadProgress] - Salvataggio dell'oggetto immagine in Phaidra 
+2015-04-09 15:54:14,217 INFO   [UploadProgress] Crea identificatore PID per  l'immagine:o:33897 
+2015-04-09 15:54:14,227 INFO   [UploadProgress] Aggiungi flusso di dati METADATA:o:33896 
+2015-04-09 15:54:18,890 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:33896 
+2015-04-09 15:54:20,679 INFO   [UploadProgress] Aggiunti oggetti  alla collezione:o:33892 
+2015-04-09 15:54:23,907 INFO   [UploadProgress] Termina il libro - identificatore PID :o:33892 

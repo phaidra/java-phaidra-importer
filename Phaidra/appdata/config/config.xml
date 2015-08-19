@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<gui-definition>
+    <configurl path="http://static.phaidra.univie.ac.at/xml/config.xml">Url configuration</configurl>
+    <!--<configurl path="http://phaidra-static.cab.unipd.it/xml/config.xml">Url configuration</configurl>--> 
+    <locale>
+        <current value="it">lingua</current>
+    </locale>
+    <version current="2.0">V.</version>
+</gui-definition>

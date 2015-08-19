@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+   <tocitem text="Phaidra" target="header_header">
+      <tocitem text="Beschreibung" target="header_description" />
+      <tocitem text="Zugriff auf Phaidra" target="header_access" />
+      <tocitem text="Warum Phaidra" target="header_whyphaidra" />
+      
+   </tocitem>
+
+   <tocitem text="Phaidra Importer" target="pi">
+      <tocitem text="Bedarf" target="pi_requisiti"/>
+      <tocitem text="Benutzer Interface" target="pi_serverlang"/>
+      <tocitem text="Werkbank" target="pi_workfolder"/>
+      <tocitem text="Hauptschnittstelle" target="pi_maininterface"/>   
+      <tocitem text="Buch erstellen" target="pi_bookcreation"/>   
+      <tocitem text="Kapiteleinteilung" target="pi_popupmenu"/>    
+   </tocitem>
+<!--
+   <tocitem text="Book Creation" target="book">
+        <tocitem text="Import Metadata" target="book_importmetadata"/>
+        <tocitem text="Export Metadata" target="book_exportmetadata"/>
+        <tocitem text="Tree View Structure" target="book_treeview">
+            <tocitem text="Add Page" target="book_addpage"/>
+            <tocitem text="Rename Object" target="book_addpage"/>
+            <tocitem text="Delete Object" target="book_addpage"/>
+            <tocitem text="Add Folder" target="book_addpage"/>
+            <tocitem text="Copy,Cut and Paste" target="book_addpage"/>
+        </tocitem>    
+        <tocitem text="Import PDF" target="book_importpdf"/>
+        <tocitem text="Export PDF" target="book_exportpdf"/>
+        <tocitem text="Export EPUB" target="book_exportepub"/>
+        <tocitem text="Upload" target="book_upload"/>
+   </tocitem>
+   <tocitem text="Collection Creation" target="header_collection">
+        <tocitem text="Import Single Page Metadata" target="collection_importsinglemetadata"/>
+        <tocitem text="Upload" target="collection_upload"/>
+   </tocitem>-->
+</toc>

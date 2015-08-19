@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadatas>
+  <metadata mandatory="Y" ID="9" forxmlname="general" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="11" lomref="1" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="2" valuespace="">
+    <description isocode="sr">opšte</description>
+    <description isocode="it">Dati generali</description>
+    <description isocode="en">General</description>
+    <description isocode="de">Allgemein</description>
+    <metadatas>
+      <metadata mandatory="Y" ID="1" forxmlname="identifier" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="3" lomref="1.1" searchable="Y" autofield="Y" editable="N" oid="0" datatype="CharacterString" mid_parent="9" cardinality="1" ordered="N" fgslabel="uw.general.identifier" vid="" defaultvalue="" sequence="1" valuespace="^o[0-9]:[0-9]+$">
+        <description isocode="sr">identifikator</description>
+        <description isocode="it">Identificatore</description>
+        <description isocode="en">Identifier</description>
+        <description isocode="de">Persistente Signatur</description>
+      </metadata>
+      <metadata mandatory="Y" ID="2" forxmlname="title" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="4" lomref="1.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="2" ordered="N" fgslabel="uw.general.title" vid="" defaultvalue="" sequence="2" valuespace=".*">
+        <description isocode="sr">naslov</description>
+        <description isocode="it">Titolo</description>
+        <description isocode="en">Title</description>
+        <description isocode="de">Titel</description>
+      </metadata>
+      <metadata mandatory="N" ID="105" forxmlname="subtitle" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552078" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.subtitle" vid="" defaultvalue="" sequence="3" valuespace=".*">
+        <description isocode="sr">podnaslov</description>
+        <description isocode="it">Sottotitolo</description>
+        <description isocode="en">Subtitle</description>
+        <description isocode="de">Untertitel</description>
+      </metadata>
+      <metadata mandatory="N" ID="122" forxmlname="alt_title" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552094" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.alt_title" vid="" defaultvalue="" sequence="4" valuespace=".*">
+        <description isocode="en">Alternative Title</description>
+        <description isocode="de">alternativer Titel</description>
+        <description isocode="sr">uporedni naslov</description>
+        <description isocode="it">Titolo alternativo</description>
+      </metadata>
+      <metadata mandatory="Y" ID="3" forxmlname="language" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="5" lomref="1.3" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Language" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.language" vid="" defaultvalue="" sequence="5" valuespace="^[a-z]+(-[A-Z]+)*$">
+        <description isocode="it">Lingua</description>
+        <description isocode="en">Language</description>
+        <description isocode="de">Sprache</description>
+        <description isocode="sr">jezik</description>
+      </metadata>
+      <metadata mandatory="Y" ID="4" forxmlname="description" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="6" lomref="1.4" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.description" vid="" defaultvalue="" sequence="6" valuespace=".*">
+        <description isocode="sr">opis ili dodatni podaci</description>
+        <description isocode="it">Descrizione</description>
+        <description isocode="en">Description or Additional Data</description>
+        <description isocode="de">Beschreibung oder zusätzliche Angaben</description>
+      </metadata>
+      <metadata mandatory="N" ID="5" forxmlname="keyword" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="7" lomref="1.5" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.keyword" vid="" defaultvalue="" sequence="7" valuespace=".*">
+        <description isocode="it">Parole chiave</description>
+        <description isocode="en">Keywords</description>
+        <description isocode="de">Schlüsselwörter</description>
+        <description isocode="sr">ključne reči</description>
+      </metadata>
+      <metadata mandatory="N" ID="6" forxmlname="coverage" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="8" lomref="1.6" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.coverage" vid="" defaultvalue="" sequence="8" valuespace=".*">
+        <description isocode="sr">obseg</description>
+        <description isocode="it">Copertura (temporale – geografica – amministrativa)</description>
+        <description isocode="en">Coverage</description>
+        <description isocode="de">Geltungsbereich</description>
+      </metadata>
+      <metadata mandatory="N" ID="138" forxmlname="irdata" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552156" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Boolean" mid_parent="9" cardinality="1" ordered="N" fgslabel="uw.general.irdata" vid="" defaultvalue="" sequence="9" valuespace="">
+        <description isocode="en">Institutional Repository</description>
+        <description isocode="de">Institutional Repository</description>
+        <description isocode="sr">institucionalni repozitorij</description>
+        <description isocode="it">Archivio istituzionale</description>
+      </metadata>
+      <metadata mandatory="N" ID="123" forxmlname="identifiers" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552096" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="9" cardinality="*" ordered="N" fgslabel="uw.general.identifiers" vid="" defaultvalue="" sequence="10" valuespace="">
+        <description isocode="sr">identifikatori</description>
+        <description isocode="it">Identificatori</description>
+        <description isocode="en">Identifiers</description>
+        <description isocode="de">Identifikatoren</description>
+        <metadatas>
+          <metadata mandatory="N" ID="124" forxmlname="resource" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552097" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="123" cardinality="1" ordered="N" fgslabel="uw.general.identifiers.resource" vid="31" defaultvalue="" sequence="1" valuespace="^.*$">
+            <description isocode="sr">izvor</description>
+            <description isocode="it">Standard</description>
+            <description isocode="en">Resource</description>
+            <description isocode="de">Quelle</description>
+          </metadata>
+          <metadata mandatory="N" ID="125" forxmlname="identifier" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552098" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="123" cardinality="1" ordered="N" fgslabel="uw.general.identifiers.identifier" vid="" defaultvalue="" sequence="2" valuespace="^.*$">
+            <description isocode="sr">identifikator</description>
+            <description isocode="it">Identificatore</description>
+            <description isocode="en">Identifier</description>
+            <description isocode="de">Identifikator</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="Y" ID="10" forxmlname="lifecycle" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="12" lomref="2" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="3" valuespace="">
+    <description isocode="sr">životni ciklus</description>
+    <description isocode="it">Ciclo di vita</description>
+    <description isocode="en">Lifecycle</description>
+    <description isocode="de">Lebenszyklus</description>
+    <metadatas>
+      <metadata mandatory="Y" ID="127" forxmlname="upload_date" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="1552107" lomref="" searchable="N" autofield="Y" editable="N" oid="0" datatype="DateTime" mid_parent="10" cardinality="1" ordered="N" fgslabel="uw.lifecycle.upload_date" vid="" defaultvalue="" sequence="1" valuespace="">
+        <description isocode="sr">datum učitavanja u Phaidru</description>
+        <description isocode="it">Data di caricamento di Phaidra</description>
+        <description isocode="en">Phaidra Upload Date</description>
+        <description isocode="de">Phaidra Uploaddatum</description>
+      </metadata>
+      <metadata mandatory="N" ID="7" forxmlname="version" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="9" lomref="2.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="10" cardinality="1" ordered="N" fgslabel="uw.lifecycle.version" vid="" defaultvalue="" sequence="2" valuespace=".*">
+        <description isocode="sr">verzija</description>
+        <description isocode="it">Versione</description>
+        <description isocode="en">Version</description>
+        <description isocode="de">Version</description>
+      </metadata>
+      <metadata mandatory="Y" ID="8" forxmlname="status" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="10" lomref="2.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="10" cardinality="1" ordered="N" fgslabel="uw.lifecycle.status" vid="2" defaultvalue="" sequence="3" valuespace="^[0-9]+$">
+        <description isocode="sr">status</description>
+        <description isocode="it">Stato</description>
+        <description isocode="en">Status</description>
+        <description isocode="de">Status</description>
+      </metadata>
+      <metadata mandatory="N" ID="137" forxmlname="peer_reviewed" fornamespace="http://phaidra.univie.ac.at/XML/metadata/extended/V1.0" veid="1552136" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Boolean" mid_parent="10" cardinality="1" ordered="N" fgslabel="uw.lifecycle.peer_reviewed" vid="" defaultvalue="" sequence="4" valuespace="">
+        <description isocode="it">Sottoposto a revisione paritaria (Peer Reviewed)</description>
+        <description isocode="en">Peer Reviewed</description>
+        <description isocode="de">Peer Reviewed</description>
+        <description isocode="sr">recenziran</description>
+      </metadata>
+      <metadata mandatory="Y" ID="11" forxmlname="contribute" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="13" lomref="2.3" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="10" cardinality="*" ordered="Y" fgslabel="" vid="" defaultvalue="" sequence="5" valuespace="">
+        <description isocode="it">Contributo</description>
+        <description isocode="en">Contribute</description>
+        <description isocode="de">Beitrag</description>
+        <description isocode="sr">doprineti</description>
+        <metadatas>
+          <metadata mandatory="Y" ID="12" forxmlname="role" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="14" lomref="2.3.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="11" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.role" vid="3" defaultvalue="" sequence="1" valuespace="">
+            <description isocode="sr">uloga</description>
+            <description isocode="it">Ruolo</description>
+            <description isocode="en">Role</description>
+            <description isocode="de">Rolle</description>
+          </metadata>
+          <metadata mandatory="N" ID="126" forxmlname="ext_role" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="1552106" lomref="" searchable="N" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="11" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.ext_role" vid="" defaultvalue="" sequence="2" valuespace="^.*$">
+            <description isocode="sr">različita uloga</description>
+            <description isocode="it">Altro ruolo</description>
+            <description isocode="en">Different role</description>
+            <description isocode="de">Andere Rolle</description>
+          </metadata>
+          <metadata mandatory="Y" ID="13" forxmlname="entity" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="15" lomref="2.3.2" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="11" cardinality="*" ordered="Y" fgslabel="" vid="" defaultvalue="" sequence="3" valuespace="">
+            <description isocode="sr">entitet / lični podaci</description>
+            <description isocode="it">Ruolo / Dati personali</description>
+            <description isocode="en">Entity / Personal data</description>
+            <description isocode="de">Angaben zur Person</description>
+            <metadatas>
+              <metadata mandatory="N" ID="14" forxmlname="firstname" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="16" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.firstname" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr"> ime</description>
+                <description isocode="it">Nome</description>
+                <description isocode="en">Firstname</description>
+                <description isocode="de">Vorname</description>
+              </metadata>
+              <metadata mandatory="N" ID="15" forxmlname="lastname" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="17" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.lastname" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">prezime</description>
+                <description isocode="it">Cognome</description>
+                <description isocode="en">Lastname</description>
+                <description isocode="de">Zuname</description>
+              </metadata>
+              <metadata mandatory="N" ID="63" forxmlname="institution" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1728" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.institution" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="it">Ente</description>
+                <description isocode="en">Institution</description>
+                <description isocode="de">Institution</description>
+                <description isocode="sr">institucija</description>
+              </metadata>
+              <metadata mandatory="N" ID="64" forxmlname="title1" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1729" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.title1" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">naslov</description>
+                <description isocode="it">Titolo</description>
+                <description isocode="en">Title</description>
+                <description isocode="de">Titel</description>
+              </metadata>
+              <metadata mandatory="N" ID="65" forxmlname="title2" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1730" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.title2" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="it">Titolo</description>
+                <description isocode="en">Title</description>
+                <description isocode="de">Titel</description>
+                <description isocode="sr">naslov</description>
+              </metadata>
+              <metadata mandatory="N" ID="66" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1731" lomref="" searchable="N" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">vrsta</description>
+                <description isocode="it">Tipo</description>
+                <description isocode="en">Type</description>
+                <description isocode="de">Typ</description>
+              </metadata>
+              <metadata mandatory="N" ID="148" forxmlname="student_id" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1552169" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="13" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.student_id" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">ID studenta</description>
+                <description isocode="it">Numero di matricola</description>
+                <description isocode="en">Student ID</description>
+                <description isocode="de">Matrikelnummer</description>
+              </metadata>
+            </metadatas>
+          </metadata>
+          <metadata mandatory="N" ID="16" forxmlname="date" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="18" lomref="2.3.3" searchable="Y" autofield="N" editable="Y" oid="0" datatype="DateTime" mid_parent="11" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.date" vid="" defaultvalue="" sequence="4" valuespace="^.*$">
+            <description isocode="it">Data</description>
+            <description isocode="en">Date</description>
+            <description isocode="de">Datum</description>
+            <description isocode="sr">datum</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="17" forxmlname="technical" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="19" lomref="4" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="4" valuespace="">
+    <description isocode="it">Dati tecnici</description>
+    <description isocode="en">Technical Data</description>
+    <description isocode="de">technische Angaben</description>
+    <description isocode="sr">tehnički podaci</description>
+    <metadatas>
+      <metadata mandatory="N" ID="23" forxmlname="format" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="25" lomref="4.1" searchable="Y" autofield="Y" editable="Y" oid="0" datatype="CharacterString" mid_parent="17" cardinality="*" ordered="N" fgslabel="uw.technical.format" vid="" defaultvalue="" sequence="" valuespace="^.+/.+$">
+        <description isocode="sr">format</description>
+        <description isocode="it">Formato</description>
+        <description isocode="en">Format</description>
+        <description isocode="de">Format</description>
+      </metadata>
+      <metadata mandatory="N" ID="24" forxmlname="size" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="26" lomref="4.2" searchable="Y" autofield="Y" editable="N" oid="0" datatype="FileSize" mid_parent="17" cardinality="1" ordered="N" fgslabel="uw.technical.size" vid="" defaultvalue="" sequence="" valuespace="^[0-9]+$">
+        <description isocode="sr">veličina</description>
+        <description isocode="it">Dimensione</description>
+        <description isocode="en">Size</description>
+        <description isocode="de">Größe</description>
+      </metadata>
+      <metadata mandatory="N" ID="25" forxmlname="location" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="27" lomref="4.3" searchable="Y" autofield="Y" editable="N" oid="0" datatype="CharacterString" mid_parent="17" cardinality="1" ordered="N" fgslabel="uw.technical.location" vid="" defaultvalue="" sequence="" valuespace="^https?://.*$">
+        <description isocode="it">Link permanente</description>
+        <description isocode="en">Permanent Link</description>
+        <description isocode="de">Permanenter Link</description>
+        <description isocode="sr">trajni link</description>
+      </metadata>
+      <metadata mandatory="N" ID="26" forxmlname="requirement" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="28" lomref="4.4" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="17" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+        <description isocode="sr">zahtevi</description>
+        <description isocode="it">Requisiti</description>
+        <description isocode="en">Requirements</description>
+        <description isocode="de">Anforderung</description>
+        <metadatas>
+          <metadata mandatory="N" ID="27" forxmlname="orcomposite" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="29" lomref="4.4.1" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="26" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+            <description isocode="sr">logički ili</description>
+            <description isocode="it">O-Struttura mista</description>
+            <description isocode="en">Or-Composite</description>
+            <description isocode="de">Oder-Komposit</description>
+            <metadatas>
+              <metadata mandatory="N" ID="28" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/requirement" veid="30" lomref="4.4.1.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="27" cardinality="1" ordered="N" fgslabel="uw.technical.requirement.orcomposite.type" vid="4" defaultvalue="" sequence="" valuespace="^[0-9]+$">
+                <description isocode="sr">vrsta</description>
+                <description isocode="it">Tipo</description>
+                <description isocode="en">Type</description>
+                <description isocode="de">Typ</description>
+              </metadata>
+              <metadata mandatory="N" ID="29" forxmlname="name" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/requirement" veid="31" lomref="4.4.1.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="27" cardinality="1" ordered="N" fgslabel="uw.technical.requirement.orcomposite.name" vid="5" defaultvalue="" sequence="" valuespace="^[0-9]+$">
+                <description isocode="sr">naziv</description>
+                <description isocode="it">Nome</description>
+                <description isocode="en">Name</description>
+                <description isocode="de">Name</description>
+              </metadata>
+              <metadata mandatory="N" ID="30" forxmlname="minversion" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/requirement" veid="32" lomref="4.4.1.3" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="27" cardinality="1" ordered="N" fgslabel="uw.technical.requirement.orcomposite.minversion" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="it">Versione minima</description>
+                <description isocode="en">Minimum version</description>
+                <description isocode="de">Minimal-Version</description>
+                <description isocode="sr">minimalna verzija</description>
+              </metadata>
+              <metadata mandatory="N" ID="31" forxmlname="maxversion" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/requirement" veid="33" lomref="4.4.1.4" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="27" cardinality="1" ordered="N" fgslabel="uw.technical.requirement.orcomposite.maxversion" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">maksimalna verzija</description>
+                <description isocode="it">Versione massima</description>
+                <description isocode="en">Maximum version</description>
+                <description isocode="de">Maximal-Version</description>
+              </metadata>
+            </metadatas>
+          </metadata>
+        </metadatas>
+      </metadata>
+      <metadata mandatory="N" ID="32" forxmlname="installremarks" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="34" lomref="4.5" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="17" cardinality="1" ordered="N" fgslabel="uw.technical.installremarks" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+        <description isocode="it">Guida all'installazione</description>
+        <description isocode="en">Installation Guide</description>
+        <description isocode="de">Installationshinweise</description>
+        <description isocode="sr">vodič za instalaciju</description>
+      </metadata>
+      <metadata mandatory="N" ID="33" forxmlname="otherrequirements" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="35" lomref="4.6" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="17" cardinality="1" ordered="N" fgslabel="uw.technical.otherrequirements" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+        <description isocode="sr">uslovi za korišćenje objekta</description>
+        <description isocode="it">Requisiti per l'utilizzo dell'oggetto</description>
+        <description isocode="en">Requirements for the Use of the Object</description>
+        <description isocode="de">Sonstige Anforderungen</description>
+      </metadata>
+      <metadata mandatory="N" ID="34" forxmlname="duration" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="36" lomref="4.7" searchable="Y" autofield="Y" editable="Y" oid="0" datatype="Duration" mid_parent="17" cardinality="1" ordered="N" fgslabel="uw.technical.duration" vid="" defaultvalue="" sequence="" valuespace="^PT([0-9][0-9]H)?([0-9][0-9]M)?([0-9][0-9])S?$">
+        <description isocode="sr">trajanje</description>
+        <description isocode="it">Durata</description>
+        <description isocode="en">Duration</description>
+        <description isocode="de">Dauer</description>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="18" forxmlname="educational" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="20" lomref="5" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="5" valuespace="">
+    <description isocode="sr">obrazovni podaci</description>
+    <description isocode="it">Ambito didattico</description>
+    <description isocode="en">Educational</description>
+    <description isocode="de">Didaktische Angaben</description>
+    <metadatas>
+      <metadata mandatory="N" ID="51" forxmlname="educationals" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="20" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="18" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+        <description isocode="sr">obrazovni podaci</description>
+        <description isocode="it">Ambito didattico</description>
+        <description isocode="en">Educational</description>
+        <description isocode="de">Didaktische Angaben</description>
+        <metadatas>
+          <metadata mandatory="N" ID="53" forxmlname="learningresourcetype" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1677" lomref="5.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="51" cardinality="*" ordered="Y" fgslabel="uw.educational.learningresourcetype" vid="11" defaultvalue="" sequence="0" valuespace="">
+            <description isocode="sr">vrsta nastavnog i obrazovnog izvora</description>
+            <description isocode="it">Tipo di risorsa didattica e pedagogica</description>
+            <description isocode="en">Type of Teaching and Educational Resource</description>
+            <description isocode="de">Typ der Lehr-/Lernressource</description>
+          </metadata>
+          <metadata mandatory="N" ID="52" forxmlname="interactivitytype" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1676" lomref="5.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="51" cardinality="1" ordered="N" fgslabel="uw.educational.interactivitytype" vid="10" defaultvalue="" sequence="1" valuespace="">
+            <description isocode="sr">vrsta interaktivnosti</description>
+            <description isocode="it">Tipo di interattività</description>
+            <description isocode="en">Interactivity Type</description>
+            <description isocode="de">Form der Interaktivität</description>
+          </metadata>
+          <metadata mandatory="N" ID="54" forxmlname="interactivitylevel" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1678" lomref="5.3" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="51" cardinality="1" ordered="N" fgslabel="uw.educational.interactivitylevel" vid="12" defaultvalue="" sequence="2" valuespace="">
+            <description isocode="it">Livello di interattività</description>
+            <description isocode="en">Interactivity Level</description>
+            <description isocode="de">Grad der Interaktivität</description>
+            <description isocode="sr">nivo interaktivnosti</description>
+          </metadata>
+          <metadata mandatory="N" ID="56" forxmlname="enduserrole" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1680" lomref="5.5" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="51" cardinality="*" ordered="N" fgslabel="uw.educational.enduserrole" vid="14" defaultvalue="" sequence="4" valuespace="">
+            <description isocode="sr">nameravana uloga krajnjeg korisnika</description>
+            <description isocode="it">Ruolo previsto per l'utente finale </description>
+            <description isocode="en">Intended End User Role</description>
+            <description isocode="de">Zielgruppe</description>
+          </metadata>
+          <metadata mandatory="N" ID="57" forxmlname="context" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1681" lomref="5.6" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="51" cardinality="*" ordered="N" fgslabel="uw.educational.context" vid="15" defaultvalue="" sequence="5" valuespace="">
+            <description isocode="it">Contesto d'utilizzo didattico</description>
+            <description isocode="en">Didactic Context of Use</description>
+            <description isocode="de">Didaktischer Nutzungskontext</description>
+            <description isocode="sr">didaktični kontekst korišćenja</description>
+          </metadata>
+          <metadata mandatory="N" ID="58" forxmlname="agerange" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1682" lomref="5.7" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="51" cardinality="*" ordered="N" fgslabel="uw.educational.agerange" vid="" defaultvalue="" sequence="6" valuespace="">
+            <description isocode="sr">uobičajeni raspon godina</description>
+            <description isocode="it">Fascia d'età più comune</description>
+            <description isocode="en">Typical Age Range</description>
+            <description isocode="de">Durchnittliches Alter der Zielgruppe</description>
+          </metadata>
+          <metadata mandatory="N" ID="59" forxmlname="difficulty" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1683" lomref="5.8" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="51" cardinality="*" ordered="N" fgslabel="uw.educational.difficulty" vid="16" defaultvalue="" sequence="7" valuespace="">
+            <description isocode="sr">nivo težine</description>
+            <description isocode="it">Livello di difficoltà</description>
+            <description isocode="en">Difficulty Level</description>
+            <description isocode="de">Schwierigkeitsgrad</description>
+          </metadata>
+          <metadata mandatory="N" ID="60" forxmlname="learningtime" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="1684" lomref="5.9" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Duration" mid_parent="51" cardinality="1" ordered="N" fgslabel="uw.educational.learningtime" vid="" defaultvalue="" sequence="8" valuespace="">
+            <description isocode="en">Typical Learning Time</description>
+            <description isocode="de">Nutzungsdauer</description>
+            <description isocode="sr">uobičajeno vreme učenja</description>
+            <description isocode="it">Tempo medio di utilizzo</description>
+          </metadata>
+          <metadata mandatory="N" ID="61" forxmlname="description" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="10919" lomref="5.10" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="51" cardinality="*" ordered="N" fgslabel="uw.educational.description" vid="" defaultvalue="" sequence="9" valuespace="">
+            <description isocode="sr">opis</description>
+            <description isocode="it">Note</description>
+            <description isocode="en">Description</description>
+            <description isocode="de">Beschreibung</description>
+          </metadata>
+          <metadata mandatory="N" ID="62" forxmlname="language" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/educational" veid="10920" lomref="5.11" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Language" mid_parent="51" cardinality="*" ordered="N" fgslabel="uw.educational.language" vid="" defaultvalue="" sequence="10" valuespace="">
+            <description isocode="en">Language</description>
+            <description isocode="de">Sprache der Endanwendung</description>
+            <description isocode="sr">jezik</description>
+            <description isocode="it">Lingua</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="Y" ID="19" forxmlname="rights" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="21" lomref="6" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="6" valuespace="">
+    <description isocode="it">Diritti &amp; Licenze</description>
+    <description isocode="en">Rights &amp; Licences</description>
+    <description isocode="de">Rechte &amp; Lizenzen</description>
+    <description isocode="sr">prava i licence</description>
+    <metadatas>
+      <metadata mandatory="Y" ID="35" forxmlname="cost" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="37" lomref="6.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Boolean" mid_parent="19" cardinality="1" ordered="N" fgslabel="uw.rights.cost" vid="" defaultvalue="" sequence="0" valuespace="^Y|N$">
+        <description isocode="sr">troškovi</description>
+        <description isocode="it">Costi</description>
+        <description isocode="en">Costs</description>
+        <description isocode="de">Kosten</description>
+      </metadata>
+      <metadata mandatory="Y" ID="36" forxmlname="copyright" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="38" lomref="6.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Boolean" mid_parent="19" cardinality="1" ordered="N" fgslabel="uw.rights.copyright" vid="" defaultvalue="" sequence="1" valuespace="^Y|N$">
+        <description isocode="sr">kopirajt i druga ograničenja</description>
+        <description isocode="it">Copyright e altre limitazioni</description>
+        <description isocode="en">Copyright and Other Restrictions</description>
+        <description isocode="de">Copyright</description>
+      </metadata>
+      <metadata mandatory="Y" ID="81" forxmlname="license" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="10851" lomref="6.4" searchable="Y" autofield="N" editable="Y" oid="0" datatype="License" mid_parent="19" cardinality="1" ordered="N" fgslabel="uw.rights.license" vid="21" defaultvalue="" sequence="2" valuespace="">
+        <description isocode="sr">izabrana licenca</description>
+        <description isocode="it">Licenza scelta</description>
+        <description isocode="en">Licence Selected</description>
+        <description isocode="de">Ausgewählte Lizenz</description>
+      </metadata>
+      <metadata mandatory="N" ID="37" forxmlname="description" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="6" lomref="6.3" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="19" cardinality="1" ordered="N" fgslabel="uw.rights.description" vid="" defaultvalue="" sequence="3" valuespace="^.*$">
+        <description isocode="it">Descrizione</description>
+        <description isocode="en">Description or Additional Data</description>
+        <description isocode="de">Beschreibung oder zusätzliche Angaben</description>
+        <description isocode="sr">opis ili dodatni podaci</description>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="21" forxmlname="annotation" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="23" lomref="8" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="7" valuespace="">
+    <description isocode="sr">napomene</description>
+    <description isocode="it">Commenti</description>
+    <description isocode="en">Comments</description>
+    <description isocode="de">Anmerkungen</description>
+    <metadatas>
+      <metadata mandatory="N" ID="50" forxmlname="annotations" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/annotation" veid="23" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="21" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+        <description isocode="sr">napomene</description>
+        <description isocode="it">Commenti</description>
+        <description isocode="en">Comments</description>
+        <description isocode="de">Anmerkungen</description>
+        <metadatas>
+          <metadata mandatory="N" ID="43" forxmlname="description" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/annotation" veid="6" lomref="8.3" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="50" cardinality="1" ordered="N" fgslabel="uw.annotation.description" vid="" defaultvalue="" sequence="" valuespace="^.+$">
+            <description isocode="it">Descrizione</description>
+            <description isocode="en">Description or Additional Data</description>
+            <description isocode="de">Beschreibung oder zusätzliche Angaben</description>
+            <description isocode="sr">opis ili dodatni podaci</description>
+          </metadata>
+          <metadata mandatory="N" ID="38" forxmlname="entity" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/annotation" veid="15" lomref="8.1" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="50" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+            <description isocode="sr">entitet / lični podaci</description>
+            <description isocode="it">Ruolo / Dati personali</description>
+            <description isocode="en">Entity / Personal data</description>
+            <description isocode="de">Angaben zur Person</description>
+            <metadatas>
+              <metadata mandatory="N" ID="39" forxmlname="firstname" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="16" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="38" cardinality="1" ordered="N" fgslabel="uw.annotation.entity.firstname" vid="" defaultvalue="#FIRSTNAME" sequence="" valuespace="^.+$">
+                <description isocode="sr"> ime</description>
+                <description isocode="it">Nome</description>
+                <description isocode="en">Firstname</description>
+                <description isocode="de">Vorname</description>
+              </metadata>
+              <metadata mandatory="N" ID="40" forxmlname="lastname" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="17" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="38" cardinality="1" ordered="N" fgslabel="uw.annotation.entity.lastname" vid="" defaultvalue="#LASTNAME" sequence="" valuespace="^.+$">
+                <description isocode="sr">prezime</description>
+                <description isocode="it">Cognome</description>
+                <description isocode="en">Lastname</description>
+                <description isocode="de">Zuname</description>
+              </metadata>
+              <metadata mandatory="N" ID="67" forxmlname="institution" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1728" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="38" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.institution" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="it">Ente</description>
+                <description isocode="en">Institution</description>
+                <description isocode="de">Institution</description>
+                <description isocode="sr">institucija</description>
+              </metadata>
+              <metadata mandatory="N" ID="69" forxmlname="title2" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1729" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="38" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.title2" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="it">Titolo</description>
+                <description isocode="en">Title</description>
+                <description isocode="de">Titel</description>
+                <description isocode="sr">naslov</description>
+              </metadata>
+              <metadata mandatory="N" ID="68" forxmlname="title1" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1729" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="38" cardinality="1" ordered="N" fgslabel="uw.lifecycle.contribute.entity.title1" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">naslov</description>
+                <description isocode="it">Titolo</description>
+                <description isocode="en">Title</description>
+                <description isocode="de">Titel</description>
+              </metadata>
+              <metadata mandatory="N" ID="70" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/entity" veid="1731" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="CharacterString" mid_parent="38" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">vrsta</description>
+                <description isocode="it">Tipo</description>
+                <description isocode="en">Type</description>
+                <description isocode="de">Typ</description>
+              </metadata>
+            </metadatas>
+          </metadata>
+          <metadata mandatory="N" ID="42" forxmlname="date" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/annotation" veid="18" lomref="8.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="DateTime" mid_parent="50" cardinality="1" ordered="N" fgslabel="uw.annotation.date" vid="" defaultvalue="#TODAY" sequence="" valuespace="^.+$">
+            <description isocode="sr">datum</description>
+            <description isocode="it">Data</description>
+            <description isocode="en">Date</description>
+            <description isocode="de">Datum</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="Y" ID="22" forxmlname="classification" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="24" lomref="9" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="8" valuespace="">
+    <description isocode="sr">Klasifikacija</description>
+    <description isocode="it">Classificazione</description>
+    <description isocode="en">Classification</description>
+    <description isocode="de">Klassifikation</description>
+    <metadatas>
+      <metadata mandatory="N" ID="48" forxmlname="description" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/classification" veid="6" lomref="9.3" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="22" cardinality="1" ordered="N" fgslabel="uw.classification.description" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+        <description isocode="it">Descrizione</description>
+        <description isocode="en">Description or Additional Data</description>
+        <description isocode="de">Beschreibung oder zusätzliche Angaben</description>
+        <description isocode="sr">opis ili dodatni podaci</description>
+      </metadata>
+      <metadata mandatory="N" ID="49" forxmlname="keyword" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/classification" veid="7" lomref="9.4" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="22" cardinality="*" ordered="Y" fgslabel="uw.classification.keyword" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+        <description isocode="sr">ključne reči</description>
+        <description isocode="it">Parole chiave</description>
+        <description isocode="en">Keywords</description>
+        <description isocode="de">Schlüsselwörter</description>
+      </metadata>
+      <metadata mandatory="N" ID="44" forxmlname="purpose" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="39" lomref="9.1" searchable="N" autofield="Y" editable="N" oid="0" datatype="Vocabulary" mid_parent="22" cardinality="1" ordered="N" fgslabel="uw.classification.purpose" vid="6" defaultvalue="" sequence="" valuespace="^[0-9]+$">
+        <description isocode="sr">cilj</description>
+        <description isocode="it">Scopo</description>
+        <description isocode="en">Purpose</description>
+        <description isocode="de">Zweck</description>
+      </metadata>
+      <metadata mandatory="N" ID="45" forxmlname="taxonpath" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/classification" veid="40" lomref="9.2" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="22" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+        <description isocode="sr">Klasifikacije ( klase, podklase)</description>
+        <description isocode="it">Classificazioni (Classi, Sottoclassi)</description>
+        <description isocode="en">Classifications (Classes, Subclasses)</description>
+        <description isocode="de">Klassifikation (Klassen,Unterklassen)</description>
+        <metadatas>
+          <metadata mandatory="N" ID="46" forxmlname="source" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/classification" veid="41" lomref="9.2.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="ClassificationSource" mid_parent="45" cardinality="1" ordered="N" fgslabel="uw.classification.taxonpath.source" vid="" defaultvalue="" sequence="" valuespace="^[0-9]+$">
+            <description isocode="sr">Izvor</description>
+            <description isocode="it">Tipo di classificazione</description>
+            <description isocode="en">Source</description>
+            <description isocode="de">Quelle</description>
+          </metadata>
+          <metadata mandatory="N" ID="47" forxmlname="taxon" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/classification" veid="42" lomref="9.2.2" searchable="N" autofield="N" editable="Y" oid="0" datatype="Taxon" mid_parent="45" cardinality="*" ordered="Y" fgslabel="uw.classification.taxonpath.taxon" vid="" defaultvalue="" sequence="" valuespace="^[0-9]+$">
+            <description isocode="sr">putanja</description>
+            <description isocode="it">Percorso</description>
+            <description isocode="en">Path</description>
+            <description isocode="de">Pfad</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="71" forxmlname="organization" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0" veid="1732" lomref="10" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="9" valuespace="">
+    <description isocode="en">Association</description>
+    <description isocode="de">Zuordnung</description>
+    <description isocode="sr">ustanove</description>
+    <description isocode="it">Afferenza</description>
+    <metadatas>
+      <metadata mandatory="N" ID="72" forxmlname="hoschtyp" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1733" lomref="10.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="71" cardinality="*" ordered="N" fgslabel="uw.organization.hoschtyp" vid="17" defaultvalue="" sequence="1" valuespace="^.*$">
+        <description isocode="sr">vrsta akademskog rada</description>
+        <description isocode="it">Tipo di documento accademico</description>
+        <description isocode="en">Type of academic paper</description>
+        <description isocode="de">Hochschulschriftentyp</description>
+      </metadata>
+      <metadata mandatory="N" ID="139" forxmlname="approbation_period" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1552157" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="DateTime" mid_parent="71" cardinality="*" ordered="N" fgslabel="uw.organization.approbation_date" vid="" defaultvalue="" sequence="2" valuespace="^.*$">
+        <description isocode="sr">datum potvrđivanja</description>
+        <description isocode="it">Data di approvazione</description>
+        <description isocode="en">Date of approbation period</description>
+        <description isocode="de">Approbationsdatum</description>
+      </metadata>
+      <metadata mandatory="N" ID="73" forxmlname="orgassignment" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1734" lomref="10.2" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="71" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="3" valuespace="^.*$">
+        <description isocode="sr">ustanova</description>
+        <description isocode="it">Struttura</description>
+        <description isocode="en">Organization Association</description>
+        <description isocode="de">Organisationszuordnung</description>
+        <metadatas>
+          <metadata mandatory="N" ID="74" forxmlname="faculty" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1735" lomref="10.2.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Faculty" mid_parent="73" cardinality="1" ordered="N" fgslabel="uw.organization.orgassignment.faculty" vid="" defaultvalue="" sequence="1" valuespace="^.*$">
+            <description isocode="sr">fakultet</description>
+            <description isocode="it">Facoltà</description>
+            <description isocode="en">Faculty</description>
+            <description isocode="de">Fakultaet</description>
+          </metadata>
+          <metadata mandatory="N" ID="75" forxmlname="department" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1736" lomref="10.2.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Department" mid_parent="73" cardinality="1" ordered="N" fgslabel="uw.organization.orgassignment.department" vid="" defaultvalue="" sequence="2" valuespace="^.*$">
+            <description isocode="sr">institut</description>
+            <description isocode="it">Struttura o progetto</description>
+            <description isocode="en">Institute</description>
+            <description isocode="de">Institut</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+      <metadata mandatory="N" ID="76" forxmlname="curriculum" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1737" lomref="10.3" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="71" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="4" valuespace="^.*$">
+        <description isocode="it">Corso di laurea</description>
+        <description isocode="en">Study</description>
+        <description isocode="de">Studienrichtung</description>
+        <description isocode="sr">studije</description>
+        <metadatas>
+          <metadata mandatory="N" ID="77" forxmlname="spl" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1744" lomref="10.3.1" searchable="Y" autofield="N" editable="Y" oid="0" datatype="SPL" mid_parent="76" cardinality="1" ordered="N" fgslabel="uw.organization.curriculum.spl" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+            <description isocode="sr">smer studijskog programa</description>
+            <description isocode="it">Indicazione corso di laurea</description>
+            <description isocode="en">Study Program Direction</description>
+            <description isocode="de">Studienprogrammleitung</description>
+          </metadata>
+          <metadata mandatory="N" ID="78" forxmlname="kennzahl" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1746" lomref="10.3.2" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Curriculum" mid_parent="76" cardinality="*" ordered="Y" fgslabel="uw.organization.curriculum.kennzahl" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+            <description isocode="sr"> ID studija</description>
+            <description isocode="it">ID Corso di laurea </description>
+            <description isocode="en">Study ID</description>
+            <description isocode="de">Studienkennzahl</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+      <metadata mandatory="N" ID="149" forxmlname="further_allocation" fornamespace="http://phaidra.univie.ac.at/XML/metadata/lom/V1.0/organization" veid="1552254" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="71" cardinality="1" ordered="N" fgslabel="uw.organization.further_allocation" vid="" defaultvalue="" sequence="5" valuespace="^.*$">
+        <description isocode="it">ulteriore assegnazione</description>
+        <description isocode="en">additional allocation</description>
+        <description isocode="de">weitere Zuordnung</description>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="82" hidden="" forxmlname="histkult" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10870" lomref="" searchable="N" autofield="N" editable="N" oid="2" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="10" valuespace="">
+    <description isocode="sr">detalji o objektu</description>
+    <description isocode="it">Dati dell'oggetto originale</description>
+    <description isocode="en">Contextual Allegation</description>
+    <description isocode="de">Kontextuelle Angaben</description>
+    <metadatas>
+      <metadata mandatory="N" ID="83" forxmlname="inscription" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10871" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="LangString" mid_parent="82" cardinality="*" ordered="N" fgslabel="uw.histkult.inscription" vid="" defaultvalue="" sequence="" valuespace=".*">
+        <description isocode="sr">zapis</description>
+        <description isocode="it">Descrizione</description>
+        <description isocode="en">Inscription</description>
+        <description isocode="de">Inschrift</description>
+      </metadata>
+      <metadata mandatory="N" ID="84" forxmlname="dimensions" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10872" lomref="" searchable="N" autofield="N" editable="N" oid="2" datatype="Node" mid_parent="82" cardinality="*" ordered="Y" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+        <description isocode="sr">dimenzije</description>
+        <description isocode="it">Dimensioni</description>
+        <description isocode="en">Dimensions</description>
+        <description isocode="de">Abmessungen</description>
+        <metadatas>
+          <metadata mandatory="N" ID="93" forxmlname="resource" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10912" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="Vocabulary" mid_parent="84" cardinality="1" ordered="N" fgslabel="uw.histkult.dimensions.resource" vid="24" defaultvalue="" sequence="1" valuespace="^.*$">
+            <description isocode="sr">Izvor</description>
+            <description isocode="it">Tipo di materiale</description>
+            <description isocode="en">Source</description>
+            <description isocode="de">Quelle</description>
+          </metadata>
+          <metadata mandatory="N" ID="88" forxmlname="dimension_unit" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10876" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="Vocabulary" mid_parent="84" cardinality="1" ordered="N" fgslabel="uw.histkult.dimensions.dimension_unit" vid="22" defaultvalue="" sequence="2" valuespace="^.*$">
+            <description isocode="sr">jedinica mere</description>
+            <description isocode="it">Unità di misura</description>
+            <description isocode="en">Measuring Unit</description>
+            <description isocode="de">Maßeinheit</description>
+          </metadata>
+          <metadata mandatory="N" ID="85" forxmlname="length" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10873" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="CharacterString" mid_parent="84" cardinality="1" ordered="N" fgslabel="uw.histkult.dimensions.legnth" vid="" defaultvalue="" sequence="3" valuespace="^.*$">
+            <description isocode="sr">dužina</description>
+            <description isocode="it">Lunghezza</description>
+            <description isocode="en">Length</description>
+            <description isocode="de">Länge</description>
+          </metadata>
+          <metadata mandatory="N" ID="86" forxmlname="width" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10874" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="CharacterString" mid_parent="84" cardinality="1" ordered="N" fgslabel="uw.histkult.dimensions.width" vid="" defaultvalue="" sequence="4" valuespace="^.*$">
+            <description isocode="sr">širina</description>
+            <description isocode="it">Larghezza</description>
+            <description isocode="en">Width</description>
+            <description isocode="de">Breite</description>
+          </metadata>
+          <metadata mandatory="N" ID="87" forxmlname="height" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10875" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="CharacterString" mid_parent="84" cardinality="1" ordered="N" fgslabel="uw.histkult.dimensions.height" vid="" defaultvalue="" sequence="5" valuespace="^.*$">
+            <description isocode="it">Altezza</description>
+            <description isocode="en">Height</description>
+            <description isocode="de">Höhe</description>
+            <description isocode="sr">visina</description>
+          </metadata>
+          <metadata mandatory="N" ID="92" forxmlname="diameter" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10909" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="CharacterString" mid_parent="84" cardinality="1" ordered="N" fgslabel="uw.histkult.dimensions.diameter" vid="" defaultvalue="" sequence="6" valuespace="^.*$">
+            <description isocode="it">Diametro</description>
+            <description isocode="en">Circumference</description>
+            <description isocode="de">Durchmesser</description>
+            <description isocode="sr">obim</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+      <metadata mandatory="N" ID="90" forxmlname="stamp" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10886" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="Vocabulary" mid_parent="82" cardinality="*" ordered="N" fgslabel="uw.histkult.stamp" vid="23" defaultvalue="" sequence="" valuespace="^.*$">
+        <description isocode="sr">pečat</description>
+        <description isocode="it">Timbro</description>
+        <description isocode="en">Stamp</description>
+        <description isocode="de">Stempel</description>
+      </metadata>
+      <metadata mandatory="N" ID="91" forxmlname="note" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10887" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="LangString" mid_parent="82" cardinality="1" ordered="N" fgslabel="uw.histkult.note" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+        <description isocode="it">Note</description>
+        <description isocode="en">Note</description>
+        <description isocode="de">Notiz</description>
+        <description isocode="sr">beleška</description>
+      </metadata>
+      <metadata mandatory="N" ID="89" forxmlname="reference_number" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10913" lomref="" searchable="N" autofield="N" editable="Y" oid="2" datatype="Node" mid_parent="82" cardinality="*" ordered="N" fgslabel="uw.histkult.reference_number" vid="" defaultvalue="" sequence="" valuespace="">
+        <description isocode="it">Numero di riferimento</description>
+        <description isocode="en">Reference Number</description>
+        <description isocode="de">Bezugsnummer</description>
+        <description isocode="sr">referentni broj</description>
+        <metadatas>
+          <metadata mandatory="N" ID="94" forxmlname="reference" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10915" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="Vocabulary" mid_parent="89" cardinality="1" ordered="N" fgslabel="uw.histkult.reference_number.reference" vid="25" defaultvalue="" sequence="" valuespace="^.*$">
+            <description isocode="sr">referenca</description>
+            <description isocode="it">Riferimento</description>
+            <description isocode="en">Reference</description>
+            <description isocode="de">Referenz</description>
+          </metadata>
+          <metadata mandatory="N" ID="95" forxmlname="number" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10916" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="CharacterString" mid_parent="89" cardinality="1" ordered="N" fgslabel="uw.histkult.reference_number.number" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+            <description isocode="sr">broj</description>
+            <description isocode="it">Numero</description>
+            <description isocode="en">Number</description>
+            <description isocode="de">Nummer</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+      <metadata mandatory="N" ID="96" forxmlname="gps" fornamespace="http://phaidra.univie.ac.at/XML/metadata/histkult/V1.0" veid="10929" lomref="" searchable="Y" autofield="N" editable="Y" oid="2" datatype="GPS" mid_parent="82" cardinality="1" ordered="N" fgslabel="uw.histkult.gps" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+        <description isocode="sr">geografske koordinate</description>
+        <description isocode="it">Coordinate geogr.</description>
+        <description isocode="en">Geograph. Coordinates</description>
+        <description isocode="de">Geogr. Länge und Breite</description>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="115" forxmlname="provenience" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552083" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="11" valuespace="">
+    <description isocode="sr">poreklo</description>
+    <description isocode="it">Provenienza</description>
+    <description isocode="en">Provenience</description>
+    <description isocode="de">Provenienz</description>
+    <metadatas>
+      <metadata mandatory="N" ID="114" forxmlname="contribute" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552135" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="115" cardinality="*" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="">
+        <description isocode="sr">detalji o izvoru</description>
+        <description isocode="it">Informazioni sulla fonte</description>
+        <description isocode="en">Details about the source</description>
+        <description isocode="de">Angabe zur Quelle</description>
+        <metadatas>
+          <metadata mandatory="N" ID="121" forxmlname="resource" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552111" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="114" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.resource" vid="24" defaultvalue="" sequence="1" valuespace="^.*$">
+            <description isocode="en">Digital or other source</description>
+            <description isocode="de">Digitale oder sonstige Quellen</description>
+            <description isocode="sr">digitalni ili drugi izvor</description>
+            <description isocode="it">Tipo di materiale</description>
+          </metadata>
+          <metadata mandatory="N" ID="119" forxmlname="comment" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552087" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="114" cardinality="*" ordered="N" fgslabel="uw.provenience.contribute.comment" vid="" defaultvalue="" sequence="2" valuespace="^.*$">
+            <description isocode="sr">detalji o izvoru</description>
+            <description isocode="it">Note</description>
+            <description isocode="en">Details about the Source</description>
+            <description isocode="de">Angaben zur Quelle</description>
+          </metadata>
+          <metadata mandatory="N" ID="107" forxmlname="role" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552081" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="Vocabulary" mid_parent="114" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.role" vid="3" defaultvalue="" sequence="3" valuespace="^.*$">
+            <description isocode="sr">uloga</description>
+            <description isocode="it">Ruolo</description>
+            <description isocode="en">Role</description>
+            <description isocode="de">Rolle</description>
+          </metadata>
+          <metadata mandatory="N" ID="106" forxmlname="entity" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552080" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="Node" mid_parent="114" cardinality="*" ordered="Y" fgslabel="" vid="" defaultvalue="" sequence="4" valuespace="">
+            <description isocode="sr">lični ili institucionalni podaci</description>
+            <description isocode="it">Dati personali o istituzionali </description>
+            <description isocode="en">Personal or Institutional Data</description>
+            <description isocode="de">Angaben zur Person oder Institution</description>
+            <metadatas>
+              <metadata mandatory="N" ID="108" forxmlname="firstname" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0/entity" veid="16" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="106" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.entity.firstname" vid="" defaultvalue="" sequence="" valuespace="^.+$">
+                <description isocode="sr"> ime</description>
+                <description isocode="it">Nome</description>
+                <description isocode="en">Firstname</description>
+                <description isocode="de">Vorname</description>
+              </metadata>
+              <metadata mandatory="N" ID="109" forxmlname="lastname" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0/entity" veid="17" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="106" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.entity.lastname" vid="" defaultvalue="" sequence="" valuespace="^.+$">
+                <description isocode="sr">prezime</description>
+                <description isocode="it">Cognome</description>
+                <description isocode="en">Lastname</description>
+                <description isocode="de">Zuname</description>
+              </metadata>
+              <metadata mandatory="N" ID="113" forxmlname="institution" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0/entity" veid="1728" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="106" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.entity.institution" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">institucija</description>
+                <description isocode="it">Ente</description>
+                <description isocode="en">Institution</description>
+                <description isocode="de">Institution</description>
+              </metadata>
+              <metadata mandatory="N" ID="110" forxmlname="title1" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0/entity" veid="1729" lomref="" searchable="N" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="106" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.entity.title1" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="it">Titolo</description>
+                <description isocode="en">Title</description>
+                <description isocode="de">Titel</description>
+              </metadata>
+              <metadata mandatory="N" ID="111" forxmlname="title2" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0/entity" veid="1729" lomref="" searchable="N" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="106" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.entity.title2" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">naslov</description>
+                <description isocode="it">Titolo</description>
+                <description isocode="en">Title</description>
+                <description isocode="de">Titel</description>
+              </metadata>
+              <metadata mandatory="N" ID="110" forxmlname="title1" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0/entity" veid="1729" lomref="" searchable="N" autofield="N" editable="Y" oid="0" datatype="CharacterString" mid_parent="106" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.entity.title1" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="sr">naslov</description>
+              </metadata>
+              <metadata mandatory="N" ID="112" forxmlname="type" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0/entity" veid="1731" lomref="" searchable="N" autofield="N" editable="N" oid="0" datatype="CharacterString" mid_parent="106" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="" valuespace="^.*$">
+                <description isocode="it">Tipo</description>
+                <description isocode="en">Type</description>
+                <description isocode="de">Typ</description>
+                <description isocode="sr">vrsta</description>
+              </metadata>
+            </metadatas>
+          </metadata>
+          <metadata mandatory="N" ID="117" forxmlname="date_from" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552085" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="DateTime" mid_parent="114" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.date_from" vid="" defaultvalue="" sequence="5" valuespace="">
+            <description isocode="it">Data a partire da</description>
+            <description isocode="en">Date from</description>
+            <description isocode="de">Datum von</description>
+            <description isocode="sr">datum od</description>
+          </metadata>
+          <metadata mandatory="N" ID="118" forxmlname="date_to" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552086" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="DateTime" mid_parent="114" cardinality="1" ordered="N" fgslabel="uw.provenience.contribute.date_to" vid="" defaultvalue="" sequence="6" valuespace="">
+            <description isocode="it">Data fino a</description>
+            <description isocode="en">Date until</description>
+            <description isocode="de">Datum bis</description>
+            <description isocode="sr">datum do</description>
+          </metadata>
+          <metadata mandatory="N" ID="116" forxmlname="chronological" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552084" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="114" cardinality="*" ordered="N" fgslabel="uw.provenience.contribute.chronological" vid="" defaultvalue="" sequence="7" valuespace=".*">
+            <description isocode="sr">vremenska pokrivenost</description>
+            <description isocode="it">Periodo</description>
+            <description isocode="en">Time Coverage</description>
+            <description isocode="de">Zeitliche Abdeckung</description>
+          </metadata>
+          <metadata mandatory="N" ID="120" forxmlname="location" fornamespace="http://phaidra.univie.ac.at/XML/metadata/provenience/V1.0" veid="1552088" lomref="" searchable="Y" autofield="N" editable="Y" oid="0" datatype="LangString" mid_parent="114" cardinality="*" ordered="N" fgslabel="uw.provenience.contribute.location" vid="" defaultvalue="" sequence="8" valuespace="^.*$">
+            <description isocode="sr">mesto</description>
+            <description isocode="it">Collocazione</description>
+            <description isocode="en">Location</description>
+            <description isocode="de">Standort</description>
+          </metadata>
+        </metadatas>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="98" hidden="1" forxmlname="digitalbook" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="16259" lomref="" searchable="N" autofield="N" editable="N" oid="3" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="12" valuespace="">
+    <description isocode="en">Digital Book</description>
+    <description isocode="de">Digitales Buch</description>
+    <description isocode="sr">podaci o knjizi</description>
+    <description isocode="it">Libro digitale</description>
+    <metadatas>
+      <metadata mandatory="N" ID="129" forxmlname="name_magazine" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552121" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="LangString" mid_parent="98" cardinality="*" ordered="N" fgslabel="uw.digitalbook.name_magazine" vid="" defaultvalue="" sequence="1" valuespace=".*">
+        <description isocode="de">Name der Zeitschrift</description>
+        <description isocode="sr">ime publikacije</description>
+        <description isocode="it">Titolo della monografia</description>
+        <description isocode="en">Name of Publication</description>
+      </metadata>
+      <metadata mandatory="N" ID="102" forxmlname="pagination" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="16256" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.pagination" vid="" defaultvalue="" sequence="2" valuespace="">
+        <description isocode="sr">stranice ili volumen</description>
+        <description isocode="it">Pagine o volume della monografia</description>
+        <description isocode="en">Pages or Volume</description>
+        <description isocode="de">Umfang</description>
+      </metadata>
+      <metadata mandatory="N" ID="103" forxmlname="reihentitel" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="16257" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.reihentitel" vid="" defaultvalue="" sequence="3" valuespace="">
+        <description isocode="sr">naslov serije</description>
+        <description isocode="it">Titolo della collana o della rivista</description>
+        <description isocode="en">Series Title</description>
+        <description isocode="de">Reihentitel</description>
+      </metadata>
+      <metadata mandatory="N" ID="131" forxmlname="volume" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552123" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.volume" vid="" defaultvalue="" sequence="4" valuespace="^.*$">
+        <description isocode="sr">volumen</description>
+        <description isocode="it">Volume della collana o della rivista</description>
+        <description isocode="en">Volume</description>
+        <description isocode="de">Band</description>
+      </metadata>
+      <metadata mandatory="N" ID="132" forxmlname="booklet" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552124" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.booklet" vid="" defaultvalue="" sequence="5" valuespace="^.*$">
+        <description isocode="sr">broj</description>
+        <description isocode="it">Numero di fascicolo della rivista</description>
+        <description isocode="en">Number</description>
+        <description isocode="de">Heft</description>
+      </metadata>
+      <metadata mandatory="N" ID="133" forxmlname="from_page" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552125" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.from_page" vid="" defaultvalue="" sequence="6" valuespace="^.*$">
+        <description isocode="en">From Page</description>
+        <description isocode="de">von Seite</description>
+        <description isocode="sr">od stranice</description>
+        <description isocode="it">da pagina</description>
+      </metadata>
+      <metadata mandatory="N" ID="134" forxmlname="to_page" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552126" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.to_page" vid="" defaultvalue="" sequence="7" valuespace="^.*$">
+        <description isocode="sr">do stranice</description>
+        <description isocode="it">a pagina</description>
+        <description isocode="en">To Page</description>
+        <description isocode="de">bis Seite</description>
+      </metadata>
+      <metadata mandatory="N" ID="130" forxmlname="name_collection" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552122" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="LangString" mid_parent="98" cardinality="*" ordered="N" fgslabel="uw.digitalbook.name_collection" vid="" defaultvalue="" sequence="8" valuespace=".*">
+        <description isocode="sr">ime kolekcije/monografije</description>
+        <description isocode="it">Titolo della collezione</description>
+        <description isocode="en">Name of Collection/Monograph</description>
+        <description isocode="de">Name der Sammlung/Monographie</description>
+      </metadata>
+      <metadata mandatory="N" ID="99" forxmlname="publisherlocation" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="16253" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="*" ordered="N" fgslabel="uw.digitalbook.publisherlocation" vid="" defaultvalue="" sequence="9" valuespace="">
+        <description isocode="it">Luogo di pubblicazione</description>
+        <description isocode="en">Publishing Address</description>
+        <description isocode="de">Verlagsort</description>
+        <description isocode="sr">adresa izdavača</description>
+      </metadata>
+      <metadata mandatory="N" ID="100" forxmlname="publisher" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="16254" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="*" ordered="N" fgslabel="uw.digitalbook.publisher" vid="" defaultvalue="" sequence="10" valuespace="">
+        <description isocode="sr">izdavač</description>
+        <description isocode="it">Editore</description>
+        <description isocode="en">Publisher</description>
+        <description isocode="de">Verlag</description>
+      </metadata>
+      <metadata mandatory="N" ID="101" forxmlname="releaseyear" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="16255" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="DateTime" mid_parent="98" cardinality="*" ordered="N" fgslabel="uw.digitalbook.releaseyear" vid="" defaultvalue="" sequence="11" valuespace="">
+        <description isocode="it">Data di pubblicazione</description>
+        <description isocode="en">Publication Date</description>
+        <description isocode="de">Erscheinungsdatum</description>
+        <description isocode="sr">datum izdavanja</description>
+      </metadata>
+      <metadata mandatory="N" ID="135" forxmlname="edition" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552127" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.edition" vid="" defaultvalue="" sequence="12" valuespace="^.*$">
+        <description isocode="sr">izdanje/ broj štampe</description>
+        <description isocode="it">Edizione/ Tiratura</description>
+        <description isocode="en">Edition/ Print Run</description>
+        <description isocode="de">Auflage</description>
+      </metadata>
+      <metadata mandatory="N" ID="136" forxmlname="release_notes" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552128" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="LangString" mid_parent="98" cardinality="*" ordered="N" fgslabel="uw.digitalbook.release_notes" vid="" defaultvalue="" sequence="13" valuespace=".*">
+        <description isocode="sr">datumi publikovanja</description>
+        <description isocode="it">Note</description>
+        <description isocode="en">Publication Dates</description>
+        <description isocode="de">Veröffentlichungsdaten</description>
+      </metadata>
+      <metadata mandatory="N" ID="128" forxmlname="medium" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="1552120" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="Vocabulary" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.medium" vid="32" defaultvalue="" sequence="14" valuespace="^.*$">
+        <description isocode="sr">medij</description>
+        <description isocode="it">Supporto</description>
+        <description isocode="de">Medium</description>
+        <description isocode="en">Medium</description>
+      </metadata>
+      <metadata mandatory="N" ID="104" forxmlname="alephurl" fornamespace="http://phaidra.univie.ac.at/XML/metadata/digitalbook/V1.0" veid="16258" lomref="" searchable="Y" autofield="N" editable="Y" oid="3" datatype="CharacterString" mid_parent="98" cardinality="1" ordered="N" fgslabel="uw.digitalbook.alephurl" vid="" defaultvalue="" sequence="15" valuespace="">
+        <description isocode="en">Aleph-URL</description>
+        <description isocode="de">Aleph-URL</description>
+        <description isocode="sr">Aleph - URL</description>
+        <description isocode="it">URL Catalogo</description>
+      </metadata>
+    </metadatas>
+  </metadata>
+  <metadata mandatory="N" ID="140" forxmlname="etheses" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552158" lomref="" searchable="N" autofield="N" editable="N" oid="4" datatype="Node" mid_parent="" cardinality="1" ordered="N" fgslabel="" vid="" defaultvalue="" sequence="13" valuespace="">
+    <description isocode="sr">E - teze</description>
+    <description isocode="it">Tesi elettroniche</description>
+    <description isocode="en">E-Theses</description>
+    <description isocode="de">E-Theses</description>
+    <metadatas>
+      <metadata mandatory="N" ID="141" forxmlname="consent_form" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552159" lomref="" searchable="Y" autofield="N" editable="Y" oid="4" datatype="Boolean" mid_parent="140" cardinality="1" ordered="N" fgslabel="uw.etheses.consent_form" vid="" defaultvalue="" sequence="1" valuespace="^Y|N$">
+        <description isocode="sr">izjava saglasnosti</description>
+        <description isocode="it">Modulo di autorizzazione</description>
+        <description isocode="en">Consent form</description>
+        <description isocode="de">Einverständniserklärung</description>
+      </metadata>
+      <metadata mandatory="N" ID="142" forxmlname="title_page" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552160" lomref="" searchable="Y" autofield="N" editable="Y" oid="4" datatype="Boolean" mid_parent="140" cardinality="1" ordered="N" fgslabel="uw.etheses.title_page" vid="" defaultvalue="" sequence="2" valuespace="^Y|N$">
+        <description isocode="sr">naslovna strana</description>
+        <description isocode="it">Pagina del titolo</description>
+        <description isocode="en">Title page</description>
+        <description isocode="de">Titelblatt</description>
+      </metadata>
+      <metadata mandatory="N" ID="143" forxmlname="title_page_identical" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552161" lomref="" searchable="Y" autofield="N" editable="Y" oid="4" datatype="Boolean" mid_parent="140" cardinality="1" ordered="N" fgslabel="uw.etheses.title_page_identical" vid="" defaultvalue="" sequence="3" valuespace="^Y|N$">
+        <description isocode="it">Pagina del titolo identica</description>
+        <description isocode="en">Title page identical</description>
+        <description isocode="de">Titelblatt ident</description>
+        <description isocode="sr">identično naslovnoj strani</description>
+      </metadata>
+      <metadata mandatory="N" ID="144" forxmlname="pdf_identical" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552162" lomref="" searchable="Y" autofield="N" editable="Y" oid="4" datatype="Boolean" mid_parent="140" cardinality="1" ordered="N" fgslabel="uw.etheses.pdf_identical" vid="" defaultvalue="" sequence="4" valuespace="^Y|N$">
+        <description isocode="sr">PDF identično</description>
+        <description isocode="it">PDF identico</description>
+        <description isocode="en">PDF identical</description>
+        <description isocode="de">PDF ident</description>
+      </metadata>
+      <metadata mandatory="N" ID="145" forxmlname="show_abstract" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552163" lomref="" searchable="Y" autofield="N" editable="Y" oid="4" datatype="Boolean" mid_parent="140" cardinality="1" ordered="N" fgslabel="uw.etheses.show_abstract" vid="" defaultvalue="" sequence="5" valuespace="^Y|N$">
+        <description isocode="it">Mostra abstract</description>
+        <description isocode="en">Show abstract</description>
+        <description isocode="de">Abstract anzeigen</description>
+        <description isocode="sr">pokaži apstrakt</description>
+      </metadata>
+      <metadata mandatory="N" ID="146" forxmlname="note_1" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552164" lomref="" searchable="Y" autofield="N" editable="Y" oid="4" datatype="LangString" mid_parent="140" cardinality="*" ordered="N" fgslabel="uw.etheses.note_1" vid="" defaultvalue="" sequence="6" valuespace="^.*$">
+        <description isocode="sr">beleška 1</description>
+        <description isocode="it">Note, 1</description>
+        <description isocode="en">Note 1</description>
+        <description isocode="de">Interne Notiz 1</description>
+      </metadata>
+      <metadata mandatory="N" ID="147" forxmlname="note_2" fornamespace="http://phaidra.univie.ac.at/XML/metadata/etheses/V1.0" veid="1552165" lomref="" searchable="Y" autofield="N" editable="Y" oid="4" datatype="LangString" mid_parent="140" cardinality="*" ordered="N" fgslabel="uw.etheses.note_2" vid="" defaultvalue="" sequence="7" valuespace="^.*$">
+        <description isocode="sr">beleška 2</description>
+        <description isocode="it">Note 2</description>
+        <description isocode="en">Note 2</description>
+        <description isocode="de">Interne Notiz 2</description>
+      </metadata>
+    </metadatas>
+  </metadata>
+</metadatas>
