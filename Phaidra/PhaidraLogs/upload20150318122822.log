@@ -1,9 +1,0 @@
-2015-03-18 12:28:22,578 INFO   [UploadProgress] Starting upload... 
-2015-03-18 12:28:22,588 INFO   [UploadProgress] Create a single video 
-2015-03-18 12:28:22,609 INFO   [UploadProgress] Start upload video with PID: null 
-2015-03-18 12:28:22,610 INFO   [UploadProgress] Caricamento video singolo iniziato 
-2015-03-18 12:28:22,611 INFO   [UploadProgress] Richiesta di creazione oggetto video in Phaidra 
-2015-03-18 12:28:26,191 INFO   [UploadProgress] - Aggiunta file fisico ad oggetto Phaidra 
-2015-03-18 12:28:45,141 INFO   [UploadProgress] - Aggiunta file dei metadati ad oggetto Phaidra 
-2015-03-18 12:28:48,794 INFO   [UploadProgress] - Salvataggio dell'oggetto video in Phaidra 
-2015-03-18 12:28:52,720 INFO   [UploadProgress] Caricamento video singolo terminato con PID:o:11055 

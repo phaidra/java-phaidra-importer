@@ -1,6 +1,0 @@
-2014-11-05 10:58:55,724 INFO   [UploadProgress] Starting upload... 
-2014-11-05 10:58:55,771 INFO   [UploadProgress] Create a book 
-2014-11-05 10:58:55,771 INFO   [ImObject] Start upload Book 
-2014-11-05 10:58:59,375 ERROR  [ImObject] Errore nella creazione del libro 
-2014-11-05 10:58:59,375 INFO   [UploadProgress] Eccezione! Caricamento annullato::Non e' possibile ricavare l'identificatore del libro  
-2014-11-05 10:58:59,375 ERROR  [UploadProgress] Eccezione! Caricamento annullato::Non e' possibile ricavare l'identificatore del libro  
