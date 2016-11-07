@@ -38,25 +38,25 @@
         <dependency>
             <groupId>org.codehaus.izpack</groupId>
             <artifactId>izpack-api</artifactId>
-            <version>5.0.0-beta11</version>
+            <version>5.0.0-beta9</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.codehaus.izpack</groupId>
             <artifactId>izpack-gui</artifactId>
-            <version>5.0.0-beta11</version>
+            <version>5.0.0-beta9</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.codehaus.izpack</groupId>
             <artifactId>izpack-installer</artifactId>
-            <version>5.0.0-beta11</version>
+            <version>5.0.0-beta9</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.codehaus.izpack</groupId>
             <artifactId>izpack-panel</artifactId>
-            <version>5.0.0-beta11</version>
+            <version>5.0.0-beta9</version>
             <type>jar</type>
         </dependency>
     </dependencies>

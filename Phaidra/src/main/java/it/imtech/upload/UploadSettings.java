@@ -501,7 +501,8 @@ public class UploadSettings extends javax.swing.JFrame {
                 }
 
             } catch (Exception ex) {
-                logger.error(ex.getMessage());
+                //logger.error(ex.getMessage());
+                logger.error(ex.getMessage(), ex);
                 JOptionPane.showMessageDialog(BookImporter.getInstance(), "Exception: " + ex.getMessage());
             }
         }

@@ -85,7 +85,7 @@ public class TemplateDialog extends javax.swing.JDialog {
             JButton delete = new JButton(Utility.getBundleString("templatedelete", bundle));
             delete.addActionListener(new ActionListener()
             {
-                @Override
+                
                 public void actionPerformed(ActionEvent event)
                 {
                     ResourceBundle innerbundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);

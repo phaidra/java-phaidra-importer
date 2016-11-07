@@ -773,7 +773,7 @@ public class MetaUtility {
 
                     classificationRemoveButton.addActionListener(new ActionListener()
                     {
-                        @Override
+                        
                         public void actionPerformed(ActionEvent event)
                         {
                             BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -796,7 +796,7 @@ public class MetaUtility {
           
                     classificationAddButton.addActionListener(new ActionListener()
                     {
-                        @Override
+                        
                         public void actionPerformed(ActionEvent event)
                         {
                             BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -853,7 +853,7 @@ public class MetaUtility {
 
                         removeContribute.addActionListener(new ActionListener()
                         {
-                            @Override
+                            
                             public void actionPerformed(ActionEvent event)
                             {
                                 BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -876,7 +876,7 @@ public class MetaUtility {
 
                         addcontribute.addActionListener(new ActionListener()
                         {
-                            @Override
+                            
                             public void actionPerformed(ActionEvent event)
                             {
                                 BookImporter.getInstance().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -1222,7 +1222,12 @@ public class MetaUtility {
                     it.imtech.xmltree.XMLUtil.xmlWriter(savedXmlMetadata, xmlFile);
             } 
             catch (Exception ex) {
-                result = ex.getMessage().substring(0, 75)+"...";
+            	logger.error(ex.getMessage(), ex);
+            	if(ex.getMessage().length() > 75){
+            		result = ex.getMessage().substring(0, 75)+"...";
+            	}else{
+            		result = ex.getMessage();
+            	}
             }
         }
 
@@ -1294,7 +1299,7 @@ public class MetaUtility {
             Transformer t = TransformerFactory.newInstance().newTransformer();
             t.setOutputProperty(OutputKeys.INDENT, "yes");
             t.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-            t.setOutputProperty(OutputKeys.STANDALONE, "");
+            t.setOutputProperty(OutputKeys.STANDALONE, "no");
             t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 
             // get the root element

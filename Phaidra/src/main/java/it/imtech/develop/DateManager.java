@@ -46,7 +46,7 @@ public class DateManager {
         test = new JButton("Get Date");
         test.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 Format formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -61,7 +61,7 @@ public class DateManager {
         testjx = new JButton("Get Date");
         testjx.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 Format formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -85,7 +85,7 @@ public class DateManager {
     
     public static void main(String[] args){
         SwingUtilities.invokeLater(new Runnable(){
-            @Override
+            
             public void run(){
                    new DateManager();
             }

@@ -40,7 +40,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.jdesktop.swingx.JXDatePicker;
-import static org.jpedal.examples.viewer.Viewer.file;
+//import static org.jpedal.examples.viewer.Viewer.file;
 
 /**
  * Classe principale di gestione del frame PhaidraImporter
@@ -259,7 +259,7 @@ public class BookImporter extends javax.swing.JFrame {
 
             this.templatebuttons.get(panelname+"_import").addActionListener(new ActionListener()
             {
-                @Override
+
                 public void actionPerformed(ActionEvent event)
                 {
                     ResourceBundle bundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
@@ -339,7 +339,6 @@ public class BookImporter extends javax.swing.JFrame {
         templateexport.setName("IMTemplateExportButton");
         templateexport.addActionListener(new ActionListener()
         {
-            @Override
             public void actionPerformed(ActionEvent event)
             {
                 exportTemplate(panelname);
@@ -353,7 +352,6 @@ public class BookImporter extends javax.swing.JFrame {
         templatedelete.setName("IMTemplateDeleteButton");
         templatedelete.addActionListener(new ActionListener()
         {
-            @Override
             public void actionPerformed(ActionEvent event)
             {
                 deleteTemplate(panelname);
@@ -389,7 +387,6 @@ public class BookImporter extends javax.swing.JFrame {
 
             jButton2.addActionListener(new ActionListener()
             {
-                @Override
                 public void actionPerformed(ActionEvent event)
                 {
                     manageSelectFolder();
@@ -859,7 +856,6 @@ public class BookImporter extends javax.swing.JFrame {
                             .addPropertyChangeListener("focusOwner", 
                      new PropertyChangeListener() {
 
-          @Override
           public void propertyChange(PropertyChangeEvent evt) {
             if (!(evt.getNewValue() instanceof JComponent)) {
               return;
@@ -1791,6 +1787,8 @@ public class BookImporter extends javax.swing.JFrame {
             logger.info("Upload single video: " + Globals.SELECTED_FOLDER_SEP);
             XMLTree.exportBookstructure(Globals.SELECTED_FOLDER_SEP);
             AlertDialog alert = null;
+            // rasta: this is hacked in, the file variable was undefined and I have no idea where it should be coming from
+            String file = "";
             switch(XMLTree.getVideoFromStructure()) {
                 case 0:
                     logger.error("Upload single video: No videos founded!");

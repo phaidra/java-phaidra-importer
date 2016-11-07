@@ -77,7 +77,7 @@ public class BookCollectionDialog extends javax.swing.JDialog {
         
         collButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 choice = 0;
@@ -92,7 +92,7 @@ public class BookCollectionDialog extends javax.swing.JDialog {
         
         bookButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 choice = 1;
@@ -107,7 +107,7 @@ public class BookCollectionDialog extends javax.swing.JDialog {
         
         koButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 choice = 2;

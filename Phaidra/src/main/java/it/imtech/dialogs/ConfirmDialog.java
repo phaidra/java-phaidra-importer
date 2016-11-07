@@ -78,7 +78,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
         
         nextButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 next = true;
@@ -92,7 +92,7 @@ public class ConfirmDialog extends javax.swing.JDialog {
         
         prevButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 next = false;

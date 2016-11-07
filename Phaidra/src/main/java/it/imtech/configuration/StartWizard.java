@@ -112,7 +112,7 @@ public class StartWizard  {
         
         nextButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 if(getCurrentCard() instanceof ChooseServer){
@@ -157,7 +157,7 @@ public class StartWizard  {
         
         prevButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                if(getCurrentCard() instanceof ChooseServer){
@@ -424,7 +424,7 @@ public class StartWizard  {
     
     public static void main(String[] args){
         SwingUtilities.invokeLater(new Runnable(){
-            @Override
+            
             public void run(){
                try {
                     for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

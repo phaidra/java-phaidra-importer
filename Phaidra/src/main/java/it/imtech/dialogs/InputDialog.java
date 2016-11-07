@@ -82,7 +82,7 @@ public class InputDialog extends javax.swing.JDialog {
         
         nextButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 ResourceBundle innerbundle = ResourceBundle.getBundle(Globals.RESOURCES, Globals.CURRENT_LOCALE, Globals.loader);
@@ -103,7 +103,7 @@ public class InputDialog extends javax.swing.JDialog {
         
         prevButton.addActionListener(new ActionListener()
         {
-            @Override
+            
             public void actionPerformed(ActionEvent event)
             {
                 next = false;
