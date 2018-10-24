@@ -517,11 +517,12 @@ public class ImObject {
                 if (words.item(s).getNodeType() == Node.ELEMENT_NODE) {
                     Element word = (Element) words.item(s);
 
-                    thisPage.addToFulltext(word.getAttribute("word"));
-
-                    this.bookFulltext.addText(thisPage.getFulltext());
-                }
+                    thisPage.addToFulltext(word.getAttribute("word"));                    
+                }                
             }
+            
+            this.bookFulltext.addText(thisPage.getFulltext());
+            
         } catch (Exception ex) {
             throw new Exception("OCR Upload Exception: " + ex.getMessage());
         }
